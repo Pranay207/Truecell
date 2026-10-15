@@ -74,7 +74,7 @@ def validate(table: Table, table_index: int = 1) -> list[Issue]:
                 actual = "numeric"
             if value and types[c] in {"numeric", "date", "id"} and actual != types[c]:
                 add(r, c, "type_mismatch", f"Column usually contains {types[c]}; this value is {actual}.")
-            if "ocr" in table.engine:
+            if "ocr" in table.row_engines[r]:
                 conf = table.cell_confidence.get((r, c), table.confidence)
                 if conf < .85:
                     add(r, c, "ocr_confidence", f"OCR recognition confidence {conf:.2f}; verify all characters.")

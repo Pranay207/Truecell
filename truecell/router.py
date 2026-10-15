@@ -4,6 +4,7 @@ from __future__ import annotations
 from pathlib import Path
 from contextlib import contextmanager
 from collections.abc import Iterator
+import math
 
 import fitz
 from PIL import Image, ImageOps
@@ -71,6 +72,11 @@ def route_page(page: fitz.Page) -> str:
 
 
 def render_page(page: fitz.Page, dpi: int = 300) -> Image.Image:
-    """Render only the active page to bound raster memory."""
-    pix = page.get_pixmap(dpi=dpi, colorspace=fitz.csRGB, alpha=False)
-    return Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+    """Render at 300 DPI, capped for unusually large PDF media boxes."""
+    width, height = page.rect.width, page.rect.height
+    maximum_dpi = min(5500 * 72 / max(width, height), math.sqrt(20_000_000 / (width * height)) * 72)
+    actual_dpi = max(1, min(dpi, int(maximum_dpi)))
+    pix = page.get_pixmap(dpi=actual_dpi, colorspace=fitz.csRGB, alpha=False)
+    image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+    image.info["dpi"] = (actual_dpi, actual_dpi)
+    return image

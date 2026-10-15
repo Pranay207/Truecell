@@ -29,10 +29,13 @@ class Table:
     provenance: list[list[tuple[int, int]]] = field(default_factory=list)
     cell_confidence: dict[tuple[int, int], float] = field(default_factory=dict)
     notes: list[str] = field(default_factory=list)
+    row_engines: list[str] = field(default_factory=list)
 
     def __post_init__(self) -> None:
         if not self.provenance:
             self.provenance = [[(self.page, i + 1)] for i in range(len(self.rows))]
+        if not self.row_engines:
+            self.row_engines = [self.engine] * len(self.rows)
 
 
 @dataclass

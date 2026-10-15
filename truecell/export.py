@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import math
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
@@ -48,9 +49,13 @@ def style_sheet(sheet) -> None:
         length = max(len(str(c.value or "")) for c in column)
         sheet.column_dimensions[column[0].column_letter].width = min(65, max(13, length + 2))
     for row in sheet.iter_rows(min_row=2):
+        line_count = 1
         for cell in row:
             cell.font = Font(name="Calibri", size=11)
             cell.alignment = Alignment(vertical="top", wrap_text=True)
+            width = sheet.column_dimensions[cell.column_letter].width
+            line_count = max(line_count, math.ceil(len(str(cell.value or "")) / max(1, width - 2)))
+        sheet.row_dimensions[row[0].row].height = min(409, 17 * line_count)
 
 
 def export_workbook(result: Result, output: str | Path) -> Path:
@@ -66,7 +71,7 @@ def export_workbook(result: Result, output: str | Path) -> Path:
             for col, value in enumerate(row, 1):
                 write_value(sheet.cell(row_no, col), value)
             for page, source_row in table.provenance[row_no - 2]:
-                provenance.append([sheet.title, row_no, page, source_row, table.engine])
+                provenance.append([sheet.title, row_no, page, source_row, table.row_engines[row_no-2]])
         for issue in result.issues:
             if issue.table != index:
                 continue

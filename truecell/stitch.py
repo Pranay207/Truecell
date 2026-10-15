@@ -51,14 +51,19 @@ def stitch(tables: list[Table]) -> tuple[list[Table], list[Issue]]:
                 for c in range(len(before)):
                     before[c] = clean(before[c] + " " + after[c])
                 target.provenance[-1].extend(table.provenance[0])
+                target.row_engines[-1] += "+" + table.row_engines[0]
                 issues.append(Issue("warning", table.page, table.provenance[0][0][1], None,
                     "Complementary page-break row fragments merged; verify the reconstructed record.",
                     code="split_row_join", table=joined.index(target) + 1))
                 table.rows.pop(0)
                 table.provenance.pop(0)
+                table.row_engines.pop(0)
                 table.cell_confidence = {(r-1,c):v for (r,c),v in table.cell_confidence.items() if r > 0}
         target.rows.extend(table.rows)
         target.provenance.extend(table.provenance)
+        target.row_engines.extend(table.row_engines)
+        if table.engine not in target.engine.split("+"):
+            target.engine += "+" + table.engine
         for (r, c), confidence in table.cell_confidence.items():
             target.cell_confidence[(r + offset, c)] = confidence
         target.notes.extend(note for note in table.notes if note not in target.notes)

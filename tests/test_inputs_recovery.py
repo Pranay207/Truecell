@@ -103,6 +103,12 @@ def test_empty_candidate_never_beats_nonempty():
     assert evaluate([t])[0]>evaluate([])[0]
 
 
+def test_false_column_splits_do_not_earn_more_coverage():
+    good=Table(["Code","Description","Units"],[["A","Widget model 1","2"],["B","Widget model 2","3"]],1,(0,0,10,10),"native-words",.72)
+    bad=Table(["Code","Description","Column 3","Column 4","Units"],[["A","Widget","model","1","2"],["B","Widget","model","2","3"]],1,(0,0,10,10),"native-text",.82)
+    assert evaluate([good])[0]>evaluate([bad])[0]
+
+
 def test_scorer_penalizes_extra_table():
     t=Table(["ID","Amt"],[["A","1"]],1,(0,0,10,10),"native")
     truth={"name":"test","pages":1,"tables":[{"headers":t.headers,"rows":t.rows}]}

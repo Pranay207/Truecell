@@ -11,7 +11,7 @@ import pdfplumber
 from .digital import extract_page
 from .export import export_workbook
 from .models import Attempt, Issue, PageReport, Result, Table
-from .recover import evaluate
+from .recover import evaluate, needs_retry
 from .router import open_document, render_page, route_page
 from .stitch import stitch
 from .validate import validate
@@ -68,8 +68,11 @@ def convert(source: str | Path, output: str | Path | None = None, *,
                         raise RuntimeError("No OCR engine available. Install rapidocr-onnxruntime or Tesseract.")
                     image = render_page(page)
                     attempt(engines[0], "deskew-300dpi", lambda: extract_image(image, index + 1, engines[0]))
-                    if recover and (not candidates or not candidates[-1][1] or candidates[-1][2].issues):
-                        attempt(engines[0], "threshold-300dpi", lambda: extract_image(image, index + 1, engines[0], alternate=True))
+                    if recover and (not candidates or needs_retry(candidates[-1][1])):
+                        alternate_name = "cell-recheck-300dpi" if engines[0] == "tesseract" else "threshold-300dpi"
+                        attempt(engines[0], alternate_name, lambda: extract_image(image, index + 1, engines[0], alternate=True))
+                        if needs_retry(max(candidates, key=lambda c:c[0])[1]):
+                            attempt(engines[0], "perspective-cell-recheck-300dpi", lambda: extract_image(image,index+1,engines[0],perspective=True,alternate=True))
                         if len(engines) > 1:
                             attempt(engines[1], "second-engine", lambda: extract_image(image, index + 1, engines[1]))
                         if not any(c[1] and c[2].cells >= 12 for c in candidates):

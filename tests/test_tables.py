@@ -69,3 +69,12 @@ def test_stitch_does_not_mutate_inputs():
     a,b=t(),t(page=2)
     stitch([a,b])
     assert len(a.rows)==len(b.rows)==1
+
+
+def test_mixed_document_keeps_row_specific_engines():
+    from truecell.validate import validate
+    a=Table(["Code","Amt"],[["A","12.00"],["B","13.00"]],1,(0,0,100,100),"native-lines")
+    b=Table(["Code","Amt"],[["C","1O.00"]],2,(0,0,100,100),"ocr-tesseract",.7)
+    joined,_=stitch([a,b])
+    assert joined[0].row_engines==["native-lines","native-lines","ocr-tesseract"]
+    assert any(i.code=="ocr_digit_risk" and i.page==2 for i in validate(joined[0]))

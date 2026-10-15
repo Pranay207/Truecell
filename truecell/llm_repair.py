@@ -71,9 +71,10 @@ def extract_page(image: Image.Image, page: int) -> list[Table]:
         raise ValueError("Vision model declined transcription.")
     tables = validate_payload(json.loads(message["content"]))
     result = []
+    dpi_x, dpi_y = image.info.get("dpi", (300, 300))
     for record in tables:
         table = Table(record["headers"], record["rows"], page,
-                      (0, 0, image.width*72/300, image.height*72/300), "vision-llm", .5)
+                      (0, 0, image.width*72/dpi_x, image.height*72/dpi_y), "vision-llm", .5)
         table.notes.append("Vision-generated candidate; every value needs source review. No automatic correction applied.")
         result.append(table)
     return result
