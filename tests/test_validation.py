@@ -15,9 +15,13 @@ def table(rows, headers=None, engine="native"):
 
 def test_injected_bank_errors(tmp_path):
     bank_sample(tmp_path)
-    result = convert(tmp_path / "B_bank_errors.pdf")
+    result = convert(tmp_path / "B_bank_errors.pdf",tmp_path / "bank.xlsx")
     assert any(i.code == "total_mismatch" and i.row == 19 and i.column == 4 for i in result.issues)
     assert any(i.code == "running_balance" and i.row == 11 and i.column == 6 for i in result.issues)
+    from openpyxl import load_workbook
+    workbook=load_workbook(tmp_path/"bank.xlsx")
+    assert workbook["Data 1"]["D20"].fill.fgColor.rgb=="00FFF0B3"
+    assert workbook["Data 1"]["F12"].fill.fgColor.rgb=="00FFF0B3"
 
 
 def test_discovered_multiplication():

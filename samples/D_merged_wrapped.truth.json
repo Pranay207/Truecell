@@ -1,0 +1,35 @@
+{
+  "name": "D_merged_wrapped",
+  "pages": 1,
+  "tables": [
+    {
+      "headers": [
+        "Product | Code",
+        "Product | Description",
+        "Movement | Units",
+        "Movement | Value"
+      ],
+      "rows": [
+        [
+          "A01",
+          "Long product name",
+          "12",
+          "36.00"
+        ],
+        [
+          "A02",
+          "Wrapped description",
+          "15",
+          "45.00"
+        ],
+        [
+          "A03",
+          "Single",
+          "10",
+          "30.00"
+        ]
+      ]
+    }
+  ],
+  "injected_errors": []
+}

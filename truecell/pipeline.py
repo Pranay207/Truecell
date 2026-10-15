@@ -23,7 +23,7 @@ def convert(source: str | Path, output: str | Path | None = None, *,
             recover: bool = True, progress: Callable[[int, int], None] | None = None) -> Result:
     """Extract each page, select an audited candidate, stitch, validate and export."""
     started = time.perf_counter()
-    result = Result(str(source))
+    result = Result(Path(source).name)
     fragments: list[Table] = []
     with open_document(source) as document:
         # Serialize only the active page for pdfplumber, avoiding retained full-document caches.

@@ -1,0 +1,405 @@
+{
+  "source": "B_bank_errors.pdf",
+  "tables": [
+    {
+      "headers": [
+        "Ref",
+        "When",
+        "Memo",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "rows": [
+        [
+          "TX-001",
+          "2026-10-01",
+          "Entry 1",
+          "0.00",
+          "40.00",
+          "1040.00"
+        ],
+        [
+          "TX-002",
+          "2026-10-02",
+          "Entry 2",
+          "12.00",
+          "0.00",
+          "1028.00"
+        ],
+        [
+          "TX-003",
+          "2026-10-03",
+          "Entry 3",
+          "13.00",
+          "0.00",
+          "1015.00"
+        ],
+        [
+          "TX-004",
+          "2026-10-04",
+          "Entry 4",
+          "0.00",
+          "43.00",
+          "1058.00"
+        ],
+        [
+          "TX-005",
+          "2026-10-05",
+          "Entry 5",
+          "15.00",
+          "0.00",
+          "1043.00"
+        ],
+        [
+          "TX-006",
+          "2026-10-06",
+          "Entry 6",
+          "16.00",
+          "0.00",
+          "1027.00"
+        ],
+        [
+          "TX-007",
+          "2026-10-07",
+          "Entry 7",
+          "0.00",
+          "46.00",
+          "1073.00"
+        ],
+        [
+          "TX-008",
+          "2026-10-08",
+          "Entry 8",
+          "18.00",
+          "0.00",
+          "1055.00"
+        ],
+        [
+          "TX-009",
+          "2026-10-09",
+          "Entry 9",
+          "19.00",
+          "0.00",
+          "1036.00"
+        ],
+        [
+          "TX-010",
+          "2026-10-10",
+          "Entry 10",
+          "0.00",
+          "49.00",
+          "1085.00"
+        ],
+        [
+          "TX-011",
+          "2026-10-11",
+          "Entry 11",
+          "21.00",
+          "0.00",
+          "1081.00"
+        ],
+        [
+          "TX-012",
+          "2026-10-12",
+          "Entry 12",
+          "22.00",
+          "0.00",
+          "1042.00"
+        ],
+        [
+          "TX-013",
+          "2026-10-13",
+          "Entry 13",
+          "0.00",
+          "52.00",
+          "1094.00"
+        ],
+        [
+          "TX-014",
+          "2026-10-14",
+          "Entry 14",
+          "24.00",
+          "0.00",
+          "1070.00"
+        ],
+        [
+          "TX-015",
+          "2026-10-15",
+          "Entry 15",
+          "25.00",
+          "0.00",
+          "1045.00"
+        ],
+        [
+          "TX-016",
+          "2026-10-16",
+          "Entry 16",
+          "0.00",
+          "55.00",
+          "1100.00"
+        ],
+        [
+          "TX-017",
+          "2026-10-17",
+          "Entry 17",
+          "27.00",
+          "0.00",
+          "1073.00"
+        ],
+        [
+          "TX-018",
+          "2026-10-18",
+          "Entry 18",
+          "28.00",
+          "0.00",
+          "1045.00"
+        ],
+        [
+          "",
+          "",
+          "Total",
+          "249.00",
+          "",
+          ""
+        ]
+      ],
+      "page": 1,
+      "bbox": [
+        35.0,
+        92.0,
+        985.0,
+        632.0
+      ],
+      "engine": "native-lines",
+      "confidence": 0.98,
+      "header_detected": true,
+      "provenance": [
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            1,
+            6
+          ]
+        ],
+        [
+          [
+            1,
+            7
+          ]
+        ],
+        [
+          [
+            1,
+            8
+          ]
+        ],
+        [
+          [
+            1,
+            9
+          ]
+        ],
+        [
+          [
+            1,
+            10
+          ]
+        ],
+        [
+          [
+            1,
+            11
+          ]
+        ],
+        [
+          [
+            1,
+            12
+          ]
+        ],
+        [
+          [
+            1,
+            13
+          ]
+        ],
+        [
+          [
+            1,
+            14
+          ]
+        ],
+        [
+          [
+            1,
+            15
+          ]
+        ],
+        [
+          [
+            1,
+            16
+          ]
+        ],
+        [
+          [
+            1,
+            17
+          ]
+        ],
+        [
+          [
+            1,
+            18
+          ]
+        ],
+        [
+          [
+            1,
+            19
+          ]
+        ]
+      ],
+      "notes": [],
+      "row_engines": [
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": 19,
+      "column": null,
+      "reason": "Sparse row may contain a wrapped cell, merged region or missing values.",
+      "suggestion": "Compare with the source document.",
+      "code": "sparse_row",
+      "table": 1
+    },
+    {
+      "severity": "error",
+      "page": 1,
+      "row": 19,
+      "column": 4,
+      "reason": "Displayed total 249.00 differs from column sum 240.00.",
+      "suggestion": "Verify source; expected sum 240.00. Do not overwrite automatically.",
+      "code": "total_mismatch",
+      "table": 1
+    },
+    {
+      "severity": "error",
+      "page": 1,
+      "row": 11,
+      "column": 6,
+      "reason": "Inferred C6[previous] - C4 + C5; expected 1064.00.",
+      "suggestion": "Compare with the source document.",
+      "code": "running_balance",
+      "table": 1
+    },
+    {
+      "severity": "error",
+      "page": 1,
+      "row": 12,
+      "column": 6,
+      "reason": "Inferred C6[previous] - C4 + C5; expected 1059.00.",
+      "suggestion": "Compare with the source document.",
+      "code": "running_balance",
+      "table": 1
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "route": "digital",
+      "engine": "native",
+      "confidence": 0.98,
+      "seconds": 0.15200519999962125,
+      "attempts": [
+        {
+          "engine": "native",
+          "strategy": "lines",
+          "tables": 1,
+          "cells": 110,
+          "issues": 4,
+          "score": 673.6,
+          "seconds": 0.0694668999994974,
+          "error": "",
+          "selected": true
+        },
+        {
+          "engine": "native",
+          "strategy": "text",
+          "tables": 1,
+          "cells": 110,
+          "issues": 5,
+          "score": 668.4,
+          "seconds": 0.037720500000432367,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "words",
+          "tables": 1,
+          "cells": 110,
+          "issues": 5,
+          "score": 666.4,
+          "seconds": 0.015869600000769424,
+          "error": "",
+          "selected": false
+        }
+      ],
+      "error": ""
+    }
+  ],
+  "seconds": 0.16233620000002702
+}

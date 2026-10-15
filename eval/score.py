@@ -5,6 +5,7 @@ import argparse
 from collections import Counter
 from decimal import Decimal
 import json
+import platform
 from pathlib import Path
 
 from truecell.models import Result
@@ -71,6 +72,7 @@ def write_report(metrics: list[dict], output: Path) -> None:
     lines = ["# Accuracy and validation report", "",
              "Measured on deterministic, self-generated dummy development documents. These numbers are not independent benchmarks and do not guarantee hidden-PDF accuracy.", "",
              "Cell precision/recall compare canonicalized values at exact table/row/column coordinates. Numeric formatting and whitespace are normalized; leading zeros are preserved. Row match uses a multiset, so duplicate records are counted. PASS requires exact cells, headers, shape and detection of every injected error.", "",
+             f"Evaluation host: Python {platform.python_version()}, {platform.system()} {platform.machine()}. Timings are local wall-clock measurements and can include concurrent system activity. Peak memory was not benchmarked.", "",
              "| Problem case | Cell P | Cell R | Exact | Rows | Headers | Shape | Tables | Errors caught | s/page | Result |",
              "|---|---:|---:|---:|---:|---:|---|---|---|---:|---|"]
     for m in metrics:
@@ -82,6 +84,9 @@ def write_report(metrics: list[dict], output: Path) -> None:
               "- Ambiguous day/month dates and comma-decimal numeric strings remain text. Structural total inference and multilingual total vocabularies are limited.",
               "- Phone-photo perspective, extreme rotation and handwritten text are not guaranteed.",
               "- The optional network vision pass requires explicit configuration and is not part of offline baseline metrics.", ""]
+    from truecell.ocr import available_engines
+    lines += ["Available OCR engines in this run: " + ", ".join(available_engines()) + ". Page Audit records which was selected. A machine with only RapidOCR can produce different accuracy and runtime.", "",
+              "The bank sample contains two injected source errors. An altered balance can raise findings on both the altered row and its successor because each printed balance is checked against the previous printed balance. Review findings also include expected layout/uncertainty notices and are not a count of proven extraction errors.", ""]
     failures = [m['case'] for m in metrics if not m['pass']]
     lines.append("Observed failing cases: " + (", ".join(failures) if failures else "none in this evaluated subset") + ".")
     output.write_text("\n".join(lines) + "\n", encoding="utf-8")

@@ -1,0 +1,1272 @@
+{
+  "source": "D_borderless.pdf",
+  "tables": [
+    {
+      "headers": [
+        "Invoice",
+        "Date",
+        "Client",
+        "SKU",
+        "Description",
+        "Qty.",
+        "Rate",
+        "Amt",
+        "Tax",
+        "Ship",
+        "Region",
+        "Status"
+      ],
+      "rows": [
+        [
+          "INV-0001",
+          "2026-10-01",
+          "Client 1",
+          "000001",
+          "Widget model 1",
+          "1",
+          "12.00",
+          "12.00",
+          "1.20",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0002",
+          "2026-10-02",
+          "Client 2",
+          "000002",
+          "Widget model 2",
+          "2",
+          "13.00",
+          "26.00",
+          "2.60",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0003",
+          "2026-10-03",
+          "Client 3",
+          "000003",
+          "Widget model 3",
+          "3",
+          "14.00",
+          "42.00",
+          "4.20",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0004",
+          "2026-10-04",
+          "Client 4",
+          "000004",
+          "Widget model 4",
+          "4",
+          "15.00",
+          "60.00",
+          "6.00",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0005",
+          "2026-10-05",
+          "Client 5",
+          "000005",
+          "Widget model 5",
+          "5",
+          "16.00",
+          "80.00",
+          "8.00",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0006",
+          "2026-10-06",
+          "Client 6",
+          "000006",
+          "Widget model 6",
+          "6",
+          "17.00",
+          "102.00",
+          "10.20",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0007",
+          "2026-10-07",
+          "Client 7",
+          "000007",
+          "Widget model 7",
+          "7",
+          "18.00",
+          "126.00",
+          "12.60",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0008",
+          "2026-10-08",
+          "Client 8",
+          "000008",
+          "Widget model 8",
+          "1",
+          "19.00",
+          "19.00",
+          "1.90",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0009",
+          "2026-10-09",
+          "Client 9",
+          "000009",
+          "Widget model 9",
+          "2",
+          "20.00",
+          "40.00",
+          "4.00",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0010",
+          "2026-10-10",
+          "Client 1",
+          "000010",
+          "Widget model 10",
+          "3",
+          "21.00",
+          "63.00",
+          "6.30",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0011",
+          "2026-10-11",
+          "Client 2",
+          "000011",
+          "Widget model 11",
+          "4",
+          "22.00",
+          "88.00",
+          "8.80",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0012",
+          "2026-10-12",
+          "Client 3",
+          "000012",
+          "Widget model 12",
+          "5",
+          "12.00",
+          "60.00",
+          "6.00",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0013",
+          "2026-10-13",
+          "Client 4",
+          "000013",
+          "Widget model 13",
+          "6",
+          "13.00",
+          "78.00",
+          "7.80",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0014",
+          "2026-10-14",
+          "Client 5",
+          "000014",
+          "Widget model 1",
+          "7",
+          "14.00",
+          "98.00",
+          "9.80",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0015",
+          "2026-10-15",
+          "Client 6",
+          "000015",
+          "Widget model 2",
+          "1",
+          "15.00",
+          "15.00",
+          "1.50",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0016",
+          "2026-10-16",
+          "Client 7",
+          "000016",
+          "Widget model 3",
+          "2",
+          "16.00",
+          "32.00",
+          "3.20",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0017",
+          "2026-10-17",
+          "Client 8",
+          "000017",
+          "Widget model 4",
+          "3",
+          "17.00",
+          "51.00",
+          "5.10",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0018",
+          "2026-10-18",
+          "Client 9",
+          "000018",
+          "Widget model 5",
+          "4",
+          "18.00",
+          "72.00",
+          "7.20",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0019",
+          "2026-10-19",
+          "Client 1",
+          "000019",
+          "Widget model 6",
+          "5",
+          "19.00",
+          "95.00",
+          "9.50",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0020",
+          "2026-10-20",
+          "Client 2",
+          "000020",
+          "Widget model 7",
+          "6",
+          "20.00",
+          "120.00",
+          "12.00",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0021",
+          "2026-10-21",
+          "Client 3",
+          "000021",
+          "Widget model 8",
+          "7",
+          "21.00",
+          "147.00",
+          "14.70",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0022",
+          "2026-10-22",
+          "Client 4",
+          "000022",
+          "Widget model 9",
+          "1",
+          "22.00",
+          "22.00",
+          "2.20",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0023",
+          "2026-10-23",
+          "Client 5",
+          "000023",
+          "Widget model 10",
+          "2",
+          "12.00",
+          "24.00",
+          "2.40",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0024",
+          "2026-10-24",
+          "Client 6",
+          "000024",
+          "Widget model 11",
+          "3",
+          "13.00",
+          "39.00",
+          "3.90",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0025",
+          "2026-10-25",
+          "Client 7",
+          "000025",
+          "Widget model 12",
+          "4",
+          "14.00",
+          "56.00",
+          "5.60",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0026",
+          "2026-10-26",
+          "Client 8",
+          "000026",
+          "Widget model 13",
+          "5",
+          "15.00",
+          "75.00",
+          "7.50",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0027",
+          "2026-10-27",
+          "Client 9",
+          "000027",
+          "Widget model 1",
+          "6",
+          "16.00",
+          "96.00",
+          "9.60",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0028",
+          "2026-10-28",
+          "Client 1",
+          "000028",
+          "Widget model 2",
+          "7",
+          "17.00",
+          "119.00",
+          "11.90",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0029",
+          "2026-10-01",
+          "Client 2",
+          "000029",
+          "Widget model 3",
+          "1",
+          "18.00",
+          "18.00",
+          "1.80",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0030",
+          "2026-10-02",
+          "Client 3",
+          "000030",
+          "Widget model 4",
+          "2",
+          "19.00",
+          "38.00",
+          "3.80",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0031",
+          "2026-10-03",
+          "Client 4",
+          "000031",
+          "Widget model 5",
+          "3",
+          "20.00",
+          "60.00",
+          "6.00",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0032",
+          "2026-10-04",
+          "Client 5",
+          "000032",
+          "Widget model 6",
+          "4",
+          "21.00",
+          "84.00",
+          "8.40",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0033",
+          "2026-10-05",
+          "Client 6",
+          "000033",
+          "Widget model 7",
+          "5",
+          "22.00",
+          "110.00",
+          "11.00",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0034",
+          "2026-10-06",
+          "Client 7",
+          "000034",
+          "Widget model 8",
+          "6",
+          "12.00",
+          "72.00",
+          "7.20",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0035",
+          "2026-10-07",
+          "Client 8",
+          "000035",
+          "Widget model 9",
+          "7",
+          "13.00",
+          "91.00",
+          "9.10",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0036",
+          "2026-10-08",
+          "Client 9",
+          "000036",
+          "Widget model 10",
+          "1",
+          "14.00",
+          "14.00",
+          "1.40",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0037",
+          "2026-10-09",
+          "Client 1",
+          "000037",
+          "Widget model 11",
+          "2",
+          "15.00",
+          "30.00",
+          "3.00",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0038",
+          "2026-10-10",
+          "Client 2",
+          "000038",
+          "Widget model 12",
+          "3",
+          "16.00",
+          "48.00",
+          "4.80",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0039",
+          "2026-10-11",
+          "Client 3",
+          "000039",
+          "Widget model 13",
+          "4",
+          "17.00",
+          "68.00",
+          "6.80",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0040",
+          "2026-10-12",
+          "Client 4",
+          "000040",
+          "Widget model 1",
+          "5",
+          "18.00",
+          "90.00",
+          "9.00",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0041",
+          "2026-10-13",
+          "Client 5",
+          "000041",
+          "Widget model 2",
+          "6",
+          "19.00",
+          "114.00",
+          "11.40",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0042",
+          "2026-10-14",
+          "Client 6",
+          "000042",
+          "Widget model 3",
+          "7",
+          "20.00",
+          "140.00",
+          "14.00",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0043",
+          "2026-10-15",
+          "Client 7",
+          "000043",
+          "Widget model 4",
+          "1",
+          "21.00",
+          "21.00",
+          "2.10",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0044",
+          "2026-10-16",
+          "Client 8",
+          "000044",
+          "Widget model 5",
+          "2",
+          "22.00",
+          "44.00",
+          "4.40",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0045",
+          "2026-10-17",
+          "Client 9",
+          "000045",
+          "Widget model 6",
+          "3",
+          "12.00",
+          "36.00",
+          "3.60",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0046",
+          "2026-10-18",
+          "Client 1",
+          "000046",
+          "Widget model 7",
+          "4",
+          "13.00",
+          "52.00",
+          "5.20",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0047",
+          "2026-10-19",
+          "Client 2",
+          "000047",
+          "Widget model 8",
+          "5",
+          "14.00",
+          "70.00",
+          "7.00",
+          "5.00",
+          "South",
+          "Paid"
+        ],
+        [
+          "INV-0048",
+          "2026-10-20",
+          "Client 3",
+          "000048",
+          "Widget model 9",
+          "6",
+          "15.00",
+          "90.00",
+          "9.00",
+          "5.00",
+          "South",
+          "Paid"
+        ]
+      ],
+      "page": 1,
+      "bbox": [
+        40.0,
+        102.86300000000006,
+        1017.504,
+        543.863
+      ],
+      "engine": "native-words",
+      "confidence": 0.72,
+      "header_detected": true,
+      "provenance": [
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            1,
+            6
+          ]
+        ],
+        [
+          [
+            1,
+            7
+          ]
+        ],
+        [
+          [
+            1,
+            8
+          ]
+        ],
+        [
+          [
+            1,
+            9
+          ]
+        ],
+        [
+          [
+            1,
+            10
+          ]
+        ],
+        [
+          [
+            1,
+            11
+          ]
+        ],
+        [
+          [
+            1,
+            12
+          ]
+        ],
+        [
+          [
+            1,
+            13
+          ]
+        ],
+        [
+          [
+            1,
+            14
+          ]
+        ],
+        [
+          [
+            1,
+            15
+          ]
+        ],
+        [
+          [
+            1,
+            16
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            4
+          ]
+        ],
+        [
+          [
+            2,
+            5
+          ]
+        ],
+        [
+          [
+            2,
+            6
+          ]
+        ],
+        [
+          [
+            2,
+            7
+          ]
+        ],
+        [
+          [
+            2,
+            8
+          ]
+        ],
+        [
+          [
+            2,
+            9
+          ]
+        ],
+        [
+          [
+            2,
+            10
+          ]
+        ],
+        [
+          [
+            2,
+            11
+          ]
+        ],
+        [
+          [
+            2,
+            12
+          ]
+        ],
+        [
+          [
+            2,
+            13
+          ]
+        ],
+        [
+          [
+            2,
+            14
+          ]
+        ],
+        [
+          [
+            2,
+            15
+          ]
+        ],
+        [
+          [
+            2,
+            16
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            4
+          ]
+        ],
+        [
+          [
+            3,
+            5
+          ]
+        ],
+        [
+          [
+            3,
+            6
+          ]
+        ],
+        [
+          [
+            3,
+            7
+          ]
+        ],
+        [
+          [
+            3,
+            8
+          ]
+        ],
+        [
+          [
+            3,
+            9
+          ]
+        ],
+        [
+          [
+            3,
+            10
+          ]
+        ],
+        [
+          [
+            3,
+            11
+          ]
+        ],
+        [
+          [
+            3,
+            12
+          ]
+        ],
+        [
+          [
+            3,
+            13
+          ]
+        ],
+        [
+          [
+            3,
+            14
+          ]
+        ],
+        [
+          [
+            3,
+            15
+          ]
+        ],
+        [
+          [
+            3,
+            16
+          ]
+        ]
+      ],
+      "notes": [
+        "Columns inferred from word positions; review alignment."
+      ],
+      "row_engines": [
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words",
+        "native-words"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected words; alternative text produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": null
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Selected words; alternative text produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": null
+    },
+    {
+      "severity": "warning",
+      "page": 3,
+      "row": null,
+      "column": null,
+      "reason": "Selected words; alternative text produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": null
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Columns inferred from word positions; review alignment.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Columns inferred from word positions; review alignment.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 3,
+      "row": null,
+      "column": null,
+      "reason": "Columns inferred from word positions; review alignment.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected words; alternative text produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Selected words; alternative text produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 3,
+      "row": null,
+      "column": null,
+      "reason": "Selected words; alternative text produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": 1
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "route": "digital",
+      "engine": "native",
+      "confidence": 0.72,
+      "seconds": 1.2826592000001256,
+      "attempts": [
+        {
+          "engine": "native",
+          "strategy": "lines",
+          "tables": 0,
+          "cells": 0,
+          "issues": 0,
+          "score": -10000,
+          "seconds": 0.25653129999955127,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "text",
+          "tables": 1,
+          "cells": 224,
+          "issues": 1,
+          "score": 1092.4,
+          "seconds": 0.7926637000000483,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "words",
+          "tables": 1,
+          "cells": 192,
+          "issues": 1,
+          "score": 1120.4,
+          "seconds": 0.21596369999952003,
+          "error": "",
+          "selected": true
+        }
+      ],
+      "error": ""
+    },
+    {
+      "page": 2,
+      "route": "digital",
+      "engine": "native",
+      "confidence": 0.72,
+      "seconds": 1.2201296999992337,
+      "attempts": [
+        {
+          "engine": "native",
+          "strategy": "lines",
+          "tables": 0,
+          "cells": 0,
+          "issues": 0,
+          "score": -10000,
+          "seconds": 0.24749459999929968,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "text",
+          "tables": 1,
+          "cells": 224,
+          "issues": 1,
+          "score": 1094.4,
+          "seconds": 0.750705299999936,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "words",
+          "tables": 1,
+          "cells": 192,
+          "issues": 1,
+          "score": 1122.4,
+          "seconds": 0.21011779999935243,
+          "error": "",
+          "selected": true
+        }
+      ],
+      "error": ""
+    },
+    {
+      "page": 3,
+      "route": "digital",
+      "engine": "native",
+      "confidence": 0.72,
+      "seconds": 1.3401305999996111,
+      "attempts": [
+        {
+          "engine": "native",
+          "strategy": "lines",
+          "tables": 0,
+          "cells": 0,
+          "issues": 0,
+          "score": -10000,
+          "seconds": 0.2487860000001092,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "text",
+          "tables": 1,
+          "cells": 224,
+          "issues": 1,
+          "score": 1094.4,
+          "seconds": 0.7439653999999791,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "words",
+          "tables": 1,
+          "cells": 192,
+          "issues": 1,
+          "score": 1122.4,
+          "seconds": 0.33746700000028795,
+          "error": "",
+          "selected": true
+        }
+      ],
+      "error": ""
+    }
+  ],
+  "seconds": 4.440501900000527
+}

@@ -1,0 +1,35 @@
+{
+  "name": "D_split_row",
+  "pages": 2,
+  "tables": [
+    {
+      "headers": [
+        "Ref",
+        "Description",
+        "Units",
+        "Value"
+      ],
+      "rows": [
+        [
+          "A1",
+          "Complete",
+          "2",
+          "10"
+        ],
+        [
+          "A2",
+          "Long item continued",
+          "3",
+          "15"
+        ],
+        [
+          "A3",
+          "Next",
+          "4",
+          "20"
+        ]
+      ]
+    }
+  ],
+  "injected_errors": []
+}

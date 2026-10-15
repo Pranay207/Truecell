@@ -1,0 +1,204 @@
+{
+  "source": "D_two_tables.pdf",
+  "tables": [
+    {
+      "headers": [
+        "Code",
+        "Count",
+        "Price"
+      ],
+      "rows": [
+        [
+          "P0",
+          "1",
+          "10"
+        ],
+        [
+          "P1",
+          "2",
+          "11"
+        ],
+        [
+          "P2",
+          "3",
+          "12"
+        ],
+        [
+          "P3",
+          "4",
+          "13"
+        ],
+        [
+          "P4",
+          "5",
+          "14"
+        ]
+      ],
+      "page": 1,
+      "bbox": [
+        35.0,
+        92.0,
+        635.0,
+        254.0
+      ],
+      "engine": "native-lines",
+      "confidence": 0.98,
+      "header_detected": true,
+      "provenance": [
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            5
+          ]
+        ]
+      ],
+      "notes": [],
+      "row_engines": [
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines"
+      ]
+    },
+    {
+      "headers": [
+        "Branch",
+        "In",
+        "Out",
+        "Net"
+      ],
+      "rows": [
+        [
+          "B0",
+          "40",
+          "10",
+          "30"
+        ],
+        [
+          "B1",
+          "41",
+          "11",
+          "30"
+        ],
+        [
+          "B2",
+          "42",
+          "12",
+          "30"
+        ],
+        [
+          "B3",
+          "43",
+          "13",
+          "30"
+        ],
+        [
+          "B4",
+          "44",
+          "14",
+          "30"
+        ]
+      ],
+      "page": 1,
+      "bbox": [
+        35.0,
+        392.0,
+        635.0,
+        554.0
+      ],
+      "engine": "native-lines",
+      "confidence": 0.98,
+      "header_detected": true,
+      "provenance": [
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            5
+          ]
+        ]
+      ],
+      "notes": [],
+      "row_engines": [
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines"
+      ]
+    }
+  ],
+  "issues": [],
+  "pages": [
+    {
+      "page": 1,
+      "route": "digital",
+      "engine": "native",
+      "confidence": 0.98,
+      "seconds": 0.09784399999989546,
+      "attempts": [
+        {
+          "engine": "native",
+          "strategy": "lines",
+          "tables": 2,
+          "cells": 35,
+          "issues": 0,
+          "score": 83.2,
+          "seconds": 0.08246370000051684,
+          "error": "",
+          "selected": true
+        }
+      ],
+      "error": ""
+    }
+  ],
+  "seconds": 0.11930740000025253
+}

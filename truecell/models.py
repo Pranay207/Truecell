@@ -34,6 +34,8 @@ class Table:
     def __post_init__(self) -> None:
         if not self.provenance:
             self.provenance = [[(self.page, i + 1)] for i in range(len(self.rows))]
+        else:
+            self.provenance = [[tuple(pair) for pair in sources] for sources in self.provenance]
         if not self.row_engines:
             self.row_engines = [self.engine] * len(self.rows)
 

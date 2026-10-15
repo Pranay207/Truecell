@@ -1,0 +1,130 @@
+{
+  "source": "D_split_row.pdf",
+  "tables": [
+    {
+      "headers": [
+        "Ref",
+        "Description",
+        "Units",
+        "Value"
+      ],
+      "rows": [
+        [
+          "A1",
+          "Complete",
+          "2",
+          "10"
+        ],
+        [
+          "A2",
+          "Long item continued",
+          "3",
+          "15"
+        ],
+        [
+          "A3",
+          "Next",
+          "4",
+          "20"
+        ]
+      ],
+      "page": 1,
+      "bbox": [
+        35.0,
+        92.0,
+        835.0,
+        173.0
+      ],
+      "engine": "native-lines",
+      "confidence": 0.98,
+      "header_detected": true,
+      "provenance": [
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "notes": [],
+      "row_engines": [
+        "native-lines",
+        "native-lines",
+        "native-lines"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": 1,
+      "column": null,
+      "reason": "Complementary page-break row fragments merged; verify the reconstructed record.",
+      "suggestion": "Review the source document.",
+      "code": "split_row_join",
+      "table": 1
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "route": "digital",
+      "engine": "native",
+      "confidence": 0.98,
+      "seconds": 0.04344570000012027,
+      "attempts": [
+        {
+          "engine": "native",
+          "strategy": "lines",
+          "tables": 1,
+          "cells": 6,
+          "issues": 0,
+          "score": 30.6,
+          "seconds": 0.02991849999943952,
+          "error": "",
+          "selected": true
+        }
+      ],
+      "error": ""
+    },
+    {
+      "page": 2,
+      "route": "digital",
+      "engine": "native",
+      "confidence": 0.98,
+      "seconds": 0.039265399999749206,
+      "attempts": [
+        {
+          "engine": "native",
+          "strategy": "lines",
+          "tables": 1,
+          "cells": 7,
+          "issues": 0,
+          "score": 28.6,
+          "seconds": 0.030456999999842083,
+          "error": "",
+          "selected": true
+        }
+      ],
+      "error": ""
+    }
+  ],
+  "seconds": 0.09622910000052798
+}

@@ -38,7 +38,7 @@ if st.button("Convert to Excel", type="primary", disabled=upload is None):
     bar = st.progress(0, text="Opening document…")
     try:
         with tempfile.TemporaryDirectory(prefix="truecell-") as temporary:
-            source = Path(temporary) / ("document" + Path(upload.name).suffix.lower())
+            source = Path(temporary) / Path(upload.name).name
             output = Path(temporary) / "converted.xlsx"
             source.write_bytes(upload.getvalue())
             result = convert(source, output, recover=recovery,

@@ -1,0 +1,94 @@
+{
+  "source": "D_merged_wrapped.pdf",
+  "tables": [
+    {
+      "headers": [
+        "Product | Code",
+        "Product | Description",
+        "Movement | Units",
+        "Movement | Value"
+      ],
+      "rows": [
+        [
+          "A01",
+          "Long product name",
+          "12",
+          "36.00"
+        ],
+        [
+          "A02",
+          "Wrapped description",
+          "15",
+          "45.00"
+        ],
+        [
+          "A03",
+          "Single",
+          "10",
+          "30.00"
+        ]
+      ],
+      "page": 1,
+      "bbox": [
+        35.0,
+        92.0,
+        755.0,
+        302.0
+      ],
+      "engine": "native-lines",
+      "confidence": 0.98,
+      "header_detected": true,
+      "provenance": [
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ]
+      ],
+      "notes": [],
+      "row_engines": [
+        "native-lines",
+        "native-lines",
+        "native-lines"
+      ]
+    }
+  ],
+  "issues": [],
+  "pages": [
+    {
+      "page": 1,
+      "route": "digital",
+      "engine": "native",
+      "confidence": 0.98,
+      "seconds": 0.050963700000465906,
+      "attempts": [
+        {
+          "engine": "native",
+          "strategy": "lines",
+          "tables": 1,
+          "cells": 12,
+          "issues": 0,
+          "score": 76.6,
+          "seconds": 0.04078819999995176,
+          "error": "",
+          "selected": true
+        }
+      ],
+      "error": ""
+    }
+  ],
+  "seconds": 0.059854400000403984
+}
