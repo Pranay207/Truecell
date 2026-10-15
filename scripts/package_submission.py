@@ -9,7 +9,7 @@ if __name__ == "__main__":
     destination.parent.mkdir(exist_ok=True)
     allowed_dirs = {"truecell", "tests", "eval", "scripts", "docs", "reports", "samples", "outputs", ".github"}
     allowed_root = {"README.md", "THIRD_PARTY.md", "LICENSE", "requirements.txt", "requirements-lock.txt",
-                    "convert.py", "app.py", "run.py", "pytest.ini", ".gitignore"}
+                    "convert.py", "app.py", "run.py", "pytest.ini", ".gitignore", ".gitattributes"}
     with zipfile.ZipFile(destination, "w", zipfile.ZIP_DEFLATED) as archive:
         for path in sorted(ROOT.rglob("*")):
             relative = path.relative_to(ROOT)
