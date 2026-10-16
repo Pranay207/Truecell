@@ -19,3 +19,9 @@ The extraction, OCR, rendering, UI and spreadsheet libraries do substantial unde
 | Python | Application runtime | https://www.python.org (PSF license) |
 
 Optional vision requests use the configured provider's API under that provider's terms. No network provider was used to produce the offline benchmark. Dependencies bring additional transitive libraries; installed distributions contain their individual notices. Preserve upstream notices when redistributing dependencies or models.
+
+The unmodified **PP-OCRv5 English mobile recognizer** is redistributed in `models/en_PP-OCRv5_rec_mobile.onnx`, from the RapidAI official model catalog / PaddleOCR ecosystem under Apache-2.0. [Model source, hash and licence](models/README.md) accompany the asset; `models/LICENSE-APACHE-2.0.txt` preserves the licence. Truecell did not train this model. RapidOCR's pinned package supplies detection/classification assets.
+
+Ruff (development formatting/linting) is MIT licensed: https://github.com/astral-sh/ruff.
+
+The external audit references public Camelot, tabula-java and W3C documents and records URLs/hashes. A separate transfer audit uses published dummy PDFs and author-provided truth from https://github.com/rayanakarthikeyan/damnlens-ai-agent. Those inputs and the competitor implementation are not redistributed. No competitor code is imported, executed or incorporated. General recovery, geometry, constraint and review logic was implemented independently with AI coding assistance; there is no claim of exclusive invention of table extraction or arithmetic validation.

@@ -1,10 +1,11 @@
 """Input validation, bounded page iteration and page-local routing."""
+
 from __future__ import annotations
 
-from pathlib import Path
-from contextlib import contextmanager
-from collections.abc import Iterator
 import math
+from collections.abc import Iterator
+from contextlib import contextmanager
+from pathlib import Path
 
 import fitz
 from PIL import Image, ImageOps
@@ -36,9 +37,12 @@ def open_document(path: str | Path) -> Iterator[fitz.Document]:
                     image.seek(index)
                     frame = ImageOps.exif_transpose(image.copy()).convert("RGB")
                     import io
+
                     buffer = io.BytesIO()
                     frame.save(buffer, format="PNG")
-                    page = document.new_page(width=frame.width * 72 / 200, height=frame.height * 72 / 200)
+                    page = document.new_page(
+                        width=frame.width * 72 / 200, height=frame.height * 72 / 200
+                    )
                     page.insert_image(page.rect, stream=buffer.getvalue())
         else:
             raise InputError("Use a PDF, PNG, JPEG, TIFF, BMP or WebP file.")

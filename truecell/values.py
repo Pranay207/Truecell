@@ -1,4 +1,5 @@
 """Conservative scalar parsing: ambiguity stays text, identifiers stay intact."""
+
 from __future__ import annotations
 
 import re
@@ -12,12 +13,19 @@ def number(value: str) -> Decimal | None:
     """Parse unambiguous dot-decimal, grouped or parenthesized amounts."""
     text = str(value).strip().replace("\u2212", "-").replace("\u00a0", " ")
     text = re.sub(r"^(?:USD|INR|EUR|GBP|Rs\.?|[$£€₹])\s*", "", text, flags=re.I)
+    text = re.sub(r"\s*(?:USD|INR|EUR|GBP)$", "", text, flags=re.I)
+    percent = text.endswith("%")
+    if percent:
+        text = text[:-1].strip()
     if text.startswith("(") and text.endswith(")"):
         text = "-" + text[1:-1]
-    if not re.fullmatch(r"[+-]?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?", text):
+    if not re.fullmatch(
+        r"[+-]?(?:\d+|\d{1,3}(?:,\d{3})+|\d{1,2}(?:,\d{2})+,\d{3})(?:\.\d+)?", text
+    ):
         return None
     try:
-        return Decimal(text.replace(",", ""))
+        value = Decimal(text.replace(",", ""))
+        return value / 100 if percent else value
     except InvalidOperation:
         return None
 

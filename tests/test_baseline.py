@@ -1,5 +1,4 @@
 """Meaningful initial regression checks for routing, preservation and typed export."""
-from pathlib import Path
 
 import pytest
 from openpyxl import load_workbook
@@ -12,11 +11,12 @@ from truecell.pipeline import convert
 from truecell.router import InputError, open_document
 from truecell.stitch import stitch
 from truecell.table import normalize
-from truecell.values import number, is_identifier
+from truecell.values import is_identifier, number
 
 
 def test_digital_end_to_end(tmp_path):
     import json
+
     invoice_sample(tmp_path)
     result = convert(tmp_path / "A_invoice_register.pdf", tmp_path / "result.xlsx")
     truth = json.loads((tmp_path / "A_invoice_register.truth.json").read_text())
@@ -25,7 +25,13 @@ def test_digital_end_to_end(tmp_path):
 
 
 def test_export_formula_injection_and_identifiers(tmp_path):
-    table = Table(["ID", "Value"], [["00123", "=2+2"], ["12345678901234567", "13.50"]], 1, (0, 0, 10, 10), "native")
+    table = Table(
+        ["ID", "Value"],
+        [["00123", "=2+2"], ["12345678901234567", "13.50"]],
+        1,
+        (0, 0, 10, 10),
+        "native",
+    )
     output = tmp_path / "safe.xlsx"
     export_workbook(Result("=unsafe", [table]), output)
     wb = load_workbook(output)
@@ -50,13 +56,26 @@ def test_headerless_first_row_preserved():
     assert not table.header_detected
 
 
-@pytest.mark.parametrize("value,expected", [("1,234.50", "1234.50"), ("(12.3)", "-12.3"), ("₹25.10", "25.10"), ("12,34", None), ("1O.00", None), ("", None)])
+@pytest.mark.parametrize(
+    "value,expected",
+    [
+        ("1,234.50", "1234.50"),
+        ("(12.3)", "-12.3"),
+        ("₹25.10", "25.10"),
+        ("12,34", None),
+        ("1O.00", None),
+        ("", None),
+    ],
+)
 def test_decimal_parser(value, expected):
     actual = number(value)
     assert (str(actual) if actual is not None else None) == expected
 
 
-@pytest.mark.parametrize("value,expected", [("00123", True), ("1234567890123456", True), ("12", False), ("0.2", False)])
+@pytest.mark.parametrize(
+    "value,expected",
+    [("00123", True), ("1234567890123456", True), ("12", False), ("0.2", False)],
+)
 def test_identifiers(value, expected):
     assert is_identifier(value) == expected
 

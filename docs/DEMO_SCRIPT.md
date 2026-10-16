@@ -1,15 +1,19 @@
-# Three-minute demo recording script
+# Truecell Studio — 3–4 minute recording script
 
-Use only the included dummy documents. Start with `python run.py`; keep Excel or LibreOffice ready. The following is a script, not a completed video.
+Record the real app at 1080p with readable zoom. Use supplied dummy files. Open the app and the bank sample's exported workbook beforehand. Do not claim this script is a recorded video. Allow conversion time to appear or clearly label any time cut.
 
-| Time | Screen action | Narration |
-|---|---|---|
-| 0:00-0:20 | Show the upload screen and local OCR engine list | "Truecell converts digital PDFs and scans into Excel locally. It preserves source row provenance and flags uncertainty rather than changing values silently." |
-| 0:20-0:45 | Open `samples/C_scanned_inventory.pdf`; show it has no selectable text and 12 columns | "This is an image-only two-page dummy inventory. OCR reconstructs cells from their boxes and detected grid geometry." |
-| 0:45-1:15 | Upload C, convert, show progress and joined data | "Each page is processed separately. Compatible tables join across pages, and repeated headers are removed. Genuine duplicate business records stay in the output." |
-| 1:15-1:40 | Download/open the workbook; show yellow cells, Page Audit and Provenance | "Yellow cells need review. The audit records attempted strategies, errors and the chosen result. Provenance maps each Excel row to a page and extracted source row." |
-| 1:40-2:15 | Convert `B_bank_errors.pdf`; show running_balance and total_mismatch findings | "The numeric columns are called X, Y and Z. The validator discovers the running-balance relation from the contents. It catches the altered balance and wrong total without requiring debit or credit headers. Values are retained and suggested expectations are reported." |
-| 2:15-2:40 | Show A's 48 rows and D_stress_50pages's measured report row | "Digital tables avoid OCR where a usable text layer exists. The development set also includes 50 pages, borderless layouts, headerless continuations and degraded scans." |
-| 2:40-3:00 | Show `reports/ACCURACY_REPORT.md`, including failures | "These are measured results on our own dummy development set, not a promise for hidden PDFs. Difficult layouts and OCR errors remain visible in the report. Judges can reproduce everything using judge_check." |
+**0:00–0:25 — Problem and scope.** “Extracting numbers is only half the job. Truecell lets us inspect where each value came from and why the numbers look suspicious. This runs locally on CPU, without an API key.” Show the upload control, 50-page scope and available OCR engines. Click **Find a wrong balance**.
 
-Before recording, run the full evaluation. State the actual measured numbers visible in the report. If a scan has errors, show the warning and source comparison instead of claiming perfect extraction. Save the final 2-5 minute recording as `demo.mp4` beside the submission zip.
+**0:25–1:15 — Diagnose without meaningful headers.** Show opaque bank headers. Open **Equation receipts**. “It inferred a running-balance relationship from repeated values. This printed balance breaks the equation for this row and the next.” Show data row 11, column 6: `1081.00`, the `1064.00` proposal and its two supporting equation instances. Show the outlined original source cell. Explain that the source document itself contains this error.
+
+**1:15–1:50 — Preview and explicitly review.** Click **Preview the effect without saving** and show two failed checks becoming zero. “This is a counterfactual, not an automatic edit.” Confirm the working value is still `1081.00`. Check the source-inspection box, enter “Arithmetic correction after source review; original printed value retained,” and apply. Show **Correction History** in Review & export and download the immutable original extraction. Explain that the separate wrong total remains a finding.
+
+**1:50–2:20 — Show the validator's limits.** Open the invoice sample, then **Challenge lab → Run controlled error injections**. “This hides headers and perturbs sampled numbers in copies. It invokes the same validator used for real conversion.” Show actual detected/missed counts and unmodeled columns. The observed development run detected 14/24; read whatever the live run reports. Do not call this OCR accuracy.
+
+**2:20–2:55 — Hard extraction and workbook evidence.** Show the supplied skewed scan and original PDF. Show its recovered 12-column table and source inspector. Open a prepared export: Data, Cell Evidence, Validation Report, Page Audit, Constraints and Verification. Ctrl+click a linked value to its evidence row. Explain that original readings remain and source formulas are not executed.
+
+**2:55–3:30 — Reproducible results and limits.** Show `reports/ACCURACY_REPORT.md`: 13/13 deterministic development cases, including 50 pages/800 rows. Show the external audit's scope: all 35 fuel-table cells, only 48 selected census cells, a no-table control. “These were development inputs, not unseen accuracy measurements.” Show saved workspaces/resume and point to setup instructions/source code.
+
+**3:30–3:45 — Deliverable.** Show a downloaded workbook and its Unreviewed or explicitly reviewed snapshot status. “The deliverable is structured Excel with the evidence needed to inspect it.” Stop recording. Save an MP4, play it back, check audio/readability and keep the duration between 2 and 5 minutes.
+
+Use the organizer's actual upload destination. The announcement's link/contact are placeholders. Submit the source ZIP, README, reports, sample pairs and actual video file/link.

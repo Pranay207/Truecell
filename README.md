@@ -1,114 +1,140 @@
-# Truecell
+# Truecell Studio
 
-Convert digital PDFs and scanned documents into Excel with source provenance, explicit uncertainty, and content-based validation. Built independently for the INCUXAI AI Agent Development Challenge 2026. All included documents contain dummy data.
+**Document to Excel, with evidence.** An offline, CPU-based extraction and review application built for the INCUXAI AI Agent Development Challenge 2026. It reads digital PDFs and scans, reconstructs tables across pages, and exports data with source coordinates, validation findings, equation receipts and correction history. All included documents contain dummy data.
 
-## Quick start
+## Run it
 
-Use **64-bit Python 3.10, 3.11 or 3.12**. Python must be on PATH.
+Install **64-bit Python 3.10–3.12**, extract the complete project, and double-click **START_TRUECELL.cmd** on Windows. On Linux/macOS run `bash start.sh`. Initial setup creates a project-local environment and installs pinned dependencies; it needs internet. Subsequent conversion works offline, without an API key or GPU. Python 3.11 on Windows is the locally tested platform; other platforms/versions have a CI matrix but were not executed here.
+
+```powershell
+# Diagnose an existing Windows installation without network access
+.\START_TRUECELL.cmd --check --offline
+# Start using installed packages only
+.\START_TRUECELL.cmd --offline
+```
+
+The launcher prints a localhost URL, normally **http://127.0.0.1:8501**, and chooses another port if occupied. It does not install system software. Manual setup:
 
 ```sh
 python -m venv .venv
-# Windows PowerShell:
-.venv\Scripts\Activate.ps1
-# Linux / macOS instead: source .venv/bin/activate
-pip install -r requirements.txt
+# Windows: .venv\Scripts\activate
+# Linux/macOS: source .venv/bin/activate
+python -m pip install --use-feature=truststore -r requirements.txt
 python run.py
 ```
 
-The browser opens at **http://127.0.0.1:8501**. Choose a document, convert, inspect findings, download the workbook. The server binds to your computer only. For CLI conversion:
+Direct dependencies are pinned in `requirements.txt`; `requirements-lock.txt` records the resolved Python 3.11 Windows environment. Use the direct pins for other platforms. Keep certificate verification enabled. The English recognition model ships in `models/` with a verified checksum. Detection/classification assets ship with RapidOCR's package; no conversion-time model download is needed. Optional Tesseract is discovered automatically, including its usual Windows installation directory.
 
-```sh
-python convert.py samples/A_invoice_register.pdf -o outputs/invoices.xlsx --audit-json outputs/invoices.audit.json
-```
+## A three-minute first run
 
-Installation needs internet; the default conversion path works offline on CPU. RapidOCR's ONNX models are bundled with its package, so first conversion does not need a model download. Optional Tesseract is discovered automatically, including `C:\Program Files\Tesseract-OCR` on Windows. On Linux/macOS install the `tesseract-ocr` / `tesseract` system package if a second OCR engine is desired. English OCR is the tested baseline. No API key is required.
+1. Click **Find a wrong balance**. The dummy bank table deliberately uses opaque column labels.
+2. Open **Equation receipts**. The engine infers the running-balance relation from the values. At data row 11, printed `1081.00` conflicts with two adjacent balance equations; a proposal suggests `1064.00`.
+3. Inspect the outlined original source cell. Click **Preview the effect without saving**: two failed equation checks become zero in a disposable copy. The original working value remains `1081.00`.
+4. Apply a correction only after explicitly checking the source and entering a reason. The source reading and immutable original extraction remain available; the change appears in the history.
+5. In **Review & export**, record a source-check attestation and download Excel with evidence. A later edit invalidates that review.
 
-If Windows reports a certificate error during installation, try `python -m pip install --use-feature=truststore -r requirements.txt` with your organization's trusted Windows certificate configuration. Do not disable certificate verification.
+The source itself contains the wrong balance. Mathematical consistency alone does not establish the correct business value. Proposals are never applied automatically.
 
-## What the workbook contains
+## What makes the result inspectable
 
-- **Data 1, Data 2, ...**: one sheet per joined table; typed unambiguous numbers and dates. Leading zeros, identifiers longer than 15 digits, ambiguous dates and uncertain numeric notation remain text.
-- **Validation Report**: severity, source page, source table data row, column, reason and suggested action. Yellow cells mark findings. Values are not corrected automatically.
-- **Page Audit**: engine, strategy, selection, measured time, recovered cells and failures for each attempt. Confidence is an extraction heuristic or OCR score, not a calibrated accuracy probability.
-- **Provenance**: output row to source page and table data row, including both fragments of an inferred split record.
-- **Read me**: source, runtime and interpretation notes.
+| Capability | What it actually records |
+|---|---|
+| Cell source inspection | Original page, bounding box in page points, engine and original/alternate readings; outline on the source image |
+| Independent reading | Optional local OCR of native pages; differences become findings rather than silent replacements |
+| Equation receipts | Inferred row arithmetic and running balances, eligible rows, observed agreement and discrepancies |
+| Counterfactual proposals | Candidate replacement, supporting equation instances, and preview of which checks would change |
+| Review history | Before/after values, reason, UTC time and chained hashes; baseline extraction retained |
+| Challenge lab | Up to 24 deterministic numeric perturbations in disposable copies, with headers hidden; detected and missed edits shown |
+| Resumable workspaces | Local source copy, atomic JSON state and verified per-page checkpoints |
 
-Source text beginning with `=` is explicitly stored as text in every sheet. Excel never executes source strings as formulas. Genuine duplicate business rows are **retained** and flagged. Detected repeated headers are not emitted as data. Ambiguous first rows are kept under generic column labels.
+Counts of source boxes or equation agreement are **not extraction-accuracy probabilities**. The Challenge lab measures validation sensitivity on the current extraction, not OCR accuracy. For example, the invoice experiment detected 14 of 24 sampled edits; columns without inferred relations can miss errors entirely. Hashes detect changed snapshots and source bytes; they are not authenticated signatures or proof of reviewer identity.
 
-## Architecture
+Saved documents live in `outputs/jobs/` and are reopened from the sidebar. No cloud account is needed. Review status starts as **Unreviewed**. Marking a snapshot reviewed records a human attestation; unresolved findings can still exist. Local files are retained until you remove their workspace directory. Do not delete the only copy of an original document.
+
+## Excel contents
+
+| Sheet | Purpose |
+|---|---|
+| Data 1, Data 2, … | One sheet per joined table, typed unambiguous numbers/dates, source-evidence hyperlinks |
+| Validation Report | Findings, source location, reason and suggested action |
+| Page Audit | Every extraction attempt, selected strategy, timing and failure |
+| Provenance | Row-to-page mapping, including both parts of split records |
+| Read me | Interpretation and safety notes |
+| Cell Evidence | Header/data source boxes, original readings and OCR scores where available |
+| Verification | Source/snapshot hashes, review status and factual coverage counts |
+| Constraints | Inferred formulas, checks, agreement and violation counts |
+| Repair Proposals | Unapplied arithmetic suggestions and supporting equations |
+| Correction History | Explicit human edits with reasons and integrity hashes |
+
+Leading zeros and identifiers longer than 15 digits remain text. Percentages and unambiguous currency/grouped numbers are typed; ambiguous dates/numeric notation remain text. Source strings, including strings beginning `=`, are explicitly stored as text throughout the workbook. Source formulas are not executed. Genuine duplicate business rows are retained and flagged; detected repeating headers are removed. Uncertain structure and alternate readings remain review findings.
+
+## Extraction approach
 
 ```mermaid
 flowchart TD
-    A[PDF or image input] --> B[Validate input and 50-page limit]
-    B --> C[Route each page]
-    C --> D[Native ruled table extraction]
-    C --> E[Render scan at 300 DPI]
-    D --> F[Alternate borderless strategies]
-    E --> G[Deskew and OCR word boxes]
-    G --> H[Grid or x-position reconstruction]
-    F --> I[Validate candidates and retain best score]
-    H --> I
-    I --> J[Retry preprocessing / second OCR engine]
-    J --> K[Optional one-page vision candidate]
-    K --> L[Join compatible adjacent pages]
-    L --> M[Content-based validation]
-    M --> N[Excel plus provenance and audit]
+    A[PDF or image / at most 50 pages] --> B[Route each page]
+    B --> C[Native grids / text alignment]
+    B --> D[Render / deskew / grid geometry / OCR]
+    C --> E[Rank layout candidates and retain evidence]
+    D --> E
+    E --> F[Recover difficult pages / audit disagreements]
+    F --> G[Join compatible adjacent tables]
+    G --> H[Validate and infer numeric relations]
+    H --> I[Source review / counterfactual proposals]
+    I --> J[Excel and JSON with evidence]
 ```
 
-`truecell/router.py`, `digital.py`, `ocr.py`, `table.py`, `stitch.py`, `validate.py`, `recover.py`, `llm_repair.py`, `export.py` implement separate stages. `pipeline.py` orchestrates page-local attempts. The source PDF stays open while only the current page's raster and extraction caches are processed. Extracted rows and audit records accumulate for workbook creation.
+`pipeline.py` orchestrates independent modules for routing, extraction, geometry, alignment, stitching, validation, constraints, review, persistence and export. Native ruled geometry is preferred when structurally trustworthy; prose-heavy candidates cannot win merely by containing more characters. Borderless reconstruction uses stable numeric columns and separated horizontal streams. Multi-level headers retain their paths; inferred layout is flagged. Joining uses adjacency, headers, geometry and complementary split-row evidence; it never deduplicates business rows.
 
-## Requirements and evidence
+Scans use grid-aware cell recognition or word geometry, contrast/deskew, optional isolated rereads, illumination/perspective recovery and another installed engine when needed. Rendering targets 300 DPI with bounded dimensions. OCR boxes are mapped back through rotation/deskew/perspective transforms to the original page. Tesseract is preferred when installed for throughput; the bundled English RapidOCR recognizer supplies the portable route and independent rereads. These are heuristics; arbitrary damaged layouts can still fail.
 
-| Challenge requirement | Implementation | Reproducible evidence |
-|---|---|---|
-| Up to 50 pages | Input guard before extraction; per-page rendering | `D_stress_50pages`: 800 data rows |
-| 10+ columns | Dynamic grid widths, no fixed invoice schema | A and C: 12 columns |
-| Scanned PDFs and images | RapidOCR ONNX; optional Tesseract; PNG/JPEG/TIFF/BMP/WebP | C and degradation cases |
-| Detect tables and headers | Native line/text strategies; image grid geometry; content transitions | Borderless, merged header and two-table cases |
-| Join multi-page tables | Adjacent-page geometry and header checks; headerless joins flagged | A, headerless, split-row cases |
-| Validate data | Decimal sums, inferred arithmetic and running balances, structural/OCR checks | B includes wrong total and altered balance under opaque headers |
+Running balances and `a*b=c` / `a+b=c` relations are inferred from repeated numeric patterns rather than requiring financial header names. Discovery requires sufficient varied rows and majority agreement. Label-based totals, structural/type checks, empty or ragged columns, duplicates, OCR ambiguity and engine disagreements supplement these checks. Faithfully extracted source arithmetic errors do not trigger pointless OCR retries.
 
-This table identifies implementation and test cases, not a claim that every case passes. See [the measured accuracy report](reports/ACCURACY_REPORT.md).
+Only the current page raster and extraction caches are processed at a time; output rows/evidence accumulate for export. Completed-page checkpoints use JSON, never pickle, and bind to source bytes, code, runtime/package versions, model assets and extraction options. Changed/corrupt checkpoints are recomputed. Failed pages are logged and remaining pages continue. Input checks reject unsupported, corrupt, encrypted or oversized documents and more than 50 pages.
 
-## Validation and recovery
-
-Column types come from cell contents. Total keywords are matched in any cell. Subtotals use the preceding block; grand totals exclude subtotal rows. Decimal comparisons use half a unit of the least precise displayed decimal place. Running-balance discovery searches previous balance minus one numeric column plus another. Row arithmetic searches `a*b=c` and `a+b=c` across at least five varied rows with at least 80% agreement. Inferred discrepancies are findings, never silent edits. Short or heterogeneous data may provide insufficient evidence.
-
-Additional checks identify ragged rows, empty columns, sparse rows, type mismatches, duplicate rows, inconsistent/ambiguous date formats, low OCR confidence, confusable numeric characters and repeated decimal separators. Candidate disagreements are reported even when the selected candidate passes arithmetic checks. A Tesseract retry can re-read low-confidence cells in isolation; every changed candidate value is logged with its old and new transcription and remains highlighted for source review.
-
-Recovery tries native lines, then text and word alignment when needed. Scans try contrast/deskew, isolated cell rechecks or thresholding, dominant-table perspective rectification with illumination normalization, and an installed second OCR engine; very poor results may try right-angle rotation. Candidate scores reward whitespace-free character coverage and penalize false column fragmentation, generic headers and validation risks. Installed Tesseract is preferred for CPU throughput; bundled RapidOCR provides the portable fallback. Rendering targets 300 DPI, capped at 20 million pixels and 5500 pixels per side for unusually large pages. This is a heuristic; all attempts remain in the audit. A failed page is logged and remaining pages continue. An unreadable/corrupt/encrypted document, unsupported type or more than 50 pages produces a clear input error. CLI status: `0` workbook has tables, `2` input/output error, `3` no recovered tables. A zero status does not certify all pages or cells.
-
-## Optional vision comparison
-
-Only configured uncertain pages are sent to a network API. Set both `TRUECELL_LLM_API_KEY` and `TRUECELL_LLM_MODEL` to enable. `TRUECELL_LLM_ENDPOINT` optionally overrides the default HTTPS OpenAI Chat Completions endpoint. Choose an account-accessible model that supports image input and strict JSON-schema output. No model is selected or charged by default.
-
-The request transcribes a **single page**, uses strict structured output, and validates response shape locally. Returned values compete as an audited candidate and differences are flagged. No original value is silently corrected. Refusal, timeout, invalid schema or provider errors degrade to the local result. Live provider behavior is not part of offline accuracy numbers. API implementation follows [official OpenAI structured-output documentation](https://developers.openai.com/api/docs/guides/structured-outputs?api-mode=chat).
-
-## Reproduce evaluation
+## CLI
 
 ```sh
-python -m eval.generate_samples --hard
-python -m pytest -q
-python scripts/judge_check.py
+python convert.py samples/A_invoice_register.pdf -o outputs/invoices.xlsx --audit-json outputs/invoices.audit.json
+python convert.py samples/B_bank_errors.pdf -o outputs/bank.xlsx --verify --checkpoints outputs/checkpoints/bank
+python convert.py scan.pdf -o outputs/scan.xlsx --force-ocr
 ```
 
-`samples/*.truth.json` and `*.truth.xlsx` hold intended cells independently of extraction. `outputs/*.xlsx` are converted workbooks, not ground truth. The scorer compares coordinates, table count, shape and headers and uses multiset row matching. PASS means exact canonicalized cells/headers/shape and all injected errors caught. Some hard cases may fail; judge_check returns nonzero if any exact case fails. It still writes every workbook and the full report. Synthetic development results must not be presented as independent hidden-test accuracy.
+`--verify` adds independent local OCR checks of native pages. `--force-ocr` helps with damaged text layers. `--no-recovery` limits extraction to the first strategy. Exit codes: `0` tables exported, `2` input/output error, `3` no recovered tables. Zero does not certify all cells/pages. Source, workbook and audit paths must differ.
 
-To evaluate a subset: `python -m eval.score --case A_invoice_register`. This rewrites the report with that subset; use judge_check to restore the full report. `requirements.txt` pins direct dependencies; `requirements-lock.txt` records the tested Python 3.11 Windows environment. Use the direct pins for cross-platform setup because transitive platform wheels differ.
+Default conversion makes no API requests even when credentials exist. Optional vision comparison requires **both** explicit `--allow-cloud` and `TRUECELL_LLM_API_KEY` / `TRUECELL_LLM_MODEL`. `TRUECELL_LLM_ENDPOINT` can override the default HTTPS endpoint. Configure an image-capable model supporting strict JSON-schema output. Uncertain page images may then leave the computer. Results compete as audited candidates; refusals, schema errors and timeouts fall back locally. No provider credentials or live requests were used in these evaluation results. Reference: [OpenAI structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs?api-mode=chat).
+
+## Reproduce the evidence
+
+```sh
+python -m pytest -q
+python scripts/judge_check.py
+python scripts/public_audit.py --fetch
+# After independently obtaining the published dummy samples:
+python scripts/transfer_audit.py --fixtures PATH_TO_SAMPLES
+# Optional development checks:
+python -m pip install -r requirements-dev.txt
+ruff check truecell tests eval scripts app.py convert.py run.py
+ruff format --check truecell tests eval scripts app.py convert.py run.py
+```
+
+`python -m eval.generate_samples --hard` regenerates dummy inputs and truth. `samples/*.truth.json` / `*.truth.xlsx` hold intended values independently of extraction; `outputs/*.xlsx` are converted files. Strict scoring checks ordered coordinates, headers, table shapes/counts, multiset rows, and detection of annotated errors. Numeric formatting/whitespace are canonicalized while leading zeros are preserved. A subset run rewrites the accuracy report; `judge_check.py` restores all cases.
+
+- [Development accuracy](reports/ACCURACY_REPORT.md): **13/13 exact cases**, including 12-column scans, blur/noise, skew, photo perspective, multi-table pages, split records and 50 pages / 800 rows. Both deliberate bank-source errors detected.
+- [External layout audit](reports/EXTERNAL_AUDIT.md): full 35-cell fuel table; **48 selected** census cells plus all 16 headers and both shapes; no-table W3C control. Other 464 census cells were not independently checked.
+- [Published fixture transfer audit](reports/TRANSFER_AUDIT.md): all cells/headers/shapes on three author-provided dummy fixtures. Only Truecell was executed; this is not a relative performance ranking.
+- [Build verification](reports/BUILD_VERIFICATION.md): actual local tests, portability checks and unverified items.
+
+All these inputs were used during development. None is a blind benchmark or promise of hidden-test accuracy. Reports preserve scope and failures rather than assigning an invented overall accuracy score.
 
 ## Limitations
 
-No program can guarantee accurate conversion of *any* PDF. Handwriting, unusual scripts, complex merged body cells, strong perspective, deeply skewed/cropped scans, overlapping text, multiple borderless tables and ambiguous layout can fail. Headerless tables are joined by shape and span and need review. Split-row joining requires strong complementary fragments; ambiguous records remain separate. Numeric-only totals without labels are not reliably distinguished from ordinary data. Total vocabulary is English, not a general multilingual solution. Content-only arithmetic can infer coincidental relations. Native extraction and OCR can share mistakes; no clean validation result proves correctness. Review yellow cells and compare critical values with source pages.
+Handwriting, untested scripts, unusual fonts or broken text-layer glyphs, nested merged body cells, overlapping text and severe crop/rotation/perspective can fail. Headerless joins and numeric alignment can confuse unrelated tables. Sparse/short data may not support arithmetic discovery; coincidental relations can generate false alarms. Numeric-only total rows are ambiguous, and English total vocabulary is limited. OCR engines can share mistakes. A clean validation report does not prove correct extraction. Compare important values with the original pages.
 
-## Submission contents
+## Submission
 
-- Source code and tests in this repository.
-- Dummy baseline and hard-case PDFs, ground-truth workbooks, converted workbooks, JSON audits.
-- [Accuracy and validation report](reports/ACCURACY_REPORT.md).
-- [Three-minute demo script](docs/DEMO_SCRIPT.md). Record the screen using this script for the required video; the script is not a recorded video.
+Run `python scripts/package_submission.py` to create `submission/Truecell-Studio-source-and-samples.zip` with source, model/licence, tests, all 13 dummy PDF/truth/converted pairs, reports and launchers. Local environments, credentials, uploaded workspaces and temporary external fixtures are excluded. The previous v0.1 archive is kept separately.
 
-To package source and samples: `python scripts/package_submission.py`. Review the report and record the video before submitting. The announcement's submission URL/contact fields are placeholders; obtain the real destination from the organizer.
+[Demo script](docs/DEMO_SCRIPT.md) provides a 3–4 minute walkthrough. **A recorded video still needs to be made**; a script is not a video. Obtain the real submission URL/contact from the organizer because the announcement contains placeholders.
 
-## Credits and licensing
-
-Original project-specific routing, stitching, validation, scoring and orchestration were written for this project. Libraries/models are credited in [THIRD_PARTY.md](THIRD_PARTY.md). PyMuPDF is AGPL/commercial dual licensed; consult its license before distributing a proprietary derivative. This repository's original code is released under AGPL-3.0-or-later to align with that dependency. No competitor source or personal documents are included.
+Original project-specific code was written independently with AI coding assistance. Libraries/models perform the underlying PDF/OCR work and are credited in [THIRD_PARTY.md](THIRD_PARTY.md). No competitor implementation is included. Original code is AGPL-3.0-or-later, consistent with PyMuPDF; preserve third-party notices.

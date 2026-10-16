@@ -6,3 +6,5 @@ __pycache__/
 tmp/
 outputs/uploads/
 submission/
+outputs/jobs/
+outputs/checkpoints/
