@@ -44,4 +44,4 @@ The final export-only check on the 50-page/800-row audit took **9.083 seconds**.
 
 Concurrent OCR testing produced a much slower photo run, retained in the raw benchmark reports. Timings vary with CPU contention, model startup and document quality; they are not a cross-machine speed guarantee. Peak memory and execution on other operating systems/Python versions were not measured here.
 
-No live cloud-provider request, hidden-test accuracy claim, actual demo recording or new submission archive is included in this QA pass. Competitor materials remain outside the project.
+No live cloud-provider request, hidden-test accuracy claim, actual demo recording or new submission archive is included in this QA pass. External project review materials remain outside this repository.

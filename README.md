@@ -203,7 +203,7 @@ python scripts/public_audit.py --fetch
 
 - [Development accuracy](reports/ACCURACY_REPORT.md): all 21 generated cases and timings.
 - [External layout audit](reports/EXTERNAL_AUDIT.md): a 35-cell fuel table, 48 selected census cells plus all 16 headers and both shapes, and a no-table control. The remaining census cells were not independently checked.
-- [Published fixture transfer audit](reports/TRANSFER_AUDIT.md): all cells, headers, and shapes on three author-provided dummy fixtures. Only Truecell was executed; this is not a competitor ranking.
+- [External published-fixture audit](reports/TRANSFER_AUDIT.md): exact cell, header, and shape regression checks on three public dummy fixtures and their author-provided expected results. Source and scope are documented in the report.
 - [Build verification](reports/BUILD_VERIFICATION.md): tests, portability checks, and explicitly unverified items.
 
 `python -m eval.generate_samples --hard` and `python -m eval.generate_layouts` regenerate the dummy sources and truth. Scoring canonicalizes numeric formatting and whitespace while preserving leading zeros. A no-table control passes only when no table is invented.
@@ -222,4 +222,4 @@ python scripts/public_audit.py --fetch
 
 `truecell/` contains the extraction engine and FastAPI application, `frontend/` contains the React/TypeScript interface and production build, `eval/` generates and scores dummy documents, `samples/` contains PDFs and truth, `outputs/` contains converted workbooks, and `reports/` records measured evidence.
 
-Project-specific code is licensed **AGPL-3.0-or-later**. Third-party libraries and models are credited in [THIRD_PARTY.md](THIRD_PARTY.md). The project contains no competitor implementation and all included documents use dummy data.
+Project-specific code is licensed **AGPL-3.0-or-later**. Third-party libraries and models are credited in [THIRD_PARTY.md](THIRD_PARTY.md). No application source from the external fixture repository is included; all documents committed under `samples/` contain generated dummy data.

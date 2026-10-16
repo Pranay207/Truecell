@@ -18,6 +18,7 @@ if __name__ == "__main__":
         "samples",
         "outputs",
         "models",
+        "third_party_licenses",
         ".github",
         "frontend",
     }

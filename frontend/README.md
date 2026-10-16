@@ -10,7 +10,7 @@ Use Node 22.12 or newer. Start the backend from the project root with `.venv\Scr
 - `npm run build`: strict TypeScript checks and an optimized static production build.
 - `npm run preview`: inspect the built interface locally. Use the Python application for API calls.
 
-No external fonts, image services, analytics or cloud AI are requested by this interface. Icons are original inline SVG. Dependencies are credited in `package.json` and pinned by `package-lock.json`.
+No external fonts, image services, analytics or cloud AI are requested by this interface. Interface icons are implemented as inline SVG. Dependencies are credited in `package.json` and pinned by `package-lock.json`.
 
 ## REST contract
 

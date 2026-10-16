@@ -11,11 +11,12 @@ The extraction, OCR, rendering, UI and spreadsheet libraries do substantial unde
 | OpenCV | Deskew, denoising and grid morphology | https://github.com/opencv/opencv (Apache-2.0) |
 | Tesseract / pytesseract | Optional second OCR engine / Python wrapper | https://github.com/tesseract-ocr/tesseract (Apache-2.0); https://github.com/madmaze/pytesseract (Apache-2.0) |
 | NumPy | Image arrays | https://numpy.org (BSD-3-Clause) |
-| Pillow | Images, TIFF frames and sample degradation | https://python-pillow.org (HPND) |
+| Pillow | Images, TIFF frames and sample degradation | https://python-pillow.org (MIT-CMU) |
 | openpyxl | Typed Excel workbooks and styles | https://openpyxl.readthedocs.io (MIT) |
-| React / React DOM | Responsive local studio interface | https://react.dev (MIT) |
-| Vite / TypeScript | Frontend build and type checking | https://vite.dev (MIT); https://www.typescriptlang.org (Apache-2.0) |
-| FastAPI / Starlette / Uvicorn | Loopback-only local HTTP API and static serving | https://fastapi.tiangolo.com (MIT); https://www.starlette.io (BSD-3-Clause); https://www.uvicorn.org (BSD-3-Clause) |
+| React / React DOM / Scheduler | Responsive local interface | https://react.dev (MIT; [bundled notice](third_party_licenses/REACT-MIT.txt)) |
+| Vite / TypeScript | Frontend build and type checking | https://vite.dev (MIT; [bundled notices](third_party_licenses/VITE-LICENSE.md)); https://www.typescriptlang.org (Apache-2.0) |
+| FastAPI / Starlette / Uvicorn | Local/private-LAN HTTP API and static serving | https://fastapi.tiangolo.com (MIT); https://www.starlette.io (BSD-3-Clause); https://www.uvicorn.org (BSD-3-Clause) |
+| python-multipart | Streaming multipart form parsing for document uploads | https://github.com/Kludex/python-multipart (Apache-2.0) |
 | ReportLab | Dummy PDF generation | https://www.reportlab.com (BSD) |
 | pytest | Regression tests | https://pytest.org (MIT) |
 | Python | Application runtime | https://www.python.org (PSF license) |
@@ -26,4 +27,4 @@ The unmodified **PP-OCRv5 English mobile recognizer** is redistributed in `model
 
 Ruff (development formatting/linting) is MIT licensed: https://github.com/astral-sh/ruff.
 
-The external audit references public Camelot, tabula-java and W3C documents and records URLs/hashes. A separate transfer audit uses published dummy PDFs and author-provided truth from https://github.com/rayanakarthikeyan/damnlens-ai-agent. Those inputs and the competitor implementation are not redistributed. No competitor code is imported, executed or incorporated. General recovery, geometry, constraint and review logic was implemented independently with AI coding assistance; there is no claim of exclusive invention of table extraction or arithmetic validation.
+The external layout audit references public Camelot, tabula-java and W3C documents and records source URLs and hashes. A separate external fixture audit evaluates Truecell against three public dummy PDFs and their author-provided expected results from [damnlens-ai-agent](https://github.com/rayanakarthikeyan/damnlens-ai-agent) at commit `9fb9116422ed4685e97ff8de6a95c01cc4788575`. The source repository's application code is not imported or executed, and its fixture files are not included in this repository. See [reports/TRANSFER_AUDIT.md](reports/TRANSFER_AUDIT.md) for scope and reproduction steps.

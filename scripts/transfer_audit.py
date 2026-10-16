@@ -1,4 +1,4 @@
-"""Evaluate only Truecell on explicitly supplied public dummy fixture PDFs."""
+"""Evaluate Truecell against explicitly supplied public dummy fixtures."""
 
 from __future__ import annotations
 
@@ -48,14 +48,15 @@ def main() -> int:
         )
         print(f"{filename}: exact={metric['cell_exact']:.2%}, pass={metric['pass']}", flush=True)
     lines = [
-        "# Published dummy-fixture transfer audit",
+        "# External published-fixture audit",
         "",
-        "Only the Truecell engine was executed. Inputs and author-provided expectations came from "
+        "This report evaluates only the Truecell engine against three public dummy PDFs and their "
+        "author-provided expected results from "
         "[damnlens-ai-agent](https://github.com/rayanakarthikeyan/damnlens-ai-agent) at "
-        "commit `9fb9116422ed4685e97ff8de6a95c01cc4788575`. "
-        "No competitor implementation or fixture bytes are redistributed. "
-        "These documents informed fixes and are now development regressions, not blind tests. "
-        "This does not measure relative engine quality or establish a winner.",
+        "commit `9fb9116422ed4685e97ff8de6a95c01cc4788575`. The source repository's "
+        "application code was not run, and its fixture files are not included in Truecell. "
+        "Because these fixtures informed later development, the results are regression checks "
+        "rather than a blind evaluation.",
         "",
         "| Fixture | Checked data cells | Exact cells | Headers | Shape | Result |",
         "|---|---:|---:|---:|---|---|",
@@ -74,9 +75,9 @@ def main() -> int:
         "Financial-source error recall is not scored here because this external truth file "
         "does not annotate injected errors.",
         "",
-        "Reproduce after independently obtaining the public samples directory: "
+        "Reproduce after obtaining the public samples directory from the cited source: "
         "`python scripts/transfer_audit.py --fixtures PATH_TO_SAMPLES`. "
-        "No competitor Python code is imported or executed.",
+        "The audit script invokes only Truecell application code.",
         "",
     ]
     (ROOT / "reports/TRANSFER_AUDIT.md").write_text("\n".join(lines), encoding="utf-8")

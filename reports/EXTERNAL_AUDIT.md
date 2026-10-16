@@ -1,6 +1,6 @@
 # External document audit
 
-Three public aggregate/dummy PDFs, with source hashes and explicit annotation scope in `eval/public_cases.json`. Expectations were transcribed from rendered source pages, not independently annotated by a third party. These inputs were used to discover and repair failures; they are development regressions, not a blind benchmark. No source PDF or competitor implementation is redistributed.
+Three public aggregate/dummy PDFs, with source hashes and explicit annotation scope in `eval/public_cases.json`. Expectations were transcribed from rendered source pages, not independently annotated by a third party. These inputs were used to discover and repair failures; they are development regressions, not a blind benchmark. No source PDF or external application implementation is redistributed.
 
 | Case | Scope | Checked cells | Headers | Shape | Result |
 |---|---|---:|---|---|---|

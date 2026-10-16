@@ -18,4 +18,4 @@ Known limitations include damaged text layers, handwriting, all-text borderless 
 
 **No submission archive was rebuilt**, at the user's request. The existing `submission/Truecell-Studio-source-and-samples.zip` is the earlier Studio 1.0 artifact, with unchanged SHA-256 `3cb732014a6292b31c1adf6fd30730ef07595293b29e1641d98c0448f37da345`. It does not contain these latest upgrades. No current-release archive extraction or package smoke test is claimed. The source folder contains the current implementation and all 21 dummy input/truth/output sets.
 
-Competitor implementations and comparative materials remain outside this project. `analysis/` and `tmp/competitor-review/` are absent. A recording script exists in `docs/DEMO_SCRIPT.md`; an actual demo video and the organizer's real submission destination are still outstanding.
+External application implementations and comparative review materials remain outside this project. `analysis/` and temporary review directories are absent. A recording script exists in `docs/DEMO_SCRIPT.md`; an actual demo video and the organizer's real submission destination are still outstanding.
