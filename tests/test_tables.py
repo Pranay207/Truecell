@@ -27,6 +27,24 @@ def test_split_row_keeps_both_sources():
     assert any(i.code == "split_row_join" for i in issues)
 
 
+def test_split_row_preserves_low_confidence_of_continuation_cells():
+    from truecell.validate import validate
+
+    first = t(rows=[["A", "Long item", "", ""]])
+    second = t(page=2, rows=[["", "continued", "3", "15"], ["B", "Next", "4", "20"]])
+    second.engine = "ocr-test"
+    second.row_engines = ["ocr-test"] * 2
+    second.cell_confidence[0, 1] = 0.6
+    second.cell_confidence[0, 2] = 0.7
+    second.cell_confidence[1, 2] = 0.99
+    joined, _ = stitch([first, second])
+    table = joined[0]
+    assert table.cell_confidence[0, 1] == 0.6
+    assert table.cell_confidence[0, 2] == 0.7
+    assert table.cell_confidence[1, 2] == 0.99
+    assert any(i.code == "ocr_confidence" and i.row == 1 and i.column == 3 for i in validate(table))
+
+
 @pytest.mark.parametrize(
     "page,headers,bbox,expected",
     [
@@ -68,6 +86,108 @@ def test_merged_headers_flattened():
         "Movement | Value",
     ]
     assert len(found.rows) == 2
+
+
+def test_ragged_headers_are_extended_without_losing_spans():
+    boxes = [
+        [(0, 0, 100, 10)],
+        [(0, 10, 50, 20), (50, 10, 100, 20)],
+        [(0, 20, 50, 30), (50, 20, 100, 30)],
+    ]
+    merged = normalize(
+        [["Group"], ["A", "B"], ["x", "1"]],
+        1,
+        (0, 0, 100, 100),
+        "native-lines",
+        cell_boxes=boxes,
+    )
+    assert merged.headers == ["Group | A", "Group | B"]
+    assert merged.rows == [["x", "1"]]
+    assert [source["text"] for source in merged.header_sources[1]] == ["Group", "B"]
+    single = normalize(
+        [["Item"], ["1", "10"], ["2", "20"]],
+        1,
+        (0, 0, 100, 100),
+        "native-lines",
+    )
+    assert single.headers == ["Item", "Column 2"]
+    assert single.rows == [["1", "10"], ["2", "20"]]
+
+
+def test_ruled_vertical_group_cells_expand_with_original_evidence():
+    raw = [
+        ["Package", "Phase", "Line", "Amount"],
+        ["WP-1", "Build", "1", "10"],
+        [None, None, "1.1", "5"],
+        [None, "QA", "2", "3"],
+        [None, None, "2.1", "2"],
+    ]
+    boxes = [
+        [(0, 0, 25, 10), (25, 0, 50, 10), (50, 0, 75, 10), (75, 0, 100, 10)],
+        [(0, 10, 25, 50), (25, 10, 50, 30), (50, 10, 75, 20), (75, 10, 100, 20)],
+        [None, None, (50, 20, 75, 30), (75, 20, 100, 30)],
+        [None, (25, 30, 50, 50), (50, 30, 75, 40), (75, 30, 100, 40)],
+        [None, None, (50, 40, 75, 50), (75, 40, 100, 50)],
+    ]
+    found = normalize(raw, 1, (0, 0, 100, 50), "native-lines", cell_boxes=boxes)
+    assert found.rows == [
+        ["WP-1", "Build", "1", "10"],
+        ["WP-1", "Build", "1.1", "5"],
+        ["WP-1", "QA", "2", "3"],
+        ["WP-1", "QA", "2.1", "2"],
+    ]
+    inherited = found.cell_sources[1][0][0]
+    assert inherited["text"] == "WP-1"
+    assert inherited["bbox"] == [0, 10, 25, 50]
+    assert inherited["role"] == "vertical_merge_expansion"
+    assert any("Vertically merged group labels" in note for note in found.notes)
+
+
+def test_vertical_expansion_requires_native_ruled_spanning_geometry():
+    raw = [["Group", "Item", "Qty"], ["Alpha", "One", "1"], [None, "Two", "2"]]
+    boxed_blank = [
+        [(0, 0, 30, 10), (30, 0, 60, 10), (60, 0, 90, 10)],
+        [(0, 10, 30, 20), (30, 10, 60, 20), (60, 10, 90, 20)],
+        [(0, 20, 30, 30), (30, 20, 60, 30), (60, 20, 90, 30)],
+    ]
+    found = normalize(raw, 1, (0, 0, 90, 30), "native-lines", cell_boxes=boxed_blank)
+    assert found.rows[1][0] == ""
+    spanning = [
+        boxed_blank[0],
+        [(0, 10, 30, 30), (30, 10, 60, 20), (60, 10, 90, 20)],
+        [None, (30, 20, 60, 30), (60, 20, 90, 30)],
+    ]
+    found = normalize(raw, 1, (0, 0, 90, 30), "native-text", cell_boxes=spanning)
+    assert found.rows[1][0] == ""
+
+
+def test_vertical_expansion_does_not_impute_numeric_cells():
+    raw = [["Batch", "Item", "Qty"], ["12", "One", "1"], [None, "Two", "2"]]
+    boxes = [
+        [(0, 0, 30, 10), (30, 0, 60, 10), (60, 0, 90, 10)],
+        [(0, 10, 30, 30), (30, 10, 60, 20), (60, 10, 90, 20)],
+        [None, (30, 20, 60, 30), (60, 20, 90, 30)],
+    ]
+    found = normalize(raw, 1, (0, 0, 90, 30), "native-lines", cell_boxes=boxes)
+    assert found.rows[1][0] == ""
+
+
+def test_vertical_header_span_is_only_flattened_as_a_header():
+    raw = [
+        ["Code", "Movement", None],
+        [None, "In", "Out"],
+        ["A", "2", "1"],
+        ["B", "3", "2"],
+    ]
+    boxes = [
+        [(0, 0, 30, 20), (30, 0, 90, 10), None],
+        [None, (30, 10, 60, 20), (60, 10, 90, 20)],
+        [(0, 20, 30, 30), (30, 20, 60, 30), (60, 20, 90, 30)],
+        [(0, 30, 30, 40), (30, 30, 60, 40), (60, 30, 90, 40)],
+    ]
+    found = normalize(raw, 1, (0, 0, 90, 40), "native-lines", cell_boxes=boxes)
+    assert found.headers == ["Code", "Movement | In", "Movement | Out"]
+    assert found.rows == [["A", "2", "1"], ["B", "3", "2"]]
 
 
 def test_footer_removed():

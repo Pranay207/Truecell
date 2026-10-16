@@ -12,7 +12,7 @@ The fuel table checks all 35 data cells and seven flattened headers. The census 
 
 The first saved development outputs failed the fuel table and census layouts; their measurements remain in the JSON when present. Header-span handling, numeric text-fragment joining and separated borderless streams were repaired with general geometry rules. The old engine state was not a tagged release; first observations are historical evidence, not a reproducible old-version benchmark.
 
-Unmapped text-layer glyphs, complex nested/merged body cells, handwriting and arbitrary damaged scans remain limitations. Inferred structure and header re-readings remain flagged.
+Unmapped text-layer glyphs, handwriting and arbitrary damaged scans remain limitations. Explicitly ruled vertical group spans in native-PDF body rows are supported conservatively; OCR/unruled spans and arbitrary multi-axis nested merges remain ambiguous. Inferred structure and header re-readings remain flagged.
 
 Reproduce: `python scripts/public_audit.py --fetch` on the first run, then omit `--fetch` for verified cached sources. This command makes network requests only with `--fetch`. The ordinary converter is offline unless cloud verification is explicitly enabled.
 

@@ -1,17 +1,22 @@
-TRUECELL STUDIO — DOCUMENT TO EXCEL, WITH EVIDENCE
+TRUECELL — DOCUMENT INTELLIGENCE
 
 1. Use 64-bit Python 3.10–3.12. Python 3.11 on Windows was tested locally.
 2. Windows: double-click START_TRUECELL.cmd. Linux/macOS: bash start.sh.
    First setup needs internet; normal conversion is offline on CPU.
 3. Open the localhost URL printed by the launcher.
-4. Click “Find a wrong balance”, then “Equation receipts”.
+   Optional phone demo: START_TRUECELL.cmd --offline --lan, then open the
+   printed Phone URL from the same private Wi-Fi network.
+4. Click “Find a wrong balance”, then open “Equations” in the validation rail.
    Inspect printed 1081.00 and the 1064.00 proposal supported by two
    adjacent balance equations. Preview without changing the working data.
-5. Review & export → Download Excel with evidence.
-   Check Cell Evidence, Constraints, Validation Report and Verification.
+5. Select the finding to inspect its source and preview the proposal impact.
+   Then use Export Excel. The Challenge rail tests validator sensitivity.
 
-Other examples: Invoice register / Skewed scan. All sample data is dummy.
-All 13 PDFs, truth workbooks and converted workbooks are included.
+Quick-demo buttons: Invoice register / Find a wrong balance / Skewed scan.
+Upload Sparse text schedule / Sideways invoice / Page carry-forwards from
+the samples/ folder. All sample data is dummy.
+All 21 dummy PDFs, truth workbooks and converted workbooks are in the source folder.
+The existing submission ZIP predates the latest upgrades; rebuild only when ready.
 
 CLI: python convert.py samples/A_invoice_register.pdf -o outputs/demo.xlsx
 Tests: python -m pytest -q

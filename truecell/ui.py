@@ -49,7 +49,11 @@ def _replace(saved: dict, result: Result) -> None:
 
 
 def _run(filename: str, content: bytes, verify: bool, force: bool = False) -> None:
-    identifier, source = create_job(filename, content)
+    try:
+        identifier, source = create_job(filename, content)
+    except (OSError, ValueError) as exc:
+        st.error(f"Cannot create a document workspace: {exc}")
+        return
     st.session_state["active_job"] = identifier
     _process(identifier, source, filename, verify, force)
 
@@ -58,8 +62,8 @@ def _process(
     identifier: str, source: Path, filename: str, verify: bool, force: bool = False
 ) -> None:
     bar = st.progress(0, text="Inspecting the document…")
-    set_status(identifier, "processing", options={"verify": verify, "force": force})
     try:
+        set_status(identifier, "processing", options={"verify": verify, "force": force})
         result = convert(
             source,
             verify=verify,
@@ -79,8 +83,13 @@ def _process(
         st.session_state["conversion"] = saved
         st.session_state.pop("lab_result", None)
     except Exception as exc:
-        set_status(identifier, "failed", error=str(exc))
-        st.error(f"Processing stopped: {exc}. Completed page checkpoints are retained for resume.")
+        try:
+            set_status(identifier, "failed", error=str(exc))
+        except (OSError, ValueError):
+            pass
+        st.error(
+            f"Processing stopped: {exc}. Any completed page checkpoints are retained for resume."
+        )
     finally:
         bar.empty()
 
@@ -98,6 +107,45 @@ def _load(identifier: str) -> None:
     st.session_state["active_job"] = identifier
 
 
+def _resume(selected: dict) -> None:
+    source = job_path(selected["id"]) / selected["source"]
+    options = selected.get("options", {})
+    try:
+        try:
+            previous = load_result(selected["id"])
+        except FileNotFoundError:
+            previous = None
+        if previous is not None and (
+            previous.history or previous.review.get("status") == "reviewed"
+        ):
+            st.info("The reviewed working copy is preserved. Reprocessing opens a new workspace.")
+            _run(
+                selected["name"],
+                source.read_bytes(),
+                options.get("verify", False),
+                options.get("force", False),
+            )
+        else:
+            _process(
+                selected["id"],
+                source,
+                selected["name"],
+                options.get("verify", False),
+                options.get("force", False),
+            )
+    except (OSError, ValueError) as exc:
+        st.error(f"Cannot resume this workspace: {exc}")
+
+
+def _form_context(saved: dict) -> str:
+    return digest(
+        {
+            "workspace": saved.get("job_id", saved.get("source")),
+            "snapshot": fingerprint(saved["result"]),
+        }
+    )[:24]
+
+
 def _source_preview(saved: dict, records: list[dict], full_page: bool = False) -> None:
     if not saved.get("source"):
         st.info("Reopen a saved document to view the original source.")
@@ -107,31 +155,35 @@ def _source_preview(saved: dict, records: list[dict], full_page: bool = False) -
         st.warning("No source box was recovered for this cell. Compare the source page manually.")
         return
     page_number = record["page"]
-    with open_document(saved["source"]) as document:
-        page = document[page_number - 1]
-        image = render_page(page, 130)
-        box = record.get("bbox")
-        if box:
-            sx, sy = image.width / page.rect.width, image.height / page.rect.height
-            x0, y0, x1, y1 = [box[i] * (sx if i % 2 == 0 else sy) for i in range(4)]
-            x0, x1 = max(0, x0), min(image.width, x1)
-            y0, y1 = max(0, y0), min(image.height, y1)
-            ImageDraw.Draw(image).rectangle((x0, y0, x1, y1), outline="#e65e42", width=3)
-            if not full_page:
-                px, py = max(70, (x1 - x0) * 0.5), max(55, (y1 - y0) * 1.4)
-                image = image.crop(
-                    (
-                        max(0, int(x0 - px)),
-                        max(0, int(y0 - py)),
-                        min(image.width, int(x1 + px)),
-                        min(image.height, int(y1 + py)),
+    try:
+        with open_document(saved["source"]) as document:
+            page = document[page_number - 1]
+            image = render_page(page, 130)
+            box = record.get("bbox")
+            if box:
+                sx, sy = image.width / page.rect.width, image.height / page.rect.height
+                x0, y0, x1, y1 = [box[i] * (sx if i % 2 == 0 else sy) for i in range(4)]
+                x0, x1 = max(0, x0), min(image.width, x1)
+                y0, y1 = max(0, y0), min(image.height, y1)
+                ImageDraw.Draw(image).rectangle((x0, y0, x1, y1), outline="#e65e42", width=3)
+                if not full_page:
+                    px, py = max(70, (x1 - x0) * 0.5), max(55, (y1 - y0) * 1.4)
+                    image = image.crop(
+                        (
+                            max(0, int(x0 - px)),
+                            max(0, int(y0 - py)),
+                            min(image.width, int(x1 + px)),
+                            min(image.height, int(y1 + py)),
+                        )
                     )
-                )
-        st.image(
-            image,
-            caption=f"Original source · page {page_number} · selected cell outlined",
-            use_container_width=True,
-        )
+            st.image(
+                image,
+                caption=f"Original source · page {page_number} · selected cell outlined",
+                use_container_width=True,
+            )
+    except (OSError, ValueError, IndexError) as exc:
+        st.error(f"Source preview unavailable: {exc}")
+        return
     if len({r["page"] for r in records}) > 1:
         st.caption("This record spans multiple pages; all source parts are listed below.")
 
@@ -146,11 +198,69 @@ def _table_frame(table) -> pd.DataFrame:
     return frame
 
 
+def _select_source_cell(key: str, table_index: int) -> None:
+    selection = st.session_state[key]["selection"]
+    if selection["rows"]:
+        st.session_state[f"row_{table_index}"] = selection["rows"][0] + 1
+        st.session_state[f"header_{table_index}"] = False
+    if selection["columns"]:
+        st.session_state[f"col_{table_index}"] = int(selection["columns"][0].split(".", 1)[0]) - 1
+
+
+def _page_browser(saved: dict) -> None:
+    if not saved.get("source"):
+        return
+    with st.expander("Browse original pages"):
+        try:
+            with open_document(saved["source"]) as document:
+                number = st.number_input(
+                    "Source page", min_value=1, max_value=len(document), value=1
+                )
+                page = document[number - 1]
+                st.image(
+                    render_page(page, 100),
+                    caption=f"Original page {number}",
+                    use_container_width=True,
+                )
+        except (OSError, ValueError) as exc:
+            st.error(str(exc))
+
+
+def _finding_jump(result: Result, table_index: int) -> None:
+    table = result.tables[table_index]
+    located = [
+        (issue, r)
+        for issue in result.issues
+        if issue.table == table_index + 1 and issue.row is not None
+        for r, sources in enumerate(table.provenance)
+        if (issue.page, issue.row) in sources
+    ]
+    if not located:
+        return
+    controls = st.columns([3, 1])
+    selected = controls[0].selectbox(
+        "Jump to a finding",
+        range(len(located)),
+        format_func=lambda i: f"{located[i][0].severity.upper()} · Row {located[i][1] + 1} · {located[i][0].reason[:100]}",
+        key=f"finding_{table_index}",
+    )
+    if controls[1].button("Inspect finding", key=f"inspect_finding_{table_index}"):
+        issue, row = located[selected]
+        st.session_state[f"row_{table_index}"] = row + 1
+        st.session_state[f"col_{table_index}"] = min(
+            max(0, (issue.column or 1) - 1), len(table.rows[row]) - 1
+        )
+        st.session_state[f"header_{table_index}"] = False
+
+
 def _inspector(saved: dict, table_index: int) -> None:
     result = saved["result"]
     table = result.tables[table_index]
     if not table.rows:
         return
+    row_key = f"row_{table_index}"
+    if row_key in st.session_state:
+        st.session_state[row_key] = min(max(1, st.session_state[row_key]), len(table.rows))
     selectors = st.columns([1, 2])
     row = (
         selectors[0].number_input(
@@ -165,9 +275,13 @@ def _inspector(saved: dict, table_index: int) -> None:
     header = st.checkbox("Inspect or correct the header", key=f"header_{table_index}")
     if header:
         row = -1
+    column_count = len(table.headers) if header else len(table.rows[row])
+    column_key = f"col_{table_index}"
+    if column_key in st.session_state:
+        st.session_state[column_key] = min(max(0, st.session_state[column_key]), column_count - 1)
     column = selectors[1].selectbox(
         "Column",
-        range(len(table.headers) if header else len(table.rows[row])),
+        range(column_count),
         format_func=lambda c: f"{c + 1}. {table.headers[c] if c < len(table.headers) else 'Extra column'}",
         key=f"col_{table_index}",
     )
@@ -194,7 +308,7 @@ def _inspector(saved: dict, table_index: int) -> None:
                 use_container_width=True,
             )
     with st.expander("Correct this cell after checking the source"):
-        with st.form(f"edit_{table_index}_{row}_{column}"):
+        with st.form(f"edit_{_form_context(saved)}_{table_index}_{row}_{column}"):
             new = st.text_input("Reviewed value", value=value)
             note = st.text_area("Reason for change")
             submitted = st.form_submit_button("Save correction")
@@ -202,7 +316,7 @@ def _inspector(saved: dict, table_index: int) -> None:
             try:
                 _replace(saved, apply_edit(result, table_index, row, column, new, note))
                 st.rerun()
-            except ValueError as exc:
+            except (OSError, ValueError) as exc:
                 st.error(str(exc))
 
 
@@ -274,7 +388,9 @@ def _equations(saved: dict, table_index: int) -> None:
         st.info(
             f"The proposed change would move failed equation checks from {before} to {after}. The working data has not changed."
         )
-    with st.form("apply_proposal"):
+    with st.form(
+        f"apply_proposal_{_form_context(saved)}_{table_index}_{proposal['row']}_{proposal['column']}"
+    ):
         checked = st.checkbox(
             "I inspected the source and understand this may change a source error."
         )
@@ -297,7 +413,7 @@ def _equations(saved: dict, table_index: int) -> None:
                     ),
                 )
                 st.rerun()
-            except ValueError as exc:
+            except (OSError, ValueError) as exc:
                 st.error(str(exc))
 
 
@@ -360,7 +476,7 @@ def _review_export(saved: dict) -> None:
     st.caption(
         "Any correction invalidates the previous review. Hashes detect changed snapshots; they do not establish reviewer identity or guarantee accuracy."
     )
-    with st.form("complete_review"):
+    with st.form(f"complete_review_{_form_context(saved)}"):
         checked = st.checkbox(
             "I checked the original source pages and reviewed the outstanding findings."
         )
@@ -370,7 +486,7 @@ def _review_export(saved: dict) -> None:
         try:
             _replace(saved, complete_review(result, checked, note))
             st.rerun()
-        except ValueError as exc:
+        except (OSError, ValueError) as exc:
             st.error(str(exc))
     left, right = st.columns(2)
     left.download_button(
@@ -402,13 +518,60 @@ def _review_export(saved: dict) -> None:
             use_container_width=True,
         )
     if saved.get("job_id"):
-        baseline = load_result(saved["job_id"], baseline=True)
-        st.download_button(
-            "Download immutable original extraction",
-            json.dumps(baseline.to_dict(), indent=2),
-            file_name="original-extraction.json",
-            mime="application/json",
-        )
+        try:
+            baseline = load_result(saved["job_id"], baseline=True)
+            st.download_button(
+                "Download immutable original extraction",
+                json.dumps(baseline.to_dict(), indent=2),
+                file_name="original-extraction.json",
+                mime="application/json",
+            )
+        except (OSError, ValueError) as exc:
+            st.error(f"Original extraction unavailable: {exc}")
+
+
+def _engine_audit(saved: dict) -> None:
+    result = saved["result"]
+    st.subheader("Every attempt stays visible")
+    _page_browser(saved)
+    summaries = [
+        {"table": i, **record}
+        for i, table in enumerate(result.tables, 1)
+        for record in table.page_summaries
+    ]
+    if summaries:
+        st.caption("Page continuity summaries, kept separately from transaction rows")
+        st.dataframe(summaries, hide_index=True, use_container_width=True)
+    attempts = []
+    for page in result.pages:
+        if not page.attempts:
+            attempts.append(
+                {
+                    "page": page.page,
+                    "route": page.route,
+                    "engine": page.engine,
+                    "error": page.error,
+                }
+            )
+        for attempt in page.attempts:
+            attempts.append(
+                {
+                    "page": page.page,
+                    "route": page.route,
+                    "strategy": attempt.strategy,
+                    "engine": attempt.engine,
+                    "selected": attempt.selected,
+                    "tables": attempt.tables,
+                    "cells": attempt.cells,
+                    "seconds": round(attempt.seconds, 3),
+                    "error": attempt.error,
+                    "page error": page.error,
+                }
+            )
+    st.dataframe(attempts, hide_index=True, use_container_width=True)
+    st.caption(
+        "OCR recognition scores and inferred-equation agreement are not measured extraction accuracy."
+    )
 
 
 def main() -> None:
@@ -442,14 +605,7 @@ def main() -> None:
                 except (ValueError, OSError) as exc:
                     st.error(str(exc))
             if selected["status"] != "complete" and st.button("Resume completed page checkpoints"):
-                options = selected.get("options", {})
-                _process(
-                    selected["id"],
-                    job_path(selected["id"]) / selected["source"],
-                    selected["name"],
-                    options.get("verify", False),
-                    options.get("force", False),
-                )
+                _resume(selected)
         st.divider()
         st.caption("Available OCR: " + (", ".join(available_engines()) or "none"))
         st.caption(
@@ -486,6 +642,15 @@ def main() -> None:
             if container.button(label, use_container_width=True):
                 path = PROJECT / "samples" / name
                 _run(name, path.read_bytes(), False)
+        extra_examples = st.columns(3)
+        for container, label, name in zip(
+            extra_examples,
+            ["Sparse text schedule", "Sideways invoice", "Page carry-forwards"],
+            ["E_sparse_schedule.pdf", "E_sideways_invoice.pdf", "E_page_carry.pdf"],
+        ):
+            if container.button(label, use_container_width=True):
+                path = PROJECT / "samples" / name
+                _run(name, path.read_bytes(), False)
     if "conversion" not in st.session_state:
         return
     saved = st.session_state["conversion"]
@@ -509,6 +674,11 @@ def main() -> None:
     if not result.tables:
         st.warning("No tables recovered. Inspect the page audit before using this result.")
         st.dataframe([asdict(i) for i in result.issues], use_container_width=True)
+        review, audit = st.tabs(["Review & export", "Engine audit"])
+        with review:
+            _review_export(saved)
+        with audit:
+            _engine_audit(saved)
         return
     table_index = st.selectbox(
         "Table",
@@ -528,10 +698,18 @@ def main() -> None:
         left, right = st.columns([1.4, 1], gap="large")
         with left:
             st.subheader("Extracted values")
+            _finding_jump(result, table_index)
+            grid_key = f"grid_{table_index}_{result.source_sha256[:12]}"
+            st.caption(
+                "Select a row or column to inspect its source. Use the finding picker to focus a flagged cell."
+            )
             st.dataframe(
                 _table_frame(result.tables[table_index]),
                 use_container_width=True,
                 height=430,
+                key=grid_key,
+                selection_mode=["single-row", "single-column"],
+                on_select=lambda: _select_source_cell(grid_key, table_index),
             )
             if result.issues:
                 st.subheader("Findings to review")
@@ -561,26 +739,4 @@ def main() -> None:
     with review:
         _review_export(saved)
     with audit:
-        st.subheader("Every attempt stays visible")
-        st.dataframe(
-            [
-                {
-                    "page": p.page,
-                    "route": p.route,
-                    "strategy": a.strategy,
-                    "engine": a.engine,
-                    "selected": a.selected,
-                    "tables": a.tables,
-                    "cells": a.cells,
-                    "seconds": round(a.seconds, 3),
-                    "error": a.error,
-                }
-                for p in result.pages
-                for a in p.attempts
-            ],
-            hide_index=True,
-            use_container_width=True,
-        )
-        st.caption(
-            "OCR recognition scores and inferred-equation agreement are not measured extraction accuracy."
-        )
+        _engine_audit(saved)

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import pdfplumber
 
+from .anchors import append_summaries, header_tables
 from .models import Table
 from .table import normalize, words_to_grid
 
@@ -13,9 +14,11 @@ def extract_page(
 ) -> list[Table]:
     """Extract table regions rather than treating all page text as one table."""
     if strategy == "words":
-        return words_to_grid(
-            page.extract_words(), page_number, "native-words", page.width, page.height
-        )
+        words = page.extract_words(extra_attrs=["fontname", "size"])
+        anchored = header_tables(words, page_number)
+        if anchored:
+            return anchored
+        return words_to_grid(words, page_number, "native-words", page.width, page.height)
     settings = {
         "vertical_strategy": strategy,
         "horizontal_strategy": strategy,
@@ -40,7 +43,17 @@ def extract_page(
             [row.cells for row in found.rows],
         )
         if table:
+            if strategy == "lines":
+                append_summaries(table, page.extract_words())
             if strategy == "text":
+                from .values import kind
+
+                if not any(
+                    kind(v) in {"numeric", "currency", "date", "id"}
+                    for row in table.rows
+                    for v in row
+                ):
+                    continue
                 table.notes.append("Borderless layout inferred; review column boundaries.")
             tables.append(table)
     return tables

@@ -1,0 +1,46 @@
+{
+  "name": "E_sparse_schedule",
+  "pages": 1,
+  "tables": [
+    {
+      "headers": [
+        "Team",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "rows": [
+        [
+          "Blue",
+          "Planning",
+          "",
+          "Review",
+          ""
+        ],
+        [
+          "Green",
+          "",
+          "Design",
+          "",
+          "Support"
+        ],
+        [
+          "Amber",
+          "Build",
+          "",
+          "Support",
+          ""
+        ],
+        [
+          "Violet",
+          "",
+          "Review",
+          "",
+          "Planning"
+        ]
+      ]
+    }
+  ],
+  "injected_errors": []
+}

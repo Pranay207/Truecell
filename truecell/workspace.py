@@ -7,6 +7,7 @@ import json
 import os
 import re
 import tempfile
+import time
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -45,7 +46,17 @@ def atomic_json(path: Path, value: dict) -> None:
             json.dump(value, stream, ensure_ascii=False, allow_nan=False, indent=2)
             stream.flush()
             os.fsync(stream.fileno())
-        os.replace(temporary, path)
+        # Windows indexers and virus scanners can briefly retain a read handle
+        # after the metadata file is opened. Keep the atomic replacement and
+        # retry only that transient sharing failure for a bounded interval.
+        for attempt in range(5):
+            try:
+                os.replace(temporary, path)
+                break
+            except PermissionError:
+                if attempt == 4:
+                    raise
+                time.sleep(0.02 * (2**attempt))
     finally:
         if temporary and temporary.exists():
             temporary.unlink()
@@ -110,7 +121,7 @@ def save_result(job_id: str, result: Result, root: Path = ROOT) -> None:
     atomic_json(folder / "current.json", {"sha256": digest(payload), "result": payload})
     metadata = json.loads((folder / "metadata.json").read_text(encoding="utf-8"))
     metadata.update(
-        status="complete",
+        status="partial" if any(page.error for page in result.pages) else "complete",
         tables=len(result.tables),
         rows=sum(len(t.rows) for t in result.tables),
     )
@@ -140,8 +151,25 @@ def list_jobs(root: Path = ROOT) -> list[dict]:
     for folder in root.iterdir():
         try:
             record = json.loads((folder / "metadata.json").read_text(encoding="utf-8"))
-            job_path(record["id"], root)
+            if not isinstance(record, dict) or any(
+                not isinstance(record.get(key), str) or not record[key]
+                for key in ("id", "name", "created", "status", "source")
+            ):
+                continue
+            if job_path(record["id"], root).name != folder.name:
+                continue
+            created = datetime.fromisoformat(record["created"])
+            if created.tzinfo is None:
+                continue
+            if record["status"] not in {"ready", "processing", "complete", "partial", "failed"}:
+                continue
+            if Path(record["source"]).name != record["source"] or not record["source"].startswith(
+                "source."
+            ):
+                continue
+            if "options" in record and not isinstance(record["options"], dict):
+                continue
             records.append(record)
-        except (OSError, ValueError, KeyError):
+        except (OSError, ValueError, KeyError, TypeError):
             continue
-    return sorted(records, key=lambda r: r["created"], reverse=True)
+    return sorted(records, key=lambda r: datetime.fromisoformat(r["created"]), reverse=True)

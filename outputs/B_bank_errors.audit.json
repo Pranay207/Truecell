@@ -2154,6 +2154,7 @@
           }
         ]
       ],
+      "page_summaries": [],
       "cell_scores": []
     }
   ],
@@ -2205,7 +2206,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.0676512999998522,
+      "seconds": 0.10174390001338907,
       "attempts": [
         {
           "engine": "native",
@@ -2214,7 +2215,7 @@
           "cells": 110,
           "issues": 4,
           "score": 1694.126,
-          "seconds": 0.05539339999813819,
+          "seconds": 0.07925209999666549,
           "error": "",
           "selected": true
         }
@@ -2222,7 +2223,7 @@
       "error": ""
     }
   ],
-  "seconds": 0.09011050000117393,
+  "seconds": 0.13256470000487752,
   "source_sha256": "0312be673c7db85435e2a34ddcb8c6b2b688c9e0f5825b2702d47b02188ed142",
   "constraints": [
     {

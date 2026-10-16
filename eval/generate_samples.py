@@ -90,6 +90,8 @@ def write_truth(
         sheet.append(table["headers"])
         for row in table["rows"]:
             sheet.append(row)
+    if not tables:
+        workbook.create_sheet("Read me").append(["No tables expected in this document."])
     workbook.save(directory / f"{name}.truth.xlsx")
 
 

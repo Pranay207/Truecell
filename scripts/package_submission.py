@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 if __name__ == "__main__":
-    destination = ROOT / "submission" / "Truecell-Studio-source-and-samples.zip"
+    destination = ROOT / "submission" / "Truecell-source-and-samples.zip"
     destination.parent.mkdir(exist_ok=True)
     allowed_dirs = {
         "truecell",
@@ -20,6 +20,7 @@ if __name__ == "__main__":
         "models",
         ".github",
         ".streamlit",
+        "frontend",
     }
     allowed_root = {
         "README.md",
@@ -42,18 +43,24 @@ if __name__ == "__main__":
     with zipfile.ZipFile(destination, "w", zipfile.ZIP_DEFLATED) as archive:
         for path in sorted(ROOT.rglob("*")):
             relative = path.relative_to(ROOT)
-            if not path.is_file() or any(
-                p
-                in {
-                    ".venv",
-                    ".git",
-                    "__pycache__",
-                    ".pytest_cache",
-                    "uploads",
-                    "jobs",
-                    "checkpoints",
-                }
-                for p in relative.parts
+            if (
+                not path.is_file()
+                or path.suffix == ".tsbuildinfo"
+                or any(
+                    p
+                    in {
+                        ".venv",
+                        ".git",
+                        "__pycache__",
+                        ".pytest_cache",
+                        "uploads",
+                        "jobs",
+                        "checkpoints",
+                        "node_modules",
+                        ".vite",
+                    }
+                    for p in relative.parts
+                )
             ):
                 continue
             if (len(relative.parts) == 1 and path.name in allowed_root) or relative.parts[

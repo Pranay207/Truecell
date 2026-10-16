@@ -8,3 +8,6 @@ outputs/uploads/
 submission/
 outputs/jobs/
 outputs/checkpoints/
+frontend/node_modules/
+frontend/.vite/
+frontend/*.tsbuildinfo

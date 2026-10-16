@@ -10273,6 +10273,7 @@
           }
         ]
       ],
+      "page_summaries": [],
       "cell_scores": []
     }
   ],
@@ -10283,7 +10284,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.1770643999989261,
+      "seconds": 0.2610899999999674,
       "attempts": [
         {
           "engine": "native",
@@ -10292,7 +10293,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.12595400000282098,
+          "seconds": 0.18974149999849033,
           "error": "",
           "selected": true
         }
@@ -10304,7 +10305,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.17458859999896958,
+      "seconds": 0.24128940000082366,
       "attempts": [
         {
           "engine": "native",
@@ -10313,7 +10314,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.1194171999959508,
+          "seconds": 0.17859720000706147,
           "error": "",
           "selected": true
         }
@@ -10325,7 +10326,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.1745022000031895,
+      "seconds": 0.21588369998789858,
       "attempts": [
         {
           "engine": "native",
@@ -10334,7 +10335,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.1285929000005126,
+          "seconds": 0.1589382999954978,
           "error": "",
           "selected": true
         }
@@ -10342,7 +10343,7 @@
       "error": ""
     }
   ],
-  "seconds": 0.7805338999969536,
+  "seconds": 1.0806152000004658,
   "source_sha256": "75efaca21f9d4c2fc28599cf3483bfd0c7dc50e70f206bcd812cd9c06c118cb8",
   "constraints": [
     {

@@ -1,0 +1,932 @@
+{
+  "source": "E_sideways_invoice.pdf",
+  "tables": [
+    {
+      "headers": [
+        "Record",
+        "Description",
+        "Units",
+        "Unit price",
+        "Amount"
+      ],
+      "rows": [
+        [
+          "A01",
+          "Paper",
+          "2",
+          "12.00",
+          "24.00"
+        ],
+        [
+          "A02",
+          "Pens",
+          "3",
+          "5.00",
+          "15.00"
+        ],
+        [
+          "A03",
+          "Folders",
+          "4",
+          "7.00",
+          "28.00"
+        ],
+        [
+          "",
+          "Sub Total",
+          "",
+          "",
+          "67.00"
+        ],
+        [
+          "",
+          "Tax 10%",
+          "",
+          "",
+          "6.70"
+        ],
+        [
+          "",
+          "Grand Total",
+          "",
+          "",
+          "73.70"
+        ]
+      ],
+      "page": 1,
+      "bbox": [
+        60.24,
+        150.0,
+        167.76,
+        665.04
+      ],
+      "engine": "ocr-rapidocr",
+      "confidence": 0.999950851003329,
+      "header_detected": true,
+      "provenance": [
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            1,
+            6
+          ]
+        ]
+      ],
+      "notes": [
+        "OCR rapidocr; deskew correction 0.00 degrees; values require source review.",
+        "Unruled summary below the table retained; label projected into the descriptive column. Verify the source."
+      ],
+      "row_engines": [
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr"
+      ],
+      "cell_sources": [
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                86.88,
+                605.28,
+                114.0,
+                665.04
+              ],
+              "text": "A01",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999573628107706,
+              "coordinates": "page points",
+              "initial_reading": "A01"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                86.88,
+                414.96,
+                114.0,
+                605.28
+              ],
+              "text": "Paper",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999287605285645,
+              "coordinates": "page points",
+              "initial_reading": "Paper"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                86.88,
+                345.12,
+                114.0,
+                414.96
+              ],
+              "text": "2",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999651908874512,
+              "coordinates": "page points",
+              "initial_reading": "2"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                86.88,
+                255.12,
+                114.0,
+                345.12
+              ],
+              "text": "12.00",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999306917190551,
+              "coordinates": "page points",
+              "initial_reading": "12.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                86.88,
+                150.0,
+                114.0,
+                255.12
+              ],
+              "text": "24.00",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999964427947998,
+              "coordinates": "page points",
+              "initial_reading": "24.00"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                114.0,
+                605.28,
+                140.88,
+                665.04
+              ],
+              "text": "A02",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999392032623291,
+              "coordinates": "page points",
+              "initial_reading": "A02"
+            },
+            {
+              "page": 1,
+              "bbox": [
+                114.0,
+                605.28,
+                140.88,
+                665.04
+              ],
+              "text": "Ad2",
+              "engine": "ocr-tesseract",
+              "confidence": 0.55,
+              "coordinates": "page points",
+              "initial_reading": "Ad2",
+              "role": "comparison",
+              "strategy": "rotate-270"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                114.0,
+                414.96,
+                140.88,
+                605.28
+              ],
+              "text": "Pens",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998729228973389,
+              "coordinates": "page points",
+              "initial_reading": "Pens"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                114.0,
+                345.12,
+                140.88,
+                414.96
+              ],
+              "text": "3",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999516010284424,
+              "coordinates": "page points",
+              "initial_reading": "3"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                114.0,
+                255.12,
+                140.88,
+                345.12
+              ],
+              "text": "5.00",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999513924121857,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                114.0,
+                150.0,
+                140.88,
+                255.12
+              ],
+              "text": "15.00",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.971919572353363,
+              "coordinates": "page points",
+              "initial_reading": "15.00"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                140.88,
+                605.28,
+                167.76,
+                665.04
+              ],
+              "text": "A03",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998644590377808,
+              "coordinates": "page points",
+              "initial_reading": "A03"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                140.88,
+                414.96,
+                167.76,
+                605.28
+              ],
+              "text": "Folders",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998920645032611,
+              "coordinates": "page points",
+              "initial_reading": "Folders"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                140.88,
+                345.12,
+                167.76,
+                414.96
+              ],
+              "text": "4",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999531507492065,
+              "coordinates": "page points",
+              "initial_reading": "4"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                140.88,
+                255.12,
+                167.76,
+                345.12
+              ],
+              "text": "7.00",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999665319919586,
+              "coordinates": "page points",
+              "initial_reading": "7.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                140.88,
+                150.0,
+                167.76,
+                255.12
+              ],
+              "text": "28.00",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999302148818969,
+              "coordinates": "page points",
+              "initial_reading": "28.00"
+            }
+          ]
+        ],
+        [
+          [],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                181.575,
+                560.537,
+                192.018,
+                600.888
+              ],
+              "text": "Sub Total",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9994450079070197,
+              "coordinates": "page points"
+            }
+          ],
+          [],
+          [],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                182.358,
+                154.15,
+                191.495,
+                177.994
+              ],
+              "text": "67.00",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999986219406128,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                201.416,
+                564.206,
+                211.858,
+                601.15
+              ],
+              "text": "Tax 10%",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998850737299237,
+              "coordinates": "page points"
+            }
+          ],
+          [],
+          [],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                201.938,
+                154.412,
+                212.119,
+                173.278
+              ],
+              "text": "6.70",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999992698431015,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                221.256,
+                551.891,
+                232.482,
+                600.888
+              ],
+              "text": "Grand Total",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999501434239474,
+              "coordinates": "page points"
+            }
+          ],
+          [],
+          [],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                222.3,
+                154.412,
+                231.437,
+                178.256
+              ],
+              "text": "73.70",
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999887943267822,
+              "coordinates": "page points"
+            }
+          ]
+        ]
+      ],
+      "header_sources": [
+        [
+          {
+            "page": 1,
+            "bbox": [
+              60.24,
+              605.28,
+              86.88,
+              665.04
+            ],
+            "text": "Record",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999694426854452,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              60.24,
+              414.96,
+              86.88,
+              605.28
+            ],
+            "text": "Description",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999520778656006,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              60.24,
+              345.12,
+              86.88,
+              414.96
+            ],
+            "text": "Units",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999685287475586,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              60.24,
+              255.12,
+              86.88,
+              345.12
+            ],
+            "text": "Unit price",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9906314611434937,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              60.24,
+              150.0,
+              86.88,
+              255.12
+            ],
+            "text": "Amount",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999503095944723,
+            "coordinates": "page points"
+          }
+        ]
+      ],
+      "page_summaries": [],
+      "cell_scores": [
+        [
+          0,
+          0,
+          0.9999573628107706
+        ],
+        [
+          0,
+          1,
+          0.9999287605285645
+        ],
+        [
+          0,
+          2,
+          0.9999651908874512
+        ],
+        [
+          0,
+          3,
+          0.9999306917190551
+        ],
+        [
+          0,
+          4,
+          0.999964427947998
+        ],
+        [
+          1,
+          0,
+          0.9999392032623291
+        ],
+        [
+          1,
+          1,
+          0.9998729228973389
+        ],
+        [
+          1,
+          2,
+          0.9999516010284424
+        ],
+        [
+          1,
+          3,
+          0.9999513924121857
+        ],
+        [
+          1,
+          4,
+          0.971919572353363
+        ],
+        [
+          2,
+          0,
+          0.9998644590377808
+        ],
+        [
+          2,
+          1,
+          0.9998920645032611
+        ],
+        [
+          2,
+          2,
+          0.9999531507492065
+        ],
+        [
+          2,
+          3,
+          0.9999665319919586
+        ],
+        [
+          2,
+          4,
+          0.9999302148818969
+        ],
+        [
+          3,
+          1,
+          0.9994450079070197
+        ],
+        [
+          3,
+          4,
+          0.999986219406128
+        ],
+        [
+          4,
+          1,
+          0.9998850737299237
+        ],
+        [
+          4,
+          4,
+          0.999992698431015
+        ],
+        [
+          5,
+          1,
+          0.9999501434239474
+        ],
+        [
+          5,
+          4,
+          0.9999887943267822
+        ]
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected rotate-270-second-engine; alternative deskew-300dpi produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": null
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected rotate-270-second-engine; alternative cell-recheck-300dpi produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": null
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected rotate-270-second-engine; alternative perspective-cell-recheck-300dpi produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": null
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected rotate-270-second-engine; alternative second-engine produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": null
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected rotate-270-second-engine; alternative rotate-90 produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": null
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected rotate-270-second-engine; alternative rotate-180 produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": null
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "OCR rapidocr; deskew correction 0.00 degrees; values require source review.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Unruled summary below the table retained; label projected into the descriptive column. Verify the source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": 2,
+      "column": 1,
+      "reason": "Alternate ocr-tesseract (rotate-270) read 'Ad2'; selected 'A02'.",
+      "suggestion": "Compare with the source document.",
+      "code": "ocr_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected rotate-270-second-engine; alternative deskew-300dpi produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected rotate-270-second-engine; alternative cell-recheck-300dpi produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected rotate-270-second-engine; alternative perspective-cell-recheck-300dpi produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected rotate-270-second-engine; alternative second-engine produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected rotate-270-second-engine; alternative rotate-90 produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected rotate-270-second-engine; alternative rotate-180 produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": 1
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "route": "ocr",
+      "engine": "rapidocr",
+      "confidence": 0.999950851003329,
+      "seconds": 21.98404070000106,
+      "attempts": [
+        {
+          "engine": "tesseract",
+          "strategy": "deskew-300dpi",
+          "tables": 1,
+          "cells": 18,
+          "issues": 27,
+          "score": -159.2,
+          "seconds": 1.5250366999971448,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "tesseract",
+          "strategy": "cell-recheck-300dpi",
+          "tables": 1,
+          "cells": 14,
+          "issues": 26,
+          "score": -102.2,
+          "seconds": 5.886046500003431,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "tesseract",
+          "strategy": "perspective-cell-recheck-300dpi",
+          "tables": 1,
+          "cells": 14,
+          "issues": 26,
+          "score": -102.2,
+          "seconds": 5.582563299991307,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "rapidocr",
+          "strategy": "second-engine",
+          "tables": 1,
+          "cells": 14,
+          "issues": 24,
+          "score": -139.166,
+          "seconds": 1.9234818999975687,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "tesseract",
+          "strategy": "rotate-90",
+          "tables": 1,
+          "cells": 20,
+          "issues": 21,
+          "score": -108.1,
+          "seconds": 0.8471482000022661,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "tesseract",
+          "strategy": "rotate-180",
+          "tables": 1,
+          "cells": 17,
+          "issues": 27,
+          "score": -134.7,
+          "seconds": 1.234577499999432,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "tesseract",
+          "strategy": "rotate-270",
+          "tables": 1,
+          "cells": 21,
+          "issues": 5,
+          "score": 77.2,
+          "seconds": 1.2868113000004087,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "rapidocr",
+          "strategy": "rotate-270-second-engine",
+          "tables": 1,
+          "cells": 21,
+          "issues": 2,
+          "score": 98.999,
+          "seconds": 3.358082899998408,
+          "error": "",
+          "selected": true
+        }
+      ],
+      "error": ""
+    }
+  ],
+  "seconds": 22.011949499996263,
+  "source_sha256": "52a9ca3fde6039fb51fca8ef01af616de4beb9db01362cc175d4c05cedb6dc83",
+  "constraints": [],
+  "proposals": [],
+  "review": {
+    "status": "unreviewed"
+  },
+  "history": []
+}

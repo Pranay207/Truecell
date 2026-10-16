@@ -22,6 +22,8 @@ def candidate_key(candidate: tuple) -> tuple:
     )
     if not tables:
         return False, -1, score
+    if all(t.engine == "native-anchors" for t in tables):
+        trusted = True
     cells = sum(len(row) for t in tables for row in t.rows)
     filled = sum(sum(bool(v) for v in row) for t in tables for row in t.rows)
     named = sum(sum(not h.startswith("Column ") for h in t.headers) for t in tables)
@@ -34,6 +36,21 @@ def candidate_key(candidate: tuple) -> tuple:
     )
     if alignment:
         quality += 0.3
+    if any(t.engine.startswith("ocr-") for t in tables):
+        # Upside-down digits often become letters and masquerade as a header.
+        # Dense nonsense must not outrank an upright table with sparse totals.
+        label_strength = sum(
+            sum(ch.isalpha() for ch in header) / max(1, sum(ch.isalnum() for ch in header))
+            for t in tables
+            for header in t.headers
+        ) / max(1, headers)
+        quality -= 0.3 * (1 - label_strength)
+        structural = sum(
+            issue.code in {"type_mismatch", "ocr_confidence", "ocr_digit_risk", "column_count"}
+            for t in tables
+            for issue in validate(t)
+        )
+        quality -= min(0.4, structural / max(1, cells))
     return trusted, round(quality, 1), score
 
 

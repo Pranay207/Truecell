@@ -1,0 +1,853 @@
+{
+  "source": "E_page_carry.pdf",
+  "tables": [
+    {
+      "headers": [
+        "Reference",
+        "Memo",
+        "Debit",
+        "Credit",
+        "Balance"
+      ],
+      "rows": [
+        [
+          "TX-001",
+          "Dummy payment",
+          "10.00",
+          "",
+          "990.00"
+        ],
+        [
+          "TX-002",
+          "Dummy payment",
+          "10.00",
+          "",
+          "980.00"
+        ],
+        [
+          "TX-003",
+          "Dummy payment",
+          "10.00",
+          "",
+          "970.00"
+        ],
+        [
+          "TX-004",
+          "Dummy payment",
+          "10.00",
+          "",
+          "960.00"
+        ],
+        [
+          "TX-005",
+          "Dummy payment",
+          "10.00",
+          "",
+          "950.00"
+        ],
+        [
+          "TX-006",
+          "Dummy payment",
+          "10.00",
+          "",
+          "940.00"
+        ]
+      ],
+      "page": 1,
+      "bbox": [
+        35.0,
+        52.06999999999999,
+        573.3499999999999,
+        207.07
+      ],
+      "engine": "native-anchors",
+      "confidence": 0.92,
+      "header_detected": true,
+      "provenance": [
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            3
+          ]
+        ]
+      ],
+      "notes": [
+        "Header anchors and repeated word positions inferred column boundaries; review alignment.",
+        "Page carry-forward summaries retained separately from business rows."
+      ],
+      "row_engines": [
+        "native-anchors",
+        "native-anchors",
+        "native-anchors",
+        "native-anchors",
+        "native-anchors",
+        "native-anchors"
+      ],
+      "cell_sources": [
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                87.07,
+                67.79,
+                97.07
+              ],
+              "text": "TX-001",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                135.0,
+                87.07,
+                210.57000000000002,
+                97.07
+              ],
+              "text": "Dummy payment",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                335.0,
+                87.07,
+                360.02,
+                97.07
+              ],
+              "text": "10.00",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                535.0,
+                87.07,
+                565.5799999999999,
+                97.07
+              ],
+              "text": "990.00",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                119.07,
+                67.79,
+                129.07
+              ],
+              "text": "TX-002",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                135.0,
+                119.07,
+                210.57000000000002,
+                129.07
+              ],
+              "text": "Dummy payment",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                335.0,
+                119.07,
+                360.02,
+                129.07
+              ],
+              "text": "10.00",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                535.0,
+                119.07,
+                565.5799999999999,
+                129.07
+              ],
+              "text": "980.00",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                151.07,
+                67.79,
+                161.07
+              ],
+              "text": "TX-003",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                135.0,
+                151.07,
+                210.57000000000002,
+                161.07
+              ],
+              "text": "Dummy payment",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                335.0,
+                151.07,
+                360.02,
+                161.07
+              ],
+              "text": "10.00",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                535.0,
+                151.07,
+                565.5799999999999,
+                161.07
+              ],
+              "text": "970.00",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                35.0,
+                87.07,
+                67.79,
+                97.07
+              ],
+              "text": "TX-004",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                135.0,
+                87.07,
+                210.57000000000002,
+                97.07
+              ],
+              "text": "Dummy payment",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                335.0,
+                87.07,
+                360.02,
+                97.07
+              ],
+              "text": "10.00",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                535.0,
+                87.07,
+                565.5799999999999,
+                97.07
+              ],
+              "text": "960.00",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                35.0,
+                119.07,
+                67.79,
+                129.07
+              ],
+              "text": "TX-005",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                135.0,
+                119.07,
+                210.57000000000002,
+                129.07
+              ],
+              "text": "Dummy payment",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                335.0,
+                119.07,
+                360.02,
+                129.07
+              ],
+              "text": "10.00",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                535.0,
+                119.07,
+                565.5799999999999,
+                129.07
+              ],
+              "text": "950.00",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                35.0,
+                151.07,
+                67.79,
+                161.07
+              ],
+              "text": "TX-006",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                135.0,
+                151.07,
+                210.57000000000002,
+                161.07
+              ],
+              "text": "Dummy payment",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                335.0,
+                151.07,
+                360.02,
+                161.07
+              ],
+              "text": "10.00",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                535.0,
+                151.07,
+                565.5799999999999,
+                161.07
+              ],
+              "text": "940.00",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ]
+      ],
+      "header_sources": [
+        [
+          {
+            "page": 1,
+            "bbox": [
+              35.0,
+              52.06999999999999,
+              83.35000000000001,
+              62.06999999999999
+            ],
+            "text": "Reference",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              35.0,
+              52.06999999999999,
+              83.35000000000001,
+              62.06999999999999
+            ],
+            "text": "Reference",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              135.0,
+              52.06999999999999,
+              163.89,
+              62.06999999999999
+            ],
+            "text": "Memo",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              135.0,
+              52.06999999999999,
+              163.89,
+              62.06999999999999
+            ],
+            "text": "Memo",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              335.0,
+              52.06999999999999,
+              360.0,
+              62.06999999999999
+            ],
+            "text": "Debit",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              335.0,
+              52.06999999999999,
+              360.0,
+              62.06999999999999
+            ],
+            "text": "Debit",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              435.0,
+              52.06999999999999,
+              463.89,
+              62.06999999999999
+            ],
+            "text": "Credit",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              435.0,
+              52.06999999999999,
+              463.89,
+              62.06999999999999
+            ],
+            "text": "Credit",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              535.0,
+              52.06999999999999,
+              573.3499999999999,
+              62.06999999999999
+            ],
+            "text": "Balance",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              535.0,
+              52.06999999999999,
+              573.3499999999999,
+              62.06999999999999
+            ],
+            "text": "Balance",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ]
+      ],
+      "page_summaries": [
+        {
+          "page": 1,
+          "text": "Carried forward 970.00",
+          "bbox": [
+            135.0,
+            197.07,
+            565.5799999999999,
+            207.07
+          ],
+          "role": "page continuity summary"
+        },
+        {
+          "page": 2,
+          "text": "Carried forward 940.00",
+          "bbox": [
+            135.0,
+            197.07,
+            565.5799999999999,
+            207.07
+          ],
+          "role": "page continuity summary"
+        }
+      ],
+      "cell_scores": []
+    }
+  ],
+  "issues": [
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected words; alternative text produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": null
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Selected words; alternative text produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": null
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Header anchors and repeated word positions inferred column boundaries; review alignment.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Header anchors and repeated word positions inferred column boundaries; review alignment.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Page carry-forward summaries retained separately from business rows.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Page carry-forward summaries retained separately from business rows.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": 4,
+      "reason": "Column is entirely empty.",
+      "suggestion": "Compare with the source document.",
+      "code": "empty_column",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected words; alternative text produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Selected words; alternative text produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": 1
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "route": "digital",
+      "engine": "native",
+      "confidence": 0.92,
+      "seconds": 0.03156420000595972,
+      "attempts": [
+        {
+          "engine": "native",
+          "strategy": "lines",
+          "tables": 0,
+          "cells": 0,
+          "issues": 0,
+          "score": -10000,
+          "seconds": 0.010153600000194274,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "text",
+          "tables": 1,
+          "cells": 18,
+          "issues": 1,
+          "score": 96.4,
+          "seconds": 0.010752600006526336,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "words",
+          "tables": 1,
+          "cells": 12,
+          "issues": 3,
+          "score": 90.4,
+          "seconds": 0.005960900001809932,
+          "error": "",
+          "selected": true
+        }
+      ],
+      "error": ""
+    },
+    {
+      "page": 2,
+      "route": "digital",
+      "engine": "native",
+      "confidence": 0.92,
+      "seconds": 0.05076129999361001,
+      "attempts": [
+        {
+          "engine": "native",
+          "strategy": "lines",
+          "tables": 0,
+          "cells": 0,
+          "issues": 0,
+          "score": -10000,
+          "seconds": 0.015771699996548705,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "text",
+          "tables": 1,
+          "cells": 18,
+          "issues": 1,
+          "score": 96.4,
+          "seconds": 0.025029800002812408,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "words",
+          "tables": 1,
+          "cells": 12,
+          "issues": 3,
+          "score": 90.4,
+          "seconds": 0.0050343999901087955,
+          "error": "",
+          "selected": true
+        }
+      ],
+      "error": ""
+    }
+  ],
+  "seconds": 0.09554189999471419,
+  "source_sha256": "3af1117b3c8de6d7c9e99a70896d39403a49e8f1d192e283448a2bf742b4e68b",
+  "constraints": [],
+  "proposals": [],
+  "review": {
+    "status": "unreviewed"
+  },
+  "history": []
+}

@@ -357,7 +357,7 @@
       "page": 1,
       "bbox": [
         34.8,
-        93.36,
+        93.12,
         1085.04,
         442.8
       ],
@@ -512,15 +512,22 @@
       ],
       "notes": [
         "OCR tesseract; deskew correction 0.00 degrees; values require source review.",
-        "Cell recheck at grid row 1, column 1: 'lnvoice' -> '\u2018invoice'; compare source.",
-        "Cell recheck at grid row 1, column 3: 'lent' -> 'het'; compare source.",
-        "Cell recheck at grid row 1, column 4: 'SKU' -> 'wo'; compare source.",
-        "Cell recheck at grid row 1, column 5: 'serio My,' -> 'Description'; compare source.",
-        "Cell recheck at grid row 1, column 12: 'tatu' -> 'ome'; compare source.",
+        "Cell recheck at grid row 1, column 2: 'Date' -> '|'; compare source.",
+        "Cell recheck at grid row 1, column 3: 'emt' -> 'lent'; compare source.",
+        "Cell recheck at grid row 1, column 4: 'SKY' -> 'mo'; compare source.",
+        "Cell recheck at grid row 1, column 8: 'Amt' -> 'ea'; compare source.",
+        "Cell recheck at grid row 1, column 10: 'Sip' -> 'Shp'; compare source.",
+        "Cell recheck at grid row 1, column 11: 'aglon' -> 'Region'; compare source.",
+        "Cell recheck at grid row 1, column 12: 'Sttus' -> 'sus'; compare source.",
         "Cell recheck at grid row 5, column 6: 'a' -> '4'; compare source.",
-        "Cell recheck at grid row 1, column 3: 'lent' -> 'Chet'; compare source.",
-        "Cell recheck at grid row 1, column 4: 'SKU' -> 'Bo'; compare source.",
-        "Cell recheck at grid row 1, column 5: 'seriton ty,' -> 'Descrpton'; compare source.",
+        "Cell recheck at grid row 1, column 1: 'Imvlce' -> 'Invoice'; compare source.",
+        "Cell recheck at grid row 1, column 2: 'Date' -> 'me'; compare source.",
+        "Cell recheck at grid row 1, column 3: 'ont' -> 'lent'; compare source.",
+        "Cell recheck at grid row 1, column 4: 'SKY' -> 'ee'; compare source.",
+        "Cell recheck at grid row 1, column 5: 'Deserpton ty,' -> 'ee'; compare source.",
+        "Cell recheck at grid row 1, column 8: 'mt' -> 'ee'; compare source.",
+        "Cell recheck at grid row 1, column 11: 'eglon' -> 'Region'; compare source.",
+        "Cell recheck at grid row 1, column 12: 'Stu' -> 'sus'; compare source.",
         "Cell recheck at grid row 7, column 6: 'a' -> '4'; compare source."
       ],
       "row_engines": [
@@ -556,7 +563,7 @@
               "page": 1,
               "bbox": [
                 34.8,
-                117.36,
+                118.08,
                 119.76,
                 145.92
               ],
@@ -572,7 +579,7 @@
               "page": 1,
               "bbox": [
                 119.76,
-                117.36,
+                118.08,
                 210.0,
                 145.92
               ],
@@ -588,7 +595,7 @@
               "page": 1,
               "bbox": [
                 210.0,
-                117.36,
+                118.08,
                 299.76,
                 145.92
               ],
@@ -604,7 +611,7 @@
               "page": 1,
               "bbox": [
                 299.76,
-                117.36,
+                118.08,
                 375.12,
                 145.92
               ],
@@ -620,7 +627,7 @@
               "page": 1,
               "bbox": [
                 375.12,
-                117.36,
+                118.08,
                 555.12,
                 145.92
               ],
@@ -636,7 +643,7 @@
               "page": 1,
               "bbox": [
                 555.12,
-                117.36,
+                118.08,
                 609.84,
                 145.92
               ],
@@ -652,7 +659,7 @@
               "page": 1,
               "bbox": [
                 609.84,
-                117.36,
+                118.08,
                 679.92,
                 145.92
               ],
@@ -668,7 +675,7 @@
               "page": 1,
               "bbox": [
                 679.92,
-                117.36,
+                118.08,
                 760.08,
                 145.92
               ],
@@ -684,7 +691,7 @@
               "page": 1,
               "bbox": [
                 760.08,
-                117.36,
+                118.08,
                 830.16,
                 145.92
               ],
@@ -700,7 +707,7 @@
               "page": 1,
               "bbox": [
                 830.16,
-                117.36,
+                118.08,
                 894.96,
                 145.92
               ],
@@ -716,7 +723,7 @@
               "page": 1,
               "bbox": [
                 894.96,
-                117.36,
+                118.08,
                 985.2,
                 145.92
               ],
@@ -732,7 +739,7 @@
               "page": 1,
               "bbox": [
                 985.2,
-                117.36,
+                118.08,
                 1085.04,
                 145.92
               ],
@@ -950,7 +957,7 @@
               ],
               "text": "INV-0003",
               "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "confidence": 0.9,
               "coordinates": "page points",
               "initial_reading": "INV-0003"
             }
@@ -2502,7 +2509,7 @@
               ],
               "text": "INV-0011",
               "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "confidence": 0.9,
               "coordinates": "page points",
               "initial_reading": "INV-0011"
             }
@@ -2582,7 +2589,7 @@
               ],
               "text": "4",
               "engine": "ocr-tesseract",
-              "confidence": 0.97,
+              "confidence": 0.93,
               "coordinates": "page points",
               "initial_reading": "4"
             }
@@ -2884,7 +2891,7 @@
               "page": 2,
               "bbox": [
                 34.8,
-                117.36,
+                118.08,
                 119.76,
                 145.92
               ],
@@ -2900,7 +2907,7 @@
               "page": 2,
               "bbox": [
                 119.76,
-                117.36,
+                118.08,
                 210.0,
                 145.92
               ],
@@ -2916,7 +2923,7 @@
               "page": 2,
               "bbox": [
                 210.0,
-                117.36,
+                118.08,
                 299.76,
                 145.92
               ],
@@ -2932,7 +2939,7 @@
               "page": 2,
               "bbox": [
                 299.76,
-                117.36,
+                118.08,
                 375.12,
                 145.92
               ],
@@ -2948,13 +2955,13 @@
               "page": 2,
               "bbox": [
                 375.12,
-                117.36,
+                118.08,
                 555.12,
                 145.92
               ],
               "text": "Widget model 13",
               "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "confidence": 0.95,
               "coordinates": "page points",
               "initial_reading": "Widget model 13"
             }
@@ -2964,7 +2971,7 @@
               "page": 2,
               "bbox": [
                 555.12,
-                117.36,
+                118.08,
                 609.84,
                 145.92
               ],
@@ -2980,7 +2987,7 @@
               "page": 2,
               "bbox": [
                 609.84,
-                117.36,
+                118.08,
                 679.92,
                 145.92
               ],
@@ -2996,7 +3003,7 @@
               "page": 2,
               "bbox": [
                 679.92,
-                117.36,
+                118.08,
                 760.08,
                 145.92
               ],
@@ -3012,7 +3019,7 @@
               "page": 2,
               "bbox": [
                 760.08,
-                117.36,
+                118.08,
                 830.16,
                 145.92
               ],
@@ -3028,7 +3035,7 @@
               "page": 2,
               "bbox": [
                 830.16,
-                117.36,
+                118.08,
                 894.96,
                 145.92
               ],
@@ -3044,7 +3051,7 @@
               "page": 2,
               "bbox": [
                 894.96,
-                117.36,
+                118.08,
                 985.2,
                 145.92
               ],
@@ -3060,7 +3067,7 @@
               "page": 2,
               "bbox": [
                 985.2,
-                117.36,
+                118.08,
                 1085.04,
                 145.92
               ],
@@ -3342,7 +3349,7 @@
               ],
               "text": "Widget model 2",
               "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "confidence": 0.96,
               "coordinates": "page points",
               "initial_reading": "Widget model 2"
             }
@@ -3860,7 +3867,7 @@
               ],
               "text": "INV-0018",
               "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "confidence": 0.91,
               "coordinates": "page points",
               "initial_reading": "INV-0018"
             }
@@ -5213,41 +5220,26 @@
             "page": 1,
             "bbox": [
               34.8,
-              93.36,
+              93.12,
               119.76,
-              117.36
-            ],
-            "text": "\u2018invoice",
-            "engine": "ocr-tesseract",
-            "confidence": 0.29,
-            "coordinates": "page points"
-          },
-          {
-            "page": 1,
-            "bbox": [
-              34.8,
-              93.36,
-              119.76,
-              117.36
+              118.08
             ],
             "text": "Invoice",
-            "engine": "rapidocr-English-v5",
-            "confidence": 0.9997382845197406,
-            "role": "header_recheck",
-            "initial_reading": "\u2018invoice",
+            "engine": "ocr-tesseract",
+            "confidence": 0.46,
             "coordinates": "page points"
           },
           {
             "page": 2,
             "bbox": [
               34.8,
-              93.36,
+              93.12,
               119.76,
-              117.36
+              118.08
             ],
             "text": "Invoice",
             "engine": "ocr-tesseract",
-            "confidence": 0.26,
+            "confidence": 0.34,
             "coordinates": "page points"
           }
         ],
@@ -5256,56 +5248,56 @@
             "page": 1,
             "bbox": [
               119.76,
-              93.36,
+              93.12,
               210.0,
-              117.36
+              118.08
             ],
-            "text": "ate",
+            "text": "|",
             "engine": "ocr-tesseract",
-            "confidence": 0.42,
+            "confidence": 0.43,
             "coordinates": "page points"
           },
           {
             "page": 1,
             "bbox": [
               119.76,
-              93.36,
+              93.12,
               210.0,
-              117.36
+              118.08
             ],
             "text": "Date",
             "engine": "rapidocr-English-v5",
             "confidence": 0.9998027384281158,
             "role": "header_recheck",
-            "initial_reading": "ate",
+            "initial_reading": "|",
             "coordinates": "page points"
           },
           {
             "page": 2,
             "bbox": [
               119.76,
-              93.36,
+              93.12,
               210.0,
-              117.36
+              118.08
             ],
-            "text": "ate",
+            "text": "me",
             "engine": "ocr-tesseract",
-            "confidence": 0.47,
+            "confidence": 0.37,
             "coordinates": "page points"
           },
           {
             "page": 2,
             "bbox": [
               119.76,
-              93.36,
+              93.12,
               210.0,
-              117.36
+              118.08
             ],
             "text": "Date",
             "engine": "rapidocr-English-v5",
             "confidence": 0.9997981935739517,
             "role": "header_recheck",
-            "initial_reading": "ate",
+            "initial_reading": "me",
             "coordinates": "page points"
           }
         ],
@@ -5314,56 +5306,56 @@
             "page": 1,
             "bbox": [
               210.0,
-              93.36,
+              93.12,
               299.76,
-              117.36
+              118.08
             ],
-            "text": "het",
+            "text": "lent",
             "engine": "ocr-tesseract",
-            "confidence": 0.55,
+            "confidence": 0.44,
             "coordinates": "page points"
           },
           {
             "page": 1,
             "bbox": [
               210.0,
-              93.36,
+              93.12,
               299.76,
-              117.36
+              118.08
             ],
             "text": "Client",
             "engine": "rapidocr-English-v5",
             "confidence": 0.999506543080012,
             "role": "header_recheck",
-            "initial_reading": "het",
+            "initial_reading": "lent",
             "coordinates": "page points"
           },
           {
             "page": 2,
             "bbox": [
               210.0,
-              93.36,
+              93.12,
               299.76,
-              117.36
+              118.08
             ],
-            "text": "Chet",
+            "text": "lent",
             "engine": "ocr-tesseract",
-            "confidence": 0.54,
+            "confidence": 0.52,
             "coordinates": "page points"
           },
           {
             "page": 2,
             "bbox": [
               210.0,
-              93.36,
+              93.12,
               299.76,
-              117.36
+              118.08
             ],
             "text": "Client",
             "engine": "rapidocr-English-v5",
             "confidence": 0.9994793732961019,
             "role": "header_recheck",
-            "initial_reading": "Chet",
+            "initial_reading": "lent",
             "coordinates": "page points"
           }
         ],
@@ -5372,56 +5364,56 @@
             "page": 1,
             "bbox": [
               299.76,
-              93.36,
+              93.12,
               375.12,
-              117.36
+              118.08
             ],
-            "text": "wo",
+            "text": "mo",
             "engine": "ocr-tesseract",
-            "confidence": 0.39,
+            "confidence": 0.44,
             "coordinates": "page points"
           },
           {
             "page": 1,
             "bbox": [
               299.76,
-              93.36,
+              93.12,
               375.12,
-              117.36
+              118.08
             ],
             "text": "SKU",
             "engine": "rapidocr-English-v5",
             "confidence": 0.9989044864972433,
             "role": "header_recheck",
-            "initial_reading": "wo",
+            "initial_reading": "mo",
             "coordinates": "page points"
           },
           {
             "page": 2,
             "bbox": [
               299.76,
-              93.36,
+              93.12,
               375.12,
-              117.36
+              118.08
             ],
-            "text": "Bo",
+            "text": "ee",
             "engine": "ocr-tesseract",
-            "confidence": 0.36,
+            "confidence": 0.55,
             "coordinates": "page points"
           },
           {
             "page": 2,
             "bbox": [
               299.76,
-              93.36,
+              93.12,
               375.12,
-              117.36
+              118.08
             ],
             "text": "SKU",
             "engine": "rapidocr-English-v5",
             "confidence": 0.998928169409434,
             "role": "header_recheck",
-            "initial_reading": "Bo",
+            "initial_reading": "ee",
             "coordinates": "page points"
           }
         ],
@@ -5430,41 +5422,56 @@
             "page": 1,
             "bbox": [
               375.12,
-              93.36,
+              93.12,
               555.12,
-              117.36
+              118.08
+            ],
+            "text": "Deerpton ty,",
+            "engine": "ocr-tesseract",
+            "confidence": 0.0,
+            "coordinates": "page points"
+          },
+          {
+            "page": 1,
+            "bbox": [
+              375.12,
+              93.12,
+              555.12,
+              118.08
             ],
             "text": "Description",
-            "engine": "ocr-tesseract",
-            "confidence": 0.24,
+            "engine": "rapidocr-English-v5",
+            "confidence": 0.9998736381530762,
+            "role": "header_recheck",
+            "initial_reading": "Deerpton ty,",
             "coordinates": "page points"
           },
           {
             "page": 2,
             "bbox": [
               375.12,
-              93.36,
+              93.12,
               555.12,
-              117.36
+              118.08
             ],
-            "text": "Descrpton",
+            "text": "ee",
             "engine": "ocr-tesseract",
-            "confidence": 0.22,
+            "confidence": 0.06,
             "coordinates": "page points"
           },
           {
             "page": 2,
             "bbox": [
               375.12,
-              93.36,
+              93.12,
               555.12,
-              117.36
+              118.08
             ],
             "text": "Description",
             "engine": "rapidocr-English-v5",
             "confidence": 0.9998727928508412,
             "role": "header_recheck",
-            "initial_reading": "Descrpton",
+            "initial_reading": "ee",
             "coordinates": "page points"
           }
         ],
@@ -5473,9 +5480,9 @@
             "page": 1,
             "bbox": [
               555.12,
-              93.36,
+              93.12,
               609.84,
-              117.36
+              118.08
             ],
             "text": "",
             "engine": "ocr-tesseract",
@@ -5486,9 +5493,9 @@
             "page": 1,
             "bbox": [
               555.12,
-              93.36,
+              93.12,
               609.84,
-              117.36
+              118.08
             ],
             "text": "Qty.",
             "engine": "rapidocr-English-v5",
@@ -5501,9 +5508,9 @@
             "page": 2,
             "bbox": [
               555.12,
-              93.36,
+              93.12,
               609.84,
-              117.36
+              118.08
             ],
             "text": "",
             "engine": "ocr-tesseract",
@@ -5514,9 +5521,9 @@
             "page": 2,
             "bbox": [
               555.12,
-              93.36,
+              93.12,
               609.84,
-              117.36
+              118.08
             ],
             "text": "Qty.",
             "engine": "rapidocr-English-v5",
@@ -5531,26 +5538,56 @@
             "page": 1,
             "bbox": [
               609.84,
-              93.36,
+              93.12,
               679.92,
-              117.36
+              118.08
+            ],
+            "text": "ate",
+            "engine": "ocr-tesseract",
+            "confidence": 0.53,
+            "coordinates": "page points"
+          },
+          {
+            "page": 1,
+            "bbox": [
+              609.84,
+              93.12,
+              679.92,
+              118.08
             ],
             "text": "Rate",
-            "engine": "ocr-tesseract",
-            "confidence": 0.48,
+            "engine": "rapidocr-English-v5",
+            "confidence": 0.9998187720775604,
+            "role": "header_recheck",
+            "initial_reading": "ate",
             "coordinates": "page points"
           },
           {
             "page": 2,
             "bbox": [
               609.84,
-              93.36,
+              93.12,
               679.92,
-              117.36
+              118.08
+            ],
+            "text": "ate",
+            "engine": "ocr-tesseract",
+            "confidence": 0.58,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              609.84,
+              93.12,
+              679.92,
+              118.08
             ],
             "text": "Rate",
-            "engine": "ocr-tesseract",
-            "confidence": 0.44,
+            "engine": "rapidocr-English-v5",
+            "confidence": 0.9998220950365067,
+            "role": "header_recheck",
+            "initial_reading": "ate",
             "coordinates": "page points"
           }
         ],
@@ -5559,24 +5596,198 @@
             "page": 1,
             "bbox": [
               679.92,
-              93.36,
+              93.12,
               760.08,
-              117.36
+              118.08
+            ],
+            "text": "ea",
+            "engine": "ocr-tesseract",
+            "confidence": 0.27,
+            "coordinates": "page points"
+          },
+          {
+            "page": 1,
+            "bbox": [
+              679.92,
+              93.12,
+              760.08,
+              118.08
             ],
             "text": "Amt",
-            "engine": "ocr-tesseract",
-            "confidence": 0.52,
+            "engine": "rapidocr-English-v5",
+            "confidence": 0.9990434845288595,
+            "role": "header_recheck",
+            "initial_reading": "ea",
             "coordinates": "page points"
           },
           {
             "page": 2,
             "bbox": [
               679.92,
-              93.36,
+              93.12,
               760.08,
-              117.36
+              118.08
+            ],
+            "text": "ee",
+            "engine": "ocr-tesseract",
+            "confidence": 0.25,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              679.92,
+              93.12,
+              760.08,
+              118.08
             ],
             "text": "Amt",
+            "engine": "rapidocr-English-v5",
+            "confidence": 0.9989712436993917,
+            "role": "header_recheck",
+            "initial_reading": "ee",
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              760.08,
+              93.12,
+              830.16,
+              118.08
+            ],
+            "text": "Ta",
+            "engine": "ocr-tesseract",
+            "confidence": 0.53,
+            "coordinates": "page points"
+          },
+          {
+            "page": 1,
+            "bbox": [
+              760.08,
+              93.12,
+              830.16,
+              118.08
+            ],
+            "text": "Tax",
+            "engine": "rapidocr-English-v5",
+            "confidence": 0.9998363455136617,
+            "role": "header_recheck",
+            "initial_reading": "Ta",
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              760.08,
+              93.12,
+              830.16,
+              118.08
+            ],
+            "text": "Ta",
+            "engine": "ocr-tesseract",
+            "confidence": 0.54,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              760.08,
+              93.12,
+              830.16,
+              118.08
+            ],
+            "text": "Tax",
+            "engine": "rapidocr-English-v5",
+            "confidence": 0.9998349944750468,
+            "role": "header_recheck",
+            "initial_reading": "Ta",
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              830.16,
+              93.12,
+              894.96,
+              118.08
+            ],
+            "text": "Shp",
+            "engine": "ocr-tesseract",
+            "confidence": 0.7,
+            "coordinates": "page points"
+          },
+          {
+            "page": 1,
+            "bbox": [
+              830.16,
+              93.12,
+              894.96,
+              118.08
+            ],
+            "text": "Ship",
+            "engine": "rapidocr-English-v5",
+            "confidence": 0.9998201280832291,
+            "role": "header_recheck",
+            "initial_reading": "Shp",
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              830.16,
+              93.12,
+              894.96,
+              118.08
+            ],
+            "text": "Shp",
+            "engine": "ocr-tesseract",
+            "confidence": 0.7,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              830.16,
+              93.12,
+              894.96,
+              118.08
+            ],
+            "text": "Ship",
+            "engine": "rapidocr-English-v5",
+            "confidence": 0.9998191446065903,
+            "role": "header_recheck",
+            "initial_reading": "Shp",
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              894.96,
+              93.12,
+              985.2,
+              118.08
+            ],
+            "text": "Region",
+            "engine": "ocr-tesseract",
+            "confidence": 0.52,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              894.96,
+              93.12,
+              985.2,
+              118.08
+            ],
+            "text": "Region",
             "engine": "ocr-tesseract",
             "confidence": 0.52,
             "coordinates": "page points"
@@ -5586,145 +5797,62 @@
           {
             "page": 1,
             "bbox": [
-              760.08,
-              93.36,
-              830.16,
-              117.36
-            ],
-            "text": "Tax",
-            "engine": "ocr-tesseract",
-            "confidence": 0.49,
-            "coordinates": "page points"
-          },
-          {
-            "page": 2,
-            "bbox": [
-              760.08,
-              93.36,
-              830.16,
-              117.36
-            ],
-            "text": "Tax",
-            "engine": "ocr-tesseract",
-            "confidence": 0.53,
-            "coordinates": "page points"
-          }
-        ],
-        [
-          {
-            "page": 1,
-            "bbox": [
-              830.16,
-              93.36,
-              894.96,
-              117.36
-            ],
-            "text": "Ship",
-            "engine": "ocr-tesseract",
-            "confidence": 0.47,
-            "coordinates": "page points"
-          },
-          {
-            "page": 2,
-            "bbox": [
-              830.16,
-              93.36,
-              894.96,
-              117.36
-            ],
-            "text": "Ship",
-            "engine": "ocr-tesseract",
-            "confidence": 0.43,
-            "coordinates": "page points"
-          }
-        ],
-        [
-          {
-            "page": 1,
-            "bbox": [
-              894.96,
-              93.36,
               985.2,
-              117.36
-            ],
-            "text": "Region",
-            "engine": "ocr-tesseract",
-            "confidence": 0.53,
-            "coordinates": "page points"
-          },
-          {
-            "page": 2,
-            "bbox": [
-              894.96,
-              93.36,
-              985.2,
-              117.36
-            ],
-            "text": "Region",
-            "engine": "ocr-tesseract",
-            "confidence": 0.53,
-            "coordinates": "page points"
-          }
-        ],
-        [
-          {
-            "page": 1,
-            "bbox": [
-              985.2,
-              93.36,
+              93.12,
               1085.04,
-              117.36
+              118.08
             ],
-            "text": "ome",
+            "text": "sus",
             "engine": "ocr-tesseract",
-            "confidence": 0.56,
+            "confidence": 0.63,
             "coordinates": "page points"
           },
           {
             "page": 1,
             "bbox": [
               985.2,
-              93.36,
+              93.12,
               1085.04,
-              117.36
+              118.08
             ],
             "text": "Status",
             "engine": "rapidocr-English-v5",
             "confidence": 0.9999463756879171,
             "role": "header_recheck",
-            "initial_reading": "ome",
+            "initial_reading": "sus",
             "coordinates": "page points"
           },
           {
             "page": 2,
             "bbox": [
               985.2,
-              93.36,
+              93.12,
               1085.04,
-              117.36
+              118.08
             ],
-            "text": "ome",
+            "text": "sus",
             "engine": "ocr-tesseract",
-            "confidence": 0.56,
+            "confidence": 0.63,
             "coordinates": "page points"
           },
           {
             "page": 2,
             "bbox": [
               985.2,
-              93.36,
+              93.12,
               1085.04,
-              117.36
+              118.08
             ],
             "text": "Status",
             "engine": "rapidocr-English-v5",
             "confidence": 0.9999463756879171,
             "role": "header_recheck",
-            "initial_reading": "ome",
+            "initial_reading": "sus",
             "coordinates": "page points"
           }
         ]
       ],
+      "page_summaries": [],
       "cell_scores": [
         [
           0,
@@ -5849,7 +5977,7 @@
         [
           2,
           0,
-          0.91
+          0.9
         ],
         [
           2,
@@ -6329,69 +6457,69 @@
         [
           10,
           0,
+          0.9
+        ],
+        [
+          10,
+          1,
+          0.96
+        ],
+        [
+          10,
+          2,
+          0.96
+        ],
+        [
+          10,
+          3,
+          0.96
+        ],
+        [
+          10,
+          4,
+          0.96
+        ],
+        [
+          10,
+          5,
+          0.93
+        ],
+        [
+          10,
+          6,
+          0.96
+        ],
+        [
+          10,
+          7,
+          0.95
+        ],
+        [
+          10,
+          8,
+          0.96
+        ],
+        [
+          10,
+          9,
+          0.96
+        ],
+        [
+          10,
+          10,
+          0.96
+        ],
+        [
+          10,
+          11,
+          0.96
+        ],
+        [
+          11,
+          0,
           0.91
         ],
         [
-          10,
-          1,
-          0.96
-        ],
-        [
-          10,
-          2,
-          0.96
-        ],
-        [
-          10,
-          3,
-          0.96
-        ],
-        [
-          10,
-          4,
-          0.96
-        ],
-        [
-          10,
-          5,
-          0.97
-        ],
-        [
-          10,
-          6,
-          0.96
-        ],
-        [
-          10,
-          7,
-          0.95
-        ],
-        [
-          10,
-          8,
-          0.96
-        ],
-        [
-          10,
-          9,
-          0.96
-        ],
-        [
-          10,
-          10,
-          0.96
-        ],
-        [
-          10,
-          11,
-          0.96
-        ],
-        [
-          11,
-          0,
-          0.91
-        ],
-        [
           11,
           1,
           0.96
@@ -6469,7 +6597,7 @@
         [
           12,
           4,
-          0.96
+          0.95
         ],
         [
           12,
@@ -6589,7 +6717,7 @@
         [
           14,
           4,
-          0.95
+          0.96
         ],
         [
           14,
@@ -6749,7 +6877,7 @@
         [
           17,
           0,
-          0.9
+          0.91
         ],
         [
           17,
@@ -7215,7 +7343,7 @@
       "page": 1,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 1: 'lnvoice' -> '\u2018invoice'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 2: 'Date' -> '|'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7225,7 +7353,7 @@
       "page": 2,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 1: 'lnvoice' -> '\u2018invoice'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 2: 'Date' -> '|'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7235,7 +7363,7 @@
       "page": 1,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 3: 'lent' -> 'het'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 3: 'emt' -> 'lent'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7245,7 +7373,7 @@
       "page": 2,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 3: 'lent' -> 'het'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 3: 'emt' -> 'lent'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7255,7 +7383,7 @@
       "page": 1,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 4: 'SKU' -> 'wo'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 4: 'SKY' -> 'mo'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7265,7 +7393,7 @@
       "page": 2,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 4: 'SKU' -> 'wo'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 4: 'SKY' -> 'mo'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7275,7 +7403,7 @@
       "page": 1,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 5: 'serio My,' -> 'Description'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 8: 'Amt' -> 'ea'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7285,7 +7413,7 @@
       "page": 2,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 5: 'serio My,' -> 'Description'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 8: 'Amt' -> 'ea'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7295,7 +7423,7 @@
       "page": 1,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 12: 'tatu' -> 'ome'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 10: 'Sip' -> 'Shp'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7305,7 +7433,47 @@
       "page": 2,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 12: 'tatu' -> 'ome'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 10: 'Sip' -> 'Shp'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 11: 'aglon' -> 'Region'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 11: 'aglon' -> 'Region'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 12: 'Sttus' -> 'sus'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 12: 'Sttus' -> 'sus'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7335,7 +7503,7 @@
       "page": 1,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 3: 'lent' -> 'Chet'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 1: 'Imvlce' -> 'Invoice'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7345,7 +7513,7 @@
       "page": 2,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 3: 'lent' -> 'Chet'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 1: 'Imvlce' -> 'Invoice'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7355,7 +7523,7 @@
       "page": 1,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 4: 'SKU' -> 'Bo'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 2: 'Date' -> 'me'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7365,7 +7533,7 @@
       "page": 2,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 4: 'SKU' -> 'Bo'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 2: 'Date' -> 'me'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7375,7 +7543,7 @@
       "page": 1,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 5: 'seriton ty,' -> 'Descrpton'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 3: 'ont' -> 'lent'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7385,7 +7553,107 @@
       "page": 2,
       "row": null,
       "column": null,
-      "reason": "Cell recheck at grid row 1, column 5: 'seriton ty,' -> 'Descrpton'; compare source.",
+      "reason": "Cell recheck at grid row 1, column 3: 'ont' -> 'lent'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 4: 'SKY' -> 'ee'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 4: 'SKY' -> 'ee'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 5: 'Deserpton ty,' -> 'ee'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 5: 'Deserpton ty,' -> 'ee'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 8: 'mt' -> 'ee'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 8: 'mt' -> 'ee'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 11: 'eglon' -> 'Region'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 11: 'eglon' -> 'Region'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 12: 'Stu' -> 'sus'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 12: 'Stu' -> 'sus'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7414,18 +7682,8 @@
       "severity": "warning",
       "page": 1,
       "row": null,
-      "column": 1,
-      "reason": "Header re-read: '\u2018invoice' -> 'Invoice'; English model agreed at two scales.",
-      "suggestion": "Verify the source header; model agreement is not certainty.",
-      "code": "header_disagreement",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
       "column": 2,
-      "reason": "Header re-read: 'ate' -> 'Date'; English model agreed at two scales.",
+      "reason": "Header re-read: '|' -> 'Date'; English model agreed at two scales.",
       "suggestion": "Verify the source header; model agreement is not certainty.",
       "code": "header_disagreement",
       "table": 1
@@ -7435,7 +7693,7 @@
       "page": 2,
       "row": null,
       "column": 2,
-      "reason": "Header re-read: 'ate' -> 'Date'; English model agreed at two scales.",
+      "reason": "Header re-read: 'me' -> 'Date'; English model agreed at two scales.",
       "suggestion": "Verify the source header; model agreement is not certainty.",
       "code": "header_disagreement",
       "table": 1
@@ -7445,7 +7703,7 @@
       "page": 1,
       "row": null,
       "column": 3,
-      "reason": "Header re-read: 'het' -> 'Client'; English model agreed at two scales.",
+      "reason": "Header re-read: 'lent' -> 'Client'; English model agreed at two scales.",
       "suggestion": "Verify the source header; model agreement is not certainty.",
       "code": "header_disagreement",
       "table": 1
@@ -7455,7 +7713,7 @@
       "page": 2,
       "row": null,
       "column": 3,
-      "reason": "Header re-read: 'Chet' -> 'Client'; English model agreed at two scales.",
+      "reason": "Header re-read: 'lent' -> 'Client'; English model agreed at two scales.",
       "suggestion": "Verify the source header; model agreement is not certainty.",
       "code": "header_disagreement",
       "table": 1
@@ -7465,7 +7723,7 @@
       "page": 1,
       "row": null,
       "column": 4,
-      "reason": "Header re-read: 'wo' -> 'SKU'; English model agreed at two scales.",
+      "reason": "Header re-read: 'mo' -> 'SKU'; English model agreed at two scales.",
       "suggestion": "Verify the source header; model agreement is not certainty.",
       "code": "header_disagreement",
       "table": 1
@@ -7475,7 +7733,17 @@
       "page": 2,
       "row": null,
       "column": 4,
-      "reason": "Header re-read: 'Bo' -> 'SKU'; English model agreed at two scales.",
+      "reason": "Header re-read: 'ee' -> 'SKU'; English model agreed at two scales.",
+      "suggestion": "Verify the source header; model agreement is not certainty.",
+      "code": "header_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": 5,
+      "reason": "Header re-read: 'Deerpton ty,' -> 'Description'; English model agreed at two scales.",
       "suggestion": "Verify the source header; model agreement is not certainty.",
       "code": "header_disagreement",
       "table": 1
@@ -7485,7 +7753,7 @@
       "page": 2,
       "row": null,
       "column": 5,
-      "reason": "Header re-read: 'Descrpton' -> 'Description'; English model agreed at two scales.",
+      "reason": "Header re-read: 'ee' -> 'Description'; English model agreed at two scales.",
       "suggestion": "Verify the source header; model agreement is not certainty.",
       "code": "header_disagreement",
       "table": 1
@@ -7514,8 +7782,88 @@
       "severity": "warning",
       "page": 1,
       "row": null,
+      "column": 7,
+      "reason": "Header re-read: 'ate' -> 'Rate'; English model agreed at two scales.",
+      "suggestion": "Verify the source header; model agreement is not certainty.",
+      "code": "header_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": 7,
+      "reason": "Header re-read: 'ate' -> 'Rate'; English model agreed at two scales.",
+      "suggestion": "Verify the source header; model agreement is not certainty.",
+      "code": "header_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": 8,
+      "reason": "Header re-read: 'ea' -> 'Amt'; English model agreed at two scales.",
+      "suggestion": "Verify the source header; model agreement is not certainty.",
+      "code": "header_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": 8,
+      "reason": "Header re-read: 'ee' -> 'Amt'; English model agreed at two scales.",
+      "suggestion": "Verify the source header; model agreement is not certainty.",
+      "code": "header_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": 9,
+      "reason": "Header re-read: 'Ta' -> 'Tax'; English model agreed at two scales.",
+      "suggestion": "Verify the source header; model agreement is not certainty.",
+      "code": "header_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": 9,
+      "reason": "Header re-read: 'Ta' -> 'Tax'; English model agreed at two scales.",
+      "suggestion": "Verify the source header; model agreement is not certainty.",
+      "code": "header_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": 10,
+      "reason": "Header re-read: 'Shp' -> 'Ship'; English model agreed at two scales.",
+      "suggestion": "Verify the source header; model agreement is not certainty.",
+      "code": "header_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": 10,
+      "reason": "Header re-read: 'Shp' -> 'Ship'; English model agreed at two scales.",
+      "suggestion": "Verify the source header; model agreement is not certainty.",
+      "code": "header_disagreement",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
       "column": 12,
-      "reason": "Header re-read: 'ome' -> 'Status'; English model agreed at two scales.",
+      "reason": "Header re-read: 'sus' -> 'Status'; English model agreed at two scales.",
       "suggestion": "Verify the source header; model agreement is not certainty.",
       "code": "header_disagreement",
       "table": 1
@@ -7525,7 +7873,7 @@
       "page": 2,
       "row": null,
       "column": 12,
-      "reason": "Header re-read: 'ome' -> 'Status'; English model agreed at two scales.",
+      "reason": "Header re-read: 'sus' -> 'Status'; English model agreed at two scales.",
       "suggestion": "Verify the source header; model agreement is not certainty.",
       "code": "header_disagreement",
       "table": 1
@@ -7557,7 +7905,7 @@
       "route": "ocr",
       "engine": "tesseract",
       "confidence": 0.96,
-      "seconds": 14.806019199997536,
+      "seconds": 15.152591400008532,
       "attempts": [
         {
           "engine": "tesseract",
@@ -7566,7 +7914,7 @@
           "cells": 144,
           "issues": 3,
           "score": 816.2,
-          "seconds": 5.324383200000739,
+          "seconds": 5.175784399994882,
           "error": "",
           "selected": false
         },
@@ -7575,9 +7923,9 @@
           "strategy": "cell-recheck-300dpi",
           "tables": 1,
           "cells": 144,
-          "issues": 13,
+          "issues": 19,
           "score": 842.2,
-          "seconds": 8.442081799999869,
+          "seconds": 8.74540130000969,
           "error": "",
           "selected": true
         }
@@ -7589,7 +7937,7 @@
       "route": "ocr",
       "engine": "tesseract",
       "confidence": 0.96,
-      "seconds": 18.932010399999854,
+      "seconds": 17.71009409999533,
       "attempts": [
         {
           "engine": "tesseract",
@@ -7598,7 +7946,7 @@
           "cells": 144,
           "issues": 3,
           "score": 816.2,
-          "seconds": 6.3552356000000145,
+          "seconds": 5.223496400009026,
           "error": "",
           "selected": false
         },
@@ -7607,9 +7955,9 @@
           "strategy": "cell-recheck-300dpi",
           "tables": 1,
           "cells": 144,
-          "issues": 12,
+          "issues": 21,
           "score": 842.2,
-          "seconds": 11.794419199999538,
+          "seconds": 11.11665319999156,
           "error": "",
           "selected": true
         }
@@ -7617,7 +7965,7 @@
       "error": ""
     }
   ],
-  "seconds": 33.89725319999707,
+  "seconds": 33.1884057999996,
   "source_sha256": "397ceaaf7677b98edfa1db5f33b2fdbcea55f0548cc9daebd33fbc70d8b289ec",
   "constraints": [
     {

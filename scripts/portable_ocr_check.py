@@ -20,7 +20,13 @@ def main() -> int:
     destination = ROOT / "tmp/portable-ocr"
     destination.mkdir(parents=True, exist_ok=True)
     records = []
-    for name in ["C_scanned_inventory", "D_blur_noise", "D_skew_5deg", "D_phone_photo"]:
+    for name in [
+        "C_scanned_inventory",
+        "D_blur_noise",
+        "D_skew_5deg",
+        "D_phone_photo",
+        "E_sideways_invoice",
+    ]:
         truth = json.loads((ROOT / "samples" / f"{name}.truth.json").read_text())
         result = convert(ROOT / "samples" / f"{name}.pdf", destination / f"{name}.xlsx")
         metric = score(truth, result)
@@ -29,7 +35,7 @@ def main() -> int:
         records.append(metric)
         print(f"{name}: {metric['cell_exact']:.2%}, pass={metric['pass']}", flush=True)
     report = {
-        "scope": "Four synthetic development cases; Tesseract excluded by engine selection override. Not hidden-test accuracy or a cross-platform execution test.",
+        "scope": "Five synthetic development cases, including a sideways invoice with unruled totals; Tesseract excluded by engine selection override. Not hidden-test accuracy or a cross-platform execution test.",
         "python": platform.python_version(),
         "host": platform.platform(),
         "cases": records,

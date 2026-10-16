@@ -3,43 +3,126 @@
 from __future__ import annotations
 
 import math
+import re
+import sys
 from pathlib import Path
+from typing import Callable
 
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
+from openpyxl.styles.cell_style import StyleArray
 
 from .models import Result
 from .values import date_value, is_identifier, number
 
 NAVY = "17324D"
 YELLOW = PatternFill("solid", fgColor="FFF0B3")
+EXCEL_TEXT_LIMIT = 32767
+XML_ESCAPE = re.compile(r"_[xX][0-9a-fA-F]{4}_")
+
+
+def excel_text(value: str) -> str:
+    """Encode forbidden XML characters without confusing literal escape sequences."""
+    return "".join(
+        "\\\\"
+        if character == "\\"
+        else "\\u005f"
+        if character == "_" and XML_ESCAPE.match(value, index)
+        else character
+        if character in "\t\n\r"
+        or 0x20 <= ord(character) <= 0xD7FF
+        or 0xE000 <= ord(character) <= 0xFFFD
+        or 0x10000 <= ord(character) <= 0x10FFFF
+        else f"\\u{ord(character):04x}"
+        for index, character in enumerate(value)
+    )
+
+
+def _set_text(cell, encoded: str) -> None:
+    """Avoid openpyxl's silent string truncation and formula interpretation."""
+    if len(encoded) > EXCEL_TEXT_LIMIT:
+        raise ValueError("Excel text exceeds one cell; use the overflow-preserving exporter.")
+    cell.value = encoded
+    cell.data_type = "s"
 
 
 def safe_text(cell, value: str) -> None:
     """Set an explicit string type, preventing spreadsheet formula injection."""
-    cell.value = value
-    cell.data_type = "s"
+    _set_text(cell, excel_text(value))
 
 
-def write_value(cell, value: str) -> None:
+class _TextWriter:
+    """Preserve oversized values in numbered chunks rather than silently cutting them."""
+
+    def __init__(self) -> None:
+        self.overflow: list[tuple[str, str, str, str]] = []
+
+    def write(self, cell, value: str) -> None:
+        encoded = excel_text(value)
+        if len(encoded) > EXCEL_TEXT_LIMIT:
+            identifier = f"text-{len(self.overflow) + 1}"
+            self.overflow.append((identifier, cell.parent.title, cell.coordinate, encoded))
+            marker = f"[Full text: Long Text / {identifier}; this cell is a preview] "
+            encoded = marker + encoded[: EXCEL_TEXT_LIMIT - len(marker)]
+        _set_text(cell, encoded)
+
+    def append(self, sheet, values) -> None:
+        # Worksheet.append validates strings immediately, before a later cleanup can run.
+        sheet.append([None if isinstance(value, str) else value for value in values])
+        # Pinned openpyxl tracks the appended row here; max_row rescans every existing cell.
+        row = sheet._current_row
+        for column, value in enumerate(values, 1):
+            if isinstance(value, str):
+                self.write(sheet.cell(row, column), value)
+
+    def finish(self, workbook) -> None:
+        if not self.overflow:
+            return
+        sheet = workbook.create_sheet("Long Text")
+        self.append(
+            sheet, ["Record", "Source sheet", "Source cell", "Chunk", "Chunks", "Encoded text"]
+        )
+        for identifier, source_sheet, source_cell, encoded in self.overflow:
+            chunks = [encoded[start : start + 30000] for start in range(0, len(encoded), 30000)]
+            for index, chunk in enumerate(chunks, 1):
+                sheet.append([identifier, source_sheet, source_cell, index, len(chunks), None])
+                # Chunks are already encoded; encoding again would change the original value.
+                _set_text(sheet.cell(sheet._current_row, 6), chunk)
+
+
+def write_value(cell, value: str, text_writer: Callable = safe_text) -> None:
     """Type only unambiguous values; preserve IDs and precision-sensitive data."""
     if is_identifier(value):
-        safe_text(cell, value)
+        text_writer(cell, value)
         cell.number_format = "@"
     elif (parsed := number(value)) is not None and len(parsed.as_tuple().digits) <= 15:
-        cell.value = float(parsed) if parsed % 1 else int(parsed)
+        numeric = float(parsed)
+        # Excel does not retain subnormal doubles. Do not turn a nonzero reading into zero.
+        if not math.isfinite(numeric) or (parsed and abs(numeric) < sys.float_info.min):
+            text_writer(cell, value)
+            return
+        decimal_places = max(0, -parsed.as_tuple().exponent)
         if value.strip().endswith("%"):
-            cell.number_format = "0.00%" if "." in value else "0%"
+            precision = max(2 if "." in value else 0, decimal_places - 2)
+            if precision > 12:
+                text_writer(cell, value)
+                return
+            cell.number_format = "0" + ("." + "0" * precision if precision else "") + "%"
         else:
             precision = (
                 min(12, len(value.split(".", 1)[1].split()[0].rstrip(")"))) if "." in value else 0
             )
-            cell.number_format = "#,##0" + ("." + "0" * precision if precision else "")
+            cell.number_format = (
+                "General"
+                if decimal_places > 12
+                else "#,##0" + ("." + "0" * precision if precision else "")
+            )
+        cell.value = numeric if parsed % 1 else int(parsed)
     elif (parsed_date := date_value(value)) is not None:
         cell.value = parsed_date
         cell.number_format = "yyyy-mm-dd"
     else:
-        safe_text(cell, value)
+        text_writer(cell, value)
 
 
 def style_sheet(sheet) -> None:
@@ -55,11 +138,17 @@ def style_sheet(sheet) -> None:
     for column in sheet.columns:
         length = max(len(str(c.value or "")) for c in column)
         sheet.column_dimensions[column[0].column_letter].width = min(65, max(13, length + 2))
+    # Register each shared style once. Assigning Font/Alignment through descriptors for
+    # every evidence cell repeatedly hashes and compares the same style definitions.
+    font_id = sheet.parent._fonts.add(Font(name="Calibri", size=11))
+    alignment_id = sheet.parent._alignments.add(Alignment(vertical="top", wrap_text=True))
     for row in sheet.iter_rows(min_row=2):
         line_count = 1
         for cell in row:
-            cell.font = Font(name="Calibri", size=11)
-            cell.alignment = Alignment(vertical="top", wrap_text=True)
+            if cell._style is None:
+                cell._style = StyleArray()
+            cell._style.fontId = font_id
+            cell._style.alignmentId = alignment_id
             width = sheet.column_dimensions[cell.column_letter].width
             line_count = max(line_count, math.ceil(len(str(cell.value or "")) / max(1, width - 2)))
         sheet.row_dimensions[row[0].row].height = min(409, 17 * line_count)
@@ -69,12 +158,13 @@ def export_workbook(result: Result, output: str | Path) -> Path:
     """Write data, every validation finding, page attempts and source row mapping."""
     workbook = Workbook()
     workbook.remove(workbook.active)
+    strings = _TextWriter()
     provenance = []
     evidence_rows = []
     for index, table in enumerate(result.tables, 1):
         sheet = workbook.create_sheet(f"Data {index}")
         for col, header in enumerate(table.headers, 1):
-            safe_text(sheet.cell(1, col), header)
+            strings.write(sheet.cell(1, col), header)
             if table.header_sources[col - 1]:
                 sheet.cell(1, col).hyperlink = f"#'Cell Evidence'!A{len(evidence_rows) + 2}"
             for record in table.header_sources[col - 1]:
@@ -94,7 +184,7 @@ def export_workbook(result: Result, output: str | Path) -> Path:
                 )
         for row_no, row in enumerate(table.rows, 2):
             for col, value in enumerate(row, 1):
-                write_value(sheet.cell(row_no, col), value)
+                write_value(sheet.cell(row_no, col), value, strings.write)
                 sources = table.cell_sources[row_no - 2][col - 1]
                 if sources:
                     sheet.cell(
@@ -138,7 +228,8 @@ def export_workbook(result: Result, output: str | Path) -> Path:
                 for col in columns:
                     sheet.cell(r, col).fill = YELLOW
     sheet = workbook.create_sheet("Validation Report")
-    sheet.append(
+    strings.append(
+        sheet,
         [
             "Severity",
             "Page",
@@ -148,10 +239,11 @@ def export_workbook(result: Result, output: str | Path) -> Path:
             "Code",
             "Reason",
             "Suggested action",
-        ]
+        ],
     )
     for issue in result.issues:
-        sheet.append(
+        strings.append(
+            sheet,
             [
                 issue.severity,
                 issue.page,
@@ -161,10 +253,11 @@ def export_workbook(result: Result, output: str | Path) -> Path:
                 issue.code,
                 issue.reason,
                 issue.suggestion,
-            ]
+            ],
         )
     if not result.issues:
-        sheet.append(
+        strings.append(
+            sheet,
             [
                 "info",
                 None,
@@ -174,10 +267,11 @@ def export_workbook(result: Result, output: str | Path) -> Path:
                 "no_findings",
                 "No implemented rule raised a finding. This is not proof of accuracy.",
                 "Compare with the source.",
-            ]
+            ],
         )
     sheet = workbook.create_sheet("Page Audit")
-    sheet.append(
+    strings.append(
+        sheet,
         [
             "Page",
             "Route",
@@ -191,11 +285,12 @@ def export_workbook(result: Result, output: str | Path) -> Path:
             "Findings",
             "Score",
             "Error",
-        ]
+        ],
     )
     for page in result.pages:
         if not page.attempts:
-            sheet.append(
+            strings.append(
+                sheet,
                 [
                     page.page,
                     page.route,
@@ -209,10 +304,11 @@ def export_workbook(result: Result, output: str | Path) -> Path:
                     0,
                     0,
                     page.error,
-                ]
+                ],
             )
         for attempt in page.attempts:
-            sheet.append(
+            strings.append(
+                sheet,
                 [
                     page.page,
                     page.route,
@@ -226,60 +322,99 @@ def export_workbook(result: Result, output: str | Path) -> Path:
                     attempt.issues,
                     attempt.score,
                     attempt.error,
-                ]
+                ],
             )
     sheet = workbook.create_sheet("Provenance")
-    sheet.append(["Data sheet", "Excel row", "PDF page", "Source table data row", "Engine"])
+    strings.append(
+        sheet, ["Data sheet", "Excel row", "PDF page", "Source table data row", "Engine"]
+    )
     for row in provenance:
-        sheet.append(row)
+        strings.append(sheet, row)
     sheet = workbook.create_sheet("Read me")
-    sheet.append(["Field", "Value"])
-    sheet.append(["Source", result.source])
-    sheet.append(["Runtime seconds", round(result.seconds, 3)])
-    sheet.append(
+    strings.append(sheet, ["Field", "Value"])
+    strings.append(sheet, ["Source", result.source])
+    strings.append(sheet, ["Runtime seconds", round(result.seconds, 3)])
+    strings.append(
+        sheet,
+        [
+            "Text encoding",
+            "All XLSX string fields use a reversible encoding: a literal backslash is doubled; "
+            "XML-forbidden code points use a backslash followed by u and four hexadecimal digits. "
+            "An underscore starting an OOXML escape-like sequence uses the same Unicode encoding. "
+            "Decode left to right, treating each doubled backslash as one literal backslash. "
+            "The full audit JSON and saved workspace retain the original strings.",
+        ],
+    )
+    strings.append(
+        sheet,
+        [
+            "Long text",
+            "Values exceeding Excel's 32767-character cell limit show an explicit preview. "
+            "The Long Text sheet preserves the complete encoded value in numbered chunks. "
+            "Join its chunks in order before decoding the text encoding.",
+        ],
+    )
+    strings.append(
+        sheet,
+        [
+            "Small numbers",
+            "Numbers below Excel's normal floating-point range remain exact text. "
+            "Numbers needing more than 12 decimal places use General formatting; "
+            "percentages needing more than 12 display decimals remain text, avoiding a false zero.",
+        ],
+    )
+    strings.append(
+        sheet,
         [
             "Yellow cells",
             "Review required. See Validation Report for the reason and source row.",
-        ]
+        ],
     )
-    sheet.append(
+    strings.append(
+        sheet,
         [
             "Source row",
             "Data row within the extracted source table, excluding detected headers.",
-        ]
+        ],
     )
-    sheet.append(
+    strings.append(
+        sheet,
         [
             "Confidence",
             "Extraction heuristic / OCR score, not a calibrated probability of correctness.",
-        ]
+        ],
     )
-    sheet.append(
+    strings.append(
+        sheet,
         [
             "Dates",
             "ISO and unambiguous day-first dates are typed. Ambiguous dates stay text.",
-        ]
+        ],
     )
-    sheet.append(
+    strings.append(
+        sheet,
         [
             "Safety",
             "Source strings are stored as text. No source formulas are executed.",
-        ]
+        ],
     )
-    sheet.append(
+    strings.append(
+        sheet,
         [
             "Cell evidence",
             "Ctrl+click a linked data cell for its source bounding box and original readings.",
-        ]
+        ],
     )
-    sheet.append(
+    strings.append(
+        sheet,
         [
             "Repair proposals",
             "Arithmetic-derived suggestions only. Source documents may contain errors. Never applied automatically.",
-        ]
+        ],
     )
     sheet = workbook.create_sheet("Cell Evidence")
-    sheet.append(
+    strings.append(
+        sheet,
         [
             "Data sheet",
             "Excel row",
@@ -294,34 +429,39 @@ def export_workbook(result: Result, output: str | Path) -> Path:
             "Reading",
             "Initial reading",
             "Role",
-        ]
+        ],
     )
     for row in evidence_rows:
-        sheet.append(row)
+        strings.append(sheet, row)
     from .constraints import coverage
     from .review import fingerprint, review_current
 
     sheet = workbook.create_sheet("Verification")
-    sheet.append(["Evidence", "Value"])
-    sheet.append(["Source SHA-256", result.source_sha256])
-    sheet.append(["Extraction snapshot SHA-256", fingerprint(result)])
-    sheet.append(
+    strings.append(sheet, ["Evidence", "Value"])
+    strings.append(sheet, ["Source SHA-256", result.source_sha256])
+    strings.append(sheet, ["Extraction snapshot SHA-256", fingerprint(result)])
+    strings.append(
+        sheet,
         [
             "Review status",
             "Reviewed current snapshot" if review_current(result) else "Unreviewed",
-        ]
+        ],
     )
-    sheet.append(
+    strings.append(
+        sheet,
         [
             "Review meaning",
             "A human source-check attestation; not independent accuracy certification.",
-        ]
+        ],
     )
-    sheet.append(["Review note", result.review.get("note", "") if review_current(result) else ""])
+    strings.append(
+        sheet, ["Review note", result.review.get("note", "") if review_current(result) else ""]
+    )
     for name, value in coverage(result).items():
-        sheet.append([name.replace("_", " "), value])
+        strings.append(sheet, [name.replace("_", " "), value])
     sheet = workbook.create_sheet("Constraints")
-    sheet.append(
+    strings.append(
+        sheet,
         [
             "ID",
             "Table",
@@ -331,10 +471,11 @@ def export_workbook(result: Result, output: str | Path) -> Path:
             "Empirical agreement",
             "Violations",
             "Meaning",
-        ]
+        ],
     )
     for relation in result.constraints:
-        sheet.append(
+        strings.append(
+            sheet,
             [
                 relation["id"],
                 relation["table"],
@@ -344,11 +485,12 @@ def export_workbook(result: Result, output: str | Path) -> Path:
                 relation["support"],
                 len(relation["violations"]),
                 "Inferred from this document; not a probability of correctness.",
-            ]
+            ],
         )
         sheet.cell(sheet.max_row, 6).number_format = "0.0%"
     sheet = workbook.create_sheet("Repair Proposals")
-    sheet.append(
+    strings.append(
+        sheet,
         [
             "Table",
             "Excel row",
@@ -359,10 +501,11 @@ def export_workbook(result: Result, output: str | Path) -> Path:
             "Evidence",
             "State",
             "Caution",
-        ]
+        ],
     )
     for proposal in result.proposals:
-        sheet.append(
+        strings.append(
+            sheet,
             [
                 proposal["table"],
                 proposal["row"] + 2,
@@ -373,10 +516,11 @@ def export_workbook(result: Result, output: str | Path) -> Path:
                 "; ".join(proposal["supporting_equations"]),
                 proposal["status"],
                 proposal["basis"],
-            ]
+            ],
         )
     sheet = workbook.create_sheet("Correction History")
-    sheet.append(
+    strings.append(
+        sheet,
         [
             "Time UTC",
             "Table",
@@ -387,10 +531,11 @@ def export_workbook(result: Result, output: str | Path) -> Path:
             "Reason",
             "Previous hash",
             "Event hash",
-        ]
+        ],
     )
     for event in result.history:
-        sheet.append(
+        strings.append(
+            sheet,
             [
                 event["at"],
                 event["table"] + 1,
@@ -401,8 +546,25 @@ def export_workbook(result: Result, output: str | Path) -> Path:
                 event["note"],
                 event["previous"],
                 event["sha256"],
-            ]
+            ],
         )
+    summaries = [
+        [
+            index,
+            record.get("page"),
+            record.get("role"),
+            record.get("text"),
+            *(record.get("bbox") or [None] * 4),
+        ]
+        for index, table in enumerate(result.tables, 1)
+        for record in table.page_summaries
+    ]
+    if summaries:
+        sheet = workbook.create_sheet("Page Summaries")
+        strings.append(sheet, ["Table", "Page", "Role", "Source text", "X0", "Y0", "X1", "Y1"])
+        for row in summaries:
+            strings.append(sheet, row)
+    strings.finish(workbook)
     for sheet in workbook:
         style_sheet(sheet)
     # Force text types in audit metadata as well as data cells.

@@ -73,6 +73,15 @@ def stitch(tables: list[Table]) -> tuple[list[Table], list[Issue]]:
                 and all(kind(before[c]) == kind(after[c]) == "text" for c in overlaps)
             ):
                 for c in range(len(before)):
+                    scores = []
+                    if before[c]:
+                        scores.append(
+                            target.cell_confidence.get((offset - 1, c), target.confidence)
+                        )
+                    if after[c]:
+                        scores.append(table.cell_confidence.get((0, c), table.confidence))
+                    if scores:
+                        target.cell_confidence[offset - 1, c] = min(scores)
                     before[c] = clean(before[c] + " " + after[c])
                 target.provenance[-1].extend(table.provenance[0])
                 target.row_engines[-1] += "+" + table.row_engines[0]
@@ -97,6 +106,7 @@ def stitch(tables: list[Table]) -> tuple[list[Table], list[Issue]]:
                     (r - 1, c): v for (r, c), v in table.cell_confidence.items() if r > 0
                 }
         target.rows.extend(table.rows)
+        target.page_summaries.extend(table.page_summaries)
         target.provenance.extend(table.provenance)
         target.row_engines.extend(table.row_engines)
         target.cell_sources.extend(table.cell_sources)

@@ -1,10 +1,11 @@
 {
-  "scope": "Four synthetic development cases; Tesseract excluded by engine selection override. Not hidden-test accuracy or a cross-platform execution test.",
+  "scope": "Five synthetic development cases, including a sideways invoice with unruled totals; Tesseract excluded by engine selection override. Not hidden-test accuracy or a cross-platform execution test.",
   "python": "3.11.9",
   "host": "Windows-10-10.0.26200-SP0",
   "cases": [
     {
       "case": "C_scanned_inventory",
+      "expected_cells": 288,
       "precision": 1.0,
       "recall": 1.0,
       "cell_exact": 1.0,
@@ -14,8 +15,8 @@
       "tables_count_match": true,
       "errors_caught": 0,
       "errors_injected": 0,
-      "seconds": 19.177229600005376,
-      "seconds_per_page": 9.588614800002688,
+      "seconds": 27.496565699999337,
+      "seconds_per_page": 13.748282849999669,
       "findings": 2,
       "pass": true,
       "selected_engines": [
@@ -24,6 +25,7 @@
     },
     {
       "case": "D_blur_noise",
+      "expected_cells": 288,
       "precision": 1.0,
       "recall": 1.0,
       "cell_exact": 1.0,
@@ -33,8 +35,8 @@
       "tables_count_match": true,
       "errors_caught": 0,
       "errors_injected": 0,
-      "seconds": 19.39783819999866,
-      "seconds_per_page": 9.69891909999933,
+      "seconds": 30.35417070001131,
+      "seconds_per_page": 15.177085350005655,
       "findings": 2,
       "pass": true,
       "selected_engines": [
@@ -43,6 +45,7 @@
     },
     {
       "case": "D_skew_5deg",
+      "expected_cells": 288,
       "precision": 1.0,
       "recall": 1.0,
       "cell_exact": 1.0,
@@ -52,8 +55,8 @@
       "tables_count_match": true,
       "errors_caught": 0,
       "errors_injected": 0,
-      "seconds": 18.592707199997676,
-      "seconds_per_page": 9.296353599998838,
+      "seconds": 31.067944700000226,
+      "seconds_per_page": 15.533972350000113,
       "findings": 2,
       "pass": true,
       "selected_engines": [
@@ -62,6 +65,7 @@
     },
     {
       "case": "D_phone_photo",
+      "expected_cells": 288,
       "precision": 1.0,
       "recall": 1.0,
       "cell_exact": 1.0,
@@ -71,8 +75,28 @@
       "tables_count_match": true,
       "errors_caught": 0,
       "errors_injected": 0,
-      "seconds": 95.71580430000176,
-      "seconds_per_page": 47.85790215000088,
+      "seconds": 418.9988996999891,
+      "seconds_per_page": 209.49944984999456,
+      "findings": 12,
+      "pass": true,
+      "selected_engines": [
+        "ocr-rapidocr"
+      ]
+    },
+    {
+      "case": "E_sideways_invoice",
+      "expected_cells": 30,
+      "precision": 1.0,
+      "recall": 1.0,
+      "cell_exact": 1.0,
+      "row_match": 1.0,
+      "header_match": 1.0,
+      "shape_match": true,
+      "tables_count_match": true,
+      "errors_caught": 0,
+      "errors_injected": 0,
+      "seconds": 24.43331130000297,
+      "seconds_per_page": 24.43331130000297,
       "findings": 12,
       "pass": true,
       "selected_engines": [

@@ -1,0 +1,1642 @@
+{
+  "source": "E_vertical_nested_lines.pdf",
+  "tables": [
+    {
+      "headers": [
+        "Package",
+        "Phase",
+        "Line",
+        "Parent",
+        "Description",
+        "Unit",
+        "Qty",
+        "Rate",
+        "Amount",
+        "Status"
+      ],
+      "rows": [
+        [
+          "WP-100",
+          "Hardware",
+          "1",
+          "-",
+          "Network gateway",
+          "ea",
+          "2",
+          "120.00",
+          "240.00",
+          "Ready"
+        ],
+        [
+          "WP-100",
+          "Hardware",
+          "1.1",
+          "1",
+          "Cable pack",
+          "pack",
+          "3",
+          "10.00",
+          "30.00",
+          "Ready"
+        ],
+        [
+          "WP-100",
+          "Installation",
+          "2",
+          "-",
+          "Site survey",
+          "hr",
+          "4",
+          "25.00",
+          "100.00",
+          "Review"
+        ],
+        [
+          "WP-100",
+          "Installation",
+          "2.1",
+          "2",
+          "Rack setup",
+          "hr",
+          "3",
+          "40.00",
+          "120.00",
+          "Ready"
+        ],
+        [
+          "WP-200",
+          "Software",
+          "3",
+          "-",
+          "Monitor license",
+          "ea",
+          "2",
+          "180.00",
+          "360.00",
+          "Ready"
+        ],
+        [
+          "WP-200",
+          "Software",
+          "3.1",
+          "3",
+          "Support plan",
+          "yr",
+          "2",
+          "35.00",
+          "70.00",
+          "Review"
+        ],
+        [
+          "WP-200",
+          "Deployment",
+          "4",
+          "-",
+          "Data migration",
+          "hr",
+          "8",
+          "15.00",
+          "120.00",
+          "Review"
+        ],
+        [
+          "WP-200",
+          "Deployment",
+          "4.1",
+          "4",
+          "Final audit",
+          "hr",
+          "4",
+          "20.00",
+          "80.00",
+          "Ready"
+        ]
+      ],
+      "page": 1,
+      "bbox": [
+        30.0,
+        60.0,
+        843.0,
+        402.0
+      ],
+      "engine": "native-lines",
+      "confidence": 0.98,
+      "header_detected": true,
+      "provenance": [
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            1,
+            6
+          ]
+        ],
+        [
+          [
+            1,
+            7
+          ]
+        ],
+        [
+          [
+            1,
+            8
+          ]
+        ]
+      ],
+      "notes": [
+        "Vertically merged group labels repeated into child rows from explicit ruled geometry; inherited cells reuse the original source box."
+      ],
+      "row_engines": [
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines",
+        "native-lines"
+      ],
+      "cell_sources": [
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                30.0,
+                98.0,
+                118.0,
+                250.0
+              ],
+              "text": "WP-100",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                118.0,
+                98.0,
+                218.0,
+                174.0
+              ],
+              "text": "Hardware",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                218.0,
+                98.0,
+                273.0,
+                136.0
+              ],
+              "text": "1",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                273.0,
+                98.0,
+                333.0,
+                136.0
+              ],
+              "text": "-",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                333.0,
+                98.0,
+                523.0,
+                136.0
+              ],
+              "text": "Network gateway",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                523.0,
+                98.0,
+                573.0,
+                136.0
+              ],
+              "text": "ea",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                573.0,
+                98.0,
+                618.0,
+                136.0
+              ],
+              "text": "2",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                618.0,
+                98.0,
+                688.0,
+                136.0
+              ],
+              "text": "120.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                688.0,
+                98.0,
+                768.0,
+                136.0
+              ],
+              "text": "240.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                768.0,
+                98.0,
+                843.0,
+                136.0
+              ],
+              "text": "Ready",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                30.0,
+                98.0,
+                118.0,
+                250.0
+              ],
+              "text": "WP-100",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points",
+              "role": "vertical_merge_expansion"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                118.0,
+                98.0,
+                218.0,
+                174.0
+              ],
+              "text": "Hardware",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points",
+              "role": "vertical_merge_expansion"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                218.0,
+                136.0,
+                273.0,
+                174.0
+              ],
+              "text": "1.1",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                273.0,
+                136.0,
+                333.0,
+                174.0
+              ],
+              "text": "1",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                333.0,
+                136.0,
+                523.0,
+                174.0
+              ],
+              "text": "Cable pack",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                523.0,
+                136.0,
+                573.0,
+                174.0
+              ],
+              "text": "pack",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                573.0,
+                136.0,
+                618.0,
+                174.0
+              ],
+              "text": "3",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                618.0,
+                136.0,
+                688.0,
+                174.0
+              ],
+              "text": "10.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                688.0,
+                136.0,
+                768.0,
+                174.0
+              ],
+              "text": "30.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                768.0,
+                136.0,
+                843.0,
+                174.0
+              ],
+              "text": "Ready",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                30.0,
+                98.0,
+                118.0,
+                250.0
+              ],
+              "text": "WP-100",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points",
+              "role": "vertical_merge_expansion"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                118.0,
+                174.0,
+                218.0,
+                250.0
+              ],
+              "text": "Installation",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                218.0,
+                174.0,
+                273.0,
+                212.0
+              ],
+              "text": "2",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                273.0,
+                174.0,
+                333.0,
+                212.0
+              ],
+              "text": "-",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                333.0,
+                174.0,
+                523.0,
+                212.0
+              ],
+              "text": "Site survey",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                523.0,
+                174.0,
+                573.0,
+                212.0
+              ],
+              "text": "hr",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                573.0,
+                174.0,
+                618.0,
+                212.0
+              ],
+              "text": "4",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                618.0,
+                174.0,
+                688.0,
+                212.0
+              ],
+              "text": "25.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                688.0,
+                174.0,
+                768.0,
+                212.0
+              ],
+              "text": "100.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                768.0,
+                174.0,
+                843.0,
+                212.0
+              ],
+              "text": "Review",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                30.0,
+                98.0,
+                118.0,
+                250.0
+              ],
+              "text": "WP-100",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points",
+              "role": "vertical_merge_expansion"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                118.0,
+                174.0,
+                218.0,
+                250.0
+              ],
+              "text": "Installation",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points",
+              "role": "vertical_merge_expansion"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                218.0,
+                212.0,
+                273.0,
+                250.0
+              ],
+              "text": "2.1",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                273.0,
+                212.0,
+                333.0,
+                250.0
+              ],
+              "text": "2",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                333.0,
+                212.0,
+                523.0,
+                250.0
+              ],
+              "text": "Rack setup",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                523.0,
+                212.0,
+                573.0,
+                250.0
+              ],
+              "text": "hr",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                573.0,
+                212.0,
+                618.0,
+                250.0
+              ],
+              "text": "3",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                618.0,
+                212.0,
+                688.0,
+                250.0
+              ],
+              "text": "40.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                688.0,
+                212.0,
+                768.0,
+                250.0
+              ],
+              "text": "120.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                768.0,
+                212.0,
+                843.0,
+                250.0
+              ],
+              "text": "Ready",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                30.0,
+                250.0,
+                118.0,
+                402.0
+              ],
+              "text": "WP-200",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                118.0,
+                250.0,
+                218.0,
+                326.0
+              ],
+              "text": "Software",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                218.0,
+                250.0,
+                273.0,
+                288.0
+              ],
+              "text": "3",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                273.0,
+                250.0,
+                333.0,
+                288.0
+              ],
+              "text": "-",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                333.0,
+                250.0,
+                523.0,
+                288.0
+              ],
+              "text": "Monitor license",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                523.0,
+                250.0,
+                573.0,
+                288.0
+              ],
+              "text": "ea",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                573.0,
+                250.0,
+                618.0,
+                288.0
+              ],
+              "text": "2",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                618.0,
+                250.0,
+                688.0,
+                288.0
+              ],
+              "text": "180.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                688.0,
+                250.0,
+                768.0,
+                288.0
+              ],
+              "text": "360.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                768.0,
+                250.0,
+                843.0,
+                288.0
+              ],
+              "text": "Ready",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                30.0,
+                250.0,
+                118.0,
+                402.0
+              ],
+              "text": "WP-200",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points",
+              "role": "vertical_merge_expansion"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                118.0,
+                250.0,
+                218.0,
+                326.0
+              ],
+              "text": "Software",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points",
+              "role": "vertical_merge_expansion"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                218.0,
+                288.0,
+                273.0,
+                326.0
+              ],
+              "text": "3.1",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                273.0,
+                288.0,
+                333.0,
+                326.0
+              ],
+              "text": "3",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                333.0,
+                288.0,
+                523.0,
+                326.0
+              ],
+              "text": "Support plan",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                523.0,
+                288.0,
+                573.0,
+                326.0
+              ],
+              "text": "yr",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                573.0,
+                288.0,
+                618.0,
+                326.0
+              ],
+              "text": "2",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                618.0,
+                288.0,
+                688.0,
+                326.0
+              ],
+              "text": "35.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                688.0,
+                288.0,
+                768.0,
+                326.0
+              ],
+              "text": "70.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                768.0,
+                288.0,
+                843.0,
+                326.0
+              ],
+              "text": "Review",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                30.0,
+                250.0,
+                118.0,
+                402.0
+              ],
+              "text": "WP-200",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points",
+              "role": "vertical_merge_expansion"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                118.0,
+                326.0,
+                218.0,
+                402.0
+              ],
+              "text": "Deployment",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                218.0,
+                326.0,
+                273.0,
+                364.0
+              ],
+              "text": "4",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                273.0,
+                326.0,
+                333.0,
+                364.0
+              ],
+              "text": "-",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                333.0,
+                326.0,
+                523.0,
+                364.0
+              ],
+              "text": "Data migration",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                523.0,
+                326.0,
+                573.0,
+                364.0
+              ],
+              "text": "hr",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                573.0,
+                326.0,
+                618.0,
+                364.0
+              ],
+              "text": "8",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                618.0,
+                326.0,
+                688.0,
+                364.0
+              ],
+              "text": "15.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                688.0,
+                326.0,
+                768.0,
+                364.0
+              ],
+              "text": "120.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                768.0,
+                326.0,
+                843.0,
+                364.0
+              ],
+              "text": "Review",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                30.0,
+                250.0,
+                118.0,
+                402.0
+              ],
+              "text": "WP-200",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points",
+              "role": "vertical_merge_expansion"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                118.0,
+                326.0,
+                218.0,
+                402.0
+              ],
+              "text": "Deployment",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points",
+              "role": "vertical_merge_expansion"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                218.0,
+                364.0,
+                273.0,
+                402.0
+              ],
+              "text": "4.1",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                273.0,
+                364.0,
+                333.0,
+                402.0
+              ],
+              "text": "4",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                333.0,
+                364.0,
+                523.0,
+                402.0
+              ],
+              "text": "Final audit",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                523.0,
+                364.0,
+                573.0,
+                402.0
+              ],
+              "text": "hr",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                573.0,
+                364.0,
+                618.0,
+                402.0
+              ],
+              "text": "4",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                618.0,
+                364.0,
+                688.0,
+                402.0
+              ],
+              "text": "20.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                688.0,
+                364.0,
+                768.0,
+                402.0
+              ],
+              "text": "80.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                768.0,
+                364.0,
+                843.0,
+                402.0
+              ],
+              "text": "Ready",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ]
+      ],
+      "header_sources": [
+        [
+          {
+            "page": 1,
+            "bbox": [
+              30.0,
+              60.0,
+              118.0,
+              98.0
+            ],
+            "text": "Package",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              118.0,
+              60.0,
+              218.0,
+              98.0
+            ],
+            "text": "Phase",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              218.0,
+              60.0,
+              273.0,
+              98.0
+            ],
+            "text": "Line",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              273.0,
+              60.0,
+              333.0,
+              98.0
+            ],
+            "text": "Parent",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              333.0,
+              60.0,
+              523.0,
+              98.0
+            ],
+            "text": "Description",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              523.0,
+              60.0,
+              573.0,
+              98.0
+            ],
+            "text": "Unit",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              573.0,
+              60.0,
+              618.0,
+              98.0
+            ],
+            "text": "Qty",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              618.0,
+              60.0,
+              688.0,
+              98.0
+            ],
+            "text": "Rate",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              688.0,
+              60.0,
+              768.0,
+              98.0
+            ],
+            "text": "Amount",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              768.0,
+              60.0,
+              843.0,
+              98.0
+            ],
+            "text": "Status",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ]
+      ],
+      "page_summaries": [],
+      "cell_scores": []
+    }
+  ],
+  "issues": [
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Vertically merged group labels repeated into child rows from explicit ruled geometry; inherited cells reuse the original source box.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "route": "digital",
+      "engine": "native",
+      "confidence": 0.98,
+      "seconds": 0.07878339999297168,
+      "attempts": [
+        {
+          "engine": "native",
+          "strategy": "lines",
+          "tables": 1,
+          "cells": 80,
+          "issues": 1,
+          "score": 1383.6,
+          "seconds": 0.06044840000686236,
+          "error": "",
+          "selected": true
+        }
+      ],
+      "error": ""
+    }
+  ],
+  "seconds": 0.10590720000618603,
+  "source_sha256": "5a30a9fcbccbcbf55cad381f2bfdff6db9c05aafd073f81c94c6705cadf94e4b",
+  "constraints": [
+    {
+      "id": "T1:C7*C8=C9",
+      "table": 1,
+      "kind": "row",
+      "operator": "*",
+      "columns": [
+        6,
+        7,
+        8
+      ],
+      "formula": "Qty * Rate = Amount",
+      "checked": 8,
+      "matched": 8,
+      "support": 1.0,
+      "rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "violations": []
+    }
+  ],
+  "proposals": [],
+  "review": {
+    "status": "unreviewed"
+  },
+  "history": []
+}

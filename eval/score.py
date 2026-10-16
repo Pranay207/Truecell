@@ -67,6 +67,7 @@ def score(truth: dict, result: Result) -> dict:
         )
     return {
         "case": truth["name"],
+        "expected_cells": expected_cells,
         "precision": matches / max(1, actual_cells),
         "recall": matches / max(1, expected_cells),
         "cell_exact": matches / max(1, expected_cells, actual_cells),
@@ -95,6 +96,7 @@ def write_report(metrics: list[dict], output: Path) -> None:
         "Measured on deterministic, self-generated dummy development documents. These numbers are not independent benchmarks and do not guarantee hidden-PDF accuracy.",
         "",
         "Cell precision/recall compare canonicalized values at exact table/row/column coordinates. Numeric formatting and whitespace are normalized; leading zeros are preserved. Row match uses a multiset, so duplicate records are counted. PASS requires exact cells, headers, shape and detection of every injected error.",
+        "No-table controls show n/a for cell/row/header percentages; passing requires no extra table. They do not contribute fabricated cell matches.",
         "",
         f"Evaluation host: Python {platform.python_version()}, {platform.system()} {platform.machine()}. Timings are local wall-clock measurements and can include concurrent system activity. Peak memory was not benchmarked.",
         "",
@@ -102,15 +104,21 @@ def write_report(metrics: list[dict], output: Path) -> None:
         "|---|---:|---:|---:|---:|---:|---|---|---|---:|---|",
     ]
     for m in metrics:
+        cells = [
+            f"{m[k]:.1%}"
+            for k in ("precision", "recall", "cell_exact", "row_match", "header_match")
+        ]
+        if m.get("expected_cells") == 0:
+            cells = ["n/a"] * 5
         lines.append(
-            f"| {m['case']} | {m['precision']:.1%} | {m['recall']:.1%} | {m['cell_exact']:.1%} | {m['row_match']:.1%} | {m['header_match']:.1%} | {m['shape_match']} | {m['tables_count_match']} | {m['errors_caught']}/{m['errors_injected']} | {m['seconds_per_page']:.2f} | {'PASS' if m['pass'] else 'FAIL'} |"
+            f"| {m['case']} | {' | '.join(cells)} | {m['shape_match']} | {m['tables_count_match']} | {m['errors_caught']}/{m['errors_injected']} | {m['seconds_per_page']:.2f} | {'PASS' if m['pass'] else 'FAIL'} |"
         )
     lines += [
         "",
         "## Known limitations / failures",
         "",
         "- OCR confidence is not a calibrated accuracy probability. High-confidence digit mistakes can still occur.",
-        "- Borderless segmentation, merged body cells, two unrelated tables with similar geometry, and cross-page wrapped records can remain ambiguous. Values are retained for review; no business-row deduplication is performed.",
+        "- Explicitly ruled vertical group spans in native-PDF body rows are supported conservatively. OCR/unruled spans, arbitrary multi-axis nested merges, borderless segmentation, two unrelated tables with similar geometry, and cross-page wrapped records can remain ambiguous. Values are retained for review; no business-row deduplication is performed.",
         "- Arithmetic inference needs enough varied rows and a strong majority. Checks may be skipped on short/heterogeneous tables. Inferred relations can be coincidental. Candidate selection prioritizes trusted native grid geometry but can still select the wrong layout; disagreements are audited.",
         "- Ambiguous day/month dates and comma-decimal numeric strings remain text. Structural total inference and multilingual total vocabularies are limited.",
         "- Phone-photo perspective, extreme rotation and handwritten text are not guaranteed.",
@@ -154,8 +162,10 @@ def run(samples: Path, destination: Path, selected: str = "*") -> list[dict]:
         metric = score(truth, result)
         metrics.append(metric)
         print(
-            f"{'PASS' if metric['pass'] else 'FAIL'} {name}: exact={metric['cell_exact']:.2%}, "
-            f"rows={metric['row_match']:.2%}, errors={metric['errors_caught']}/{metric['errors_injected']}, {result.seconds:.2f}s",
+            f"{'PASS' if metric['pass'] else 'FAIL'} {name}: exact="
+            + (f"{metric['cell_exact']:.2%}" if truth["tables"] else "n/a (no-table control)")
+            + ", "
+            + f"rows={metric['row_match']:.2%}, errors={metric['errors_caught']}/{metric['errors_injected']}, {result.seconds:.2f}s",
             flush=True,
         )
     return metrics

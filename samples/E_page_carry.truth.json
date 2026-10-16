@@ -1,0 +1,60 @@
+{
+  "name": "E_page_carry",
+  "pages": 2,
+  "tables": [
+    {
+      "headers": [
+        "Reference",
+        "Memo",
+        "Debit",
+        "Credit",
+        "Balance"
+      ],
+      "rows": [
+        [
+          "TX-001",
+          "Dummy payment",
+          "10.00",
+          "",
+          "990.00"
+        ],
+        [
+          "TX-002",
+          "Dummy payment",
+          "10.00",
+          "",
+          "980.00"
+        ],
+        [
+          "TX-003",
+          "Dummy payment",
+          "10.00",
+          "",
+          "970.00"
+        ],
+        [
+          "TX-004",
+          "Dummy payment",
+          "10.00",
+          "",
+          "960.00"
+        ],
+        [
+          "TX-005",
+          "Dummy payment",
+          "10.00",
+          "",
+          "950.00"
+        ],
+        [
+          "TX-006",
+          "Dummy payment",
+          "10.00",
+          "",
+          "940.00"
+        ]
+      ]
+    }
+  ],
+  "injected_errors": []
+}

@@ -1,0 +1,69 @@
+{
+  "source": "E_no_table_letter.pdf",
+  "tables": [],
+  "issues": [
+    {
+      "severity": "error",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "No table could be reconstructed.",
+      "suggestion": "Review the source document.",
+      "code": "no_table",
+      "table": null
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "route": "digital",
+      "engine": "native",
+      "confidence": 0,
+      "seconds": 0.06724530000064988,
+      "attempts": [
+        {
+          "engine": "native",
+          "strategy": "lines",
+          "tables": 0,
+          "cells": 0,
+          "issues": 0,
+          "score": -10000,
+          "seconds": 0.05526850000023842,
+          "error": "",
+          "selected": true
+        },
+        {
+          "engine": "native",
+          "strategy": "text",
+          "tables": 0,
+          "cells": 0,
+          "issues": 0,
+          "score": -10000,
+          "seconds": 0.004572400008328259,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "words",
+          "tables": 0,
+          "cells": 0,
+          "issues": 0,
+          "score": -10000,
+          "seconds": 0.0034048999950755388,
+          "error": "",
+          "selected": false
+        }
+      ],
+      "error": ""
+    }
+  ],
+  "seconds": 0.0702852999966126,
+  "source_sha256": "bed5e9633f4c69c79c8ca770b9448db51a66171f7e58060d08c0644574a127ed",
+  "constraints": [],
+  "proposals": [],
+  "review": {
+    "status": "unreviewed"
+  },
+  "history": []
+}

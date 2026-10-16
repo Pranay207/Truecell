@@ -59,10 +59,16 @@ def apply_edit(result: Result, table: int, row: int, column: int, value: str, no
         raise ValueError("Explain the correction after checking the source.")
     if not history_valid(result):
         raise ValueError("Correction history is inconsistent; restore the original extraction.")
+    if type(table) is not int or not 0 <= table < len(result.tables):
+        raise ValueError("Invalid table index.")
+    target = result.tables[table]
+    if type(row) is not int or not -1 <= row < len(target.rows):
+        raise ValueError("Invalid source row.")
+    values = target.headers if row == -1 else target.rows[row]
+    if type(column) is not int or not 0 <= column < len(values):
+        raise ValueError("Invalid column index.")
     working = deepcopy(result)
     target = working.tables[table]
-    if row < -1:
-        raise ValueError("Invalid source row.")
     old = target.headers[column] if row == -1 else target.rows[row][column]
     if old == str(value):
         raise ValueError("The value is unchanged.")

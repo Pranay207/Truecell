@@ -1,0 +1,408 @@
+{
+  "source": "E_wrapped_contacts.pdf",
+  "tables": [
+    {
+      "headers": [
+        "Contact ID",
+        "Name",
+        "Address",
+        "City"
+      ],
+      "rows": [
+        [
+          "001",
+          "Asha Rao",
+          "12 Example Street Building B, second floor",
+          "Pune"
+        ],
+        [
+          "002",
+          "Hari Sen",
+          "13 Example Street Building B, second floor",
+          "Kochi"
+        ],
+        [
+          "003",
+          "Mira Das",
+          "14 Example Street Building B, second floor",
+          "Patna"
+        ]
+      ],
+      "page": 1,
+      "bbox": [
+        35.0,
+        52.06999999999999,
+        546.13,
+        206.07
+      ],
+      "engine": "native-anchors",
+      "confidence": 0.92,
+      "header_detected": true,
+      "provenance": [
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ]
+      ],
+      "notes": [
+        "Header anchors and repeated word positions inferred column boundaries; review alignment."
+      ],
+      "row_engines": [
+        "native-anchors",
+        "native-anchors",
+        "native-anchors"
+      ],
+      "cell_sources": [
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                87.07,
+                51.68000000000001,
+                97.07
+              ],
+              "text": "001",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                135.0,
+                87.07,
+                178.91,
+                97.07
+              ],
+              "text": "Asha Rao",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                280.0,
+                87.07,
+                385.05,
+                110.07
+              ],
+              "text": "12 Example Street Building B, second floor",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                520.0,
+                87.07,
+                543.3499999999999,
+                97.07
+              ],
+              "text": "Pune",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                135.07,
+                51.68000000000001,
+                145.07
+              ],
+              "text": "002",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                135.0,
+                135.07,
+                173.9,
+                145.07
+              ],
+              "text": "Hari Sen",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                280.0,
+                135.07,
+                385.05,
+                158.07
+              ],
+              "text": "13 Example Street Building B, second floor",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                520.0,
+                135.07,
+                545.01,
+                145.07
+              ],
+              "text": "Kochi",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                183.07,
+                51.68000000000001,
+                193.07
+              ],
+              "text": "003",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                135.0,
+                183.07,
+                175.0,
+                193.07
+              ],
+              "text": "Mira Das",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                280.0,
+                183.07,
+                385.05,
+                206.07
+              ],
+              "text": "14 Example Street Building B, second floor",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                520.0,
+                183.07,
+                546.13,
+                193.07
+              ],
+              "text": "Patna",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ]
+      ],
+      "header_sources": [
+        [
+          {
+            "page": 1,
+            "bbox": [
+              35.0,
+              52.06999999999999,
+              85.0,
+              62.06999999999999
+            ],
+            "text": "Contact ID",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              135.0,
+              52.06999999999999,
+              162.23000000000002,
+              62.06999999999999
+            ],
+            "text": "Name",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              280.0,
+              52.06999999999999,
+              320.01,
+              62.06999999999999
+            ],
+            "text": "Address",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              520.0,
+              52.06999999999999,
+              538.89,
+              62.06999999999999
+            ],
+            "text": "City",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ]
+      ],
+      "page_summaries": [],
+      "cell_scores": []
+    }
+  ],
+  "issues": [
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected words; alternative text produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": null
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Header anchors and repeated word positions inferred column boundaries; review alignment.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Selected words; alternative text produced different content or shape.",
+      "suggestion": "Compare the page and highlighted data.",
+      "code": "candidate_disagreement",
+      "table": 1
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "route": "digital",
+      "engine": "native",
+      "confidence": 0.92,
+      "seconds": 0.029437599994707853,
+      "attempts": [
+        {
+          "engine": "native",
+          "strategy": "lines",
+          "tables": 0,
+          "cells": 0,
+          "issues": 0,
+          "score": -10000,
+          "seconds": 0.012657700004638173,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "text",
+          "tables": 1,
+          "cells": 28,
+          "issues": 5,
+          "score": 95.4,
+          "seconds": 0.010148100001970306,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "words",
+          "tables": 1,
+          "cells": 12,
+          "issues": 1,
+          "score": 158.4,
+          "seconds": 0.0025714999937918037,
+          "error": "",
+          "selected": true
+        }
+      ],
+      "error": ""
+    }
+  ],
+  "seconds": 0.03328099999635015,
+  "source_sha256": "88c70c50607ea3be278b202fff4ac4d67866f928cc91bdfdd367338639233d43",
+  "constraints": [],
+  "proposals": [],
+  "review": {
+    "status": "unreviewed"
+  },
+  "history": []
+}

@@ -96,6 +96,54 @@ def test_page_failure_continues(monkeypatch, tmp_path):
     assert sum(len(t.rows) for t in result.tables) == 32
 
 
+def test_broken_primary_ocr_still_tries_working_second_engine(monkeypatch, tmp_path):
+    import truecell.ocr as ocr
+
+    source = tmp_path / "scan.png"
+    Image.new("RGB", (300, 200), "white").save(source)
+    calls = []
+
+    def extract(image, page, engine, **options):
+        calls.append(engine)
+        if engine == "broken":
+            raise RuntimeError()
+        return [
+            Table(
+                ["Ref", "Units", "Amount"],
+                [["A", "2", "10"], ["B", "3", "15"]],
+                page,
+                (0, 0, 100, 100),
+                "ocr-working",
+                0.99,
+            )
+        ]
+
+    monkeypatch.setattr(ocr, "available_engines", lambda: ["broken", "working"])
+    monkeypatch.setattr(ocr, "extract_image", extract)
+    result = convert(source)
+    assert "working" in calls
+    assert result.tables[0].rows == [["A", "2", "10"], ["B", "3", "15"]]
+    assert any(a.error == "RuntimeError" for a in result.pages[0].attempts)
+    assert not result.pages[0].error
+
+
+def test_all_ocr_failures_remain_visible_and_are_not_checkpointed(monkeypatch, tmp_path):
+    import truecell.ocr as ocr
+    import truecell.pipeline as pipeline
+
+    source = tmp_path / "scan.png"
+    Image.new("RGB", (300, 200), "white").save(source)
+    monkeypatch.setattr(ocr, "available_engines", lambda: ["broken"])
+    monkeypatch.setattr(ocr, "extract_image", lambda *a, **k: (_ for _ in ()).throw(RuntimeError()))
+    monkeypatch.setattr(pipeline, "signature", lambda *a: "qa-error-recovery")
+    cache = tmp_path / "cache"
+    result = convert(source, checkpoint_dir=cache)
+    assert result.pages[0].error == "All extraction attempts failed; see Page Audit."
+    assert all(a.error == "RuntimeError" for a in result.pages[0].attempts)
+    assert any(i.code == "page_failed" and i.reason for i in result.issues)
+    assert not list(cache.glob("page-*.json"))
+
+
 def test_no_network_without_configuration(monkeypatch):
     monkeypatch.delenv("TRUECELL_LLM_API_KEY", raising=False)
     monkeypatch.delenv("TRUECELL_LLM_MODEL", raising=False)

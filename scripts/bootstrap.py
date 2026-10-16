@@ -15,14 +15,40 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def port_number(value: str) -> int:
+    port = int(value)
+    if not 1 <= port <= 65535:
+        raise argparse.ArgumentTypeError("Port must be between 1 and 65535.")
+    return port
+
+
+def available_port(first: int, bind_host: str = "127.0.0.1") -> int | None:
+    for candidate in range(first, min(first + 10, 65536)):
+        with socket.socket() as connection:
+            try:
+                connection.bind((bind_host, candidate))
+                return candidate
+            except OSError:
+                continue
+    return None
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--offline", action="store_true")
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--judge-test", action="store_true")
-    parser.add_argument("--port", type=int, default=8501)
+    parser.add_argument("--ui", choices=("modern", "streamlit"), default="modern")
+    parser.add_argument("--port", type=port_number, default=8501)
     parser.add_argument("--no-browser", action="store_true")
+    parser.add_argument(
+        "--lan",
+        action="store_true",
+        help="Allow the modern app from a phone on the same private Wi-Fi network.",
+    )
     args = parser.parse_args()
+    if args.lan and args.ui == "streamlit":
+        parser.error("--lan is available with the modern interface only")
     if not (3, 10) <= sys.version_info[:2] <= (3, 12):
         print(
             "Use 64-bit Python 3.10, 3.11 or 3.12. No system software is installed automatically."
@@ -83,22 +109,25 @@ def main() -> int:
         return 0
     if args.judge_test:
         return subprocess.call([str(python), str(ROOT / "scripts/judge_check.py")], cwd=ROOT)
-    port = None
-    for candidate in range(args.port, args.port + 10):
-        with socket.socket() as connection:
-            try:
-                connection.bind(("127.0.0.1", candidate))
-                port = candidate
-                break
-            except OSError:
-                continue
+    port = available_port(args.port, "0.0.0.0" if args.lan else "127.0.0.1")
     if port is None:
         print("No free local port; choose --port with another value.")
         return 2
-    command = [str(python), str(ROOT / "run.py"), "--server.port", str(port)]
+    command = [
+        str(python),
+        str(ROOT / "run.py"),
+        "--ui",
+        args.ui,
+        "--port",
+        str(port),
+    ]
     if args.no_browser:
-        command += ["--server.headless", "true"]
-    print(f"Truecell Studio: http://127.0.0.1:{port}")
+        command.append("--no-browser")
+    if args.lan:
+        command.append("--lan")
+        print("Starting Truecell for this computer and the same private network.")
+    else:
+        print(f"Truecell: http://127.0.0.1:{port}")
     return subprocess.call(command, cwd=ROOT)
 
 

@@ -10,6 +10,10 @@ from .models import Table
 from .values import kind
 
 FOOTER = re.compile(r"^(?:page\s*)?\d+\s*(?:of|/)\s*\d+$|^page\s+\d+$", re.I)
+VERTICAL_MERGE_NOTE = (
+    "Vertically merged group labels repeated into child rows from explicit ruled "
+    "geometry; inherited cells reuse the original source box."
+)
 
 
 def clean(value: object) -> str:
@@ -35,6 +39,63 @@ def header_likely(first: list[str], following: list[list[str]]) -> bool:
     return changes >= max(1, len(first) * 0.2)
 
 
+def _vertical_merge_origins(
+    raw: list[list[object]],
+    cell_boxes: list[list[tuple | None]],
+    data_indices: list[int],
+) -> dict[tuple[int, int], int]:
+    """Map blank child cells to a prior cell only when its box spans that row."""
+    origins: dict[tuple[int, int], int] = {}
+    tolerance = 0.75
+    for position, raw_index in enumerate(data_indices):
+        if raw_index >= len(cell_boxes):
+            continue
+        current_boxes = cell_boxes[raw_index]
+        intervals = [
+            (box[1], box[3])
+            for box in current_boxes
+            if box is not None and len(box) >= 4 and box[3] > box[1]
+        ]
+        # A row needs independent cells to establish its actual vertical band.
+        if len(intervals) < 2:
+            continue
+        shortest = min(bottom - top for top, bottom in intervals)
+        row_intervals = [
+            (top, bottom)
+            for top, bottom in intervals
+            if bottom - top <= shortest + tolerance
+        ]
+        row_top = median(top for top, _ in row_intervals)
+        row_bottom = median(bottom for _, bottom in row_intervals)
+        if row_bottom <= row_top:
+            continue
+        for column in range(len(raw[raw_index])):
+            current_box = current_boxes[column] if column < len(current_boxes) else None
+            if clean(raw[raw_index][column]) or current_box is not None:
+                continue
+            for source_index in reversed(data_indices[:position]):
+                source_row = raw[source_index]
+                source_boxes = cell_boxes[source_index] if source_index < len(cell_boxes) else []
+                source_box = source_boxes[column] if column < len(source_boxes) else None
+                source_value = clean(source_row[column]) if column < len(source_row) else ""
+                # An explicit intervening cell, even if empty, ends the earlier span.
+                if source_box is not None and not source_value:
+                    break
+                if not source_value:
+                    continue
+                if source_box is None or len(source_box) < 4:
+                    break
+                if kind(source_value) not in {"text", "id", "date"}:
+                    break
+                if (
+                    source_box[1] <= row_top + tolerance
+                    and source_box[3] >= row_bottom - tolerance
+                ):
+                    origins[(raw_index, column)] = source_index
+                break
+    return origins
+
+
 def normalize(
     raw: list[list[object]],
     page: int,
@@ -42,8 +103,11 @@ def normalize(
     engine: str,
     confidence: float = 1.0,
     cell_boxes: list[list[tuple | None]] | None = None,
+    row_indices: list[int] | None = None,
 ) -> Table | None:
-    """Preserve ragged data for validation and flatten demonstrable merged headers."""
+    """Normalize tables; optionally return raw data-row indexes for OCR evidence."""
+    if row_indices is not None:
+        row_indices.clear()
     rows = [[clean(c) for c in row] for row in raw]
     indices = [
         i
@@ -68,29 +132,55 @@ def normalize(
         parent = ""
         headers = []
         for c in range(width):
-            parent = rows[0][c] or parent
+            top = rows[0][c] if c < len(rows[0]) else ""
+            parent = top or parent
             sub = rows[1][c] if c < len(rows[1]) else ""
             headers.append(" | ".join(filter(None, (parent, sub))))
         rows = rows[2:]
         header_indices, indices = indices[:2], indices[2:]
         has_header = True
     elif has_header:
-        headers, rows = rows[0], rows[1:]
+        headers, rows = rows[0] + [""] * (width - len(rows[0])), rows[1:]
         header_indices, indices = indices[:1], indices[1:]
     else:
         headers = [f"Column {c + 1}" for c in range(width)]
     headers = [h or f"Column {c + 1}" for c, h in enumerate(headers)]
+    vertical_origins: dict[tuple[int, int], int] = {}
+    if engine == "native-lines" and cell_boxes is not None:
+        vertical_origins = _vertical_merge_origins(raw, cell_boxes, indices)
+        for data_row, raw_index in enumerate(indices):
+            for column in range(len(rows[data_row])):
+                source_index = vertical_origins.get((raw_index, column))
+                if source_index is not None:
+                    rows[data_row][column] = clean(raw[source_index][column])
     table = Table(headers, rows, page, tuple(bbox), engine, confidence, has_header)
+    if vertical_origins:
+        table.notes.append(VERTICAL_MERGE_NOTE)
+    if row_indices is not None:
+        row_indices.extend(indices)
     if cell_boxes is not None:
 
         def source(r: int, c: int) -> list[dict]:
+            inherited = (r, c) in vertical_origins
+            if inherited:
+                r = vertical_origins[(r, c)]
+            top_value = raw[r][c] if c < len(raw[r]) else None
+            second_value = (
+                raw[header_indices[1]][c]
+                if len(header_indices) == 2
+                and c < len(raw[header_indices[1]])
+                else None
+            )
             if (
                 len(header_indices) == 2
                 and r == header_indices[0]
-                and not raw[r][c]
-                and raw[header_indices[1]][c]
+                and not top_value
+                and second_value
             ):
-                c = next((j for j in range(c - 1, -1, -1) if raw[r][j]), c)
+                c = next(
+                    (j for j in range(c - 1, -1, -1) if j < len(raw[r]) and raw[r][j]),
+                    c,
+                )
             box = cell_boxes[r][c] if r < len(cell_boxes) and c < len(cell_boxes[r]) else None
             return [
                 {
@@ -100,6 +190,7 @@ def normalize(
                     "engine": engine,
                     "confidence": None if engine.startswith("native") else confidence,
                     "coordinates": "page points",
+                    **({"role": "vertical_merge_expansion"} if inherited else {}),
                 }
             ]
 
@@ -122,6 +213,8 @@ def words_to_grid(
     if aligned:
         return aligned
     if len(words) < 4:
+        return []
+    if not any(kind(w["text"]) in {"numeric", "currency", "date", "id"} for w in words):
         return []
     height = median(w["bottom"] - w["top"] for w in words)
     lines: list[list[dict]] = []

@@ -72,6 +72,10 @@ def convert(
             result.pages.append(report)
             candidates: list[tuple[float, list[Table], Attempt]] = []
 
+            def best_tables() -> list[Table]:
+                best = max(candidates, key=candidate_key, default=None)
+                return best[1] if best else []
+
             def attempt(engine: str, strategy: str, operation) -> None:
                 tick = time.perf_counter()
                 try:
@@ -88,6 +92,7 @@ def convert(
                     )
                     candidates.append((score, tables, record))
                 except Exception as exc:
+                    error = str(exc) or type(exc).__name__
                     record = Attempt(
                         engine,
                         strategy,
@@ -96,9 +101,9 @@ def convert(
                         0,
                         -10000,
                         time.perf_counter() - tick,
-                        str(exc),
+                        error,
                     )
-                    LOG.warning("Page %s %s failed: %s", index + 1, strategy, exc)
+                    LOG.warning("Page %s %s failed: %s", index + 1, strategy, error)
                 report.attempts.append(record)
 
             try:
@@ -130,7 +135,8 @@ def convert(
                                 lambda: extract_page(p, index + 1, "words"),
                             )
                 if report.route == "ocr" or (
-                    report.route == "digital" and (verify or not any(c[1] for c in candidates))
+                    report.route == "digital"
+                    and (verify or (not any(c[1] for c in candidates) and bool(page.get_images())))
                 ):
                     from .ocr import available_engines, extract_image
 
@@ -156,7 +162,7 @@ def convert(
                             alternate_name,
                             lambda: extract_image(image, index + 1, engines[0], alternate=True),
                         )
-                        if needs_retry(max(candidates, key=candidate_key)[1]):
+                        if needs_retry(best_tables()):
                             attempt(
                                 engines[0],
                                 "perspective-cell-recheck-300dpi",
@@ -168,21 +174,38 @@ def convert(
                                     alternate=True,
                                 ),
                             )
-                        if len(engines) > 1 and (
-                            verify or needs_retry(max(candidates, key=candidate_key)[1])
-                        ):
+                        if len(engines) > 1 and (verify or needs_retry(best_tables())):
                             attempt(
                                 engines[1],
                                 "second-engine",
                                 lambda: extract_image(image, index + 1, engines[1]),
                             )
-                        if not any(c[1] and c[2].cells >= 12 for c in candidates):
+                        # Sideways text can still produce a large, incorrect grid.
+                        # Retry on substantive uncertainty, not just a low cell count.
+                        if needs_retry(best_tables()):
                             for angle in (90, 180, 270):
                                 attempt(
                                     engines[0],
                                     f"rotate-{angle}",
                                     lambda angle=angle: extract_image(
                                         image, index + 1, engines[0], rotation=angle
+                                    ),
+                                )
+                                if not needs_retry(best_tables()):
+                                    break
+                            best = max(candidates, key=candidate_key, default=None)
+                            if (
+                                len(engines) > 1
+                                and best
+                                and best[2].strategy.startswith("rotate-")
+                                and needs_retry(best[1])
+                            ):
+                                angle = int(best[2].strategy.rsplit("-", 1)[1])
+                                attempt(
+                                    engines[1],
+                                    f"rotate-{angle}-second-engine",
+                                    lambda: extract_image(
+                                        image, index + 1, engines[1], rotation=angle
                                     ),
                                 )
                 if (
@@ -283,9 +306,9 @@ def convert(
                 else:
                     raise RuntimeError("All extraction attempts failed; see Page Audit.")
             except Exception as exc:
-                report.error = str(exc)
+                report.error = str(exc) or type(exc).__name__
                 result.issues.append(
-                    Issue("error", index + 1, None, None, str(exc), code="page_failed")
+                    Issue("error", index + 1, None, None, report.error, code="page_failed")
                 )
                 LOG.exception("Page %s failed", index + 1)
             report.seconds = time.perf_counter() - page_started

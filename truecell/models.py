@@ -33,6 +33,7 @@ class Table:
     row_engines: list[str] = field(default_factory=list)
     cell_sources: list[list[list[dict[str, Any]]]] = field(default_factory=list)
     header_sources: list[list[dict[str, Any]]] = field(default_factory=list)
+    page_summaries: list[dict[str, Any]] = field(default_factory=list)
 
     def __post_init__(self) -> None:
         if not self.provenance:

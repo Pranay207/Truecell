@@ -9963,6 +9963,7 @@
           }
         ]
       ],
+      "page_summaries": [],
       "cell_scores": []
     }
   ],
@@ -10064,7 +10065,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.3525173000016366,
+      "seconds": 0.26154619999579154,
       "attempts": [
         {
           "engine": "native",
@@ -10073,7 +10074,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.28900890000659274,
+          "seconds": 0.19345269999757875,
           "error": "",
           "selected": true
         }
@@ -10085,7 +10086,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.41053000000101747,
+      "seconds": 0.5251514000119641,
       "attempts": [
         {
           "engine": "native",
@@ -10094,7 +10095,7 @@
           "cells": 192,
           "issues": 1,
           "score": 1985.6,
-          "seconds": 0.12567660000058822,
+          "seconds": 0.17445960000623018,
           "error": "",
           "selected": true
         },
@@ -10105,7 +10106,7 @@
           "cells": 241,
           "issues": 3,
           "score": 931.812,
-          "seconds": 0.21091890000388958,
+          "seconds": 0.24710469999990892,
           "error": "",
           "selected": false
         },
@@ -10116,7 +10117,7 @@
           "cells": 192,
           "issues": 2,
           "score": 981.6,
-          "seconds": 0.07077700000081677,
+          "seconds": 0.09850150000420399,
           "error": "",
           "selected": false
         }
@@ -10128,7 +10129,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.907130400002643,
+      "seconds": 0.7485967999964487,
       "attempts": [
         {
           "engine": "native",
@@ -10137,7 +10138,7 @@
           "cells": 192,
           "issues": 1,
           "score": 1985.6,
-          "seconds": 0.2478241999997408,
+          "seconds": 0.2559973000024911,
           "error": "",
           "selected": true
         },
@@ -10148,7 +10149,7 @@
           "cells": 241,
           "issues": 3,
           "score": 931.812,
-          "seconds": 0.5231332999974256,
+          "seconds": 0.35551110000233166,
           "error": "",
           "selected": false
         },
@@ -10159,7 +10160,7 @@
           "cells": 192,
           "issues": 2,
           "score": 981.6,
-          "seconds": 0.1309417999946163,
+          "seconds": 0.12507039999763947,
           "error": "",
           "selected": false
         }
@@ -10167,7 +10168,7 @@
       "error": ""
     }
   ],
-  "seconds": 2.0083912999980384,
+  "seconds": 1.8743526000034763,
   "source_sha256": "53c85256f6c94fdf3350f754df3e32bde4a9a9311b1b8ec0cfc9d8a7778f4438",
   "constraints": [
     {

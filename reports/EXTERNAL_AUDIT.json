@@ -4,7 +4,7 @@
     "scope": "full",
     "source_sha256": "7d6c24e45b38375e322419281cee1335ddb97e00fc86abe9f22afcd8b42e6d82",
     "url": "https://raw.githubusercontent.com/camelot-dev/camelot/92777b852e00933a5c4b9ba642601784604356cd/tests/files/foo.pdf",
-    "seconds": 0.5385944999943604,
+    "seconds": 0.22578140000405256,
     "first_development_observation": {
       "pass": false,
       "checked_cells": 35,
@@ -23,7 +23,7 @@
     "scope": "checkpoints",
     "source_sha256": "092853e4af150d1c72f474a59ce902305e8675c1d04059d5e2af4a628bc6dfbd",
     "url": "https://raw.githubusercontent.com/tabulapdf/tabula-java/master/src/test/resources/technology/tabula/12s0324.pdf",
-    "seconds": 2.7216214000000036,
+    "seconds": 2.7123181999922963,
     "first_development_observation": {
       "pass": false,
       "checked_cells": 48,
@@ -42,7 +42,7 @@
     "scope": "empty",
     "source_sha256": "3df79d34abbca99308e79cb94461c1893582604d68329a41fd4bec1885e6adb4",
     "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-    "seconds": 8.113608299994667,
+    "seconds": 6.582727899993188,
     "first_development_observation": {
       "pass": true,
       "checked_cells": 0,

@@ -14,6 +14,7 @@ import cv2
 import numpy as np
 from PIL import Image
 
+from .anchors import append_summaries, header_tables
 from .geometry import rotation_to_original, transformed_box
 from .models import Table
 from .table import normalize, words_to_grid
@@ -259,6 +260,26 @@ def grid_regions(
         crop_h = horizontal[y : y + rh, x : x + rw]
         xs = [x + c for c in _runs(np.where(np.count_nonzero(crop_v, axis=0) > rh * 0.35)[0])]
         ys = [y + r for r in _runs(np.where(np.count_nonzero(crop_h, axis=1) > rw * 0.35)[0])]
+        if len(xs) >= 3:
+            # Adaptive thresholding can turn white letters inside a filled
+            # header into several false horizontal separators. The original
+            # gray image identifies the continuous dark band independently.
+            dark = np.where(np.median(gray[y : y + rh, xs[0] : xs[-1]], axis=1) < 120)[0]
+            bands = []
+            # White glyph rows can interrupt the dark median. Bridge those
+            # interruptions using the ordinary body-row spacing as a scale.
+            bridge = max(2, round(float(np.median(np.diff(ys))) * 0.65)) if len(ys) > 1 else 2
+            for row in dark.tolist():
+                if bands and row - bands[-1][-1] <= bridge:
+                    bands[-1].append(row)
+                else:
+                    bands.append([row])
+            for band in bands:
+                if 8 <= len(band) <= rh * 0.4:
+                    top, bottom = y + band[0], y + band[-1] + 1
+                    ys = [row for row in ys if row < top - 4 or row > bottom + 4]
+                    ys.extend([top, bottom])
+            ys = _runs(np.array(sorted(ys), dtype=int))
         if len(xs) >= 3 and len(ys) >= 3:
             regions.append((xs, ys))
     return sorted(regions, key=lambda r: (r[1][0], r[0][0])), mask
@@ -382,6 +403,15 @@ def extract_image(
     point_map = np.diag([72 / original_dpi[0], 72 / original_dpi[1], 1]) @ pixel_to_original
     regions, mask = grid_regions(gray)
     cleaned = gray.copy()
+    if not regions:
+        # A single underline can join every header into a glyph-like blob.
+        # Remove only long, thin rule components, preserving filled headings.
+        _, labels, stats, _ = cv2.connectedComponentsWithStats(mask)
+        thin_rules = np.zeros_like(mask)
+        for label, (x, y, width, height, area) in enumerate(stats[1:], 1):
+            if width > gray.shape[1] * 0.25 and width > height * 25:
+                thin_rules[labels == label] = 255
+        cleaned[cv2.dilate(thin_rules, np.ones((3, 3), np.uint8)) > 0] = 255
     # Whiten inferred rule coordinates, not the entire morphology mask: the
     # latter can erase filled header backgrounds and the text they surround.
     for xs, ys in regions:
@@ -453,6 +483,7 @@ def extract_image(
             ]
             for r in range(len(ys) - 1)
         ]
+        row_indices: list[int] = []
         table = normalize(
             raw,
             page,
@@ -460,19 +491,35 @@ def extract_image(
             f"ocr-{engine}",
             confidence,
             boxes,
+            row_indices,
         )
         if table:
-            offset = len(raw) - len(table.rows)
+            single_header = table.header_detected and all(len(s) == 1 for s in table.header_sources)
+            header_index = (
+                next(
+                    (
+                        r
+                        for r in range(row_indices[0])
+                        if all(
+                            sources[0].get("bbox") == list(boxes[r][c])
+                            for c, sources in enumerate(table.header_sources)
+                        )
+                    ),
+                    None,
+                )
+                if row_indices and single_header
+                else None
+            )
             for c, sources in enumerate(table.header_sources):
                 for record in sources:
                     record["confidence"] = (
-                        min((word["confidence"] for word in grid[0][c]), default=0)
-                        if offset == 1
+                        min((word["confidence"] for word in grid[header_index][c]), default=0)
+                        if header_index is not None
                         else None
                     )
-            if alternate and engine == "tesseract" and table.header_detected and offset == 1:
+            if alternate and engine == "tesseract" and header_index is not None:
                 try:
-                    verified_headers = reread_headers(gray, xs, ys)
+                    verified_headers = reread_headers(gray, xs, ys[header_index : header_index + 2])
                     for c, reading in enumerate(verified_headers):
                         if reading and reading[0] != table.headers[c]:
                             old = table.headers[c]
@@ -480,7 +527,7 @@ def extract_image(
                             table.header_sources[c].append(
                                 {
                                     "page": page,
-                                    "bbox": list(boxes[0][c]),
+                                    "bbox": list(boxes[header_index][c]),
                                     "text": reading[0],
                                     "engine": "rapidocr-English-v5",
                                     "confidence": reading[1],
@@ -493,18 +540,52 @@ def extract_image(
                     table.notes.append(
                         f"English header verification unavailable: {type(exc).__name__}."
                     )
-            for r, row in enumerate(grid[offset:]):
+            for r, raw_index in enumerate(row_indices):
+                row = grid[raw_index]
                 for c, cell in enumerate(row):
                     table.cell_confidence[(r, c)] = min(
                         (word["confidence"] for word in cell), default=0
                     )
                     for record in table.cell_sources[r][c]:
                         record["confidence"] = table.cell_confidence[(r, c)]
-                        record["initial_reading"] = original_readings[r + offset][c]
+                        record["initial_reading"] = original_readings[raw_index][c]
             table.notes.append(
                 f"OCR {engine}; deskew correction {angle:.2f} degrees; values require source review."
             )
             table.notes.extend(rechecks)
+            summary_words = words
+            if engine == "rapidocr":
+                # Grid-only recognition cannot see totals below the rules.
+                # Read a bounded footer strip only when it contains ink.
+                x0, y0 = max(0, xs[0] - 10), ys[-1] + 3
+                x1, y1 = min(w, xs[-1] + 10), min(h, y0 + (ys[1] - ys[0]) * 7)
+                summary_words = []
+                if y1 - y0 >= 32 and x1 > x0:
+                    footer = cleaned[y0:y1, x0:x1]
+                    if np.count_nonzero(footer < 160) > 20:
+                        # Preserve a nonzero height when RapidOCR rounds a
+                        # very wide crop to multiples of 32 pixels.
+                        footer = cv2.copyMakeBorder(
+                            footer, 64, 64, 0, 0, cv2.BORDER_CONSTANT, value=255
+                        )
+                        try:
+                            readings = recognize(footer, engine)
+                        except Exception as exc:
+                            readings = []
+                            table.notes.append(
+                                f"Summary OCR unavailable ({type(exc).__name__}); inspect below the table."
+                            )
+                        summary_words = [
+                            {
+                                **word,
+                                "x0": word["x0"] + x0,
+                                "x1": word["x1"] + x0,
+                                "top": word["top"] + y0 - 64,
+                                "bottom": word["bottom"] + y0 - 64,
+                            }
+                            for word in readings
+                        ]
+            append_grid_summaries(table, summary_words, xs, ys, point_map)
             tables.append(table)
     if not tables:
         scaled = [
@@ -517,13 +598,18 @@ def extract_image(
             }
             for word in words
         ]
-        tables = words_to_grid(scaled, page, f"ocr-{engine}-words", w * sx, h * sy)
+        tables = header_tables(scaled, page, engine=f"ocr-{engine}-anchors", font_evidence=False)
+        if not tables:
+            tables = words_to_grid(scaled, page, f"ocr-{engine}-words", w * sx, h * sy)
         for table in tables:
-            table.confidence = min(confidence, 0.72)
+            table.confidence = min(confidence, table.confidence)
             # Word reconstruction used the processed image's point coordinates.
             # Bring those boxes back through the same deskew/perspective map.
             processed_points_to_original = point_map @ np.diag([1 / sx, 1 / sy, 1])
             table.bbox = tuple(transformed_box(table.bbox, processed_points_to_original))
+            for record in table.page_summaries:
+                if record.get("bbox"):
+                    record["bbox"] = transformed_box(record["bbox"], processed_points_to_original)
             for row in [table.header_sources] + table.cell_sources:
                 for cell in row:
                     for record in cell:
@@ -537,3 +623,28 @@ def extract_image(
                 "Perspective rectification inferred from a dominant table outline; verify row and column alignment."
             )
     return tables
+
+
+def append_grid_summaries(
+    table: Table, words: list[dict], xs: list[int], ys: list[int], point_map: np.ndarray
+) -> None:
+    """Group unruled summaries upright, then map their evidence to the source."""
+    upright = Table(
+        table.headers[:], table.rows[:], table.page, (xs[0], ys[0], xs[-1], ys[-1]), table.engine
+    )
+    upright.cell_sources = [
+        [[{"bbox": [xs[c], ys[0], xs[c + 1], ys[-1]]}] for c in range(len(xs) - 1)]
+        for _ in table.rows
+    ]
+    append_summaries(upright, words)
+    for r in range(len(table.rows), len(upright.rows)):
+        table.rows.append(upright.rows[r])
+        sources = upright.cell_sources[r]
+        for c, cell in enumerate(sources):
+            for record in cell:
+                record["bbox"] = transformed_box(record["bbox"], point_map)
+                table.cell_confidence[r, c] = record["confidence"]
+        table.cell_sources.append(sources)
+        table.provenance.append([(table.page, len(table.provenance) + 1)])
+        table.row_engines.append(table.engine)
+    table.notes.extend(note for note in upright.notes if note not in table.notes)

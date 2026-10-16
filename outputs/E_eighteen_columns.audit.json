@@ -1,0 +1,3078 @@
+{
+  "source": "E_eighteen_columns.pdf",
+  "tables": [
+    {
+      "headers": [
+        "Ref",
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M09",
+        "M10",
+        "M11",
+        "M12",
+        "M13",
+        "M14",
+        "M15",
+        "M16",
+        "M17"
+      ],
+      "rows": [
+        [
+          "R01",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37"
+        ],
+        [
+          "R02",
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46",
+          "47",
+          "48",
+          "49",
+          "50",
+          "51",
+          "52",
+          "53",
+          "54",
+          "55",
+          "56",
+          "57"
+        ],
+        [
+          "R03",
+          "61",
+          "62",
+          "63",
+          "64",
+          "65",
+          "66",
+          "67",
+          "68",
+          "69",
+          "70",
+          "71",
+          "72",
+          "73",
+          "74",
+          "75",
+          "76",
+          "77"
+        ],
+        [
+          "R04",
+          "81",
+          "82",
+          "83",
+          "84",
+          "85",
+          "86",
+          "87",
+          "88",
+          "89",
+          "90",
+          "91",
+          "92",
+          "93",
+          "94",
+          "95",
+          "96",
+          "97"
+        ],
+        [
+          "R05",
+          "101",
+          "102",
+          "103",
+          "104",
+          "105",
+          "106",
+          "107",
+          "108",
+          "109",
+          "110",
+          "111",
+          "112",
+          "113",
+          "114",
+          "115",
+          "116",
+          "117"
+        ],
+        [
+          "R06",
+          "121",
+          "122",
+          "123",
+          "124",
+          "125",
+          "126",
+          "127",
+          "128",
+          "129",
+          "130",
+          "131",
+          "132",
+          "133",
+          "134",
+          "135",
+          "136",
+          "137"
+        ],
+        [
+          "R07",
+          "141",
+          "142",
+          "143",
+          "144",
+          "145",
+          "146",
+          "147",
+          "148",
+          "149",
+          "150",
+          "151",
+          "152",
+          "153",
+          "154",
+          "155",
+          "156",
+          "157"
+        ],
+        [
+          "R08",
+          "161",
+          "162",
+          "163",
+          "164",
+          "165",
+          "166",
+          "167",
+          "168",
+          "169",
+          "170",
+          "171",
+          "172",
+          "173",
+          "174",
+          "175",
+          "176",
+          "177"
+        ],
+        [
+          "R09",
+          "181",
+          "182",
+          "183",
+          "184",
+          "185",
+          "186",
+          "187",
+          "188",
+          "189",
+          "190",
+          "191",
+          "192",
+          "193",
+          "194",
+          "195",
+          "196",
+          "197"
+        ]
+      ],
+      "page": 1,
+      "bbox": [
+        40.0,
+        70.863,
+        1094.5049999999999,
+        322.863
+      ],
+      "engine": "native-anchors",
+      "confidence": 0.92,
+      "header_detected": true,
+      "provenance": [
+        [
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            4
+          ]
+        ],
+        [
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            1,
+            6
+          ]
+        ],
+        [
+          [
+            1,
+            7
+          ]
+        ],
+        [
+          [
+            1,
+            8
+          ]
+        ],
+        [
+          [
+            1,
+            9
+          ]
+        ]
+      ],
+      "notes": [
+        "Header anchors and repeated word positions inferred column boundaries; review alignment."
+      ],
+      "row_engines": [
+        "native-anchors",
+        "native-anchors",
+        "native-anchors",
+        "native-anchors",
+        "native-anchors",
+        "native-anchors",
+        "native-anchors",
+        "native-anchors",
+        "native-anchors"
+      ],
+      "cell_sources": [
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                40.0,
+                97.863,
+                56.50599999999999,
+                106.863
+              ],
+              "text": "R01",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                101.0,
+                97.863,
+                111.00800000000001,
+                106.863
+              ],
+              "text": "21",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                162.0,
+                97.863,
+                172.00799999999998,
+                106.863
+              ],
+              "text": "22",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                223.0,
+                97.863,
+                233.00799999999998,
+                106.863
+              ],
+              "text": "23",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                284.0,
+                97.863,
+                294.00800000000004,
+                106.863
+              ],
+              "text": "24",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                345.0,
+                97.863,
+                355.00800000000004,
+                106.863
+              ],
+              "text": "25",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                406.0,
+                97.863,
+                416.00800000000004,
+                106.863
+              ],
+              "text": "26",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                467.0,
+                97.863,
+                477.00800000000004,
+                106.863
+              ],
+              "text": "27",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                528.0,
+                97.863,
+                538.008,
+                106.863
+              ],
+              "text": "28",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                589.0,
+                97.863,
+                599.008,
+                106.863
+              ],
+              "text": "29",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                650.0,
+                97.863,
+                660.008,
+                106.863
+              ],
+              "text": "30",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                711.0,
+                97.863,
+                721.008,
+                106.863
+              ],
+              "text": "31",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                772.0,
+                97.863,
+                782.008,
+                106.863
+              ],
+              "text": "32",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                833.0,
+                97.863,
+                843.008,
+                106.863
+              ],
+              "text": "33",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.0,
+                97.863,
+                904.008,
+                106.863
+              ],
+              "text": "34",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                955.0,
+                97.863,
+                965.008,
+                106.863
+              ],
+              "text": "35",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1016.0,
+                97.863,
+                1026.008,
+                106.863
+              ],
+              "text": "36",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1077.0,
+                97.863,
+                1087.0079999999998,
+                106.863
+              ],
+              "text": "37",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                40.0,
+                124.863,
+                56.50599999999999,
+                133.863
+              ],
+              "text": "R02",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                101.0,
+                124.863,
+                111.00800000000001,
+                133.863
+              ],
+              "text": "41",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                162.0,
+                124.863,
+                172.00799999999998,
+                133.863
+              ],
+              "text": "42",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                223.0,
+                124.863,
+                233.00799999999998,
+                133.863
+              ],
+              "text": "43",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                284.0,
+                124.863,
+                294.00800000000004,
+                133.863
+              ],
+              "text": "44",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                345.0,
+                124.863,
+                355.00800000000004,
+                133.863
+              ],
+              "text": "45",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                406.0,
+                124.863,
+                416.00800000000004,
+                133.863
+              ],
+              "text": "46",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                467.0,
+                124.863,
+                477.00800000000004,
+                133.863
+              ],
+              "text": "47",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                528.0,
+                124.863,
+                538.008,
+                133.863
+              ],
+              "text": "48",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                589.0,
+                124.863,
+                599.008,
+                133.863
+              ],
+              "text": "49",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                650.0,
+                124.863,
+                660.008,
+                133.863
+              ],
+              "text": "50",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                711.0,
+                124.863,
+                721.008,
+                133.863
+              ],
+              "text": "51",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                772.0,
+                124.863,
+                782.008,
+                133.863
+              ],
+              "text": "52",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                833.0,
+                124.863,
+                843.008,
+                133.863
+              ],
+              "text": "53",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.0,
+                124.863,
+                904.008,
+                133.863
+              ],
+              "text": "54",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                955.0,
+                124.863,
+                965.008,
+                133.863
+              ],
+              "text": "55",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1016.0,
+                124.863,
+                1026.008,
+                133.863
+              ],
+              "text": "56",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1077.0,
+                124.863,
+                1087.0079999999998,
+                133.863
+              ],
+              "text": "57",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                40.0,
+                151.863,
+                56.50599999999999,
+                160.863
+              ],
+              "text": "R03",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                101.0,
+                151.863,
+                111.00800000000001,
+                160.863
+              ],
+              "text": "61",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                162.0,
+                151.863,
+                172.00799999999998,
+                160.863
+              ],
+              "text": "62",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                223.0,
+                151.863,
+                233.00799999999998,
+                160.863
+              ],
+              "text": "63",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                284.0,
+                151.863,
+                294.00800000000004,
+                160.863
+              ],
+              "text": "64",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                345.0,
+                151.863,
+                355.00800000000004,
+                160.863
+              ],
+              "text": "65",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                406.0,
+                151.863,
+                416.00800000000004,
+                160.863
+              ],
+              "text": "66",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                467.0,
+                151.863,
+                477.00800000000004,
+                160.863
+              ],
+              "text": "67",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                528.0,
+                151.863,
+                538.008,
+                160.863
+              ],
+              "text": "68",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                589.0,
+                151.863,
+                599.008,
+                160.863
+              ],
+              "text": "69",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                650.0,
+                151.863,
+                660.008,
+                160.863
+              ],
+              "text": "70",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                711.0,
+                151.863,
+                721.008,
+                160.863
+              ],
+              "text": "71",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                772.0,
+                151.863,
+                782.008,
+                160.863
+              ],
+              "text": "72",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                833.0,
+                151.863,
+                843.008,
+                160.863
+              ],
+              "text": "73",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.0,
+                151.863,
+                904.008,
+                160.863
+              ],
+              "text": "74",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                955.0,
+                151.863,
+                965.008,
+                160.863
+              ],
+              "text": "75",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1016.0,
+                151.863,
+                1026.008,
+                160.863
+              ],
+              "text": "76",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1077.0,
+                151.863,
+                1087.0079999999998,
+                160.863
+              ],
+              "text": "77",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                40.0,
+                178.863,
+                56.50599999999999,
+                187.863
+              ],
+              "text": "R04",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                101.0,
+                178.863,
+                111.00800000000001,
+                187.863
+              ],
+              "text": "81",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                162.0,
+                178.863,
+                172.00799999999998,
+                187.863
+              ],
+              "text": "82",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                223.0,
+                178.863,
+                233.00799999999998,
+                187.863
+              ],
+              "text": "83",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                284.0,
+                178.863,
+                294.00800000000004,
+                187.863
+              ],
+              "text": "84",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                345.0,
+                178.863,
+                355.00800000000004,
+                187.863
+              ],
+              "text": "85",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                406.0,
+                178.863,
+                416.00800000000004,
+                187.863
+              ],
+              "text": "86",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                467.0,
+                178.863,
+                477.00800000000004,
+                187.863
+              ],
+              "text": "87",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                528.0,
+                178.863,
+                538.008,
+                187.863
+              ],
+              "text": "88",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                589.0,
+                178.863,
+                599.008,
+                187.863
+              ],
+              "text": "89",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                650.0,
+                178.863,
+                660.008,
+                187.863
+              ],
+              "text": "90",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                711.0,
+                178.863,
+                721.008,
+                187.863
+              ],
+              "text": "91",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                772.0,
+                178.863,
+                782.008,
+                187.863
+              ],
+              "text": "92",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                833.0,
+                178.863,
+                843.008,
+                187.863
+              ],
+              "text": "93",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.0,
+                178.863,
+                904.008,
+                187.863
+              ],
+              "text": "94",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                955.0,
+                178.863,
+                965.008,
+                187.863
+              ],
+              "text": "95",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1016.0,
+                178.863,
+                1026.008,
+                187.863
+              ],
+              "text": "96",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1077.0,
+                178.863,
+                1087.0079999999998,
+                187.863
+              ],
+              "text": "97",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                40.0,
+                205.863,
+                56.50599999999999,
+                214.863
+              ],
+              "text": "R05",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                101.0,
+                205.863,
+                116.012,
+                214.863
+              ],
+              "text": "101",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                162.0,
+                205.863,
+                177.012,
+                214.863
+              ],
+              "text": "102",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                223.0,
+                205.863,
+                238.012,
+                214.863
+              ],
+              "text": "103",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                284.0,
+                205.863,
+                299.012,
+                214.863
+              ],
+              "text": "104",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                345.0,
+                205.863,
+                360.012,
+                214.863
+              ],
+              "text": "105",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                406.0,
+                205.863,
+                421.012,
+                214.863
+              ],
+              "text": "106",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                467.0,
+                205.863,
+                482.012,
+                214.863
+              ],
+              "text": "107",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                528.0,
+                205.863,
+                543.0120000000001,
+                214.863
+              ],
+              "text": "108",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                589.0,
+                205.863,
+                604.0120000000001,
+                214.863
+              ],
+              "text": "109",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                650.0,
+                205.863,
+                665.0120000000001,
+                214.863
+              ],
+              "text": "110",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                711.0,
+                205.863,
+                726.0120000000001,
+                214.863
+              ],
+              "text": "111",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                772.0,
+                205.863,
+                787.0120000000001,
+                214.863
+              ],
+              "text": "112",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                833.0,
+                205.863,
+                848.0120000000001,
+                214.863
+              ],
+              "text": "113",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.0,
+                205.863,
+                909.0120000000001,
+                214.863
+              ],
+              "text": "114",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                955.0,
+                205.863,
+                970.0120000000001,
+                214.863
+              ],
+              "text": "115",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1016.0,
+                205.863,
+                1031.012,
+                214.863
+              ],
+              "text": "116",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1077.0,
+                205.863,
+                1092.012,
+                214.863
+              ],
+              "text": "117",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                40.0,
+                232.863,
+                56.50599999999999,
+                241.863
+              ],
+              "text": "R06",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                101.0,
+                232.863,
+                116.012,
+                241.863
+              ],
+              "text": "121",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                162.0,
+                232.863,
+                177.012,
+                241.863
+              ],
+              "text": "122",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                223.0,
+                232.863,
+                238.012,
+                241.863
+              ],
+              "text": "123",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                284.0,
+                232.863,
+                299.012,
+                241.863
+              ],
+              "text": "124",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                345.0,
+                232.863,
+                360.012,
+                241.863
+              ],
+              "text": "125",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                406.0,
+                232.863,
+                421.012,
+                241.863
+              ],
+              "text": "126",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                467.0,
+                232.863,
+                482.012,
+                241.863
+              ],
+              "text": "127",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                528.0,
+                232.863,
+                543.0120000000001,
+                241.863
+              ],
+              "text": "128",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                589.0,
+                232.863,
+                604.0120000000001,
+                241.863
+              ],
+              "text": "129",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                650.0,
+                232.863,
+                665.0120000000001,
+                241.863
+              ],
+              "text": "130",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                711.0,
+                232.863,
+                726.0120000000001,
+                241.863
+              ],
+              "text": "131",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                772.0,
+                232.863,
+                787.0120000000001,
+                241.863
+              ],
+              "text": "132",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                833.0,
+                232.863,
+                848.0120000000001,
+                241.863
+              ],
+              "text": "133",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.0,
+                232.863,
+                909.0120000000001,
+                241.863
+              ],
+              "text": "134",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                955.0,
+                232.863,
+                970.0120000000001,
+                241.863
+              ],
+              "text": "135",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1016.0,
+                232.863,
+                1031.012,
+                241.863
+              ],
+              "text": "136",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1077.0,
+                232.863,
+                1092.012,
+                241.863
+              ],
+              "text": "137",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                40.0,
+                259.863,
+                56.50599999999999,
+                268.863
+              ],
+              "text": "R07",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                101.0,
+                259.863,
+                116.012,
+                268.863
+              ],
+              "text": "141",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                162.0,
+                259.863,
+                177.012,
+                268.863
+              ],
+              "text": "142",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                223.0,
+                259.863,
+                238.012,
+                268.863
+              ],
+              "text": "143",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                284.0,
+                259.863,
+                299.012,
+                268.863
+              ],
+              "text": "144",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                345.0,
+                259.863,
+                360.012,
+                268.863
+              ],
+              "text": "145",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                406.0,
+                259.863,
+                421.012,
+                268.863
+              ],
+              "text": "146",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                467.0,
+                259.863,
+                482.012,
+                268.863
+              ],
+              "text": "147",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                528.0,
+                259.863,
+                543.0120000000001,
+                268.863
+              ],
+              "text": "148",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                589.0,
+                259.863,
+                604.0120000000001,
+                268.863
+              ],
+              "text": "149",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                650.0,
+                259.863,
+                665.0120000000001,
+                268.863
+              ],
+              "text": "150",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                711.0,
+                259.863,
+                726.0120000000001,
+                268.863
+              ],
+              "text": "151",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                772.0,
+                259.863,
+                787.0120000000001,
+                268.863
+              ],
+              "text": "152",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                833.0,
+                259.863,
+                848.0120000000001,
+                268.863
+              ],
+              "text": "153",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.0,
+                259.863,
+                909.0120000000001,
+                268.863
+              ],
+              "text": "154",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                955.0,
+                259.863,
+                970.0120000000001,
+                268.863
+              ],
+              "text": "155",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1016.0,
+                259.863,
+                1031.012,
+                268.863
+              ],
+              "text": "156",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1077.0,
+                259.863,
+                1092.012,
+                268.863
+              ],
+              "text": "157",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                40.0,
+                286.863,
+                56.50599999999999,
+                295.863
+              ],
+              "text": "R08",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                101.0,
+                286.863,
+                116.012,
+                295.863
+              ],
+              "text": "161",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                162.0,
+                286.863,
+                177.012,
+                295.863
+              ],
+              "text": "162",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                223.0,
+                286.863,
+                238.012,
+                295.863
+              ],
+              "text": "163",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                284.0,
+                286.863,
+                299.012,
+                295.863
+              ],
+              "text": "164",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                345.0,
+                286.863,
+                360.012,
+                295.863
+              ],
+              "text": "165",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                406.0,
+                286.863,
+                421.012,
+                295.863
+              ],
+              "text": "166",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                467.0,
+                286.863,
+                482.012,
+                295.863
+              ],
+              "text": "167",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                528.0,
+                286.863,
+                543.0120000000001,
+                295.863
+              ],
+              "text": "168",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                589.0,
+                286.863,
+                604.0120000000001,
+                295.863
+              ],
+              "text": "169",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                650.0,
+                286.863,
+                665.0120000000001,
+                295.863
+              ],
+              "text": "170",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                711.0,
+                286.863,
+                726.0120000000001,
+                295.863
+              ],
+              "text": "171",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                772.0,
+                286.863,
+                787.0120000000001,
+                295.863
+              ],
+              "text": "172",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                833.0,
+                286.863,
+                848.0120000000001,
+                295.863
+              ],
+              "text": "173",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.0,
+                286.863,
+                909.0120000000001,
+                295.863
+              ],
+              "text": "174",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                955.0,
+                286.863,
+                970.0120000000001,
+                295.863
+              ],
+              "text": "175",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1016.0,
+                286.863,
+                1031.012,
+                295.863
+              ],
+              "text": "176",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1077.0,
+                286.863,
+                1092.012,
+                295.863
+              ],
+              "text": "177",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                40.0,
+                313.863,
+                56.50599999999999,
+                322.863
+              ],
+              "text": "R09",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                101.0,
+                313.863,
+                116.012,
+                322.863
+              ],
+              "text": "181",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                162.0,
+                313.863,
+                177.012,
+                322.863
+              ],
+              "text": "182",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                223.0,
+                313.863,
+                238.012,
+                322.863
+              ],
+              "text": "183",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                284.0,
+                313.863,
+                299.012,
+                322.863
+              ],
+              "text": "184",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                345.0,
+                313.863,
+                360.012,
+                322.863
+              ],
+              "text": "185",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                406.0,
+                313.863,
+                421.012,
+                322.863
+              ],
+              "text": "186",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                467.0,
+                313.863,
+                482.012,
+                322.863
+              ],
+              "text": "187",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                528.0,
+                313.863,
+                543.0120000000001,
+                322.863
+              ],
+              "text": "188",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                589.0,
+                313.863,
+                604.0120000000001,
+                322.863
+              ],
+              "text": "189",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                650.0,
+                313.863,
+                665.0120000000001,
+                322.863
+              ],
+              "text": "190",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                711.0,
+                313.863,
+                726.0120000000001,
+                322.863
+              ],
+              "text": "191",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                772.0,
+                313.863,
+                787.0120000000001,
+                322.863
+              ],
+              "text": "192",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                833.0,
+                313.863,
+                848.0120000000001,
+                322.863
+              ],
+              "text": "193",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.0,
+                313.863,
+                909.0120000000001,
+                322.863
+              ],
+              "text": "194",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                955.0,
+                313.863,
+                970.0120000000001,
+                322.863
+              ],
+              "text": "195",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1016.0,
+                313.863,
+                1031.012,
+                322.863
+              ],
+              "text": "196",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                1077.0,
+                313.863,
+                1092.012,
+                322.863
+              ],
+              "text": "197",
+              "engine": "native-anchors",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ]
+      ],
+      "header_sources": [
+        [
+          {
+            "page": 1,
+            "bbox": [
+              40.0,
+              70.863,
+              54.498999999999995,
+              79.863
+            ],
+            "text": "Ref",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              101.0,
+              70.863,
+              118.50500000000001,
+              79.863
+            ],
+            "text": "M01",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              162.0,
+              70.863,
+              179.505,
+              79.863
+            ],
+            "text": "M02",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              223.0,
+              70.863,
+              240.505,
+              79.863
+            ],
+            "text": "M03",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              284.0,
+              70.863,
+              301.505,
+              79.863
+            ],
+            "text": "M04",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              345.0,
+              70.863,
+              362.505,
+              79.863
+            ],
+            "text": "M05",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              406.0,
+              70.863,
+              423.505,
+              79.863
+            ],
+            "text": "M06",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              467.0,
+              70.863,
+              484.505,
+              79.863
+            ],
+            "text": "M07",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              528.0,
+              70.863,
+              545.505,
+              79.863
+            ],
+            "text": "M08",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              589.0,
+              70.863,
+              606.505,
+              79.863
+            ],
+            "text": "M09",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              650.0,
+              70.863,
+              667.505,
+              79.863
+            ],
+            "text": "M10",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              711.0,
+              70.863,
+              728.505,
+              79.863
+            ],
+            "text": "M11",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              772.0,
+              70.863,
+              789.505,
+              79.863
+            ],
+            "text": "M12",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              833.0,
+              70.863,
+              850.505,
+              79.863
+            ],
+            "text": "M13",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              894.0,
+              70.863,
+              911.505,
+              79.863
+            ],
+            "text": "M14",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              955.0,
+              70.863,
+              972.505,
+              79.863
+            ],
+            "text": "M15",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              1016.0,
+              70.863,
+              1033.5049999999999,
+              79.863
+            ],
+            "text": "M16",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              1077.0,
+              70.863,
+              1094.5049999999999,
+              79.863
+            ],
+            "text": "M17",
+            "engine": "native-anchors",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ]
+      ],
+      "page_summaries": [],
+      "cell_scores": []
+    }
+  ],
+  "issues": [
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Header anchors and repeated word positions inferred column boundaries; review alignment.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    }
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "route": "digital",
+      "engine": "native",
+      "confidence": 0.92,
+      "seconds": 2.191045999992639,
+      "attempts": [
+        {
+          "engine": "native",
+          "strategy": "lines",
+          "tables": 0,
+          "cells": 0,
+          "issues": 0,
+          "score": -10000,
+          "seconds": 0.05160459999751765,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "text",
+          "tables": 1,
+          "cells": 162,
+          "issues": 1,
+          "score": 380.4,
+          "seconds": 1.1858135999937076,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "native",
+          "strategy": "words",
+          "tables": 1,
+          "cells": 162,
+          "issues": 1,
+          "score": 382.4,
+          "seconds": 0.9455192000023089,
+          "error": "",
+          "selected": true
+        }
+      ],
+      "error": ""
+    }
+  ],
+  "seconds": 3.6893559000018286,
+  "source_sha256": "75e0353747aa5d373ec4f22ebd3a097c06eac0522df58e9284b8d21e4f908df4",
+  "constraints": [],
+  "proposals": [],
+  "review": {
+    "status": "unreviewed"
+  },
+  "history": []
+}

@@ -1,0 +1,119 @@
+{
+  "name": "E_vertical_nested_lines",
+  "pages": 1,
+  "tables": [
+    {
+      "headers": [
+        "Package",
+        "Phase",
+        "Line",
+        "Parent",
+        "Description",
+        "Unit",
+        "Qty",
+        "Rate",
+        "Amount",
+        "Status"
+      ],
+      "rows": [
+        [
+          "WP-100",
+          "Hardware",
+          "1",
+          "-",
+          "Network gateway",
+          "ea",
+          "2",
+          "120.00",
+          "240.00",
+          "Ready"
+        ],
+        [
+          "WP-100",
+          "Hardware",
+          "1.1",
+          "1",
+          "Cable pack",
+          "pack",
+          "3",
+          "10.00",
+          "30.00",
+          "Ready"
+        ],
+        [
+          "WP-100",
+          "Installation",
+          "2",
+          "-",
+          "Site survey",
+          "hr",
+          "4",
+          "25.00",
+          "100.00",
+          "Review"
+        ],
+        [
+          "WP-100",
+          "Installation",
+          "2.1",
+          "2",
+          "Rack setup",
+          "hr",
+          "3",
+          "40.00",
+          "120.00",
+          "Ready"
+        ],
+        [
+          "WP-200",
+          "Software",
+          "3",
+          "-",
+          "Monitor license",
+          "ea",
+          "2",
+          "180.00",
+          "360.00",
+          "Ready"
+        ],
+        [
+          "WP-200",
+          "Software",
+          "3.1",
+          "3",
+          "Support plan",
+          "yr",
+          "2",
+          "35.00",
+          "70.00",
+          "Review"
+        ],
+        [
+          "WP-200",
+          "Deployment",
+          "4",
+          "-",
+          "Data migration",
+          "hr",
+          "8",
+          "15.00",
+          "120.00",
+          "Review"
+        ],
+        [
+          "WP-200",
+          "Deployment",
+          "4.1",
+          "4",
+          "Final audit",
+          "hr",
+          "4",
+          "20.00",
+          "80.00",
+          "Ready"
+        ]
+      ]
+    }
+  ],
+  "injected_errors": []
+}

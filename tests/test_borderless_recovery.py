@@ -70,3 +70,29 @@ def test_zero_is_not_cleaned_into_an_empty_cell():
     from truecell.table import clean
 
     assert clean(0) == "0"
+
+
+def test_dense_upside_down_ocr_cannot_outvote_sparse_upright_totals():
+    upright = Table(
+        ["Ref", "Description", "Units", "Amount"],
+        [
+            ["1", "Paper", "2", "10"],
+            ["2", "Ink", "3", "15"],
+            ["", "Sub Total", "", "25"],
+            ["", "Tax", "", "5"],
+            ["", "Grand Total", "", "30"],
+        ],
+        1,
+        (0, 0, 400, 300),
+        "ocr-test",
+        0.97,
+    )
+    nonsense = Table(
+        ["0S'2I", "uondiosag", "0l", "00'6I"],
+        [["0S'2I", "uondiosag", "0l", "00'6I"]] * 5,
+        1,
+        (0, 0, 400, 300),
+        "ocr-test",
+        0.75,
+    )
+    assert candidate_key((100, [upright], None)) > candidate_key((500, [nonsense], None))

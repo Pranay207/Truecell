@@ -1,0 +1,60 @@
+{
+  "name": "E_sideways_invoice",
+  "pages": 1,
+  "tables": [
+    {
+      "headers": [
+        "Record",
+        "Description",
+        "Units",
+        "Unit price",
+        "Amount"
+      ],
+      "rows": [
+        [
+          "A01",
+          "Paper",
+          "2",
+          "12.00",
+          "24.00"
+        ],
+        [
+          "A02",
+          "Pens",
+          "3",
+          "5.00",
+          "15.00"
+        ],
+        [
+          "A03",
+          "Folders",
+          "4",
+          "7.00",
+          "28.00"
+        ],
+        [
+          "",
+          "Sub Total",
+          "",
+          "",
+          "67.00"
+        ],
+        [
+          "",
+          "Tax 10%",
+          "",
+          "",
+          "6.70"
+        ],
+        [
+          "",
+          "Grand Total",
+          "",
+          "",
+          "73.70"
+        ]
+      ]
+    }
+  ],
+  "injected_errors": []
+}
