@@ -10,7 +10,8 @@ from pathlib import Path
 import fitz
 from PIL import Image, ImageOps
 
-MAX_PAGES = 50
+MAX_PAGES = 200
+MAX_IMAGE_FRAMES = 50
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".tif", ".tiff", ".bmp", ".webp"}
 
 
@@ -20,7 +21,7 @@ class InputError(ValueError):
 
 @contextmanager
 def open_document(path: str | Path) -> Iterator[fitz.Document]:
-    """Open supported files, including multipage TIFF, with a 50-page limit."""
+    """Open supported files, including multipage TIFF, with a bounded page limit."""
     source = Path(path)
     if not source.is_file():
         raise InputError(f"File not found: {source}")
@@ -31,8 +32,8 @@ def open_document(path: str | Path) -> Iterator[fitz.Document]:
         elif source.suffix.lower() in IMAGE_EXTENSIONS:
             document = fitz.open()
             with Image.open(source) as image:
-                if getattr(image, "n_frames", 1) > MAX_PAGES:
-                    raise InputError("At most 50 image frames are supported.")
+                if getattr(image, "n_frames", 1) > MAX_IMAGE_FRAMES:
+                    raise InputError(f"At most {MAX_IMAGE_FRAMES} image frames are supported.")
                 for index in range(getattr(image, "n_frames", 1)):
                     image.seek(index)
                     frame = ImageOps.exif_transpose(image.copy()).convert("RGB")
@@ -49,7 +50,7 @@ def open_document(path: str | Path) -> Iterator[fitz.Document]:
         if document.needs_pass:
             raise InputError("Encrypted PDF requires a password. Export an unlocked copy first.")
         if len(document) > MAX_PAGES:
-            raise InputError(f"Document has {len(document)} pages; maximum is 50.")
+            raise InputError(f"Document has {len(document)} pages; maximum is {MAX_PAGES}.")
         if not len(document):
             raise InputError("Document contains no pages.")
     except InputError:

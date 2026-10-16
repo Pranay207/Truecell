@@ -2,7 +2,7 @@
 
 Record the real app at 1080p with readable zoom. Use supplied dummy files. Open the app and the bank sample's exported workbook beforehand. Do not claim this script is a recorded video. Allow conversion time to appear or clearly label any time cut.
 
-**0:00–0:25 — Problem and scope.** “Extracting numbers is only half the job. Truecell lets us inspect where each value came from and why the numbers look suspicious. This runs locally on CPU, without an API key.” Show the upload control, 50-page scope, Offline OCR status and extraction options. Click **Find a wrong balance**.
+**0:00–0:25 — Problem and scope.** “Extracting numbers is only half the job. Truecell lets us inspect where each value came from and why the numbers look suspicious. This runs locally on CPU, without an API key.” Show the upload control, 200-page limit, Offline OCR status and extraction options. Click **Find a wrong balance**.
 
 **0:25–1:15 — Diagnose without meaningful headers.** Show opaque bank headers. Open **Equations** in the validation rail. “It inferred a running-balance relationship from repeated values. This printed balance breaks the equation for this row and the next.” Show data row 11, column 6: `1081.00`, the `1064.00` proposal and its two supporting equation instances. Show the outlined original source cell. Explain that the source document itself contains this error.
 

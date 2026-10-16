@@ -10,17 +10,25 @@ from truecell.llm_repair import configured, validate_payload
 from truecell.models import Result, Table
 from truecell.pipeline import convert
 from truecell.recover import evaluate
-from truecell.router import InputError, open_document, route_page
+from truecell.router import MAX_PAGES, InputError, open_document, route_page
 
 
-def test_fifty_page_limit(tmp_path):
-    source = tmp_path / "too_many.pdf"
+def test_two_hundred_page_limit(tmp_path):
+    assert MAX_PAGES == 200
+    accepted = tmp_path / "maximum.pdf"
     with fitz.open() as document:
-        for _ in range(51):
+        for _ in range(MAX_PAGES):
             document.new_page()
-        document.save(source)
-    with pytest.raises(InputError, match="maximum is 50"):
-        with open_document(source):
+        document.save(accepted)
+    with open_document(accepted) as document:
+        assert len(document) == MAX_PAGES
+    rejected = tmp_path / "too_many.pdf"
+    with fitz.open() as document:
+        for _ in range(MAX_PAGES + 1):
+            document.new_page()
+        document.save(rejected)
+    with pytest.raises(InputError, match="maximum is 200"):
+        with open_document(rejected):
             pass
 
 
@@ -62,6 +70,12 @@ def test_multipage_tiff(tmp_path):
     with open_document(source) as document:
         assert len(document) == 2
         assert route_page(document[0]) == "ocr"
+    overflow = tmp_path / "too_many_frames.tiff"
+    frames = [Image.new("RGB", (2, 2), "white") for _ in range(51)]
+    frames[0].save(overflow, save_all=True, append_images=frames[1:])
+    with pytest.raises(InputError, match="At most 50 image frames"):
+        with open_document(overflow):
+            pass
 
 
 def test_blank_page_reported_not_crash(tmp_path):

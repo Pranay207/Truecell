@@ -621,7 +621,7 @@ def main() -> None:
     )
     with st.expander("Open a document", expanded="conversion" not in st.session_state):
         upload = st.file_uploader(
-            "PDF or scanned document · up to 50 pages",
+            "PDF or scanned document · up to 200 pages",
             type=["pdf", "png", "jpg", "jpeg", "tif", "tiff", "bmp", "webp"],
         )
         controls = st.columns([2, 2, 1])

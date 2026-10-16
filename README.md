@@ -94,7 +94,7 @@ Excel strings use a reversible escape convention for XML-forbidden characters an
 
 ```mermaid
 flowchart TD
-    A[PDF or image / at most 50 pages] --> B[Route each page]
+    A[PDF or image / at most 200 pages] --> B[Route each page]
     B --> C[Native grids / text alignment]
     B --> D[Render / deskew / grid geometry / OCR]
     C --> E[Rank layout candidates and retain evidence]
@@ -114,7 +114,7 @@ Scans use grid-aware cell recognition or word geometry, contrast/deskew, optiona
 
 Running balances and `a*b=c` / `a+b=c` relations are inferred from repeated numeric patterns rather than requiring financial header names. Discovery requires sufficient varied rows and majority agreement. Label-based totals, structural/type checks, empty or ragged columns, duplicates, OCR ambiguity and engine disagreements supplement these checks. Faithfully extracted source arithmetic errors do not trigger pointless OCR retries.
 
-Only the current page raster and extraction caches are processed at a time; output rows/evidence accumulate for export. Completed-page checkpoints use JSON, never pickle, and bind to source bytes, code, runtime/package versions, model assets and extraction options. Changed/corrupt checkpoints are recomputed. Failed pages are logged and remaining pages continue. Input checks reject unsupported, corrupt, encrypted or oversized documents and more than 50 pages.
+Only the current page raster and extraction caches are processed at a time; output rows/evidence accumulate for export. Completed-page checkpoints use JSON, never pickle, and bind to source bytes, code, runtime/package versions, model assets and extraction options. Changed/corrupt checkpoints are recomputed. Failed pages are logged and remaining pages continue. Input checks reject unsupported, corrupt, encrypted or oversized documents and more than 200 pages. The measured stress fixture remains 50 pages / 800 rows; the higher input ceiling is a runtime capability, not a 200-page accuracy claim.
 
 ## CLI
 

@@ -599,7 +599,7 @@ function Landing({
           </p>
           <div className="proof-chips">
             <span>
-              <Icon name="file" size={15} /> Up to 50 pages
+              <Icon name="file" size={15} /> Up to 200 pages
             </span>
             <span>
               <Icon name="lock" size={15} /> Offline OCR

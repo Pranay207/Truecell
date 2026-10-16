@@ -16,6 +16,7 @@ from truecell.api import create_app, environment_lan_host
 from truecell.checkpoint import source_hash
 from truecell.constraints import analyze
 from truecell.models import PageReport, Result, Table
+from truecell.router import MAX_PAGES
 from truecell.workspace import create_job, job_path, set_status
 
 
@@ -256,7 +257,10 @@ def test_api_limits_invalid_input_and_addresses(tmp_path):
         assert upload(client, content=b"x" * 100_001).status_code == 413
         assert upload(client, "script.exe").status_code == 400
         assert upload(client, content=b"not a PDF").status_code == 400
-        assert upload(client, content=pdf_bytes(51)).status_code == 400
+        long_document = upload(client, content=pdf_bytes(116))
+        assert long_document.status_code == 202
+        completed(client, long_document.json()["id"])
+        assert upload(client, content=pdf_bytes(MAX_PAGES + 1)).status_code == 400
         assert client.get("/api/jobs/invalid").status_code == 400
         assert client.get("/api/jobs/" + "a" * 32).status_code == 404
         response = upload(client)
@@ -285,7 +289,9 @@ def test_api_limits_invalid_input_and_addresses(tmp_path):
 def test_api_blocks_remote_origins_and_dns_rebinding(tmp_path):
     app = create_app(tmp_path / "jobs", runner=fake_runner([]))
     with local_client(app) as client:
-        assert client.get("/api/health").json()["offline"] is True
+        health = client.get("/api/health").json()
+        assert health["offline"] is True
+        assert health["max_pages"] == 200 == MAX_PAGES
         assert (
             client.get("/api/health", headers={"Origin": "https://evil.example"}).status_code == 403
         )
