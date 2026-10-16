@@ -5,7 +5,7 @@
 ## Judge snapshot
 
 - **21/21** deterministic development cases passed, including 50 pages / 800 rows, 18 columns, scans, difficult layouts and nested line items with ruled vertical spans.
-- **203 Python tests** and **10 frontend tests** passed.
+- **203 Python tests** and **13 frontend tests** passed.
 - **5/5 portable OCR cases** passed with Tesseract excluded.
 - Every exported row retains page provenance; recovered cells can retain page coordinates, engine, reading and confidence evidence.
 
@@ -46,7 +46,7 @@ Direct dependencies are pinned in `requirements.txt`; `requirements-lock.txt` re
 4. Apply a correction only after explicitly checking the source and entering a reason. The source reading and immutable original extraction remain available; the change appears in the history.
 5. In the **Audit** rail, record a source check with **Record source check**, then use **Export Excel** in the top bar. A later edit invalidates that review.
 
-Select any table cell or finding to focus its exact source evidence. The **Audit** rail preserves every extraction attempt, and source-page controls remain available even when no table is recovered. The **Challenge** rail runs controlled disposable mutations against the production validator. Additional examples demonstrate a sparse text schedule, a sideways invoice and page carry-forwards.
+Search large extracted tables across every column without changing their data or source-linked row identities. Select any table cell or finding to focus its exact source evidence. The **Audit** rail preserves every extraction attempt, and source-page controls remain available even when no table is recovered. The **Challenge** rail runs controlled disposable mutations against the production validator. Additional examples demonstrate a sparse text schedule, a sideways invoice and page carry-forwards.
 
 The source itself contains the wrong balance. Mathematical consistency alone does not establish the correct business value. Proposals are never applied automatically.
 

@@ -28,7 +28,7 @@ Tested on Windows with Python 3.11.9. This pass covers the current source folder
 ## Verification
 
 - **203 Python tests passed** in the development environment after retiring the legacy interface. The preceding 210-test revision also passed in a separately installed clean environment; later regression coverage changed the suite composition. Ruff checks and formatting passed for 48 Python files, and dependency checks passed in the recorded environments.
-- **10 frontend tests passed**, strict TypeScript checks passed, and the Vite production bundle rebuilt successfully. The supplied build needs no Node.js at judge runtime.
+- **13 frontend tests passed**, including extracted-row search and original-index preservation; strict TypeScript checks passed, and the Vite production bundle rebuilt successfully. The supplied build needs no Node.js at judge runtime.
 - **21/21** deterministic dummy-document cases passed, including the explicitly ruled native-PDF vertical-span/nested-line-item case, the 50-page/800-row case and both injected bank-source errors. A no-table control passes only with zero output tables; its cell percentages are n/a.
 - **5/5** scan cases passed with Tesseract excluded: inventory, blur/noise, skew, perspective photo and sideways invoice. See `PORTABLE_OCR.json` for the engine-isolation method and measured timings.
 - Public cached regression checks passed their disclosed scope: 35 fuel-table cells, 48 selected census cells plus headers/shapes, and a W3C no-table control. This does not check every census cell.

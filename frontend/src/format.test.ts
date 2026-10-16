@@ -4,6 +4,7 @@ import {
   active,
   cellValue,
   countRows,
+  filterRows,
   issueCell,
   recordsFor,
 } from "./format.ts";
@@ -85,4 +86,38 @@ test("row count and progress state use real extraction data", () => {
   assert.equal(countRows(), 0);
   assert.equal(active("partial"), false);
   assert.equal(active("processing"), true);
+});
+test("table search preserves original row indices", () => {
+  const rows = [
+    ["Germany", "Berlin Institute", "Berlin"],
+    ["France", "Sorbonne", "Paris"],
+    ["Germany", "Hof University", "Hof"],
+  ];
+
+  assert.deepEqual(filterRows(["Country", "Name", "City"], rows, "hof"), [
+    { rowIndex: 2, row: rows[2] },
+  ]);
+});
+test("table search is case-insensitive across headers and values", () => {
+  const headers = ["Country/Region", "Billing City"];
+  const rows = [
+    ["Germany", "KOLN"],
+    ["India", "Hyderabad"],
+  ];
+
+  assert.deepEqual(filterRows(headers, rows, "gErMaNy"), [
+    { rowIndex: 0, row: rows[0] },
+  ]);
+  assert.deepEqual(filterRows(headers, rows, "billing"), [
+    { rowIndex: 0, row: rows[0] },
+    { rowIndex: 1, row: rows[1] },
+  ]);
+});
+test("blank table search returns every indexed row", () => {
+  const rows = [["one"], ["two"]];
+
+  assert.deepEqual(filterRows(["Value"], rows, "   "), [
+    { rowIndex: 0, row: rows[0] },
+    { rowIndex: 1, row: rows[1] },
+  ]);
 });

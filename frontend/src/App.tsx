@@ -5,6 +5,7 @@ import {
   active,
   cellValue,
   countRows,
+  filterRows,
   issueCell,
   labelStatus,
   recordsFor,
@@ -56,6 +57,12 @@ function Icon({ name, size = 20 }: { name: string; size?: number }) {
       <>
         <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z" />
         <circle cx="12" cy="12" r="3" />
+      </>
+    ),
+    search: (
+      <>
+        <circle cx="11" cy="11" r="7" />
+        <path d="m20 20-4-4" />
       </>
     ),
     download: (
@@ -807,6 +814,7 @@ function Workspace({
   >("findings");
   const [review, setReview] = useState(false);
   const [gridPage, setGridPage] = useState(0);
+  const [tableSearch, setTableSearch] = useState("");
   const [saving, setSaving] = useState(false);
   const [showEvidence, setShowEvidence] = useState(true);
   const table = result?.tables[tableIndex];
@@ -821,11 +829,41 @@ function Workspace({
       (width, row) => Math.max(width, row.length),
       table.headers.length,
     ) ?? 0;
+  const filteredRows = useMemo(
+    () => (table ? filterRows(table.headers, table.rows, tableSearch) : []),
+    [table, tableSearch],
+  );
+  const maxGridPage = Math.max(0, Math.ceil(filteredRows.length / 40) - 1);
+  const visibleGridPage = Math.min(gridPage, maxGridPage);
+  const visibleRows = filteredRows.slice(
+    visibleGridPage * 40,
+    (visibleGridPage + 1) * 40,
+  );
+
+  useEffect(() => {
+    setGridPage(0);
+  }, [result]);
+
+  useEffect(() => {
+    setGridPage((current) => Math.min(current, maxGridPage));
+  }, [maxGridPage]);
+
   const select = (cell: Cell) => {
     setTableIndex(cell.table);
     setSelected(cell);
     setShowEvidence(true);
-    if (cell.row >= 0) setGridPage(Math.floor(cell.row / 40));
+    if (cell.row >= 0) {
+      const filteredIndex =
+        cell.table === tableIndex
+          ? filteredRows.findIndex((entry) => entry.rowIndex === cell.row)
+          : -1;
+      if (filteredIndex >= 0) {
+        setGridPage(Math.floor(filteredIndex / 40));
+      } else {
+        setTableSearch("");
+        setGridPage(Math.floor(cell.row / 40));
+      }
+    }
     const sources = result ? recordsFor(result, cell) : [];
     if (sources.length) setPage(sources[0].page);
   };
@@ -1080,6 +1118,40 @@ function Workspace({
               </div>
               {table ? (
                 <>
+                  <div className="table-search-bar">
+                    <div className="table-search-field">
+                      <Icon name="search" size={15} />
+                      <input
+                        type="search"
+                        aria-label="Search extracted data"
+                        value={tableSearch}
+                        placeholder="Search this table"
+                        autoComplete="off"
+                        onChange={(event) => {
+                          setTableSearch(event.target.value);
+                          setGridPage(0);
+                        }}
+                      />
+                      {tableSearch && (
+                        <button
+                          type="button"
+                          className="table-search-clear"
+                          aria-label="Clear table search"
+                          onClick={() => {
+                            setTableSearch("");
+                            setGridPage(0);
+                          }}
+                        >
+                          <Icon name="close" size={14} />
+                        </button>
+                      )}
+                    </div>
+                    <span className="table-search-count" role="status">
+                      {tableSearch.trim()
+                        ? `${filteredRows.length.toLocaleString()} of ${table.rows.length.toLocaleString()} rows`
+                        : `${table.rows.length.toLocaleString()} rows`}
+                    </span>
+                  </div>
                   <div className="table-scroll">
                     <table className="data-grid">
                       <thead>
@@ -1113,71 +1185,83 @@ function Workspace({
                         </tr>
                       </thead>
                       <tbody>
-                        {table.rows
-                          .slice(gridPage * 40, (gridPage + 1) * 40)
-                          .map((row, i) => (
-                            <tr key={gridPage * 40 + i}>
-                              <th className="row-number" scope="row">
-                                {gridPage * 40 + i + 1}
-                              </th>
-                              {Array.from(
-                                {
-                                  length: Math.max(
-                                    table.headers.length,
-                                    row.length,
-                                  ),
-                                },
-                                (_, c) => {
-                                  const r = gridPage * 40 + i;
-                                  const isSelected =
-                                    selected?.table === tableIndex &&
-                                    selected.row === r &&
-                                    selected.column === c;
-                                  const isFlagged = flagged.has(
-                                    `${tableIndex}:${r}:${c}`,
-                                  );
-                                  return (
-                                    <td key={c}>
-                                      <button
-                                        disabled={c >= row.length}
-                                        onClick={() =>
-                                          select({
-                                            table: tableIndex,
-                                            row: r,
-                                            column: c,
-                                          })
-                                        }
-                                        className={`${isSelected ? "selected-cell " : ""}${isFlagged ? "flagged-cell" : ""}`}
-                                        aria-label={`Row ${r + 1}, ${table.headers[c] ?? `column ${c + 1}`}: ${row[c] || "empty"}`}
-                                        aria-pressed={isSelected}
-                                      >
-                                        {row[c] || (
-                                          <span className="empty-cell">—</span>
-                                        )}
-                                        {isFlagged && (
-                                          <i className="flag-indicator" />
-                                        )}
-                                      </button>
-                                    </td>
-                                  );
-                                },
-                              )}
-                            </tr>
-                          ))}
+                        {visibleRows.map(({ rowIndex: r, row }) => (
+                          <tr key={r}>
+                            <th className="row-number" scope="row">
+                              {r + 1}
+                            </th>
+                            {Array.from(
+                              {
+                                length: Math.max(
+                                  table.headers.length,
+                                  row.length,
+                                ),
+                              },
+                              (_, c) => {
+                                const isSelected =
+                                  selected?.table === tableIndex &&
+                                  selected.row === r &&
+                                  selected.column === c;
+                                const isFlagged = flagged.has(
+                                  `${tableIndex}:${r}:${c}`,
+                                );
+                                return (
+                                  <td key={c}>
+                                    <button
+                                      disabled={c >= row.length}
+                                      onClick={() =>
+                                        select({
+                                          table: tableIndex,
+                                          row: r,
+                                          column: c,
+                                        })
+                                      }
+                                      className={`${isSelected ? "selected-cell " : ""}${isFlagged ? "flagged-cell" : ""}`}
+                                      aria-label={`Row ${r + 1}, ${table.headers[c] ?? `column ${c + 1}`}: ${row[c] || "empty"}`}
+                                      aria-pressed={isSelected}
+                                    >
+                                      {row[c] || (
+                                        <span className="empty-cell">—</span>
+                                      )}
+                                      {isFlagged && (
+                                        <i className="flag-indicator" />
+                                      )}
+                                    </button>
+                                  </td>
+                                );
+                              },
+                            )}
+                          </tr>
+                        ))}
+                        {visibleRows.length === 0 && (
+                          <tr className="table-no-results">
+                            <td colSpan={columnCount + 1}>
+                              <div>
+                                <Icon name="search" size={19} />
+                                <strong>No matching rows</strong>
+                                <span>Try another word or clear the search.</span>
+                              </div>
+                            </td>
+                          </tr>
+                        )}
                       </tbody>
                     </table>
                   </div>
                   <div className="table-pagination">
                     <span>
-                      {table.rows.length ? gridPage * 40 + 1 : 0}–
-                      {Math.min((gridPage + 1) * 40, table.rows.length)} of{" "}
-                      {table.rows.length.toLocaleString()} rows
+                      {filteredRows.length ? visibleGridPage * 40 + 1 : 0}–
+                      {Math.min(
+                        (visibleGridPage + 1) * 40,
+                        filteredRows.length,
+                      )}{" "}
+                      of {filteredRows.length.toLocaleString()}
+                      {tableSearch.trim() ? " matches" : " rows"}
                     </span>
                     <div>
                       <button
                         className="icon-button"
                         aria-label="Previous table rows"
-                        disabled={gridPage === 0}
+                        disabled={visibleGridPage === 0}
                         onClick={() => setGridPage((p) => p - 1)}
                       >
                         <Icon name="left" size={16} />
@@ -1185,7 +1269,9 @@ function Workspace({
                       <button
                         className="icon-button"
                         aria-label="Next table rows"
-                        disabled={(gridPage + 1) * 40 >= table.rows.length}
+                        disabled={
+                          (visibleGridPage + 1) * 40 >= filteredRows.length
+                        }
                         onClick={() => setGridPage((p) => p + 1)}
                       >
                         <Icon name="chevron" size={16} />

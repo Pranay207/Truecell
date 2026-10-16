@@ -45,6 +45,26 @@ export function cellValue(result: Result, cell: Cell): string {
 export function countRows(result?: Result): number {
   return result?.tables.reduce((n, t) => n + t.rows.length, 0) ?? 0;
 }
+export type FilteredRow = {
+  rowIndex: number;
+  row: string[];
+};
+export function filterRows(
+  headers: string[],
+  rows: string[][],
+  query: string,
+): FilteredRow[] {
+  const needle = query.trim().toLocaleLowerCase();
+  return rows.flatMap((row, rowIndex) => {
+    const matches =
+      needle.length === 0 ||
+      headers.some((header) =>
+        header.toLocaleLowerCase().includes(needle),
+      ) ||
+      row.some((value) => value.toLocaleLowerCase().includes(needle));
+    return matches ? [{ rowIndex, row }] : [];
+  });
+}
 export function labelStatus(status: string): string {
   return (
     (
