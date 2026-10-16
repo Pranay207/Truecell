@@ -1,31 +1,10 @@
-"""Workflow checks for the source inspector, equation preview and actual mutation lab."""
-
-from streamlit.testing.v1 import AppTest
+"""Checks for equation validation, offline behavior and source geometry."""
 
 from eval.generate_samples import bank_sample, invoice_sample
 from truecell.assurance import challenge
 from truecell.pipeline import convert
 from truecell.review import fingerprint
 from truecell.values import number
-
-
-def test_real_source_inspector_and_equation_preview(tmp_path):
-    bank_sample(tmp_path)
-    source = tmp_path / "B_bank_errors.pdf"
-    result = convert(source)
-    app = AppTest.from_file("app.py")
-    app.session_state["conversion"] = {
-        "result": result,
-        "source": str(source),
-        "name": "bank.xlsx",
-    }
-    app.run(timeout=30)
-    assert not app.exception
-    next(b for b in app.button if b.label == "Preview the effect without saving").click()
-    app.run(timeout=30)
-    assert not app.exception
-    assert any("from 2 to 0" in i.value for i in app.info)
-    assert app.session_state["conversion"]["result"].tables[0].rows[10][5] == "1081.00"
 
 
 def test_challenge_invokes_actual_validator_without_editing_data(tmp_path):

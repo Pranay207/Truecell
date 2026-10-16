@@ -38,7 +38,6 @@ def main() -> int:
     parser.add_argument("--offline", action="store_true")
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--judge-test", action="store_true")
-    parser.add_argument("--ui", choices=("modern", "streamlit"), default="modern")
     parser.add_argument("--port", type=port_number, default=8501)
     parser.add_argument("--no-browser", action="store_true")
     parser.add_argument(
@@ -47,8 +46,6 @@ def main() -> int:
         help="Allow the modern app from a phone on the same private Wi-Fi network.",
     )
     args = parser.parse_args()
-    if args.lan and args.ui == "streamlit":
-        parser.error("--lan is available with the modern interface only")
     if not (3, 10) <= sys.version_info[:2] <= (3, 12):
         print(
             "Use 64-bit Python 3.10, 3.11 or 3.12. No system software is installed automatically."
@@ -116,8 +113,6 @@ def main() -> int:
     command = [
         str(python),
         str(ROOT / "run.py"),
-        "--ui",
-        args.ui,
         "--port",
         str(port),
     ]

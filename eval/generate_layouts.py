@@ -44,7 +44,18 @@ def vertical_nested_sample(directory: Path) -> None:
         ["WP-100", "Installation", "2.1", "2", "Rack setup", "hr", "3", "40.00", "120.00", "Ready"],
         ["WP-200", "Software", "3", "-", "Monitor license", "ea", "2", "180.00", "360.00", "Ready"],
         ["WP-200", "Software", "3.1", "3", "Support plan", "yr", "2", "35.00", "70.00", "Review"],
-        ["WP-200", "Deployment", "4", "-", "Data migration", "hr", "8", "15.00", "120.00", "Review"],
+        [
+            "WP-200",
+            "Deployment",
+            "4",
+            "-",
+            "Data migration",
+            "hr",
+            "8",
+            "15.00",
+            "120.00",
+            "Review",
+        ],
         ["WP-200", "Deployment", "4.1", "4", "Final audit", "hr", "4", "20.00", "80.00", "Ready"],
     ]
     widths = [88, 100, 55, 60, 190, 50, 45, 70, 80, 75]

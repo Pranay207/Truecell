@@ -9,8 +9,8 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m pip install ruff==0.11.13
-      - run: ruff check truecell tests eval scripts app.py convert.py run.py
-      - run: ruff format --check truecell tests eval scripts app.py convert.py run.py
+      - run: ruff check truecell tests eval scripts convert.py run.py
+      - run: ruff format --check truecell tests eval scripts convert.py run.py
   test:
     runs-on: ${{ matrix.os }}
     strategy:

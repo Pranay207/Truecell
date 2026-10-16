@@ -13,7 +13,6 @@ The extraction, OCR, rendering, UI and spreadsheet libraries do substantial unde
 | NumPy | Image arrays | https://numpy.org (BSD-3-Clause) |
 | Pillow | Images, TIFF frames and sample degradation | https://python-pillow.org (HPND) |
 | openpyxl | Typed Excel workbooks and styles | https://openpyxl.readthedocs.io (MIT) |
-| Streamlit / pandas | Upload UI and table preview | https://streamlit.io (Apache-2.0); https://pandas.pydata.org (BSD-3-Clause) |
 | React / React DOM | Responsive local studio interface | https://react.dev (MIT) |
 | Vite / TypeScript | Frontend build and type checking | https://vite.dev (MIT); https://www.typescriptlang.org (Apache-2.0) |
 | FastAPI / Starlette / Uvicorn | Loopback-only local HTTP API and static serving | https://fastapi.tiangolo.com (MIT); https://www.starlette.io (BSD-3-Clause); https://www.uvicorn.org (BSD-3-Clause) |

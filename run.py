@@ -1,4 +1,4 @@
-"""Launch the modern Truecell app, with the original Streamlit UI as a fallback."""
+"""Launch the local FastAPI server and prebuilt React application."""
 
 from __future__ import annotations
 
@@ -66,7 +66,6 @@ def modern(port: int, no_browser: bool, lan: bool = False) -> int:
     if not (ROOT / "frontend" / "dist" / "index.html").is_file():
         print("The supplied frontend build is missing (frontend/dist/index.html).")
         print("Restore the complete project, or run npm install && npm run build in frontend/.")
-        print("The fallback remains available with: python run.py --ui streamlit")
         return 2
     local_url = f"http://127.0.0.1:{port}"
     lan_host = discover_lan_address() if lan else None
@@ -102,29 +101,8 @@ def modern(port: int, no_browser: bool, lan: bool = False) -> int:
     )
 
 
-def streamlit(port: int, no_browser: bool) -> int:
-    command = [
-        sys.executable,
-        "-m",
-        "streamlit",
-        "run",
-        str(ROOT / "app.py"),
-        "--server.address",
-        "127.0.0.1",
-        "--server.port",
-        str(port),
-        "--browser.gatherUsageStats",
-        "false",
-    ]
-    if no_browser:
-        command += ["--server.headless", "true"]
-    print(f"Truecell Streamlit fallback: http://127.0.0.1:{port}")
-    return subprocess.call(command, cwd=ROOT)
-
-
 def main() -> int:
     parser = argparse.ArgumentParser(description="Run Truecell on this computer.")
-    parser.add_argument("--ui", choices=("modern", "streamlit"), default="modern")
     parser.add_argument("--port", "--server.port", dest="port", type=int, default=8501)
     parser.add_argument("--no-browser", action="store_true")
     parser.add_argument(
@@ -135,13 +113,7 @@ def main() -> int:
     args = parser.parse_args()
     if not 1 <= args.port <= 65535:
         parser.error("port must be between 1 and 65535")
-    if args.lan and args.ui == "streamlit":
-        parser.error("--lan is available with the modern interface only")
-    return (
-        streamlit(args.port, args.no_browser)
-        if args.ui == "streamlit"
-        else modern(args.port, args.no_browser, args.lan)
-    )
+    return modern(args.port, args.no_browser, args.lan)
 
 
 if __name__ == "__main__":

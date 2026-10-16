@@ -61,9 +61,7 @@ def _vertical_merge_origins(
             continue
         shortest = min(bottom - top for top, bottom in intervals)
         row_intervals = [
-            (top, bottom)
-            for top, bottom in intervals
-            if bottom - top <= shortest + tolerance
+            (top, bottom) for top, bottom in intervals if bottom - top <= shortest + tolerance
         ]
         row_top = median(top for top, _ in row_intervals)
         row_bottom = median(bottom for _, bottom in row_intervals)
@@ -87,10 +85,7 @@ def _vertical_merge_origins(
                     break
                 if kind(source_value) not in {"text", "id", "date"}:
                     break
-                if (
-                    source_box[1] <= row_top + tolerance
-                    and source_box[3] >= row_bottom - tolerance
-                ):
+                if source_box[1] <= row_top + tolerance and source_box[3] >= row_bottom - tolerance:
                     origins[(raw_index, column)] = source_index
                 break
     return origins
@@ -167,8 +162,7 @@ def normalize(
             top_value = raw[r][c] if c < len(raw[r]) else None
             second_value = (
                 raw[header_indices[1]][c]
-                if len(header_indices) == 2
-                and c < len(raw[header_indices[1]])
+                if len(header_indices) == 2 and c < len(raw[header_indices[1]])
                 else None
             )
             if (

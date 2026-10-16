@@ -20,27 +20,27 @@ Tested on Windows with Python 3.11.9. This pass covers the current source folder
 | Excel text | Forbidden XML controls could crash export; oversized strings could truncate | Reversible escaping and complete Long Text chunks preserve source text; raw JSON remains unchanged |
 | Excel decimals | Very small values could display or underflow to zero | Representable values use suitable formatting; unsafe magnitudes remain exact text |
 | Large exports | Repeated worksheet scans and repeated style construction caused excessive work | Row appends and body-style assignments avoid those repeated operations |
-| Modern UI | Streamlit's fixed app shell did not provide the intended competition presentation | React/TypeScript now supplies a responsive source → grid → validation workspace served by local FastAPI |
+| Application shell | The earlier fixed shell did not provide the intended competition presentation | React/TypeScript is now the sole responsive source → grid → validation interface served by local FastAPI |
 | Mobile usability | Small controls, a hidden brand descriptor and a 40 MB frontend limit weakened the phone experience | Narrow layouts keep the full brand visible, stack cleanly, retain horizontal table/source inspection, use 44 px touch targets, and match the 50 MB backend limit |
 | Validation safety | Proposals and validator experiments needed an inspectable no-save path | Preview and Challenge run on disposable copies; tests and a live fingerprint check confirm the working result is unchanged |
 | Re-extraction | Reprocessing an edited or reviewed workspace could overwrite review work | Untouched partial jobs resume verified checkpoints; edited/reviewed jobs fork to a new workspace |
 
 ## Verification
 
-- **219 Python tests passed** in the development environment. The preceding 210-test revision also passed in a separately installed clean environment; the later regression coverage changes no dependencies. Ruff checks and formatting passed for 51 Python files, and dependency checks passed in both recorded environments.
+- **203 Python tests passed** in the development environment after retiring the legacy interface. The preceding 210-test revision also passed in a separately installed clean environment; later regression coverage changed the suite composition. Ruff checks and formatting passed for 48 Python files, and dependency checks passed in the recorded environments.
 - **10 frontend tests passed**, strict TypeScript checks passed, and the Vite production bundle rebuilt successfully. The supplied build needs no Node.js at judge runtime.
 - **21/21** deterministic dummy-document cases passed, including the explicitly ruled native-PDF vertical-span/nested-line-item case, the 50-page/800-row case and both injected bank-source errors. A no-table control passes only with zero output tables; its cell percentages are n/a.
 - **5/5** scan cases passed with Tesseract excluded: inventory, blur/noise, skew, perspective photo and sideways invoice. See `PORTABLE_OCR.json` for the engine-isolation method and measured timings.
 - Public cached regression checks passed their disclosed scope: 35 fuel-table cells, 48 selected census cells plus headers/shapes, and a W3C no-table control. This does not check every census cell.
 - The recorded readback audit predates the vertical-span case and checked the original **20 converted workbooks** for row counts, headers, source hashes, **1,067 identifier cells**, and absence of formula-type cells. Those workbooks contain 13,225 data-cell positions; that count is not an independent accuracy measurement.
 - CLI checks returned the expected exit codes for a missing file, identical input/output paths, invalid output suffix, a no-table document and successful native conversion, without tracebacks.
-- AppTest covered the Streamlit fallback's no-table downloads, unreadable sources, stale consent, failed saves, resume behavior and actual source inspection. The 50-page result opened without exceptions; selecting row 800 also succeeded.
+- FastAPI tests covered uploads, no-table downloads, source integrity, edits, reviews, exports, safe workspace deletion, recovery and reprocessing. Frontend unit tests covered API requests and display formatting.
 - The modern local server returned HTTP 200 for health, the React page, hashed assets, a source-page image, Excel and audit JSON. Optional LAN mode also returned HTTP 200 through its exact private-network address while retaining localhost access. A live bank extraction produced 19 rows × 6 columns; preview removed two failed equation checks in a disposable copy, Challenge caught 22/24 controlled edits, and the saved fingerprint/value stayed unchanged.
 - The offline launcher/model check passed. Browser screenshot interaction and native Excel rendering were not performed.
 
 ## Performance scope
 
-The final export-only check on the 50-page/800-row audit took **9.083 seconds**. A programmatic UI run took **21.449 seconds** for initial display/export and **6.237 seconds** to inspect row 800 while other QA work was running. An isolated two-page perspective-photo conversion, including Excel export, took **16.760 seconds** and passed all expected cells, headers and shapes.
+The final export-only check on the 50-page/800-row audit took **9.083 seconds**. An isolated two-page perspective-photo conversion, including Excel export, took **16.760 seconds** and passed all expected cells, headers and shapes.
 
 Concurrent OCR testing produced a much slower photo run, retained in the raw benchmark reports. Timings vary with CPU contention, model startup and document quality; they are not a cross-machine speed guarantee. Peak memory and execution on other operating systems/Python versions were not measured here.
 

@@ -7,8 +7,6 @@ opencv-python==4.11.0.86
 rapidocr-onnxruntime==1.4.4
 onnxruntime==1.22.0
 pytesseract==0.3.13
-streamlit==1.45.1
-pandas==2.3.3
 reportlab==4.4.1
 fastapi==0.143.2
 uvicorn==0.53.0

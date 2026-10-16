@@ -19,7 +19,6 @@ if __name__ == "__main__":
         "outputs",
         "models",
         ".github",
-        ".streamlit",
         "frontend",
     }
     allowed_root = {
@@ -34,7 +33,6 @@ if __name__ == "__main__":
         "START_TRUECELL.cmd",
         "start.sh",
         "convert.py",
-        "app.py",
         "run.py",
         "pytest.ini",
         ".gitignore",

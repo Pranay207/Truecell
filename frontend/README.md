@@ -1,6 +1,6 @@
 # Truecell Studio frontend
 
-Original React + TypeScript interface for the local Truecell extraction engine. The Python server serves `dist/`; judges do not need Node for the prebuilt interface. Streamlit remains an independent fallback.
+React + TypeScript interface for the local Truecell extraction engine. The Python server serves `dist/`; judges do not need Node for the prebuilt interface.
 
 ## Development
 

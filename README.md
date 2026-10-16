@@ -1,11 +1,11 @@
 # Truecell
 
-**Document Intelligence — Document to Excel, with evidence.** An offline, CPU-based extraction and review application built for the INCUXAI AI Agent Development Challenge 2026. It reads digital PDFs and scans, reconstructs tables across pages, and exports data with source coordinates, validation findings, equation receipts and correction history. A responsive React/TypeScript application is served locally by FastAPI; the original Streamlit interface remains available as a fallback. All included documents contain dummy data.
+**Document Intelligence — Document to Excel, with evidence.** An offline, CPU-based extraction and review application built for the INCUXAI AI Agent Development Challenge 2026. It reads digital PDFs and scans, reconstructs tables across pages, and exports data with source coordinates, validation findings, equation receipts and correction history. A responsive React/TypeScript application is served locally by FastAPI. All included documents contain dummy data.
 
 ## Judge snapshot
 
 - **21/21** deterministic development cases passed, including 50 pages / 800 rows, 18 columns, scans, difficult layouts and nested line items with ruled vertical spans.
-- **219 Python tests** and **10 frontend tests** passed.
+- **203 Python tests** and **10 frontend tests** passed.
 - **5/5 portable OCR cases** passed with Tesseract excluded.
 - Every exported row retains page provenance; recovered cells can retain page coordinates, engine, reading and confidence evidence.
 
@@ -34,8 +34,6 @@ python -m pip install --use-feature=truststore -r requirements.txt
 python run.py
 # Optional phone access on the same private Wi-Fi
 python run.py --lan
-# Original fallback interface
-python run.py --ui streamlit
 ```
 
 Direct dependencies are pinned in `requirements.txt`; `requirements-lock.txt` records the resolved Python 3.11 Windows environment. Use the direct pins for other platforms. Keep certificate verification enabled. The English recognition model ships in `models/` with a verified checksum. Detection/classification assets ship with RapidOCR's package; no conversion-time model download is needed. Optional Tesseract is discovered automatically, including its usual Windows installation directory.
@@ -141,8 +139,8 @@ npm --prefix frontend run build
 python scripts/transfer_audit.py --fixtures PATH_TO_SAMPLES
 # Optional development checks:
 python -m pip install -r requirements-dev.txt
-ruff check truecell tests eval scripts app.py convert.py run.py
-ruff format --check truecell tests eval scripts app.py convert.py run.py
+ruff check truecell tests eval scripts convert.py run.py
+ruff format --check truecell tests eval scripts convert.py run.py
 ```
 
 `python -m eval.generate_samples --hard` regenerates the original dummy inputs and truth. `python -m eval.generate_layouts` generates eight additional cases. `samples/*.truth.json` / `*.truth.xlsx` hold intended values independently of extraction; `outputs/*.xlsx` are converted files. Strict scoring checks ordered coordinates, headers, table shapes/counts, multiset rows, and detection of annotated errors. Numeric formatting/whitespace are canonicalized while leading zeros are preserved. No-table controls require zero output tables and report cell percentages as n/a. A subset run rewrites the accuracy report; `judge_check.py` restores all cases.
@@ -169,4 +167,4 @@ Original project-specific code was written independently with AI coding assistan
 
 ## Folder guide
 
-The outer `Truecell/` is the project directory. Its inner `truecell/` is the Python package containing the extraction engine, local API and Streamlit fallback. `frontend/` contains the React/TypeScript source and prebuilt `dist/` assets; `eval/` generates/scores dummy documents; `samples/` holds PDFs and truth; `outputs/` holds converted workbooks and audit JSON; `tests/` checks behavior; `reports/` records measured results; `docs/` holds guidance; `models/` contains the credited OCR asset. `.venv/`, `frontend/node_modules/`, cache directories and `tmp/` are local development files. Competitor source and comparison materials are kept outside this project.
+The outer `Truecell/` is the project directory. Its inner `truecell/` is the Python package containing the extraction engine and local API. `frontend/` contains the React/TypeScript source and prebuilt `dist/` assets; `eval/` generates/scores dummy documents; `samples/` holds PDFs and truth; `outputs/` holds converted workbooks and audit JSON; `tests/` checks behavior; `reports/` records measured results; `docs/` holds guidance; `models/` contains the credited OCR asset. `.venv/`, `frontend/node_modules/`, cache directories and `tmp/` are local development files. Competitor source and comparison materials are kept outside this project.
