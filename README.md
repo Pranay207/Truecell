@@ -1,15 +1,22 @@
-# Truecell
+<p align="center">
+  <img src="frontend/public/favicon.svg" width="80" height="80" alt="Truecell logo">
+</p>
 
-**Every cell. Accounted for.**
+<h1 align="center">Truecell</h1>
 
-*Turn PDFs and scans into validated Excel—with source evidence for every value.*
+<p align="center">
+  <strong>Every cell. Accounted for.</strong><br>
+  <em>Turn PDFs and scans into validated Excel—with source evidence for every value.</em>
+</p>
 
-[![Tests](https://github.com/Pranay207/Truecell/actions/workflows/tests.yml/badge.svg)](https://github.com/Pranay207/Truecell/actions/workflows/tests.yml)
-![Python 3.10–3.12](https://img.shields.io/badge/Python-3.10--3.12-3776AB?logo=python&logoColor=white)
-![React 19](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-local_API-009688?logo=fastapi&logoColor=white)
-![Offline OCR](https://img.shields.io/badge/OCR-offline-0F766E)
-[![AGPL-3.0-or-later](https://img.shields.io/badge/license-AGPL--3.0--or--later-663399)](LICENSE)
+<p align="center">
+  <a href="https://github.com/Pranay207/Truecell/actions/workflows/tests.yml"><img src="https://github.com/Pranay207/Truecell/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
+  <img src="https://img.shields.io/badge/Python-3.10--3.12-3776AB?logo=python&amp;logoColor=white" alt="Python 3.10–3.12">
+  <img src="https://img.shields.io/badge/React-19-149ECA?logo=react&amp;logoColor=white" alt="React 19">
+  <img src="https://img.shields.io/badge/FastAPI-local_API-009688?logo=fastapi&amp;logoColor=white" alt="FastAPI local API">
+  <img src="https://img.shields.io/badge/OCR-offline-0F766E" alt="Offline OCR">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-663399" alt="AGPL-3.0-or-later"></a>
+</p>
 
 Truecell is a local-first React and FastAPI application built for the **INCUXAI AI Agent Development Challenge 2026**. It detects tables, reconstructs difficult layouts, joins continuations across pages, checks numeric relationships, and exports reviewable Excel workbooks. Every retained value can carry its page, source box, extraction engine, original reading, and confidence evidence.
 
