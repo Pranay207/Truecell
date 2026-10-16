@@ -65,9 +65,364 @@
       "notes": [],
       "row_engines": [
         "native-lines",
-        "native-lines",
+        "native-lines+native-lines",
         "native-lines"
-      ]
+      ],
+      "cell_sources": [
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                119.0,
+                185.0,
+                146.0
+              ],
+              "text": "A1",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                185.0,
+                119.0,
+                535.0,
+                146.0
+              ],
+              "text": "Complete",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                535.0,
+                119.0,
+                685.0,
+                146.0
+              ],
+              "text": "2",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                119.0,
+                835.0,
+                146.0
+              ],
+              "text": "10",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                146.0,
+                185.0,
+                173.0
+              ],
+              "text": "A2",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            },
+            {
+              "page": 2,
+              "bbox": [
+                35.0,
+                119.0,
+                185.0,
+                146.0
+              ],
+              "text": "",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                185.0,
+                146.0,
+                535.0,
+                173.0
+              ],
+              "text": "Long item",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            },
+            {
+              "page": 2,
+              "bbox": [
+                185.0,
+                119.0,
+                535.0,
+                146.0
+              ],
+              "text": "continued",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                535.0,
+                146.0,
+                685.0,
+                173.0
+              ],
+              "text": "",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            },
+            {
+              "page": 2,
+              "bbox": [
+                535.0,
+                119.0,
+                685.0,
+                146.0
+              ],
+              "text": "3",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                146.0,
+                835.0,
+                173.0
+              ],
+              "text": "",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            },
+            {
+              "page": 2,
+              "bbox": [
+                685.0,
+                119.0,
+                835.0,
+                146.0
+              ],
+              "text": "15",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                35.0,
+                146.0,
+                185.0,
+                173.0
+              ],
+              "text": "A3",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                185.0,
+                146.0,
+                535.0,
+                173.0
+              ],
+              "text": "Next",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                535.0,
+                146.0,
+                685.0,
+                173.0
+              ],
+              "text": "4",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                685.0,
+                146.0,
+                835.0,
+                173.0
+              ],
+              "text": "20",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ]
+      ],
+      "header_sources": [
+        [
+          {
+            "page": 1,
+            "bbox": [
+              35.0,
+              92.0,
+              185.0,
+              119.0
+            ],
+            "text": "Ref",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              35.0,
+              92.0,
+              185.0,
+              119.0
+            ],
+            "text": "Ref",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              185.0,
+              92.0,
+              535.0,
+              119.0
+            ],
+            "text": "Description",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              185.0,
+              92.0,
+              535.0,
+              119.0
+            ],
+            "text": "Description",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              535.0,
+              92.0,
+              685.0,
+              119.0
+            ],
+            "text": "Units",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              535.0,
+              92.0,
+              685.0,
+              119.0
+            ],
+            "text": "Units",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              685.0,
+              92.0,
+              835.0,
+              119.0
+            ],
+            "text": "Value",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              685.0,
+              92.0,
+              835.0,
+              119.0
+            ],
+            "text": "Value",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ]
+      ],
+      "cell_scores": []
     }
   ],
   "issues": [
@@ -88,7 +443,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.04344570000012027,
+      "seconds": 0.026186600000073668,
       "attempts": [
         {
           "engine": "native",
@@ -96,8 +451,8 @@
           "tables": 1,
           "cells": 6,
           "issues": 0,
-          "score": 30.6,
-          "seconds": 0.02991849999943952,
+          "score": 1030.6,
+          "seconds": 0.0179571999979089,
           "error": "",
           "selected": true
         }
@@ -109,7 +464,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.039265399999749206,
+      "seconds": 0.025797599999350496,
       "attempts": [
         {
           "engine": "native",
@@ -117,8 +472,8 @@
           "tables": 1,
           "cells": 7,
           "issues": 0,
-          "score": 28.6,
-          "seconds": 0.030456999999842083,
+          "score": 1028.6,
+          "seconds": 0.019836500003293622,
           "error": "",
           "selected": true
         }
@@ -126,5 +481,12 @@
       "error": ""
     }
   ],
-  "seconds": 0.09622910000052798
+  "seconds": 0.06126930000027642,
+  "source_sha256": "95bbd1f5cbbdf234d782c9db7f7f3e09e84aa3bbfe153a907a3ab71a11403ea2",
+  "constraints": [],
+  "proposals": [],
+  "review": {
+    "status": "unreviewed"
+  },
+  "history": []
 }

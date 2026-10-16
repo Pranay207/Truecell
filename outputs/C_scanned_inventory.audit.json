@@ -356,9 +356,9 @@
       ],
       "page": 1,
       "bbox": [
-        34.800000000000004,
+        34.8,
         93.84,
-        1085.0400000000002,
+        1085.04,
         442.8
       ],
       "engine": "ocr-tesseract",
@@ -539,6 +539,6460 @@
         "ocr-tesseract",
         "ocr-tesseract",
         "ocr-tesseract"
+      ],
+      "cell_sources": [
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                34.8,
+                116.88,
+                120.0,
+                145.92
+              ],
+              "text": "INV-0001",
+              "engine": "ocr-tesseract",
+              "confidence": 0.91,
+              "coordinates": "page points",
+              "initial_reading": "INV-0001"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                120.0,
+                116.88,
+                209.76,
+                145.92
+              ],
+              "text": "2026-10-01",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-01"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                209.76,
+                116.88,
+                300.0,
+                145.92
+              ],
+              "text": "Client 1",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Client 1"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                300.0,
+                116.88,
+                374.88,
+                145.92
+              ],
+              "text": "000001",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000001"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                374.88,
+                116.88,
+                554.88,
+                145.92
+              ],
+              "text": "Widget model 1",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 1"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                554.88,
+                116.88,
+                610.08,
+                145.92
+              ],
+              "text": "1",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "1"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                610.08,
+                116.88,
+                680.16,
+                145.92
+              ],
+              "text": "12.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "12.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                680.16,
+                116.88,
+                759.84,
+                145.92
+              ],
+              "text": "12.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "12.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                759.84,
+                116.88,
+                829.92,
+                145.92
+              ],
+              "text": "1.20",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "1.20"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                829.92,
+                116.88,
+                894.96,
+                145.92
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.96,
+                116.88,
+                984.96,
+                145.92
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                984.96,
+                116.88,
+                1085.04,
+                145.92
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                34.8,
+                145.92,
+                120.0,
+                173.04
+              ],
+              "text": "INV-0002",
+              "engine": "ocr-tesseract",
+              "confidence": 0.9,
+              "coordinates": "page points",
+              "initial_reading": "INV-0002"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                120.0,
+                145.92,
+                209.76,
+                173.04
+              ],
+              "text": "2026-10-02",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-02"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                209.76,
+                145.92,
+                300.0,
+                173.04
+              ],
+              "text": "Client 2",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 2"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                300.0,
+                145.92,
+                374.88,
+                173.04
+              ],
+              "text": "000002",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000002"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                374.88,
+                145.92,
+                554.88,
+                173.04
+              ],
+              "text": "Widget model 2",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 2"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                554.88,
+                145.92,
+                610.08,
+                173.04
+              ],
+              "text": "2",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                610.08,
+                145.92,
+                680.16,
+                173.04
+              ],
+              "text": "13.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "13.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                680.16,
+                145.92,
+                759.84,
+                173.04
+              ],
+              "text": "26.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "26.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                759.84,
+                145.92,
+                829.92,
+                173.04
+              ],
+              "text": "2.60",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2.60"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                829.92,
+                145.92,
+                894.96,
+                173.04
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.96,
+                145.92,
+                984.96,
+                173.04
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                984.96,
+                145.92,
+                1085.04,
+                173.04
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                34.8,
+                173.04,
+                120.0,
+                199.92
+              ],
+              "text": "INV-0003",
+              "engine": "ocr-tesseract",
+              "confidence": 0.91,
+              "coordinates": "page points",
+              "initial_reading": "INV-0003"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                120.0,
+                173.04,
+                209.76,
+                199.92
+              ],
+              "text": "2026-10-03",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-03"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                209.76,
+                173.04,
+                300.0,
+                199.92
+              ],
+              "text": "Client 3",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 3"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                300.0,
+                173.04,
+                374.88,
+                199.92
+              ],
+              "text": "000003",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000003"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                374.88,
+                173.04,
+                554.88,
+                199.92
+              ],
+              "text": "Widget model 3",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 3"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                554.88,
+                173.04,
+                610.08,
+                199.92
+              ],
+              "text": "3",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "3"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                610.08,
+                173.04,
+                680.16,
+                199.92
+              ],
+              "text": "14.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "14.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                680.16,
+                173.04,
+                759.84,
+                199.92
+              ],
+              "text": "42.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "42.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                759.84,
+                173.04,
+                829.92,
+                199.92
+              ],
+              "text": "4.20",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "4.20"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                829.92,
+                173.04,
+                894.96,
+                199.92
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.96,
+                173.04,
+                984.96,
+                199.92
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                984.96,
+                173.04,
+                1085.04,
+                199.92
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                34.8,
+                199.92,
+                120.0,
+                226.8
+              ],
+              "text": "INV-0004",
+              "engine": "ocr-tesseract",
+              "confidence": 0.92,
+              "coordinates": "page points",
+              "initial_reading": "INV-0004"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                120.0,
+                199.92,
+                209.76,
+                226.8
+              ],
+              "text": "2026-10-04",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-04"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                209.76,
+                199.92,
+                300.0,
+                226.8
+              ],
+              "text": "Client 4",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 4"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                300.0,
+                199.92,
+                374.88,
+                226.8
+              ],
+              "text": "000004",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000004"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                374.88,
+                199.92,
+                554.88,
+                226.8
+              ],
+              "text": "Widget model 4",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 4"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                554.88,
+                199.92,
+                610.08,
+                226.8
+              ],
+              "text": "4",
+              "engine": "ocr-tesseract",
+              "confidence": 0.97,
+              "coordinates": "page points",
+              "initial_reading": "\u201c"
+            },
+            {
+              "page": 1,
+              "bbox": [
+                554.88,
+                199.92,
+                610.08,
+                226.8
+              ],
+              "text": "\u201c",
+              "engine": "ocr-tesseract",
+              "confidence": 0.0,
+              "coordinates": "page points",
+              "initial_reading": "\u201c",
+              "role": "comparison",
+              "strategy": "deskew-300dpi"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                610.08,
+                199.92,
+                680.16,
+                226.8
+              ],
+              "text": "15.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "15.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                680.16,
+                199.92,
+                759.84,
+                226.8
+              ],
+              "text": "60.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "60.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                759.84,
+                199.92,
+                829.92,
+                226.8
+              ],
+              "text": "6.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "6.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                829.92,
+                199.92,
+                894.96,
+                226.8
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.96,
+                199.92,
+                984.96,
+                226.8
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                984.96,
+                199.92,
+                1085.04,
+                226.8
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                34.8,
+                226.8,
+                120.0,
+                253.92
+              ],
+              "text": "INV-0005",
+              "engine": "ocr-tesseract",
+              "confidence": 0.9,
+              "coordinates": "page points",
+              "initial_reading": "INV-0005"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                120.0,
+                226.8,
+                209.76,
+                253.92
+              ],
+              "text": "2026-10-05",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-05"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                209.76,
+                226.8,
+                300.0,
+                253.92
+              ],
+              "text": "Client 5",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Client 5"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                300.0,
+                226.8,
+                374.88,
+                253.92
+              ],
+              "text": "000005",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000005"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                374.88,
+                226.8,
+                554.88,
+                253.92
+              ],
+              "text": "Widget model 5",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 5"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                554.88,
+                226.8,
+                610.08,
+                253.92
+              ],
+              "text": "5",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                610.08,
+                226.8,
+                680.16,
+                253.92
+              ],
+              "text": "16.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "16.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                680.16,
+                226.8,
+                759.84,
+                253.92
+              ],
+              "text": "80.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "80.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                759.84,
+                226.8,
+                829.92,
+                253.92
+              ],
+              "text": "8.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "8.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                829.92,
+                226.8,
+                894.96,
+                253.92
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.96,
+                226.8,
+                984.96,
+                253.92
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                984.96,
+                226.8,
+                1085.04,
+                253.92
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                34.8,
+                253.92,
+                120.0,
+                281.04
+              ],
+              "text": "INV-0006",
+              "engine": "ocr-tesseract",
+              "confidence": 0.91,
+              "coordinates": "page points",
+              "initial_reading": "INV-0006"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                120.0,
+                253.92,
+                209.76,
+                281.04
+              ],
+              "text": "2026-10-06",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-06"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                209.76,
+                253.92,
+                300.0,
+                281.04
+              ],
+              "text": "Client 6",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 6"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                300.0,
+                253.92,
+                374.88,
+                281.04
+              ],
+              "text": "000006",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000006"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                374.88,
+                253.92,
+                554.88,
+                281.04
+              ],
+              "text": "Widget model 6",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 6"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                554.88,
+                253.92,
+                610.08,
+                281.04
+              ],
+              "text": "6",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "6"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                610.08,
+                253.92,
+                680.16,
+                281.04
+              ],
+              "text": "17.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "17.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                680.16,
+                253.92,
+                759.84,
+                281.04
+              ],
+              "text": "102.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "102.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                759.84,
+                253.92,
+                829.92,
+                281.04
+              ],
+              "text": "10.20",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "10.20"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                829.92,
+                253.92,
+                894.96,
+                281.04
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.96,
+                253.92,
+                984.96,
+                281.04
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                984.96,
+                253.92,
+                1085.04,
+                281.04
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                34.8,
+                281.04,
+                120.0,
+                307.92
+              ],
+              "text": "INV-0007",
+              "engine": "ocr-tesseract",
+              "confidence": 0.91,
+              "coordinates": "page points",
+              "initial_reading": "INV-0007"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                120.0,
+                281.04,
+                209.76,
+                307.92
+              ],
+              "text": "2026-10-07",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-07"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                209.76,
+                281.04,
+                300.0,
+                307.92
+              ],
+              "text": "Client 7",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 7"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                300.0,
+                281.04,
+                374.88,
+                307.92
+              ],
+              "text": "000007",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000007"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                374.88,
+                281.04,
+                554.88,
+                307.92
+              ],
+              "text": "Widget model 7",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 7"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                554.88,
+                281.04,
+                610.08,
+                307.92
+              ],
+              "text": "7",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "7"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                610.08,
+                281.04,
+                680.16,
+                307.92
+              ],
+              "text": "18.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "18.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                680.16,
+                281.04,
+                759.84,
+                307.92
+              ],
+              "text": "126.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "126.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                759.84,
+                281.04,
+                829.92,
+                307.92
+              ],
+              "text": "12.60",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "12.60"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                829.92,
+                281.04,
+                894.96,
+                307.92
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.96,
+                281.04,
+                984.96,
+                307.92
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                984.96,
+                281.04,
+                1085.04,
+                307.92
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                34.8,
+                307.92,
+                120.0,
+                334.8
+              ],
+              "text": "INV-0008",
+              "engine": "ocr-tesseract",
+              "confidence": 0.9,
+              "coordinates": "page points",
+              "initial_reading": "INV-0008"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                120.0,
+                307.92,
+                209.76,
+                334.8
+              ],
+              "text": "2026-10-08",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-08"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                209.76,
+                307.92,
+                300.0,
+                334.8
+              ],
+              "text": "Client 8",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 8"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                300.0,
+                307.92,
+                374.88,
+                334.8
+              ],
+              "text": "000008",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000008"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                374.88,
+                307.92,
+                554.88,
+                334.8
+              ],
+              "text": "Widget model 8",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 8"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                554.88,
+                307.92,
+                610.08,
+                334.8
+              ],
+              "text": "1",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "1"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                610.08,
+                307.92,
+                680.16,
+                334.8
+              ],
+              "text": "19.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "19.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                680.16,
+                307.92,
+                759.84,
+                334.8
+              ],
+              "text": "19.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "19.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                759.84,
+                307.92,
+                829.92,
+                334.8
+              ],
+              "text": "1.90",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "1.90"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                829.92,
+                307.92,
+                894.96,
+                334.8
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.96,
+                307.92,
+                984.96,
+                334.8
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                984.96,
+                307.92,
+                1085.04,
+                334.8
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                34.8,
+                334.8,
+                120.0,
+                361.92
+              ],
+              "text": "INV-0009",
+              "engine": "ocr-tesseract",
+              "confidence": 0.9,
+              "coordinates": "page points",
+              "initial_reading": "INV-0009"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                120.0,
+                334.8,
+                209.76,
+                361.92
+              ],
+              "text": "2026-10-09",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-09"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                209.76,
+                334.8,
+                300.0,
+                361.92
+              ],
+              "text": "Client 9",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 9"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                300.0,
+                334.8,
+                374.88,
+                361.92
+              ],
+              "text": "000009",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000009"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                374.88,
+                334.8,
+                554.88,
+                361.92
+              ],
+              "text": "Widget model 9",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 9"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                554.88,
+                334.8,
+                610.08,
+                361.92
+              ],
+              "text": "2",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                610.08,
+                334.8,
+                680.16,
+                361.92
+              ],
+              "text": "20.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "20.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                680.16,
+                334.8,
+                759.84,
+                361.92
+              ],
+              "text": "40.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "40.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                759.84,
+                334.8,
+                829.92,
+                361.92
+              ],
+              "text": "4.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "4.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                829.92,
+                334.8,
+                894.96,
+                361.92
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.96,
+                334.8,
+                984.96,
+                361.92
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                984.96,
+                334.8,
+                1085.04,
+                361.92
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                34.8,
+                361.92,
+                120.0,
+                389.04
+              ],
+              "text": "INV-0010",
+              "engine": "ocr-tesseract",
+              "confidence": 0.9,
+              "coordinates": "page points",
+              "initial_reading": "INV-0010"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                120.0,
+                361.92,
+                209.76,
+                389.04
+              ],
+              "text": "2026-10-10",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-10"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                209.76,
+                361.92,
+                300.0,
+                389.04
+              ],
+              "text": "Client 1",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 1"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                300.0,
+                361.92,
+                374.88,
+                389.04
+              ],
+              "text": "000010",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000010"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                374.88,
+                361.92,
+                554.88,
+                389.04
+              ],
+              "text": "Widget model 10",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 10"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                554.88,
+                361.92,
+                610.08,
+                389.04
+              ],
+              "text": "3",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "3"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                610.08,
+                361.92,
+                680.16,
+                389.04
+              ],
+              "text": "21.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "21.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                680.16,
+                361.92,
+                759.84,
+                389.04
+              ],
+              "text": "63.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "63.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                759.84,
+                361.92,
+                829.92,
+                389.04
+              ],
+              "text": "6.30",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "6.30"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                829.92,
+                361.92,
+                894.96,
+                389.04
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.96,
+                361.92,
+                984.96,
+                389.04
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                984.96,
+                361.92,
+                1085.04,
+                389.04
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                34.8,
+                389.04,
+                120.0,
+                415.92
+              ],
+              "text": "INV-0011",
+              "engine": "ocr-tesseract",
+              "confidence": 0.92,
+              "coordinates": "page points",
+              "initial_reading": "INV-0011"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                120.0,
+                389.04,
+                209.76,
+                415.92
+              ],
+              "text": "2026-10-11",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-11"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                209.76,
+                389.04,
+                300.0,
+                415.92
+              ],
+              "text": "Client 2",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 2"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                300.0,
+                389.04,
+                374.88,
+                415.92
+              ],
+              "text": "000011",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000011"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                374.88,
+                389.04,
+                554.88,
+                415.92
+              ],
+              "text": "Widget model 11",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 11"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                554.88,
+                389.04,
+                610.08,
+                415.92
+              ],
+              "text": "4",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "4"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                610.08,
+                389.04,
+                680.16,
+                415.92
+              ],
+              "text": "22.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "22.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                680.16,
+                389.04,
+                759.84,
+                415.92
+              ],
+              "text": "88.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "88.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                759.84,
+                389.04,
+                829.92,
+                415.92
+              ],
+              "text": "8.80",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "8.80"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                829.92,
+                389.04,
+                894.96,
+                415.92
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.96,
+                389.04,
+                984.96,
+                415.92
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                984.96,
+                389.04,
+                1085.04,
+                415.92
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                34.8,
+                415.92,
+                120.0,
+                442.8
+              ],
+              "text": "INV-0012",
+              "engine": "ocr-tesseract",
+              "confidence": 0.91,
+              "coordinates": "page points",
+              "initial_reading": "INV-0012"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                120.0,
+                415.92,
+                209.76,
+                442.8
+              ],
+              "text": "2026-10-12",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-12"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                209.76,
+                415.92,
+                300.0,
+                442.8
+              ],
+              "text": "Client 3",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Client 3"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                300.0,
+                415.92,
+                374.88,
+                442.8
+              ],
+              "text": "000012",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "000012"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                374.88,
+                415.92,
+                554.88,
+                442.8
+              ],
+              "text": "Widget model 12",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 12"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                554.88,
+                415.92,
+                610.08,
+                442.8
+              ],
+              "text": "5",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                610.08,
+                415.92,
+                680.16,
+                442.8
+              ],
+              "text": "12.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "12.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                680.16,
+                415.92,
+                759.84,
+                442.8
+              ],
+              "text": "60.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "60.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                759.84,
+                415.92,
+                829.92,
+                442.8
+              ],
+              "text": "6.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "6.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                829.92,
+                415.92,
+                894.96,
+                442.8
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                894.96,
+                415.92,
+                984.96,
+                442.8
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                984.96,
+                415.92,
+                1085.04,
+                442.8
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                34.8,
+                116.88,
+                120.0,
+                145.92
+              ],
+              "text": "INV-0013",
+              "engine": "ocr-tesseract",
+              "confidence": 0.9,
+              "coordinates": "page points",
+              "initial_reading": "INV-0013"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                120.0,
+                116.88,
+                209.76,
+                145.92
+              ],
+              "text": "2026-10-13",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-13"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                209.76,
+                116.88,
+                300.0,
+                145.92
+              ],
+              "text": "Client 4",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 4"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                300.0,
+                116.88,
+                374.88,
+                145.92
+              ],
+              "text": "000013",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000013"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                374.88,
+                116.88,
+                554.88,
+                145.92
+              ],
+              "text": "Widget model 13",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 13"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                554.88,
+                116.88,
+                610.08,
+                145.92
+              ],
+              "text": "6",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "6"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                610.08,
+                116.88,
+                680.16,
+                145.92
+              ],
+              "text": "13.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "13.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                680.16,
+                116.88,
+                759.84,
+                145.92
+              ],
+              "text": "78.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "78.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                759.84,
+                116.88,
+                829.92,
+                145.92
+              ],
+              "text": "7.80",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "7.80"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                829.92,
+                116.88,
+                894.96,
+                145.92
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                894.96,
+                116.88,
+                984.96,
+                145.92
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                984.96,
+                116.88,
+                1085.04,
+                145.92
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                34.8,
+                145.92,
+                120.0,
+                173.04
+              ],
+              "text": "INV-0014",
+              "engine": "ocr-tesseract",
+              "confidence": 0.89,
+              "coordinates": "page points",
+              "initial_reading": "INV-0014"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                120.0,
+                145.92,
+                209.76,
+                173.04
+              ],
+              "text": "2026-10-14",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-14"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                209.76,
+                145.92,
+                300.0,
+                173.04
+              ],
+              "text": "Client 5",
+              "engine": "ocr-tesseract",
+              "confidence": 0.92,
+              "coordinates": "page points",
+              "initial_reading": "Client 5"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                300.0,
+                145.92,
+                374.88,
+                173.04
+              ],
+              "text": "000014",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000014"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                374.88,
+                145.92,
+                554.88,
+                173.04
+              ],
+              "text": "Widget model 1",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 1"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                554.88,
+                145.92,
+                610.08,
+                173.04
+              ],
+              "text": "7",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "7"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                610.08,
+                145.92,
+                680.16,
+                173.04
+              ],
+              "text": "14.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "14.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                680.16,
+                145.92,
+                759.84,
+                173.04
+              ],
+              "text": "98.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "98.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                759.84,
+                145.92,
+                829.92,
+                173.04
+              ],
+              "text": "9.80",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "9.80"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                829.92,
+                145.92,
+                894.96,
+                173.04
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                894.96,
+                145.92,
+                984.96,
+                173.04
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                984.96,
+                145.92,
+                1085.04,
+                173.04
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                34.8,
+                173.04,
+                120.0,
+                199.92
+              ],
+              "text": "INV-0015",
+              "engine": "ocr-tesseract",
+              "confidence": 0.9,
+              "coordinates": "page points",
+              "initial_reading": "INV-0015"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                120.0,
+                173.04,
+                209.76,
+                199.92
+              ],
+              "text": "2026-10-15",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-15"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                209.76,
+                173.04,
+                300.0,
+                199.92
+              ],
+              "text": "Client 6",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 6"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                300.0,
+                173.04,
+                374.88,
+                199.92
+              ],
+              "text": "000015",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000015"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                374.88,
+                173.04,
+                554.88,
+                199.92
+              ],
+              "text": "Widget model 2",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 2"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                554.88,
+                173.04,
+                610.08,
+                199.92
+              ],
+              "text": "1",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "1"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                610.08,
+                173.04,
+                680.16,
+                199.92
+              ],
+              "text": "15.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "15.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                680.16,
+                173.04,
+                759.84,
+                199.92
+              ],
+              "text": "15.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "15.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                759.84,
+                173.04,
+                829.92,
+                199.92
+              ],
+              "text": "1.50",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "1.50"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                829.92,
+                173.04,
+                894.96,
+                199.92
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                894.96,
+                173.04,
+                984.96,
+                199.92
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                984.96,
+                173.04,
+                1085.04,
+                199.92
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                34.8,
+                199.92,
+                120.0,
+                226.8
+              ],
+              "text": "INV-0016",
+              "engine": "ocr-tesseract",
+              "confidence": 0.9,
+              "coordinates": "page points",
+              "initial_reading": "INV-0016"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                120.0,
+                199.92,
+                209.76,
+                226.8
+              ],
+              "text": "2026-10-16",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-16"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                209.76,
+                199.92,
+                300.0,
+                226.8
+              ],
+              "text": "Client 7",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 7"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                300.0,
+                199.92,
+                374.88,
+                226.8
+              ],
+              "text": "000016",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000016"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                374.88,
+                199.92,
+                554.88,
+                226.8
+              ],
+              "text": "Widget model 3",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 3"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                554.88,
+                199.92,
+                610.08,
+                226.8
+              ],
+              "text": "2",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                610.08,
+                199.92,
+                680.16,
+                226.8
+              ],
+              "text": "16.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "16.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                680.16,
+                199.92,
+                759.84,
+                226.8
+              ],
+              "text": "32.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "32.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                759.84,
+                199.92,
+                829.92,
+                226.8
+              ],
+              "text": "3.20",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "3.20"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                829.92,
+                199.92,
+                894.96,
+                226.8
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                894.96,
+                199.92,
+                984.96,
+                226.8
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                984.96,
+                199.92,
+                1085.04,
+                226.8
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                34.8,
+                226.8,
+                120.0,
+                253.92
+              ],
+              "text": "INV-0017",
+              "engine": "ocr-tesseract",
+              "confidence": 0.9,
+              "coordinates": "page points",
+              "initial_reading": "INV-0017"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                120.0,
+                226.8,
+                209.76,
+                253.92
+              ],
+              "text": "2026-10-17",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-17"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                209.76,
+                226.8,
+                300.0,
+                253.92
+              ],
+              "text": "Client 8",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 8"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                300.0,
+                226.8,
+                374.88,
+                253.92
+              ],
+              "text": "000017",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "000017"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                374.88,
+                226.8,
+                554.88,
+                253.92
+              ],
+              "text": "Widget model 4",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 4"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                554.88,
+                226.8,
+                610.08,
+                253.92
+              ],
+              "text": "3",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "3"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                610.08,
+                226.8,
+                680.16,
+                253.92
+              ],
+              "text": "17.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "17.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                680.16,
+                226.8,
+                759.84,
+                253.92
+              ],
+              "text": "51.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "51.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                759.84,
+                226.8,
+                829.92,
+                253.92
+              ],
+              "text": "5.10",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.10"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                829.92,
+                226.8,
+                894.96,
+                253.92
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                894.96,
+                226.8,
+                984.96,
+                253.92
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                984.96,
+                226.8,
+                1085.04,
+                253.92
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                34.8,
+                253.92,
+                120.0,
+                281.04
+              ],
+              "text": "INV-0018",
+              "engine": "ocr-tesseract",
+              "confidence": 0.91,
+              "coordinates": "page points",
+              "initial_reading": "INV-0018"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                120.0,
+                253.92,
+                209.76,
+                281.04
+              ],
+              "text": "2026-10-18",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-18"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                209.76,
+                253.92,
+                300.0,
+                281.04
+              ],
+              "text": "Client 9",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 9"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                300.0,
+                253.92,
+                374.88,
+                281.04
+              ],
+              "text": "000018",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000018"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                374.88,
+                253.92,
+                554.88,
+                281.04
+              ],
+              "text": "Widget model 5",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 5"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                554.88,
+                253.92,
+                610.08,
+                281.04
+              ],
+              "text": "4",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "4"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                610.08,
+                253.92,
+                680.16,
+                281.04
+              ],
+              "text": "18.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "18.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                680.16,
+                253.92,
+                759.84,
+                281.04
+              ],
+              "text": "72.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "72.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                759.84,
+                253.92,
+                829.92,
+                281.04
+              ],
+              "text": "7.20",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "7.20"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                829.92,
+                253.92,
+                894.96,
+                281.04
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                894.96,
+                253.92,
+                984.96,
+                281.04
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                984.96,
+                253.92,
+                1085.04,
+                281.04
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                34.8,
+                281.04,
+                120.0,
+                307.92
+              ],
+              "text": "INV-0019",
+              "engine": "ocr-tesseract",
+              "confidence": 0.91,
+              "coordinates": "page points",
+              "initial_reading": "INV-0019"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                120.0,
+                281.04,
+                209.76,
+                307.92
+              ],
+              "text": "2026-10-19",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-19"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                209.76,
+                281.04,
+                300.0,
+                307.92
+              ],
+              "text": "Client 1",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 1"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                300.0,
+                281.04,
+                374.88,
+                307.92
+              ],
+              "text": "000019",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000019"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                374.88,
+                281.04,
+                554.88,
+                307.92
+              ],
+              "text": "Widget model 6",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 6"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                554.88,
+                281.04,
+                610.08,
+                307.92
+              ],
+              "text": "5",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                610.08,
+                281.04,
+                680.16,
+                307.92
+              ],
+              "text": "19.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "19.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                680.16,
+                281.04,
+                759.84,
+                307.92
+              ],
+              "text": "95.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "95.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                759.84,
+                281.04,
+                829.92,
+                307.92
+              ],
+              "text": "9.50",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "9.50"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                829.92,
+                281.04,
+                894.96,
+                307.92
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                894.96,
+                281.04,
+                984.96,
+                307.92
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                984.96,
+                281.04,
+                1085.04,
+                307.92
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                34.8,
+                307.92,
+                120.0,
+                334.8
+              ],
+              "text": "INV-0020",
+              "engine": "ocr-tesseract",
+              "confidence": 0.9,
+              "coordinates": "page points",
+              "initial_reading": "INV-0020"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                120.0,
+                307.92,
+                209.76,
+                334.8
+              ],
+              "text": "2026-10-20",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-20"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                209.76,
+                307.92,
+                300.0,
+                334.8
+              ],
+              "text": "Client 2",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 2"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                300.0,
+                307.92,
+                374.88,
+                334.8
+              ],
+              "text": "000020",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000020"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                374.88,
+                307.92,
+                554.88,
+                334.8
+              ],
+              "text": "Widget model 7",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 7"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                554.88,
+                307.92,
+                610.08,
+                334.8
+              ],
+              "text": "6",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "6"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                610.08,
+                307.92,
+                680.16,
+                334.8
+              ],
+              "text": "20.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "20.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                680.16,
+                307.92,
+                759.84,
+                334.8
+              ],
+              "text": "120.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "120.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                759.84,
+                307.92,
+                829.92,
+                334.8
+              ],
+              "text": "12.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "12.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                829.92,
+                307.92,
+                894.96,
+                334.8
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                894.96,
+                307.92,
+                984.96,
+                334.8
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                984.96,
+                307.92,
+                1085.04,
+                334.8
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                34.8,
+                334.8,
+                120.0,
+                361.92
+              ],
+              "text": "INV-0021",
+              "engine": "ocr-tesseract",
+              "confidence": 0.91,
+              "coordinates": "page points",
+              "initial_reading": "INV-0021"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                120.0,
+                334.8,
+                209.76,
+                361.92
+              ],
+              "text": "2026-10-21",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-21"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                209.76,
+                334.8,
+                300.0,
+                361.92
+              ],
+              "text": "Client 3",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 3"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                300.0,
+                334.8,
+                374.88,
+                361.92
+              ],
+              "text": "000021",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "000021"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                374.88,
+                334.8,
+                554.88,
+                361.92
+              ],
+              "text": "Widget model 8",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 8"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                554.88,
+                334.8,
+                610.08,
+                361.92
+              ],
+              "text": "7",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "7"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                610.08,
+                334.8,
+                680.16,
+                361.92
+              ],
+              "text": "21.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "21.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                680.16,
+                334.8,
+                759.84,
+                361.92
+              ],
+              "text": "147.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "147.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                759.84,
+                334.8,
+                829.92,
+                361.92
+              ],
+              "text": "14.70",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "14.70"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                829.92,
+                334.8,
+                894.96,
+                361.92
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                894.96,
+                334.8,
+                984.96,
+                361.92
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                984.96,
+                334.8,
+                1085.04,
+                361.92
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                34.8,
+                361.92,
+                120.0,
+                389.04
+              ],
+              "text": "INV-0022",
+              "engine": "ocr-tesseract",
+              "confidence": 0.9,
+              "coordinates": "page points",
+              "initial_reading": "INV-0022"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                120.0,
+                361.92,
+                209.76,
+                389.04
+              ],
+              "text": "2026-10-22",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-22"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                209.76,
+                361.92,
+                300.0,
+                389.04
+              ],
+              "text": "Client 4",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Client 4"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                300.0,
+                361.92,
+                374.88,
+                389.04
+              ],
+              "text": "000022",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000022"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                374.88,
+                361.92,
+                554.88,
+                389.04
+              ],
+              "text": "Widget model 9",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 9"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                554.88,
+                361.92,
+                610.08,
+                389.04
+              ],
+              "text": "1",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "1"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                610.08,
+                361.92,
+                680.16,
+                389.04
+              ],
+              "text": "22.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "22.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                680.16,
+                361.92,
+                759.84,
+                389.04
+              ],
+              "text": "22.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "22.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                759.84,
+                361.92,
+                829.92,
+                389.04
+              ],
+              "text": "2.20",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2.20"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                829.92,
+                361.92,
+                894.96,
+                389.04
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                894.96,
+                361.92,
+                984.96,
+                389.04
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                984.96,
+                361.92,
+                1085.04,
+                389.04
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                34.8,
+                389.04,
+                120.0,
+                415.92
+              ],
+              "text": "INV-0023",
+              "engine": "ocr-tesseract",
+              "confidence": 0.92,
+              "coordinates": "page points",
+              "initial_reading": "INV-0023"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                120.0,
+                389.04,
+                209.76,
+                415.92
+              ],
+              "text": "2026-10-23",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-23"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                209.76,
+                389.04,
+                300.0,
+                415.92
+              ],
+              "text": "Client 5",
+              "engine": "ocr-tesseract",
+              "confidence": 0.93,
+              "coordinates": "page points",
+              "initial_reading": "Client 5"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                300.0,
+                389.04,
+                374.88,
+                415.92
+              ],
+              "text": "000023",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000023"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                374.88,
+                389.04,
+                554.88,
+                415.92
+              ],
+              "text": "Widget model 10",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 10"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                554.88,
+                389.04,
+                610.08,
+                415.92
+              ],
+              "text": "2",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                610.08,
+                389.04,
+                680.16,
+                415.92
+              ],
+              "text": "12.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "12.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                680.16,
+                389.04,
+                759.84,
+                415.92
+              ],
+              "text": "24.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "24.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                759.84,
+                389.04,
+                829.92,
+                415.92
+              ],
+              "text": "2.40",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "2.40"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                829.92,
+                389.04,
+                894.96,
+                415.92
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                894.96,
+                389.04,
+                984.96,
+                415.92
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                984.96,
+                389.04,
+                1085.04,
+                415.92
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 2,
+              "bbox": [
+                34.8,
+                415.92,
+                120.0,
+                442.8
+              ],
+              "text": "INV-0024",
+              "engine": "ocr-tesseract",
+              "confidence": 0.9,
+              "coordinates": "page points",
+              "initial_reading": "INV-0024"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                120.0,
+                415.92,
+                209.76,
+                442.8
+              ],
+              "text": "2026-10-24",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "2026-10-24"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                209.76,
+                415.92,
+                300.0,
+                442.8
+              ],
+              "text": "Client 6",
+              "engine": "ocr-tesseract",
+              "confidence": 0.95,
+              "coordinates": "page points",
+              "initial_reading": "Client 6"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                300.0,
+                415.92,
+                374.88,
+                442.8
+              ],
+              "text": "000024",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "000024"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                374.88,
+                415.92,
+                554.88,
+                442.8
+              ],
+              "text": "Widget model 11",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Widget model 11"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                554.88,
+                415.92,
+                610.08,
+                442.8
+              ],
+              "text": "3",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "3"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                610.08,
+                415.92,
+                680.16,
+                442.8
+              ],
+              "text": "13.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "13.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                680.16,
+                415.92,
+                759.84,
+                442.8
+              ],
+              "text": "39.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "39.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                759.84,
+                415.92,
+                829.92,
+                442.8
+              ],
+              "text": "3.90",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "3.90"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                829.92,
+                415.92,
+                894.96,
+                442.8
+              ],
+              "text": "5.00",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "5.00"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                894.96,
+                415.92,
+                984.96,
+                442.8
+              ],
+              "text": "South",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "South"
+            }
+          ],
+          [
+            {
+              "page": 2,
+              "bbox": [
+                984.96,
+                415.92,
+                1085.04,
+                442.8
+              ],
+              "text": "Paid",
+              "engine": "ocr-tesseract",
+              "confidence": 0.96,
+              "coordinates": "page points",
+              "initial_reading": "Paid"
+            }
+          ]
+        ]
+      ],
+      "header_sources": [
+        [
+          {
+            "page": 1,
+            "bbox": [
+              34.8,
+              93.84,
+              120.0,
+              116.88
+            ],
+            "text": "Invoice",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              34.8,
+              93.84,
+              120.0,
+              116.88
+            ],
+            "text": "Invoice",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              120.0,
+              93.84,
+              209.76,
+              116.88
+            ],
+            "text": "Date",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              120.0,
+              93.84,
+              209.76,
+              116.88
+            ],
+            "text": "Date",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              209.76,
+              93.84,
+              300.0,
+              116.88
+            ],
+            "text": "Client",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              209.76,
+              93.84,
+              300.0,
+              116.88
+            ],
+            "text": "Client",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              300.0,
+              93.84,
+              374.88,
+              116.88
+            ],
+            "text": "SKU",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              300.0,
+              93.84,
+              374.88,
+              116.88
+            ],
+            "text": "SKU",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              374.88,
+              93.84,
+              554.88,
+              116.88
+            ],
+            "text": "Description",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              374.88,
+              93.84,
+              554.88,
+              116.88
+            ],
+            "text": "Description",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              554.88,
+              93.84,
+              610.08,
+              116.88
+            ],
+            "text": "Qty.",
+            "engine": "ocr-tesseract",
+            "confidence": 0.95,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              554.88,
+              93.84,
+              610.08,
+              116.88
+            ],
+            "text": "Qty.",
+            "engine": "ocr-tesseract",
+            "confidence": 0.95,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              610.08,
+              93.84,
+              680.16,
+              116.88
+            ],
+            "text": "Rate",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              610.08,
+              93.84,
+              680.16,
+              116.88
+            ],
+            "text": "Rate",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              680.16,
+              93.84,
+              759.84,
+              116.88
+            ],
+            "text": "Amt",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              680.16,
+              93.84,
+              759.84,
+              116.88
+            ],
+            "text": "Amt",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              759.84,
+              93.84,
+              829.92,
+              116.88
+            ],
+            "text": "Tax",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              759.84,
+              93.84,
+              829.92,
+              116.88
+            ],
+            "text": "Tax",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              829.92,
+              93.84,
+              894.96,
+              116.88
+            ],
+            "text": "Ship",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              829.92,
+              93.84,
+              894.96,
+              116.88
+            ],
+            "text": "Ship",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              894.96,
+              93.84,
+              984.96,
+              116.88
+            ],
+            "text": "Region",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              894.96,
+              93.84,
+              984.96,
+              116.88
+            ],
+            "text": "Region",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              984.96,
+              93.84,
+              1085.04,
+              116.88
+            ],
+            "text": "Status",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          },
+          {
+            "page": 2,
+            "bbox": [
+              984.96,
+              93.84,
+              1085.04,
+              116.88
+            ],
+            "text": "Status",
+            "engine": "ocr-tesseract",
+            "confidence": 0.96,
+            "coordinates": "page points"
+          }
+        ]
+      ],
+      "cell_scores": [
+        [
+          0,
+          0,
+          0.91
+        ],
+        [
+          0,
+          1,
+          0.96
+        ],
+        [
+          0,
+          2,
+          0.95
+        ],
+        [
+          0,
+          3,
+          0.96
+        ],
+        [
+          0,
+          4,
+          0.96
+        ],
+        [
+          0,
+          5,
+          0.96
+        ],
+        [
+          0,
+          6,
+          0.95
+        ],
+        [
+          0,
+          7,
+          0.96
+        ],
+        [
+          0,
+          8,
+          0.96
+        ],
+        [
+          0,
+          9,
+          0.96
+        ],
+        [
+          0,
+          10,
+          0.96
+        ],
+        [
+          0,
+          11,
+          0.96
+        ],
+        [
+          1,
+          0,
+          0.9
+        ],
+        [
+          1,
+          1,
+          0.96
+        ],
+        [
+          1,
+          2,
+          0.96
+        ],
+        [
+          1,
+          3,
+          0.96
+        ],
+        [
+          1,
+          4,
+          0.96
+        ],
+        [
+          1,
+          5,
+          0.96
+        ],
+        [
+          1,
+          6,
+          0.96
+        ],
+        [
+          1,
+          7,
+          0.96
+        ],
+        [
+          1,
+          8,
+          0.96
+        ],
+        [
+          1,
+          9,
+          0.96
+        ],
+        [
+          1,
+          10,
+          0.96
+        ],
+        [
+          1,
+          11,
+          0.96
+        ],
+        [
+          2,
+          0,
+          0.91
+        ],
+        [
+          2,
+          1,
+          0.96
+        ],
+        [
+          2,
+          2,
+          0.96
+        ],
+        [
+          2,
+          3,
+          0.96
+        ],
+        [
+          2,
+          4,
+          0.96
+        ],
+        [
+          2,
+          5,
+          0.96
+        ],
+        [
+          2,
+          6,
+          0.95
+        ],
+        [
+          2,
+          7,
+          0.96
+        ],
+        [
+          2,
+          8,
+          0.95
+        ],
+        [
+          2,
+          9,
+          0.96
+        ],
+        [
+          2,
+          10,
+          0.96
+        ],
+        [
+          2,
+          11,
+          0.95
+        ],
+        [
+          3,
+          0,
+          0.92
+        ],
+        [
+          3,
+          1,
+          0.96
+        ],
+        [
+          3,
+          2,
+          0.96
+        ],
+        [
+          3,
+          3,
+          0.96
+        ],
+        [
+          3,
+          4,
+          0.96
+        ],
+        [
+          3,
+          5,
+          0.97
+        ],
+        [
+          3,
+          6,
+          0.96
+        ],
+        [
+          3,
+          7,
+          0.96
+        ],
+        [
+          3,
+          8,
+          0.96
+        ],
+        [
+          3,
+          9,
+          0.96
+        ],
+        [
+          3,
+          10,
+          0.96
+        ],
+        [
+          3,
+          11,
+          0.95
+        ],
+        [
+          4,
+          0,
+          0.9
+        ],
+        [
+          4,
+          1,
+          0.96
+        ],
+        [
+          4,
+          2,
+          0.95
+        ],
+        [
+          4,
+          3,
+          0.96
+        ],
+        [
+          4,
+          4,
+          0.96
+        ],
+        [
+          4,
+          5,
+          0.96
+        ],
+        [
+          4,
+          6,
+          0.95
+        ],
+        [
+          4,
+          7,
+          0.96
+        ],
+        [
+          4,
+          8,
+          0.95
+        ],
+        [
+          4,
+          9,
+          0.96
+        ],
+        [
+          4,
+          10,
+          0.96
+        ],
+        [
+          4,
+          11,
+          0.96
+        ],
+        [
+          5,
+          0,
+          0.91
+        ],
+        [
+          5,
+          1,
+          0.96
+        ],
+        [
+          5,
+          2,
+          0.96
+        ],
+        [
+          5,
+          3,
+          0.96
+        ],
+        [
+          5,
+          4,
+          0.95
+        ],
+        [
+          5,
+          5,
+          0.96
+        ],
+        [
+          5,
+          6,
+          0.96
+        ],
+        [
+          5,
+          7,
+          0.96
+        ],
+        [
+          5,
+          8,
+          0.96
+        ],
+        [
+          5,
+          9,
+          0.96
+        ],
+        [
+          5,
+          10,
+          0.96
+        ],
+        [
+          5,
+          11,
+          0.96
+        ],
+        [
+          6,
+          0,
+          0.91
+        ],
+        [
+          6,
+          1,
+          0.96
+        ],
+        [
+          6,
+          2,
+          0.96
+        ],
+        [
+          6,
+          3,
+          0.96
+        ],
+        [
+          6,
+          4,
+          0.96
+        ],
+        [
+          6,
+          5,
+          0.96
+        ],
+        [
+          6,
+          6,
+          0.95
+        ],
+        [
+          6,
+          7,
+          0.96
+        ],
+        [
+          6,
+          8,
+          0.96
+        ],
+        [
+          6,
+          9,
+          0.95
+        ],
+        [
+          6,
+          10,
+          0.96
+        ],
+        [
+          6,
+          11,
+          0.95
+        ],
+        [
+          7,
+          0,
+          0.9
+        ],
+        [
+          7,
+          1,
+          0.96
+        ],
+        [
+          7,
+          2,
+          0.96
+        ],
+        [
+          7,
+          3,
+          0.96
+        ],
+        [
+          7,
+          4,
+          0.96
+        ],
+        [
+          7,
+          5,
+          0.96
+        ],
+        [
+          7,
+          6,
+          0.96
+        ],
+        [
+          7,
+          7,
+          0.96
+        ],
+        [
+          7,
+          8,
+          0.96
+        ],
+        [
+          7,
+          9,
+          0.96
+        ],
+        [
+          7,
+          10,
+          0.96
+        ],
+        [
+          7,
+          11,
+          0.96
+        ],
+        [
+          8,
+          0,
+          0.9
+        ],
+        [
+          8,
+          1,
+          0.96
+        ],
+        [
+          8,
+          2,
+          0.96
+        ],
+        [
+          8,
+          3,
+          0.96
+        ],
+        [
+          8,
+          4,
+          0.96
+        ],
+        [
+          8,
+          5,
+          0.96
+        ],
+        [
+          8,
+          6,
+          0.96
+        ],
+        [
+          8,
+          7,
+          0.96
+        ],
+        [
+          8,
+          8,
+          0.96
+        ],
+        [
+          8,
+          9,
+          0.95
+        ],
+        [
+          8,
+          10,
+          0.96
+        ],
+        [
+          8,
+          11,
+          0.96
+        ],
+        [
+          9,
+          0,
+          0.9
+        ],
+        [
+          9,
+          1,
+          0.96
+        ],
+        [
+          9,
+          2,
+          0.96
+        ],
+        [
+          9,
+          3,
+          0.96
+        ],
+        [
+          9,
+          4,
+          0.96
+        ],
+        [
+          9,
+          5,
+          0.96
+        ],
+        [
+          9,
+          6,
+          0.96
+        ],
+        [
+          9,
+          7,
+          0.96
+        ],
+        [
+          9,
+          8,
+          0.96
+        ],
+        [
+          9,
+          9,
+          0.96
+        ],
+        [
+          9,
+          10,
+          0.96
+        ],
+        [
+          9,
+          11,
+          0.96
+        ],
+        [
+          10,
+          0,
+          0.92
+        ],
+        [
+          10,
+          1,
+          0.96
+        ],
+        [
+          10,
+          2,
+          0.96
+        ],
+        [
+          10,
+          3,
+          0.96
+        ],
+        [
+          10,
+          4,
+          0.96
+        ],
+        [
+          10,
+          5,
+          0.96
+        ],
+        [
+          10,
+          6,
+          0.95
+        ],
+        [
+          10,
+          7,
+          0.96
+        ],
+        [
+          10,
+          8,
+          0.95
+        ],
+        [
+          10,
+          9,
+          0.95
+        ],
+        [
+          10,
+          10,
+          0.96
+        ],
+        [
+          10,
+          11,
+          0.95
+        ],
+        [
+          11,
+          0,
+          0.91
+        ],
+        [
+          11,
+          1,
+          0.96
+        ],
+        [
+          11,
+          2,
+          0.95
+        ],
+        [
+          11,
+          3,
+          0.95
+        ],
+        [
+          11,
+          4,
+          0.95
+        ],
+        [
+          11,
+          5,
+          0.96
+        ],
+        [
+          11,
+          6,
+          0.95
+        ],
+        [
+          11,
+          7,
+          0.96
+        ],
+        [
+          11,
+          8,
+          0.95
+        ],
+        [
+          11,
+          9,
+          0.95
+        ],
+        [
+          11,
+          10,
+          0.96
+        ],
+        [
+          11,
+          11,
+          0.96
+        ],
+        [
+          12,
+          0,
+          0.9
+        ],
+        [
+          12,
+          1,
+          0.96
+        ],
+        [
+          12,
+          2,
+          0.96
+        ],
+        [
+          12,
+          3,
+          0.96
+        ],
+        [
+          12,
+          4,
+          0.95
+        ],
+        [
+          12,
+          5,
+          0.96
+        ],
+        [
+          12,
+          6,
+          0.96
+        ],
+        [
+          12,
+          7,
+          0.96
+        ],
+        [
+          12,
+          8,
+          0.96
+        ],
+        [
+          12,
+          9,
+          0.96
+        ],
+        [
+          12,
+          10,
+          0.96
+        ],
+        [
+          12,
+          11,
+          0.96
+        ],
+        [
+          13,
+          0,
+          0.89
+        ],
+        [
+          13,
+          1,
+          0.96
+        ],
+        [
+          13,
+          2,
+          0.92
+        ],
+        [
+          13,
+          3,
+          0.96
+        ],
+        [
+          13,
+          4,
+          0.96
+        ],
+        [
+          13,
+          5,
+          0.96
+        ],
+        [
+          13,
+          6,
+          0.96
+        ],
+        [
+          13,
+          7,
+          0.95
+        ],
+        [
+          13,
+          8,
+          0.96
+        ],
+        [
+          13,
+          9,
+          0.96
+        ],
+        [
+          13,
+          10,
+          0.96
+        ],
+        [
+          13,
+          11,
+          0.96
+        ],
+        [
+          14,
+          0,
+          0.9
+        ],
+        [
+          14,
+          1,
+          0.96
+        ],
+        [
+          14,
+          2,
+          0.96
+        ],
+        [
+          14,
+          3,
+          0.96
+        ],
+        [
+          14,
+          4,
+          0.96
+        ],
+        [
+          14,
+          5,
+          0.96
+        ],
+        [
+          14,
+          6,
+          0.96
+        ],
+        [
+          14,
+          7,
+          0.95
+        ],
+        [
+          14,
+          8,
+          0.96
+        ],
+        [
+          14,
+          9,
+          0.96
+        ],
+        [
+          14,
+          10,
+          0.96
+        ],
+        [
+          14,
+          11,
+          0.95
+        ],
+        [
+          15,
+          0,
+          0.9
+        ],
+        [
+          15,
+          1,
+          0.96
+        ],
+        [
+          15,
+          2,
+          0.96
+        ],
+        [
+          15,
+          3,
+          0.96
+        ],
+        [
+          15,
+          4,
+          0.96
+        ],
+        [
+          15,
+          5,
+          0.96
+        ],
+        [
+          15,
+          6,
+          0.96
+        ],
+        [
+          15,
+          7,
+          0.96
+        ],
+        [
+          15,
+          8,
+          0.96
+        ],
+        [
+          15,
+          9,
+          0.96
+        ],
+        [
+          15,
+          10,
+          0.96
+        ],
+        [
+          15,
+          11,
+          0.95
+        ],
+        [
+          16,
+          0,
+          0.9
+        ],
+        [
+          16,
+          1,
+          0.96
+        ],
+        [
+          16,
+          2,
+          0.96
+        ],
+        [
+          16,
+          3,
+          0.95
+        ],
+        [
+          16,
+          4,
+          0.96
+        ],
+        [
+          16,
+          5,
+          0.96
+        ],
+        [
+          16,
+          6,
+          0.95
+        ],
+        [
+          16,
+          7,
+          0.96
+        ],
+        [
+          16,
+          8,
+          0.96
+        ],
+        [
+          16,
+          9,
+          0.96
+        ],
+        [
+          16,
+          10,
+          0.96
+        ],
+        [
+          16,
+          11,
+          0.96
+        ],
+        [
+          17,
+          0,
+          0.91
+        ],
+        [
+          17,
+          1,
+          0.96
+        ],
+        [
+          17,
+          2,
+          0.96
+        ],
+        [
+          17,
+          3,
+          0.96
+        ],
+        [
+          17,
+          4,
+          0.96
+        ],
+        [
+          17,
+          5,
+          0.96
+        ],
+        [
+          17,
+          6,
+          0.96
+        ],
+        [
+          17,
+          7,
+          0.95
+        ],
+        [
+          17,
+          8,
+          0.96
+        ],
+        [
+          17,
+          9,
+          0.96
+        ],
+        [
+          17,
+          10,
+          0.96
+        ],
+        [
+          17,
+          11,
+          0.95
+        ],
+        [
+          18,
+          0,
+          0.91
+        ],
+        [
+          18,
+          1,
+          0.96
+        ],
+        [
+          18,
+          2,
+          0.96
+        ],
+        [
+          18,
+          3,
+          0.96
+        ],
+        [
+          18,
+          4,
+          0.95
+        ],
+        [
+          18,
+          5,
+          0.96
+        ],
+        [
+          18,
+          6,
+          0.96
+        ],
+        [
+          18,
+          7,
+          0.96
+        ],
+        [
+          18,
+          8,
+          0.96
+        ],
+        [
+          18,
+          9,
+          0.95
+        ],
+        [
+          18,
+          10,
+          0.96
+        ],
+        [
+          18,
+          11,
+          0.95
+        ],
+        [
+          19,
+          0,
+          0.9
+        ],
+        [
+          19,
+          1,
+          0.96
+        ],
+        [
+          19,
+          2,
+          0.96
+        ],
+        [
+          19,
+          3,
+          0.96
+        ],
+        [
+          19,
+          4,
+          0.96
+        ],
+        [
+          19,
+          5,
+          0.96
+        ],
+        [
+          19,
+          6,
+          0.95
+        ],
+        [
+          19,
+          7,
+          0.96
+        ],
+        [
+          19,
+          8,
+          0.96
+        ],
+        [
+          19,
+          9,
+          0.96
+        ],
+        [
+          19,
+          10,
+          0.96
+        ],
+        [
+          19,
+          11,
+          0.96
+        ],
+        [
+          20,
+          0,
+          0.91
+        ],
+        [
+          20,
+          1,
+          0.96
+        ],
+        [
+          20,
+          2,
+          0.96
+        ],
+        [
+          20,
+          3,
+          0.95
+        ],
+        [
+          20,
+          4,
+          0.96
+        ],
+        [
+          20,
+          5,
+          0.96
+        ],
+        [
+          20,
+          6,
+          0.96
+        ],
+        [
+          20,
+          7,
+          0.96
+        ],
+        [
+          20,
+          8,
+          0.96
+        ],
+        [
+          20,
+          9,
+          0.96
+        ],
+        [
+          20,
+          10,
+          0.96
+        ],
+        [
+          20,
+          11,
+          0.96
+        ],
+        [
+          21,
+          0,
+          0.9
+        ],
+        [
+          21,
+          1,
+          0.96
+        ],
+        [
+          21,
+          2,
+          0.96
+        ],
+        [
+          21,
+          3,
+          0.96
+        ],
+        [
+          21,
+          4,
+          0.95
+        ],
+        [
+          21,
+          5,
+          0.96
+        ],
+        [
+          21,
+          6,
+          0.95
+        ],
+        [
+          21,
+          7,
+          0.96
+        ],
+        [
+          21,
+          8,
+          0.96
+        ],
+        [
+          21,
+          9,
+          0.96
+        ],
+        [
+          21,
+          10,
+          0.96
+        ],
+        [
+          21,
+          11,
+          0.96
+        ],
+        [
+          22,
+          0,
+          0.92
+        ],
+        [
+          22,
+          1,
+          0.96
+        ],
+        [
+          22,
+          2,
+          0.93
+        ],
+        [
+          22,
+          3,
+          0.96
+        ],
+        [
+          22,
+          4,
+          0.96
+        ],
+        [
+          22,
+          5,
+          0.96
+        ],
+        [
+          22,
+          6,
+          0.95
+        ],
+        [
+          22,
+          7,
+          0.95
+        ],
+        [
+          22,
+          8,
+          0.96
+        ],
+        [
+          22,
+          9,
+          0.95
+        ],
+        [
+          22,
+          10,
+          0.96
+        ],
+        [
+          22,
+          11,
+          0.95
+        ],
+        [
+          23,
+          0,
+          0.9
+        ],
+        [
+          23,
+          1,
+          0.95
+        ],
+        [
+          23,
+          2,
+          0.95
+        ],
+        [
+          23,
+          3,
+          0.96
+        ],
+        [
+          23,
+          4,
+          0.96
+        ],
+        [
+          23,
+          5,
+          0.96
+        ],
+        [
+          23,
+          6,
+          0.96
+        ],
+        [
+          23,
+          7,
+          0.96
+        ],
+        [
+          23,
+          8,
+          0.96
+        ],
+        [
+          23,
+          9,
+          0.96
+        ],
+        [
+          23,
+          10,
+          0.96
+        ],
+        [
+          23,
+          11,
+          0.96
+        ]
       ]
     }
   ],
@@ -548,26 +7002,6 @@
       "page": 1,
       "row": null,
       "column": null,
-      "reason": "Selected cell-recheck-300dpi; alternative deskew-300dpi produced different content or shape.",
-      "suggestion": "Compare the page and highlighted data.",
-      "code": "candidate_disagreement",
-      "table": null
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": null,
-      "reason": "Selected cell-recheck-300dpi; alternative second-engine produced different content or shape.",
-      "suggestion": "Compare the page and highlighted data.",
-      "code": "candidate_disagreement",
-      "table": null
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": null,
       "reason": "OCR tesseract; deskew correction 0.00 degrees; values require source review.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
@@ -606,21 +7040,11 @@
     {
       "severity": "warning",
       "page": 1,
-      "row": null,
-      "column": null,
-      "reason": "Selected cell-recheck-300dpi; alternative deskew-300dpi produced different content or shape.",
-      "suggestion": "Compare the page and highlighted data.",
-      "code": "candidate_disagreement",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": null,
-      "reason": "Selected cell-recheck-300dpi; alternative second-engine produced different content or shape.",
-      "suggestion": "Compare the page and highlighted data.",
-      "code": "candidate_disagreement",
+      "row": 4,
+      "column": 6,
+      "reason": "Alternate ocr-tesseract (deskew-300dpi) read '\u201c'; selected '4'.",
+      "suggestion": "Compare with the source document.",
+      "code": "ocr_disagreement",
       "table": 1
     }
   ],
@@ -630,7 +7054,7 @@
       "route": "ocr",
       "engine": "tesseract",
       "confidence": 0.96,
-      "seconds": 67.54741399999966,
+      "seconds": 11.158415300000343,
       "attempts": [
         {
           "engine": "tesseract",
@@ -638,8 +7062,8 @@
           "tables": 1,
           "cells": 144,
           "issues": 3,
-          "score": 826.2,
-          "seconds": 6.666049899999962,
+          "score": 828.2,
+          "seconds": 5.1933894000030705,
           "error": "",
           "selected": false
         },
@@ -649,21 +7073,10 @@
           "tables": 1,
           "cells": 144,
           "issues": 2,
-          "score": 838.2,
-          "seconds": 6.439302300000236,
+          "score": 842.2,
+          "seconds": 5.45341140000528,
           "error": "",
           "selected": true
-        },
-        {
-          "engine": "rapidocr",
-          "strategy": "second-engine",
-          "tables": 1,
-          "cells": 143,
-          "issues": 2,
-          "score": 832.991,
-          "seconds": 53.788229100000535,
-          "error": "",
-          "selected": false
         }
       ],
       "error": ""
@@ -673,7 +7086,7 @@
       "route": "ocr",
       "engine": "tesseract",
       "confidence": 0.96,
-      "seconds": 7.6890769000001455,
+      "seconds": 4.100951599997643,
       "attempts": [
         {
           "engine": "tesseract",
@@ -681,8 +7094,8 @@
           "tables": 1,
           "cells": 144,
           "issues": 1,
-          "score": 840.2,
-          "seconds": 6.482175399999505,
+          "score": 842.2,
+          "seconds": 3.506295899998804,
           "error": "",
           "selected": true
         }
@@ -690,5 +7103,55 @@
       "error": ""
     }
   ],
-  "seconds": 75.61083380000036
+  "seconds": 15.65945240000292,
+  "source_sha256": "c1df12ddce2418f307056ad554295891c3af4808368ffff2aaddea5396691a0e",
+  "constraints": [
+    {
+      "id": "T1:C6*C7=C8",
+      "table": 1,
+      "kind": "row",
+      "operator": "*",
+      "columns": [
+        5,
+        6,
+        7
+      ],
+      "formula": "Qty. * Rate = Amt",
+      "checked": 24,
+      "matched": 24,
+      "support": 1.0,
+      "rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "violations": []
+    }
+  ],
+  "proposals": [],
+  "review": {
+    "status": "unreviewed"
+  },
+  "history": []
 }

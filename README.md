@@ -109,6 +109,7 @@ Default conversion makes no API requests even when credentials exist. Optional v
 ```sh
 python -m pytest -q
 python scripts/judge_check.py
+python scripts/portable_ocr_check.py
 python scripts/public_audit.py --fetch
 # After independently obtaining the published dummy samples:
 python scripts/transfer_audit.py --fixtures PATH_TO_SAMPLES
@@ -124,6 +125,7 @@ ruff format --check truecell tests eval scripts app.py convert.py run.py
 - [External layout audit](reports/EXTERNAL_AUDIT.md): full 35-cell fuel table; **48 selected** census cells plus all 16 headers and both shapes; no-table W3C control. Other 464 census cells were not independently checked.
 - [Published fixture transfer audit](reports/TRANSFER_AUDIT.md): all cells/headers/shapes on three author-provided dummy fixtures. Only Truecell was executed; this is not a relative performance ranking.
 - [Build verification](reports/BUILD_VERIFICATION.md): actual local tests, portability checks and unverified items.
+- [Portable OCR check](reports/PORTABLE_OCR.json): all four synthetic scan cases passed with Tesseract excluded; the perspective-photo case took about 96 seconds for two pages.
 
 All these inputs were used during development. None is a blind benchmark or promise of hidden-test accuracy. Reports preserve scope and failures rather than assigning an invented overall accuracy score.
 

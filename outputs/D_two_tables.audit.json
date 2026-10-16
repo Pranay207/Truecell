@@ -83,7 +83,292 @@
         "native-lines",
         "native-lines",
         "native-lines"
-      ]
+      ],
+      "cell_sources": [
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                119.0,
+                235.0,
+                146.0
+              ],
+              "text": "P0",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                235.0,
+                119.0,
+                435.0,
+                146.0
+              ],
+              "text": "1",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                435.0,
+                119.0,
+                635.0,
+                146.0
+              ],
+              "text": "10",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                146.0,
+                235.0,
+                173.0
+              ],
+              "text": "P1",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                235.0,
+                146.0,
+                435.0,
+                173.0
+              ],
+              "text": "2",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                435.0,
+                146.0,
+                635.0,
+                173.0
+              ],
+              "text": "11",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                173.0,
+                235.0,
+                200.0
+              ],
+              "text": "P2",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                235.0,
+                173.0,
+                435.0,
+                200.0
+              ],
+              "text": "3",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                435.0,
+                173.0,
+                635.0,
+                200.0
+              ],
+              "text": "12",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                200.0,
+                235.0,
+                227.0
+              ],
+              "text": "P3",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                235.0,
+                200.0,
+                435.0,
+                227.0
+              ],
+              "text": "4",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                435.0,
+                200.0,
+                635.0,
+                227.0
+              ],
+              "text": "13",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                227.0,
+                235.0,
+                254.0
+              ],
+              "text": "P4",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                235.0,
+                227.0,
+                435.0,
+                254.0
+              ],
+              "text": "5",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                435.0,
+                227.0,
+                635.0,
+                254.0
+              ],
+              "text": "14",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ]
+      ],
+      "header_sources": [
+        [
+          {
+            "page": 1,
+            "bbox": [
+              35.0,
+              92.0,
+              235.0,
+              119.0
+            ],
+            "text": "Code",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              235.0,
+              92.0,
+              435.0,
+              119.0
+            ],
+            "text": "Count",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              435.0,
+              92.0,
+              635.0,
+              119.0
+            ],
+            "text": "Price",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ]
+      ],
+      "cell_scores": []
     },
     {
       "headers": [
@@ -173,7 +458,382 @@
         "native-lines",
         "native-lines",
         "native-lines"
-      ]
+      ],
+      "cell_sources": [
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                419.0,
+                185.0,
+                446.0
+              ],
+              "text": "B0",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                185.0,
+                419.0,
+                335.0,
+                446.0
+              ],
+              "text": "40",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                335.0,
+                419.0,
+                485.0,
+                446.0
+              ],
+              "text": "10",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                485.0,
+                419.0,
+                635.0,
+                446.0
+              ],
+              "text": "30",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                446.0,
+                185.0,
+                473.0
+              ],
+              "text": "B1",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                185.0,
+                446.0,
+                335.0,
+                473.0
+              ],
+              "text": "41",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                335.0,
+                446.0,
+                485.0,
+                473.0
+              ],
+              "text": "11",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                485.0,
+                446.0,
+                635.0,
+                473.0
+              ],
+              "text": "30",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                473.0,
+                185.0,
+                500.0
+              ],
+              "text": "B2",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                185.0,
+                473.0,
+                335.0,
+                500.0
+              ],
+              "text": "42",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                335.0,
+                473.0,
+                485.0,
+                500.0
+              ],
+              "text": "12",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                485.0,
+                473.0,
+                635.0,
+                500.0
+              ],
+              "text": "30",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                500.0,
+                185.0,
+                527.0
+              ],
+              "text": "B3",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                185.0,
+                500.0,
+                335.0,
+                527.0
+              ],
+              "text": "43",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                335.0,
+                500.0,
+                485.0,
+                527.0
+              ],
+              "text": "13",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                485.0,
+                500.0,
+                635.0,
+                527.0
+              ],
+              "text": "30",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                527.0,
+                185.0,
+                554.0
+              ],
+              "text": "B4",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                185.0,
+                527.0,
+                335.0,
+                554.0
+              ],
+              "text": "44",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                335.0,
+                527.0,
+                485.0,
+                554.0
+              ],
+              "text": "14",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                485.0,
+                527.0,
+                635.0,
+                554.0
+              ],
+              "text": "30",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ]
+      ],
+      "header_sources": [
+        [
+          {
+            "page": 1,
+            "bbox": [
+              35.0,
+              392.0,
+              185.0,
+              419.0
+            ],
+            "text": "Branch",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              185.0,
+              392.0,
+              335.0,
+              419.0
+            ],
+            "text": "In",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              335.0,
+              392.0,
+              485.0,
+              419.0
+            ],
+            "text": "Out",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              485.0,
+              392.0,
+              635.0,
+              419.0
+            ],
+            "text": "Net",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ]
+      ],
+      "cell_scores": []
     }
   ],
   "issues": [],
@@ -183,7 +843,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.09784399999989546,
+      "seconds": 0.037483500003872905,
       "attempts": [
         {
           "engine": "native",
@@ -191,8 +851,8 @@
           "tables": 2,
           "cells": 35,
           "issues": 0,
-          "score": 83.2,
-          "seconds": 0.08246370000051684,
+          "score": 1083.2,
+          "seconds": 0.029093299999658484,
           "error": "",
           "selected": true
         }
@@ -200,5 +860,36 @@
       "error": ""
     }
   ],
-  "seconds": 0.11930740000025253
+  "seconds": 0.04428570000163745,
+  "source_sha256": "20a9b0865a38ba5407cdd24d9f8fe9ac46672d36cb532820e6f8b2e9ffecb19d",
+  "constraints": [
+    {
+      "id": "T2:C3+C4=C2",
+      "table": 2,
+      "kind": "row",
+      "operator": "+",
+      "columns": [
+        2,
+        3,
+        1
+      ],
+      "formula": "Out + Net = In",
+      "checked": 5,
+      "matched": 5,
+      "support": 1.0,
+      "rows": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "violations": []
+    }
+  ],
+  "proposals": [],
+  "review": {
+    "status": "unreviewed"
+  },
+  "history": []
 }

@@ -311,7 +311,1850 @@
         "native-lines",
         "native-lines",
         "native-lines"
-      ]
+      ],
+      "cell_sources": [
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                119.0,
+                155.0,
+                146.0
+              ],
+              "text": "TX-001",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                119.0,
+                285.0,
+                146.0
+              ],
+              "text": "2026-10-01",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                119.0,
+                545.0,
+                146.0
+              ],
+              "text": "Entry 1",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                119.0,
+                685.0,
+                146.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                119.0,
+                825.0,
+                146.0
+              ],
+              "text": "40.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                119.0,
+                985.0,
+                146.0
+              ],
+              "text": "1040.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                146.0,
+                155.0,
+                173.0
+              ],
+              "text": "TX-002",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                146.0,
+                285.0,
+                173.0
+              ],
+              "text": "2026-10-02",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                146.0,
+                545.0,
+                173.0
+              ],
+              "text": "Entry 2",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                146.0,
+                685.0,
+                173.0
+              ],
+              "text": "12.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                146.0,
+                825.0,
+                173.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                146.0,
+                985.0,
+                173.0
+              ],
+              "text": "1028.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                173.0,
+                155.0,
+                200.0
+              ],
+              "text": "TX-003",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                173.0,
+                285.0,
+                200.0
+              ],
+              "text": "2026-10-03",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                173.0,
+                545.0,
+                200.0
+              ],
+              "text": "Entry 3",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                173.0,
+                685.0,
+                200.0
+              ],
+              "text": "13.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                173.0,
+                825.0,
+                200.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                173.0,
+                985.0,
+                200.0
+              ],
+              "text": "1015.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                200.0,
+                155.0,
+                227.0
+              ],
+              "text": "TX-004",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                200.0,
+                285.0,
+                227.0
+              ],
+              "text": "2026-10-04",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                200.0,
+                545.0,
+                227.0
+              ],
+              "text": "Entry 4",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                200.0,
+                685.0,
+                227.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                200.0,
+                825.0,
+                227.0
+              ],
+              "text": "43.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                200.0,
+                985.0,
+                227.0
+              ],
+              "text": "1058.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                227.0,
+                155.0,
+                254.0
+              ],
+              "text": "TX-005",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                227.0,
+                285.0,
+                254.0
+              ],
+              "text": "2026-10-05",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                227.0,
+                545.0,
+                254.0
+              ],
+              "text": "Entry 5",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                227.0,
+                685.0,
+                254.0
+              ],
+              "text": "15.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                227.0,
+                825.0,
+                254.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                227.0,
+                985.0,
+                254.0
+              ],
+              "text": "1043.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                254.0,
+                155.0,
+                281.0
+              ],
+              "text": "TX-006",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                254.0,
+                285.0,
+                281.0
+              ],
+              "text": "2026-10-06",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                254.0,
+                545.0,
+                281.0
+              ],
+              "text": "Entry 6",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                254.0,
+                685.0,
+                281.0
+              ],
+              "text": "16.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                254.0,
+                825.0,
+                281.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                254.0,
+                985.0,
+                281.0
+              ],
+              "text": "1027.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                281.0,
+                155.0,
+                308.0
+              ],
+              "text": "TX-007",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                281.0,
+                285.0,
+                308.0
+              ],
+              "text": "2026-10-07",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                281.0,
+                545.0,
+                308.0
+              ],
+              "text": "Entry 7",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                281.0,
+                685.0,
+                308.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                281.0,
+                825.0,
+                308.0
+              ],
+              "text": "46.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                281.0,
+                985.0,
+                308.0
+              ],
+              "text": "1073.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                308.0,
+                155.0,
+                335.0
+              ],
+              "text": "TX-008",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                308.0,
+                285.0,
+                335.0
+              ],
+              "text": "2026-10-08",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                308.0,
+                545.0,
+                335.0
+              ],
+              "text": "Entry 8",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                308.0,
+                685.0,
+                335.0
+              ],
+              "text": "18.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                308.0,
+                825.0,
+                335.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                308.0,
+                985.0,
+                335.0
+              ],
+              "text": "1055.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                335.0,
+                155.0,
+                362.0
+              ],
+              "text": "TX-009",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                335.0,
+                285.0,
+                362.0
+              ],
+              "text": "2026-10-09",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                335.0,
+                545.0,
+                362.0
+              ],
+              "text": "Entry 9",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                335.0,
+                685.0,
+                362.0
+              ],
+              "text": "19.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                335.0,
+                825.0,
+                362.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                335.0,
+                985.0,
+                362.0
+              ],
+              "text": "1036.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                362.0,
+                155.0,
+                389.0
+              ],
+              "text": "TX-010",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                362.0,
+                285.0,
+                389.0
+              ],
+              "text": "2026-10-10",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                362.0,
+                545.0,
+                389.0
+              ],
+              "text": "Entry 10",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                362.0,
+                685.0,
+                389.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                362.0,
+                825.0,
+                389.0
+              ],
+              "text": "49.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                362.0,
+                985.0,
+                389.0
+              ],
+              "text": "1085.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                389.0,
+                155.0,
+                416.0
+              ],
+              "text": "TX-011",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                389.0,
+                285.0,
+                416.0
+              ],
+              "text": "2026-10-11",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                389.0,
+                545.0,
+                416.0
+              ],
+              "text": "Entry 11",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                389.0,
+                685.0,
+                416.0
+              ],
+              "text": "21.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                389.0,
+                825.0,
+                416.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                389.0,
+                985.0,
+                416.0
+              ],
+              "text": "1081.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                416.0,
+                155.0,
+                443.0
+              ],
+              "text": "TX-012",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                416.0,
+                285.0,
+                443.0
+              ],
+              "text": "2026-10-12",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                416.0,
+                545.0,
+                443.0
+              ],
+              "text": "Entry 12",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                416.0,
+                685.0,
+                443.0
+              ],
+              "text": "22.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                416.0,
+                825.0,
+                443.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                416.0,
+                985.0,
+                443.0
+              ],
+              "text": "1042.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                443.0,
+                155.0,
+                470.0
+              ],
+              "text": "TX-013",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                443.0,
+                285.0,
+                470.0
+              ],
+              "text": "2026-10-13",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                443.0,
+                545.0,
+                470.0
+              ],
+              "text": "Entry 13",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                443.0,
+                685.0,
+                470.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                443.0,
+                825.0,
+                470.0
+              ],
+              "text": "52.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                443.0,
+                985.0,
+                470.0
+              ],
+              "text": "1094.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                470.0,
+                155.0,
+                497.0
+              ],
+              "text": "TX-014",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                470.0,
+                285.0,
+                497.0
+              ],
+              "text": "2026-10-14",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                470.0,
+                545.0,
+                497.0
+              ],
+              "text": "Entry 14",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                470.0,
+                685.0,
+                497.0
+              ],
+              "text": "24.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                470.0,
+                825.0,
+                497.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                470.0,
+                985.0,
+                497.0
+              ],
+              "text": "1070.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                497.0,
+                155.0,
+                524.0
+              ],
+              "text": "TX-015",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                497.0,
+                285.0,
+                524.0
+              ],
+              "text": "2026-10-15",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                497.0,
+                545.0,
+                524.0
+              ],
+              "text": "Entry 15",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                497.0,
+                685.0,
+                524.0
+              ],
+              "text": "25.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                497.0,
+                825.0,
+                524.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                497.0,
+                985.0,
+                524.0
+              ],
+              "text": "1045.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                524.0,
+                155.0,
+                551.0
+              ],
+              "text": "TX-016",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                524.0,
+                285.0,
+                551.0
+              ],
+              "text": "2026-10-16",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                524.0,
+                545.0,
+                551.0
+              ],
+              "text": "Entry 16",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                524.0,
+                685.0,
+                551.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                524.0,
+                825.0,
+                551.0
+              ],
+              "text": "55.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                524.0,
+                985.0,
+                551.0
+              ],
+              "text": "1100.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                551.0,
+                155.0,
+                578.0
+              ],
+              "text": "TX-017",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                551.0,
+                285.0,
+                578.0
+              ],
+              "text": "2026-10-17",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                551.0,
+                545.0,
+                578.0
+              ],
+              "text": "Entry 17",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                551.0,
+                685.0,
+                578.0
+              ],
+              "text": "27.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                551.0,
+                825.0,
+                578.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                551.0,
+                985.0,
+                578.0
+              ],
+              "text": "1073.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                578.0,
+                155.0,
+                605.0
+              ],
+              "text": "TX-018",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                578.0,
+                285.0,
+                605.0
+              ],
+              "text": "2026-10-18",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                578.0,
+                545.0,
+                605.0
+              ],
+              "text": "Entry 18",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                578.0,
+                685.0,
+                605.0
+              ],
+              "text": "28.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                578.0,
+                825.0,
+                605.0
+              ],
+              "text": "0.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                578.0,
+                985.0,
+                605.0
+              ],
+              "text": "1045.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                605.0,
+                155.0,
+                632.0
+              ],
+              "text": "",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                155.0,
+                605.0,
+                285.0,
+                632.0
+              ],
+              "text": "",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                285.0,
+                605.0,
+                545.0,
+                632.0
+              ],
+              "text": "Total",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                545.0,
+                605.0,
+                685.0,
+                632.0
+              ],
+              "text": "249.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                685.0,
+                605.0,
+                825.0,
+                632.0
+              ],
+              "text": "",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                825.0,
+                605.0,
+                985.0,
+                632.0
+              ],
+              "text": "",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ]
+      ],
+      "header_sources": [
+        [
+          {
+            "page": 1,
+            "bbox": [
+              35.0,
+              92.0,
+              155.0,
+              119.0
+            ],
+            "text": "Ref",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              155.0,
+              92.0,
+              285.0,
+              119.0
+            ],
+            "text": "When",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              285.0,
+              92.0,
+              545.0,
+              119.0
+            ],
+            "text": "Memo",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              545.0,
+              92.0,
+              685.0,
+              119.0
+            ],
+            "text": "X",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              685.0,
+              92.0,
+              825.0,
+              119.0
+            ],
+            "text": "Y",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              825.0,
+              92.0,
+              985.0,
+              119.0
+            ],
+            "text": "Z",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ]
+      ],
+      "cell_scores": []
     }
   ],
   "issues": [
@@ -362,7 +2205,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.15200519999962125,
+      "seconds": 0.0676512999998522,
       "attempts": [
         {
           "engine": "native",
@@ -370,36 +2213,198 @@
           "tables": 1,
           "cells": 110,
           "issues": 4,
-          "score": 673.6,
-          "seconds": 0.0694668999994974,
+          "score": 1694.126,
+          "seconds": 0.05539339999813819,
           "error": "",
           "selected": true
-        },
-        {
-          "engine": "native",
-          "strategy": "text",
-          "tables": 1,
-          "cells": 110,
-          "issues": 5,
-          "score": 668.4,
-          "seconds": 0.037720500000432367,
-          "error": "",
-          "selected": false
-        },
-        {
-          "engine": "native",
-          "strategy": "words",
-          "tables": 1,
-          "cells": 110,
-          "issues": 5,
-          "score": 666.4,
-          "seconds": 0.015869600000769424,
-          "error": "",
-          "selected": false
         }
       ],
       "error": ""
     }
   ],
-  "seconds": 0.16233620000002702
+  "seconds": 0.09011050000117393,
+  "source_sha256": "0312be673c7db85435e2a34ddcb8c6b2b688c9e0f5825b2702d47b02188ed142",
+  "constraints": [
+    {
+      "id": "T1:balance:C6-C4+C5",
+      "table": 1,
+      "kind": "balance",
+      "operator": "balance",
+      "columns": [
+        5,
+        3,
+        4
+      ],
+      "formula": "Previous Z - X + Y = Z",
+      "checked": 17,
+      "matched": 15,
+      "support": 0.8823529411764706,
+      "rows": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "violations": [
+        {
+          "row": 10,
+          "column": 5,
+          "expected": "1064.00",
+          "observed": "1081.00"
+        },
+        {
+          "row": 11,
+          "column": 5,
+          "expected": "1059.00",
+          "observed": "1042.00"
+        }
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "id": "T1:R11:C6:1064.00",
+      "table": 1,
+      "row": 10,
+      "column": 5,
+      "observed": "1081.00",
+      "proposed": "1064.00",
+      "supporting_equations": [
+        "T1:balance:C6-C4+C5@row11",
+        "T1:balance:C6-C4+C5@row12"
+      ],
+      "support_count": 2,
+      "source_pages": [
+        1
+      ],
+      "status": "proposal_only",
+      "basis": "Inferred document arithmetic; verify the source before applying.",
+      "alternatives": 1
+    },
+    {
+      "id": "T1:R10:C6:1102.00",
+      "table": 1,
+      "row": 9,
+      "column": 5,
+      "observed": "1085.00",
+      "proposed": "1102.00",
+      "supporting_equations": [
+        "T1:balance:C6-C4+C5@row11"
+      ],
+      "support_count": 1,
+      "source_pages": [
+        1
+      ],
+      "status": "proposal_only",
+      "basis": "Inferred document arithmetic; verify the source before applying.",
+      "alternatives": 1
+    },
+    {
+      "id": "T1:R11:C4:4.00",
+      "table": 1,
+      "row": 10,
+      "column": 3,
+      "observed": "21.00",
+      "proposed": "4.00",
+      "supporting_equations": [
+        "T1:balance:C6-C4+C5@row11"
+      ],
+      "support_count": 1,
+      "source_pages": [
+        1
+      ],
+      "status": "proposal_only",
+      "basis": "Inferred document arithmetic; verify the source before applying.",
+      "alternatives": 1
+    },
+    {
+      "id": "T1:R11:C5:17.00",
+      "table": 1,
+      "row": 10,
+      "column": 4,
+      "observed": "0.00",
+      "proposed": "17.00",
+      "supporting_equations": [
+        "T1:balance:C6-C4+C5@row11"
+      ],
+      "support_count": 1,
+      "source_pages": [
+        1
+      ],
+      "status": "proposal_only",
+      "basis": "Inferred document arithmetic; verify the source before applying.",
+      "alternatives": 1
+    },
+    {
+      "id": "T1:R12:C4:39.00",
+      "table": 1,
+      "row": 11,
+      "column": 3,
+      "observed": "22.00",
+      "proposed": "39.00",
+      "supporting_equations": [
+        "T1:balance:C6-C4+C5@row12"
+      ],
+      "support_count": 1,
+      "source_pages": [
+        1
+      ],
+      "status": "proposal_only",
+      "basis": "Inferred document arithmetic; verify the source before applying.",
+      "alternatives": 1
+    },
+    {
+      "id": "T1:R12:C5:-17.00",
+      "table": 1,
+      "row": 11,
+      "column": 4,
+      "observed": "0.00",
+      "proposed": "-17.00",
+      "supporting_equations": [
+        "T1:balance:C6-C4+C5@row12"
+      ],
+      "support_count": 1,
+      "source_pages": [
+        1
+      ],
+      "status": "proposal_only",
+      "basis": "Inferred document arithmetic; verify the source before applying.",
+      "alternatives": 1
+    },
+    {
+      "id": "T1:R12:C6:1059.00",
+      "table": 1,
+      "row": 11,
+      "column": 5,
+      "observed": "1042.00",
+      "proposed": "1059.00",
+      "supporting_equations": [
+        "T1:balance:C6-C4+C5@row12"
+      ],
+      "support_count": 1,
+      "source_pages": [
+        1
+      ],
+      "status": "proposal_only",
+      "basis": "Inferred document arithmetic; verify the source before applying.",
+      "alternatives": 1
+    }
+  ],
+  "review": {
+    "status": "unreviewed"
+  },
+  "history": []
 }

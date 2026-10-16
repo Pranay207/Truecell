@@ -63,7 +63,310 @@
         "native-lines",
         "native-lines",
         "native-lines"
-      ]
+      ],
+      "cell_sources": [
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                176.0,
+                215.0,
+                218.0
+              ],
+              "text": "A01",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                215.0,
+                176.0,
+                395.0,
+                218.0
+              ],
+              "text": "Long product name",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                395.0,
+                176.0,
+                575.0,
+                218.0
+              ],
+              "text": "12",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                575.0,
+                176.0,
+                755.0,
+                218.0
+              ],
+              "text": "36.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                218.0,
+                215.0,
+                260.0
+              ],
+              "text": "A02",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                215.0,
+                218.0,
+                395.0,
+                260.0
+              ],
+              "text": "Wrapped description",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                395.0,
+                218.0,
+                575.0,
+                260.0
+              ],
+              "text": "15",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                575.0,
+                218.0,
+                755.0,
+                260.0
+              ],
+              "text": "45.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "page": 1,
+              "bbox": [
+                35.0,
+                260.0,
+                215.0,
+                302.0
+              ],
+              "text": "A03",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                215.0,
+                260.0,
+                395.0,
+                302.0
+              ],
+              "text": "Single",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                395.0,
+                260.0,
+                575.0,
+                302.0
+              ],
+              "text": "10",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ],
+          [
+            {
+              "page": 1,
+              "bbox": [
+                575.0,
+                260.0,
+                755.0,
+                302.0
+              ],
+              "text": "30.00",
+              "engine": "native-lines",
+              "confidence": null,
+              "coordinates": "page points"
+            }
+          ]
+        ]
+      ],
+      "header_sources": [
+        [
+          {
+            "page": 1,
+            "bbox": [
+              35.0,
+              92.0,
+              395.0,
+              134.0
+            ],
+            "text": "Product",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          },
+          {
+            "page": 1,
+            "bbox": [
+              35.0,
+              134.0,
+              215.0,
+              176.0
+            ],
+            "text": "Code",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              35.0,
+              92.0,
+              395.0,
+              134.0
+            ],
+            "text": "Product",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          },
+          {
+            "page": 1,
+            "bbox": [
+              215.0,
+              134.0,
+              395.0,
+              176.0
+            ],
+            "text": "Description",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              395.0,
+              92.0,
+              755.0,
+              134.0
+            ],
+            "text": "Movement",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          },
+          {
+            "page": 1,
+            "bbox": [
+              395.0,
+              134.0,
+              575.0,
+              176.0
+            ],
+            "text": "Units",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ],
+        [
+          {
+            "page": 1,
+            "bbox": [
+              395.0,
+              92.0,
+              755.0,
+              134.0
+            ],
+            "text": "Movement",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          },
+          {
+            "page": 1,
+            "bbox": [
+              575.0,
+              134.0,
+              755.0,
+              176.0
+            ],
+            "text": "Value",
+            "engine": "native-lines",
+            "confidence": null,
+            "coordinates": "page points"
+          }
+        ]
+      ],
+      "cell_scores": []
     }
   ],
   "issues": [],
@@ -73,7 +376,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.050963700000465906,
+      "seconds": 0.0328799999988405,
       "attempts": [
         {
           "engine": "native",
@@ -81,8 +384,8 @@
           "tables": 1,
           "cells": 12,
           "issues": 0,
-          "score": 76.6,
-          "seconds": 0.04078819999995176,
+          "score": 1076.6,
+          "seconds": 0.02177300000039395,
           "error": "",
           "selected": true
         }
@@ -90,5 +393,12 @@
       "error": ""
     }
   ],
-  "seconds": 0.059854400000403984
+  "seconds": 0.040841900001396425,
+  "source_sha256": "e8a441b23bca503cd5ea8a74044f47c89801ffbc4c93a9df136d9cf0ced3d042",
+  "constraints": [],
+  "proposals": [],
+  "review": {
+    "status": "unreviewed"
+  },
+  "history": []
 }

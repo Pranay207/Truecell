@@ -1,0 +1,83 @@
+{
+  "scope": "Four synthetic development cases; Tesseract excluded by engine selection override. Not hidden-test accuracy or a cross-platform execution test.",
+  "python": "3.11.9",
+  "host": "Windows-10-10.0.26200-SP0",
+  "cases": [
+    {
+      "case": "C_scanned_inventory",
+      "precision": 1.0,
+      "recall": 1.0,
+      "cell_exact": 1.0,
+      "row_match": 1.0,
+      "header_match": 1.0,
+      "shape_match": true,
+      "tables_count_match": true,
+      "errors_caught": 0,
+      "errors_injected": 0,
+      "seconds": 19.177229600005376,
+      "seconds_per_page": 9.588614800002688,
+      "findings": 2,
+      "pass": true,
+      "selected_engines": [
+        "ocr-rapidocr"
+      ]
+    },
+    {
+      "case": "D_blur_noise",
+      "precision": 1.0,
+      "recall": 1.0,
+      "cell_exact": 1.0,
+      "row_match": 1.0,
+      "header_match": 1.0,
+      "shape_match": true,
+      "tables_count_match": true,
+      "errors_caught": 0,
+      "errors_injected": 0,
+      "seconds": 19.39783819999866,
+      "seconds_per_page": 9.69891909999933,
+      "findings": 2,
+      "pass": true,
+      "selected_engines": [
+        "ocr-rapidocr"
+      ]
+    },
+    {
+      "case": "D_skew_5deg",
+      "precision": 1.0,
+      "recall": 1.0,
+      "cell_exact": 1.0,
+      "row_match": 1.0,
+      "header_match": 1.0,
+      "shape_match": true,
+      "tables_count_match": true,
+      "errors_caught": 0,
+      "errors_injected": 0,
+      "seconds": 18.592707199997676,
+      "seconds_per_page": 9.296353599998838,
+      "findings": 2,
+      "pass": true,
+      "selected_engines": [
+        "ocr-rapidocr"
+      ]
+    },
+    {
+      "case": "D_phone_photo",
+      "precision": 1.0,
+      "recall": 1.0,
+      "cell_exact": 1.0,
+      "row_match": 1.0,
+      "header_match": 1.0,
+      "shape_match": true,
+      "tables_count_match": true,
+      "errors_caught": 0,
+      "errors_injected": 0,
+      "seconds": 95.71580430000176,
+      "seconds_per_page": 47.85790215000088,
+      "findings": 12,
+      "pass": true,
+      "selected_engines": [
+        "ocr-rapidocr"
+      ]
+    }
+  ]
+}
