@@ -41,11 +41,12 @@ Truecell is a local-first React and FastAPI application built for the **INCUXAI 
 
 | Verified result | Evidence |
 |---|---|
-| **21/21** deterministic development cases passed | [Accuracy report](reports/ACCURACY_REPORT.md) |
-| **203** Python tests and **13** frontend tests passed | [Build verification](reports/BUILD_VERIFICATION.md) |
+| **22/22** deterministic development cases passed | [Accuracy report](reports/ACCURACY_REPORT.md) |
+| **214** Python tests and **14** frontend tests passed | [Build verification](reports/BUILD_VERIFICATION.md) |
 | **5/5** scan cases passed with Tesseract excluded | [Portable OCR results](reports/PORTABLE_OCR.json) |
 | **50 pages / 800 rows / 12 columns** recovered in the measured stress fixture | [Stress PDF](samples/D_stress_50pages.pdf) · [Converted workbook](outputs/D_stress_50pages.xlsx) |
 | **18-column** borderless table and vertically grouped nested line items passed exact checks | [18-column workbook](outputs/E_eighteen_columns.xlsx) · [Nested-lines workbook](outputs/E_vertical_nested_lines.xlsx) |
+| **126/126 cells** across two public Unicode tables matched their source-pinned reference | [External audit](reports/EXTERNAL_AUDIT.md) |
 
 These are disclosed dummy development fixtures, not blind or hidden-document accuracy claims. Exact evaluation compares ordered cells, headers, table shapes, row multisets, and annotated errors. Start with [JUDGE_START_HERE.txt](JUDGE_START_HERE.txt) for the shortest review path.
 
@@ -54,10 +55,10 @@ These are disclosed dummy development fixtures, not blind or hidden-document acc
 | Judging area | Truecell evidence |
 |---|---|
 | **OCR and extraction accuracy — 30** | Bundled offline RapidOCR, optional local Tesseract, native-PDF extraction, deskew/rotation/perspective recovery, cell-level source boxes, and **5/5** portable OCR fixtures without Tesseract. |
-| **Multi-page and complex tables — 25** | Repeated-header removal, continuation joins, split-row recovery, page carry-forward separation, 18-column reconstruction, conservative vertically spanned group labels, and an exact **50-page / 800-row** stress result. |
+| **Multi-page and complex tables — 25** | Repeated-header removal, continuation joins, split-row recovery, page carry-forward separation, 18-column reconstruction, conservative vertically spanned group labels, an exact **50-page / 800-row** stress result, and a visible/exported join receipt. |
 | **Column alignment and data integrity — 20** | Header and geometry scoring, leading-zero preservation, typed unambiguous values, formula-injection protection, duplicate retention, row-to-page provenance, and exact shape/header checks. |
-| **Automation and error recovery — 15** | Automatic page routing, alternate extraction strategies, failed-page continuation, verified JSON checkpoints, resumable partial jobs, inferred arithmetic checks, counterfactual repair previews, and explicit correction history. |
-| **Code quality and usability — 10** | Responsive React/TypeScript UI, FastAPI backend, searchable extracted tables, source inspector, saved local workspaces, **203 Python + 13 frontend tests**, Ruff checks, and a 3-OS/3-Python CI matrix. |
+| **Automation and error recovery — 15** | Automatic page routing, alternate extraction strategies, failed-page continuation, verified JSON checkpoints, resumable partial jobs, inferred arithmetic checks, counterfactual repair previews, a source-addressable uncertainty queue, and explicit correction history. |
+| **Code quality and usability — 10** | Responsive React/TypeScript UI, FastAPI backend, searchable extracted tables, source inspector, saved local workspaces, **214 Python + 14 frontend tests**, Ruff checks, and a 3-OS/3-Python CI matrix. |
 
 ## Run it in one command
 
@@ -113,6 +114,7 @@ Every document below contains generated dummy data. The linked XLSX files are Tr
 | Invoice register | [PDF](samples/A_invoice_register.pdf) | [XLSX](outputs/A_invoice_register.xlsx) | 12 columns joined across 3 pages |
 | Bank errors | [PDF](samples/B_bank_errors.pdf) | [XLSX](outputs/B_bank_errors.xlsx) | Two injected arithmetic errors detected |
 | Scanned inventory | [PDF](samples/C_scanned_inventory.pdf) | [XLSX](outputs/C_scanned_inventory.xlsx) | Offline OCR across 2 scanned pages |
+| Scanned continuations | [PDF](samples/F_scanned_multipage_continuations.pdf) | [XLSX](outputs/F_scanned_multipage_continuations.xlsx) | 5 raster-only pages, 12 columns, repeated headers and two split-row joins |
 | Stress document | [PDF](samples/D_stress_50pages.pdf) | [XLSX](outputs/D_stress_50pages.xlsx) | 50 pages, 800 rows, repeated-header removal |
 | Wide borderless table | [PDF](samples/E_eighteen_columns.pdf) | [XLSX](outputs/E_eighteen_columns.xlsx) | 18-column alignment |
 | Nested line items | [PDF](samples/E_vertical_nested_lines.pdf) | [XLSX](outputs/E_vertical_nested_lines.xlsx) | Vertically spanned group labels with source evidence |
@@ -123,22 +125,25 @@ Measured locally on Windows, Python 3.11.9. Times are wall-clock observations an
 
 | Development fixture | Pages | Rows | Columns | Time | Exact result |
 |---|---:|---:|---:|---:|---|
-| Invoice register | 3 | 48 | 12 | 1.08 s | PASS |
-| Bank errors | 1 | 19 | 6 | 0.13 s | PASS, 2/2 errors caught |
-| Scanned inventory | 2 | 24 | 12 | 17.58 s | PASS |
-| 50-page stress | 50 | 800 | 12 | 30.12 s | PASS |
+| Invoice register | 3 | 48 | 12 | 1.36 s | PASS |
+| Bank errors | 1 | 19 | 6 | 0.34 s | PASS, 2/2 errors caught |
+| Scanned inventory | 2 | 24 | 12 | 32.96 s | PASS |
+| 5-page scanned continuations | 5 | 33 | 12 | 174.97 s | PASS, 2/2 split rows joined |
+| 50-page stress | 50 | 800 | 12 | 118.00 s | PASS |
 | 18-column table | 1 | 9 | 18 | 3.69 s | PASS |
 | Vertical nested lines | 1 | 8 | 10 | 0.11 s | PASS |
 
-See all 21 cases, definitions, and per-page timings in the [accuracy report](reports/ACCURACY_REPORT.md).
+See all 22 cases, definitions, and per-page timings in the [accuracy report](reports/ACCURACY_REPORT.md).
+The five-page raster benchmark selected local Tesseract and took about three minutes on this host. The separate portable suite excludes Tesseract and remains 5/5 on its five disclosed scan fixtures; do not infer RapidOCR performance for the new stress case.
 
 ## Demo
 
 1. Start Truecell and choose **Find a wrong balance**.
-2. Open **Equations** and inspect printed `1081.00`; Truecell proposes `1064.00` using two adjacent balance equations.
-3. Select the finding to outline the original source cell. Preview the proposal and verify that it clears two equation failures without changing saved data.
-4. Apply the correction only after source review and entering a reason. Show the immutable original reading and correction history.
-5. Export Excel, then show the Data, Cell Evidence, Validation Report, Constraints, Page Audit, and Verification sheets.
+2. Open **Review**, select a priority item, and jump to its exact source page and cell. Mark it checked only after inspection.
+3. Open **Equations** and inspect printed `1081.00`; Truecell proposes `1064.00` using two adjacent balance equations.
+4. Preview the proposal and verify that it clears two equation failures without changing saved data. Apply it only after source review and entering a reason.
+5. Open the invoice sample and show its join receipt: contributing pages, repeated headers removed, split rows recovered, and rows read per page.
+6. Export Excel, then show the Data, Cell Evidence, Validation Report, Join Receipt, Constraints, Page Audit, and Verification sheets.
 
 Use the prepared [3–4 minute recording script](docs/DEMO_SCRIPT.md) for the full walkthrough.
 
@@ -159,9 +164,9 @@ flowchart LR
     H --> I[Excel and audit JSON]
 ```
 
-The agent chooses page-level strategies from document evidence, reconstructs tables, preserves source coordinates, joins only compatible adjacent tables, and validates the assembled result. Running-balance and `a*b=c` / `a+b=c` relations are inferred from repeated numeric patterns instead of relying on financial column names. Proposed repairs remain unapplied until a reviewer inspects the source and supplies a reason.
+The agent chooses page-level strategies from document evidence, reconstructs tables, preserves source coordinates, joins only compatible adjacent tables, and validates the assembled result. Each assembled table carries a join receipt showing which pages and row fragments contributed to it. Running-balance and `a*b=c` / `a+b=c` relations are inferred from repeated numeric patterns instead of relying on financial column names. Proposed repairs remain unapplied until a reviewer inspects the source and supplies a reason.
 
-Search filters large extracted tables across every column while preserving original row identities for evidence, edits, and findings. Saved workspaces keep the source, extraction, corrections, and review history together under `outputs/jobs/`.
+Search filters large extracted tables across every column while preserving original row identities for evidence and edits. The bounded review queue puts rule findings and the lowest OCR-confidence cells first, opens their source location, and remembers checked/reopened state without changing the extraction fingerprint. Saved workspaces keep the source, extraction, corrections, and review history together under `outputs/jobs/`.
 
 <details>
 <summary>Extraction and recovery details</summary>
@@ -181,6 +186,7 @@ Search filters large extracted tables across every column while preserving origi
 | `Data 1`, `Data 2`, … | Reconstructed tables with safe typing and source-evidence links |
 | `Validation Report` | Structural, arithmetic, OCR, and ambiguity findings |
 | `Cell Evidence` | Page, bounding box, engine, reading, alternate reading, and score |
+| `Join Receipt` | Contributing pages, page joins, repeated headers removed, split rows recovered, and source-row counts |
 | `Page Audit` | Extraction attempts, selected strategy, timing, and failures |
 | `Provenance` | Row-to-page mapping, including split records |
 | `Constraints` / `Repair Proposals` | Inferred equations, agreement, violations, and unapplied candidates |
@@ -193,6 +199,7 @@ Identifiers and leading zeros remain text. Unambiguous numbers and dates are typ
 
 ```sh
 python -m pytest -q
+python scripts/verify_recorded_outputs.py
 python scripts/judge_check.py
 python scripts/portable_ocr_check.py
 
@@ -210,8 +217,8 @@ python scripts/public_audit.py --fetch
 <details>
 <summary>Reports and evaluation scope</summary>
 
-- [Development accuracy](reports/ACCURACY_REPORT.md): all 21 generated cases and timings.
-- [External layout audit](reports/EXTERNAL_AUDIT.md): a 35-cell fuel table, 48 selected census cells plus all 16 headers and both shapes, and a no-table control. The remaining census cells were not independently checked.
+- [Development accuracy](reports/ACCURACY_REPORT.md): all 22 generated cases and timings.
+- [External layout audit](reports/EXTERNAL_AUDIT.md): a 35-cell fuel table, 48 selected census cells plus all 16 headers and both shapes, a no-table control, and two complete public Unicode tables with 126/126 data cells and 14/14 flattened headers. The remaining census cells are outside the annotation scope.
 - [External published-fixture audit](reports/TRANSFER_AUDIT.md): exact cell, header, and shape regression checks on three public dummy fixtures and their author-provided expected results. Source and scope are documented in the report.
 - [Build verification](reports/BUILD_VERIFICATION.md): tests, portability checks, and explicitly unverified items.
 

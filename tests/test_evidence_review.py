@@ -10,7 +10,15 @@ from truecell.checkpoint import Checkpoints
 from truecell.constraints import analyze, coverage
 from truecell.models import Result
 from truecell.pipeline import convert
-from truecell.review import apply_edit, complete_review, history_valid, review_current
+from truecell.review import (
+    apply_edit,
+    complete_review,
+    fingerprint,
+    history_valid,
+    review_current,
+    review_queue,
+    set_item_review,
+)
 from truecell.workspace import create_job, job_path, load_result, save_result
 
 
@@ -100,6 +108,40 @@ def test_audit_roundtrip_retains_boxes_scores_and_constraints(bank):
     assert restored.tables[0].cell_confidence[(0, 0)] == 0.72
     assert restored.tables[0].cell_sources == bank.tables[0].cell_sources
     assert restored.constraints == bank.constraints
+
+
+def test_priority_review_queue_persists_cell_checks_without_changing_snapshot(bank):
+    bank.tables[0].cell_confidence[(0, 0)] = 0.72
+    queue = review_queue(bank)
+    uncertain = next(item for item in queue["items"] if item["kind"] == "confidence")
+    assert uncertain["table"] == 0 and uncertain["row"] == 0 and uncertain["column"] == 0
+    assert uncertain["status"] == "pending" and queue["pending"] == queue["visible"]
+
+    before = fingerprint(bank)
+    checked = set_item_review(bank, uncertain["id"], True)
+    updated = review_queue(checked)
+    assert fingerprint(checked) == before
+    assert (
+        next(item for item in updated["items"] if item["id"] == uncertain["id"])["status"]
+        == "checked"
+    )
+    assert updated["checked"] == 1
+
+    reopened = set_item_review(checked, uncertain["id"], False)
+    assert review_queue(reopened)["checked"] == 0
+    with pytest.raises(ValueError, match="current extraction"):
+        set_item_review(bank, "not-a-real-review-item", True)
+
+
+def test_source_attestation_completes_visible_priority_queue(bank):
+    bank.tables[0].cell_confidence[(0, 0)] = 0.72
+    reviewed = complete_review(bank, True, "Checked every priority item against its source.")
+    queue = review_queue(reviewed)
+    assert queue["visible"] > 0 and queue["pending"] == 0
+    assert queue["checked"] == queue["visible"] and review_current(reviewed)
+    reopened = set_item_review(reviewed, queue["items"][0]["id"], False)
+    assert not review_current(reopened)
+    assert review_queue(reopened)["pending"] == 1
 
 
 def test_workspace_baseline_is_immutable(bank, tmp_path):

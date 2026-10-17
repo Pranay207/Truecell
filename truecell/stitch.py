@@ -2,11 +2,36 @@
 
 from __future__ import annotations
 
+from collections import Counter
 from copy import deepcopy
 from difflib import SequenceMatcher
 
 from .models import Issue, Table
 from .table import clean
+
+
+def _receipt(table: Table) -> dict:
+    """Return a stable, JSON-safe account of how page fragments became a table."""
+    receipt = table.join_receipt
+    receipt.setdefault("page_joins", 0)
+    receipt.setdefault("repeated_headers_removed", 0)
+    receipt.setdefault("split_rows_recovered", 0)
+    table.join_receipt = receipt
+    return receipt
+
+
+def _refresh_receipt(table: Table) -> None:
+    """Derive page and row totals from final provenance after all joins."""
+    receipt = _receipt(table)
+    rows_by_page = Counter(page for sources in table.provenance for page, _source_row in sources)
+    pages = sorted(rows_by_page or {table.page: 0})
+    receipt.update(
+        {
+            "pages": pages,
+            "rows_by_page": [{"page": page, "rows": rows_by_page[page]} for page in pages],
+            "output_rows": len(table.rows),
+        }
+    )
 
 
 def compatible(left: Table, right: Table) -> bool:
@@ -34,11 +59,19 @@ def stitch(tables: list[Table]) -> tuple[list[Table], list[Issue]]:
     issues: list[Issue] = []
     for source in tables:
         table = deepcopy(source)
+        _receipt(table)
         matches = [t for t in joined if compatible(t, table)]
         if len(matches) != 1:
             joined.append(table)
             continue
         target = matches[0]
+        target_receipt = _receipt(target)
+        source_receipt = _receipt(table)
+        target_receipt["page_joins"] += source_receipt["page_joins"] + 1
+        target_receipt["repeated_headers_removed"] += source_receipt[
+            "repeated_headers_removed"
+        ] + int(table.header_detected)
+        target_receipt["split_rows_recovered"] += source_receipt["split_rows_recovered"]
         if not table.header_detected:
             issues.append(
                 Issue(
@@ -98,6 +131,7 @@ def stitch(tables: list[Table]) -> tuple[list[Table], list[Issue]]:
                         table=joined.index(target) + 1,
                     )
                 )
+                target_receipt["split_rows_recovered"] += 1
                 table.rows.pop(0)
                 table.provenance.pop(0)
                 table.row_engines.pop(0)
@@ -119,4 +153,6 @@ def stitch(tables: list[Table]) -> tuple[list[Table], list[Issue]]:
             target.cell_confidence[(r + offset, c)] = confidence
         target.notes.extend(note for note in table.notes if note not in target.notes)
         target.confidence = min(target.confidence, table.confidence)
+    for table in joined:
+        _refresh_receipt(table)
     return joined, issues

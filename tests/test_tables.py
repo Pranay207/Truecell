@@ -1,8 +1,10 @@
 """Layout and stitching regressions protect row counts and provenance."""
 
 import pytest
+from openpyxl import load_workbook
 
-from truecell.models import Table
+from truecell.export import export_workbook
+from truecell.models import Result, Table
 from truecell.stitch import compatible, stitch
 from truecell.table import normalize, words_to_grid
 
@@ -25,6 +27,69 @@ def test_split_row_keeps_both_sources():
     assert joined[0].rows[0] == ["A", "Long item continued", "3", "15"]
     assert joined[0].provenance[0] == [(1, 1), (2, 1)]
     assert any(i.code == "split_row_join" for i in issues)
+    assert joined[0].join_receipt == {
+        "page_joins": 1,
+        "repeated_headers_removed": 1,
+        "split_rows_recovered": 1,
+        "pages": [1, 2],
+        "rows_by_page": [{"page": 1, "rows": 1}, {"page": 2, "rows": 2}],
+        "output_rows": 2,
+    }
+
+
+def test_join_receipt_counts_headerless_continuation_without_claiming_header_removal():
+    joined, _ = stitch(
+        [
+            t(rows=[["A", "First", "2", "10"]]),
+            t(page=2, rows=[["B", "Second", "3", "15"]], detected=False),
+            t(page=3, rows=[["C", "Third", "4", "20"]]),
+        ]
+    )
+
+    assert joined[0].join_receipt == {
+        "page_joins": 2,
+        "repeated_headers_removed": 1,
+        "split_rows_recovered": 0,
+        "pages": [1, 2, 3],
+        "rows_by_page": [
+            {"page": 1, "rows": 1},
+            {"page": 2, "rows": 1},
+            {"page": 3, "rows": 1},
+        ],
+        "output_rows": 3,
+    }
+
+
+def test_single_page_table_has_a_zero_join_receipt():
+    joined, _ = stitch([t(rows=[["A", "Only", "2", "10"]])])
+
+    assert joined[0].join_receipt["pages"] == [1]
+    assert joined[0].join_receipt["page_joins"] == 0
+    assert joined[0].join_receipt["repeated_headers_removed"] == 0
+    assert joined[0].join_receipt["split_rows_recovered"] == 0
+
+
+def test_join_receipt_is_in_exported_workbook(tmp_path):
+    joined, _ = stitch(
+        [
+            t(rows=[["A", "First", "2", "10"]]),
+            t(page=2, rows=[["B", "Second", "3", "15"]]),
+        ]
+    )
+
+    workbook = load_workbook(
+        export_workbook(Result("joined.pdf", joined), tmp_path / "joined.xlsx")
+    )
+    receipt = workbook["Join Receipt"]
+    assert receipt["A2"].value == "Data 1"
+    assert receipt["B2"].value == "1, 2"
+    assert receipt["C2"].value == 1
+    assert receipt["D2"].value == 1
+    assert receipt["E2"].value == 0
+    assert [(receipt[f"F{row}"].value, receipt[f"G{row}"].value) for row in (2, 3)] == [
+        (1, 1),
+        (2, 1),
+    ]
 
 
 def test_split_row_preserves_low_confidence_of_continuation_cells():

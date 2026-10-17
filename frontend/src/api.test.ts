@@ -80,6 +80,35 @@ test("challenge uses zero-based table index and keeps missed injections visible"
   }
 });
 
+test("priority review records the exact queue item and source-check state", async () => {
+  const previous = globalThis.fetch;
+  let requested: { url: string; method?: string; body: unknown } | undefined;
+  globalThis.fetch = async (input, init) => {
+    requested = {
+      url: String(input),
+      method: init?.method,
+      body: JSON.parse(String(init?.body)),
+    };
+    return new Response(JSON.stringify({ id: "dummy", status: "complete" }), {
+      status: 200,
+    });
+  };
+  try {
+    await api.reviewItem("dummy", "confidence-0-1-2", true, "snapshot");
+    assert.deepEqual(requested, {
+      url: "/api/jobs/dummy/review-items",
+      method: "POST",
+      body: {
+        item_id: "confidence-0-1-2",
+        source_checked: true,
+        fingerprint: "snapshot",
+      },
+    });
+  } finally {
+    globalThis.fetch = previous;
+  }
+});
+
 test("recovery accepts a new workspace ID while retaining the fork origin", async () => {
   const previous = globalThis.fetch;
   globalThis.fetch = async (input, init) => {

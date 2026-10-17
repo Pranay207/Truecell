@@ -5539,6 +5539,26 @@
         ]
       ],
       "page_summaries": [],
+      "join_receipt": {
+        "page_joins": 1,
+        "repeated_headers_removed": 1,
+        "split_rows_recovered": 0,
+        "pages": [
+          1,
+          2
+        ],
+        "rows_by_page": [
+          {
+            "page": 1,
+            "rows": 12
+          },
+          {
+            "page": 2,
+            "rows": 12
+          }
+        ],
+        "output_rows": 24
+      },
       "cell_scores": [
         [
           0,
@@ -7111,7 +7131,7 @@
       "route": "ocr",
       "engine": "tesseract",
       "confidence": 0.96,
-      "seconds": 12.342538500000956,
+      "seconds": 27.29954590000125,
       "attempts": [
         {
           "engine": "tesseract",
@@ -7120,7 +7140,7 @@
           "cells": 8,
           "issues": 11,
           "score": -78.4,
-          "seconds": 2.788979000004474,
+          "seconds": 6.5595730999993975,
           "error": "",
           "selected": false
         },
@@ -7131,7 +7151,7 @@
           "cells": 8,
           "issues": 15,
           "score": -63.4,
-          "seconds": 4.549954999994952,
+          "seconds": 8.907468700002937,
           "error": "",
           "selected": false
         },
@@ -7142,7 +7162,7 @@
           "cells": 144,
           "issues": 4,
           "score": 842.2,
-          "seconds": 4.442374599995674,
+          "seconds": 9.641112699999212,
           "error": "",
           "selected": true
         }
@@ -7154,7 +7174,7 @@
       "route": "ocr",
       "engine": "tesseract",
       "confidence": 0.96,
-      "seconds": 10.644304999994347,
+      "seconds": 24.310665199998766,
       "attempts": [
         {
           "engine": "tesseract",
@@ -7163,7 +7183,7 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 2.609903000004124,
+          "seconds": 6.396311599997716,
           "error": "",
           "selected": false
         },
@@ -7174,7 +7194,7 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 2.47832730000664,
+          "seconds": 6.64203720000296,
           "error": "",
           "selected": false
         },
@@ -7185,7 +7205,7 @@
           "cells": 144,
           "issues": 2,
           "score": 842.2,
-          "seconds": 4.885854899999686,
+          "seconds": 9.021535399999266,
           "error": "",
           "selected": true
         }
@@ -7193,7 +7213,7 @@
       "error": ""
     }
   ],
-  "seconds": 23.195458600006532,
+  "seconds": 52.365094699998735,
   "source_sha256": "65c0f315264ba36010947e95b1e00e7e2772c6fec5d35f762e50b78b71a86a0f",
   "constraints": [
     {

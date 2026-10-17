@@ -6,20 +6,24 @@ TRUECELL — DOCUMENT INTELLIGENCE
 3. Open the localhost URL printed by the launcher.
    Optional phone demo: START_TRUECELL.cmd --offline --lan, then open the
    printed Phone URL from the same private Wi-Fi network.
-4. Click “Find a wrong balance”, then open “Equations” in the validation rail.
+4. Click “Find a wrong balance”, then open “Review” in the validation rail.
+   The priority queue opens each uncertain or invalid value at its source.
+   Mark an item checked only after inspecting that evidence. Then open “Equations”.
    Inspect printed 1081.00 and the 1064.00 proposal supported by two
    adjacent balance equations. Preview without changing the working data.
 5. Select the finding to inspect its source and preview the proposal impact.
-   Then use Export Excel. The Challenge rail tests validator sensitivity.
+   Open the invoice sample to show its page-join receipt, then Export Excel.
+   The workbook includes Join Receipt and Cell Evidence sheets.
 
 Quick-demo buttons: Invoice register / Find a wrong balance / Skewed scan.
 Upload Sparse text schedule / Sideways invoice / Page carry-forwards from
 the samples/ folder. All sample data is dummy.
-All 21 dummy PDFs, truth workbooks and converted workbooks are in the source folder.
+All 22 dummy PDFs, truth workbooks and converted workbooks are in the source folder.
 The existing submission ZIP predates the latest upgrades; rebuild only when ready.
 
 CLI: python convert.py samples/A_invoice_register.pdf -o outputs/demo.xlsx
 Tests: python -m pytest -q
+Fast recorded-output verification: python scripts/verify_recorded_outputs.py
 Full development evaluation: python scripts/judge_check.py
 
 Read README.md and reports/BUILD_VERIFICATION.md for setup and limitations.

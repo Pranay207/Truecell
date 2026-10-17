@@ -155,6 +155,44 @@ def test_api_upload_edit_review_source_and_export_workflow(tmp_path):
         assert fork.status_code == 202 and fork.json()["id"] != identifier
 
 
+def test_api_priority_review_queue_is_saved_and_source_addressable(tmp_path):
+    calls = []
+
+    def uncertain_runner(source, **options):
+        result = fake_runner(calls)(source, **options)
+        result.tables[0].cell_confidence[(0, 0)] = 0.71
+        return result
+
+    app = create_app(tmp_path / "jobs", runner=uncertain_runner)
+    with local_client(app) as client:
+        identifier = upload(client).json()["id"]
+        detail = completed(client, identifier)
+        queue = detail["review_queue"]
+        item = next(entry for entry in queue["items"] if entry["kind"] == "confidence")
+        assert item["status"] == "pending"
+        assert (item["table"], item["row"], item["column"], item["page"]) == (0, 0, 0, 1)
+
+        checked = client.post(
+            f"/api/jobs/{identifier}/review-items",
+            json={
+                "item_id": item["id"],
+                "source_checked": True,
+                "fingerprint": detail["fingerprint"],
+            },
+        )
+        assert checked.status_code == 200, checked.text
+        checked_detail = checked.json()
+        assert checked_detail["fingerprint"] == detail["fingerprint"]
+        assert checked_detail["review_queue"]["pending"] == queue["pending"] - 1
+        assert client.get(f"/api/jobs/{identifier}").json()["review_queue"]["checked"] == 1
+
+        invalid = client.post(
+            f"/api/jobs/{identifier}/review-items",
+            json={"item_id": "missing", "source_checked": True},
+        )
+        assert invalid.status_code == 400
+
+
 def test_api_delete_workspace_requires_exact_name_and_preserves_other_jobs(tmp_path):
     root = tmp_path / "jobs"
     app = create_app(root, runner=fake_runner([]))

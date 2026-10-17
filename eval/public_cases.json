@@ -1,31 +1,376 @@
 [
   {
-    "name":"camelot-fuel-table",
-    "file":"camelot-foo.pdf",
-    "url":"https://raw.githubusercontent.com/camelot-dev/camelot/92777b852e00933a5c4b9ba642601784604356cd/tests/files/foo.pdf",
-    "sha256":"7d6c24e45b38375e322419281cee1335ddb97e00fc86abe9f22afcd8b42e6d82",
-    "mode":"full",
-    "tables":[{"headers":["Cycle Name","KI (1/km)","Distance (mi)","Percent Fuel Savings | Improved Speed","Percent Fuel Savings | Decreased Accel","Percent Fuel Savings | Eliminate Stops","Percent Fuel Savings | Decreased Idle"],
-      "rows":[["2012_2","3.30","1.3","5.9%","9.5%","29.2%","17.4%"],["2145_1","0.68","11.2","2.4%","0.1%","9.5%","2.7%"],["4234_1","0.59","58.7","8.5%","1.3%","8.5%","3.3%"],["2032_2","0.17","57.8","21.7%","0.3%","2.7%","1.2%"],["4171_1","0.07","173.9","58.1%","1.6%","2.1%","0.5%"]]}]
-  },
-  {
-    "name":"census-two-table-checkpoints",
-    "file":"tabula-statistics.pdf",
-    "url":"https://raw.githubusercontent.com/tabulapdf/tabula-java/master/src/test/resources/technology/tabula/12s0324.pdf",
-    "sha256":"092853e4af150d1c72f474a59ce902305e8675c1d04059d5e2af4a628bc6dfbd",
-    "mode":"checkpoints",
-    "tables":[
-      {"row_count":32,"headers":["Offense charged","Total | Total","Total | Under 18 years","Total | 18 years and over","Male | Total","Male | Under 18 years","Male | 18 years and over","Female | Total","Female | Under 18 years","Female | 18 years and over"],
-       "rows":[["Total","11,062.6","1,540.0","9,522.6","8,263.3","1,071.6","7,191.7","2,799.2","468.3","2,330.9"],["Violent crime","467.9","69.1","398.8","380.2","56.5","323.7","87.7","12.6","75.2"],["Property crime","1,396.4","338.7","1,057.7","875.9","210.8","665.1","608.2","127.9","392.6"]]},
-      {"row_count":32,"headers":["Offense charged","Total","White","Black","American Indian/Alaskan Native","Asian Pacific Islander"],
-       "rows":[["Total","10,690,561","7,389,208","3,027,153","150,544","123,656"],["Violent crime","456,965","268,346","177,766","5,608","5,245"],["Murder and nonnegligent manslaughter","9,739","4,741","4,801","100","97"]]}
+    "name": "camelot-fuel-table",
+    "file": "camelot-foo.pdf",
+    "url": "https://raw.githubusercontent.com/camelot-dev/camelot/92777b852e00933a5c4b9ba642601784604356cd/tests/files/foo.pdf",
+    "sha256": "7d6c24e45b38375e322419281cee1335ddb97e00fc86abe9f22afcd8b42e6d82",
+    "mode": "full",
+    "tables": [
+      {
+        "headers": [
+          "Cycle Name",
+          "KI (1/km)",
+          "Distance (mi)",
+          "Percent Fuel Savings | Improved Speed",
+          "Percent Fuel Savings | Decreased Accel",
+          "Percent Fuel Savings | Eliminate Stops",
+          "Percent Fuel Savings | Decreased Idle"
+        ],
+        "rows": [
+          [
+            "2012_2",
+            "3.30",
+            "1.3",
+            "5.9%",
+            "9.5%",
+            "29.2%",
+            "17.4%"
+          ],
+          [
+            "2145_1",
+            "0.68",
+            "11.2",
+            "2.4%",
+            "0.1%",
+            "9.5%",
+            "2.7%"
+          ],
+          [
+            "4234_1",
+            "0.59",
+            "58.7",
+            "8.5%",
+            "1.3%",
+            "8.5%",
+            "3.3%"
+          ],
+          [
+            "2032_2",
+            "0.17",
+            "57.8",
+            "21.7%",
+            "0.3%",
+            "2.7%",
+            "1.2%"
+          ],
+          [
+            "4171_1",
+            "0.07",
+            "173.9",
+            "58.1%",
+            "1.6%",
+            "2.1%",
+            "0.5%"
+          ]
+        ]
+      }
     ]
   },
   {
-    "name":"w3c-document-without-table",
-    "file":"w3c-no-table.pdf",
-    "url":"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-    "sha256":"3df79d34abbca99308e79cb94461c1893582604d68329a41fd4bec1885e6adb4",
-    "mode":"empty","tables":[]
+    "name": "census-two-table-checkpoints",
+    "file": "tabula-statistics.pdf",
+    "url": "https://raw.githubusercontent.com/tabulapdf/tabula-java/2cdf3b4fd3f7e921dca8cc6814cdd9316be40f0f/src/test/resources/technology/tabula/12s0324.pdf",
+    "sha256": "092853e4af150d1c72f474a59ce902305e8675c1d04059d5e2af4a628bc6dfbd",
+    "mode": "checkpoints",
+    "tables": [
+      {
+        "row_count": 32,
+        "headers": [
+          "Offense charged",
+          "Total | Total",
+          "Total | Under 18 years",
+          "Total | 18 years and over",
+          "Male | Total",
+          "Male | Under 18 years",
+          "Male | 18 years and over",
+          "Female | Total",
+          "Female | Under 18 years",
+          "Female | 18 years and over"
+        ],
+        "rows": [
+          [
+            "Total",
+            "11,062.6",
+            "1,540.0",
+            "9,522.6",
+            "8,263.3",
+            "1,071.6",
+            "7,191.7",
+            "2,799.2",
+            "468.3",
+            "2,330.9"
+          ],
+          [
+            "Violent crime",
+            "467.9",
+            "69.1",
+            "398.8",
+            "380.2",
+            "56.5",
+            "323.7",
+            "87.7",
+            "12.6",
+            "75.2"
+          ],
+          [
+            "Property crime",
+            "1,396.4",
+            "338.7",
+            "1,057.7",
+            "875.9",
+            "210.8",
+            "665.1",
+            "608.2",
+            "127.9",
+            "392.6"
+          ]
+        ]
+      },
+      {
+        "row_count": 32,
+        "headers": [
+          "Offense charged",
+          "Total",
+          "White",
+          "Black",
+          "American Indian/Alaskan Native",
+          "Asian Pacific Islander"
+        ],
+        "rows": [
+          [
+            "Total",
+            "10,690,561",
+            "7,389,208",
+            "3,027,153",
+            "150,544",
+            "123,656"
+          ],
+          [
+            "Violent crime",
+            "456,965",
+            "268,346",
+            "177,766",
+            "5,608",
+            "5,245"
+          ],
+          [
+            "Murder and nonnegligent manslaughter",
+            "9,739",
+            "4,741",
+            "4,801",
+            "100",
+            "97"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "name": "w3c-document-without-table",
+    "file": "w3c-no-table.pdf",
+    "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "sha256": "3df79d34abbca99308e79cb94461c1893582604d68329a41fd4bec1885e6adb4",
+    "mode": "empty",
+    "tables": []
+  },
+  {
+    "name": "tabula-unicode-two-tables",
+    "tables": [
+      {
+        "headers": [
+          "Column 1",
+          "株主資本 | 資本金",
+          "株主資本 | 資本剰余金",
+          "株主資本 | 利益剰余金",
+          "株主資本 | 自己株式",
+          "株主資本 | 株主資本合計"
+        ],
+        "rows": [
+          [
+            "当期首残高",
+            "5,664",
+            "749",
+            "12,017",
+            "△747",
+            "17,683"
+          ],
+          [
+            "当期変動額",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "剰余金の配当",
+            "",
+            "",
+            "△525",
+            "",
+            "△525"
+          ],
+          [
+            "当期純利益",
+            "",
+            "",
+            "1,269",
+            "",
+            "1,269"
+          ],
+          [
+            "自己株式の取得",
+            "",
+            "",
+            "",
+            "△0",
+            "△0"
+          ],
+          [
+            "持分法の適用範囲 の変動",
+            "",
+            "",
+            "85",
+            "",
+            "85"
+          ],
+          [
+            "株主資本以外の項目 の当期変動額（純額)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "当期変動額合計",
+            "―",
+            "―",
+            "829",
+            "△0",
+            "829"
+          ],
+          [
+            "当期末残高",
+            "5,664",
+            "749",
+            "12,846",
+            "△747",
+            "18,512"
+          ]
+        ]
+      },
+      {
+        "headers": [
+          "Column 1",
+          "その他の包括利益累計額 | その他有価証券 評価差額金",
+          "その他の包括利益累計額 | 繰延ヘッジ 損益",
+          "その他の包括利益累計額 | 為替換算 調整勘定",
+          "その他の包括利益累計額 | 退職給付に係る 調整累計額",
+          "その他の包括利益累計額 | その他の 包括利益 累計額合計",
+          "少数株主持分",
+          "純資産合計"
+        ],
+        "rows": [
+          [
+            "当期首残高",
+            "△669",
+            "61",
+            "△109",
+            "―",
+            "△717",
+            "246",
+            "17,212"
+          ],
+          [
+            "当期変動額",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "剰余金の配当",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "△525"
+          ],
+          [
+            "当期純利益",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "1,269"
+          ],
+          [
+            "自己株式の取得",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "△0"
+          ],
+          [
+            "持分法の適用範囲 の変動",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "85"
+          ],
+          [
+            "株主資本以外の項目 の当期変動額（純額)",
+            "556",
+            "80",
+            "5",
+            "―",
+            "642",
+            "△0",
+            "642"
+          ],
+          [
+            "当期変動額合計",
+            "556",
+            "80",
+            "5",
+            "―",
+            "642",
+            "△0",
+            "1,471"
+          ],
+          [
+            "当期末残高",
+            "△113",
+            "142",
+            "△104",
+            "―",
+            "△75",
+            "245",
+            "18,683"
+          ]
+        ]
+      }
+    ],
+    "file": "tabula-twotables.pdf",
+    "url": "https://raw.githubusercontent.com/tabulapdf/tabula-java/2cdf3b4fd3f7e921dca8cc6814cdd9316be40f0f/src/test/resources/technology/tabula/twotables.pdf",
+    "sha256": "72a9d20672e4d581ae9933a07cbe9a6f6db40632218fb7e73bd923dee033d8cd",
+    "reference_url": "https://raw.githubusercontent.com/tabulapdf/tabula-java/2cdf3b4fd3f7e921dca8cc6814cdd9316be40f0f/src/test/resources/technology/tabula/csv/twotables.csv",
+    "reference_sha256": "9fa47b7f1d16d2d16afdc8544fc1a67d078690cc08b091a5a51425940af99c6c",
+    "mode": "full",
+    "reference_file": "tabula-twotables.csv"
   }
 ]

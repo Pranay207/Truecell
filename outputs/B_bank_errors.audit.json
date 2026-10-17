@@ -2155,6 +2155,21 @@
         ]
       ],
       "page_summaries": [],
+      "join_receipt": {
+        "page_joins": 0,
+        "repeated_headers_removed": 0,
+        "split_rows_recovered": 0,
+        "pages": [
+          1
+        ],
+        "rows_by_page": [
+          {
+            "page": 1,
+            "rows": 19
+          }
+        ],
+        "output_rows": 19
+      },
       "cell_scores": []
     }
   ],
@@ -2206,7 +2221,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.10174390001338907,
+      "seconds": 0.4727555999998003,
       "attempts": [
         {
           "engine": "native",
@@ -2215,7 +2230,7 @@
           "cells": 110,
           "issues": 4,
           "score": 1694.126,
-          "seconds": 0.07925209999666549,
+          "seconds": 0.3817764999985229,
           "error": "",
           "selected": true
         }
@@ -2223,7 +2238,7 @@
       "error": ""
     }
   ],
-  "seconds": 0.13256470000487752,
+  "seconds": 0.565322099995683,
   "source_sha256": "0312be673c7db85435e2a34ddcb8c6b2b688c9e0f5825b2702d47b02188ed142",
   "constraints": [
     {

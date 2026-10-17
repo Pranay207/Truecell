@@ -1,0 +1,148 @@
+.join-receipt {
+  padding: 10px 12px 9px;
+  border-bottom: 1px solid #dce8e1;
+  background: linear-gradient(105deg, #f0f8f4 0%, #f8faf6 66%);
+  color: #587064;
+}
+
+.join-receipt-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.join-receipt-heading > div {
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.join-receipt-heading span {
+  color: #0b887f;
+  font-size: 7px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.join-receipt-heading strong {
+  overflow: hidden;
+  color: #173831;
+  font-size: 9px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.join-receipt-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  flex: 0 0 auto;
+}
+
+.join-receipt-mark i {
+  width: 5px;
+  height: 11px;
+  border: 1px solid #7eb5a5;
+  border-radius: 1px;
+  background: #fff;
+}
+
+.join-receipt dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+  margin: 8px 0 0;
+}
+
+.join-receipt dl > div {
+  min-width: 0;
+  padding: 5px 6px;
+  border: 1px solid #dbe8df;
+  border-radius: 5px;
+  background: rgb(255 255 255 / 68%);
+}
+
+.join-receipt dt {
+  overflow: hidden;
+  color: #788b80;
+  font-size: 7px;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.join-receipt dd {
+  margin: 2px 0 0;
+  color: #173831;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.join-receipt-pages {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  margin: 7px 0 0;
+  padding-bottom: 2px;
+  overflow-x: auto;
+  color: #7a8a80;
+  font-size: 7px;
+  scrollbar-width: thin;
+  white-space: nowrap;
+}
+
+.join-receipt-pages > span {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.join-receipt-pages b {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 2px 5px;
+  border-radius: 999px;
+  background: #e2f1ea;
+  color: #32675a;
+  font-weight: 600;
+}
+
+.join-receipt-pages b i {
+  font-style: normal;
+  font-weight: 750;
+}
+
+.join-receipt-pages em {
+  margin-left: auto;
+  overflow: hidden;
+  color: #6c8175;
+  font-style: normal;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 720px) {
+  .join-receipt {
+    padding: 11px 13px 10px;
+  }
+
+  .join-receipt-heading strong {
+    font-size: 10px;
+  }
+
+  .join-receipt dt {
+    font-size: 8px;
+  }
+
+  .join-receipt dd {
+    font-size: 12px;
+  }
+
+  .join-receipt-pages {
+    font-size: 8px;
+  }
+}

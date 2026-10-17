@@ -1377,6 +1377,139 @@ code {
   margin-bottom: 13px;
   line-height: 1.7;
 }
+.queue-overview {
+  border-bottom: 1px solid #e6ece3;
+  margin: -2px 0 12px;
+  padding-bottom: 11px;
+}
+.queue-overview .rail-intro {
+  margin-bottom: 8px;
+}
+.queue-overview > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 1px 6px;
+  color: #788b7d;
+}
+.queue-overview strong {
+  color: var(--teal);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.queue-overview span {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.queue-overview progress {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 4px;
+  margin-top: 4px;
+  border: 0;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #e8eee8;
+  accent-color: var(--teal);
+}
+.queue-card {
+  border: 1px solid #e6d9b7;
+  border-radius: 8px;
+  background: #fffdf7;
+  padding: 11px 10px 9px;
+  margin-bottom: 9px;
+}
+.queue-card.queue-checked {
+  border-color: #d9e5dc;
+  background: #f8fbf7;
+}
+.queue-card > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+}
+.queue-kind {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #9a762e;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.queue-checked .queue-kind {
+  color: var(--teal);
+}
+.queue-card small {
+  color: #907f5f;
+  font-size: 8px;
+  white-space: nowrap;
+}
+.queue-card h3 {
+  color: #4f4937;
+  font-size: 10px;
+  margin-top: 8px;
+}
+.queue-card p {
+  color: #75613b;
+  font-size: 10px;
+  line-height: 1.6;
+  margin: 4px 0 9px;
+  overflow-wrap: anywhere;
+}
+.queue-checked h3,
+.queue-checked p,
+.queue-checked small {
+  color: #708079;
+}
+.queue-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.queue-actions .text-button {
+  color: #926f2b;
+  font-size: 8px;
+}
+.queue-checked .queue-actions .text-button {
+  color: var(--teal);
+}
+.queue-check,
+.queue-reopen {
+  border: 1px solid #d8c797;
+  border-radius: 5px;
+  background: #fff;
+  color: #806326;
+  padding: 4px 7px;
+  font-size: 8px;
+  font-weight: 650;
+}
+.queue-check:hover:not(:disabled) {
+  border-color: #ad8533;
+  background: #fff8e6;
+}
+.queue-reopen {
+  border-color: #d9e4dc;
+  color: #74867c;
+}
+.queue-reopen:hover:not(:disabled) {
+  background: #eef5ef;
+  color: var(--teal);
+}
+.queue-omitted {
+  border: 1px solid #dde5dc;
+  border-radius: 7px;
+  background: #f7faf6;
+  color: #748379;
+  font-size: 9px;
+  line-height: 1.6;
+  margin: 12px 0;
+  padding: 9px;
+}
 .issue-card {
   display: block;
   text-align: left;

@@ -9964,6 +9964,31 @@
         ]
       ],
       "page_summaries": [],
+      "join_receipt": {
+        "page_joins": 2,
+        "repeated_headers_removed": 0,
+        "split_rows_recovered": 0,
+        "pages": [
+          1,
+          2,
+          3
+        ],
+        "rows_by_page": [
+          {
+            "page": 1,
+            "rows": 16
+          },
+          {
+            "page": 2,
+            "rows": 16
+          },
+          {
+            "page": 3,
+            "rows": 16
+          }
+        ],
+        "output_rows": 48
+      },
       "cell_scores": []
     }
   ],
@@ -10065,7 +10090,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.26154619999579154,
+      "seconds": 0.9376279999996768,
       "attempts": [
         {
           "engine": "native",
@@ -10074,7 +10099,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.19345269999757875,
+          "seconds": 0.6623343000028399,
           "error": "",
           "selected": true
         }
@@ -10086,7 +10111,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.5251514000119641,
+      "seconds": 1.9569878000002063,
       "attempts": [
         {
           "engine": "native",
@@ -10095,7 +10120,7 @@
           "cells": 192,
           "issues": 1,
           "score": 1985.6,
-          "seconds": 0.17445960000623018,
+          "seconds": 0.673595899999782,
           "error": "",
           "selected": true
         },
@@ -10106,7 +10131,7 @@
           "cells": 241,
           "issues": 3,
           "score": 931.812,
-          "seconds": 0.24710469999990892,
+          "seconds": 0.9880985999989207,
           "error": "",
           "selected": false
         },
@@ -10117,7 +10142,7 @@
           "cells": 192,
           "issues": 2,
           "score": 981.6,
-          "seconds": 0.09850150000420399,
+          "seconds": 0.278885600000649,
           "error": "",
           "selected": false
         }
@@ -10129,7 +10154,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.7485967999964487,
+      "seconds": 1.9818152999978338,
       "attempts": [
         {
           "engine": "native",
@@ -10138,7 +10163,7 @@
           "cells": 192,
           "issues": 1,
           "score": 1985.6,
-          "seconds": 0.2559973000024911,
+          "seconds": 0.6656886000018858,
           "error": "",
           "selected": true
         },
@@ -10149,7 +10174,7 @@
           "cells": 241,
           "issues": 3,
           "score": 931.812,
-          "seconds": 0.35551110000233166,
+          "seconds": 1.028472400001192,
           "error": "",
           "selected": false
         },
@@ -10160,7 +10185,7 @@
           "cells": 192,
           "issues": 2,
           "score": 981.6,
-          "seconds": 0.12507039999763947,
+          "seconds": 0.27318129999912344,
           "error": "",
           "selected": false
         }
@@ -10168,7 +10193,7 @@
       "error": ""
     }
   ],
-  "seconds": 1.8743526000034763,
+  "seconds": 6.317804899998009,
   "source_sha256": "53c85256f6c94fdf3350f754df3e32bde4a9a9311b1b8ec0cfc9d8a7778f4438",
   "constraints": [
     {

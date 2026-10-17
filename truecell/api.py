@@ -35,7 +35,14 @@ from .export import export_workbook
 from .models import Result
 from .ocr import available_engines
 from .pipeline import convert
-from .review import apply_edit, complete_review, fingerprint, review_current
+from .review import (
+    apply_edit,
+    complete_review,
+    fingerprint,
+    review_current,
+    review_queue,
+    set_item_review,
+)
 from .router import IMAGE_EXTENSIONS, MAX_PAGES, open_document, render_page
 from .validate import validate
 from .workspace import (
@@ -115,6 +122,11 @@ class SourceReview(SnapshotRequest):
     note: StrictStr = Field(min_length=1, max_length=20_000)
 
 
+class QueueItemReview(SnapshotRequest):
+    item_id: StrictStr = Field(min_length=1, max_length=100)
+    source_checked: StrictBool
+
+
 class WorkspaceDelete(BaseModel):
     model_config = ConfigDict(extra="forbid")
     confirmation: StrictStr = Field(min_length=1, max_length=255)
@@ -190,6 +202,7 @@ class _Jobs:
                     fingerprint=fingerprint(result),
                     coverage=coverage(result),
                     reviewed=review_current(result),
+                    review_queue=review_queue(result),
                     result_is_previous=identifier in self.active,
                 )
             return detail
@@ -585,6 +598,19 @@ def create_app(
             jobs.check_snapshot(result, review.fingerprint)
             try:
                 changed = complete_review(result, review.source_checked, review.note)
+                save_result(identifier, changed, jobs.root)
+            except ValueError as exc:
+                raise HTTPException(400, str(exc)) from exc
+            return jobs.detail(identifier)
+
+    @application.post("/api/jobs/{identifier}/review-items")
+    def record_item_review(identifier: str, review: QueueItemReview):
+        with jobs.lock:
+            jobs.ensure_idle(identifier)
+            result = jobs.result(identifier)
+            jobs.check_snapshot(result, review.fingerprint)
+            try:
+                changed = set_item_review(result, review.item_id, review.source_checked)
                 save_result(identifier, changed, jobs.root)
             except ValueError as exc:
                 raise HTTPException(400, str(exc)) from exc

@@ -5853,6 +5853,26 @@
         ]
       ],
       "page_summaries": [],
+      "join_receipt": {
+        "page_joins": 1,
+        "repeated_headers_removed": 1,
+        "split_rows_recovered": 0,
+        "pages": [
+          1,
+          2
+        ],
+        "rows_by_page": [
+          {
+            "page": 1,
+            "rows": 12
+          },
+          {
+            "page": 2,
+            "rows": 12
+          }
+        ],
+        "output_rows": 24
+      },
       "cell_scores": [
         [
           0,
@@ -7905,7 +7925,7 @@
       "route": "ocr",
       "engine": "tesseract",
       "confidence": 0.96,
-      "seconds": 15.152591400008532,
+      "seconds": 33.84806949999984,
       "attempts": [
         {
           "engine": "tesseract",
@@ -7914,7 +7934,7 @@
           "cells": 144,
           "issues": 3,
           "score": 816.2,
-          "seconds": 5.175784399994882,
+          "seconds": 11.998542199999065,
           "error": "",
           "selected": false
         },
@@ -7925,7 +7945,7 @@
           "cells": 144,
           "issues": 19,
           "score": 842.2,
-          "seconds": 8.74540130000969,
+          "seconds": 18.323037399997702,
           "error": "",
           "selected": true
         }
@@ -7937,7 +7957,7 @@
       "route": "ocr",
       "engine": "tesseract",
       "confidence": 0.96,
-      "seconds": 17.71009409999533,
+      "seconds": 33.86619410000276,
       "attempts": [
         {
           "engine": "tesseract",
@@ -7946,7 +7966,7 @@
           "cells": 144,
           "issues": 3,
           "score": 816.2,
-          "seconds": 5.223496400009026,
+          "seconds": 11.266239799999312,
           "error": "",
           "selected": false
         },
@@ -7957,7 +7977,7 @@
           "cells": 144,
           "issues": 21,
           "score": 842.2,
-          "seconds": 11.11665319999156,
+          "seconds": 18.973300600002403,
           "error": "",
           "selected": true
         }
@@ -7965,7 +7985,7 @@
       "error": ""
     }
   ],
-  "seconds": 33.1884057999996,
+  "seconds": 68.4940781999976,
   "source_sha256": "397ceaaf7677b98edfa1db5f33b2fdbcea55f0548cc9daebd33fbc70d8b289ec",
   "constraints": [
     {

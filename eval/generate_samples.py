@@ -250,6 +250,106 @@ def scan_sample(
     write_truth(directory, name, [{"headers": HEADERS, "rows": rows}], 2)
 
 
+def scanned_continuation_stress_sample(directory: Path) -> None:
+    """Create a five-page raster table with two page-break row continuations."""
+    import io
+
+    import fitz
+    from PIL import Image, ImageEnhance
+
+    name = "F_scanned_multipage_continuations"
+    headers = [
+        "Batch",
+        "Date",
+        "Supplier",
+        "Item",
+        "Description",
+        "UOM",
+        "Qty",
+        "Rate",
+        "Gross",
+        "Tax",
+        "Zone",
+        "Status",
+    ]
+    page_width, page_height = 900, 420
+    widths = [68, 82, 78, 67, 135, 45, 45, 62, 68, 58, 72, 78]
+    descriptions = [
+        "Sensor module",
+        "Valve kit",
+        "Relay panel",
+        "Cable drum",
+        "Filter pack",
+        "Motor guard",
+        "Pump seal",
+        "Gauge mount",
+    ]
+    rows = []
+    for index in range(33):
+        quantity = index % 7 + 1
+        rate = 14 + index % 9
+        gross = quantity * rate
+        rows.append(
+            [
+                f"BT-{index + 1:04d}",
+                f"2026-09-{index % 28 + 1:02d}",
+                f"Vendor {chr(65 + index % 6)}",
+                f"IT-{index + 1:04d}",
+                descriptions[index % len(descriptions)],
+                "ea",
+                str(quantity),
+                f"{rate:.2f}",
+                f"{gross:.2f}",
+                f"{gross * 0.1:.2f}",
+                ["East", "North", "South", "West"][index % 4],
+                ["Ready", "Review", "Hold"][index % 3],
+            ]
+        )
+
+    def first_fragment(row: list[str]) -> list[str]:
+        first_word = row[4].split(maxsplit=1)[0]
+        return row[:4] + [first_word, row[5], "", "", "", "", row[10], ""]
+
+    def second_fragment(row: list[str]) -> list[str]:
+        second_word = row[4].split(maxsplit=1)[1]
+        return ["", "", "", "", second_word, ""] + row[6:10] + ["", row[11]]
+
+    # Every page contains seven physical rows. Rows 7 and 27 cross a page break.
+    page_rows = [
+        rows[0:6] + [first_fragment(rows[6])],
+        [second_fragment(rows[6])] + rows[7:13],
+        rows[13:20],
+        rows[20:26] + [first_fragment(rows[26])],
+        [second_fragment(rows[26])] + rows[27:33],
+    ]
+
+    native_buffer = io.BytesIO()
+    source = canvas.Canvas(native_buffer, pagesize=(page_width, page_height), invariant=1)
+    for page_index, physical_rows in enumerate(page_rows, 1):
+        source.setFont("Helvetica-Bold", 16)
+        source.drawString(20, 392, "Dummy receiving register - scanned copy")
+        draw_table(source, headers, physical_rows, x=20, top=355, widths=widths)
+        source.setFont("Helvetica", 10)
+        source.drawString(20, 20, f"Page {page_index} of {len(page_rows)}")
+        source.showPage()
+    source.save()
+
+    native = fitz.open(stream=native_buffer.getvalue(), filetype="pdf")
+    scanned = fitz.open()
+    for page in native:
+        pix = page.get_pixmap(dpi=180, colorspace=fitz.csRGB, alpha=False)
+        image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
+        image = ImageEnhance.Contrast(image).enhance(0.96)
+        encoded = io.BytesIO()
+        image.save(encoded, format="PNG", optimize=True)
+        target = scanned.new_page(width=page_width, height=page_height)
+        target.insert_image(target.rect, stream=encoded.getvalue())
+    scanned.save(directory / f"{name}.pdf", deflate=True)
+    scanned.close()
+    native.close()
+    write_truth(directory, name, [{"headers": headers, "rows": rows}], len(page_rows))
+
+
 def layout_samples(directory: Path) -> None:
     """Create distinct hard-layout cases with explicit intended output shapes."""
     # Two unrelated ruled tables on the same page.
@@ -355,6 +455,7 @@ def main() -> None:
         scan_sample(args.output, "D_blur_noise", degradation="noise")
         scan_sample(args.output, "D_phone_photo", degradation="photo")
         scan_sample(args.output, "D_mixed", mixed=True)
+        scanned_continuation_stress_sample(args.output)
         layout_samples(args.output)
     print(f"Generated dummy development documents in {args.output}")
 

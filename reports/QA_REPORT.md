@@ -1,4 +1,4 @@
-# QA pass - 16 October 2026
+# QA pass - 17 October 2026
 
 Tested on Windows with Python 3.11.9. This pass covers the current source folder. The submission ZIP was intentionally left unchanged.
 
@@ -24,14 +24,16 @@ Tested on Windows with Python 3.11.9. This pass covers the current source folder
 | Mobile usability | Small controls, a hidden brand descriptor and a 40 MB frontend limit weakened the phone experience | Narrow layouts keep the full brand visible, stack cleanly, retain horizontal table/source inspection, use 44 px touch targets, and match the 50 MB backend limit |
 | Validation safety | Proposals and validator experiments needed an inspectable no-save path | Preview and Challenge run on disposable copies; tests and a live fingerprint check confirm the working result is unchanged |
 | Re-extraction | Reprocessing an edited or reviewed workspace could overwrite review work | Untouched partial jobs resume verified checkpoints; edited/reviewed jobs fork to a new workspace |
+| Multi-page traceability | Continuation joins were visible only in reconstructed output | Every joined table now reports contributing pages, per-page row fragments, removed repeated headers and recovered split rows in the UI and Excel |
+| Review workload | Findings and uncertain OCR cells lacked one bounded workflow | A priority queue opens each item at its source and persists checked/reopened state without altering the extraction fingerprint |
 
 ## Verification
 
-- **203 Python tests passed** in the development environment after retiring the legacy interface. The preceding 210-test revision also passed in a separately installed clean environment; later regression coverage changed the suite composition. Ruff checks and formatting passed for 48 Python files, and dependency checks passed in the recorded environments.
-- **13 frontend tests passed**, including extracted-row search and original-index preservation; strict TypeScript checks passed, and the Vite production bundle rebuilt successfully. The supplied build needs no Node.js at judge runtime.
-- **21/21** deterministic dummy-document cases passed, including the explicitly ruled native-PDF vertical-span/nested-line-item case, the 50-page/800-row case and both injected bank-source errors. A no-table control passes only with zero output tables; its cell percentages are n/a.
+- **214 Python tests passed** in the development environment. Ruff checks and formatting passed, and dependency checks passed in the recorded environments.
+- **14 frontend tests passed**, including extracted-row search, original-index preservation and review-queue requests; strict TypeScript checks passed, and the Vite production bundle rebuilt successfully. The supplied build needs no Node.js at judge runtime.
+- **22/22** committed dummy-document outputs passed source-hash and exact-score verification. The new five-page raster-only, 12-column continuation fixture also passed a fresh Tesseract conversion with all 33 rows, four repeated headers removed and two split rows recovered. A no-table control passes only with zero output tables; its cell percentages are n/a.
 - **5/5** scan cases passed with Tesseract excluded: inventory, blur/noise, skew, perspective photo and sideways invoice. See `PORTABLE_OCR.json` for the engine-isolation method and measured timings.
-- Public cached regression checks passed their disclosed scope: 35 fuel-table cells, 48 selected census cells plus headers/shapes, and a W3C no-table control. This does not check every census cell.
+- Public cached regression checks passed their disclosed scope: 35 fuel-table cells, 48 selected census cells plus headers/shapes, a W3C no-table control, and 126 cells plus 14 flattened headers across two public Unicode tables. This does not check every census cell.
 - The recorded readback audit predates the vertical-span case and checked the original **20 converted workbooks** for row counts, headers, source hashes, **1,067 identifier cells**, and absence of formula-type cells. Those workbooks contain 13,225 data-cell positions; that count is not an independent accuracy measurement.
 - CLI checks returned the expected exit codes for a missing file, identical input/output paths, invalid output suffix, a no-table document and successful native conversion, without tracebacks.
 - FastAPI tests covered uploads, no-table downloads, source integrity, edits, reviews, exports, safe workspace deletion, recovery and reprocessing. Frontend unit tests covered API requests and display formatting.
@@ -41,6 +43,8 @@ Tested on Windows with Python 3.11.9. This pass covers the current source folder
 ## Performance scope
 
 The final export-only check on the 50-page/800-row audit took **9.083 seconds**. An isolated two-page perspective-photo conversion, including Excel export, took **16.760 seconds** and passed all expected cells, headers and shapes.
+
+The fresh five-page raster-only continuation conversion took **174.97 seconds** with local Tesseract on this host (about **34.99 seconds/page**) and passed its exact source-bound checks. This is a single-machine development measurement.
 
 Concurrent OCR testing produced a much slower photo run, retained in the raw benchmark reports. Timings vary with CPU contention, model startup and document quality; they are not a cross-machine speed guarantee. Peak memory and execution on other operating systems/Python versions were not measured here.
 

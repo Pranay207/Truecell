@@ -170262,6 +170262,266 @@
         ]
       ],
       "page_summaries": [],
+      "join_receipt": {
+        "page_joins": 49,
+        "repeated_headers_removed": 49,
+        "split_rows_recovered": 0,
+        "pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50
+        ],
+        "rows_by_page": [
+          {
+            "page": 1,
+            "rows": 16
+          },
+          {
+            "page": 2,
+            "rows": 16
+          },
+          {
+            "page": 3,
+            "rows": 16
+          },
+          {
+            "page": 4,
+            "rows": 16
+          },
+          {
+            "page": 5,
+            "rows": 16
+          },
+          {
+            "page": 6,
+            "rows": 16
+          },
+          {
+            "page": 7,
+            "rows": 16
+          },
+          {
+            "page": 8,
+            "rows": 16
+          },
+          {
+            "page": 9,
+            "rows": 16
+          },
+          {
+            "page": 10,
+            "rows": 16
+          },
+          {
+            "page": 11,
+            "rows": 16
+          },
+          {
+            "page": 12,
+            "rows": 16
+          },
+          {
+            "page": 13,
+            "rows": 16
+          },
+          {
+            "page": 14,
+            "rows": 16
+          },
+          {
+            "page": 15,
+            "rows": 16
+          },
+          {
+            "page": 16,
+            "rows": 16
+          },
+          {
+            "page": 17,
+            "rows": 16
+          },
+          {
+            "page": 18,
+            "rows": 16
+          },
+          {
+            "page": 19,
+            "rows": 16
+          },
+          {
+            "page": 20,
+            "rows": 16
+          },
+          {
+            "page": 21,
+            "rows": 16
+          },
+          {
+            "page": 22,
+            "rows": 16
+          },
+          {
+            "page": 23,
+            "rows": 16
+          },
+          {
+            "page": 24,
+            "rows": 16
+          },
+          {
+            "page": 25,
+            "rows": 16
+          },
+          {
+            "page": 26,
+            "rows": 16
+          },
+          {
+            "page": 27,
+            "rows": 16
+          },
+          {
+            "page": 28,
+            "rows": 16
+          },
+          {
+            "page": 29,
+            "rows": 16
+          },
+          {
+            "page": 30,
+            "rows": 16
+          },
+          {
+            "page": 31,
+            "rows": 16
+          },
+          {
+            "page": 32,
+            "rows": 16
+          },
+          {
+            "page": 33,
+            "rows": 16
+          },
+          {
+            "page": 34,
+            "rows": 16
+          },
+          {
+            "page": 35,
+            "rows": 16
+          },
+          {
+            "page": 36,
+            "rows": 16
+          },
+          {
+            "page": 37,
+            "rows": 16
+          },
+          {
+            "page": 38,
+            "rows": 16
+          },
+          {
+            "page": 39,
+            "rows": 16
+          },
+          {
+            "page": 40,
+            "rows": 16
+          },
+          {
+            "page": 41,
+            "rows": 16
+          },
+          {
+            "page": 42,
+            "rows": 16
+          },
+          {
+            "page": 43,
+            "rows": 16
+          },
+          {
+            "page": 44,
+            "rows": 16
+          },
+          {
+            "page": 45,
+            "rows": 16
+          },
+          {
+            "page": 46,
+            "rows": 16
+          },
+          {
+            "page": 47,
+            "rows": 16
+          },
+          {
+            "page": 48,
+            "rows": 16
+          },
+          {
+            "page": 49,
+            "rows": 16
+          },
+          {
+            "page": 50,
+            "rows": 16
+          }
+        ],
+        "output_rows": 800
+      },
       "cell_scores": []
     }
   ],
@@ -170272,7 +170532,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.27660199999809265,
+      "seconds": 1.2978461000020616,
       "attempts": [
         {
           "engine": "native",
@@ -170281,7 +170541,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.18833549998817034,
+          "seconds": 0.9071174999990035,
           "error": "",
           "selected": true
         }
@@ -170293,7 +170553,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.30590249999659136,
+      "seconds": 1.9880067999984021,
       "attempts": [
         {
           "engine": "native",
@@ -170302,7 +170562,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.2196191999973962,
+          "seconds": 1.538557200001378,
           "error": "",
           "selected": true
         }
@@ -170314,7 +170574,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.3984356999862939,
+      "seconds": 1.6183514000003925,
       "attempts": [
         {
           "engine": "native",
@@ -170323,7 +170583,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.31473490000644233,
+          "seconds": 1.2152826000019559,
           "error": "",
           "selected": true
         }
@@ -170335,7 +170595,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.3677083000075072,
+      "seconds": 1.6074122999998508,
       "attempts": [
         {
           "engine": "native",
@@ -170344,7 +170604,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2136.6,
-          "seconds": 0.262396499994793,
+          "seconds": 1.126771800001734,
           "error": "",
           "selected": true
         }
@@ -170356,7 +170616,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.4653316000039922,
+      "seconds": 1.5091132000015932,
       "attempts": [
         {
           "engine": "native",
@@ -170365,7 +170625,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2132.6,
-          "seconds": 0.2991240000119433,
+          "seconds": 1.0340450999938184,
           "error": "",
           "selected": true
         }
@@ -170377,7 +170637,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.469667199999094,
+      "seconds": 1.460532899996906,
       "attempts": [
         {
           "engine": "native",
@@ -170386,7 +170646,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.38718859999789856,
+          "seconds": 1.1330585999967298,
           "error": "",
           "selected": true
         }
@@ -170398,7 +170658,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.27952100000402424,
+      "seconds": 1.2268456000019796,
       "attempts": [
         {
           "engine": "native",
@@ -170407,7 +170667,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 0.20191769998928066,
+          "seconds": 0.9099522000033176,
           "error": "",
           "selected": true
         }
@@ -170419,7 +170679,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.2656297000066843,
+      "seconds": 1.406503199999861,
       "attempts": [
         {
           "engine": "native",
@@ -170428,7 +170688,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 0.2027821999945445,
+          "seconds": 0.9887413000033121,
           "error": "",
           "selected": true
         }
@@ -170440,7 +170700,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.28846739999426063,
+      "seconds": 1.7185841000027722,
       "attempts": [
         {
           "engine": "native",
@@ -170449,7 +170709,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.2135792000044603,
+          "seconds": 0.9180116000061389,
           "error": "",
           "selected": true
         }
@@ -170461,7 +170721,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.48454010000568815,
+      "seconds": 2.266416800004663,
       "attempts": [
         {
           "engine": "native",
@@ -170470,7 +170730,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.35252159999799915,
+          "seconds": 1.941243699999177,
           "error": "",
           "selected": true
         }
@@ -170482,7 +170742,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.48152900001150556,
+      "seconds": 1.5244250999967335,
       "attempts": [
         {
           "engine": "native",
@@ -170491,7 +170751,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.38393559999531135,
+          "seconds": 1.1619262999956845,
           "error": "",
           "selected": true
         }
@@ -170503,7 +170763,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.3759683000098448,
+      "seconds": 1.4108885999958147,
       "attempts": [
         {
           "engine": "native",
@@ -170512,7 +170772,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2128.6,
-          "seconds": 0.2657750000071246,
+          "seconds": 1.0377961000049254,
           "error": "",
           "selected": true
         }
@@ -170524,7 +170784,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.41640210000332445,
+      "seconds": 2.084789100001217,
       "attempts": [
         {
           "engine": "native",
@@ -170533,7 +170793,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2134.6,
-          "seconds": 0.3294791000080295,
+          "seconds": 1.5403250000017579,
           "error": "",
           "selected": true
         }
@@ -170545,7 +170805,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.625466099998448,
+      "seconds": 1.6899517999991076,
       "attempts": [
         {
           "engine": "native",
@@ -170554,7 +170814,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 0.4525790000043344,
+          "seconds": 1.1194325999967987,
           "error": "",
           "selected": true
         }
@@ -170566,7 +170826,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.5155715000000782,
+      "seconds": 1.583682199998293,
       "attempts": [
         {
           "engine": "native",
@@ -170575,7 +170835,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.40184669999871403,
+          "seconds": 1.2265267000038875,
           "error": "",
           "selected": true
         }
@@ -170587,7 +170847,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.37406850000843406,
+      "seconds": 1.6627548999967985,
       "attempts": [
         {
           "engine": "native",
@@ -170596,7 +170856,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.2976933000027202,
+          "seconds": 1.256773200002499,
           "error": "",
           "selected": true
         }
@@ -170608,7 +170868,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.3058122999937041,
+      "seconds": 2.232709000003524,
       "attempts": [
         {
           "engine": "native",
@@ -170617,7 +170877,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2132.6,
-          "seconds": 0.21455009999044705,
+          "seconds": 1.6010982000007061,
           "error": "",
           "selected": true
         }
@@ -170629,7 +170889,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.4573982000001706,
+      "seconds": 1.2628422999987379,
       "attempts": [
         {
           "engine": "native",
@@ -170638,7 +170898,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2132.6,
-          "seconds": 0.3326231000100961,
+          "seconds": 0.9295485999973607,
           "error": "",
           "selected": true
         }
@@ -170650,7 +170910,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.386373100001947,
+      "seconds": 1.4556497999947169,
       "attempts": [
         {
           "engine": "native",
@@ -170659,7 +170919,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.3137445000029402,
+          "seconds": 1.014141900006507,
           "error": "",
           "selected": true
         }
@@ -170671,7 +170931,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.3368761000019731,
+      "seconds": 1.3552501999947708,
       "attempts": [
         {
           "engine": "native",
@@ -170680,7 +170940,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.27209189999848604,
+          "seconds": 0.9643590999985463,
           "error": "",
           "selected": true
         }
@@ -170692,7 +170952,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.22439329999906477,
+      "seconds": 1.4695898999998462,
       "attempts": [
         {
           "engine": "native",
@@ -170701,7 +170961,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 0.15763600000354927,
+          "seconds": 1.1767819000015152,
           "error": "",
           "selected": true
         }
@@ -170713,7 +170973,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.3446646999946097,
+      "seconds": 1.201689699999406,
       "attempts": [
         {
           "engine": "native",
@@ -170722,7 +170982,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 0.2774288999935379,
+          "seconds": 0.9111057999980403,
           "error": "",
           "selected": true
         }
@@ -170734,7 +170994,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.2753950999904191,
+      "seconds": 1.1255286000014166,
       "attempts": [
         {
           "engine": "native",
@@ -170743,7 +171003,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.2131197999988217,
+          "seconds": 0.844057199996314,
           "error": "",
           "selected": true
         }
@@ -170755,7 +171015,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.29674610000802204,
+      "seconds": 2.057649299997138,
       "attempts": [
         {
           "engine": "native",
@@ -170764,7 +171024,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.22913360000529792,
+          "seconds": 1.7475152999977581,
           "error": "",
           "selected": true
         }
@@ -170776,7 +171036,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.2779739999969024,
+      "seconds": 1.1933499000006123,
       "attempts": [
         {
           "engine": "native",
@@ -170785,7 +171045,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2130.6,
-          "seconds": 0.20737729998654686,
+          "seconds": 0.8987182999990182,
           "error": "",
           "selected": true
         }
@@ -170797,7 +171057,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.2953350999887334,
+      "seconds": 1.0980695999969612,
       "attempts": [
         {
           "engine": "native",
@@ -170806,7 +171066,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2132.6,
-          "seconds": 0.20136000000638887,
+          "seconds": 0.7944788000022527,
           "error": "",
           "selected": true
         }
@@ -170818,7 +171078,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.4513613000017358,
+      "seconds": 1.3458821000021999,
       "attempts": [
         {
           "engine": "native",
@@ -170827,7 +171087,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.3257532999996329,
+          "seconds": 0.9374150000003283,
           "error": "",
           "selected": true
         }
@@ -170839,7 +171099,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.4057899999897927,
+      "seconds": 1.2115178999956697,
       "attempts": [
         {
           "engine": "native",
@@ -170848,7 +171108,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.3000088999979198,
+          "seconds": 0.9091221999988193,
           "error": "",
           "selected": true
         }
@@ -170860,7 +171120,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.37954750000790227,
+      "seconds": 1.2478396000005887,
       "attempts": [
         {
           "engine": "native",
@@ -170869,7 +171129,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 0.31335320000653155,
+          "seconds": 0.8809468999970704,
           "error": "",
           "selected": true
         }
@@ -170881,7 +171141,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.31478620000416413,
+      "seconds": 1.6330215999987558,
       "attempts": [
         {
           "engine": "native",
@@ -170890,7 +171150,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2130.6,
-          "seconds": 0.2427663999987999,
+          "seconds": 1.1657925999970757,
           "error": "",
           "selected": true
         }
@@ -170902,7 +171162,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.24537030000647064,
+      "seconds": 2.069717700003821,
       "attempts": [
         {
           "engine": "native",
@@ -170911,7 +171171,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2132.6,
-          "seconds": 0.17692270000407007,
+          "seconds": 1.541846699998132,
           "error": "",
           "selected": true
         }
@@ -170923,7 +171183,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.22353439999278635,
+      "seconds": 1.3574948000023142,
       "attempts": [
         {
           "engine": "native",
@@ -170932,7 +171192,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.16408790000423323,
+          "seconds": 0.935638499999186,
           "error": "",
           "selected": true
         }
@@ -170944,7 +171204,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.29496410000137985,
+      "seconds": 1.3128579999975045,
       "attempts": [
         {
           "engine": "native",
@@ -170953,7 +171213,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 0.21637119998922572,
+          "seconds": 1.0312966000055894,
           "error": "",
           "selected": true
         }
@@ -170965,7 +171225,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.24799740000162274,
+      "seconds": 1.3131251000013435,
       "attempts": [
         {
           "engine": "native",
@@ -170974,7 +171234,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.18795970000792295,
+          "seconds": 0.9893618999994942,
           "error": "",
           "selected": true
         }
@@ -170986,7 +171246,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.2565941000066232,
+      "seconds": 1.1718867999952636,
       "attempts": [
         {
           "engine": "native",
@@ -170995,7 +171255,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.19313030000193976,
+          "seconds": 0.8794156000003568,
           "error": "",
           "selected": true
         }
@@ -171007,7 +171267,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.22422580000420567,
+      "seconds": 1.2430756999965524,
       "attempts": [
         {
           "engine": "native",
@@ -171016,7 +171276,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.16708199999993667,
+          "seconds": 0.9158495000010589,
           "error": "",
           "selected": true
         }
@@ -171028,7 +171288,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.22788239999499638,
+      "seconds": 1.6333116000023438,
       "attempts": [
         {
           "engine": "native",
@@ -171037,7 +171297,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.16546469999593683,
+          "seconds": 0.8676946999985375,
           "error": "",
           "selected": true
         }
@@ -171049,7 +171309,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.3562173999962397,
+      "seconds": 1.5967442000037408,
       "attempts": [
         {
           "engine": "native",
@@ -171058,7 +171318,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2132.6,
-          "seconds": 0.27736219999496825,
+          "seconds": 1.1774021000019275,
           "error": "",
           "selected": true
         }
@@ -171070,7 +171330,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.38024420000147074,
+      "seconds": 1.278967999998713,
       "attempts": [
         {
           "engine": "native",
@@ -171079,7 +171339,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2138.6,
-          "seconds": 0.29877619999751914,
+          "seconds": 0.9805884000015794,
           "error": "",
           "selected": true
         }
@@ -171091,7 +171351,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.33644210000056773,
+      "seconds": 1.2518762999970932,
       "attempts": [
         {
           "engine": "native",
@@ -171100,7 +171360,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.26941780000925064,
+          "seconds": 0.9027103000044008,
           "error": "",
           "selected": true
         }
@@ -171112,7 +171372,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.26341369999863673,
+      "seconds": 1.2269605999972555,
       "attempts": [
         {
           "engine": "native",
@@ -171121,7 +171381,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.19939069999963976,
+          "seconds": 0.9211272999964422,
           "error": "",
           "selected": true
         }
@@ -171133,7 +171393,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.2305705000035232,
+      "seconds": 1.5209938000043621,
       "attempts": [
         {
           "engine": "native",
@@ -171142,7 +171402,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.16927830000349786,
+          "seconds": 1.1723560000027646,
           "error": "",
           "selected": true
         }
@@ -171154,7 +171414,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.2622687999974005,
+      "seconds": 1.4137676000027568,
       "attempts": [
         {
           "engine": "native",
@@ -171163,7 +171423,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2132.6,
-          "seconds": 0.1954167000076268,
+          "seconds": 1.0976108000031672,
           "error": "",
           "selected": true
         }
@@ -171175,7 +171435,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.28761250000388827,
+      "seconds": 1.2686921000058646,
       "attempts": [
         {
           "engine": "native",
@@ -171184,7 +171444,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2134.6,
-          "seconds": 0.2039776999881724,
+          "seconds": 0.9347925000038231,
           "error": "",
           "selected": true
         }
@@ -171196,7 +171456,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.3157377000025008,
+      "seconds": 1.474867600001744,
       "attempts": [
         {
           "engine": "native",
@@ -171205,7 +171465,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.24652179999975488,
+          "seconds": 1.0624659000022803,
           "error": "",
           "selected": true
         }
@@ -171217,7 +171477,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.5065641999972286,
+      "seconds": 2.483270299999276,
       "attempts": [
         {
           "engine": "native",
@@ -171226,7 +171486,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 0.3724231999949552,
+          "seconds": 1.3397474000012153,
           "error": "",
           "selected": true
         }
@@ -171238,7 +171498,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.8126187000016216,
+      "seconds": 2.2222885000010137,
       "attempts": [
         {
           "engine": "native",
@@ -171247,7 +171507,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 0.6168542000086745,
+          "seconds": 1.6203162999954657,
           "error": "",
           "selected": true
         }
@@ -171259,7 +171519,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.5468350000010105,
+      "seconds": 4.815065200004028,
       "attempts": [
         {
           "engine": "native",
@@ -171268,7 +171528,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.4048713999945903,
+          "seconds": 4.203194000001531,
           "error": "",
           "selected": true
         }
@@ -171280,7 +171540,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.7764786000043387,
+      "seconds": 2.682645799999591,
       "attempts": [
         {
           "engine": "native",
@@ -171289,7 +171549,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 0.4241877000022214,
+          "seconds": 2.150028999996721,
           "error": "",
           "selected": true
         }
@@ -171301,7 +171561,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.6588438000035239,
+      "seconds": 1.5948300000018207,
       "attempts": [
         {
           "engine": "native",
@@ -171310,7 +171570,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.4967544999963138,
+          "seconds": 1.1560951999999816,
           "error": "",
           "selected": true
         }
@@ -171318,7 +171578,7 @@
       "error": ""
     }
   ],
-  "seconds": 30.116451000008965,
+  "seconds": 118.0024928999992,
   "source_sha256": "9c4b4e31cec885b8559a464fd6bc8617f90eadfaf729cec1f5e6e92980d06fa1",
   "constraints": [
     {

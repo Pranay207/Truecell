@@ -10274,6 +10274,31 @@
         ]
       ],
       "page_summaries": [],
+      "join_receipt": {
+        "page_joins": 2,
+        "repeated_headers_removed": 2,
+        "split_rows_recovered": 0,
+        "pages": [
+          1,
+          2,
+          3
+        ],
+        "rows_by_page": [
+          {
+            "page": 1,
+            "rows": 16
+          },
+          {
+            "page": 2,
+            "rows": 16
+          },
+          {
+            "page": 3,
+            "rows": 16
+          }
+        ],
+        "output_rows": 48
+      },
       "cell_scores": []
     }
   ],
@@ -10284,7 +10309,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.2610899999999674,
+      "seconds": 0.530891900001734,
       "attempts": [
         {
           "engine": "native",
@@ -10293,7 +10318,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.18974149999849033,
+          "seconds": 0.27733420000004116,
           "error": "",
           "selected": true
         }
@@ -10305,7 +10330,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.24128940000082366,
+      "seconds": 1.2419145999956527,
       "attempts": [
         {
           "engine": "native",
@@ -10314,7 +10339,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.17859720000706147,
+          "seconds": 0.9424252999961027,
           "error": "",
           "selected": true
         }
@@ -10326,7 +10351,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.21588369998789858,
+      "seconds": 1.4055025999987265,
       "attempts": [
         {
           "engine": "native",
@@ -10335,7 +10360,7 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.1589382999954978,
+          "seconds": 0.999211499998637,
           "error": "",
           "selected": true
         }
@@ -10343,7 +10368,7 @@
       "error": ""
     }
   ],
-  "seconds": 1.0806152000004658,
+  "seconds": 5.020387199998368,
   "source_sha256": "75efaca21f9d4c2fc28599cf3483bfd0c7dc50e70f206bcd812cd9c06c118cb8",
   "constraints": [
     {

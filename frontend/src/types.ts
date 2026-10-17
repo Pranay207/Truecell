@@ -18,6 +18,14 @@ export type Table = {
   header_sources: SourceRecord[][];
   notes: string[];
   page_summaries?: Record<string, unknown>[];
+  join_receipt?: {
+    pages: number[];
+    page_joins: number;
+    repeated_headers_removed: number;
+    split_rows_recovered: number;
+    rows_by_page: { page: number; rows: number }[];
+    output_rows: number;
+  };
 };
 export type Issue = {
   severity: string;
@@ -80,6 +88,30 @@ export type Result = {
   review: { status?: string; fingerprint?: string; note?: string };
   history: Record<string, unknown>[];
 };
+export type ReviewQueueItem = {
+  id: string;
+  kind: "finding" | "confidence";
+  severity: string;
+  page: number;
+  title: string;
+  reason: string;
+  suggestion: string;
+  table?: number | null;
+  row?: number | null;
+  column?: number | null;
+  confidence?: number | null;
+  status: "pending" | "checked";
+  checked_at?: string | null;
+};
+export type ReviewQueue = {
+  items: ReviewQueueItem[];
+  total: number;
+  visible: number;
+  pending: number;
+  checked: number;
+  omitted: number;
+  confidence_threshold: number;
+};
 export type Job = {
   id: string;
   name: string;
@@ -95,6 +127,7 @@ export type Job = {
   options?: { verify?: boolean; force_ocr?: boolean; force?: boolean };
   result_is_previous?: boolean;
   forked_from?: string;
+  review_queue?: ReviewQueue;
 };
 export type Sample = { filename: string; name: string; pages?: number };
 export type Cell = { table: number; row: number; column: number };

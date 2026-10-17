@@ -5553,6 +5553,26 @@
         ]
       ],
       "page_summaries": [],
+      "join_receipt": {
+        "page_joins": 1,
+        "repeated_headers_removed": 1,
+        "split_rows_recovered": 0,
+        "pages": [
+          1,
+          2
+        ],
+        "rows_by_page": [
+          {
+            "page": 1,
+            "rows": 12
+          },
+          {
+            "page": 2,
+            "rows": 12
+          }
+        ],
+        "output_rows": 24
+      },
       "cell_scores": [
         [
           0,
@@ -7055,7 +7075,7 @@
       "route": "ocr",
       "engine": "tesseract",
       "confidence": 0.96,
-      "seconds": 12.349659400002565,
+      "seconds": 19.688731700000062,
       "attempts": [
         {
           "engine": "tesseract",
@@ -7064,7 +7084,7 @@
           "cells": 144,
           "issues": 3,
           "score": 828.2,
-          "seconds": 4.478516200004378,
+          "seconds": 10.026409500002046,
           "error": "",
           "selected": false
         },
@@ -7075,7 +7095,7 @@
           "cells": 144,
           "issues": 2,
           "score": 842.2,
-          "seconds": 6.3325272999936715,
+          "seconds": 7.396827600001416,
           "error": "",
           "selected": true
         }
@@ -7087,7 +7107,7 @@
       "route": "ocr",
       "engine": "tesseract",
       "confidence": 0.96,
-      "seconds": 4.89508719999867,
+      "seconds": 5.802631600003224,
       "attempts": [
         {
           "engine": "tesseract",
@@ -7096,7 +7116,7 @@
           "cells": 144,
           "issues": 1,
           "score": 842.2,
-          "seconds": 4.102197899992461,
+          "seconds": 5.302933499995561,
           "error": "",
           "selected": true
         }
@@ -7104,7 +7124,7 @@
       "error": ""
     }
   ],
-  "seconds": 17.57739259999653,
+  "seconds": 25.859645000004093,
   "source_sha256": "c1df12ddce2418f307056ad554295891c3af4808368ffff2aaddea5396691a0e",
   "constraints": [
     {

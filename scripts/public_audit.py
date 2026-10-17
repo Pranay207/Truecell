@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import sys
@@ -14,6 +15,43 @@ sys.path.insert(0, str(ROOT))
 from eval.score import canonical, score
 from truecell.models import Result
 from truecell.pipeline import convert
+
+MAX_FIXTURE_BYTES = 40_000_000
+
+
+def materialize(path: Path, url: str, expected_sha256: str, fetch: bool) -> None:
+    """Download an explicitly requested public artifact and verify its pinned bytes."""
+    if not path.exists():
+        if not fetch:
+            raise SystemExit(
+                f"Missing {path.name}; rerun with --fetch to download public fixtures."
+            )
+        with urlopen(url, timeout=40) as response:
+            content = response.read(MAX_FIXTURE_BYTES + 1)
+        if len(content) > MAX_FIXTURE_BYTES:
+            raise ValueError("Public fixture exceeds the bounded download size.")
+        if hashlib.sha256(content).hexdigest() != expected_sha256:
+            raise ValueError("Upstream bytes differ from the pinned fixture.")
+        path.write_bytes(content)
+    if hashlib.sha256(path.read_bytes()).hexdigest() != expected_sha256:
+        raise ValueError(f"Checksum mismatch: {path.name}")
+
+
+def verify_tabula_twotables_reference(case: dict, path: Path) -> None:
+    """Bind the embedded structured truth to Tabula's published CSV rows."""
+    rows = list(csv.reader(path.open(encoding="utf-8-sig", newline="")))
+    expected_blocks = (rows[2:11], rows[13:22])
+    if len(case["tables"]) != 2 or any(len(block) != 9 for block in expected_blocks):
+        raise ValueError("Unexpected Tabula twotables reference structure.")
+    for table, reference_rows in zip(case["tables"], expected_blocks):
+        if len(table["rows"]) != len(reference_rows):
+            raise ValueError("Embedded truth does not match the published reference rows.")
+        for expected, published in zip(table["rows"], reference_rows):
+            # One visually identical parenthesis has different width metadata.
+            normalized_expected = [canonical(value).replace("（", "(") for value in expected]
+            normalized_published = [canonical(value).replace("（", "(") for value in published]
+            if normalized_expected != normalized_published:
+                raise ValueError("Embedded truth differs from Tabula's published CSV.")
 
 
 def check(case: dict, result: Result) -> dict:
@@ -73,24 +111,22 @@ def main() -> int:
     parser.add_argument("--cache", type=Path, default=ROOT / "tmp/public-audit")
     args = parser.parse_args()
     args.cache.mkdir(parents=True, exist_ok=True)
-    cases = json.loads((ROOT / "eval/public_cases.json").read_text())
+    cases = json.loads((ROOT / "eval/public_cases.json").read_text(encoding="utf-8"))
     records = []
     for case in cases:
         path = args.cache / case["file"]
-        if not path.exists():
-            if not args.fetch:
-                raise SystemExit(
-                    f"Missing {path.name}; rerun with --fetch to download public fixtures."
-                )
-            with urlopen(case["url"], timeout=40) as response:
-                content = response.read(40_000_001)
-            if len(content) > 40_000_000:
-                raise ValueError("Public fixture exceeds the bounded download size.")
-            if hashlib.sha256(content).hexdigest() != case["sha256"]:
-                raise ValueError("Upstream bytes differ from the pinned fixture.")
-            path.write_bytes(content)
-        if hashlib.sha256(path.read_bytes()).hexdigest() != case["sha256"]:
-            raise ValueError(f"Checksum mismatch: {path.name}")
+        materialize(path, case["url"], case["sha256"], args.fetch)
+        reference_path = None
+        if case.get("reference_url"):
+            reference_path = args.cache / case["reference_file"]
+            materialize(
+                reference_path,
+                case["reference_url"],
+                case["reference_sha256"],
+                args.fetch,
+            )
+        if case["name"] == "tabula-unicode-two-tables" and reference_path:
+            verify_tabula_twotables_reference(case, reference_path)
         result = convert(path, args.cache / (path.stem + "-truecell.xlsx"))
         (args.cache / (path.stem + "-latest.json")).write_text(
             json.dumps(result.to_dict(), indent=2), encoding="utf-8"
@@ -107,6 +143,9 @@ def main() -> int:
             "scope": case["mode"],
             "source_sha256": case["sha256"],
             "url": case["url"],
+            "reference_url": case.get("reference_url"),
+            "reference_sha256": case.get("reference_sha256"),
+            "published_reference_verified": reference_path is not None,
             "seconds": result.seconds,
             "first_development_observation": first,
             **metric,
@@ -119,7 +158,7 @@ def main() -> int:
     lines = [
         "# External document audit",
         "",
-        "Three public aggregate/dummy PDFs, with source hashes and explicit annotation scope in `eval/public_cases.json`. Expectations were transcribed from rendered source pages, not independently annotated by a third party. These inputs were used to discover and repair failures; they are development regressions, not a blind benchmark. No source PDF or external application implementation is redistributed.",
+        f"{len(cases)} public aggregate/dummy PDFs from three independently maintained source projects, with source hashes and explicit annotation scope in `eval/public_cases.json`. Expectations were transcribed from rendered source pages; the Unicode two-table case is also bound to its publisher's paired CSV by checksum and an exact row comparison. These inputs were used to discover and repair failures, so they are development regressions rather than a blind benchmark. No source PDF or external application implementation is redistributed.",
         "",
         "| Case | Scope | Checked cells | Headers | Shape | Result |",
         "|---|---|---:|---|---|---|",
@@ -130,7 +169,7 @@ def main() -> int:
         )
     lines += [
         "",
-        "The fuel table checks all 35 data cells and seven flattened headers. The census page checks **48 selected data cells**, all 16 headers, both table counts/shapes (32×10 and 32×6), and uniqueness of selected row labels. Its other 464 data cells were not independently checked. The W3C fixture checks that no table is invented. Do not describe these checkpoints as whole-document OCR accuracy.",
+        "The fuel table checks all 35 data cells and seven flattened headers. The census page checks **48 selected data cells**, all 16 headers, both table counts/shapes (32×10 and 32×6), and uniqueness of selected row labels; its other 464 data cells are outside the annotation scope. The Unicode case checks two complete tables: all **126 data cells**, all 14 flattened headers, both shapes, Japanese text, multiline cells, spanning headers, and negative-triangle notation. The W3C fixture checks that no table is invented. Do not describe these checks as whole-document OCR accuracy.",
         "",
         "The first saved development outputs failed the fuel table and census layouts; their measurements remain in the JSON when present. Header-span handling, numeric text-fragment joining and separated borderless streams were repaired with general geometry rules. The old engine state was not a tagged release; first observations are historical evidence, not a reproducible old-version benchmark.",
         "",
@@ -141,6 +180,11 @@ def main() -> int:
     ]
     for case in cases:
         lines.append(f"- {case['name']}: {case['url']} (SHA-256 `{case['sha256']}`)")
+        if case.get("reference_url"):
+            lines.append(
+                f"  - Published reference CSV: {case['reference_url']} "
+                f"(SHA-256 `{case['reference_sha256']}`)"
+            )
     (ROOT / "reports/EXTERNAL_AUDIT.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     (ROOT / "reports/EXTERNAL_AUDIT.json").write_text(
         json.dumps(records, indent=2), encoding="utf-8"

@@ -10,12 +10,13 @@ import {
   labelStatus,
   recordsFor,
 } from "./format";
+import { JoinReceipt } from "./JoinReceipt";
 import type {
   Cell,
   ChallengeReport,
-  Issue,
   Job,
   PreviewReport,
+  ReviewQueueItem,
   Result,
   Sample,
   SourceRecord,
@@ -810,8 +811,8 @@ function Workspace({
   const [page, setPage] = useState(1);
   const [selected, setSelected] = useState<Cell | null>(null);
   const [rail, setRail] = useState<
-    "findings" | "equations" | "challenge" | "audit"
-  >("findings");
+    "review" | "equations" | "challenge" | "audit"
+  >("review");
   const [review, setReview] = useState(false);
   const [gridPage, setGridPage] = useState(0);
   const [tableSearch, setTableSearch] = useState("");
@@ -868,10 +869,22 @@ function Workspace({
     if (sources.length) setPage(sources[0].page);
   };
   const records = result && selected ? recordsFor(result, selected) : [];
-  const relevantIssues =
-    result?.issues.filter(
-      (i) => i.table == null || i.table === tableIndex + 1,
-    ) ?? [];
+  const reviewQueue = job.review_queue ?? {
+    items: [],
+    total: 0,
+    visible: 0,
+    pending: 0,
+    checked: 0,
+    omitted: 0,
+    confidence_threshold: 0.93,
+  };
+  const relevantReviewItems = reviewQueue.items
+    .filter((item) => item.table == null || item.table === tableIndex)
+    .sort((a, b) => {
+      if (a.status !== b.status) return a.status === "pending" ? -1 : 1;
+      if (a.kind !== b.kind) return a.kind === "finding" ? -1 : 1;
+      return (a.confidence ?? 1) - (b.confidence ?? 1);
+    });
   const flagged = useMemo(
     () =>
       new Set(
@@ -1054,10 +1067,10 @@ function Workspace({
               <strong>{countRows(result).toLocaleString()}</strong>
               <span>data rows</span>
             </div>
-            <div className={result.issues.length ? "summary-findings" : ""}>
-              <Icon name={result.issues.length ? "warning" : "check"} />
-              <strong>{result.issues.length}</strong>
-              <span>review findings</span>
+            <div className={reviewQueue.pending ? "summary-findings" : ""}>
+              <Icon name={reviewQueue.pending ? "warning" : "check"} />
+              <strong>{reviewQueue.pending}</strong>
+              <span>items to review</span>
             </div>
             <button
               onClick={() => setReview(true)}
@@ -1116,6 +1129,7 @@ function Workspace({
                 </span>
                 {table && <small>{table.headers.length} columns</small>}
               </div>
+              {table && <JoinReceipt table={table} />}
               {table ? (
                 <>
                   <div className="table-search-bar">
@@ -1302,7 +1316,7 @@ function Workspace({
                 role="tablist"
                 aria-label="Review panels"
               >
-                {(["findings", "equations", "challenge", "audit"] as const).map(
+                {(["review", "equations", "challenge", "audit"] as const).map(
                   (t) => (
                     <button
                       role="tab"
@@ -1310,33 +1324,77 @@ function Workspace({
                       key={t}
                       onClick={() => setRail(t)}
                     >
-                      {t === "findings"
-                        ? "Findings"
+                      {t === "review"
+                        ? "Review"
                         : t === "equations"
                           ? "Equations"
                           : t === "challenge"
                             ? "Challenge"
                             : "Audit"}
-                      {t === "findings" && <span>{relevantIssues.length}</span>}
+                      {t === "review" && (
+                        <span>
+                          {
+                            relevantReviewItems.filter(
+                              (item) => item.status === "pending",
+                            ).length
+                          }
+                        </span>
+                      )}
                     </button>
                   ),
                 )}
               </div>
-              {rail === "findings" && (
+              {rail === "review" && (
                 <div className="rail-content">
-                  <p className="rail-intro">
-                    Checks point to what deserves a closer look.
-                  </p>
-                  {relevantIssues.length ? (
-                    relevantIssues.map((issue, i) => (
-                      <IssueCard
-                        key={i}
-                        issue={issue}
-                        onSelect={() => {
-                          const cell = issueCell(result, issue);
-                          if (cell) select(cell);
-                          else setPage(issue.page);
+                  <div className="queue-overview">
+                    <p className="rail-intro">
+                      Inspect priority cells against their original reading,
+                      then mark each one checked.
+                    </p>
+                    <div aria-label="Review queue progress">
+                      <strong>
+                        {reviewQueue.checked}/{reviewQueue.visible}
+                      </strong>
+                      <span>checked</span>
+                      <progress
+                        max={Math.max(1, reviewQueue.visible)}
+                        value={reviewQueue.checked}
+                      />
+                    </div>
+                  </div>
+                  {relevantReviewItems.length ? (
+                    relevantReviewItems.map((item) => (
+                      <ReviewQueueCard
+                        key={item.id}
+                        item={item}
+                        saving={saving}
+                        onInspect={() => {
+                          if (
+                            item.table != null &&
+                            item.row != null &&
+                            item.column != null
+                          ) {
+                            select({
+                              table: item.table,
+                              row: item.row,
+                              column: item.column,
+                            });
+                          } else {
+                            setSelected(null);
+                            setShowEvidence(false);
+                            setPage(item.page);
+                          }
                         }}
+                        onReview={() =>
+                          void mutate(() =>
+                            api.reviewItem(
+                              job.id,
+                              item.id,
+                              item.status !== "checked",
+                              job.fingerprint,
+                            ),
+                          )
+                        }
                       />
                     ))
                   ) : (
@@ -1344,18 +1402,26 @@ function Workspace({
                       <span>
                         <Icon name="check" size={25} />
                       </span>
-                      <h3>No rule violations found</h3>
+                      <h3>Priority queue is clear</h3>
                       <p>
-                        A source check is still needed. Passing checks do not
-                        prove extraction accuracy.
+                        No validation finding or low-confidence reading needs
+                        attention in this table.
                       </p>
                     </div>
+                  )}
+                  {reviewQueue.omitted > 0 && (
+                    <p className="queue-omitted">
+                      {reviewQueue.omitted.toLocaleString()} additional
+                      low-confidence cells are outside this bounded priority
+                      view. The Excel evidence sheet still lists every source
+                      reading.
+                    </p>
                   )}
                   <div className="rail-footnote">
                     <Icon name="eye" size={16} />
                     <p>
-                      Amber marks a finding to inspect, not a confirmed source
-                      error.
+                      Queue items indicate uncertainty or a rule finding, not a
+                      confirmed source error.
                     </p>
                   </div>
                 </div>
@@ -1561,6 +1627,7 @@ function Workspace({
               result={result}
               saving={saving || processing}
               reviewed={!!reviewed}
+              pendingItems={reviewQueue.pending}
               onClose={() => setReview(false)}
               onReview={(note) =>
                 void mutate(() => api.review(job.id, note, job.fingerprint))
@@ -1874,33 +1941,54 @@ function SourcePane({
   );
 }
 
-function IssueCard({
-  issue,
-  onSelect,
+function ReviewQueueCard({
+  item,
+  saving,
+  onInspect,
+  onReview,
 }: {
-  issue: Issue;
-  onSelect: () => void;
+  item: ReviewQueueItem;
+  saving: boolean;
+  onInspect: () => void;
+  onReview: () => void;
 }) {
+  const checked = item.status === "checked";
   return (
-    <button className={`issue-card issue-${issue.severity}`} onClick={onSelect}>
+    <article className={`queue-card ${checked ? "queue-checked" : ""}`}>
       <div>
-        <span className="issue-kind">
+        <span className="queue-kind">
           <Icon
-            name={issue.severity === "info" ? "eye" : "warning"}
+            name={
+              checked ? "check" : item.kind === "finding" ? "warning" : "eye"
+            }
             size={13}
           />
-          {issue.severity}
+          {checked
+            ? "Source checked"
+            : item.kind === "finding"
+              ? "Validation finding"
+              : "Uncertain reading"}
         </span>
         <small>
-          Page {issue.page}
-          {issue.row != null ? ` · row ${issue.row}` : ""}
+          Page {item.page}
+          {item.row != null ? ` · row ${item.row + 1}` : ""}
         </small>
       </div>
-      <p>{issue.reason}</p>
-      <span className="issue-action">
-        Inspect source <Icon name="arrow" size={13} />
-      </span>
-    </button>
+      <h3>{item.title}</h3>
+      <p>{item.reason}</p>
+      <div className="queue-actions">
+        <button className="text-button" onClick={onInspect}>
+          Inspect source <Icon name="arrow" size={13} />
+        </button>
+        <button
+          className={checked ? "queue-reopen" : "queue-check"}
+          onClick={onReview}
+          disabled={saving}
+        >
+          {checked ? "Reopen" : "Mark checked"}
+        </button>
+      </div>
+    </article>
   );
 }
 
@@ -2158,12 +2246,14 @@ function ReviewModal({
   result,
   saving,
   reviewed,
+  pendingItems,
   onClose,
   onReview,
 }: {
   result: Result;
   saving: boolean;
   reviewed: boolean;
+  pendingItems: number;
   onClose: () => void;
   onReview: (note: string) => void;
 }) {
@@ -2197,8 +2287,9 @@ function ReviewModal({
         >
           <p>
             Review the original pages and the{" "}
-            <strong>{result.issues.length} outstanding findings</strong> before
-            recording your check.
+            <strong>{pendingItems} pending priority items</strong> before
+            recording your check. This final attestation marks the visible
+            queue as checked.
           </p>
           <label className="check-label">
             <input
@@ -2208,16 +2299,16 @@ function ReviewModal({
               required
               disabled={saving}
             />
-            I checked the original source pages and reviewed the outstanding
-            findings.
+            I checked the original source pages and reviewed the priority
+            queue.
           </label>
           <label>
-            Review note and accepted findings
+            Review note and accepted items
             <textarea
               value={note}
               onChange={(e) => setNote(e.target.value)}
               rows={4}
-              placeholder="What did you check? Which findings are accepted, and why?"
+              placeholder="What did you check? Which readings or findings did you accept, and why?"
               required
               disabled={saving}
             />

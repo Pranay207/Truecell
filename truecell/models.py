@@ -34,6 +34,7 @@ class Table:
     cell_sources: list[list[list[dict[str, Any]]]] = field(default_factory=list)
     header_sources: list[list[dict[str, Any]]] = field(default_factory=list)
     page_summaries: list[dict[str, Any]] = field(default_factory=list)
+    join_receipt: dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         if not self.provenance:

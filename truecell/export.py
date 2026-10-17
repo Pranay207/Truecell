@@ -324,6 +324,50 @@ def export_workbook(result: Result, output: str | Path) -> Path:
                     attempt.error,
                 ],
             )
+    sheet = workbook.create_sheet("Join Receipt")
+    strings.append(
+        sheet,
+        [
+            "Data sheet",
+            "Source pages",
+            "Page joins",
+            "Repeated headers removed",
+            "Split rows recovered",
+            "PDF page",
+            "Source rows on page",
+            "Output rows",
+        ],
+    )
+    for index, table in enumerate(result.tables, 1):
+        receipt = table.join_receipt
+        pages = receipt.get("pages") or sorted(
+            {page for sources in table.provenance for page, _ in sources} or {table.page}
+        )
+        rows_by_page = receipt.get("rows_by_page") or [
+            {
+                "page": page,
+                "rows": sum(
+                    source_page == page
+                    for sources in table.provenance
+                    for source_page, _ in sources
+                ),
+            }
+            for page in pages
+        ]
+        for page_rows in rows_by_page:
+            strings.append(
+                sheet,
+                [
+                    f"Data {index}",
+                    ", ".join(str(page) for page in pages),
+                    receipt.get("page_joins", max(0, len(pages) - 1)),
+                    receipt.get("repeated_headers_removed", 0),
+                    receipt.get("split_rows_recovered", 0),
+                    page_rows["page"],
+                    page_rows["rows"],
+                    receipt.get("output_rows", len(table.rows)),
+                ],
+            )
     sheet = workbook.create_sheet("Provenance")
     strings.append(
         sheet, ["Data sheet", "Excel row", "PDF page", "Source table data row", "Engine"]

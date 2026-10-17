@@ -659,6 +659,26 @@
           "role": "page continuity summary"
         }
       ],
+      "join_receipt": {
+        "page_joins": 1,
+        "repeated_headers_removed": 1,
+        "split_rows_recovered": 0,
+        "pages": [
+          1,
+          2
+        ],
+        "rows_by_page": [
+          {
+            "page": 1,
+            "rows": 3
+          },
+          {
+            "page": 2,
+            "rows": 3
+          }
+        ],
+        "output_rows": 6
+      },
       "cell_scores": []
     }
   ],
@@ -760,7 +780,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.92,
-      "seconds": 0.03156420000595972,
+      "seconds": 0.03345719999924768,
       "attempts": [
         {
           "engine": "native",
@@ -769,7 +789,7 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 0.010153600000194274,
+          "seconds": 0.00893750000250293,
           "error": "",
           "selected": false
         },
@@ -780,7 +800,7 @@
           "cells": 18,
           "issues": 1,
           "score": 96.4,
-          "seconds": 0.010752600006526336,
+          "seconds": 0.012273000000277534,
           "error": "",
           "selected": false
         },
@@ -791,7 +811,7 @@
           "cells": 12,
           "issues": 3,
           "score": 90.4,
-          "seconds": 0.005960900001809932,
+          "seconds": 0.002344400003494229,
           "error": "",
           "selected": true
         }
@@ -803,7 +823,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.92,
-      "seconds": 0.05076129999361001,
+      "seconds": 0.018166199995903298,
       "attempts": [
         {
           "engine": "native",
@@ -812,7 +832,7 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 0.015771699996548705,
+          "seconds": 0.008278499997686595,
           "error": "",
           "selected": false
         },
@@ -823,7 +843,7 @@
           "cells": 18,
           "issues": 1,
           "score": 96.4,
-          "seconds": 0.025029800002812408,
+          "seconds": 0.006214400003955234,
           "error": "",
           "selected": false
         },
@@ -834,7 +854,7 @@
           "cells": 12,
           "issues": 3,
           "score": 90.4,
-          "seconds": 0.0050343999901087955,
+          "seconds": 0.0015923999962978996,
           "error": "",
           "selected": true
         }
@@ -842,7 +862,7 @@
       "error": ""
     }
   ],
-  "seconds": 0.09554189999471419,
+  "seconds": 0.05709760000172537,
   "source_sha256": "3af1117b3c8de6d7c9e99a70896d39403a49e8f1d192e283448a2bf742b4e68b",
   "constraints": [],
   "proposals": [],

@@ -83,6 +83,16 @@ export const api = {
       `/jobs/${id}/review`,
       json({ source_checked: true, note, fingerprint }),
     ),
+  reviewItem: (
+    id: string,
+    itemId: string,
+    sourceChecked: boolean,
+    fingerprint?: string,
+  ) =>
+    request<Job>(
+      `/jobs/${id}/review-items`,
+      json({ item_id: itemId, source_checked: sourceChecked, fingerprint }),
+    ),
   preview: (id: string, cell: Cell, value: string, fingerprint?: string) =>
     request<PreviewReport>(
       `/jobs/${id}/preview`,
