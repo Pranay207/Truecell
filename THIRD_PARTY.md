@@ -20,6 +20,7 @@ The extraction, OCR, rendering, UI and spreadsheet libraries do substantial unde
 | ReportLab | Dummy PDF generation | https://www.reportlab.com (BSD) |
 | pytest | Regression tests | https://pytest.org (MIT) |
 | Python | Application runtime | https://www.python.org (PSF license) |
+| PyInstaller | Windows portable application packaging | https://pyinstaller.org (GPL-2.0-or-later with bootloader exception) |
 
 Optional vision requests use the configured provider's API under that provider's terms. No network provider was used to produce the offline benchmark. Dependencies bring additional transitive libraries; installed distributions contain their individual notices. Preserve upstream notices when redistributing dependencies or models.
 

@@ -1,0 +1,1 @@
+"""Windows portable distribution support."""

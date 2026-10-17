@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import importlib.util
 import math
+import os
 import shutil
 from functools import lru_cache
 from pathlib import Path
@@ -34,6 +35,8 @@ def cell_text(words: list[dict]) -> str:
 
 def tesseract_path() -> str | None:
     """Locate the system binary, including common Windows installations."""
+    if os.environ.get("TRUECELL_PORTABLE_RAPIDOCR_ONLY") == "1":
+        return None
     found = shutil.which("tesseract")
     if found:
         return found

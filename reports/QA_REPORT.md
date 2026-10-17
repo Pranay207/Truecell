@@ -29,7 +29,8 @@ Tested on Windows with Python 3.11.9. This pass covers the current source folder
 
 ## Verification
 
-- **214 Python tests passed** in the development environment. Ruff checks and formatting passed, and dependency checks passed in the recorded environments.
+- **222 Python tests passed** in the development environment. Ruff checks and formatting passed, and dependency checks passed in the recorded environments.
+- The packaged Windows EXE passed a separate portable smoke test covering local health/UI, exact native extraction, bundled RapidOCR, Excel/audit downloads, a path containing spaces and saved-workspace recovery after restart.
 - **14 frontend tests passed**, including extracted-row search, original-index preservation and review-queue requests; strict TypeScript checks passed, and the Vite production bundle rebuilt successfully. The supplied build needs no Node.js at judge runtime.
 - **22/22** committed dummy-document outputs passed source-hash and exact-score verification. The new five-page raster-only, 12-column continuation fixture also passed a fresh Tesseract conversion with all 33 rows, four repeated headers removed and two split rows recovered. A no-table control passes only with zero output tables; its cell percentages are n/a.
 - **5/5** scan cases passed with Tesseract excluded: inventory, blur/noise, skew, perspective photo and sideways invoice. See `PORTABLE_OCR.json` for the engine-isolation method and measured timings.

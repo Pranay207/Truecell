@@ -42,7 +42,7 @@ Truecell is a local-first React and FastAPI application built for the **INCUXAI 
 | Verified result | Evidence |
 |---|---|
 | **22/22** deterministic development cases passed | [Accuracy report](reports/ACCURACY_REPORT.md) |
-| **214** Python tests and **14** frontend tests passed | [Build verification](reports/BUILD_VERIFICATION.md) |
+| **222** Python tests and **14** frontend tests passed | [Build verification](reports/BUILD_VERIFICATION.md) |
 | **5/5** scan cases passed with Tesseract excluded | [Portable OCR results](reports/PORTABLE_OCR.json) |
 | **50 pages / 800 rows / 12 columns** recovered in the measured stress fixture | [Stress PDF](samples/D_stress_50pages.pdf) · [Converted workbook](outputs/D_stress_50pages.xlsx) |
 | **18-column** borderless table and vertically grouped nested line items passed exact checks | [18-column workbook](outputs/E_eighteen_columns.xlsx) · [Nested-lines workbook](outputs/E_vertical_nested_lines.xlsx) |
@@ -58,18 +58,32 @@ These are disclosed dummy development fixtures, not blind or hidden-document acc
 | **Multi-page and complex tables — 25** | Repeated-header removal, continuation joins, split-row recovery, page carry-forward separation, 18-column reconstruction, conservative vertically spanned group labels, an exact **50-page / 800-row** stress result, and a visible/exported join receipt. |
 | **Column alignment and data integrity — 20** | Header and geometry scoring, leading-zero preservation, typed unambiguous values, formula-injection protection, duplicate retention, row-to-page provenance, and exact shape/header checks. |
 | **Automation and error recovery — 15** | Automatic page routing, alternate extraction strategies, failed-page continuation, verified JSON checkpoints, resumable partial jobs, inferred arithmetic checks, counterfactual repair previews, a source-addressable uncertainty queue, and explicit correction history. |
-| **Code quality and usability — 10** | Responsive React/TypeScript UI, FastAPI backend, searchable extracted tables, source inspector, saved local workspaces, **214 Python + 14 frontend tests**, Ruff checks, and a 3-OS/3-Python CI matrix. |
+| **Code quality and usability — 10** | Responsive React/TypeScript UI, FastAPI backend, searchable extracted tables, source inspector, saved local workspaces, **222 Python + 14 frontend tests**, Ruff checks, and a 3-OS/3-Python CI matrix. |
 
-## Run it in one command
+## Run Truecell
 
-Use **64-bit Python 3.10–3.12**. Python 3.11 on Windows is the locally tested platform.
+### 1. Windows portable — easiest
+
+Use the supplied `Truecell-Portable-Windows-x64.zip` on **Windows 10/11 x64**:
+
+1. Extract the complete ZIP.
+2. Double-click `Truecell.exe` inside `Truecell-Portable`.
+3. Truecell opens automatically in the default browser.
+
+Python, Node.js, an API key and internet access are not required. The portable folder includes the React application, local FastAPI server, RapidOCR, OCR models and demo PDFs. Saved documents remain beside the executable in `TruecellData`; keep the entire extracted folder together. The console window shows the local address and stops the server when closed.
+
+The tested portable bundle is a PyInstaller one-folder application: **316.41 MB extracted / 152.36 MB zipped**. Its packaged EXE passed health and UI checks, exact native-PDF extraction, a RapidOCR scan with external Tesseract disabled, Excel/audit downloads, launch from a path containing spaces, and workspace persistence after restart. See [portable instructions](portable/README-FIRST.txt).
+
+### 2. Python/source launcher
+
+Use **64-bit Python 3.10–3.12** when running from source. Python 3.11 on Windows is the locally tested platform.
 
 ```text
 Windows:       double-click START_TRUECELL.cmd
 Linux/macOS:   bash start.sh
 ```
 
-The first run creates `.venv` and installs pinned dependencies, so it needs internet. Later runs and normal conversions work offline on CPU without an API key or GPU. The launcher opens a local URL, normally **http://127.0.0.1:8501**.
+The first source run creates `.venv` and installs pinned dependencies, so it needs internet. Later runs and normal conversions work offline on CPU without an API key or GPU. The launcher opens a local URL, normally **http://127.0.0.1:8501**.
 
 ```powershell
 # Verify an existing installation without network access
@@ -102,6 +116,19 @@ python convert.py scan.pdf -o outputs/scan.xlsx --force-ocr
 ```
 
 `--verify` runs an independent local OCR check on native pages. `--force-ocr` handles damaged text layers. `python run.py --lan` serves the app only to loopback and the detected private network while the process is running.
+
+</details>
+
+<details>
+<summary>Build and verify the Windows portable release</summary>
+
+```powershell
+# Requires the source development environment; end users do not run this.
+.\BUILD_PORTABLE.cmd
+.\.venv\Scripts\python.exe scripts\smoke_portable.py
+```
+
+The build uses pinned packages from `requirements-build.txt`, writes ignored artifacts under `portable-release/`, and creates a per-file `SHA256SUMS.txt`. The portable ZIP is a release artifact rather than a source-controlled binary.
 
 </details>
 

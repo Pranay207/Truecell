@@ -11,3 +11,5 @@ outputs/checkpoints/
 frontend/node_modules/
 frontend/.vite/
 frontend/*.tsbuildinfo
+portable-build/
+portable-release/

@@ -1,8 +1,11 @@
 TRUECELL — DOCUMENT INTELLIGENCE
 
-1. Use 64-bit Python 3.10–3.12. Python 3.11 on Windows was tested locally.
-2. Windows: double-click START_TRUECELL.cmd. Linux/macOS: bash start.sh.
-   First setup needs internet; normal conversion is offline on CPU.
+1. Easiest on Windows 10/11 x64: extract Truecell-Portable-Windows-x64.zip,
+   keep the complete folder together, and double-click Truecell.exe.
+   Python, Node.js, an API key and internet are not required.
+2. Source fallback: double-click START_TRUECELL.cmd on Windows or run
+   bash start.sh on Linux/macOS. This first setup needs internet and
+   64-bit Python 3.10–3.12; later source launches work offline.
 3. Open the localhost URL printed by the launcher.
    Optional phone demo: START_TRUECELL.cmd --offline --lan, then open the
    printed Phone URL from the same private Wi-Fi network.
