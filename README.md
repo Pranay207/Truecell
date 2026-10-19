@@ -249,7 +249,6 @@ python scripts/public_audit.py --fetch
 
 - [Development accuracy](reports/ACCURACY_REPORT.md): all 22 generated cases and timings.
 - [External layout audit](reports/EXTERNAL_AUDIT.md): a 35-cell fuel table, 48 selected census cells plus all 16 headers and both shapes, a no-table control, and two complete public Unicode tables with 126/126 data cells and 14/14 flattened headers. The remaining census cells are outside the annotation scope.
-- [External published-fixture audit](reports/TRANSFER_AUDIT.md): exact cell, header, and shape regression checks on three public dummy fixtures and their author-provided expected results. Source and scope are documented in the report.
 - [Build verification](reports/BUILD_VERIFICATION.md): tests, portability checks, and explicitly unverified items.
 
 `python -m eval.generate_samples --hard` and `python -m eval.generate_layouts` regenerate the dummy sources and truth. Scoring canonicalizes numeric formatting and whitespace while preserving leading zeros. A no-table control passes only when no table is invented.
