@@ -50,15 +50,15 @@ Truecell is a local-first React and FastAPI application built for the **INCUXAI 
 
 These are disclosed dummy development fixtures, not blind or hidden-document accuracy claims. Exact evaluation compares ordered cells, headers, table shapes, row multisets, and annotated errors. Start with [JUDGE_START_HERE.txt](JUDGE_START_HERE.txt) for the shortest review path.
 
-## Competition evidence matrix
+## Evaluation criteria coverage
 
-| Judging area | Truecell evidence |
+| Evaluation criterion | Verified proof |
 |---|---|
-| **OCR and extraction accuracy — 30** | Bundled offline RapidOCR, optional local Tesseract, native-PDF extraction, deskew/rotation/perspective recovery, cell-level source boxes, and **5/5** portable OCR fixtures without Tesseract. |
-| **Multi-page and complex tables — 25** | Repeated-header removal, continuation joins, split-row recovery, page carry-forward separation, 18-column reconstruction, conservative vertically spanned group labels, an exact **50-page / 800-row** stress result, and a visible/exported join receipt. |
-| **Column alignment and data integrity — 20** | Header and geometry scoring, leading-zero preservation, typed unambiguous values, formula-injection protection, duplicate retention, row-to-page provenance, and exact shape/header checks. |
-| **Automation and error recovery — 15** | Automatic page routing, alternate extraction strategies, failed-page continuation, verified JSON checkpoints, resumable partial jobs, inferred arithmetic checks, counterfactual repair previews, a source-addressable uncertainty queue, and explicit correction history. |
-| **Code quality and usability — 10** | Responsive React/TypeScript UI, FastAPI backend, searchable extracted tables, source inspector, saved local workspaces, **222 Python + 14 frontend tests**, Ruff checks, and a 3-OS/3-Python CI matrix. |
+| **OCR and extraction accuracy — 30** | **5/5 offline OCR fixtures passed** with Tesseract excluded. Native PDF extraction, RapidOCR, deskew, rotation recovery, and cell-level source boxes. [View OCR evidence](reports/PORTABLE_OCR.json). |
+| **Multi-page and complex tables — 25** | **50 pages · 800 rows · 12 columns** recovered in the measured stress fixture. Repeated headers, split rows, 18-column tables, and vertically grouped line items are covered. [View accuracy report](reports/ACCURACY_REPORT.md). |
+| **Column alignment and data integrity — 20** | **126/126 public Unicode cells matched** their source-pinned reference. Leading zeros, duplicates, row provenance, safe formulas, and exact header/shape checks are preserved. [View external audit](reports/EXTERNAL_AUDIT.md). |
+| **Automation and error recovery — 15** | Automatic page routing, alternate extraction strategies, resumable checkpoints, arithmetic validation, correction previews, and review history. [View QA evidence](reports/QA_REPORT.md). |
+| **Code quality and usability — 10** | **222 Python + 14 frontend tests passed.** Responsive React UI, FastAPI backend, offline operation, searchable tables, saved workspaces, and multi-platform CI. [View build verification](reports/BUILD_VERIFICATION.md). |
 
 ## Run Truecell
 
