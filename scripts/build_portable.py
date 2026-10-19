@@ -18,6 +18,7 @@ BUILD = ROOT / "portable-build"
 RELEASES = ROOT / "portable-release"
 BUNDLE = RELEASES / "Truecell-Portable"
 ARCHIVE = RELEASES / "Truecell-Portable-Windows-x64.zip"
+ARCHIVE_CHECKSUM = ARCHIVE.with_suffix(ARCHIVE.suffix + ".sha256")
 
 
 def inside_workspace(path: Path) -> bool:
@@ -40,7 +41,9 @@ def copy_release_documents() -> None:
     shutil.copy2(ROOT / "portable" / "README-FIRST.txt", BUNDLE / "README-FIRST.txt")
     for name in ("LICENSE", "THIRD_PARTY.md"):
         shutil.copy2(ROOT / name, BUNDLE / name)
-    model_notices = BUNDLE / "MODEL-NOTICES"
+    third_party_notices = BUNDLE / "third_party_licenses"
+    shutil.copytree(ROOT / "third_party_licenses", third_party_notices)
+    model_notices = BUNDLE / "models"
     model_notices.mkdir(exist_ok=True)
     for name in ("README.md", "LICENSE-APACHE-2.0.txt"):
         shutil.copy2(ROOT / "models" / name, model_notices / name)
@@ -62,12 +65,15 @@ def write_manifest() -> None:
 
 def make_archive() -> None:
     remove_build_path(ARCHIVE)
+    remove_build_path(ARCHIVE_CHECKSUM)
     with zipfile.ZipFile(
         ARCHIVE, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6
     ) as archive:
         for path in sorted(BUNDLE.rglob("*")):
             if path.is_file():
                 archive.write(path, Path(BUNDLE.name) / path.relative_to(BUNDLE))
+    digest = sha256(ARCHIVE)
+    ARCHIVE_CHECKSUM.write_text(f"{digest}  {ARCHIVE.name}\n", encoding="utf-8")
 
 
 def main() -> int:

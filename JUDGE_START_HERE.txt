@@ -22,7 +22,8 @@ Quick-demo buttons: Invoice register / Find a wrong balance / Skewed scan.
 Upload Sparse text schedule / Sideways invoice / Page carry-forwards from
 the samples/ folder. All sample data is dummy.
 All 22 dummy PDFs, truth workbooks and converted workbooks are in the source folder.
-The existing submission ZIP predates the latest upgrades; rebuild only when ready.
+Truecell-2.0-Submission.zip contains the current source, samples, converted workbooks,
+reports, tests and setup instructions.
 
 CLI: python convert.py samples/A_invoice_register.pdf -o outputs/demo.xlsx
 Tests: python -m pytest -q
@@ -31,4 +32,5 @@ Full development evaluation: python scripts/judge_check.py
 
 Read README.md and reports/BUILD_VERIFICATION.md for setup and limitations.
 Development tests are not hidden-document accuracy guarantees.
-docs/DEMO_SCRIPT.md is a recording script; the actual video is separate.
+Demo video (3:53): https://pranay207.github.io/Truecell/demo/
+The matching recording script is in docs/DEMO_SCRIPT.md.

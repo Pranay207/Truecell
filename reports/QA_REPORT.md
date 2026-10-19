@@ -1,6 +1,6 @@
 # QA pass - 17 October 2026
 
-Tested on Windows with Python 3.11.9. This pass covers the current source folder. The submission ZIP was intentionally left unchanged.
+Tested on Windows with Python 3.11.9. This pass covers the current source folder; the source/evidence archive was rebuilt from the reviewed Git-tracked allowlist on 19 October 2026.
 
 ## Issues found and fixed
 
@@ -49,4 +49,4 @@ The fresh five-page raster-only continuation conversion took **174.97 seconds** 
 
 Concurrent OCR testing produced a much slower photo run, retained in the raw benchmark reports. Timings vary with CPU contention, model startup and document quality; they are not a cross-machine speed guarantee. Peak memory and execution on other operating systems/Python versions were not measured here.
 
-No live cloud-provider request, hidden-test accuracy claim, actual demo recording or new submission archive is included in this QA pass. External project review materials remain outside this repository.
+No live cloud-provider request or hidden-test accuracy claim is included in this QA pass. The final 3:53 demo and current source/evidence archive accompany the submission. External project review materials remain outside this repository.

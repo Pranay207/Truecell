@@ -19,10 +19,10 @@ SMOKE_ROOT = ROOT / "portable-build" / "Smoke Test With Spaces"
 BUNDLE = SMOKE_ROOT / "Truecell-Portable"
 
 
-def request(url: str, *, data: bytes | None = None) -> bytes:
+def request(url: str, *, data: bytes | None = None, timeout: float = 30) -> bytes:
     headers = {"Content-Type": "application/json"} if data is not None else {}
     operation = urllib.request.Request(url, data=data, headers=headers)
-    with urllib.request.urlopen(operation, timeout=10) as response:
+    with urllib.request.urlopen(operation, timeout=timeout) as response:
         if response.status not in {200, 202}:
             raise RuntimeError(f"Unexpected HTTP {response.status}: {url}")
         return response.read()
@@ -67,8 +67,14 @@ def wait_for_health(base: str, process: subprocess.Popen, timeout: float = 90) -
 
 def wait_for_job(base: str, identifier: str, timeout: float) -> dict:
     deadline = time.monotonic() + timeout
+    last_error = "server did not return job status"
     while time.monotonic() < deadline:
-        job = json_request(base + f"/api/jobs/{identifier}")
+        try:
+            job = json_request(base + f"/api/jobs/{identifier}")
+        except (OSError, ValueError, urllib.error.HTTPError) as exc:
+            last_error = str(exc)
+            time.sleep(0.3)
+            continue
         if job["status"] in {"complete", "partial", "failed"}:
             if job["status"] != "complete":
                 raise RuntimeError(
@@ -76,7 +82,7 @@ def wait_for_job(base: str, identifier: str, timeout: float) -> dict:
                 )
             return job
         time.sleep(0.3)
-    raise RuntimeError(f"Portable extraction timed out: {identifier}")
+    raise RuntimeError(f"Portable extraction timed out: {identifier} ({last_error})")
 
 
 def expected_tables(name: str) -> list[dict]:

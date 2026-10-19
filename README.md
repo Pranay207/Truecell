@@ -67,6 +67,11 @@ These are disclosed dummy development fixtures, not blind or hidden-document acc
 
 ## Run Truecell
 
+The final submission provides two separate archives:
+
+- `Truecell-Portable-Windows-x64.zip` — easiest Windows application; extract and run without installing Python.
+- `Truecell-2.0-Submission.zip` — current source, samples, converted workbooks, reports, tests and setup documentation.
+
 ### 1. Windows portable — easiest
 
 Use the supplied `Truecell-Portable-Windows-x64.zip` on **Windows 10/11 x64**:
@@ -77,7 +82,7 @@ Use the supplied `Truecell-Portable-Windows-x64.zip` on **Windows 10/11 x64**:
 
 Python, Node.js, an API key and internet access are not required. The portable folder includes the React application, local FastAPI server, RapidOCR, OCR models and demo PDFs. Saved documents remain beside the executable in `TruecellData`; keep the entire extracted folder together. The console window shows the local address and stops the server when closed.
 
-The tested portable bundle is a PyInstaller one-folder application: **316.41 MB extracted / 152.36 MB zipped**. Its packaged EXE passed health and UI checks, exact native-PDF extraction, a RapidOCR scan with external Tesseract disabled, Excel/audit downloads, launch from a path containing spaces, and workspace persistence after restart. See [portable instructions](portable/README-FIRST.txt).
+The tested portable bundle is a PyInstaller one-folder application: **316.56 MiB extracted / 152.42 MiB zipped**. Its packaged EXE passed health and UI checks, exact native-PDF extraction, a RapidOCR scan with external Tesseract disabled, Excel/audit downloads, launch from a path containing spaces, and workspace persistence after restart. See [portable instructions](portable/README-FIRST.txt).
 
 ### 2. Python/source launcher
 
