@@ -37,7 +37,7 @@ Truecell is a local-first React and FastAPI application built for the **INCUXAI 
 
 </details>
 
-## Judge snapshot
+## Verified Results
 
 | Verified result | Evidence |
 |---|---|
