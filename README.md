@@ -174,7 +174,9 @@ The five-page raster benchmark selected local Tesseract and took about three min
 
 Use the prepared [3–4 minute recording script](docs/DEMO_SCRIPT.md) for the full walkthrough.
 
-<!-- Add the recorded demo video URL here before submission. -->
+### [▶ Watch the 3:53 professional demo](https://pranay207.github.io/Truecell/demo/)
+
+The browser player includes professional narration, English captions, and real Truecell workflows. It demonstrates source-linked cells, arithmetic validation, counterfactual correction preview, human review history, multipage OCR joins, large-table search, and the evidence-rich Excel export.
 
 ## How it works
 

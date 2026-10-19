@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b8b84">
+    <meta name="description" content="Watch the 3 minute 53 second Truecell competition demo.">
+    <title>Truecell — Professional Demo</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #102f33;
+        --muted: #587175;
+        --teal: #0b8b84;
+        --line: #d7e2da;
+        --paper: #fbfcf9;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        overflow-x: hidden;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 12% 12%, rgba(11, 139, 132, 0.12), transparent 30rem),
+          radial-gradient(circle at 90% 85%, rgba(131, 119, 189, 0.10), transparent 28rem),
+          #f3f6f1;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      main {
+        width: calc(100% - 32px);
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 38px 0 52px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 32px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        font-size: clamp(1.45rem, 4vw, 2rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+
+      .mark {
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        border-radius: 13px;
+        color: white;
+        background: var(--teal);
+        box-shadow: 0 10px 28px rgba(11, 139, 132, 0.22);
+      }
+
+      .mark svg { width: 27px; height: 27px; }
+
+      .badge {
+        padding: 8px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+        background: rgba(255, 255, 255, 0.68);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .intro {
+        max-width: 780px;
+        margin-bottom: 25px;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2.15rem, 7vw, 4.5rem);
+        line-height: 0.98;
+        letter-spacing: -0.065em;
+      }
+
+      .intro p {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2.2vw, 1.25rem);
+        line-height: 1.6;
+      }
+
+      .player {
+        overflow: hidden;
+        padding: 10px;
+        border: 1px solid rgba(16, 47, 51, 0.12);
+        border-radius: 24px;
+        background: #0d1719;
+        box-shadow: 0 28px 80px rgba(26, 55, 50, 0.2);
+      }
+
+      video {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 15px;
+        background: #071113;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin: 20px 0;
+      }
+
+      .fact {
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.68);
+        font-size: 0.88rem;
+        font-weight: 700;
+        text-align: center;
+        overflow-wrap: anywhere;
+      }
+
+      footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      a { color: var(--teal); font-weight: 700; }
+
+      @media (max-width: 720px) {
+        main { width: calc(100% - 20px); padding-top: 20px; }
+        header { align-items: flex-start; flex-direction: column; margin-bottom: 25px; }
+        .badge { font-size: 0.65rem; }
+        .player { padding: 5px; border-radius: 15px; }
+        video { border-radius: 10px; }
+        .facts { grid-template-columns: repeat(2, 1fr); }
+        footer { align-items: flex-start; flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="brand">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3" y="3" width="14" height="14" rx="2"></rect>
+              <path d="M3 8h14M3 12.5h14M8 3v14M12.5 3v14M15.5 19.5l2.2 2.2L22 16.8"></path>
+            </svg>
+          </span>
+          Truecell
+        </div>
+        <span class="badge">Competition demo · 3:53</span>
+      </header>
+
+      <section class="intro">
+        <h1>Every cell.<br>Accounted for.</h1>
+        <p>See Truecell turn documents into validated Excel while preserving source evidence, numeric checks, human review, and an exportable audit trail.</p>
+      </section>
+
+      <section class="player" aria-label="Truecell professional demo video">
+        <video controls playsinline preload="metadata" poster="truecell-demo-poster.jpg">
+          <source src="truecell-demo.mp4" type="video/mp4">
+          <track kind="captions" src="truecell-demo.en.vtt" srclang="en" label="English" default>
+          Your browser cannot play this video. <a href="truecell-demo.mp4">Download the MP4</a>.
+        </video>
+      </section>
+
+      <section class="facts" aria-label="Demo highlights">
+        <div class="fact">Offline OCR</div>
+        <div class="fact">Source evidence</div>
+        <div class="fact">Numeric validation</div>
+        <div class="fact">Reviewable Excel</div>
+      </section>
+
+      <footer>
+        <span>1080p · narrated · English captions · real Truecell workflows</span>
+        <span><a href="truecell-demo.mp4">Direct MP4</a> · <a href="https://github.com/Pranay207/Truecell">Source code</a></span>
+      </footer>
+    </main>
+  </body>
+</html>

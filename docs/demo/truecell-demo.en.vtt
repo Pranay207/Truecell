@@ -1,0 +1,206 @@
+﻿WEBVTT
+
+1
+00:00:00.220 --> 00:00:03.455
+Most PDF-to-Excel demos stop when a spreadsheet appears.
+
+2
+00:00:03.455 --> 00:00:04.264
+Truecell continues.
+
+3
+00:00:04.264 --> 00:00:10.734
+It verifies the numbers, shows where every cell came from, and records what happened during review.
+
+4
+00:00:10.734 --> 00:00:14.777
+This is document extraction built for evidence, not just output.
+
+5
+00:00:15.427 --> 00:00:18.937
+A basic extraction workflow ends with rows and columns.
+
+6
+00:00:18.937 --> 00:00:24.006
+Truecell continues through validation, source tracing, explicit human review, and an audit-ready workbook.
+
+7
+00:00:24.006 --> 00:00:30.245
+Each layer is visible in the application and reproducible from the supplied source, samples, and reports.
+
+8
+00:00:30.895 --> 00:00:35.581
+Truecell runs locally on CPU, without an API key or cloud AI upload.
+
+9
+00:00:35.581 --> 00:00:42.070
+It handles native PDFs and scanned documents, detects tables automatically, and accepts files up to two hundred pages.
+
+10
+00:00:42.070 --> 00:00:45.674
+The measured evidence shown in this demo covers fifty pages.
+
+11
+00:00:46.324 --> 00:00:51.651
+In this dummy bank statement, the table appears in seconds, but extraction is only step one.
+
+12
+00:00:51.651 --> 00:00:53.649
+Truecell builds a bounded priority queue.
+
+13
+00:00:53.649 --> 00:01:00.974
+It flags a wrong total, a sparse summary row, and two running-balance breaks while retaining the original page beside the structured grid.
+
+14
+00:01:01.624 --> 00:01:07.514
+Selecting the balance finding jumps to row eleven, column Z, and outlines the exact source cell.
+
+15
+00:01:07.514 --> 00:01:13.035
+The evidence drawer retains the original reading, page, source box, extraction engine, and confidence context.
+
+16
+00:01:13.035 --> 00:01:16.717
+A reviewer can inspect the document before touching the value.
+
+17
+00:01:17.367 --> 00:01:22.441
+Truecell discovers repeated numeric relationships instead of relying on fixed financial column names.
+
+18
+00:01:22.441 --> 00:01:26.734
+Fifteen of seventeen eligible rows agree with the inferred balance equation.
+
+19
+00:01:26.734 --> 00:01:30.247
+The printed value, one thousand eighty-one, breaks two checks.
+
+20
+00:01:30.247 --> 00:01:34.150
+Two equation instances support a proposal of one thousand sixty-four.
+
+21
+00:01:34.800 --> 00:01:38.451
+Before editing, Truecell evaluates the proposal on a disposable copy.
+
+22
+00:01:38.451 --> 00:01:44.293
+Review findings fall from four to two, and failed equation checks fall from two to zero.
+
+23
+00:01:44.293 --> 00:01:46.118
+The working data remains unchanged.
+
+24
+00:01:46.118 --> 00:01:50.865
+Agreement is evidence, not permission, so the agent never silently applies the correction.
+
+25
+00:01:51.515 --> 00:01:56.881
+After checking the source, the reviewer supplies a reason and explicitly saves the corrected value.
+
+26
+00:01:56.881 --> 00:02:03.321
+The original reading remains available, and the audit rail records the before value, after value, timestamp, and explanation.
+
+27
+00:02:03.321 --> 00:02:06.898
+This is a traceable human decision, not an invisible rewrite.
+
+28
+00:02:07.548 --> 00:02:14.024
+Now the difficult case: five raster-only pages, twelve columns, repeated headers, and records split across page boundaries.
+
+29
+00:02:14.024 --> 00:02:20.500
+Truecell joins all five pages into one table, removes four repeated headers, and recovers both split rows.
+
+30
+00:02:20.500 --> 00:02:24.309
+The join receipt exposes every merge instead of hiding it.
+
+31
+00:02:24.959 --> 00:02:29.813
+This disclosed stress fixture contains fifty pages, eight hundred rows, and twelve columns.
+
+32
+00:02:29.813 --> 00:02:33.173
+Searching for invoice eight hundred returns one exact match.
+
+33
+00:02:33.173 --> 00:02:38.027
+Selecting it moves straight to page fifty and outlines the original source value.
+
+34
+00:02:38.027 --> 00:02:40.641
+Search never breaks the row-to-page evidence link.
+
+35
+00:02:41.291 --> 00:02:45.086
+Truecell perturbs disposable copies and reports both detections and misses.
+
+36
+00:02:45.086 --> 00:02:50.019
+In this live run, fourteen of twenty-four controlled edits raised a new finding.
+
+37
+00:02:50.019 --> 00:02:53.055
+The untouched source and review history remain safe.
+
+38
+00:02:53.055 --> 00:02:58.748
+This measures validation sensitivity, not OCR accuracy, and it keeps limitations visible to the judge.
+
+39
+00:02:59.398 --> 00:03:02.048
+The Excel output is designed for inspection.
+
+40
+00:03:02.048 --> 00:03:09.998
+Alongside the data, it includes cell evidence, validation findings, the join receipt, page audit, inferred constraints, correction history, verification, and provenance.
+
+41
+00:03:09.998 --> 00:03:16.434
+Judges can trace a spreadsheet value back to the page and understand how the result was produced.
+
+42
+00:03:17.084 --> 00:03:18.997
+The claims are deliberately scoped.
+
+43
+00:03:18.997 --> 00:03:23.208
+Twenty-two of twenty-two disclosed development cases passed their defined exact checks.
+
+44
+00:03:23.208 --> 00:03:28.184
+The packaged RapidOCR suite passed five of five scan cases with Tesseract excluded.
+
+45
+00:03:28.184 --> 00:03:33.160
+The public Unicode audit matched one hundred twenty-six of one hundred twenty-six cells.
+
+46
+00:03:33.160 --> 00:03:37.371
+These are development results, not a promise about every hidden document.
+
+47
+00:03:38.021 --> 00:03:40.532
+Many tools can extract a table.
+
+48
+00:03:40.532 --> 00:03:47.229
+Truecell adds what serious document work requires: validation, source evidence, review discipline, and an audit trail.
+
+49
+00:03:47.229 --> 00:03:50.577
+This is the difference a judge can inspect.
+
+50
+00:03:50.577 --> 00:03:50.996
+Truecell.
+
+51
+00:03:50.996 --> 00:03:52.670
+Every cell, accounted for.
+
