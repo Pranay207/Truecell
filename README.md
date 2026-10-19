@@ -20,6 +20,11 @@
 
 Truecell is a local-first React and FastAPI application built for the **INCUXAI AI Agent Development Challenge 2026**. It detects tables, reconstructs difficult layouts, joins continuations across pages, checks numeric relationships, and exports reviewable Excel workbooks. Every retained value can carry its page, source box, extraction engine, original reading, and confidence evidence.
 
+<p align="center">
+  <a href="https://pranay207.github.io/Truecell/demo/"><strong>▶ Watch the 3:53 Product Demo</strong></a><br>
+  <sub>See source-linked extraction, validation, correction review, multipage joins, search, and evidence-rich Excel export.</sub>
+</p>
+
 ![Truecell home screen with local document upload and guided samples](docs/images/truecell-home.png)
 
 *Local-first upload and guided sample workflow.*
@@ -173,10 +178,6 @@ The five-page raster benchmark selected local Tesseract and took about three min
 6. Export Excel, then show the Data, Cell Evidence, Validation Report, Join Receipt, Constraints, Page Audit, and Verification sheets.
 
 Use the prepared [3–4 minute recording script](docs/DEMO_SCRIPT.md) for the full walkthrough.
-
-### [▶ Watch the 3:53 professional demo](https://pranay207.github.io/Truecell/demo/)
-
-The browser player includes professional narration, English captions, and real Truecell workflows. It demonstrates source-linked cells, arithmetic validation, counterfactual correction preview, human review history, multipage OCR joins, large-table search, and the evidence-rich Excel export.
 
 ## How it works
 
