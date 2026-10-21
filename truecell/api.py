@@ -26,19 +26,23 @@ from fastapi import FastAPI, File, Form, HTTPException, Query, Request, UploadFi
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from starlette.concurrency import run_in_threadpool
 
 from .assurance import challenge
 from .constraints import analyze, coverage
-from .export import export_workbook
+from .export import export_csv, export_workbook
 from .models import Result
-from .ocr import available_engines
+from .ocr import available_engines, tesseract_languages
 from .pipeline import convert
+from .profiling import normalize_languages
 from .review import (
     apply_edit,
     complete_review,
+    evidence_coverage,
+    evidence_status,
     fingerprint,
+    quality_state,
     review_current,
     review_queue,
     set_item_review,
@@ -90,10 +94,25 @@ def environment_lan_host() -> str | None:
     return host
 
 
+def environment_local_proxy() -> bool:
+    """Enable private bridge clients only for an explicitly configured local container."""
+    value = os.environ.get("TRUECELL_TRUST_LOCAL_PROXY", "").strip().lower()
+    if value not in {"", "0", "1", "false", "true"}:
+        raise RuntimeError("TRUECELL_TRUST_LOCAL_PROXY must be true, false, 1 or 0.")
+    return value in {"1", "true"}
+
+
 class ProcessOptions(BaseModel):
     model_config = ConfigDict(extra="forbid")
     verify: StrictBool = False
     force_ocr: StrictBool = False
+    ocr_languages: StrictStr = Field(default="eng", min_length=2, max_length=100)
+
+    @field_validator("ocr_languages")
+    @classmethod
+    def validate_ocr_languages(cls, value: str) -> str:
+        """Store canonical local OCR codes so retries use the exact same profile."""
+        return "+".join(normalize_languages(value))
 
 
 class SnapshotRequest(BaseModel):
@@ -201,6 +220,8 @@ class _Jobs:
                     result=result.to_dict(),
                     fingerprint=fingerprint(result),
                     coverage=coverage(result),
+                    evidence_coverage=evidence_coverage(result),
+                    quality=quality_state(result),
                     reviewed=review_current(result),
                     review_queue=review_queue(result),
                     result_is_previous=identifier in self.active,
@@ -267,6 +288,7 @@ class _Jobs:
                 source,
                 verify=options.verify,
                 force_ocr=options.force_ocr,
+                ocr_languages=options.ocr_languages,
                 allow_cloud=False,
                 checkpoint_dir=self.folder(identifier) / "pages",
                 progress=progress,
@@ -339,6 +361,7 @@ def create_app(
     max_upload_bytes: int = MAX_UPLOAD_BYTES,
     frontend: Path | None = None,
     lan_host: str | None = None,
+    trust_local_proxy: bool = False,
 ) -> FastAPI:
     """Create a local API; injectable roots/runner keep tests away from real jobs."""
     if lan_host is not None and not private_lan_address(lan_host):
@@ -362,6 +385,7 @@ def create_app(
     application = FastAPI(title="Truecell Local API", docs_url="/api/docs", lifespan=lifespan)
     application.state.jobs = jobs
     application.state.lan_host = lan_host
+    application.state.trust_local_proxy = trust_local_proxy
     origin_hosts = ["localhost", r"127\.0\.0\.1", r"\[::1\]"]
     if lan_host:
         origin_hosts.append(re.escape(lan_host))
@@ -383,7 +407,11 @@ def create_app(
             origin_port = origin_parts.port if origin_parts else None
         except ValueError:
             return JSONResponse({"detail": "Invalid request origin."}, status_code=403)
-        client_allowed = client in LOCAL_HOSTS or (bool(lan_host) and private_lan_address(client))
+        client_allowed = (
+            client in LOCAL_HOSTS
+            or (bool(lan_host) and private_lan_address(client))
+            or (trust_local_proxy and private_lan_address(client))
+        )
         if not client_allowed or host not in allowed_hosts:
             return JSONResponse({"detail": "This device or host is not allowed."}, status_code=403)
         if origin:
@@ -397,7 +425,15 @@ def create_app(
                 and origin_parts.scheme == request.url.scheme
                 and origin_port == request_port
             )
-            if not (loopback_development or same_lan_origin):
+            same_origin_local_proxy = bool(
+                trust_local_proxy
+                and host in LOCAL_HOSTS
+                and origin_host == host
+                and origin_parts
+                and origin_parts.scheme == request.url.scheme
+                and origin_port == request_port
+            )
+            if not (loopback_development or same_lan_origin or same_origin_local_proxy):
                 return JSONResponse({"detail": "This origin is not allowed."}, status_code=403)
         length = request.headers.get("content-length")
         if length:
@@ -420,20 +456,48 @@ def create_app(
             "max_pages": MAX_PAGES,
             "max_upload_bytes": jobs.maximum,
             "ocr_engines": available_engines(),
-            "network_mode": "lan" if lan_host else "loopback",
+            "tesseract_languages": list(tesseract_languages()),
+            "network_mode": "lan"
+            if lan_host
+            else "local-container"
+            if trust_local_proxy
+            else "loopback",
         }
 
     @application.get("/api/jobs")
     def saved_jobs():
-        return {"jobs": list_jobs(jobs.root)}
+        records = list_jobs(jobs.root)
+        for record in records:
+            if (jobs.folder(record["id"]) / "current.json").is_file():
+                try:
+                    record["quality"] = quality_state(jobs.result(record["id"]))
+                except HTTPException:
+                    record["quality"] = {
+                        "status": "needs_rescan",
+                        "reasons": ["The saved extraction could not be verified."],
+                        "reviewed_export_ready": False,
+                        "draft_export_ready": False,
+                    }
+        return {"jobs": records}
 
     @application.post("/api/jobs", status_code=202)
     async def upload_job(
         file: Annotated[UploadFile, File()],
         verify: Annotated[bool, Form()] = False,
         force_ocr: Annotated[bool, Form()] = False,
+        ocr_languages: Annotated[str, Form(min_length=2, max_length=100)] = "eng",
     ):
         try:
+            try:
+                options = ProcessOptions(
+                    verify=verify,
+                    force_ocr=force_ocr,
+                    ocr_languages=ocr_languages,
+                )
+            except ValueError as exc:
+                raise HTTPException(
+                    422, "Use valid three-letter local OCR language codes."
+                ) from exc
             content = bytearray()
             while chunk := await file.read(min(1024 * 1024, jobs.maximum + 1)):
                 content.extend(chunk)
@@ -443,7 +507,7 @@ def create_app(
                 jobs.upload,
                 file.filename or "document.pdf",
                 bytes(content),
-                ProcessOptions(verify=verify, force_ocr=force_ocr),
+                options,
             )
             return await run_in_threadpool(jobs.detail, identifier)
         finally:
@@ -480,6 +544,7 @@ def create_app(
                     verify=saved_options.get("verify", False) is True,
                     force_ocr=saved_options.get("force_ocr", saved_options.get("force", False))
                     is True,
+                    ocr_languages=saved_options.get("ocr_languages", "eng"),
                 )
             if (jobs.folder(identifier) / "current.json").exists():
                 current = jobs.result(identifier)
@@ -508,6 +573,8 @@ def create_app(
             "result": result.to_dict(),
             "fingerprint": fingerprint(result),
             "coverage": coverage(result),
+            "evidence_coverage": evidence_coverage(result),
+            "quality": quality_state(result),
         }
 
     @application.patch("/api/jobs/{identifier}/cells")
@@ -616,6 +683,26 @@ def create_app(
                 raise HTTPException(400, str(exc)) from exc
             return jobs.detail(identifier)
 
+    @application.get("/api/jobs/{identifier}/review-queue")
+    def paged_review_queue(
+        identifier: str,
+        offset: Annotated[int, Query(ge=0)] = 0,
+        limit: Annotated[int, Query(ge=1, le=500)] = 100,
+        table: Annotated[int | None, Query(ge=0)] = None,
+        status: Annotated[str | None, Query(pattern="^(pending|checked)$")] = None,
+    ):
+        result = jobs.result(identifier)
+        try:
+            return review_queue(
+                result,
+                offset=offset,
+                limit=limit,
+                table=table,
+                status=status,
+            )
+        except ValueError as exc:
+            raise HTTPException(400, str(exc)) from exc
+
     @application.post("/api/jobs/{identifier}/revalidate")
     def revalidate(identifier: str, snapshot: SnapshotRequest):
         with jobs.lock:
@@ -643,8 +730,22 @@ def create_app(
         values = target.headers if row == -1 else target.rows[row]
         if not 0 <= column < len(values):
             raise HTTPException(400, "Invalid column index.")
-        records = target.header_sources[column] if row == -1 else target.cell_sources[row][column]
-        return {"value": values[column], "sources": records}
+        if row == -1:
+            records = target.header_sources[column] if column < len(target.header_sources) else []
+            fallback_page = target.page
+        else:
+            source_row = target.cell_sources[row] if row < len(target.cell_sources) else []
+            records = source_row[column] if column < len(source_row) else []
+            fallback_page = (
+                target.provenance[row][0][0]
+                if row < len(target.provenance) and target.provenance[row]
+                else target.page
+            )
+        return {
+            "value": values[column],
+            "sources": records,
+            "location": evidence_status(values[column], records, fallback_page),
+        }
 
     def checked_source(identifier: str) -> Path:
         source = jobs.source(identifier)
@@ -687,12 +788,45 @@ def create_app(
     def excel_download(identifier: str):
         result = jobs.result(identifier)
         with TemporaryDirectory(prefix="truecell-xlsx-") as temporary:
-            output = export_workbook(result, Path(temporary) / "result.xlsx")
+            output = export_workbook(result, Path(temporary) / "result.xlsx", reviewed=False)
             content = output.read_bytes()
         return Response(
             content,
             media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-            headers={"Content-Disposition": 'attachment; filename="truecell-result.xlsx"'},
+            headers={"Content-Disposition": 'attachment; filename="truecell-draft.xlsx"'},
+        )
+
+    @application.get("/api/jobs/{identifier}/reviewed.xlsx")
+    def reviewed_excel_download(identifier: str):
+        result = jobs.result(identifier)
+        try:
+            with TemporaryDirectory(prefix="truecell-reviewed-xlsx-") as temporary:
+                output = export_workbook(result, Path(temporary) / "reviewed.xlsx", reviewed=True)
+                content = output.read_bytes()
+        except ValueError as exc:
+            raise HTTPException(409, str(exc)) from exc
+        return Response(
+            content,
+            media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            headers={"Content-Disposition": 'attachment; filename="truecell-reviewed.xlsx"'},
+        )
+
+    @application.get("/api/jobs/{identifier}/export.csv")
+    def csv_download(
+        identifier: str,
+        table: Annotated[int, Query(ge=1)] = 1,
+    ):
+        result = jobs.result(identifier)
+        try:
+            with TemporaryDirectory(prefix="truecell-csv-") as temporary:
+                output = export_csv(result, Path(temporary) / "result.csv", table=table - 1)
+                content = output.read_bytes()
+        except ValueError as exc:
+            raise HTTPException(404, str(exc)) from exc
+        return Response(
+            content,
+            media_type="text/csv; charset=utf-8",
+            headers={"Content-Disposition": f'attachment; filename="truecell-table-{table}.csv"'},
         )
 
     def audit_response(identifier: str, baseline: bool = False):
@@ -758,4 +892,7 @@ def create_app(
     return application
 
 
-app = create_app(lan_host=environment_lan_host())
+app = create_app(
+    lan_host=environment_lan_host(),
+    trust_local_proxy=environment_local_proxy(),
+)

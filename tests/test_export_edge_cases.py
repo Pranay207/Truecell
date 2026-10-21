@@ -6,9 +6,16 @@ from decimal import Decimal
 import pytest
 from openpyxl import load_workbook
 
-from truecell.export import EXCEL_TEXT_LIMIT, excel_text, export_workbook
+from truecell.export import EXCEL_TEXT_LIMIT, csv_text, excel_text, export_csv, export_workbook
 from truecell.models import Issue, Result, Table
-from truecell.review import apply_edit, complete_review
+from truecell.review import apply_edit, complete_review, review_queue, set_item_review
+
+
+def check_every_review_item(result):
+    for item in review_queue(result, limit=None)["items"]:
+        if item["status"] == "pending":
+            result = set_item_review(result, item["id"], True)
+    return result
 
 
 def decode_text(encoded):
@@ -54,7 +61,7 @@ def test_controls_in_data_header_evidence_and_review_metadata_export(tmp_path):
     table.header_sources = [[{"page": 1, "bbox": [0, 0, 10, 2], "text": header}]]
     table.cell_sources = [[[{"page": 1, "bbox": [0, 2, 10, 10], "text": original}]]]
     result = apply_edit(Result("dummy\x05.pdf", [table]), 0, 0, 0, corrected, reason)
-    result = complete_review(result, True, review_note)
+    result = complete_review(check_every_review_item(result), True, review_note)
     before = deepcopy(result.to_dict())
 
     workbook = load_workbook(export_workbook(result, tmp_path / "controls.xlsx"))
@@ -71,6 +78,41 @@ def test_controls_in_data_header_evidence_and_review_metadata_export(tmp_path):
     assert decode_text(workbook["Read me"]["B2"].value) == result.source
     assert result.to_dict() == before
     assert not any(cell.data_type == "f" for sheet in workbook for row in sheet for cell in row)
+
+
+def test_reviewed_export_is_gated_and_labels_draft_and_reviewed(tmp_path):
+    table = Table(["ID"], [["001"]], 1, (0, 0, 10, 10), "native")
+    table.header_sources = [[{"page": 1, "bbox": [0, 0, 10, 2], "text": "ID"}]]
+    table.cell_sources = [[[{"page": 1, "bbox": [0, 2, 10, 10], "text": "001"}]]]
+    result = Result("dummy.pdf", [table])
+    draft = load_workbook(export_workbook(result, tmp_path / "draft.xlsx"))
+    values = {row[0].value: row[1].value for row in draft["Verification"]}
+    assert values["Export type"] == "Draft Excel"
+    with pytest.raises(ValueError, match="Reviewed Excel"):
+        export_workbook(result, tmp_path / "blocked.xlsx", reviewed=True)
+    reviewed = complete_review(result, True, "Checked the only source cell.")
+    final = load_workbook(export_workbook(reviewed, tmp_path / "reviewed.xlsx", reviewed=True))
+    values = {row[0].value: row[1].value for row in final["Verification"]}
+    assert values["Export type"] == "Reviewed Excel"
+
+
+def test_csv_export_is_utf8_and_formula_safe(tmp_path):
+    result = Result(
+        "dummy.pdf",
+        [
+            Table(
+                ["Name", "Formula"],
+                [["Jos\u00e9", "=2+2"], ["x", "+cmd"]],
+                1,
+                (0, 0, 1, 1),
+                "native",
+            )
+        ],
+    )
+    path = export_csv(result, tmp_path / "table.csv")
+    text = path.read_text(encoding="utf-8-sig")
+    assert "Jos\u00e9" in text and "'=2+2" in text and "'+cmd" in text
+    assert csv_text("ordinary") == "ordinary"
 
 
 def test_excel_limit_keeps_complete_values_in_numbered_chunks(tmp_path):

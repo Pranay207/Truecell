@@ -361,7 +361,7 @@
         1085.04,
         442.8
       ],
-      "engine": "ocr-tesseract",
+      "engine": "ocr-rapidocr+ocr-tesseract",
       "confidence": 0.96,
       "header_detected": true,
       "provenance": [
@@ -511,38 +511,32 @@
         ]
       ],
       "notes": [
+        "OCR rapidocr; deskew correction 0.00 degrees; values require source review.",
         "OCR tesseract; deskew correction 0.00 degrees; values require source review.",
-        "Cell recheck at grid row 1, column 2: 'Date' -> '|'; compare source.",
-        "Cell recheck at grid row 1, column 3: 'emt' -> 'lent'; compare source.",
-        "Cell recheck at grid row 1, column 4: 'SKY' -> 'mo'; compare source.",
-        "Cell recheck at grid row 1, column 8: 'Amt' -> 'ea'; compare source.",
-        "Cell recheck at grid row 1, column 10: 'Sip' -> 'Shp'; compare source.",
-        "Cell recheck at grid row 1, column 11: 'aglon' -> 'Region'; compare source.",
-        "Cell recheck at grid row 1, column 12: 'Sttus' -> 'sus'; compare source.",
-        "Cell recheck at grid row 5, column 6: 'a' -> '4'; compare source.",
         "Cell recheck at grid row 1, column 1: 'Imvlce' -> 'Invoice'; compare source.",
         "Cell recheck at grid row 1, column 2: 'Date' -> 'me'; compare source.",
         "Cell recheck at grid row 1, column 3: 'ont' -> 'lent'; compare source.",
         "Cell recheck at grid row 1, column 4: 'SKY' -> 'ee'; compare source.",
         "Cell recheck at grid row 1, column 5: 'Deserpton ty,' -> 'ee'; compare source.",
         "Cell recheck at grid row 1, column 8: 'mt' -> 'ee'; compare source.",
+        "Cell recheck at grid row 1, column 10: 'Sip' -> 'Shp'; compare source.",
         "Cell recheck at grid row 1, column 11: 'eglon' -> 'Region'; compare source.",
         "Cell recheck at grid row 1, column 12: 'Stu' -> 'sus'; compare source.",
         "Cell recheck at grid row 7, column 6: 'a' -> '4'; compare source."
       ],
       "row_engines": [
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
         "ocr-tesseract",
         "ocr-tesseract",
         "ocr-tesseract",
@@ -568,8 +562,8 @@
                 145.92
               ],
               "text": "INV-0001",
-              "engine": "ocr-tesseract",
-              "confidence": 0.92,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999039098620415,
               "coordinates": "page points",
               "initial_reading": "INV-0001"
             }
@@ -584,8 +578,8 @@
                 145.92
               ],
               "text": "2026-10-01",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999395310878754,
               "coordinates": "page points",
               "initial_reading": "2026-10-01"
             }
@@ -600,8 +594,8 @@
                 145.92
               ],
               "text": "Client 1",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9992003664374352,
               "coordinates": "page points",
               "initial_reading": "Client 1"
             }
@@ -616,8 +610,8 @@
                 145.92
               ],
               "text": "000001",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9957939585049947,
               "coordinates": "page points",
               "initial_reading": "000001"
             }
@@ -632,8 +626,8 @@
                 145.92
               ],
               "text": "Widget model 1",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9992988194738116,
               "coordinates": "page points",
               "initial_reading": "Widget model 1"
             }
@@ -648,8 +642,8 @@
                 145.92
               ],
               "text": "1",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999617338180542,
               "coordinates": "page points",
               "initial_reading": "1"
             }
@@ -664,8 +658,8 @@
                 145.92
               ],
               "text": "12.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996767640113831,
               "coordinates": "page points",
               "initial_reading": "12.00"
             }
@@ -680,8 +674,8 @@
                 145.92
               ],
               "text": "12.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996102333068848,
               "coordinates": "page points",
               "initial_reading": "12.00"
             }
@@ -696,8 +690,8 @@
                 145.92
               ],
               "text": "1.20",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9990893751382828,
               "coordinates": "page points",
               "initial_reading": "1.20"
             }
@@ -712,8 +706,8 @@
                 145.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998559802770615,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -728,8 +722,8 @@
                 145.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998656034469604,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -744,8 +738,8 @@
                 145.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997527301311493,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -762,8 +756,8 @@
                 173.04
               ],
               "text": "INV-0002",
-              "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998719543218613,
               "coordinates": "page points",
               "initial_reading": "INV-0002"
             }
@@ -778,8 +772,8 @@
                 173.04
               ],
               "text": "2026-10-02",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999894654750824,
               "coordinates": "page points",
               "initial_reading": "2026-10-02"
             }
@@ -794,8 +788,8 @@
                 173.04
               ],
               "text": "Client 2",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9886299148201942,
               "coordinates": "page points",
               "initial_reading": "Client 2"
             }
@@ -810,8 +804,8 @@
                 173.04
               ],
               "text": "000002",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9994642535845438,
               "coordinates": "page points",
               "initial_reading": "000002"
             }
@@ -826,8 +820,8 @@
                 173.04
               ],
               "text": "Widget model 2",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9699669522898537,
               "coordinates": "page points",
               "initial_reading": "Widget model 2"
             }
@@ -842,8 +836,8 @@
                 173.04
               ],
               "text": "2",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998804330825806,
               "coordinates": "page points",
               "initial_reading": "2"
             }
@@ -858,8 +852,8 @@
                 173.04
               ],
               "text": "13.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998489379882812,
               "coordinates": "page points",
               "initial_reading": "13.00"
             }
@@ -874,8 +868,8 @@
                 173.04
               ],
               "text": "26.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997259736061096,
               "coordinates": "page points",
               "initial_reading": "26.00"
             }
@@ -890,8 +884,8 @@
                 173.04
               ],
               "text": "2.60",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999543771147728,
               "coordinates": "page points",
               "initial_reading": "2.60"
             }
@@ -906,8 +900,8 @@
                 173.04
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997939020395279,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -922,8 +916,8 @@
                 173.04
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998462438583374,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -938,8 +932,8 @@
                 173.04
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998145401477814,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -956,8 +950,8 @@
                 199.92
               ],
               "text": "INV-0003",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998549669981003,
               "coordinates": "page points",
               "initial_reading": "INV-0003"
             }
@@ -972,8 +966,8 @@
                 199.92
               ],
               "text": "2026-10-03",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999890661239624,
               "coordinates": "page points",
               "initial_reading": "2026-10-03"
             }
@@ -988,8 +982,8 @@
                 199.92
               ],
               "text": "Client 3",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9995972663164139,
               "coordinates": "page points",
               "initial_reading": "Client 3"
             }
@@ -1004,8 +998,8 @@
                 199.92
               ],
               "text": "000003",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9989360769589742,
               "coordinates": "page points",
               "initial_reading": "000003"
             }
@@ -1020,8 +1014,8 @@
                 199.92
               ],
               "text": "Widget model 3",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9904072880744934,
               "coordinates": "page points",
               "initial_reading": "Widget model 3"
             }
@@ -1036,8 +1030,8 @@
                 199.92
               ],
               "text": "3",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998828172683716,
               "coordinates": "page points",
               "initial_reading": "3"
             }
@@ -1052,8 +1046,8 @@
                 199.92
               ],
               "text": "14.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997891068458558,
               "coordinates": "page points",
               "initial_reading": "14.00"
             }
@@ -1068,8 +1062,8 @@
                 199.92
               ],
               "text": "42.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998340606689453,
               "coordinates": "page points",
               "initial_reading": "42.00"
             }
@@ -1084,8 +1078,8 @@
                 199.92
               ],
               "text": "4.20",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998335242271423,
               "coordinates": "page points",
               "initial_reading": "4.20"
             }
@@ -1100,8 +1094,8 @@
                 199.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999864786863327,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -1116,8 +1110,8 @@
                 199.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997793197631836,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -1132,8 +1126,8 @@
                 199.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997501820325851,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -1150,8 +1144,8 @@
                 226.8
               ],
               "text": "INV-0004",
-              "engine": "ocr-tesseract",
-              "confidence": 0.92,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998564273118973,
               "coordinates": "page points",
               "initial_reading": "INV-0004"
             }
@@ -1166,8 +1160,8 @@
                 226.8
               ],
               "text": "2026-10-04",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998108446598053,
               "coordinates": "page points",
               "initial_reading": "2026-10-04"
             }
@@ -1182,8 +1176,8 @@
                 226.8
               ],
               "text": "Client 4",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9995079934597015,
               "coordinates": "page points",
               "initial_reading": "Client 4"
             }
@@ -1198,8 +1192,8 @@
                 226.8
               ],
               "text": "000004",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9986623326937357,
               "coordinates": "page points",
               "initial_reading": "000004"
             }
@@ -1214,8 +1208,8 @@
                 226.8
               ],
               "text": "Widget model 4",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9811865176473346,
               "coordinates": "page points",
               "initial_reading": "Widget model 4"
             }
@@ -1230,10 +1224,10 @@
                 226.8
               ],
               "text": "4",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999655485153198,
               "coordinates": "page points",
-              "initial_reading": "a"
+              "initial_reading": "4"
             }
           ],
           [
@@ -1246,8 +1240,8 @@
                 226.8
               ],
               "text": "15.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998921394348145,
               "coordinates": "page points",
               "initial_reading": "15.00"
             }
@@ -1262,8 +1256,8 @@
                 226.8
               ],
               "text": "60.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996372580528259,
               "coordinates": "page points",
               "initial_reading": "60.00"
             }
@@ -1278,8 +1272,8 @@
                 226.8
               ],
               "text": "6.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997310042381287,
               "coordinates": "page points",
               "initial_reading": "6.00"
             }
@@ -1294,8 +1288,8 @@
                 226.8
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998121410608292,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -1310,8 +1304,8 @@
                 226.8
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998473048210144,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -1326,8 +1320,8 @@
                 226.8
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998452812433243,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -1344,8 +1338,8 @@
                 253.92
               ],
               "text": "INV-0005",
-              "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997659027576447,
               "coordinates": "page points",
               "initial_reading": "INV-0005"
             }
@@ -1360,8 +1354,8 @@
                 253.92
               ],
               "text": "2026-10-05",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998997509479522,
               "coordinates": "page points",
               "initial_reading": "2026-10-05"
             }
@@ -1376,8 +1370,8 @@
                 253.92
               ],
               "text": "Client 5",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9992491453886032,
               "coordinates": "page points",
               "initial_reading": "Client 5"
             }
@@ -1392,8 +1386,8 @@
                 253.92
               ],
               "text": "000005",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9994654754797617,
               "coordinates": "page points",
               "initial_reading": "000005"
             }
@@ -1408,8 +1402,8 @@
                 253.92
               ],
               "text": "Widget model 5",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9875032390866961,
               "coordinates": "page points",
               "initial_reading": "Widget model 5"
             }
@@ -1424,8 +1418,8 @@
                 253.92
               ],
               "text": "5",
-              "engine": "ocr-tesseract",
-              "confidence": 0.97,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998735189437866,
               "coordinates": "page points",
               "initial_reading": "5"
             }
@@ -1440,8 +1434,8 @@
                 253.92
               ],
               "text": "16.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998632550239563,
               "coordinates": "page points",
               "initial_reading": "16.00"
             }
@@ -1456,8 +1450,8 @@
                 253.92
               ],
               "text": "80.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997903347015381,
               "coordinates": "page points",
               "initial_reading": "80.00"
             }
@@ -1472,8 +1466,8 @@
                 253.92
               ],
               "text": "8.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.94,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997885525226593,
               "coordinates": "page points",
               "initial_reading": "8.00"
             }
@@ -1488,8 +1482,8 @@
                 253.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998473674058914,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -1504,8 +1498,8 @@
                 253.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9255781412124634,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -1520,8 +1514,8 @@
                 253.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996878206729889,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -1538,8 +1532,8 @@
                 281.04
               ],
               "text": "INV-0006",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998767897486687,
               "coordinates": "page points",
               "initial_reading": "INV-0006"
             }
@@ -1554,8 +1548,8 @@
                 281.04
               ],
               "text": "2026-10-06",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998534560203552,
               "coordinates": "page points",
               "initial_reading": "2026-10-06"
             }
@@ -1570,8 +1564,8 @@
                 281.04
               ],
               "text": "Client 6",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9984079301357269,
               "coordinates": "page points",
               "initial_reading": "Client 6"
             }
@@ -1586,8 +1580,8 @@
                 281.04
               ],
               "text": "000006",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9990598460038503,
               "coordinates": "page points",
               "initial_reading": "000006"
             }
@@ -1602,8 +1596,8 @@
                 281.04
               ],
               "text": "Widget model 6",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9916682243347168,
               "coordinates": "page points",
               "initial_reading": "Widget model 6"
             }
@@ -1618,8 +1612,8 @@
                 281.04
               ],
               "text": "6",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999686479568481,
               "coordinates": "page points",
               "initial_reading": "6"
             }
@@ -1634,8 +1628,8 @@
                 281.04
               ],
               "text": "17.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997598052024841,
               "coordinates": "page points",
               "initial_reading": "17.00"
             }
@@ -1650,8 +1644,8 @@
                 281.04
               ],
               "text": "102.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998788436253866,
               "coordinates": "page points",
               "initial_reading": "102.00"
             }
@@ -1666,8 +1660,8 @@
                 281.04
               ],
               "text": "10.20",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998751163482666,
               "coordinates": "page points",
               "initial_reading": "10.20"
             }
@@ -1682,8 +1676,8 @@
                 281.04
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998767524957657,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -1698,8 +1692,8 @@
                 281.04
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999839723110199,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -1714,8 +1708,8 @@
                 281.04
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998064488172531,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -1732,8 +1726,8 @@
                 307.92
               ],
               "text": "INV-0007",
-              "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998713135719299,
               "coordinates": "page points",
               "initial_reading": "INV-0007"
             }
@@ -1748,8 +1742,8 @@
                 307.92
               ],
               "text": "2026-10-07",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999901020526886,
               "coordinates": "page points",
               "initial_reading": "2026-10-07"
             }
@@ -1764,8 +1758,8 @@
                 307.92
               ],
               "text": "Client 7",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9995785430073738,
               "coordinates": "page points",
               "initial_reading": "Client 7"
             }
@@ -1780,8 +1774,8 @@
                 307.92
               ],
               "text": "000007",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9989546736081442,
               "coordinates": "page points",
               "initial_reading": "000007"
             }
@@ -1796,8 +1790,8 @@
                 307.92
               ],
               "text": "Widget model 7",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9872834554740361,
               "coordinates": "page points",
               "initial_reading": "Widget model 7"
             }
@@ -1812,8 +1806,8 @@
                 307.92
               ],
               "text": "7",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998205304145813,
               "coordinates": "page points",
               "initial_reading": "7"
             }
@@ -1828,8 +1822,8 @@
                 307.92
               ],
               "text": "18.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999887478351593,
               "coordinates": "page points",
               "initial_reading": "18.00"
             }
@@ -1844,8 +1838,8 @@
                 307.92
               ],
               "text": "126.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999131957689921,
               "coordinates": "page points",
               "initial_reading": "126.00"
             }
@@ -1860,8 +1854,8 @@
                 307.92
               ],
               "text": "12.60",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999796450138092,
               "coordinates": "page points",
               "initial_reading": "12.60"
             }
@@ -1876,8 +1870,8 @@
                 307.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999811053276062,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -1892,8 +1886,8 @@
                 307.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998297810554504,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -1908,8 +1902,8 @@
                 307.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997619837522507,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -1926,8 +1920,8 @@
                 334.8
               ],
               "text": "INV-0008",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998756423592567,
               "coordinates": "page points",
               "initial_reading": "INV-0008"
             }
@@ -1942,8 +1936,8 @@
                 334.8
               ],
               "text": "2026-10-08",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999883621931076,
               "coordinates": "page points",
               "initial_reading": "2026-10-08"
             }
@@ -1958,8 +1952,8 @@
                 334.8
               ],
               "text": "Client 8",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9995909407734871,
               "coordinates": "page points",
               "initial_reading": "Client 8"
             }
@@ -1974,8 +1968,8 @@
                 334.8
               ],
               "text": "000008",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9989058077335358,
               "coordinates": "page points",
               "initial_reading": "000008"
             }
@@ -1990,8 +1984,8 @@
                 334.8
               ],
               "text": "Widget model 8",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9901277635778699,
               "coordinates": "page points",
               "initial_reading": "Widget model 8"
             }
@@ -2006,8 +2000,8 @@
                 334.8
               ],
               "text": "1",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999704360961914,
               "coordinates": "page points",
               "initial_reading": "1"
             }
@@ -2022,8 +2016,8 @@
                 334.8
               ],
               "text": "19.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998228669166564,
               "coordinates": "page points",
               "initial_reading": "19.00"
             }
@@ -2038,8 +2032,8 @@
                 334.8
               ],
               "text": "19.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998784899711609,
               "coordinates": "page points",
               "initial_reading": "19.00"
             }
@@ -2054,8 +2048,8 @@
                 334.8
               ],
               "text": "1.90",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9993586838245392,
               "coordinates": "page points",
               "initial_reading": "1.90"
             }
@@ -2070,8 +2064,8 @@
                 334.8
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998867958784103,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -2086,8 +2080,8 @@
                 334.8
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997447967529297,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -2102,8 +2096,8 @@
                 334.8
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998017698526382,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -2120,8 +2114,8 @@
                 362.16
               ],
               "text": "INV-0009",
-              "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998861849308014,
               "coordinates": "page points",
               "initial_reading": "INV-0009"
             }
@@ -2136,8 +2130,8 @@
                 362.16
               ],
               "text": "2026-10-09",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9714889287948608,
               "coordinates": "page points",
               "initial_reading": "2026-10-09"
             }
@@ -2152,8 +2146,8 @@
                 362.16
               ],
               "text": "Client 9",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9973131641745567,
               "coordinates": "page points",
               "initial_reading": "Client 9"
             }
@@ -2168,8 +2162,8 @@
                 362.16
               ],
               "text": "000009",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9987626771132151,
               "coordinates": "page points",
               "initial_reading": "000009"
             }
@@ -2184,8 +2178,8 @@
                 362.16
               ],
               "text": "Widget model 9",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9708665013313293,
               "coordinates": "page points",
               "initial_reading": "Widget model 9"
             }
@@ -2200,8 +2194,8 @@
                 362.16
               ],
               "text": "2",
-              "engine": "ocr-tesseract",
-              "confidence": 0.97,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998472929000854,
               "coordinates": "page points",
               "initial_reading": "2"
             }
@@ -2216,8 +2210,8 @@
                 362.16
               ],
               "text": "20.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9995174169540405,
               "coordinates": "page points",
               "initial_reading": "20.00"
             }
@@ -2232,8 +2226,8 @@
                 362.16
               ],
               "text": "40.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996445298194885,
               "coordinates": "page points",
               "initial_reading": "40.00"
             }
@@ -2248,8 +2242,8 @@
                 362.16
               ],
               "text": "4.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996570944786072,
               "coordinates": "page points",
               "initial_reading": "4.00"
             }
@@ -2264,8 +2258,8 @@
                 362.16
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998591840267181,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -2280,8 +2274,8 @@
                 362.16
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998538374900818,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -2296,8 +2290,8 @@
                 362.16
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999800443649292,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -2314,8 +2308,8 @@
                 389.04
               ],
               "text": "INV-0010",
-              "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999892458319664,
               "coordinates": "page points",
               "initial_reading": "INV-0010"
             }
@@ -2330,8 +2324,8 @@
                 389.04
               ],
               "text": "2026-10-10",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999398469924927,
               "coordinates": "page points",
               "initial_reading": "2026-10-10"
             }
@@ -2346,8 +2340,8 @@
                 389.04
               ],
               "text": "Client 1",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9992458149790764,
               "coordinates": "page points",
               "initial_reading": "Client 1"
             }
@@ -2362,8 +2356,8 @@
                 389.04
               ],
               "text": "000010",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9993779261906942,
               "coordinates": "page points",
               "initial_reading": "000010"
             }
@@ -2378,8 +2372,8 @@
                 389.04
               ],
               "text": "Widget model 10",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9935513615608216,
               "coordinates": "page points",
               "initial_reading": "Widget model 10"
             }
@@ -2394,8 +2388,8 @@
                 389.04
               ],
               "text": "3",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998717308044434,
               "coordinates": "page points",
               "initial_reading": "3"
             }
@@ -2410,8 +2404,8 @@
                 389.04
               ],
               "text": "21.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9991572856903076,
               "coordinates": "page points",
               "initial_reading": "21.00"
             }
@@ -2426,8 +2420,8 @@
                 389.04
               ],
               "text": "63.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997150540351868,
               "coordinates": "page points",
               "initial_reading": "63.00"
             }
@@ -2442,8 +2436,8 @@
                 389.04
               ],
               "text": "6.30",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998583197593689,
               "coordinates": "page points",
               "initial_reading": "6.30"
             }
@@ -2458,8 +2452,8 @@
                 389.04
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998713433742523,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -2474,8 +2468,8 @@
                 389.04
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997491359710693,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -2490,8 +2484,8 @@
                 389.04
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997586458921432,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -2508,8 +2502,8 @@
                 415.92
               ],
               "text": "INV-0011",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998782649636269,
               "coordinates": "page points",
               "initial_reading": "INV-0011"
             }
@@ -2524,8 +2518,8 @@
                 415.92
               ],
               "text": "2026-10-11",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999357998371124,
               "coordinates": "page points",
               "initial_reading": "2026-10-11"
             }
@@ -2540,8 +2534,8 @@
                 415.92
               ],
               "text": "Client 2",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9987429231405258,
               "coordinates": "page points",
               "initial_reading": "Client 2"
             }
@@ -2556,8 +2550,8 @@
                 415.92
               ],
               "text": "000011",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997372031211853,
               "coordinates": "page points",
               "initial_reading": "000011"
             }
@@ -2572,8 +2566,8 @@
                 415.92
               ],
               "text": "Widget model 11",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9692920446395874,
               "coordinates": "page points",
               "initial_reading": "Widget model 11"
             }
@@ -2588,8 +2582,8 @@
                 415.92
               ],
               "text": "4",
-              "engine": "ocr-tesseract",
-              "confidence": 0.93,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999719858169556,
               "coordinates": "page points",
               "initial_reading": "4"
             }
@@ -2604,8 +2598,8 @@
                 415.92
               ],
               "text": "22.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998938322067261,
               "coordinates": "page points",
               "initial_reading": "22.00"
             }
@@ -2620,8 +2614,8 @@
                 415.92
               ],
               "text": "88.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997823119163514,
               "coordinates": "page points",
               "initial_reading": "88.00"
             }
@@ -2636,8 +2630,8 @@
                 415.92
               ],
               "text": "8.80",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999857485294342,
               "coordinates": "page points",
               "initial_reading": "8.80"
             }
@@ -2652,8 +2646,8 @@
                 415.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998402744531631,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -2668,8 +2662,8 @@
                 415.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998041033744812,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -2684,8 +2678,8 @@
                 415.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998005926609039,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -2702,8 +2696,8 @@
                 442.8
               ],
               "text": "INV-0012",
-              "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999093636870384,
               "coordinates": "page points",
               "initial_reading": "INV-0012"
             }
@@ -2718,8 +2712,8 @@
                 442.8
               ],
               "text": "2026-10-12",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999429225921631,
               "coordinates": "page points",
               "initial_reading": "2026-10-12"
             }
@@ -2734,8 +2728,8 @@
                 442.8
               ],
               "text": "Client 3",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9995703995227814,
               "coordinates": "page points",
               "initial_reading": "Client 3"
             }
@@ -2750,8 +2744,8 @@
                 442.8
               ],
               "text": "000012",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998907248179117,
               "coordinates": "page points",
               "initial_reading": "000012"
             }
@@ -2766,8 +2760,8 @@
                 442.8
               ],
               "text": "Widget model 12",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9884538769721984,
               "coordinates": "page points",
               "initial_reading": "Widget model 12"
             }
@@ -2782,8 +2776,8 @@
                 442.8
               ],
               "text": "5",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998098015785217,
               "coordinates": "page points",
               "initial_reading": "5"
             }
@@ -2798,8 +2792,8 @@
                 442.8
               ],
               "text": "12.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9995375514030457,
               "coordinates": "page points",
               "initial_reading": "12.00"
             }
@@ -2814,8 +2808,8 @@
                 442.8
               ],
               "text": "60.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997598052024841,
               "coordinates": "page points",
               "initial_reading": "60.00"
             }
@@ -2830,8 +2824,8 @@
                 442.8
               ],
               "text": "6.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.94,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996309578418732,
               "coordinates": "page points",
               "initial_reading": "6.00"
             }
@@ -2846,8 +2840,8 @@
                 442.8
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997774660587311,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -2862,8 +2856,8 @@
                 442.8
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998154759407043,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -2878,8 +2872,8 @@
                 442.8
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997522085905075,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -5225,8 +5219,8 @@
               118.08
             ],
             "text": "Invoice",
-            "engine": "ocr-tesseract",
-            "confidence": 0.46,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9998000008719308,
             "coordinates": "page points"
           },
           {
@@ -5252,24 +5246,9 @@
               210.0,
               118.08
             ],
-            "text": "|",
-            "engine": "ocr-tesseract",
-            "confidence": 0.43,
-            "coordinates": "page points"
-          },
-          {
-            "page": 1,
-            "bbox": [
-              119.76,
-              93.12,
-              210.0,
-              118.08
-            ],
             "text": "Date",
-            "engine": "rapidocr-English-v5",
-            "confidence": 0.9998027384281158,
-            "role": "header_recheck",
-            "initial_reading": "|",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9998417496681213,
             "coordinates": "page points"
           },
           {
@@ -5310,24 +5289,9 @@
               299.76,
               118.08
             ],
-            "text": "lent",
-            "engine": "ocr-tesseract",
-            "confidence": 0.44,
-            "coordinates": "page points"
-          },
-          {
-            "page": 1,
-            "bbox": [
-              210.0,
-              93.12,
-              299.76,
-              118.08
-            ],
             "text": "Client",
-            "engine": "rapidocr-English-v5",
-            "confidence": 0.999506543080012,
-            "role": "header_recheck",
-            "initial_reading": "lent",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.999173084894816,
             "coordinates": "page points"
           },
           {
@@ -5368,24 +5332,9 @@
               375.12,
               118.08
             ],
-            "text": "mo",
-            "engine": "ocr-tesseract",
-            "confidence": 0.44,
-            "coordinates": "page points"
-          },
-          {
-            "page": 1,
-            "bbox": [
-              299.76,
-              93.12,
-              375.12,
-              118.08
-            ],
             "text": "SKU",
-            "engine": "rapidocr-English-v5",
-            "confidence": 0.9989044864972433,
-            "role": "header_recheck",
-            "initial_reading": "mo",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9992853999137878,
             "coordinates": "page points"
           },
           {
@@ -5426,24 +5375,9 @@
               555.12,
               118.08
             ],
-            "text": "Deerpton ty,",
-            "engine": "ocr-tesseract",
-            "confidence": 0.0,
-            "coordinates": "page points"
-          },
-          {
-            "page": 1,
-            "bbox": [
-              375.12,
-              93.12,
-              555.12,
-              118.08
-            ],
             "text": "Description",
-            "engine": "rapidocr-English-v5",
-            "confidence": 0.9998736381530762,
-            "role": "header_recheck",
-            "initial_reading": "Deerpton ty,",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9998219826004722,
             "coordinates": "page points"
           },
           {
@@ -5484,24 +5418,9 @@
               609.84,
               118.08
             ],
-            "text": "",
-            "engine": "ocr-tesseract",
-            "confidence": 0,
-            "coordinates": "page points"
-          },
-          {
-            "page": 1,
-            "bbox": [
-              555.12,
-              93.12,
-              609.84,
-              118.08
-            ],
             "text": "Qty.",
-            "engine": "rapidocr-English-v5",
-            "confidence": 0.9775231927633286,
-            "role": "header_recheck",
-            "initial_reading": "Column 6",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9738706797361374,
             "coordinates": "page points"
           },
           {
@@ -5542,24 +5461,9 @@
               679.92,
               118.08
             ],
-            "text": "ate",
-            "engine": "ocr-tesseract",
-            "confidence": 0.53,
-            "coordinates": "page points"
-          },
-          {
-            "page": 1,
-            "bbox": [
-              609.84,
-              93.12,
-              679.92,
-              118.08
-            ],
             "text": "Rate",
-            "engine": "rapidocr-English-v5",
-            "confidence": 0.9998187720775604,
-            "role": "header_recheck",
-            "initial_reading": "ate",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999210238456726,
             "coordinates": "page points"
           },
           {
@@ -5600,24 +5504,9 @@
               760.08,
               118.08
             ],
-            "text": "ea",
-            "engine": "ocr-tesseract",
-            "confidence": 0.27,
-            "coordinates": "page points"
-          },
-          {
-            "page": 1,
-            "bbox": [
-              679.92,
-              93.12,
-              760.08,
-              118.08
-            ],
             "text": "Amt",
-            "engine": "rapidocr-English-v5",
-            "confidence": 0.9990434845288595,
-            "role": "header_recheck",
-            "initial_reading": "ea",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9990895589192709,
             "coordinates": "page points"
           },
           {
@@ -5658,24 +5547,9 @@
               830.16,
               118.08
             ],
-            "text": "Ta",
-            "engine": "ocr-tesseract",
-            "confidence": 0.53,
-            "coordinates": "page points"
-          },
-          {
-            "page": 1,
-            "bbox": [
-              760.08,
-              93.12,
-              830.16,
-              118.08
-            ],
             "text": "Tax",
-            "engine": "rapidocr-English-v5",
-            "confidence": 0.9998363455136617,
-            "role": "header_recheck",
-            "initial_reading": "Ta",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.999869724114736,
             "coordinates": "page points"
           },
           {
@@ -5716,24 +5590,9 @@
               894.96,
               118.08
             ],
-            "text": "Shp",
-            "engine": "ocr-tesseract",
-            "confidence": 0.7,
-            "coordinates": "page points"
-          },
-          {
-            "page": 1,
-            "bbox": [
-              830.16,
-              93.12,
-              894.96,
-              118.08
-            ],
             "text": "Ship",
-            "engine": "rapidocr-English-v5",
-            "confidence": 0.9998201280832291,
-            "role": "header_recheck",
-            "initial_reading": "Shp",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9996831566095352,
             "coordinates": "page points"
           },
           {
@@ -5775,8 +5634,8 @@
               118.08
             ],
             "text": "Region",
-            "engine": "ocr-tesseract",
-            "confidence": 0.52,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9998758435249329,
             "coordinates": "page points"
           },
           {
@@ -5802,24 +5661,9 @@
               1085.04,
               118.08
             ],
-            "text": "sus",
-            "engine": "ocr-tesseract",
-            "confidence": 0.63,
-            "coordinates": "page points"
-          },
-          {
-            "page": 1,
-            "bbox": [
-              985.2,
-              93.12,
-              1085.04,
-              118.08
-            ],
             "text": "Status",
-            "engine": "rapidocr-English-v5",
-            "confidence": 0.9999463756879171,
-            "role": "header_recheck",
-            "initial_reading": "sus",
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999123613039652,
             "coordinates": "page points"
           },
           {
@@ -5877,722 +5721,722 @@
         [
           0,
           0,
-          0.92
+          0.9999039098620415
         ],
         [
           0,
           1,
-          0.96
+          0.9999395310878754
         ],
         [
           0,
           2,
-          0.96
+          0.9992003664374352
         ],
         [
           0,
           3,
-          0.96
+          0.9957939585049947
         ],
         [
           0,
           4,
-          0.95
+          0.9992988194738116
         ],
         [
           0,
           5,
-          0.96
+          0.9999617338180542
         ],
         [
           0,
           6,
-          0.96
+          0.9996767640113831
         ],
         [
           0,
           7,
-          0.96
+          0.9996102333068848
         ],
         [
           0,
           8,
-          0.96
+          0.9990893751382828
         ],
         [
           0,
           9,
-          0.96
+          0.9998559802770615
         ],
         [
           0,
           10,
-          0.96
+          0.9998656034469604
         ],
         [
           0,
           11,
-          0.96
+          0.9997527301311493
         ],
         [
           1,
           0,
-          0.91
+          0.9998719543218613
         ],
         [
           1,
           1,
-          0.96
+          0.999894654750824
         ],
         [
           1,
           2,
-          0.96
+          0.9886299148201942
         ],
         [
           1,
           3,
-          0.96
+          0.9994642535845438
         ],
         [
           1,
           4,
-          0.95
+          0.9699669522898537
         ],
         [
           1,
           5,
-          0.96
+          0.9998804330825806
         ],
         [
           1,
           6,
-          0.96
+          0.9998489379882812
         ],
         [
           1,
           7,
-          0.96
+          0.9997259736061096
         ],
         [
           1,
           8,
-          0.96
+          0.999543771147728
         ],
         [
           1,
           9,
-          0.96
+          0.9997939020395279
         ],
         [
           1,
           10,
-          0.96
+          0.9998462438583374
         ],
         [
           1,
           11,
-          0.96
+          0.9998145401477814
         ],
         [
           2,
           0,
-          0.9
+          0.9998549669981003
         ],
         [
           2,
           1,
-          0.96
+          0.999890661239624
         ],
         [
           2,
           2,
-          0.96
+          0.9995972663164139
         ],
         [
           2,
           3,
-          0.96
+          0.9989360769589742
         ],
         [
           2,
           4,
-          0.96
+          0.9904072880744934
         ],
         [
           2,
           5,
-          0.95
+          0.9998828172683716
         ],
         [
           2,
           6,
-          0.96
+          0.9997891068458558
         ],
         [
           2,
           7,
-          0.95
+          0.9998340606689453
         ],
         [
           2,
           8,
-          0.96
+          0.9998335242271423
         ],
         [
           2,
           9,
-          0.96
+          0.999864786863327
         ],
         [
           2,
           10,
-          0.96
+          0.9997793197631836
         ],
         [
           2,
           11,
-          0.96
+          0.9997501820325851
         ],
         [
           3,
           0,
-          0.92
+          0.9998564273118973
         ],
         [
           3,
           1,
-          0.96
+          0.9998108446598053
         ],
         [
           3,
           2,
-          0.96
+          0.9995079934597015
         ],
         [
           3,
           3,
-          0.96
+          0.9986623326937357
         ],
         [
           3,
           4,
-          0.95
+          0.9811865176473346
         ],
         [
           3,
           5,
-          0.96
+          0.9999655485153198
         ],
         [
           3,
           6,
-          0.96
+          0.9998921394348145
         ],
         [
           3,
           7,
-          0.96
+          0.9996372580528259
         ],
         [
           3,
           8,
-          0.95
+          0.9997310042381287
         ],
         [
           3,
           9,
-          0.96
+          0.9998121410608292
         ],
         [
           3,
           10,
-          0.96
+          0.9998473048210144
         ],
         [
           3,
           11,
-          0.96
+          0.9998452812433243
         ],
         [
           4,
           0,
-          0.91
+          0.9997659027576447
         ],
         [
           4,
           1,
-          0.96
+          0.9998997509479522
         ],
         [
           4,
           2,
-          0.96
+          0.9992491453886032
         ],
         [
           4,
           3,
-          0.96
+          0.9994654754797617
         ],
         [
           4,
           4,
-          0.95
+          0.9875032390866961
         ],
         [
           4,
           5,
-          0.97
+          0.9998735189437866
         ],
         [
           4,
           6,
-          0.96
+          0.9998632550239563
         ],
         [
           4,
           7,
-          0.96
+          0.9997903347015381
         ],
         [
           4,
           8,
-          0.94
+          0.9997885525226593
         ],
         [
           4,
           9,
-          0.96
+          0.9998473674058914
         ],
         [
           4,
           10,
-          0.96
+          0.9255781412124634
         ],
         [
           4,
           11,
-          0.96
+          0.9996878206729889
         ],
         [
           5,
           0,
-          0.9
+          0.9998767897486687
         ],
         [
           5,
           1,
-          0.96
+          0.9998534560203552
         ],
         [
           5,
           2,
-          0.96
+          0.9984079301357269
         ],
         [
           5,
           3,
-          0.96
+          0.9990598460038503
         ],
         [
           5,
           4,
-          0.95
+          0.9916682243347168
         ],
         [
           5,
           5,
-          0.96
+          0.9999686479568481
         ],
         [
           5,
           6,
-          0.96
+          0.9997598052024841
         ],
         [
           5,
           7,
-          0.96
+          0.9998788436253866
         ],
         [
           5,
           8,
-          0.96
+          0.9998751163482666
         ],
         [
           5,
           9,
-          0.96
+          0.9998767524957657
         ],
         [
           5,
           10,
-          0.96
+          0.999839723110199
         ],
         [
           5,
           11,
-          0.96
+          0.9998064488172531
         ],
         [
           6,
           0,
-          0.91
+          0.9998713135719299
         ],
         [
           6,
           1,
-          0.96
+          0.999901020526886
         ],
         [
           6,
           2,
-          0.96
+          0.9995785430073738
         ],
         [
           6,
           3,
-          0.96
+          0.9989546736081442
         ],
         [
           6,
           4,
-          0.96
+          0.9872834554740361
         ],
         [
           6,
           5,
-          0.96
+          0.9998205304145813
         ],
         [
           6,
           6,
-          0.96
+          0.999887478351593
         ],
         [
           6,
           7,
-          0.96
+          0.9999131957689921
         ],
         [
           6,
           8,
-          0.96
+          0.999796450138092
         ],
         [
           6,
           9,
-          0.95
+          0.999811053276062
         ],
         [
           6,
           10,
-          0.96
+          0.9998297810554504
         ],
         [
           6,
           11,
-          0.96
+          0.9997619837522507
         ],
         [
           7,
           0,
-          0.9
+          0.9998756423592567
         ],
         [
           7,
           1,
-          0.96
+          0.999883621931076
         ],
         [
           7,
           2,
-          0.96
+          0.9995909407734871
         ],
         [
           7,
           3,
-          0.95
+          0.9989058077335358
         ],
         [
           7,
           4,
-          0.96
+          0.9901277635778699
         ],
         [
           7,
           5,
-          0.96
+          0.9999704360961914
         ],
         [
           7,
           6,
-          0.96
+          0.9998228669166564
         ],
         [
           7,
           7,
-          0.96
+          0.9998784899711609
         ],
         [
           7,
           8,
-          0.96
+          0.9993586838245392
         ],
         [
           7,
           9,
-          0.96
+          0.9998867958784103
         ],
         [
           7,
           10,
-          0.96
+          0.9997447967529297
         ],
         [
           7,
           11,
-          0.96
+          0.9998017698526382
         ],
         [
           8,
           0,
-          0.91
+          0.9998861849308014
         ],
         [
           8,
           1,
-          0.96
+          0.9714889287948608
         ],
         [
           8,
           2,
-          0.96
+          0.9973131641745567
         ],
         [
           8,
           3,
-          0.96
+          0.9987626771132151
         ],
         [
           8,
           4,
-          0.95
+          0.9708665013313293
         ],
         [
           8,
           5,
-          0.97
+          0.9998472929000854
         ],
         [
           8,
           6,
-          0.96
+          0.9995174169540405
         ],
         [
           8,
           7,
-          0.96
+          0.9996445298194885
         ],
         [
           8,
           8,
-          0.96
+          0.9996570944786072
         ],
         [
           8,
           9,
-          0.96
+          0.9998591840267181
         ],
         [
           8,
           10,
-          0.96
+          0.9998538374900818
         ],
         [
           8,
           11,
-          0.96
+          0.999800443649292
         ],
         [
           9,
           0,
-          0.91
+          0.999892458319664
         ],
         [
           9,
           1,
-          0.96
+          0.9999398469924927
         ],
         [
           9,
           2,
-          0.96
+          0.9992458149790764
         ],
         [
           9,
           3,
-          0.96
+          0.9993779261906942
         ],
         [
           9,
           4,
-          0.95
+          0.9935513615608216
         ],
         [
           9,
           5,
-          0.96
+          0.9998717308044434
         ],
         [
           9,
           6,
-          0.96
+          0.9991572856903076
         ],
         [
           9,
           7,
-          0.95
+          0.9997150540351868
         ],
         [
           9,
           8,
-          0.95
+          0.9998583197593689
         ],
         [
           9,
           9,
-          0.96
+          0.9998713433742523
         ],
         [
           9,
           10,
-          0.96
+          0.9997491359710693
         ],
         [
           9,
           11,
-          0.96
+          0.9997586458921432
         ],
         [
           10,
           0,
-          0.9
+          0.9998782649636269
         ],
         [
           10,
           1,
-          0.96
+          0.9999357998371124
         ],
         [
           10,
           2,
-          0.96
+          0.9987429231405258
         ],
         [
           10,
           3,
-          0.96
+          0.9997372031211853
         ],
         [
           10,
           4,
-          0.96
+          0.9692920446395874
         ],
         [
           10,
           5,
-          0.93
+          0.9999719858169556
         ],
         [
           10,
           6,
-          0.96
+          0.9998938322067261
         ],
         [
           10,
           7,
-          0.95
+          0.9997823119163514
         ],
         [
           10,
           8,
-          0.96
+          0.999857485294342
         ],
         [
           10,
           9,
-          0.96
+          0.9998402744531631
         ],
         [
           10,
           10,
-          0.96
+          0.9998041033744812
         ],
         [
           10,
           11,
-          0.96
+          0.9998005926609039
         ],
         [
           11,
           0,
-          0.91
+          0.9999093636870384
         ],
         [
           11,
           1,
-          0.96
+          0.9999429225921631
         ],
         [
           11,
           2,
-          0.96
+          0.9995703995227814
         ],
         [
           11,
           3,
-          0.96
+          0.9998907248179117
         ],
         [
           11,
           4,
-          0.95
+          0.9884538769721984
         ],
         [
           11,
           5,
-          0.96
+          0.9998098015785217
         ],
         [
           11,
           6,
-          0.96
+          0.9995375514030457
         ],
         [
           11,
           7,
-          0.96
+          0.9997598052024841
         ],
         [
           11,
           8,
-          0.94
+          0.9996309578418732
         ],
         [
           11,
           9,
-          0.96
+          0.9997774660587311
         ],
         [
           11,
           10,
-          0.96
+          0.9998154759407043
         ],
         [
           11,
           11,
-          0.96
+          0.9997522085905075
         ],
         [
           12,
@@ -7323,7 +7167,7 @@
       "page": 1,
       "row": null,
       "column": null,
-      "reason": "Selected cell-recheck-300dpi; alternative deskew-300dpi produced different content or shape.",
+      "reason": "Selected independent-language-aware-cross-check; alternative deskew-300dpi produced different content or shape.",
       "suggestion": "Compare the page and highlighted data.",
       "code": "candidate_disagreement",
       "table": null
@@ -7343,6 +7187,26 @@
       "page": 1,
       "row": null,
       "column": null,
+      "reason": "OCR rapidocr; deskew correction 0.00 degrees; values require source review.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "OCR rapidocr; deskew correction 0.00 degrees; values require source review.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
       "reason": "OCR tesseract; deskew correction 0.00 degrees; values require source review.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
@@ -7354,166 +7218,6 @@
       "row": null,
       "column": null,
       "reason": "OCR tesseract; deskew correction 0.00 degrees; values require source review.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 1, column 2: 'Date' -> '|'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 2,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 1, column 2: 'Date' -> '|'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 1, column 3: 'emt' -> 'lent'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 2,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 1, column 3: 'emt' -> 'lent'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 1, column 4: 'SKY' -> 'mo'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 2,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 1, column 4: 'SKY' -> 'mo'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 1, column 8: 'Amt' -> 'ea'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 2,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 1, column 8: 'Amt' -> 'ea'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 1, column 10: 'Sip' -> 'Shp'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 2,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 1, column 10: 'Sip' -> 'Shp'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 1, column 11: 'aglon' -> 'Region'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 2,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 1, column 11: 'aglon' -> 'Region'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 1, column 12: 'Sttus' -> 'sus'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 2,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 1, column 12: 'Sttus' -> 'sus'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 5, column 6: 'a' -> '4'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 2,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 5, column 6: 'a' -> '4'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7643,6 +7347,26 @@
       "page": 1,
       "row": null,
       "column": null,
+      "reason": "Cell recheck at grid row 1, column 10: 'Sip' -> 'Shp'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Cell recheck at grid row 1, column 10: 'Sip' -> 'Shp'; compare source.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
       "reason": "Cell recheck at grid row 1, column 11: 'eglon' -> 'Region'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
@@ -7696,16 +7420,6 @@
       "reason": "Cell recheck at grid row 7, column 6: 'a' -> '4'; compare source.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": 2,
-      "reason": "Header re-read: '|' -> 'Date'; English model agreed at two scales.",
-      "suggestion": "Verify the source header; model agreement is not certainty.",
-      "code": "header_disagreement",
       "table": 1
     },
     {
@@ -7720,30 +7434,10 @@
     },
     {
       "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": 3,
-      "reason": "Header re-read: 'lent' -> 'Client'; English model agreed at two scales.",
-      "suggestion": "Verify the source header; model agreement is not certainty.",
-      "code": "header_disagreement",
-      "table": 1
-    },
-    {
-      "severity": "warning",
       "page": 2,
       "row": null,
       "column": 3,
       "reason": "Header re-read: 'lent' -> 'Client'; English model agreed at two scales.",
-      "suggestion": "Verify the source header; model agreement is not certainty.",
-      "code": "header_disagreement",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": 4,
-      "reason": "Header re-read: 'mo' -> 'SKU'; English model agreed at two scales.",
       "suggestion": "Verify the source header; model agreement is not certainty.",
       "code": "header_disagreement",
       "table": 1
@@ -7760,16 +7454,6 @@
     },
     {
       "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": 5,
-      "reason": "Header re-read: 'Deerpton ty,' -> 'Description'; English model agreed at two scales.",
-      "suggestion": "Verify the source header; model agreement is not certainty.",
-      "code": "header_disagreement",
-      "table": 1
-    },
-    {
-      "severity": "warning",
       "page": 2,
       "row": null,
       "column": 5,
@@ -7780,7 +7464,7 @@
     },
     {
       "severity": "warning",
-      "page": 1,
+      "page": 2,
       "row": null,
       "column": 6,
       "reason": "Header re-read: 'Column 6' -> 'Qty.'; English model agreed at two scales.",
@@ -7792,38 +7476,8 @@
       "severity": "warning",
       "page": 2,
       "row": null,
-      "column": 6,
-      "reason": "Header re-read: 'Column 6' -> 'Qty.'; English model agreed at two scales.",
-      "suggestion": "Verify the source header; model agreement is not certainty.",
-      "code": "header_disagreement",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
       "column": 7,
       "reason": "Header re-read: 'ate' -> 'Rate'; English model agreed at two scales.",
-      "suggestion": "Verify the source header; model agreement is not certainty.",
-      "code": "header_disagreement",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 2,
-      "row": null,
-      "column": 7,
-      "reason": "Header re-read: 'ate' -> 'Rate'; English model agreed at two scales.",
-      "suggestion": "Verify the source header; model agreement is not certainty.",
-      "code": "header_disagreement",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": 8,
-      "reason": "Header re-read: 'ea' -> 'Amt'; English model agreed at two scales.",
       "suggestion": "Verify the source header; model agreement is not certainty.",
       "code": "header_disagreement",
       "table": 1
@@ -7840,7 +7494,7 @@
     },
     {
       "severity": "warning",
-      "page": 1,
+      "page": 2,
       "row": null,
       "column": 9,
       "reason": "Header re-read: 'Ta' -> 'Tax'; English model agreed at two scales.",
@@ -7852,38 +7506,8 @@
       "severity": "warning",
       "page": 2,
       "row": null,
-      "column": 9,
-      "reason": "Header re-read: 'Ta' -> 'Tax'; English model agreed at two scales.",
-      "suggestion": "Verify the source header; model agreement is not certainty.",
-      "code": "header_disagreement",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
       "column": 10,
       "reason": "Header re-read: 'Shp' -> 'Ship'; English model agreed at two scales.",
-      "suggestion": "Verify the source header; model agreement is not certainty.",
-      "code": "header_disagreement",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 2,
-      "row": null,
-      "column": 10,
-      "reason": "Header re-read: 'Shp' -> 'Ship'; English model agreed at two scales.",
-      "suggestion": "Verify the source header; model agreement is not certainty.",
-      "code": "header_disagreement",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": 12,
-      "reason": "Header re-read: 'sus' -> 'Status'; English model agreed at two scales.",
       "suggestion": "Verify the source header; model agreement is not certainty.",
       "code": "header_disagreement",
       "table": 1
@@ -7903,7 +7527,7 @@
       "page": 1,
       "row": null,
       "column": null,
-      "reason": "Selected cell-recheck-300dpi; alternative deskew-300dpi produced different content or shape.",
+      "reason": "Selected independent-language-aware-cross-check; alternative deskew-300dpi produced different content or shape.",
       "suggestion": "Compare the page and highlighted data.",
       "code": "candidate_disagreement",
       "table": 1
@@ -7923,9 +7547,9 @@
     {
       "page": 1,
       "route": "ocr",
-      "engine": "tesseract",
-      "confidence": 0.96,
-      "seconds": 33.84806949999984,
+      "engine": "rapidocr",
+      "confidence": 0.999800518155098,
+      "seconds": 35.418204499999774,
       "attempts": [
         {
           "engine": "tesseract",
@@ -7934,30 +7558,76 @@
           "cells": 144,
           "issues": 3,
           "score": 816.2,
-          "seconds": 11.998542199999065,
+          "seconds": 10.246172700000898,
           "error": "",
           "selected": false
         },
         {
-          "engine": "tesseract",
-          "strategy": "cell-recheck-300dpi",
+          "engine": "rapidocr",
+          "strategy": "independent-language-aware-cross-check",
           "tables": 1,
           "cells": 144,
-          "issues": 19,
-          "score": 842.2,
-          "seconds": 18.323037399997702,
+          "issues": 1,
+          "score": 842.996,
+          "seconds": 20.29306639999959,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "scan",
+        "native_text_health": "missing",
+        "native_word_count": 0,
+        "native_character_count": 0,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 0.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 1,
+        "image_coverage": 1.0,
+        "raster_profiled": true,
+        "ink_coverage": 0.081,
+        "blur_score": 0.573,
+        "contrast_score": 0.514,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.021,
+        "table_likelihood": 1.0,
+        "estimated_tables": 2,
+        "table_count_class": "multiple",
+        "quality_grade": "good",
+        "content_cues": [
+          "table"
+        ],
+        "detected_scripts": [],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "ocr",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "ocr",
+        "native_candidate_available": false,
+        "ocr_engine_language_coverage": {
+          "tesseract": [
+            "eng"
+          ],
+          "rapidocr": [
+            "eng"
+          ]
+        },
+        "cross_check_executed": false,
+        "high_value_detected_after_ocr": true
+      }
     },
     {
       "page": 2,
       "route": "ocr",
       "engine": "tesseract",
       "confidence": 0.96,
-      "seconds": 33.86619410000276,
+      "seconds": 36.28293070000109,
       "attempts": [
         {
           "engine": "tesseract",
@@ -7966,7 +7636,7 @@
           "cells": 144,
           "issues": 3,
           "score": 816.2,
-          "seconds": 11.266239799999312,
+          "seconds": 8.807928599999286,
           "error": "",
           "selected": false
         },
@@ -7977,15 +7647,60 @@
           "cells": 144,
           "issues": 21,
           "score": 842.2,
-          "seconds": 18.973300600002403,
+          "seconds": 19.884508600000117,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "scan",
+        "native_text_health": "missing",
+        "native_word_count": 0,
+        "native_character_count": 0,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 0.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 1,
+        "image_coverage": 1.0,
+        "raster_profiled": true,
+        "ink_coverage": 0.081,
+        "blur_score": 0.56,
+        "contrast_score": 0.514,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.021,
+        "table_likelihood": 1.0,
+        "estimated_tables": 2,
+        "table_count_class": "multiple",
+        "quality_grade": "good",
+        "content_cues": [
+          "table"
+        ],
+        "detected_scripts": [],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "ocr",
+        "cross_check_recommended": false,
+        "high_value_content": false,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "ocr",
+        "native_candidate_available": false,
+        "ocr_engine_language_coverage": {
+          "tesseract": [
+            "eng"
+          ],
+          "rapidocr": [
+            "eng"
+          ]
+        },
+        "cross_check_executed": false
+      }
     }
   ],
-  "seconds": 68.4940781999976,
+  "seconds": 72.96141659999921,
   "source_sha256": "397ceaaf7677b98edfa1db5f33b2fdbcea55f0548cc9daebd33fbc70d8b289ec",
   "constraints": [
     {

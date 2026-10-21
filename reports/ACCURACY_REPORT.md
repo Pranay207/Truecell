@@ -9,28 +9,29 @@ Evaluation host: Python 3.11.9, Windows AMD64. Timings are local wall-clock meas
 
 | Problem case | Cell P | Cell R | Exact | Rows | Headers | Shape | Tables | Errors caught | s/page | Result |
 |---|---:|---:|---:|---:|---:|---|---|---|---:|---|
-| A_invoice_register | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 1.67 | PASS |
-| B_bank_errors | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 2/2 | 0.57 | PASS |
-| C_scanned_inventory | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 12.93 | PASS |
-| D_blur_noise | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 34.25 | PASS |
-| D_borderless | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 2.03 | PASS |
-| D_headerless | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 2.11 | PASS |
-| D_merged_wrapped | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.08 | PASS |
-| D_mixed | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 4.91 | PASS |
-| D_phone_photo | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 26.18 | PASS |
-| D_skew_5deg | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 9.30 | PASS |
-| D_split_row | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.06 | PASS |
-| D_stress_50pages | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 2.36 | PASS |
-| D_two_tables | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.04 | PASS |
-| E_eighteen_columns | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 3.69 | PASS |
-| E_no_table_letter | n/a | n/a | n/a | n/a | n/a | True | True | 0/0 | 0.07 | PASS |
-| E_page_carry | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.03 | PASS |
-| E_sideways_invoice | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 22.01 | PASS |
-| E_sparse_schedule | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.02 | PASS |
-| E_unruled_totals | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.04 | PASS |
-| E_vertical_nested_lines | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.11 | PASS |
-| E_wrapped_contacts | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.03 | PASS |
-| F_scanned_multipage_continuations | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 34.99 | PASS |
+| A_invoice_register | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.83 | PASS |
+| B_bank_errors | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 2/2 | 0.30 | PASS |
+| C_scanned_inventory | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 13.60 | PASS |
+| D_blur_noise | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 36.48 | PASS |
+| D_borderless | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 3.15 | PASS |
+| D_headerless | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 4.19 | PASS |
+| D_merged_wrapped | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.05 | PASS |
+| D_mixed | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 6.27 | PASS |
+| D_phone_photo | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 19.47 | PASS |
+| D_skew_5deg | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 18.84 | PASS |
+| D_split_row | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.07 | PASS |
+| D_stress_50pages | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 1.48 | PASS |
+| D_two_tables | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.10 | PASS |
+| E_eighteen_columns | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 7.37 | PASS |
+| E_no_table_letter | n/a | n/a | n/a | n/a | n/a | True | True | 0/0 | 0.05 | PASS |
+| E_page_carry | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.13 | PASS |
+| E_sideways_invoice | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 37.24 | PASS |
+| E_sparse_schedule | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.13 | PASS |
+| E_unruled_totals | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.22 | PASS |
+| E_vertical_nested_lines | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 1.07 | PASS |
+| E_wrapped_contacts | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.20 | PASS |
+| F_scanned_multipage_continuations | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 40.50 | PASS |
+| G_thirteen_page_equivalent | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 1.06 | PASS |
 
 ## Known limitations / failures
 

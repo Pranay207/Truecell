@@ -59,7 +59,8 @@
         ]
       ],
       "notes": [
-        "Header anchors and repeated word positions inferred column boundaries; review alignment."
+        "Header anchors and repeated word positions inferred column boundaries; review alignment.",
+        "Nearby text-only continuation lines joined to keyed rows; source boxes retained."
       ],
       "row_engines": [
         "native-anchors",
@@ -110,7 +111,8 @@
               "text": "12 Example Street Building B, second floor",
               "engine": "native-anchors",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "role": "wrapped_continuation_join"
             }
           ],
           [
@@ -172,7 +174,8 @@
               "text": "13 Example Street Building B, second floor",
               "engine": "native-anchors",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "role": "wrapped_continuation_join"
             }
           ],
           [
@@ -234,7 +237,8 @@
               "text": "14 Example Street Building B, second floor",
               "engine": "native-anchors",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "role": "wrapped_continuation_join"
             }
           ],
           [
@@ -317,6 +321,21 @@
         ]
       ],
       "page_summaries": [],
+      "join_receipt": {
+        "page_joins": 0,
+        "repeated_headers_removed": 0,
+        "split_rows_recovered": 0,
+        "pages": [
+          1
+        ],
+        "rows_by_page": [
+          {
+            "page": 1,
+            "rows": 3
+          }
+        ],
+        "output_rows": 3
+      },
       "cell_scores": []
     }
   ],
@@ -346,6 +365,46 @@
       "page": 1,
       "row": null,
       "column": null,
+      "reason": "Nearby text-only continuation lines joined to keyed rows; source boxes retained.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": 1,
+      "column": 1,
+      "reason": "Value '001' does not match the inferred phone role (header='Contact ID'; 0/3 populated values match).",
+      "suggestion": "Compare with the source document.",
+      "code": "semantic_type_mismatch",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": 2,
+      "column": 1,
+      "reason": "Value '002' does not match the inferred phone role (header='Contact ID'; 0/3 populated values match).",
+      "suggestion": "Compare with the source document.",
+      "code": "semantic_type_mismatch",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": 3,
+      "column": 1,
+      "reason": "Value '003' does not match the inferred phone role (header='Contact ID'; 0/3 populated values match).",
+      "suggestion": "Compare with the source document.",
+      "code": "semantic_type_mismatch",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
       "reason": "Selected words; alternative text produced different content or shape.",
       "suggestion": "Compare the page and highlighted data.",
       "code": "candidate_disagreement",
@@ -358,7 +417,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.92,
-      "seconds": 0.029437599994707853,
+      "seconds": 0.15396449999934703,
       "attempts": [
         {
           "engine": "native",
@@ -367,7 +426,7 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 0.012657700004638173,
+          "seconds": 0.028802799999539275,
           "error": "",
           "selected": false
         },
@@ -378,7 +437,7 @@
           "cells": 28,
           "issues": 5,
           "score": 95.4,
-          "seconds": 0.010148100001970306,
+          "seconds": 0.07743040000059409,
           "error": "",
           "selected": false
         },
@@ -387,17 +446,55 @@
           "strategy": "words",
           "tables": 1,
           "cells": 12,
-          "issues": 1,
+          "issues": 5,
           "score": 158.4,
-          "seconds": 0.0025714999937918037,
+          "seconds": 0.014410199999474571,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 38,
+        "native_character_count": 213,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": false,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     }
   ],
-  "seconds": 0.03328099999635015,
+  "seconds": 0.19895630000064557,
   "source_sha256": "88c70c50607ea3be278b202fff4ac4d67866f928cc91bdfdd367338639233d43",
   "constraints": [],
   "proposals": [],

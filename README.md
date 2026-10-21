@@ -18,7 +18,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-663399" alt="AGPL-3.0-or-later"></a>
 </p>
 
-Truecell is a local-first React and FastAPI application built for the **INCUXAI AI Agent Development Challenge 2026**. It detects tables, reconstructs difficult layouts, joins continuations across pages, checks numeric relationships, and exports reviewable Excel workbooks. Every retained value can carry its page, source box, extraction engine, original reading, and confidence evidence.
+Truecell is a local-first React and FastAPI application built for the **INCUXAI AI Agent Development Challenge 2026**. It profiles every page, routes native text and scans through evidence-based extraction strategies, reconstructs difficult tables, checks structural and numeric relationships, and exports reviewable spreadsheet data. Every non-empty cell is accounted for as source-located or explicitly unlocated with a reason.
 
 <p align="center">
   <a href="https://pranay207.github.io/Truecell/demo/"><strong>▶ Watch the 3:53 Demo</strong></a><br>
@@ -46,24 +46,25 @@ Truecell is a local-first React and FastAPI application built for the **INCUXAI 
 
 | Verified result | Evidence |
 |---|---|
-| **22/22** deterministic development cases passed | [Accuracy report](reports/ACCURACY_REPORT.md) |
-| **222** Python tests and **14** frontend tests passed | [Build verification](reports/BUILD_VERIFICATION.md) |
+| **23/23** deterministic development cases passed | [Accuracy report](reports/ACCURACY_REPORT.md) |
+| **260** Python tests and **15** frontend tests passed | [Build verification](reports/BUILD_VERIFICATION.md) |
 | **5/5** scan cases passed with Tesseract excluded | [Portable OCR results](reports/PORTABLE_OCR.json) |
 | **50 pages / 800 rows / 12 columns** recovered in the measured stress fixture | [Stress PDF](samples/D_stress_50pages.pdf) · [Converted workbook](outputs/D_stress_50pages.xlsx) |
+| **13 pages / 4 tables / 1,092 cells** matched exactly in a disclosed challenge-equivalent fixture | [Equivalent report](reports/THIRTEEN_PAGE_EQUIVALENT.md) · [PDF](samples/G_thirteen_page_equivalent.pdf) · [Workbook](outputs/G_thirteen_page_equivalent.xlsx) |
 | **18-column** borderless table and vertically grouped nested line items passed exact checks | [18-column workbook](outputs/E_eighteen_columns.xlsx) · [Nested-lines workbook](outputs/E_vertical_nested_lines.xlsx) |
 | **126/126 cells** across two public Unicode tables matched their source-pinned reference | [External audit](reports/EXTERNAL_AUDIT.md) |
 
-These are disclosed dummy development fixtures, not blind or hidden-document accuracy claims. Exact evaluation compares ordered cells, headers, table shapes, row multisets, and annotated errors. Start with [JUDGE_START_HERE.txt](JUDGE_START_HERE.txt) for the shortest review path.
+These are disclosed dummy development fixtures, not blind or hidden-document accuracy claims. Exact evaluation compares ordered cells, headers, table shapes, row multisets, and annotated errors. The two-stage [blind evaluation workflow](docs/BLIND_EVALUATION.md) is ready for an independent evaluator's unseen documents. See the [11-point implementation map](docs/IMPLEMENTATION_STATUS.md) and start with [JUDGE_START_HERE.txt](JUDGE_START_HERE.txt) for the shortest review path.
 
 ## Evaluation criteria coverage
 
 | Evaluation criterion | Verified proof |
 |---|---|
-| **OCR and extraction accuracy — 30** | **5/5 offline OCR fixtures passed** with Tesseract excluded. Native PDF extraction, RapidOCR, deskew, rotation recovery, and cell-level source boxes. [View OCR evidence](reports/PORTABLE_OCR.json). |
-| **Multi-page and complex tables — 25** | **50 pages · 800 rows · 12 columns** recovered in the measured stress fixture. Repeated headers, split rows, 18-column tables, and vertically grouped line items are covered. [View accuracy report](reports/ACCURACY_REPORT.md). |
+| **OCR and extraction accuracy — 30** | **5/5 offline OCR fixtures passed** with Tesseract excluded. Per-page quality profiling, native PDF extraction, multilingual local Tesseract routing, RapidOCR, deskew, rotation/perspective recovery, candidate cross-checking and cell-level source boxes. [View OCR evidence](reports/PORTABLE_OCR.json). |
+| **Multi-page and complex tables — 25** | **50 pages · 800 rows · 12 columns** recovered in the measured stress fixture, plus an exact **13-page / 4-table / 14-column** equivalent case. Repeated headers, consensus repair, split rows, full-width titles and vertically grouped line items are covered. [View accuracy report](reports/ACCURACY_REPORT.md). |
 | **Column alignment and data integrity — 20** | **126/126 public Unicode cells matched** their source-pinned reference. Leading zeros, duplicates, row provenance, safe formulas, and exact header/shape checks are preserved. [View external audit](reports/EXTERNAL_AUDIT.md). |
-| **Automation and error recovery — 15** | Automatic page routing, alternate extraction strategies, resumable checkpoints, arithmetic validation, correction previews, and review history. [View QA evidence](reports/QA_REPORT.md). |
-| **Code quality and usability — 10** | **222 Python + 14 frontend tests passed.** Responsive React UI, FastAPI backend, offline operation, searchable tables, saved workspaces, and multi-platform CI. [View build verification](reports/BUILD_VERIFICATION.md). |
+| **Automation and error recovery — 15** | Automatic quality/risk routing, alternate extraction strategies, resumable checkpoints, partial/failed result states, page-level continuation, arithmetic validation, correction previews, and fingerprint-bound review history. [View QA evidence](reports/QA_REPORT.md). |
+| **Code quality and usability — 10** | **260 Python + 15 frontend tests passed.** Responsive React UI, FastAPI backend, searchable tables, complete paginated review, Draft/Reviewed export gates, CSV/JSON outputs, Docker delivery and multi-platform CI. [View build verification](reports/BUILD_VERIFICATION.md). |
 
 ## Run Truecell
 
@@ -82,7 +83,7 @@ Use the supplied `Truecell-Portable-Windows-x64.zip` on **Windows 10/11 x64**:
 
 Python, Node.js, an API key and internet access are not required. The portable folder includes the React application, local FastAPI server, RapidOCR, OCR models and demo PDFs. Saved documents remain beside the executable in `TruecellData`; keep the entire extracted folder together. The console window shows the local address and stops the server when closed.
 
-The tested portable bundle is a PyInstaller one-folder application: **316.56 MiB extracted / 152.42 MiB zipped**. Its packaged EXE passed health and UI checks, exact native-PDF extraction, a RapidOCR scan with external Tesseract disabled, Excel/audit downloads, launch from a path containing spaces, and workspace persistence after restart. See [portable instructions](portable/README-FIRST.txt).
+The tested portable bundle is a PyInstaller one-folder application: **316.68 MiB extracted / 152.50 MiB zipped**. Its packaged EXE passed health and UI checks, exact native-PDF extraction, a RapidOCR scan with external Tesseract disabled, Excel/audit downloads, launch from a path containing spaces, and workspace persistence after restart. See [portable instructions](portable/README-FIRST.txt).
 
 ### 2. Python/source launcher
 
@@ -108,6 +109,16 @@ The first source run creates `.venv` and installs pinned dependencies, so it nee
 
 The application accepts PDFs up to **200 pages**, multi-frame images/TIFFs up to **50 frames**, and uploads up to **50 MB**. The measured large-document fixture is 50 pages; the 200-page ceiling is an input capability, not a 200-page accuracy benchmark. The production frontend is prebuilt, so judges do not need Node.js.
 
+### 3. Docker/server
+
+With Docker Desktop or Docker Engine running:
+
+```sh
+docker compose up --build
+```
+
+Open **http://127.0.0.1:8501**. The container runs as a non-root user, exposes only loopback by default, includes offline English OCR, and stores workspaces in the `truecell-workspaces` volume. Add the required Tesseract language packages to the image when deploying multilingual scan support.
+
 <details>
 <summary>Manual setup and CLI</summary>
 
@@ -123,9 +134,10 @@ python run.py
 python convert.py samples/A_invoice_register.pdf -o outputs/demo.xlsx
 python convert.py samples/B_bank_errors.pdf -o outputs/bank.xlsx --verify
 python convert.py scan.pdf -o outputs/scan.xlsx --force-ocr
+python convert.py multilingual.pdf -o outputs/multilingual.xlsx --ocr-languages eng+tel+hin
 ```
 
-`--verify` runs an independent local OCR check on native pages. `--force-ocr` handles damaged text layers. `python run.py --lan` serves the app only to loopback and the detected private network while the process is running.
+`--verify` runs an independent local OCR check on native pages. `--force-ocr` handles damaged text layers. `--ocr-languages` accepts Tesseract codes or friendly names and reports missing local language packs instead of silently falling back. `python run.py --lan` serves the app only to loopback and the detected private network while the process is running.
 
 </details>
 
@@ -155,6 +167,7 @@ Every document below contains generated dummy data. The linked XLSX files are Tr
 | Stress document | [PDF](samples/D_stress_50pages.pdf) | [XLSX](outputs/D_stress_50pages.xlsx) | 50 pages, 800 rows, repeated-header removal |
 | Wide borderless table | [PDF](samples/E_eighteen_columns.pdf) | [XLSX](outputs/E_eighteen_columns.xlsx) | 18-column alignment |
 | Nested line items | [PDF](samples/E_vertical_nested_lines.pdf) | [XLSX](outputs/E_vertical_nested_lines.xlsx) | Vertically spanned group labels with source evidence |
+| 13-page equivalent | [PDF](samples/G_thirteen_page_equivalent.pdf) | [XLSX](outputs/G_thirteen_page_equivalent.xlsx) | Four 14-column tables, full-width titles, wrapped cells and page continuations; disclosed synthetic case |
 
 ## Measured benchmark
 
@@ -162,16 +175,17 @@ Measured locally on Windows, Python 3.11.9. Times are wall-clock observations an
 
 | Development fixture | Pages | Rows | Columns | Time | Exact result |
 |---|---:|---:|---:|---:|---|
-| Invoice register | 3 | 48 | 12 | 1.36 s | PASS |
-| Bank errors | 1 | 19 | 6 | 0.34 s | PASS, 2/2 errors caught |
-| Scanned inventory | 2 | 24 | 12 | 32.96 s | PASS |
-| 5-page scanned continuations | 5 | 33 | 12 | 174.97 s | PASS, 2/2 split rows joined |
-| 50-page stress | 50 | 800 | 12 | 118.00 s | PASS |
-| 18-column table | 1 | 9 | 18 | 3.69 s | PASS |
-| Vertical nested lines | 1 | 8 | 10 | 0.11 s | PASS |
+| Invoice register | 3 | 48 | 12 | 6.43 s | PASS |
+| Bank errors | 1 | 19 | 6 | 1.31 s | PASS, 2/2 errors caught |
+| Scanned inventory | 2 | 24 | 12 | 69.41 s | PASS |
+| 5-page scanned continuations | 5 | 33 | 12 | 202.48 s | PASS, 2/2 split rows joined |
+| 50-page stress | 50 | 800 | 12 | 73.81 s | PASS |
+| 18-column table | 1 | 9 | 18 | 7.37 s | PASS |
+| Vertical nested lines | 1 | 8 | 10 | 1.07 s | PASS |
+| 13-page equivalent | 13 | 78 | 14 each | 13.74 s | PASS, 1,092/1,092 data cells |
 
-See all 22 cases, definitions, and per-page timings in the [accuracy report](reports/ACCURACY_REPORT.md).
-The five-page raster benchmark selected local Tesseract and took about three minutes on this host. The separate portable suite excludes Tesseract and remains 5/5 on its five disclosed scan fixtures; do not infer RapidOCR performance for the new stress case.
+See all 23 cases, definitions, and per-page timings in the [accuracy report](reports/ACCURACY_REPORT.md).
+The current five-page raster benchmark cross-checked local Tesseract and RapidOCR, selected RapidOCR for the exported pages, and took about 3.4 minutes on this host. The separate portable suite excludes Tesseract and remains 5/5 on its five disclosed scan fixtures.
 
 ## Demo
 
@@ -188,20 +202,20 @@ Use the prepared [3–4 minute recording script](docs/DEMO_SCRIPT.md) for the fu
 
 ```mermaid
 flowchart LR
-    A[PDF or image] --> B[Validate and route pages]
+    A[PDF or image] --> B[Profile quality, content and scripts]
     B --> C[Native text and grid extraction]
     B --> D[Render, deskew and offline OCR]
-    C --> E[Rank table candidates]
+    C --> E[Rank and cross-check candidates]
     D --> E
     E --> F[Recover and join continuations]
-    F --> G[Validate structure and arithmetic]
-    G --> H[Review cells against source]
-    H --> I[Excel and audit JSON]
+    F --> G[Infer column roles and validate]
+    G --> H[Review exceptions against source]
+    H --> I[Excel, CSV and audit JSON]
 ```
 
-The agent chooses page-level strategies from document evidence, reconstructs tables, preserves source coordinates, joins only compatible adjacent tables, and validates the assembled result. Each assembled table carries a join receipt showing which pages and row fragments contributed to it. Running-balance and `a*b=c` / `a+b=c` relations are inferred from repeated numeric patterns instead of relying on financial column names. Proposed repairs remain unapplied until a reviewer inspects the source and supplies a reason.
+The agent records a page profile before choosing a strategy: content mode, text-layer health, image coverage, blur, contrast, skew, rotation, perspective risk, table likelihood, content cues, detected scripts and risk reasons. It reconstructs tables, preserves source coordinates, joins only compatible adjacent tables, and validates the assembled result. Each assembled table carries a join receipt showing which pages and row fragments contributed to it. Phone, date, ID, amount, quantity, total and balance roles guide conservative checks; proposed repairs remain unapplied until a reviewer inspects the source and supplies a reason.
 
-Search filters large extracted tables across every column while preserving original row identities for evidence and edits. The bounded review queue puts rule findings and the lowest OCR-confidence cells first, opens their source location, and remembers checked/reopened state without changing the extraction fingerprint. Saved workspaces keep the source, extraction, corrections, and review history together under `outputs/jobs/`.
+Search filters large extracted tables across every column while preserving original row identities for evidence and edits. The complete paginated review queue puts findings, unlocated cells and the lowest OCR-confidence cells first, opens their source location, and remembers each checked/reopened item without changing the extraction fingerprint. Draft Excel and CSV are available for working data; **Reviewed Excel** is enabled only when every current priority item is individually resolved. Saved workspaces keep the source, extraction, corrections, and review history together under `outputs/jobs/`.
 
 <details>
 <summary>Extraction and recovery details</summary>
@@ -210,7 +224,7 @@ Search filters large extracted tables across every column while preserving origi
 - Scans use grid-aware recognition, contrast enhancement, deskew, rotation recovery, optional isolated rereads, and perspective correction. OCR coordinates are mapped back to the original page.
 - Repeating headers are removed, business rows are never silently deduplicated, split records can retain evidence from both pages, and carry-forward summaries stay outside transaction rows.
 - Completed-page checkpoints bind to source bytes, code, packages, model assets, and options. Changed or corrupt checkpoints are recomputed. Failed pages are logged while later pages continue.
-- The bundled English model provides portable RapidOCR. Tesseract is used when installed. Optional cloud vision requires both `--allow-cloud` and explicit credentials; it was not used for the reported results.
+- The bundled English model provides portable RapidOCR. Installed Tesseract language packs can be selected in the UI, CLI or `TRUECELL_OCR_LANGUAGES`; unavailable packs produce an audit warning. Optional cloud vision requires both `--allow-cloud` and explicit credentials; it was not used for the reported results.
 
 </details>
 
@@ -226,7 +240,7 @@ Search filters large extracted tables across every column while preserving origi
 | `Provenance` | Row-to-page mapping, including split records |
 | `Constraints` / `Repair Proposals` | Inferred equations, agreement, violations, and unapplied candidates |
 | `Correction History` | Explicit human edits, reasons, timestamps, and chained hashes |
-| `Verification` / `Read me` | Source hashes, review status, coverage counts, and interpretation notes |
+| `Verification` / `Read me` | Source hashes, Draft/Reviewed export type, review status, located/unlocated evidence counts, and interpretation notes |
 
 Identifiers and leading zeros remain text. Unambiguous numbers and dates are typed. Strings beginning with `=` remain text, so source content is never executed as an Excel formula. Long and XML-forbidden text uses a documented reversible export convention.
 
@@ -237,10 +251,12 @@ python -m pytest -q
 python scripts/verify_recorded_outputs.py
 python scripts/judge_check.py
 python scripts/portable_ocr_check.py
+python scripts/blind_benchmark.py --help
 
 # Frontend development checks require Node.js 22.12+
 npm --prefix frontend test
 npm --prefix frontend run build
+docker compose config
 ```
 
 The public-source audit is separate because fetching its published fixtures requires network access:
@@ -252,7 +268,10 @@ python scripts/public_audit.py --fetch
 <details>
 <summary>Reports and evaluation scope</summary>
 
-- [Development accuracy](reports/ACCURACY_REPORT.md): all 22 generated cases and timings.
+- [Development accuracy](reports/ACCURACY_REPORT.md): all 23 generated cases and timings.
+- [13-page equivalent](reports/THIRTEEN_PAGE_EQUIVALENT.md): exact wide-table regression evidence with an explicit synthetic-data disclosure.
+- [11-point implementation map](docs/IMPLEMENTATION_STATUS.md): requested capabilities, proof and remaining boundaries.
+- [Blind evaluation protocol](docs/BLIND_EVALUATION.md): extract without truth, then score the frozen saved audits.
 - [External layout audit](reports/EXTERNAL_AUDIT.md): a 35-cell fuel table, 48 selected census cells plus all 16 headers and both shapes, a no-table control, and two complete public Unicode tables with 126/126 data cells and 14/14 flattened headers. The remaining census cells are outside the annotation scope.
 - [Build verification](reports/BUILD_VERIFICATION.md): tests, portability checks, and explicitly unverified items.
 
@@ -262,11 +281,11 @@ python scripts/public_audit.py --fetch
 
 ## Limitations
 
-- Handwriting, untested scripts, broken glyph maps, severe cropping, overlapping text, and extreme perspective may fail.
-- Native, explicitly ruled vertical body spans are supported conservatively. OCR/unruled spans and arbitrary multi-axis merged structures remain ambiguous.
+- Handwriting, uninstalled OCR scripts, broken glyph maps, severe cropping, overlapping text, and extreme perspective may fail.
+- Native, explicitly ruled vertical body spans are supported conservatively. OCR/unruled spans and arbitrary multi-axis merged structures remain ambiguous and are flagged for review.
 - Headerless joins can confuse unrelated tables with similar geometry. Sparse data may not provide enough evidence for arithmetic inference, while coincidental relations can create false alarms.
 - OCR confidence and arithmetic agreement are evidence, not guarantees. A clean validation report does not prove correct extraction; important values still require source review.
-- English total vocabulary is limited, and OCR engines can share the same mistake.
+- Semantic header signals currently emphasize English, Hindi and Telugu; data-driven inference covers additional scripts only when recurring value patterns are strong. OCR engines can share the same mistake.
 
 ## Project and license
 

@@ -160,6 +160,7 @@ def header_tables(
         cuts = [_cut(a, b, body, height) for a, b in zip(groups, groups[1:])]
         headers = [text(g) for g in groups]
         row_words = []
+        wrapped_cells: set[tuple[int, int]] = set()
         summaries = []
         last_y = 0.0
         for line in limited:
@@ -180,17 +181,21 @@ def header_tables(
                 )
                 continue
             y = min(w["top"] for w in line)
-            # Missing key + one occupied text field is a wrapped cell, not a new row.
+            # A missing key plus a small number of nearby text fields can be a
+            # wrapped continuation. Requiring an established key and matching
+            # populated text columns keeps this reconstruction conservative.
             if (
                 row_words
                 and not cells[0]
-                and len(occupied) == 1
-                and kind(text(cells[occupied[0]])) == "text"
-                and row_words[-1][occupied[0]]
-                and y - last_y < height * 2.2
+                and 1 <= len(occupied) <= min(2, max(1, count // 3))
+                and row_words[-1][0]
+                and all(kind(text(cells[c])) == "text" for c in occupied)
+                and all(row_words[-1][c] for c in occupied)
+                and y - last_y < height * 1.8
             ):
-                c = occupied[0]
-                row_words[-1][c].extend(cells[c])
+                for c in occupied:
+                    row_words[-1][c].extend(cells[c])
+                    wrapped_cells.add((len(row_words) - 1, c))
             else:
                 row_words.append(cells)
             last_y = y
@@ -210,6 +215,9 @@ def header_tables(
         table.cell_sources = [
             [evidence(cell, page, table.engine) for cell in row] for row in row_words
         ]
+        for r, c in wrapped_cells:
+            for record in table.cell_sources[r][c]:
+                record["role"] = "wrapped_continuation_join"
         table.page_summaries = summaries
         if not font_evidence:
             for r, row in enumerate(row_words):
@@ -231,6 +239,10 @@ def header_tables(
         if not font_evidence:
             table.notes.append(
                 "OCR header inferred from geometry and numeric records; verify source text."
+            )
+        if wrapped_cells:
+            table.notes.append(
+                "Nearby text-only continuation lines joined to keyed rows; source boxes retained."
             )
         output.append(table)
     return output

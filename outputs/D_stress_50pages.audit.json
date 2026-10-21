@@ -170532,7 +170532,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.2978461000020616,
+      "seconds": 1.0382172999998147,
       "attempts": [
         {
           "engine": "native",
@@ -170541,19 +170541,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.9071174999990035,
+          "seconds": 0.5486359999995329,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1492,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 2,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.9880067999984021,
+      "seconds": 0.6724769000011293,
       "attempts": [
         {
           "engine": "native",
@@ -170562,19 +170601,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 1.538557200001378,
+          "seconds": 0.3531626999993023,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1494,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 3,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.6183514000003925,
+      "seconds": 0.6556557999992947,
       "attempts": [
         {
           "engine": "native",
@@ -170583,19 +170661,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 1.2152826000019559,
+          "seconds": 0.28240999999979977,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1494,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 4,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.6074122999998508,
+      "seconds": 0.6170273999996425,
       "attempts": [
         {
           "engine": "native",
@@ -170604,19 +170721,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2136.6,
-          "seconds": 1.126771800001734,
+          "seconds": 0.3049630999994406,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1501,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 5,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.5091132000015932,
+      "seconds": 0.6547425000007934,
       "attempts": [
         {
           "engine": "native",
@@ -170625,19 +170781,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2132.6,
-          "seconds": 1.0340450999938184,
+          "seconds": 0.26938479999989795,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1497,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 6,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.460532899996906,
+      "seconds": 0.6464469999991707,
       "attempts": [
         {
           "engine": "native",
@@ -170646,19 +170841,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 1.1330585999967298,
+          "seconds": 0.26554049999867857,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1492,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 7,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.2268456000019796,
+      "seconds": 0.8984867999988637,
       "attempts": [
         {
           "engine": "native",
@@ -170667,19 +170901,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 0.9099522000033176,
+          "seconds": 0.37274210000032326,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1496,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 8,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.406503199999861,
+      "seconds": 0.6709268999984488,
       "attempts": [
         {
           "engine": "native",
@@ -170688,19 +170961,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 0.9887413000033121,
+          "seconds": 0.2746600999998918,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1496,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 9,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.7185841000027722,
+      "seconds": 0.9723160000012285,
       "attempts": [
         {
           "engine": "native",
@@ -170709,19 +171021,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.9180116000061389,
+          "seconds": 0.36396400000012363,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1498,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 10,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 2.266416800004663,
+      "seconds": 0.8414348000005702,
       "attempts": [
         {
           "engine": "native",
@@ -170730,19 +171081,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 1.941243699999177,
+          "seconds": 0.46818589999929827,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1499,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 11,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.5244250999967335,
+      "seconds": 0.9071786999993492,
       "attempts": [
         {
           "engine": "native",
@@ -170751,19 +171141,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 1.1619262999956845,
+          "seconds": 0.4682364000000234,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1495,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 12,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.4108885999958147,
+      "seconds": 0.5485341000003245,
       "attempts": [
         {
           "engine": "native",
@@ -170772,19 +171201,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2128.6,
-          "seconds": 1.0377961000049254,
+          "seconds": 0.2792574000013701,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1494,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 13,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 2.084789100001217,
+      "seconds": 0.942332599999645,
       "attempts": [
         {
           "engine": "native",
@@ -170793,19 +171261,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2134.6,
-          "seconds": 1.5403250000017579,
+          "seconds": 0.27986000000055355,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1500,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 14,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.6899517999991076,
+      "seconds": 0.6678632000002835,
       "attempts": [
         {
           "engine": "native",
@@ -170814,19 +171321,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 1.1194325999967987,
+          "seconds": 0.3712839999989228,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1497,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 15,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.583682199998293,
+      "seconds": 0.6322917999987112,
       "attempts": [
         {
           "engine": "native",
@@ -170835,19 +171381,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 1.2265267000038875,
+          "seconds": 0.2547475999999733,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1499,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 16,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.6627548999967985,
+      "seconds": 0.9553883000007772,
       "attempts": [
         {
           "engine": "native",
@@ -170856,19 +171441,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 1.256773200002499,
+          "seconds": 0.6092470000003232,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1493,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 17,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 2.232709000003524,
+      "seconds": 0.6968172999986564,
       "attempts": [
         {
           "engine": "native",
@@ -170877,19 +171501,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2132.6,
-          "seconds": 1.6010982000007061,
+          "seconds": 0.31216909999966447,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1498,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 18,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.2628422999987379,
+      "seconds": 0.8328335999995033,
       "attempts": [
         {
           "engine": "native",
@@ -170898,19 +171561,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2132.6,
-          "seconds": 0.9295485999973607,
+          "seconds": 0.5431711999990512,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1498,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 19,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.4556497999947169,
+      "seconds": 0.7512941999993927,
       "attempts": [
         {
           "engine": "native",
@@ -170919,19 +171621,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 1.014141900006507,
+          "seconds": 0.4665337999995245,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1495,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 20,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.3552501999947708,
+      "seconds": 0.7655703999989782,
       "attempts": [
         {
           "engine": "native",
@@ -170940,19 +171681,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.9643590999985463,
+          "seconds": 0.46082559999922523,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1499,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 21,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.4695898999998462,
+      "seconds": 0.5600909999993746,
       "attempts": [
         {
           "engine": "native",
@@ -170961,19 +171741,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 1.1767819000015152,
+          "seconds": 0.28374259999873175,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1497,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 22,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.201689699999406,
+      "seconds": 0.7052820999997493,
       "attempts": [
         {
           "engine": "native",
@@ -170982,19 +171801,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 0.9111057999980403,
+          "seconds": 0.2851606999993237,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1497,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 23,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.1255286000014166,
+      "seconds": 0.6800812000001315,
       "attempts": [
         {
           "engine": "native",
@@ -171003,19 +171861,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.844057199996314,
+          "seconds": 0.3322256000010384,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1495,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 24,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 2.057649299997138,
+      "seconds": 0.5147875999991811,
       "attempts": [
         {
           "engine": "native",
@@ -171024,19 +171921,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 1.7475152999977581,
+          "seconds": 0.25616140000056475,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1499,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 25,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.1933499000006123,
+      "seconds": 0.9764329999998154,
       "attempts": [
         {
           "engine": "native",
@@ -171045,19 +171981,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2130.6,
-          "seconds": 0.8987182999990182,
+          "seconds": 0.5861017999995966,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1496,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 26,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.0980695999969612,
+      "seconds": 0.5535015999994357,
       "attempts": [
         {
           "engine": "native",
@@ -171066,19 +172041,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2132.6,
-          "seconds": 0.7944788000022527,
+          "seconds": 0.2583011999995506,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1498,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 27,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.3458821000021999,
+      "seconds": 0.948812500000713,
       "attempts": [
         {
           "engine": "native",
@@ -171087,19 +172101,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.9374150000003283,
+          "seconds": 0.47442149999915273,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1495,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 28,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.2115178999956697,
+      "seconds": 1.18985690000045,
       "attempts": [
         {
           "engine": "native",
@@ -171108,19 +172161,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.9091221999988193,
+          "seconds": 0.6524375999997574,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1499,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 29,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.2478396000005887,
+      "seconds": 0.8225927999992564,
       "attempts": [
         {
           "engine": "native",
@@ -171129,19 +172221,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 0.8809468999970704,
+          "seconds": 0.5256580999994185,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1497,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 30,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.6330215999987558,
+      "seconds": 0.5732293999990361,
       "attempts": [
         {
           "engine": "native",
@@ -171150,19 +172281,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2130.6,
-          "seconds": 1.1657925999970757,
+          "seconds": 0.2981658000007883,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1496,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 31,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 2.069717700003821,
+      "seconds": 0.8511670000007143,
       "attempts": [
         {
           "engine": "native",
@@ -171171,19 +172341,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2132.6,
-          "seconds": 1.541846699998132,
+          "seconds": 0.35070600000108243,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1498,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 32,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.3574948000023142,
+      "seconds": 0.7797061000001122,
       "attempts": [
         {
           "engine": "native",
@@ -171192,19 +172401,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.935638499999186,
+          "seconds": 0.27314449999903445,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1495,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 33,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.3128579999975045,
+      "seconds": 0.7656451000002562,
       "attempts": [
         {
           "engine": "native",
@@ -171213,19 +172461,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 1.0312966000055894,
+          "seconds": 0.33986629999890283,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1497,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 34,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.3131251000013435,
+      "seconds": 0.6748619999998482,
       "attempts": [
         {
           "engine": "native",
@@ -171234,19 +172521,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.9893618999994942,
+          "seconds": 0.36381230000006326,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1499,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 35,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.1718867999952636,
+      "seconds": 1.0784371000008832,
       "attempts": [
         {
           "engine": "native",
@@ -171255,19 +172581,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 0.8794156000003568,
+          "seconds": 0.4480762000002869,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1499,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 36,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.2430756999965524,
+      "seconds": 0.7030868999991071,
       "attempts": [
         {
           "engine": "native",
@@ -171276,19 +172641,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.9158495000010589,
+          "seconds": 0.3932856000010361,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1493,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 37,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.6333116000023438,
+      "seconds": 0.73213399999986,
       "attempts": [
         {
           "engine": "native",
@@ -171297,19 +172701,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 0.8676946999985375,
+          "seconds": 0.2974368000013783,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1495,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 38,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.5967442000037408,
+      "seconds": 1.1086521000015637,
       "attempts": [
         {
           "engine": "native",
@@ -171318,19 +172761,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2132.6,
-          "seconds": 1.1774021000019275,
+          "seconds": 0.3849499999996624,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1498,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 39,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.278967999998713,
+      "seconds": 0.905035300000236,
       "attempts": [
         {
           "engine": "native",
@@ -171339,19 +172821,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2138.6,
-          "seconds": 0.9805884000015794,
+          "seconds": 0.36240040000120644,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1504,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 40,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.2518762999970932,
+      "seconds": 0.9222537999994529,
       "attempts": [
         {
           "engine": "native",
@@ -171360,19 +172881,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.9027103000044008,
+          "seconds": 0.505296699999235,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1493,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 41,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.2269605999972555,
+      "seconds": 0.6265588000005664,
       "attempts": [
         {
           "engine": "native",
@@ -171381,19 +172941,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 0.9211272999964422,
+          "seconds": 0.306498099998862,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1493,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 42,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.5209938000043621,
+      "seconds": 0.9392095999992307,
       "attempts": [
         {
           "engine": "native",
@@ -171402,19 +173001,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 1.1723560000027646,
+          "seconds": 0.5329617999996117,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1499,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 43,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.4137676000027568,
+      "seconds": 0.6667938999999024,
       "attempts": [
         {
           "engine": "native",
@@ -171423,19 +173061,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2132.6,
-          "seconds": 1.0976108000031672,
+          "seconds": 0.40187279999918246,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1498,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 44,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.2686921000058646,
+      "seconds": 0.8475603999995656,
       "attempts": [
         {
           "engine": "native",
@@ -171444,19 +173121,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2134.6,
-          "seconds": 0.9347925000038231,
+          "seconds": 0.28222569999888947,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1500,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 45,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.474867600001744,
+      "seconds": 0.5684590000000753,
       "attempts": [
         {
           "engine": "native",
@@ -171465,19 +173181,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2127.6,
-          "seconds": 1.0624659000022803,
+          "seconds": 0.27987170000051265,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1493,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 46,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 2.483270299999276,
+      "seconds": 0.9139715999990585,
       "attempts": [
         {
           "engine": "native",
@@ -171486,19 +173241,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 1.3397474000012153,
+          "seconds": 0.28618379999898025,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1497,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 47,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 2.2222885000010137,
+      "seconds": 0.9553757000012411,
       "attempts": [
         {
           "engine": "native",
@@ -171507,19 +173301,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 1.6203162999954657,
+          "seconds": 0.47312369999963266,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1497,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 48,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 4.815065200004028,
+      "seconds": 1.1817824999998265,
       "attempts": [
         {
           "engine": "native",
@@ -171528,19 +173361,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2133.6,
-          "seconds": 4.203194000001531,
+          "seconds": 0.6707087000013416,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1499,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 49,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 2.682645799999591,
+      "seconds": 1.7128766999994696,
       "attempts": [
         {
           "engine": "native",
@@ -171549,19 +173421,58 @@
           "cells": 192,
           "issues": 0,
           "score": 2131.6,
-          "seconds": 2.150028999996721,
+          "seconds": 1.1306624999997439,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1497,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 50,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 1.5948300000018207,
+      "seconds": 1.7125787000004493,
       "attempts": [
         {
           "engine": "native",
@@ -171570,15 +173481,54 @@
           "cells": 192,
           "issues": 0,
           "score": 2129.6,
-          "seconds": 1.1560951999999816,
+          "seconds": 0.7606367999997019,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1495,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     }
   ],
-  "seconds": 118.0024928999992,
+  "seconds": 73.81160749999981,
   "source_sha256": "9c4b4e31cec885b8559a464fd6bc8617f90eadfaf729cec1f5e6e92980d06fa1",
   "constraints": [
     {

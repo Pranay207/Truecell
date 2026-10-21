@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+import os
 import time
 from collections.abc import Callable
 from pathlib import Path
@@ -14,12 +15,38 @@ from .constraints import analyze
 from .digital import extract_page
 from .export import export_workbook
 from .models import Attempt, Issue, PageReport, Result, Table
+from .profiling import normalize_languages, profile_page
 from .recover import candidate_key, evaluate, needs_retry
 from .router import open_document, render_page, route_page
 from .stitch import stitch
 from .validate import validate
 
 LOG = logging.getLogger(__name__)
+
+HIGH_VALUE_TERMS = {
+    "account",
+    "amount",
+    "balance",
+    "credit",
+    "debit",
+    "invoice",
+    "price",
+    "quantity",
+    "salary",
+    "tax",
+    "total",
+}
+
+
+def _high_value_candidate(tables: list[Table]) -> bool:
+    """Recognize tables where one wrong value can materially change a decision."""
+    words = {
+        token.lower()
+        for table in tables
+        for header in table.headers
+        for token in header.replace("/", " ").replace("_", " ").split()
+    }
+    return bool(words.intersection(HIGH_VALUE_TERMS))
 
 
 def convert(
@@ -32,9 +59,15 @@ def convert(
     checkpoint_dir: str | Path | None = None,
     force_ocr: bool = False,
     allow_cloud: bool = False,
+    ocr_languages: str | list[str] | tuple[str, ...] | None = None,
 ) -> Result:
     """Extract each page, select an audited candidate, stitch, validate and export."""
     started = time.perf_counter()
+    requested_languages = normalize_languages(
+        ocr_languages
+        if ocr_languages is not None
+        else os.environ.get("TRUECELL_OCR_LANGUAGES", "eng")
+    )
     result = Result(Path(source).name)
     result.source_sha256 = source_hash(source)
     cache = (
@@ -47,6 +80,7 @@ def convert(
                     "verify": verify,
                     "force_ocr": force_ocr,
                     "allow_cloud": allow_cloud,
+                    "ocr_languages": requested_languages,
                 },
             ),
         )
@@ -68,7 +102,8 @@ def convert(
                 if progress:
                     progress(index + 1, len(document))
                 continue
-            report = PageReport(index + 1, "unknown")
+            page_profile = profile_page(page, requested_languages)
+            report = PageReport(index + 1, "unknown", profile=page_profile.to_dict())
             result.pages.append(report)
             candidates: list[tuple[float, list[Table], Attempt]] = []
 
@@ -107,7 +142,8 @@ def convert(
                 report.attempts.append(record)
 
             try:
-                report.route = "ocr" if force_ocr else route_page(page)
+                report.route = "ocr" if force_ocr else route_page(page, page_profile)
+                report.profile["routing_decision"] = "forced-ocr" if force_ocr else report.route
                 if report.route == "digital":
                     import io
 
@@ -134,24 +170,107 @@ def convert(
                                 "words",
                                 lambda: extract_page(p, index + 1, "words"),
                             )
-                if report.route == "ocr" or (
+                native_candidate_available = any(
+                    tables and record.engine == "native" for _, tables, record in candidates
+                )
+                report.profile["native_candidate_available"] = native_candidate_available
+                native_uncertain = not candidates or needs_retry(best_tables())
+                profile_cross_check = bool(report.profile.get("cross_check_recommended"))
+                high_value_cross_check = (
+                    bool(report.profile.get("high_value_content")) and native_uncertain
+                )
+                independent_cross_check = verify or (
+                    recover and (profile_cross_check or high_value_cross_check)
+                )
+                should_run_ocr = report.route == "ocr" or (
                     report.route == "digital"
-                    and (verify or (not any(c[1] for c in candidates) and bool(page.get_images())))
-                ):
-                    from .ocr import available_engines, extract_image
+                    and (
+                        independent_cross_check
+                        or (not any(c[1] for c in candidates) and bool(page.get_images()))
+                    )
+                )
+                if should_run_ocr:
+                    from .ocr import (
+                        available_engines,
+                        engine_language_coverage,
+                        extract_image,
+                        order_engines,
+                    )
 
-                    engines = available_engines()
+                    engines = order_engines(available_engines(), requested_languages)
                     if not engines:
                         raise RuntimeError(
                             "No OCR engine available. Install rapidocr-onnxruntime or Tesseract."
                         )
+                    coverage = {
+                        engine: list(engine_language_coverage(engine, requested_languages))
+                        for engine in engines
+                    }
+                    report.profile["ocr_engine_language_coverage"] = coverage
+                    report.profile["cross_check_executed"] = bool(report.route == "digital")
+                    supported = {language for values in coverage.values() for language in values}
+                    missing_languages = [
+                        language for language in requested_languages if language not in supported
+                    ]
+                    if missing_languages:
+                        result.issues.append(
+                            Issue(
+                                "warning",
+                                index + 1,
+                                None,
+                                None,
+                                "Requested OCR language packs are unavailable: "
+                                + ", ".join(missing_languages)
+                                + ".",
+                                "Install the matching local Tesseract language packs or provide a clearer native PDF.",
+                                "ocr_language_unavailable",
+                            )
+                        )
                     image = render_page(page)
+
+                    def image_tables(engine: str, **options) -> list[Table]:
+                        if requested_languages == ("eng",):
+                            return extract_image(image, index + 1, engine, **options)
+                        return extract_image(
+                            image,
+                            index + 1,
+                            engine,
+                            languages=requested_languages,
+                            **options,
+                        )
+
+                    ocr_candidate_count = len(candidates)
                     attempt(
                         engines[0],
                         "deskew-300dpi",
-                        lambda: extract_image(image, index + 1, engines[0]),
+                        lambda: image_tables(engines[0]),
                     )
-                    if recover and (not candidates or needs_retry(candidates[-1][1])):
+                    discovered_high_value = len(
+                        candidates
+                    ) > ocr_candidate_count and _high_value_candidate(candidates[-1][1])
+                    if discovered_high_value:
+                        report.profile["high_value_content"] = True
+                        report.profile["high_value_detected_after_ocr"] = True
+                    if (
+                        not native_candidate_available
+                        and (independent_cross_check or (recover and discovered_high_value))
+                        and len(engines) > 1
+                    ):
+                        attempt(
+                            engines[1],
+                            "independent-language-aware-cross-check",
+                            lambda: image_tables(engines[1]),
+                        )
+                    # A nonempty native candidate plus one OCR reading is already
+                    # an independent check. Keep the expensive threshold,
+                    # perspective and rotation ladder for OCR-routed pages or a
+                    # digital page whose native strategies found no table.
+                    full_ocr_recovery = report.route == "ocr" or not native_candidate_available
+                    if (
+                        recover
+                        and full_ocr_recovery
+                        and (not candidates or needs_retry(best_tables()))
+                    ):
                         alternate_name = (
                             "cell-recheck-300dpi"
                             if engines[0] == "tesseract"
@@ -160,36 +279,43 @@ def convert(
                         attempt(
                             engines[0],
                             alternate_name,
-                            lambda: extract_image(image, index + 1, engines[0], alternate=True),
+                            lambda: image_tables(engines[0], alternate=True),
                         )
                         if needs_retry(best_tables()):
                             attempt(
                                 engines[0],
                                 "perspective-cell-recheck-300dpi",
-                                lambda: extract_image(
-                                    image,
-                                    index + 1,
-                                    engines[0],
-                                    perspective=True,
-                                    alternate=True,
-                                ),
+                                lambda: image_tables(engines[0], perspective=True, alternate=True),
                             )
-                        if len(engines) > 1 and (verify or needs_retry(best_tables())):
+                        second_already_tried = (
+                            any(item.engine == engines[1] for item in report.attempts)
+                            if len(engines) > 1
+                            else False
+                        )
+                        if (
+                            len(engines) > 1
+                            and not second_already_tried
+                            and (verify or needs_retry(best_tables()))
+                        ):
                             attempt(
                                 engines[1],
                                 "second-engine",
-                                lambda: extract_image(image, index + 1, engines[1]),
+                                lambda: image_tables(engines[1]),
                             )
                         # Sideways text can still produce a large, incorrect grid.
                         # Retry on substantive uncertainty, not just a low cell count.
                         if needs_retry(best_tables()):
-                            for angle in (90, 180, 270):
+                            hint = int(report.profile.get("rotation_hint", 0))
+                            angles = tuple(
+                                dict.fromkeys(
+                                    ([hint] if hint in {90, 180, 270} else []) + [90, 180, 270]
+                                )
+                            )
+                            for angle in angles:
                                 attempt(
                                     engines[0],
                                     f"rotate-{angle}",
-                                    lambda angle=angle: extract_image(
-                                        image, index + 1, engines[0], rotation=angle
-                                    ),
+                                    lambda angle=angle: image_tables(engines[0], rotation=angle),
                                 )
                                 if not needs_retry(best_tables()):
                                     break
@@ -204,9 +330,7 @@ def convert(
                                 attempt(
                                     engines[1],
                                     f"rotate-{angle}-second-engine",
-                                    lambda: extract_image(
-                                        image, index + 1, engines[1], rotation=angle
-                                    ),
+                                    lambda: image_tables(engines[1], rotation=angle),
                                 )
                 if (
                     allow_cloud

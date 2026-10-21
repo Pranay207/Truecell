@@ -6,12 +6,25 @@ import re
 from datetime import datetime
 from decimal import Decimal, InvalidOperation
 
-DATE_FORMATS = ("%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y", "%d %b %Y", "%d.%m.%Y")
+DATE_FORMATS = (
+    "%Y-%m-%d",
+    "%Y/%m/%d",
+    "%Y.%m.%d",
+    "%d/%m/%Y",
+    "%d-%m-%Y",
+    "%d.%m.%Y",
+    "%d %b %Y",
+    "%d %B %Y",
+    "%b %d, %Y",
+    "%B %d, %Y",
+)
+CURRENCY = r"(?:USD|INR|EUR|GBP|Rs\.?|[$£€₹]|Â£|â‚¬|â‚¹)"
 
 
 def number(value: str) -> Decimal | None:
     """Parse unambiguous dot-decimal, grouped or parenthesized amounts."""
     text = str(value).strip().replace("\u2212", "-").replace("\u00a0", " ")
+    text = re.sub(rf"^{CURRENCY}\s*", "", text, flags=re.I)
     text = re.sub(r"^(?:USD|INR|EUR|GBP|Rs\.?|[$£€₹])\s*", "", text, flags=re.I)
     text = re.sub(r"\s*(?:USD|INR|EUR|GBP)$", "", text, flags=re.I)
     percent = text.endswith("%")
@@ -59,5 +72,7 @@ def kind(value: str) -> str:
     if date_value(value):
         return "date"
     if number(value) is not None:
+        if re.search(CURRENCY, value, re.I):
+            return "currency"
         return "currency" if re.search(r"[$£€₹]|USD|INR|EUR|GBP", value) else "numeric"
     return "text"

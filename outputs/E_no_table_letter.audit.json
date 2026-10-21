@@ -19,7 +19,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0,
-      "seconds": 0.06724530000064988,
+      "seconds": 0.021279900000081398,
       "attempts": [
         {
           "engine": "native",
@@ -28,7 +28,7 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 0.05526850000023842,
+          "seconds": 0.008405800001128227,
           "error": "",
           "selected": true
         },
@@ -39,7 +39,7 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 0.004572400008328259,
+          "seconds": 0.0031398999999510124,
           "error": "",
           "selected": false
         },
@@ -50,15 +50,53 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 0.0034048999950755388,
+          "seconds": 0.0035901999999623513,
           "error": "",
           "selected": false
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 34,
+        "native_character_count": 222,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.176,
+        "estimated_tables": 0,
+        "table_count_class": "none",
+        "quality_grade": "good",
+        "content_cues": [
+          "ordinary_text"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": false,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": false
+      }
     }
   ],
-  "seconds": 0.0702852999966126,
+  "seconds": 0.048523800000111805,
   "source_sha256": "bed5e9633f4c69c79c8ca770b9448db51a66171f7e58060d08c0644574a127ed",
   "constraints": [],
   "proposals": [],

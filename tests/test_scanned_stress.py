@@ -81,5 +81,11 @@ def test_verified_scanned_stress_audit_matches_every_truth_cell():
     assert metric["cell_exact"] == 1
     assert len(result.tables) == 1
     assert (len(result.tables[0].rows), len(result.tables[0].headers)) == (33, 12)
-    assert all(page.route == "ocr" and page.engine == "tesseract" for page in result.pages)
+    assert all(
+        page.route == "ocr" and page.engine in {"tesseract", "rapidocr"} for page in result.pages
+    )
+    assert all(
+        {attempt.engine for attempt in page.attempts} >= {"tesseract", "rapidocr"}
+        for page in result.pages
+    )
     assert sum(issue.code == "split_row_join" for issue in result.issues) == 2

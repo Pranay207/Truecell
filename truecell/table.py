@@ -10,9 +10,16 @@ from .models import Table
 from .values import kind
 
 FOOTER = re.compile(r"^(?:page\s*)?\d+\s*(?:of|/)\s*\d+$|^page\s+\d+$", re.I)
+TITLE_WORDS = re.compile(
+    r"\b(?:report|register|statement|schedule|list|invoice|summary|directory|roster|ledger)\b",
+    re.I,
+)
 VERTICAL_MERGE_NOTE = (
     "Vertically merged group labels repeated into child rows from explicit ruled "
     "geometry; inherited cells reuse the original source box."
+)
+NESTED_GROUP_NOTE = (
+    "Full-width body group labels retained as nested section rows; no child values were imputed."
 )
 
 
@@ -37,6 +44,46 @@ def header_likely(first: list[str], following: list[list[str]]) -> bool:
         for c in range(len(first))
     )
     return changes >= max(1, len(first) * 0.2)
+
+
+def _title_row_likely(
+    rows: list[list[str]],
+    width: int,
+    cell_boxes: list[list[tuple | None]] | None,
+    raw_index: int,
+    table_bbox: tuple,
+) -> bool:
+    """Separate a document title from a real spanning parent header.
+
+    A single spanning label such as ``Movement`` can be a legitimate parent
+    header, so title removal requires both a complete leaf-header row below it
+    and title-like text or strong full-width geometry.  The row is retained as
+    page evidence rather than being discarded silently.
+    """
+    if len(rows) < 3 or width < 3:
+        return False
+    occupied = [clean(value) for value in rows[0] if clean(value)]
+    dense_leaf = (
+        sum(bool(clean(value)) for value in rows[1]) >= width * 0.6
+        and all(kind(value) in {"text", "empty"} for value in rows[1])
+        and sum(sum(bool(clean(value)) for value in row) >= width * 0.6 for row in rows[2:5])
+        >= min(2, len(rows[2:5]))
+    )
+    if len(occupied) != 1 or not (header_likely(rows[1], rows[2:]) or dense_leaf):
+        return False
+    title = occupied[0]
+    letters = "".join(character for character in title if character.isalpha())
+    lexical = bool(TITLE_WORDS.search(title)) or (
+        len(title.split()) >= 2 and bool(letters) and letters.upper() == letters
+    )
+    full_width = False
+    if cell_boxes is not None and raw_index < len(cell_boxes):
+        boxes = [box for box in cell_boxes[raw_index] if box is not None and len(box) >= 4]
+        table_width = max(1.0, float(table_bbox[2]) - float(table_bbox[0]))
+        full_width = bool(boxes) and max(box[2] - box[0] for box in boxes) / table_width >= 0.82
+    # Geometry alone is accepted only for a multi-word title; this preserves
+    # one-word full-width group headers such as "Product" or "Movement".
+    return lexical or full_width and len(title.split()) >= 2
 
 
 def _vertical_merge_origins(
@@ -113,7 +160,12 @@ def normalize(
     if len(rows) < 2 or max(map(len, rows), default=0) < 2:
         return None
     width = max(map(len, rows))
-    has_header = header_likely(rows[0], rows[1:])
+    title_index: int | None = None
+    if _title_row_likely(rows, width, cell_boxes, indices[0], bbox):
+        title_index = indices[0]
+        rows = rows[1:]
+        indices = indices[1:]
+    has_header = title_index is not None or header_likely(rows[0], rows[1:])
     header_indices = []
     # Spanning top groups: pdfplumber represents merged cells as None/empty.
     if (
@@ -141,6 +193,7 @@ def normalize(
         headers = [f"Column {c + 1}" for c in range(width)]
     headers = [h or f"Column {c + 1}" for c, h in enumerate(headers)]
     vertical_origins: dict[tuple[int, int], int] = {}
+    nested_groups: set[tuple[int, int]] = set()
     if engine == "native-lines" and cell_boxes is not None:
         vertical_origins = _vertical_merge_origins(raw, cell_boxes, indices)
         for data_row, raw_index in enumerate(indices):
@@ -148,15 +201,55 @@ def normalize(
                 source_index = vertical_origins.get((raw_index, column))
                 if source_index is not None:
                     rows[data_row][column] = clean(raw[source_index][column])
+            populated = [c for c, value in enumerate(raw[raw_index]) if clean(value)]
+            if len(populated) == 1:
+                column = populated[0]
+                box = (
+                    cell_boxes[raw_index][column]
+                    if raw_index < len(cell_boxes) and column < len(cell_boxes[raw_index])
+                    else None
+                )
+                table_width = max(1.0, float(bbox[2]) - float(bbox[0]))
+                if (
+                    box is not None
+                    and len(box) >= 4
+                    and (box[2] - box[0]) / table_width >= 0.8
+                    and kind(clean(raw[raw_index][column])) == "text"
+                ):
+                    nested_groups.add((raw_index, column))
     table = Table(headers, rows, page, tuple(bbox), engine, confidence, has_header)
+    if title_index is not None:
+        title_cell = next(
+            (c for c, value in enumerate(raw[title_index]) if clean(value)),
+            0,
+        )
+        title_box = (
+            cell_boxes[title_index][title_cell]
+            if cell_boxes is not None
+            and title_index < len(cell_boxes)
+            and title_cell < len(cell_boxes[title_index])
+            else None
+        )
+        title = clean(raw[title_index][title_cell])
+        table.page_summaries.append(
+            {
+                "page": page,
+                "text": title,
+                "bbox": list(title_box) if title_box else None,
+                "role": "document_title",
+            }
+        )
     if vertical_origins:
         table.notes.append(VERTICAL_MERGE_NOTE)
+    if nested_groups:
+        table.notes.append(NESTED_GROUP_NOTE)
     if row_indices is not None:
         row_indices.extend(indices)
     if cell_boxes is not None:
 
         def source(r: int, c: int) -> list[dict]:
             inherited = (r, c) in vertical_origins
+            nested_group = (r, c) in nested_groups
             if inherited:
                 r = vertical_origins[(r, c)]
             top_value = raw[r][c] if c < len(raw[r]) else None
@@ -184,7 +277,13 @@ def normalize(
                     "engine": engine,
                     "confidence": None if engine.startswith("native") else confidence,
                     "coordinates": "page points",
-                    **({"role": "vertical_merge_expansion"} if inherited else {}),
+                    **(
+                        {"role": "vertical_merge_expansion"}
+                        if inherited
+                        else {"role": "nested_group_label"}
+                        if nested_group
+                        else {}
+                    ),
                 }
             ]
 

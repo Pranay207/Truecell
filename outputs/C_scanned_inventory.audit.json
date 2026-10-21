@@ -361,8 +361,8 @@
         1085.04,
         442.8
       ],
-      "engine": "ocr-tesseract",
-      "confidence": 0.96,
+      "engine": "ocr-rapidocr",
+      "confidence": 0.9999245688319206,
       "header_detected": true,
       "provenance": [
         [
@@ -511,34 +511,33 @@
         ]
       ],
       "notes": [
-        "OCR tesseract; deskew correction 0.00 degrees; values require source review.",
-        "Cell recheck at grid row 5, column 6: '\u201c' -> '4'; compare source."
+        "OCR rapidocr; deskew correction 0.00 degrees; values require source review."
       ],
       "row_engines": [
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract",
-        "ocr-tesseract"
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr",
+        "ocr-rapidocr"
       ],
       "cell_sources": [
         [
@@ -552,8 +551,8 @@
                 145.92
               ],
               "text": "INV-0001",
-              "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999711513519287,
               "coordinates": "page points",
               "initial_reading": "INV-0001"
             }
@@ -568,8 +567,8 @@
                 145.92
               ],
               "text": "2026-10-01",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999893188476563,
               "coordinates": "page points",
               "initial_reading": "2026-10-01"
             }
@@ -584,8 +583,8 @@
                 145.92
               ],
               "text": "Client 1",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9404574409127235,
               "coordinates": "page points",
               "initial_reading": "Client 1"
             }
@@ -600,8 +599,8 @@
                 145.92
               ],
               "text": "000001",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998051921526591,
               "coordinates": "page points",
               "initial_reading": "000001"
             }
@@ -616,8 +615,8 @@
                 145.92
               ],
               "text": "Widget model 1",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996220171451569,
               "coordinates": "page points",
               "initial_reading": "Widget model 1"
             }
@@ -632,8 +631,8 @@
                 145.92
               ],
               "text": "1",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999871253967285,
               "coordinates": "page points",
               "initial_reading": "1"
             }
@@ -648,8 +647,8 @@
                 145.92
               ],
               "text": "12.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9910397529602051,
               "coordinates": "page points",
               "initial_reading": "12.00"
             }
@@ -664,8 +663,8 @@
                 145.92
               ],
               "text": "12.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999660730361939,
               "coordinates": "page points",
               "initial_reading": "12.00"
             }
@@ -680,8 +679,8 @@
                 145.92
               ],
               "text": "1.20",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9995656758546829,
               "coordinates": "page points",
               "initial_reading": "1.20"
             }
@@ -696,8 +695,8 @@
                 145.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999372959136963,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -712,8 +711,8 @@
                 145.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999945878982544,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -728,8 +727,8 @@
                 145.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998781979084015,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -746,8 +745,8 @@
                 173.04
               ],
               "text": "INV-0002",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999540746212006,
               "coordinates": "page points",
               "initial_reading": "INV-0002"
             }
@@ -762,8 +761,8 @@
                 173.04
               ],
               "text": "2026-10-02",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.995414537191391,
               "coordinates": "page points",
               "initial_reading": "2026-10-02"
             }
@@ -778,8 +777,8 @@
                 173.04
               ],
               "text": "Client 2",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9988696947693825,
               "coordinates": "page points",
               "initial_reading": "Client 2"
             }
@@ -794,8 +793,8 @@
                 173.04
               ],
               "text": "000002",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997749725977579,
               "coordinates": "page points",
               "initial_reading": "000002"
             }
@@ -810,8 +809,8 @@
                 173.04
               ],
               "text": "Widget model 2",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997244477272034,
               "coordinates": "page points",
               "initial_reading": "Widget model 2"
             }
@@ -826,8 +825,8 @@
                 173.04
               ],
               "text": "2",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999786615371704,
               "coordinates": "page points",
               "initial_reading": "2"
             }
@@ -842,8 +841,8 @@
                 173.04
               ],
               "text": "13.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999741554260254,
               "coordinates": "page points",
               "initial_reading": "13.00"
             }
@@ -858,8 +857,8 @@
                 173.04
               ],
               "text": "26.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999297738075257,
               "coordinates": "page points",
               "initial_reading": "26.00"
             }
@@ -874,8 +873,8 @@
                 173.04
               ],
               "text": "2.60",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998771995306015,
               "coordinates": "page points",
               "initial_reading": "2.60"
             }
@@ -890,8 +889,8 @@
                 173.04
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999285042285919,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -906,8 +905,8 @@
                 173.04
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999284505844116,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -922,8 +921,8 @@
                 173.04
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998601973056793,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -940,8 +939,8 @@
                 199.92
               ],
               "text": "INV-0003",
-              "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999547451734543,
               "coordinates": "page points",
               "initial_reading": "INV-0003"
             }
@@ -956,8 +955,8 @@
                 199.92
               ],
               "text": "2026-10-03",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999782681465149,
               "coordinates": "page points",
               "initial_reading": "2026-10-03"
             }
@@ -972,8 +971,8 @@
                 199.92
               ],
               "text": "Client 3",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9618034288287163,
               "coordinates": "page points",
               "initial_reading": "Client 3"
             }
@@ -988,8 +987,8 @@
                 199.92
               ],
               "text": "000003",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9993631740411123,
               "coordinates": "page points",
               "initial_reading": "000003"
             }
@@ -1004,8 +1003,8 @@
                 199.92
               ],
               "text": "Widget model 3",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997339802128928,
               "coordinates": "page points",
               "initial_reading": "Widget model 3"
             }
@@ -1020,8 +1019,8 @@
                 199.92
               ],
               "text": "3",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999651908874512,
               "coordinates": "page points",
               "initial_reading": "3"
             }
@@ -1036,8 +1035,8 @@
                 199.92
               ],
               "text": "14.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999166369438172,
               "coordinates": "page points",
               "initial_reading": "14.00"
             }
@@ -1052,8 +1051,8 @@
                 199.92
               ],
               "text": "42.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999686241149902,
               "coordinates": "page points",
               "initial_reading": "42.00"
             }
@@ -1068,8 +1067,8 @@
                 199.92
               ],
               "text": "4.20",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999664127826691,
               "coordinates": "page points",
               "initial_reading": "4.20"
             }
@@ -1084,8 +1083,8 @@
                 199.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999932050704956,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -1100,8 +1099,8 @@
                 199.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999526500701904,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -1116,8 +1115,8 @@
                 199.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998824298381805,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -1134,8 +1133,8 @@
                 226.8
               ],
               "text": "INV-0004",
-              "engine": "ocr-tesseract",
-              "confidence": 0.92,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999528974294662,
               "coordinates": "page points",
               "initial_reading": "INV-0004"
             }
@@ -1150,8 +1149,8 @@
                 226.8
               ],
               "text": "2026-10-04",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998571991920471,
               "coordinates": "page points",
               "initial_reading": "2026-10-04"
             }
@@ -1166,8 +1165,8 @@
                 226.8
               ],
               "text": "Client 4",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9987111836671829,
               "coordinates": "page points",
               "initial_reading": "Client 4"
             }
@@ -1182,8 +1181,8 @@
                 226.8
               ],
               "text": "000004",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996803402900696,
               "coordinates": "page points",
               "initial_reading": "000004"
             }
@@ -1198,8 +1197,8 @@
                 226.8
               ],
               "text": "Widget model 4",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9993306526115963,
               "coordinates": "page points",
               "initial_reading": "Widget model 4"
             }
@@ -1214,10 +1213,10 @@
                 226.8
               ],
               "text": "4",
-              "engine": "ocr-tesseract",
-              "confidence": 0.97,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999502897262573,
               "coordinates": "page points",
-              "initial_reading": "\u201c"
+              "initial_reading": "4"
             },
             {
               "page": 1,
@@ -1246,8 +1245,8 @@
                 226.8
               ],
               "text": "15.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999747037887573,
               "coordinates": "page points",
               "initial_reading": "15.00"
             }
@@ -1262,8 +1261,8 @@
                 226.8
               ],
               "text": "60.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998101353645324,
               "coordinates": "page points",
               "initial_reading": "60.00"
             }
@@ -1278,8 +1277,8 @@
                 226.8
               ],
               "text": "6.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999092668294907,
               "coordinates": "page points",
               "initial_reading": "6.00"
             }
@@ -1294,8 +1293,8 @@
                 226.8
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999363720417023,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -1310,8 +1309,8 @@
                 226.8
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999297142028809,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -1326,8 +1325,8 @@
                 226.8
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998646676540375,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -1344,8 +1343,8 @@
                 253.92
               ],
               "text": "INV-0005",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999507069587708,
               "coordinates": "page points",
               "initial_reading": "INV-0005"
             }
@@ -1360,8 +1359,8 @@
                 253.92
               ],
               "text": "2026-10-05",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999760150909424,
               "coordinates": "page points",
               "initial_reading": "2026-10-05"
             }
@@ -1376,8 +1375,8 @@
                 253.92
               ],
               "text": "Client 5",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996863752603531,
               "coordinates": "page points",
               "initial_reading": "Client 5"
             }
@@ -1392,8 +1391,8 @@
                 253.92
               ],
               "text": "000005",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996482829252878,
               "coordinates": "page points",
               "initial_reading": "000005"
             }
@@ -1408,8 +1407,8 @@
                 253.92
               ],
               "text": "Widget model 5",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996546634605953,
               "coordinates": "page points",
               "initial_reading": "Widget model 5"
             }
@@ -1424,8 +1423,8 @@
                 253.92
               ],
               "text": "5",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999797344207764,
               "coordinates": "page points",
               "initial_reading": "5"
             }
@@ -1440,8 +1439,8 @@
                 253.92
               ],
               "text": "16.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999930465221405,
               "coordinates": "page points",
               "initial_reading": "16.00"
             }
@@ -1456,8 +1455,8 @@
                 253.92
               ],
               "text": "80.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999221324920654,
               "coordinates": "page points",
               "initial_reading": "80.00"
             }
@@ -1472,8 +1471,8 @@
                 253.92
               ],
               "text": "8.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999169260263443,
               "coordinates": "page points",
               "initial_reading": "8.00"
             }
@@ -1488,8 +1487,8 @@
                 253.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999300837516785,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -1504,8 +1503,8 @@
                 253.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999488353729248,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -1520,8 +1519,8 @@
                 253.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998885095119476,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -1538,8 +1537,8 @@
                 281.04
               ],
               "text": "INV-0006",
-              "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999396353960037,
               "coordinates": "page points",
               "initial_reading": "INV-0006"
             }
@@ -1554,8 +1553,8 @@
                 281.04
               ],
               "text": "2026-10-06",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999782562255859,
               "coordinates": "page points",
               "initial_reading": "2026-10-06"
             }
@@ -1570,8 +1569,8 @@
                 281.04
               ],
               "text": "Client 6",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9984259530901909,
               "coordinates": "page points",
               "initial_reading": "Client 6"
             }
@@ -1586,8 +1585,8 @@
                 281.04
               ],
               "text": "000006",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9993943671385447,
               "coordinates": "page points",
               "initial_reading": "000006"
             }
@@ -1602,8 +1601,8 @@
                 281.04
               ],
               "text": "Widget model 6",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9990714831011636,
               "coordinates": "page points",
               "initial_reading": "Widget model 6"
             }
@@ -1618,8 +1617,8 @@
                 281.04
               ],
               "text": "6",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999943971633911,
               "coordinates": "page points",
               "initial_reading": "6"
             }
@@ -1634,8 +1633,8 @@
                 281.04
               ],
               "text": "17.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999788284301758,
               "coordinates": "page points",
               "initial_reading": "17.00"
             }
@@ -1650,8 +1649,8 @@
                 281.04
               ],
               "text": "102.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998733997344971,
               "coordinates": "page points",
               "initial_reading": "102.00"
             }
@@ -1666,8 +1665,8 @@
                 281.04
               ],
               "text": "10.20",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999958872795105,
               "coordinates": "page points",
               "initial_reading": "10.20"
             }
@@ -1682,8 +1681,8 @@
                 281.04
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999940037727356,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -1698,8 +1697,8 @@
                 281.04
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999243736267089,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -1714,8 +1713,8 @@
                 281.04
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998617768287659,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -1732,8 +1731,8 @@
                 307.92
               ],
               "text": "INV-0007",
-              "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999542832374573,
               "coordinates": "page points",
               "initial_reading": "INV-0007"
             }
@@ -1748,8 +1747,8 @@
                 307.92
               ],
               "text": "2026-10-07",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999980914592743,
               "coordinates": "page points",
               "initial_reading": "2026-10-07"
             }
@@ -1764,8 +1763,8 @@
                 307.92
               ],
               "text": "Client 7",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9699705690145493,
               "coordinates": "page points",
               "initial_reading": "Client 7"
             }
@@ -1780,8 +1779,8 @@
                 307.92
               ],
               "text": "000007",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999697188536326,
               "coordinates": "page points",
               "initial_reading": "000007"
             }
@@ -1796,8 +1795,8 @@
                 307.92
               ],
               "text": "Widget model 7",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996323585510254,
               "coordinates": "page points",
               "initial_reading": "Widget model 7"
             }
@@ -1812,8 +1811,8 @@
                 307.92
               ],
               "text": "7",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999953508377075,
               "coordinates": "page points",
               "initial_reading": "7"
             }
@@ -1828,8 +1827,8 @@
                 307.92
               ],
               "text": "18.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999941885471344,
               "coordinates": "page points",
               "initial_reading": "18.00"
             }
@@ -1844,8 +1843,8 @@
                 307.92
               ],
               "text": "126.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998140335083008,
               "coordinates": "page points",
               "initial_reading": "126.00"
             }
@@ -1860,8 +1859,8 @@
                 307.92
               ],
               "text": "12.60",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999949061870575,
               "coordinates": "page points",
               "initial_reading": "12.60"
             }
@@ -1876,8 +1875,8 @@
                 307.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999247640371323,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -1892,8 +1891,8 @@
                 307.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999487638473511,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -1908,8 +1907,8 @@
                 307.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998963326215744,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -1926,8 +1925,8 @@
                 334.8
               ],
               "text": "INV-0008",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999519139528275,
               "coordinates": "page points",
               "initial_reading": "INV-0008"
             }
@@ -1942,8 +1941,8 @@
                 334.8
               ],
               "text": "2026-10-08",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999818921089172,
               "coordinates": "page points",
               "initial_reading": "2026-10-08"
             }
@@ -1958,8 +1957,8 @@
                 334.8
               ],
               "text": "Client 8",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996350258588791,
               "coordinates": "page points",
               "initial_reading": "Client 8"
             }
@@ -1974,8 +1973,8 @@
                 334.8
               ],
               "text": "000008",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9995404978593191,
               "coordinates": "page points",
               "initial_reading": "000008"
             }
@@ -1990,8 +1989,8 @@
                 334.8
               ],
               "text": "Widget model 8",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999525785446167,
               "coordinates": "page points",
               "initial_reading": "Widget model 8"
             }
@@ -2006,8 +2005,8 @@
                 334.8
               ],
               "text": "1",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999881982803345,
               "coordinates": "page points",
               "initial_reading": "1"
             }
@@ -2022,8 +2021,8 @@
                 334.8
               ],
               "text": "19.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999712944030762,
               "coordinates": "page points",
               "initial_reading": "19.00"
             }
@@ -2038,8 +2037,8 @@
                 334.8
               ],
               "text": "19.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999653339385987,
               "coordinates": "page points",
               "initial_reading": "19.00"
             }
@@ -2054,8 +2053,8 @@
                 334.8
               ],
               "text": "1.90",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999180138111115,
               "coordinates": "page points",
               "initial_reading": "1.90"
             }
@@ -2070,8 +2069,8 @@
                 334.8
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999367594718933,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -2086,8 +2085,8 @@
                 334.8
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999260663986206,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -2102,8 +2101,8 @@
                 334.8
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999861091375351,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -2120,8 +2119,8 @@
                 361.92
               ],
               "text": "INV-0009",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999528527259827,
               "coordinates": "page points",
               "initial_reading": "INV-0009"
             }
@@ -2136,8 +2135,8 @@
                 361.92
               ],
               "text": "2026-10-09",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.99996919631958,
               "coordinates": "page points",
               "initial_reading": "2026-10-09"
             }
@@ -2152,8 +2151,8 @@
                 361.92
               ],
               "text": "Client 9",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9458262771368027,
               "coordinates": "page points",
               "initial_reading": "Client 9"
             }
@@ -2168,8 +2167,8 @@
                 361.92
               ],
               "text": "000009",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9993602335453033,
               "coordinates": "page points",
               "initial_reading": "000009"
             }
@@ -2184,8 +2183,8 @@
                 361.92
               ],
               "text": "Widget model 9",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9992575645446777,
               "coordinates": "page points",
               "initial_reading": "Widget model 9"
             }
@@ -2200,8 +2199,8 @@
                 361.92
               ],
               "text": "2",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999730587005615,
               "coordinates": "page points",
               "initial_reading": "2"
             }
@@ -2216,8 +2215,8 @@
                 361.92
               ],
               "text": "20.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998818159103393,
               "coordinates": "page points",
               "initial_reading": "20.00"
             }
@@ -2232,8 +2231,8 @@
                 361.92
               ],
               "text": "40.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999352693557739,
               "coordinates": "page points",
               "initial_reading": "40.00"
             }
@@ -2248,8 +2247,8 @@
                 361.92
               ],
               "text": "4.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999188631772995,
               "coordinates": "page points",
               "initial_reading": "4.00"
             }
@@ -2264,8 +2263,8 @@
                 361.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999098032712936,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -2280,8 +2279,8 @@
                 361.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999476432800293,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -2296,8 +2295,8 @@
                 361.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999019950628281,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -2314,8 +2313,8 @@
                 389.04
               ],
               "text": "INV-0010",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999543875455856,
               "coordinates": "page points",
               "initial_reading": "INV-0010"
             }
@@ -2330,8 +2329,8 @@
                 389.04
               ],
               "text": "2026-10-10",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999904632568359,
               "coordinates": "page points",
               "initial_reading": "2026-10-10"
             }
@@ -2346,8 +2345,8 @@
                 389.04
               ],
               "text": "Client 1",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9991805031895638,
               "coordinates": "page points",
               "initial_reading": "Client 1"
             }
@@ -2362,8 +2361,8 @@
                 389.04
               ],
               "text": "000010",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998673101266226,
               "coordinates": "page points",
               "initial_reading": "000010"
             }
@@ -2378,8 +2377,8 @@
                 389.04
               ],
               "text": "Widget model 10",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997729023297628,
               "coordinates": "page points",
               "initial_reading": "Widget model 10"
             }
@@ -2394,8 +2393,8 @@
                 389.04
               ],
               "text": "3",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999499320983887,
               "coordinates": "page points",
               "initial_reading": "3"
             }
@@ -2410,8 +2409,8 @@
                 389.04
               ],
               "text": "21.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999771118164062,
               "coordinates": "page points",
               "initial_reading": "21.00"
             }
@@ -2426,8 +2425,8 @@
                 389.04
               ],
               "text": "63.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9719254612922669,
               "coordinates": "page points",
               "initial_reading": "63.00"
             }
@@ -2442,8 +2441,8 @@
                 389.04
               ],
               "text": "6.30",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999407231807709,
               "coordinates": "page points",
               "initial_reading": "6.30"
             }
@@ -2458,8 +2457,8 @@
                 389.04
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999412894248962,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -2474,8 +2473,8 @@
                 389.04
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999350070953369,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -2490,8 +2489,8 @@
                 389.04
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998669922351837,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -2508,8 +2507,8 @@
                 415.92
               ],
               "text": "INV-0011",
-              "engine": "ocr-tesseract",
-              "confidence": 0.92,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999650865793228,
               "coordinates": "page points",
               "initial_reading": "INV-0011"
             }
@@ -2524,8 +2523,8 @@
                 415.92
               ],
               "text": "2026-10-11",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999923825263977,
               "coordinates": "page points",
               "initial_reading": "2026-10-11"
             }
@@ -2540,8 +2539,8 @@
                 415.92
               ],
               "text": "Client 2",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9391118809580803,
               "coordinates": "page points",
               "initial_reading": "Client 2"
             }
@@ -2556,8 +2555,8 @@
                 415.92
               ],
               "text": "000011",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998975793520609,
               "coordinates": "page points",
               "initial_reading": "000011"
             }
@@ -2572,8 +2571,8 @@
                 415.92
               ],
               "text": "Widget model 11",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9699440360069275,
               "coordinates": "page points",
               "initial_reading": "Widget model 11"
             }
@@ -2588,8 +2587,8 @@
                 415.92
               ],
               "text": "4",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999542236328125,
               "coordinates": "page points",
               "initial_reading": "4"
             }
@@ -2604,8 +2603,8 @@
                 415.92
               ],
               "text": "22.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999415636062622,
               "coordinates": "page points",
               "initial_reading": "22.00"
             }
@@ -2620,8 +2619,8 @@
                 415.92
               ],
               "text": "88.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999066591262817,
               "coordinates": "page points",
               "initial_reading": "88.00"
             }
@@ -2636,8 +2635,8 @@
                 415.92
               ],
               "text": "8.80",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999312460422516,
               "coordinates": "page points",
               "initial_reading": "8.80"
             }
@@ -2652,8 +2651,8 @@
                 415.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998974353075027,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -2668,8 +2667,8 @@
                 415.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999525547027588,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -2684,8 +2683,8 @@
                 415.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999033659696579,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -2702,8 +2701,8 @@
                 442.8
               ],
               "text": "INV-0012",
-              "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999631941318512,
               "coordinates": "page points",
               "initial_reading": "INV-0012"
             }
@@ -2718,8 +2717,8 @@
                 442.8
               ],
               "text": "2026-10-12",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999916791915894,
               "coordinates": "page points",
               "initial_reading": "2026-10-12"
             }
@@ -2734,8 +2733,8 @@
                 442.8
               ],
               "text": "Client 3",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996877610683441,
               "coordinates": "page points",
               "initial_reading": "Client 3"
             }
@@ -2750,8 +2749,8 @@
                 442.8
               ],
               "text": "000012",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999542037645975,
               "coordinates": "page points",
               "initial_reading": "000012"
             }
@@ -2766,8 +2765,8 @@
                 442.8
               ],
               "text": "Widget model 12",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999825366338094,
               "coordinates": "page points",
               "initial_reading": "Widget model 12"
             }
@@ -2782,8 +2781,8 @@
                 442.8
               ],
               "text": "5",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999786615371704,
               "coordinates": "page points",
               "initial_reading": "5"
             }
@@ -2798,8 +2797,8 @@
                 442.8
               ],
               "text": "12.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999674665927887,
               "coordinates": "page points",
               "initial_reading": "12.00"
             }
@@ -2814,8 +2813,8 @@
                 442.8
               ],
               "text": "60.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999111413955688,
               "coordinates": "page points",
               "initial_reading": "60.00"
             }
@@ -2830,8 +2829,8 @@
                 442.8
               ],
               "text": "6.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999185353517532,
               "coordinates": "page points",
               "initial_reading": "6.00"
             }
@@ -2846,8 +2845,8 @@
                 442.8
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999372065067291,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -2862,8 +2861,8 @@
                 442.8
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999412536621094,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -2878,8 +2877,8 @@
                 442.8
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998748600482941,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -2896,8 +2895,8 @@
                 145.92
               ],
               "text": "INV-0013",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999687671661377,
               "coordinates": "page points",
               "initial_reading": "INV-0013"
             }
@@ -2912,8 +2911,8 @@
                 145.92
               ],
               "text": "2026-10-13",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999916434288025,
               "coordinates": "page points",
               "initial_reading": "2026-10-13"
             }
@@ -2928,8 +2927,8 @@
                 145.92
               ],
               "text": "Client 4",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9386227503418922,
               "coordinates": "page points",
               "initial_reading": "Client 4"
             }
@@ -2944,8 +2943,8 @@
                 145.92
               ],
               "text": "000013",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999212423960367,
               "coordinates": "page points",
               "initial_reading": "000013"
             }
@@ -2960,8 +2959,8 @@
                 145.92
               ],
               "text": "Widget model 13",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998136480649312,
               "coordinates": "page points",
               "initial_reading": "Widget model 13"
             }
@@ -2976,8 +2975,8 @@
                 145.92
               ],
               "text": "6",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999961853027344,
               "coordinates": "page points",
               "initial_reading": "6"
             }
@@ -2992,8 +2991,8 @@
                 145.92
               ],
               "text": "13.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999926221370697,
               "coordinates": "page points",
               "initial_reading": "13.00"
             }
@@ -3008,8 +3007,8 @@
                 145.92
               ],
               "text": "78.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999614953994751,
               "coordinates": "page points",
               "initial_reading": "78.00"
             }
@@ -3024,8 +3023,8 @@
                 145.92
               ],
               "text": "7.80",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999672770500183,
               "coordinates": "page points",
               "initial_reading": "7.80"
             }
@@ -3040,8 +3039,8 @@
                 145.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999361932277679,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -3056,8 +3055,8 @@
                 145.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999462842941285,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -3072,8 +3071,8 @@
                 145.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998781979084015,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -3090,8 +3089,8 @@
                 173.04
               ],
               "text": "INV-0014",
-              "engine": "ocr-tesseract",
-              "confidence": 0.89,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999647438526154,
               "coordinates": "page points",
               "initial_reading": "INV-0014"
             }
@@ -3106,8 +3105,8 @@
                 173.04
               ],
               "text": "2026-10-14",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999909996986389,
               "coordinates": "page points",
               "initial_reading": "2026-10-14"
             }
@@ -3122,8 +3121,8 @@
                 173.04
               ],
               "text": "Client 5",
-              "engine": "ocr-tesseract",
-              "confidence": 0.92,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9980887547135353,
               "coordinates": "page points",
               "initial_reading": "Client 5"
             }
@@ -3138,8 +3137,8 @@
                 173.04
               ],
               "text": "000014",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999114175637563,
               "coordinates": "page points",
               "initial_reading": "000014"
             }
@@ -3154,8 +3153,8 @@
                 173.04
               ],
               "text": "Widget model 1",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996509424277714,
               "coordinates": "page points",
               "initial_reading": "Widget model 1"
             }
@@ -3170,8 +3169,8 @@
                 173.04
               ],
               "text": "7",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999948740005493,
               "coordinates": "page points",
               "initial_reading": "7"
             }
@@ -3186,8 +3185,8 @@
                 173.04
               ],
               "text": "14.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999682664871216,
               "coordinates": "page points",
               "initial_reading": "14.00"
             }
@@ -3202,8 +3201,8 @@
                 173.04
               ],
               "text": "98.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999960470199585,
               "coordinates": "page points",
               "initial_reading": "98.00"
             }
@@ -3218,8 +3217,8 @@
                 173.04
               ],
               "text": "9.80",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999549984931946,
               "coordinates": "page points",
               "initial_reading": "9.80"
             }
@@ -3234,8 +3233,8 @@
                 173.04
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999276101589203,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -3250,8 +3249,8 @@
                 173.04
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999284505844116,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -3266,8 +3265,8 @@
                 173.04
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998601973056793,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -3284,8 +3283,8 @@
                 199.92
               ],
               "text": "INV-0015",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999643564224243,
               "coordinates": "page points",
               "initial_reading": "INV-0015"
             }
@@ -3300,8 +3299,8 @@
                 199.92
               ],
               "text": "2026-10-15",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999896883964539,
               "coordinates": "page points",
               "initial_reading": "2026-10-15"
             }
@@ -3316,8 +3315,8 @@
                 199.92
               ],
               "text": "Client 6",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.99974624812603,
               "coordinates": "page points",
               "initial_reading": "Client 6"
             }
@@ -3332,8 +3331,8 @@
                 199.92
               ],
               "text": "000015",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999016920725504,
               "coordinates": "page points",
               "initial_reading": "000015"
             }
@@ -3348,8 +3347,8 @@
                 199.92
               ],
               "text": "Widget model 2",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997207309518542,
               "coordinates": "page points",
               "initial_reading": "Widget model 2"
             }
@@ -3364,8 +3363,8 @@
                 199.92
               ],
               "text": "1",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999887943267822,
               "coordinates": "page points",
               "initial_reading": "1"
             }
@@ -3380,8 +3379,8 @@
                 199.92
               ],
               "text": "15.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999677896499634,
               "coordinates": "page points",
               "initial_reading": "15.00"
             }
@@ -3396,8 +3395,8 @@
                 199.92
               ],
               "text": "15.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999156951904297,
               "coordinates": "page points",
               "initial_reading": "15.00"
             }
@@ -3412,8 +3411,8 @@
                 199.92
               ],
               "text": "1.50",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998491108417511,
               "coordinates": "page points",
               "initial_reading": "1.50"
             }
@@ -3428,8 +3427,8 @@
                 199.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999318718910217,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -3444,8 +3443,8 @@
                 199.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999535083770752,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -3460,8 +3459,8 @@
                 199.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998824298381805,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -3478,8 +3477,8 @@
                 226.8
               ],
               "text": "INV-0016",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999567270278931,
               "coordinates": "page points",
               "initial_reading": "INV-0016"
             }
@@ -3494,8 +3493,8 @@
                 226.8
               ],
               "text": "2026-10-16",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999897480010986,
               "coordinates": "page points",
               "initial_reading": "2026-10-16"
             }
@@ -3510,8 +3509,8 @@
                 226.8
               ],
               "text": "Client 7",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996017515659332,
               "coordinates": "page points",
               "initial_reading": "Client 7"
             }
@@ -3526,8 +3525,8 @@
                 226.8
               ],
               "text": "000016",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998262226581573,
               "coordinates": "page points",
               "initial_reading": "000016"
             }
@@ -3542,8 +3541,8 @@
                 226.8
               ],
               "text": "Widget model 3",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997296120439257,
               "coordinates": "page points",
               "initial_reading": "Widget model 3"
             }
@@ -3558,8 +3557,8 @@
                 226.8
               ],
               "text": "2",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999775886535645,
               "coordinates": "page points",
               "initial_reading": "2"
             }
@@ -3574,8 +3573,8 @@
                 226.8
               ],
               "text": "16.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999653339385987,
               "coordinates": "page points",
               "initial_reading": "16.00"
             }
@@ -3590,8 +3589,8 @@
                 226.8
               ],
               "text": "32.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999672889709472,
               "coordinates": "page points",
               "initial_reading": "32.00"
             }
@@ -3606,8 +3605,8 @@
                 226.8
               ],
               "text": "3.20",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999619424343109,
               "coordinates": "page points",
               "initial_reading": "3.20"
             }
@@ -3622,8 +3621,8 @@
                 226.8
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999357759952545,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -3638,8 +3637,8 @@
                 226.8
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.99992995262146,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -3654,8 +3653,8 @@
                 226.8
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998646676540375,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -3672,8 +3671,8 @@
                 253.92
               ],
               "text": "INV-0017",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999676942825317,
               "coordinates": "page points",
               "initial_reading": "INV-0017"
             }
@@ -3688,8 +3687,8 @@
                 253.92
               ],
               "text": "2026-10-17",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999908089637757,
               "coordinates": "page points",
               "initial_reading": "2026-10-17"
             }
@@ -3704,8 +3703,8 @@
                 253.92
               ],
               "text": "Client 8",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9659256115555763,
               "coordinates": "page points",
               "initial_reading": "Client 8"
             }
@@ -3720,8 +3719,8 @@
                 253.92
               ],
               "text": "000017",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999160369237264,
               "coordinates": "page points",
               "initial_reading": "000017"
             }
@@ -3736,8 +3735,8 @@
                 253.92
               ],
               "text": "Widget model 4",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9994494191237858,
               "coordinates": "page points",
               "initial_reading": "Widget model 4"
             }
@@ -3752,8 +3751,8 @@
                 253.92
               ],
               "text": "3",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999673366546631,
               "coordinates": "page points",
               "initial_reading": "3"
             }
@@ -3768,8 +3767,8 @@
                 253.92
               ],
               "text": "17.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999572277069092,
               "coordinates": "page points",
               "initial_reading": "17.00"
             }
@@ -3784,8 +3783,8 @@
                 253.92
               ],
               "text": "51.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999678134918213,
               "coordinates": "page points",
               "initial_reading": "51.00"
             }
@@ -3800,8 +3799,8 @@
                 253.92
               ],
               "text": "5.10",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999772906303406,
               "coordinates": "page points",
               "initial_reading": "5.10"
             }
@@ -3816,8 +3815,8 @@
                 253.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999304115772247,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -3832,8 +3831,8 @@
                 253.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999487638473511,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -3848,8 +3847,8 @@
                 253.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998885095119476,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -3866,8 +3865,8 @@
                 281.04
               ],
               "text": "INV-0018",
-              "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999966636300087,
               "coordinates": "page points",
               "initial_reading": "INV-0018"
             }
@@ -3882,8 +3881,8 @@
                 281.04
               ],
               "text": "2026-10-18",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999914407730103,
               "coordinates": "page points",
               "initial_reading": "2026-10-18"
             }
@@ -3898,8 +3897,8 @@
                 281.04
               ],
               "text": "Client 9",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999345988035202,
               "coordinates": "page points",
               "initial_reading": "Client 9"
             }
@@ -3914,8 +3913,8 @@
                 281.04
               ],
               "text": "000018",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999249080816904,
               "coordinates": "page points",
               "initial_reading": "000018"
             }
@@ -3930,8 +3929,8 @@
                 281.04
               ],
               "text": "Widget model 5",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9994614124298096,
               "coordinates": "page points",
               "initial_reading": "Widget model 5"
             }
@@ -3946,8 +3945,8 @@
                 281.04
               ],
               "text": "4",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999953031539917,
               "coordinates": "page points",
               "initial_reading": "4"
             }
@@ -3962,8 +3961,8 @@
                 281.04
               ],
               "text": "18.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999693870544434,
               "coordinates": "page points",
               "initial_reading": "18.00"
             }
@@ -3978,8 +3977,8 @@
                 281.04
               ],
               "text": "72.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999794721603393,
               "coordinates": "page points",
               "initial_reading": "72.00"
             }
@@ -3994,8 +3993,8 @@
                 281.04
               ],
               "text": "7.20",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999663233757019,
               "coordinates": "page points",
               "initial_reading": "7.20"
             }
@@ -4010,8 +4009,8 @@
                 281.04
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999386370182037,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -4026,8 +4025,8 @@
                 281.04
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999240398406982,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -4042,8 +4041,8 @@
                 281.04
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998617768287659,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -4060,8 +4059,8 @@
                 307.92
               ],
               "text": "INV-0019",
-              "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999620318412781,
               "coordinates": "page points",
               "initial_reading": "INV-0019"
             }
@@ -4076,8 +4075,8 @@
                 307.92
               ],
               "text": "2026-10-19",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999854922294616,
               "coordinates": "page points",
               "initial_reading": "2026-10-19"
             }
@@ -4092,8 +4091,8 @@
                 307.92
               ],
               "text": "Client 1",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997502192854881,
               "coordinates": "page points",
               "initial_reading": "Client 1"
             }
@@ -4108,8 +4107,8 @@
                 307.92
               ],
               "text": "000019",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999228815237681,
               "coordinates": "page points",
               "initial_reading": "000019"
             }
@@ -4124,8 +4123,8 @@
                 307.92
               ],
               "text": "Widget model 6",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9993727462632316,
               "coordinates": "page points",
               "initial_reading": "Widget model 6"
             }
@@ -4140,8 +4139,8 @@
                 307.92
               ],
               "text": "5",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999804496765137,
               "coordinates": "page points",
               "initial_reading": "5"
             }
@@ -4156,8 +4155,8 @@
                 307.92
               ],
               "text": "19.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999603271484375,
               "coordinates": "page points",
               "initial_reading": "19.00"
             }
@@ -4172,8 +4171,8 @@
                 307.92
               ],
               "text": "95.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999542474746704,
               "coordinates": "page points",
               "initial_reading": "95.00"
             }
@@ -4188,8 +4187,8 @@
                 307.92
               ],
               "text": "9.50",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999963790178299,
               "coordinates": "page points",
               "initial_reading": "9.50"
             }
@@ -4204,8 +4203,8 @@
                 307.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999251216650009,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -4220,8 +4219,8 @@
                 307.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999487161636352,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -4236,8 +4235,8 @@
                 307.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998963326215744,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -4254,8 +4253,8 @@
                 334.8
               ],
               "text": "INV-0020",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999234899878502,
               "coordinates": "page points",
               "initial_reading": "INV-0020"
             }
@@ -4270,8 +4269,8 @@
                 334.8
               ],
               "text": "2026-10-20",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999890327453613,
               "coordinates": "page points",
               "initial_reading": "2026-10-20"
             }
@@ -4286,8 +4285,8 @@
                 334.8
               ],
               "text": "Client 2",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999072477221489,
               "coordinates": "page points",
               "initial_reading": "Client 2"
             }
@@ -4302,8 +4301,8 @@
                 334.8
               ],
               "text": "000020",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9994029005368551,
               "coordinates": "page points",
               "initial_reading": "000020"
             }
@@ -4318,8 +4317,8 @@
                 334.8
               ],
               "text": "Widget model 7",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9995468088558742,
               "coordinates": "page points",
               "initial_reading": "Widget model 7"
             }
@@ -4334,8 +4333,8 @@
                 334.8
               ],
               "text": "6",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999943971633911,
               "coordinates": "page points",
               "initial_reading": "6"
             }
@@ -4350,8 +4349,8 @@
                 334.8
               ],
               "text": "20.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999928605556488,
               "coordinates": "page points",
               "initial_reading": "20.00"
             }
@@ -4366,8 +4365,8 @@
                 334.8
               ],
               "text": "120.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999266068140665,
               "coordinates": "page points",
               "initial_reading": "120.00"
             }
@@ -4382,8 +4381,8 @@
                 334.8
               ],
               "text": "12.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999547362327575,
               "coordinates": "page points",
               "initial_reading": "12.00"
             }
@@ -4398,8 +4397,8 @@
                 334.8
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999367892742157,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -4414,8 +4413,8 @@
                 334.8
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999260425567627,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -4430,8 +4429,8 @@
                 334.8
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999861091375351,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -4448,8 +4447,8 @@
                 361.92
               ],
               "text": "INV-0021",
-              "engine": "ocr-tesseract",
-              "confidence": 0.91,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999683201313019,
               "coordinates": "page points",
               "initial_reading": "INV-0021"
             }
@@ -4464,8 +4463,8 @@
                 361.92
               ],
               "text": "2026-10-21",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999928951263428,
               "coordinates": "page points",
               "initial_reading": "2026-10-21"
             }
@@ -4480,8 +4479,8 @@
                 361.92
               ],
               "text": "Client 3",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9589861482381821,
               "coordinates": "page points",
               "initial_reading": "Client 3"
             }
@@ -4496,8 +4495,8 @@
                 361.92
               ],
               "text": "000021",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999013741811117,
               "coordinates": "page points",
               "initial_reading": "000021"
             }
@@ -4512,8 +4511,8 @@
                 361.92
               ],
               "text": "Widget model 8",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997723358018058,
               "coordinates": "page points",
               "initial_reading": "Widget model 8"
             }
@@ -4528,8 +4527,8 @@
                 361.92
               ],
               "text": "7",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999945163726807,
               "coordinates": "page points",
               "initial_reading": "7"
             }
@@ -4544,8 +4543,8 @@
                 361.92
               ],
               "text": "21.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999518275260926,
               "coordinates": "page points",
               "initial_reading": "21.00"
             }
@@ -4560,8 +4559,8 @@
                 361.92
               ],
               "text": "147.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999208748340607,
               "coordinates": "page points",
               "initial_reading": "147.00"
             }
@@ -4576,8 +4575,8 @@
                 361.92
               ],
               "text": "14.70",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999867439270019,
               "coordinates": "page points",
               "initial_reading": "14.70"
             }
@@ -4592,8 +4591,8 @@
                 361.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999103397130966,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -4608,8 +4607,8 @@
                 361.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999480724334717,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -4624,8 +4623,8 @@
                 361.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999019950628281,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -4642,8 +4641,8 @@
                 389.04
               ],
               "text": "INV-0022",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999615103006363,
               "coordinates": "page points",
               "initial_reading": "INV-0022"
             }
@@ -4658,8 +4657,8 @@
                 389.04
               ],
               "text": "2026-10-22",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999904990196228,
               "coordinates": "page points",
               "initial_reading": "2026-10-22"
             }
@@ -4674,8 +4673,8 @@
                 389.04
               ],
               "text": "Client 4",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9985221773386002,
               "coordinates": "page points",
               "initial_reading": "Client 4"
             }
@@ -4690,8 +4689,8 @@
                 389.04
               ],
               "text": "000022",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998856981595358,
               "coordinates": "page points",
               "initial_reading": "000022"
             }
@@ -4706,8 +4705,8 @@
                 389.04
               ],
               "text": "Widget model 9",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999435910156795,
               "coordinates": "page points",
               "initial_reading": "Widget model 9"
             }
@@ -4722,8 +4721,8 @@
                 389.04
               ],
               "text": "1",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.99998939037323,
               "coordinates": "page points",
               "initial_reading": "1"
             }
@@ -4738,8 +4737,8 @@
                 389.04
               ],
               "text": "22.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999685525894165,
               "coordinates": "page points",
               "initial_reading": "22.00"
             }
@@ -4754,8 +4753,8 @@
                 389.04
               ],
               "text": "22.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999571800231933,
               "coordinates": "page points",
               "initial_reading": "22.00"
             }
@@ -4770,8 +4769,8 @@
                 389.04
               ],
               "text": "2.20",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998994469642639,
               "coordinates": "page points",
               "initial_reading": "2.20"
             }
@@ -4786,8 +4785,8 @@
                 389.04
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999941349029541,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -4802,8 +4801,8 @@
                 389.04
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999351263046264,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -4818,8 +4817,8 @@
                 389.04
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998669922351837,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -4836,8 +4835,8 @@
                 415.92
               ],
               "text": "INV-0023",
-              "engine": "ocr-tesseract",
-              "confidence": 0.92,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999515116214752,
               "coordinates": "page points",
               "initial_reading": "INV-0023"
             }
@@ -4852,8 +4851,8 @@
                 415.92
               ],
               "text": "2026-10-23",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999853491783142,
               "coordinates": "page points",
               "initial_reading": "2026-10-23"
             }
@@ -4868,8 +4867,8 @@
                 415.92
               ],
               "text": "Client 5",
-              "engine": "ocr-tesseract",
-              "confidence": 0.93,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996262043714523,
               "coordinates": "page points",
               "initial_reading": "Client 5"
             }
@@ -4884,8 +4883,8 @@
                 415.92
               ],
               "text": "000023",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997453987598419,
               "coordinates": "page points",
               "initial_reading": "000023"
             }
@@ -4900,8 +4899,8 @@
                 415.92
               ],
               "text": "Widget model 10",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9662841320037842,
               "coordinates": "page points",
               "initial_reading": "Widget model 10"
             }
@@ -4916,8 +4915,8 @@
                 415.92
               ],
               "text": "2",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999749660491943,
               "coordinates": "page points",
               "initial_reading": "2"
             }
@@ -4932,8 +4931,8 @@
                 415.92
               ],
               "text": "12.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9996129274368286,
               "coordinates": "page points",
               "initial_reading": "12.00"
             }
@@ -4948,8 +4947,8 @@
                 415.92
               ],
               "text": "24.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999366879463196,
               "coordinates": "page points",
               "initial_reading": "24.00"
             }
@@ -4964,8 +4963,8 @@
                 415.92
               ],
               "text": "2.40",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998530894517899,
               "coordinates": "page points",
               "initial_reading": "2.40"
             }
@@ -4980,8 +4979,8 @@
                 415.92
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998990148305893,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -4996,8 +4995,8 @@
                 415.92
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999520540237427,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -5012,8 +5011,8 @@
                 415.92
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999033659696579,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -5030,8 +5029,8 @@
                 442.8
               ],
               "text": "INV-0024",
-              "engine": "ocr-tesseract",
-              "confidence": 0.9,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999552816152573,
               "coordinates": "page points",
               "initial_reading": "INV-0024"
             }
@@ -5046,8 +5045,8 @@
                 442.8
               ],
               "text": "2026-10-24",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999863624572753,
               "coordinates": "page points",
               "initial_reading": "2026-10-24"
             }
@@ -5062,8 +5061,8 @@
                 442.8
               ],
               "text": "Client 6",
-              "engine": "ocr-tesseract",
-              "confidence": 0.95,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.998554952442646,
               "coordinates": "page points",
               "initial_reading": "Client 6"
             }
@@ -5078,8 +5077,8 @@
                 442.8
               ],
               "text": "000024",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999879002571106,
               "coordinates": "page points",
               "initial_reading": "000024"
             }
@@ -5094,8 +5093,8 @@
                 442.8
               ],
               "text": "Widget model 11",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9997740745544433,
               "coordinates": "page points",
               "initial_reading": "Widget model 11"
             }
@@ -5110,8 +5109,8 @@
                 442.8
               ],
               "text": "3",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999620914459229,
               "coordinates": "page points",
               "initial_reading": "3"
             }
@@ -5126,8 +5125,8 @@
                 442.8
               ],
               "text": "13.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999487519264221,
               "coordinates": "page points",
               "initial_reading": "13.00"
             }
@@ -5142,8 +5141,8 @@
                 442.8
               ],
               "text": "39.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999499320983887,
               "coordinates": "page points",
               "initial_reading": "39.00"
             }
@@ -5158,8 +5157,8 @@
                 442.8
               ],
               "text": "3.90",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.999956339597702,
               "coordinates": "page points",
               "initial_reading": "3.90"
             }
@@ -5174,8 +5173,8 @@
                 442.8
               ],
               "text": "5.00",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999371767044067,
               "coordinates": "page points",
               "initial_reading": "5.00"
             }
@@ -5190,8 +5189,8 @@
                 442.8
               ],
               "text": "South",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9999411582946778,
               "coordinates": "page points",
               "initial_reading": "South"
             }
@@ -5206,8 +5205,8 @@
                 442.8
               ],
               "text": "Paid",
-              "engine": "ocr-tesseract",
-              "confidence": 0.96,
+              "engine": "ocr-rapidocr",
+              "confidence": 0.9998748600482941,
               "coordinates": "page points",
               "initial_reading": "Paid"
             }
@@ -5225,8 +5224,8 @@
               119.04
             ],
             "text": "Invoice",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9998475909233093,
             "coordinates": "page points"
           },
           {
@@ -5238,8 +5237,8 @@
               119.04
             ],
             "text": "Invoice",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9998472332954407,
             "coordinates": "page points"
           }
         ],
@@ -5253,8 +5252,8 @@
               119.04
             ],
             "text": "Date",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9998817443847656,
             "coordinates": "page points"
           },
           {
@@ -5266,8 +5265,8 @@
               119.04
             ],
             "text": "Date",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9998795390129089,
             "coordinates": "page points"
           }
         ],
@@ -5281,8 +5280,8 @@
               119.04
             ],
             "text": "Client",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9996572236220042,
             "coordinates": "page points"
           },
           {
@@ -5294,8 +5293,8 @@
               119.04
             ],
             "text": "Client",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9995063344637553,
             "coordinates": "page points"
           }
         ],
@@ -5309,8 +5308,8 @@
               119.04
             ],
             "text": "SKU",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9998624722162882,
             "coordinates": "page points"
           },
           {
@@ -5322,8 +5321,8 @@
               119.04
             ],
             "text": "SKU",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9998641411463419,
             "coordinates": "page points"
           }
         ],
@@ -5337,8 +5336,8 @@
               119.04
             ],
             "text": "Description",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9996972138231451,
             "coordinates": "page points"
           },
           {
@@ -5350,8 +5349,8 @@
               119.04
             ],
             "text": "Description",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9997081594033674,
             "coordinates": "page points"
           }
         ],
@@ -5365,8 +5364,8 @@
               119.04
             ],
             "text": "Qty.",
-            "engine": "ocr-tesseract",
-            "confidence": 0.95,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999769926071167,
             "coordinates": "page points"
           },
           {
@@ -5378,8 +5377,8 @@
               119.04
             ],
             "text": "Qty.",
-            "engine": "ocr-tesseract",
-            "confidence": 0.95,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999770224094391,
             "coordinates": "page points"
           }
         ],
@@ -5393,8 +5392,8 @@
               119.04
             ],
             "text": "Rate",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999103099107742,
             "coordinates": "page points"
           },
           {
@@ -5406,8 +5405,8 @@
               119.04
             ],
             "text": "Rate",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999109655618668,
             "coordinates": "page points"
           }
         ],
@@ -5421,8 +5420,8 @@
               119.04
             ],
             "text": "Amt",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999087850252787,
             "coordinates": "page points"
           },
           {
@@ -5434,8 +5433,8 @@
               119.04
             ],
             "text": "Amt",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999066392580668,
             "coordinates": "page points"
           }
         ],
@@ -5449,8 +5448,8 @@
               119.04
             ],
             "text": "Tax",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999335606892904,
             "coordinates": "page points"
           },
           {
@@ -5462,8 +5461,8 @@
               119.04
             ],
             "text": "Tax",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999334812164307,
             "coordinates": "page points"
           }
         ],
@@ -5477,8 +5476,8 @@
               119.04
             ],
             "text": "Ship",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9998728036880493,
             "coordinates": "page points"
           },
           {
@@ -5490,8 +5489,8 @@
               119.04
             ],
             "text": "Ship",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9998739361763,
             "coordinates": "page points"
           }
         ],
@@ -5505,8 +5504,8 @@
               119.04
             ],
             "text": "Region",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999604821205139,
             "coordinates": "page points"
           },
           {
@@ -5518,8 +5517,8 @@
               119.04
             ],
             "text": "Region",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999604026476542,
             "coordinates": "page points"
           }
         ],
@@ -5533,8 +5532,8 @@
               119.04
             ],
             "text": "Status",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999742905298868,
             "coordinates": "page points"
           },
           {
@@ -5546,8 +5545,8 @@
               119.04
             ],
             "text": "Status",
-            "engine": "ocr-tesseract",
-            "confidence": 0.96,
+            "engine": "ocr-rapidocr",
+            "confidence": 0.9999742905298868,
             "coordinates": "page points"
           }
         ]
@@ -5577,1442 +5576,1442 @@
         [
           0,
           0,
-          0.91
+          0.9999711513519287
         ],
         [
           0,
           1,
-          0.96
+          0.9999893188476563
         ],
         [
           0,
           2,
-          0.95
+          0.9404574409127235
         ],
         [
           0,
           3,
-          0.96
+          0.9998051921526591
         ],
         [
           0,
           4,
-          0.96
+          0.9996220171451569
         ],
         [
           0,
           5,
-          0.96
+          0.9999871253967285
         ],
         [
           0,
           6,
-          0.95
+          0.9910397529602051
         ],
         [
           0,
           7,
-          0.96
+          0.9999660730361939
         ],
         [
           0,
           8,
-          0.96
+          0.9995656758546829
         ],
         [
           0,
           9,
-          0.96
+          0.9999372959136963
         ],
         [
           0,
           10,
-          0.96
+          0.999945878982544
         ],
         [
           0,
           11,
-          0.96
+          0.9998781979084015
         ],
         [
           1,
           0,
-          0.9
+          0.9999540746212006
         ],
         [
           1,
           1,
-          0.96
+          0.995414537191391
         ],
         [
           1,
           2,
-          0.96
+          0.9988696947693825
         ],
         [
           1,
           3,
-          0.96
+          0.9997749725977579
         ],
         [
           1,
           4,
-          0.96
+          0.9997244477272034
         ],
         [
           1,
           5,
-          0.96
+          0.9999786615371704
         ],
         [
           1,
           6,
-          0.96
+          0.9999741554260254
         ],
         [
           1,
           7,
-          0.96
+          0.9999297738075257
         ],
         [
           1,
           8,
-          0.96
+          0.9998771995306015
         ],
         [
           1,
           9,
-          0.96
+          0.9999285042285919
         ],
         [
           1,
           10,
-          0.96
+          0.9999284505844116
         ],
         [
           1,
           11,
-          0.96
+          0.9998601973056793
         ],
         [
           2,
           0,
-          0.91
+          0.9999547451734543
         ],
         [
           2,
           1,
-          0.96
+          0.9999782681465149
         ],
         [
           2,
           2,
-          0.96
+          0.9618034288287163
         ],
         [
           2,
           3,
-          0.96
+          0.9993631740411123
         ],
         [
           2,
           4,
-          0.96
+          0.9997339802128928
         ],
         [
           2,
           5,
-          0.96
+          0.9999651908874512
         ],
         [
           2,
           6,
-          0.95
+          0.9999166369438172
         ],
         [
           2,
           7,
-          0.96
+          0.9999686241149902
         ],
         [
           2,
           8,
-          0.95
+          0.9999664127826691
         ],
         [
           2,
           9,
-          0.96
+          0.999932050704956
         ],
         [
           2,
           10,
-          0.96
+          0.9999526500701904
         ],
         [
           2,
           11,
-          0.95
+          0.9998824298381805
         ],
         [
           3,
           0,
-          0.92
+          0.9999528974294662
         ],
         [
           3,
           1,
-          0.96
+          0.9998571991920471
         ],
         [
           3,
           2,
-          0.96
+          0.9987111836671829
         ],
         [
           3,
           3,
-          0.96
+          0.9996803402900696
         ],
         [
           3,
           4,
-          0.96
+          0.9993306526115963
         ],
         [
           3,
           5,
-          0.97
+          0.9999502897262573
         ],
         [
           3,
           6,
-          0.96
+          0.9999747037887573
         ],
         [
           3,
           7,
-          0.96
+          0.9998101353645324
         ],
         [
           3,
           8,
-          0.96
+          0.9999092668294907
         ],
         [
           3,
           9,
-          0.96
+          0.9999363720417023
         ],
         [
           3,
           10,
-          0.96
+          0.9999297142028809
         ],
         [
           3,
           11,
-          0.95
+          0.9998646676540375
         ],
         [
           4,
           0,
-          0.9
+          0.9999507069587708
         ],
         [
           4,
           1,
-          0.96
+          0.9999760150909424
         ],
         [
           4,
           2,
-          0.95
+          0.9996863752603531
         ],
         [
           4,
           3,
-          0.96
+          0.9996482829252878
         ],
         [
           4,
           4,
-          0.96
+          0.9996546634605953
         ],
         [
           4,
           5,
-          0.96
+          0.9999797344207764
         ],
         [
           4,
           6,
-          0.95
+          0.999930465221405
         ],
         [
           4,
           7,
-          0.96
+          0.9999221324920654
         ],
         [
           4,
           8,
-          0.95
+          0.9999169260263443
         ],
         [
           4,
           9,
-          0.96
+          0.9999300837516785
         ],
         [
           4,
           10,
-          0.96
+          0.9999488353729248
         ],
         [
           4,
           11,
-          0.96
+          0.9998885095119476
         ],
         [
           5,
           0,
-          0.91
+          0.9999396353960037
         ],
         [
           5,
           1,
-          0.96
+          0.9999782562255859
         ],
         [
           5,
           2,
-          0.96
+          0.9984259530901909
         ],
         [
           5,
           3,
-          0.96
+          0.9993943671385447
         ],
         [
           5,
           4,
-          0.95
+          0.9990714831011636
         ],
         [
           5,
           5,
-          0.96
+          0.9999943971633911
         ],
         [
           5,
           6,
-          0.96
+          0.9999788284301758
         ],
         [
           5,
           7,
-          0.96
+          0.9998733997344971
         ],
         [
           5,
           8,
-          0.96
+          0.999958872795105
         ],
         [
           5,
           9,
-          0.96
+          0.999940037727356
         ],
         [
           5,
           10,
-          0.96
+          0.9999243736267089
         ],
         [
           5,
           11,
-          0.96
+          0.9998617768287659
         ],
         [
           6,
           0,
-          0.91
+          0.9999542832374573
         ],
         [
           6,
           1,
-          0.96
+          0.999980914592743
         ],
         [
           6,
           2,
-          0.96
+          0.9699705690145493
         ],
         [
           6,
           3,
-          0.96
+          0.999697188536326
         ],
         [
           6,
           4,
-          0.96
+          0.9996323585510254
         ],
         [
           6,
           5,
-          0.96
+          0.9999953508377075
         ],
         [
           6,
           6,
-          0.95
+          0.999941885471344
         ],
         [
           6,
           7,
-          0.96
+          0.9998140335083008
         ],
         [
           6,
           8,
-          0.96
+          0.999949061870575
         ],
         [
           6,
           9,
-          0.95
+          0.9999247640371323
         ],
         [
           6,
           10,
-          0.96
+          0.9999487638473511
         ],
         [
           6,
           11,
-          0.95
+          0.9998963326215744
         ],
         [
           7,
           0,
-          0.9
+          0.9999519139528275
         ],
         [
           7,
           1,
-          0.96
+          0.9999818921089172
         ],
         [
           7,
           2,
-          0.96
+          0.9996350258588791
         ],
         [
           7,
           3,
-          0.96
+          0.9995404978593191
         ],
         [
           7,
           4,
-          0.96
+          0.999525785446167
         ],
         [
           7,
           5,
-          0.96
+          0.9999881982803345
         ],
         [
           7,
           6,
-          0.96
+          0.9999712944030762
         ],
         [
           7,
           7,
-          0.96
+          0.9999653339385987
         ],
         [
           7,
           8,
-          0.96
+          0.9999180138111115
         ],
         [
           7,
           9,
-          0.96
+          0.9999367594718933
         ],
         [
           7,
           10,
-          0.96
+          0.9999260663986206
         ],
         [
           7,
           11,
-          0.96
+          0.999861091375351
         ],
         [
           8,
           0,
-          0.9
+          0.9999528527259827
         ],
         [
           8,
           1,
-          0.96
+          0.99996919631958
         ],
         [
           8,
           2,
-          0.96
+          0.9458262771368027
         ],
         [
           8,
           3,
-          0.96
+          0.9993602335453033
         ],
         [
           8,
           4,
-          0.96
+          0.9992575645446777
         ],
         [
           8,
           5,
-          0.96
+          0.9999730587005615
         ],
         [
           8,
           6,
-          0.96
+          0.9998818159103393
         ],
         [
           8,
           7,
-          0.96
+          0.9999352693557739
         ],
         [
           8,
           8,
-          0.96
+          0.9999188631772995
         ],
         [
           8,
           9,
-          0.95
+          0.9999098032712936
         ],
         [
           8,
           10,
-          0.96
+          0.9999476432800293
         ],
         [
           8,
           11,
-          0.96
+          0.9999019950628281
         ],
         [
           9,
           0,
-          0.9
+          0.9999543875455856
         ],
         [
           9,
           1,
-          0.96
+          0.9999904632568359
         ],
         [
           9,
           2,
-          0.96
+          0.9991805031895638
         ],
         [
           9,
           3,
-          0.96
+          0.9998673101266226
         ],
         [
           9,
           4,
-          0.96
+          0.9997729023297628
         ],
         [
           9,
           5,
-          0.96
+          0.9999499320983887
         ],
         [
           9,
           6,
-          0.96
+          0.9999771118164062
         ],
         [
           9,
           7,
-          0.96
+          0.9719254612922669
         ],
         [
           9,
           8,
-          0.96
+          0.9999407231807709
         ],
         [
           9,
           9,
-          0.96
+          0.9999412894248962
         ],
         [
           9,
           10,
-          0.96
+          0.9999350070953369
         ],
         [
           9,
           11,
-          0.96
+          0.9998669922351837
         ],
         [
           10,
           0,
-          0.92
+          0.9999650865793228
         ],
         [
           10,
           1,
-          0.96
+          0.9999923825263977
         ],
         [
           10,
           2,
-          0.96
+          0.9391118809580803
         ],
         [
           10,
           3,
-          0.96
+          0.9998975793520609
         ],
         [
           10,
           4,
-          0.96
+          0.9699440360069275
         ],
         [
           10,
           5,
-          0.96
+          0.9999542236328125
         ],
         [
           10,
           6,
-          0.95
+          0.9999415636062622
         ],
         [
           10,
           7,
-          0.96
+          0.9999066591262817
         ],
         [
           10,
           8,
-          0.95
+          0.9999312460422516
         ],
         [
           10,
           9,
-          0.95
+          0.9998974353075027
         ],
         [
           10,
           10,
-          0.96
+          0.9999525547027588
         ],
         [
           10,
           11,
-          0.95
+          0.9999033659696579
         ],
         [
           11,
           0,
-          0.91
+          0.9999631941318512
         ],
         [
           11,
           1,
-          0.96
+          0.9999916791915894
         ],
         [
           11,
           2,
-          0.95
+          0.9996877610683441
         ],
         [
           11,
           3,
-          0.95
+          0.9999542037645975
         ],
         [
           11,
           4,
-          0.95
+          0.999825366338094
         ],
         [
           11,
           5,
-          0.96
+          0.9999786615371704
         ],
         [
           11,
           6,
-          0.95
+          0.999674665927887
         ],
         [
           11,
           7,
-          0.96
+          0.9999111413955688
         ],
         [
           11,
           8,
-          0.95
+          0.9999185353517532
         ],
         [
           11,
           9,
-          0.95
+          0.9999372065067291
         ],
         [
           11,
           10,
-          0.96
+          0.9999412536621094
         ],
         [
           11,
           11,
-          0.96
+          0.9998748600482941
         ],
         [
           12,
           0,
-          0.9
+          0.9999687671661377
         ],
         [
           12,
           1,
-          0.96
+          0.9999916434288025
         ],
         [
           12,
           2,
-          0.96
+          0.9386227503418922
         ],
         [
           12,
           3,
-          0.96
+          0.9999212423960367
         ],
         [
           12,
           4,
-          0.95
+          0.9998136480649312
         ],
         [
           12,
           5,
-          0.96
+          0.9999961853027344
         ],
         [
           12,
           6,
-          0.96
+          0.999926221370697
         ],
         [
           12,
           7,
-          0.96
+          0.9999614953994751
         ],
         [
           12,
           8,
-          0.96
+          0.9999672770500183
         ],
         [
           12,
           9,
-          0.96
+          0.9999361932277679
         ],
         [
           12,
           10,
-          0.96
+          0.9999462842941285
         ],
         [
           12,
           11,
-          0.96
+          0.9998781979084015
         ],
         [
           13,
           0,
-          0.89
+          0.9999647438526154
         ],
         [
           13,
           1,
-          0.96
+          0.9999909996986389
         ],
         [
           13,
           2,
-          0.92
+          0.9980887547135353
         ],
         [
           13,
           3,
-          0.96
+          0.9999114175637563
         ],
         [
           13,
           4,
-          0.96
+          0.9996509424277714
         ],
         [
           13,
           5,
-          0.96
+          0.9999948740005493
         ],
         [
           13,
           6,
-          0.96
+          0.9999682664871216
         ],
         [
           13,
           7,
-          0.95
+          0.999960470199585
         ],
         [
           13,
           8,
-          0.96
+          0.9999549984931946
         ],
         [
           13,
           9,
-          0.96
+          0.9999276101589203
         ],
         [
           13,
           10,
-          0.96
+          0.9999284505844116
         ],
         [
           13,
           11,
-          0.96
+          0.9998601973056793
         ],
         [
           14,
           0,
-          0.9
+          0.9999643564224243
         ],
         [
           14,
           1,
-          0.96
+          0.9999896883964539
         ],
         [
           14,
           2,
-          0.96
+          0.99974624812603
         ],
         [
           14,
           3,
-          0.96
+          0.9999016920725504
         ],
         [
           14,
           4,
-          0.96
+          0.9997207309518542
         ],
         [
           14,
           5,
-          0.96
+          0.9999887943267822
         ],
         [
           14,
           6,
-          0.96
+          0.9999677896499634
         ],
         [
           14,
           7,
-          0.95
+          0.9999156951904297
         ],
         [
           14,
           8,
-          0.96
+          0.9998491108417511
         ],
         [
           14,
           9,
-          0.96
+          0.9999318718910217
         ],
         [
           14,
           10,
-          0.96
+          0.9999535083770752
         ],
         [
           14,
           11,
-          0.95
+          0.9998824298381805
         ],
         [
           15,
           0,
-          0.9
+          0.9999567270278931
         ],
         [
           15,
           1,
-          0.96
+          0.9999897480010986
         ],
         [
           15,
           2,
-          0.96
+          0.9996017515659332
         ],
         [
           15,
           3,
-          0.96
+          0.9998262226581573
         ],
         [
           15,
           4,
-          0.96
+          0.9997296120439257
         ],
         [
           15,
           5,
-          0.96
+          0.9999775886535645
         ],
         [
           15,
           6,
-          0.96
+          0.9999653339385987
         ],
         [
           15,
           7,
-          0.96
+          0.9999672889709472
         ],
         [
           15,
           8,
-          0.96
+          0.9999619424343109
         ],
         [
           15,
           9,
-          0.96
+          0.9999357759952545
         ],
         [
           15,
           10,
-          0.96
+          0.99992995262146
         ],
         [
           15,
           11,
-          0.95
+          0.9998646676540375
         ],
         [
           16,
           0,
-          0.9
+          0.9999676942825317
         ],
         [
           16,
           1,
-          0.96
+          0.9999908089637757
         ],
         [
           16,
           2,
-          0.96
+          0.9659256115555763
         ],
         [
           16,
           3,
-          0.95
+          0.9999160369237264
         ],
         [
           16,
           4,
-          0.96
+          0.9994494191237858
         ],
         [
           16,
           5,
-          0.96
+          0.9999673366546631
         ],
         [
           16,
           6,
-          0.95
+          0.9999572277069092
         ],
         [
           16,
           7,
-          0.96
+          0.9999678134918213
         ],
         [
           16,
           8,
-          0.96
+          0.9999772906303406
         ],
         [
           16,
           9,
-          0.96
+          0.9999304115772247
         ],
         [
           16,
           10,
-          0.96
+          0.9999487638473511
         ],
         [
           16,
           11,
-          0.96
+          0.9998885095119476
         ],
         [
           17,
           0,
-          0.91
+          0.999966636300087
         ],
         [
           17,
           1,
-          0.96
+          0.9999914407730103
         ],
         [
           17,
           2,
-          0.96
+          0.999345988035202
         ],
         [
           17,
           3,
-          0.96
+          0.9999249080816904
         ],
         [
           17,
           4,
-          0.96
+          0.9994614124298096
         ],
         [
           17,
           5,
-          0.96
+          0.999953031539917
         ],
         [
           17,
           6,
-          0.96
+          0.9999693870544434
         ],
         [
           17,
           7,
-          0.95
+          0.9999794721603393
         ],
         [
           17,
           8,
-          0.96
+          0.9999663233757019
         ],
         [
           17,
           9,
-          0.96
+          0.9999386370182037
         ],
         [
           17,
           10,
-          0.96
+          0.9999240398406982
         ],
         [
           17,
           11,
-          0.95
+          0.9998617768287659
         ],
         [
           18,
           0,
-          0.91
+          0.9999620318412781
         ],
         [
           18,
           1,
-          0.96
+          0.9999854922294616
         ],
         [
           18,
           2,
-          0.96
+          0.9997502192854881
         ],
         [
           18,
           3,
-          0.96
+          0.9999228815237681
         ],
         [
           18,
           4,
-          0.95
+          0.9993727462632316
         ],
         [
           18,
           5,
-          0.96
+          0.9999804496765137
         ],
         [
           18,
           6,
-          0.96
+          0.9999603271484375
         ],
         [
           18,
           7,
-          0.96
+          0.9999542474746704
         ],
         [
           18,
           8,
-          0.96
+          0.999963790178299
         ],
         [
           18,
           9,
-          0.95
+          0.9999251216650009
         ],
         [
           18,
           10,
-          0.96
+          0.9999487161636352
         ],
         [
           18,
           11,
-          0.95
+          0.9998963326215744
         ],
         [
           19,
           0,
-          0.9
+          0.9999234899878502
         ],
         [
           19,
           1,
-          0.96
+          0.9999890327453613
         ],
         [
           19,
           2,
-          0.96
+          0.999072477221489
         ],
         [
           19,
           3,
-          0.96
+          0.9994029005368551
         ],
         [
           19,
           4,
-          0.96
+          0.9995468088558742
         ],
         [
           19,
           5,
-          0.96
+          0.9999943971633911
         ],
         [
           19,
           6,
-          0.95
+          0.999928605556488
         ],
         [
           19,
           7,
-          0.96
+          0.9999266068140665
         ],
         [
           19,
           8,
-          0.96
+          0.9999547362327575
         ],
         [
           19,
           9,
-          0.96
+          0.9999367892742157
         ],
         [
           19,
           10,
-          0.96
+          0.9999260425567627
         ],
         [
           19,
           11,
-          0.96
+          0.999861091375351
         ],
         [
           20,
           0,
-          0.91
+          0.9999683201313019
         ],
         [
           20,
           1,
-          0.96
+          0.9999928951263428
         ],
         [
           20,
           2,
-          0.96
+          0.9589861482381821
         ],
         [
           20,
           3,
-          0.95
+          0.9999013741811117
         ],
         [
           20,
           4,
-          0.96
+          0.9997723358018058
         ],
         [
           20,
           5,
-          0.96
+          0.9999945163726807
         ],
         [
           20,
           6,
-          0.96
+          0.9999518275260926
         ],
         [
           20,
           7,
-          0.96
+          0.9999208748340607
         ],
         [
           20,
           8,
-          0.96
+          0.9999867439270019
         ],
         [
           20,
           9,
-          0.96
+          0.9999103397130966
         ],
         [
           20,
           10,
-          0.96
+          0.9999480724334717
         ],
         [
           20,
           11,
-          0.96
+          0.9999019950628281
         ],
         [
           21,
           0,
-          0.9
+          0.9999615103006363
         ],
         [
           21,
           1,
-          0.96
+          0.9999904990196228
         ],
         [
           21,
           2,
-          0.96
+          0.9985221773386002
         ],
         [
           21,
           3,
-          0.96
+          0.9998856981595358
         ],
         [
           21,
           4,
-          0.95
+          0.999435910156795
         ],
         [
           21,
           5,
-          0.96
+          0.99998939037323
         ],
         [
           21,
           6,
-          0.95
+          0.9999685525894165
         ],
         [
           21,
           7,
-          0.96
+          0.9999571800231933
         ],
         [
           21,
           8,
-          0.96
+          0.9998994469642639
         ],
         [
           21,
           9,
-          0.96
+          0.999941349029541
         ],
         [
           21,
           10,
-          0.96
+          0.9999351263046264
         ],
         [
           21,
           11,
-          0.96
+          0.9998669922351837
         ],
         [
           22,
           0,
-          0.92
+          0.9999515116214752
         ],
         [
           22,
           1,
-          0.96
+          0.9999853491783142
         ],
         [
           22,
           2,
-          0.93
+          0.9996262043714523
         ],
         [
           22,
           3,
-          0.96
+          0.9997453987598419
         ],
         [
           22,
           4,
-          0.96
+          0.9662841320037842
         ],
         [
           22,
           5,
-          0.96
+          0.9999749660491943
         ],
         [
           22,
           6,
-          0.95
+          0.9996129274368286
         ],
         [
           22,
           7,
-          0.95
+          0.9999366879463196
         ],
         [
           22,
           8,
-          0.96
+          0.9998530894517899
         ],
         [
           22,
           9,
-          0.95
+          0.9998990148305893
         ],
         [
           22,
           10,
-          0.96
+          0.9999520540237427
         ],
         [
           22,
           11,
-          0.95
+          0.9999033659696579
         ],
         [
           23,
           0,
-          0.9
+          0.9999552816152573
         ],
         [
           23,
           1,
-          0.95
+          0.9999863624572753
         ],
         [
           23,
           2,
-          0.95
+          0.998554952442646
         ],
         [
           23,
           3,
-          0.96
+          0.999879002571106
         ],
         [
           23,
           4,
-          0.96
+          0.9997740745544433
         ],
         [
           23,
           5,
-          0.96
+          0.9999620914459229
         ],
         [
           23,
           6,
-          0.96
+          0.9999487519264221
         ],
         [
           23,
           7,
-          0.96
+          0.9999499320983887
         ],
         [
           23,
           8,
-          0.96
+          0.999956339597702
         ],
         [
           23,
           9,
-          0.96
+          0.9999371767044067
         ],
         [
           23,
           10,
-          0.96
+          0.9999411582946778
         ],
         [
           23,
           11,
-          0.96
+          0.9998748600482941
         ]
       ]
     }
@@ -7023,7 +7022,7 @@
       "page": 1,
       "row": null,
       "column": null,
-      "reason": "OCR tesseract; deskew correction 0.00 degrees; values require source review.",
+      "reason": "OCR rapidocr; deskew correction 0.00 degrees; values require source review.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7033,27 +7032,7 @@
       "page": 2,
       "row": null,
       "column": null,
-      "reason": "OCR tesseract; deskew correction 0.00 degrees; values require source review.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 1,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 5, column 6: '\u201c' -> '4'; compare source.",
-      "suggestion": "Verify the source page and reconstructed cells.",
-      "code": "layout_review",
-      "table": 1
-    },
-    {
-      "severity": "warning",
-      "page": 2,
-      "row": null,
-      "column": null,
-      "reason": "Cell recheck at grid row 5, column 6: '\u201c' -> '4'; compare source.",
+      "reason": "OCR rapidocr; deskew correction 0.00 degrees; values require source review.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
       "table": 1
@@ -7073,41 +7052,87 @@
     {
       "page": 1,
       "route": "ocr",
-      "engine": "tesseract",
-      "confidence": 0.96,
-      "seconds": 19.688731700000062,
+      "engine": "rapidocr",
+      "confidence": 0.9999245688319206,
+      "seconds": 13.055620500001169,
       "attempts": [
         {
           "engine": "tesseract",
           "strategy": "deskew-300dpi",
           "tables": 1,
           "cells": 144,
-          "issues": 3,
+          "issues": 4,
           "score": 828.2,
-          "seconds": 10.026409500002046,
+          "seconds": 4.305960699999559,
           "error": "",
           "selected": false
         },
         {
-          "engine": "tesseract",
-          "strategy": "cell-recheck-300dpi",
+          "engine": "rapidocr",
+          "strategy": "independent-language-aware-cross-check",
           "tables": 1,
           "cells": 144,
-          "issues": 2,
-          "score": 842.2,
-          "seconds": 7.396827600001416,
+          "issues": 1,
+          "score": 842.998,
+          "seconds": 7.43915829999969,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "scan",
+        "native_text_health": "missing",
+        "native_word_count": 0,
+        "native_character_count": 0,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 0.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 1,
+        "image_coverage": 1.0,
+        "raster_profiled": true,
+        "ink_coverage": 0.074,
+        "blur_score": 1.0,
+        "contrast_score": 0.945,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.006,
+        "table_likelihood": 1.0,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "table"
+        ],
+        "detected_scripts": [],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "ocr",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "ocr",
+        "native_candidate_available": false,
+        "ocr_engine_language_coverage": {
+          "tesseract": [
+            "eng"
+          ],
+          "rapidocr": [
+            "eng"
+          ]
+        },
+        "cross_check_executed": false,
+        "high_value_detected_after_ocr": true
+      }
     },
     {
       "page": 2,
       "route": "ocr",
-      "engine": "tesseract",
-      "confidence": 0.96,
-      "seconds": 5.802631600003224,
+      "engine": "rapidocr",
+      "confidence": 0.9999354511499405,
+      "seconds": 13.726794000000154,
       "attempts": [
         {
           "engine": "tesseract",
@@ -7116,15 +7141,72 @@
           "cells": 144,
           "issues": 1,
           "score": 842.2,
-          "seconds": 5.302933499995561,
+          "seconds": 5.31318839999949,
+          "error": "",
+          "selected": false
+        },
+        {
+          "engine": "rapidocr",
+          "strategy": "independent-language-aware-cross-check",
+          "tables": 1,
+          "cells": 144,
+          "issues": 1,
+          "score": 842.999,
+          "seconds": 6.104695199999696,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "scan",
+        "native_text_health": "missing",
+        "native_word_count": 0,
+        "native_character_count": 0,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 0.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 1,
+        "image_coverage": 1.0,
+        "raster_profiled": true,
+        "ink_coverage": 0.074,
+        "blur_score": 1.0,
+        "contrast_score": 0.945,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.006,
+        "table_likelihood": 1.0,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "table"
+        ],
+        "detected_scripts": [],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "ocr",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "ocr",
+        "native_candidate_available": false,
+        "ocr_engine_language_coverage": {
+          "tesseract": [
+            "eng"
+          ],
+          "rapidocr": [
+            "eng"
+          ]
+        },
+        "cross_check_executed": false,
+        "high_value_detected_after_ocr": true
+      }
     }
   ],
-  "seconds": 25.859645000004093,
+  "seconds": 27.192425999999614,
   "source_sha256": "c1df12ddce2418f307056ad554295891c3af4808368ffff2aaddea5396691a0e",
   "constraints": [
     {

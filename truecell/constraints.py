@@ -12,22 +12,26 @@ from itertools import combinations, permutations
 from typing import Any
 
 from .models import Result, Table
+from .semantics import infer_column_semantics
 from .values import is_identifier, number
 
 EPSILON = Decimal("0.01")
 
 
 def _numeric_columns(table: Table) -> list[int]:
+    semantics = infer_column_semantics(table)
     columns = []
     for c in range(len(table.headers)):
         values = [row[c] for row in table.rows if c < len(row) and row[c] and not _total(row)]
         if (
-            values
+            semantics[c].role not in {"id", "phone", "date"}
+            and values
             and sum(number(v) is not None and not is_identifier(v) for v in values) / len(values)
             >= 0.75
         ):
             columns.append(c)
-    return columns[:14]
+    priority = {"quantity": 0, "amount": 1, "total": 1, "balance": 2, "text": 3}
+    return sorted(columns, key=lambda c: (priority.get(semantics[c].role, 3), c))[:14]
 
 
 def _total(row: list[str]) -> bool:
@@ -45,6 +49,7 @@ def _value(table: Table, r: int, c: int) -> Decimal | None:
 def discover(table: Table, table_index: int = 1) -> list[dict[str, Any]]:
     """Discover varied row equations and a strongest running-balance relation."""
     columns = _numeric_columns(table)
+    semantics = infer_column_semantics(table)
     relations = []
     rows = [r for r, row in enumerate(table.rows) if not _total(row)]
     for a, b in combinations(columns, 2):
@@ -89,7 +94,8 @@ def discover(table: Table, table_index: int = 1) -> list[dict[str, Any]]:
                     }
                 )
     balances = []
-    for balance in columns[:12]:
+    named_balances = [c for c in columns if semantics[c].role == "balance"]
+    for balance in named_balances or columns[:12]:
         for debit, credit in permutations([c for c in columns[:12] if c != balance], 2):
             evidence = []
             for r in rows:

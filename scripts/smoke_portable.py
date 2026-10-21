@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import http.client
 import json
 import shutil
 import socket
@@ -21,11 +22,19 @@ BUNDLE = SMOKE_ROOT / "Truecell-Portable"
 
 def request(url: str, *, data: bytes | None = None, timeout: float = 30) -> bytes:
     headers = {"Content-Type": "application/json"} if data is not None else {}
-    operation = urllib.request.Request(url, data=data, headers=headers)
-    with urllib.request.urlopen(operation, timeout=timeout) as response:
-        if response.status not in {200, 202}:
-            raise RuntimeError(f"Unexpected HTTP {response.status}: {url}")
-        return response.read()
+    retries = 1 if data is not None else 3
+    for attempt in range(retries):
+        operation = urllib.request.Request(url, data=data, headers=headers)
+        try:
+            with urllib.request.urlopen(operation, timeout=timeout) as response:
+                if response.status not in {200, 202}:
+                    raise RuntimeError(f"Unexpected HTTP {response.status}: {url}")
+                return response.read()
+        except (ConnectionError, http.client.IncompleteRead):
+            if attempt + 1 == retries:
+                raise
+            time.sleep(0.25)
+    raise AssertionError("unreachable")
 
 
 def json_request(url: str, *, data: bytes | None = None) -> dict:

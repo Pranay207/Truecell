@@ -4,6 +4,7 @@ import type {
   Job,
   PreviewReport,
   Result,
+  ReviewQueue,
   Sample,
 } from "./types";
 
@@ -45,11 +46,12 @@ export const api = {
     request<Job>(`/samples/${encodeURIComponent(filename)}`, {
       method: "POST",
     }),
-  upload: (file: File, verify: boolean, force: boolean) => {
+  upload: (file: File, verify: boolean, force: boolean, ocrLanguages = "eng") => {
     const body = new FormData();
     body.append("file", file);
     body.append("verify", String(verify));
     body.append("force_ocr", String(force));
+    body.append("ocr_languages", ocrLanguages);
     return request<Job>("/jobs", { method: "POST", body });
   },
   job: (id: string, signal?: AbortSignal) =>
@@ -59,7 +61,10 @@ export const api = {
       `/jobs/${id}`,
       json({ confirmation }, "DELETE"),
     ),
-  process: (id: string, options: { verify: boolean; force_ocr: boolean }) =>
+  process: (
+    id: string,
+    options: { verify: boolean; force_ocr: boolean; ocr_languages?: string },
+  ) =>
     request<Job>(`/jobs/${id}/process`, json(options)),
   result: (id: string) =>
     request<{
@@ -93,6 +98,21 @@ export const api = {
       `/jobs/${id}/review-items`,
       json({ item_id: itemId, source_checked: sourceChecked, fingerprint }),
     ),
+  reviewQueue: (
+    id: string,
+    offset = 0,
+    limit = 100,
+    table?: number,
+    status?: "pending" | "checked",
+  ) => {
+    const query = new URLSearchParams({
+      offset: String(offset),
+      limit: String(limit),
+    });
+    if (table != null) query.set("table", String(table));
+    if (status) query.set("status", status);
+    return request<ReviewQueue>(`/jobs/${id}/review-queue?${query}`);
+  },
   preview: (id: string, cell: Cell, value: string, fingerprint?: string) =>
     request<PreviewReport>(
       `/jobs/${id}/preview`,
@@ -111,6 +131,13 @@ export const api = {
   image: (id: string, page: number) => `${ROOT}/jobs/${id}/pages/${page}/image`,
   download: (
     id: string,
-    kind: "export.xlsx" | "audit.json" | "baseline.json" | "source",
+    kind:
+      | "export.xlsx"
+      | "reviewed.xlsx"
+      | "audit.json"
+      | "baseline.json"
+      | "source",
   ) => `${ROOT}/jobs/${id}/${kind}`,
+  csv: (id: string, table: number) =>
+    `${ROOT}/jobs/${id}/export.csv?table=${table + 1}`,
 };

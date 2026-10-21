@@ -13,8 +13,11 @@ from truecell.pipeline import convert
 from truecell.review import (
     apply_edit,
     complete_review,
+    evidence_coverage,
+    evidence_status,
     fingerprint,
     history_valid,
+    quality_state,
     review_current,
     review_queue,
     set_item_review,
@@ -26,6 +29,15 @@ from truecell.workspace import create_job, job_path, load_result, save_result
 def bank(tmp_path):
     bank_sample(tmp_path)
     return convert(tmp_path / "B_bank_errors.pdf")
+
+
+def check_every_review_item(result):
+    """Model the required per-item source check before the final attestation."""
+    current = result
+    for item in review_queue(current, limit=None)["items"]:
+        if item["status"] == "pending":
+            current = set_item_review(current, item["id"], True)
+    return current
 
 
 def test_diagnosis_uses_both_balance_transitions(bank):
@@ -51,10 +63,16 @@ def test_every_native_cell_has_a_real_source_box(bank):
     assert source["text"] == "1081.00" and source["page"] == 1
     assert source["bbox"][2] > source["bbox"][0]
     assert source["confidence"] is None
+    report = evidence_coverage(bank)
+    assert report["nonempty_cells"] and report["unlocated"] == 0 and report["complete"]
 
 
 def test_correction_preserves_source_and_invalidates_review(bank):
-    reviewed = complete_review(bank, True, "Checked the source and acknowledged its wrong values.")
+    reviewed = complete_review(
+        check_every_review_item(bank),
+        True,
+        "Checked the source and acknowledged its wrong values.",
+    )
     assert review_current(reviewed)
     edited = apply_edit(
         reviewed,
@@ -72,13 +90,13 @@ def test_correction_preserves_source_and_invalidates_review(bank):
 
 
 def test_tampered_data_invalidates_review(bank):
-    reviewed = complete_review(bank, True, "Checked all source pages.")
+    reviewed = complete_review(check_every_review_item(bank), True, "Checked all source pages.")
     reviewed.tables[0].rows[0][5] = "999"
     assert not review_current(reviewed)
 
 
 def test_header_edit_preserves_original_reading_and_resets_review(bank):
-    reviewed = complete_review(bank, True, "Checked the source.")
+    reviewed = complete_review(check_every_review_item(bank), True, "Checked the source.")
     original = bank.tables[0].header_sources[0][0]["text"]
     edited = apply_edit(
         reviewed, 0, -1, 0, "Transaction reference", "Clearer label after source review."
@@ -133,15 +151,51 @@ def test_priority_review_queue_persists_cell_checks_without_changing_snapshot(ba
         set_item_review(bank, "not-a-real-review-item", True)
 
 
-def test_source_attestation_completes_visible_priority_queue(bank):
+def test_source_attestation_requires_each_priority_item(bank):
     bank.tables[0].cell_confidence[(0, 0)] = 0.72
-    reviewed = complete_review(bank, True, "Checked every priority item against its source.")
+    with pytest.raises(ValueError, match="individually"):
+        complete_review(bank, True, "Premature attestation.")
+    reviewed = complete_review(
+        check_every_review_item(bank),
+        True,
+        "Checked every priority item against its source.",
+    )
     queue = review_queue(reviewed)
     assert queue["visible"] > 0 and queue["pending"] == 0
     assert queue["checked"] == queue["visible"] and review_current(reviewed)
     reopened = set_item_review(reviewed, queue["items"][0]["id"], False)
     assert not review_current(reopened)
     assert review_queue(reopened)["pending"] == 1
+
+
+def test_review_queue_is_paginated_without_hiding_remaining_items(bank):
+    bank.tables[0].cell_confidence = {
+        (row, column): 0.5
+        for row, values in enumerate(bank.tables[0].rows)
+        for column, _ in enumerate(values)
+    }
+    first = review_queue(bank, limit=10)
+    assert first["visible"] == 10 and first["has_more"]
+    assert first["remaining"] == first["filtered_total"] - 10
+    second = review_queue(bank, offset=first["next_offset"], limit=10)
+    assert not ({item["id"] for item in first["items"]} & {item["id"] for item in second["items"]})
+
+
+def test_nonempty_cell_without_box_has_explicit_evidence_reason(bank):
+    bank.tables[0].cell_sources[0][0] = []
+    location = evidence_status(bank.tables[0].rows[0][0], [], 1)
+    assert location["status"] == "unlocated" and "No cell-level" in location["reason"]
+    report = evidence_coverage(bank)
+    assert report["unlocated"] == 1 and not report["complete"]
+    queue = review_queue(bank, limit=None)
+    assert any(item["id"] == "evidence-0-0-0" for item in queue["items"])
+
+
+def test_quality_gate_separates_rescan_review_and_reviewed_states(bank):
+    assert quality_state(Result("empty.pdf"))["status"] == "needs_rescan"
+    assert quality_state(bank)["status"] == "needs_review"
+    reviewed = complete_review(check_every_review_item(bank), True, "Checked every source item.")
+    assert quality_state(reviewed)["status"] == "reviewed"
 
 
 def test_workspace_baseline_is_immutable(bank, tmp_path):

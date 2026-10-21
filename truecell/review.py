@@ -13,7 +13,8 @@ from .models import Result
 from .validate import validate
 
 LOW_CONFIDENCE_THRESHOLD = 0.93
-LOW_CONFIDENCE_LIMIT = 100
+DEFAULT_REVIEW_PAGE_SIZE = 100
+MAX_REVIEW_PAGE_SIZE = 500
 
 
 def digest(value: object) -> str:
@@ -54,6 +55,7 @@ def review_current(result: Result) -> bool:
         result.review.get("status") == "reviewed"
         and history_valid(result)
         and result.review.get("fingerprint") == fingerprint(result)
+        and review_queue(result, limit=1)["pending"] == 0
     )
 
 
@@ -79,8 +81,130 @@ def _issue_cell(result: Result, issue) -> tuple[int, int, int] | None:
     return None
 
 
-def review_queue(result: Result) -> dict:
-    """Build a bounded, source-addressable queue of findings and uncertain cells."""
+def _valid_bbox(record: object) -> bool:
+    """Return whether a source record contains a finite, non-empty rectangle."""
+    if not isinstance(record, dict):
+        return False
+    bbox = record.get("bbox")
+    if not isinstance(bbox, (list, tuple)) or len(bbox) != 4:
+        return False
+    try:
+        x0, y0, x1, y1 = (float(value) for value in bbox)
+    except (TypeError, ValueError):
+        return False
+    return all(math.isfinite(value) for value in (x0, y0, x1, y1)) and x1 > x0 and y1 > y0
+
+
+def evidence_status(value: object, sources: object, fallback_page: int | None = None) -> dict:
+    """Describe the source-location coverage of one extracted cell.
+
+    Empty cells are outside the evidence invariant. Every non-empty cell is either
+    located by at least one source box or carries an explicit reason explaining why
+    it must be checked against the full source page.
+    """
+    text = "" if value is None else str(value)
+    records = (
+        [record for record in sources if isinstance(record, dict)]
+        if isinstance(sources, list)
+        else []
+    )
+    pages = sorted(
+        {
+            record["page"]
+            for record in records
+            if isinstance(record.get("page"), int) and record["page"] > 0
+        }
+    )
+    page = pages[0] if pages else fallback_page
+    if not text.strip():
+        return {
+            "status": "not_applicable",
+            "located": False,
+            "reason": "The extracted cell is empty; no source location is required.",
+            "page": page,
+            "source_records": len(records),
+            "located_records": 0,
+        }
+    located = sum(_valid_bbox(record) for record in records)
+    if located:
+        reason = "At least one original reading has an exact source bounding box."
+        status = "located"
+    elif records:
+        reason = (
+            "The extraction engine retained a source reading but did not return an exact "
+            "cell bounding box; inspect the full source page."
+        )
+        status = "unlocated"
+    else:
+        reason = (
+            "No cell-level source record was produced; inspect the mapped source page "
+            "before accepting this value."
+        )
+        status = "unlocated"
+    return {
+        "status": status,
+        "located": bool(located),
+        "reason": reason,
+        "page": page,
+        "source_records": len(records),
+        "located_records": located,
+    }
+
+
+def evidence_coverage(result: Result) -> dict:
+    """Account for the evidence state of every non-empty header and data cell."""
+    total = located = unlocated = 0
+    by_table: list[dict] = []
+    for table_index, table in enumerate(result.tables):
+        table_total = table_located = table_unlocated = 0
+        for column, value in enumerate(table.headers):
+            sources = table.header_sources[column] if column < len(table.header_sources) else []
+            status = evidence_status(value, sources, table.page)
+            if status["status"] == "not_applicable":
+                continue
+            table_total += 1
+            table_located += int(status["located"])
+            table_unlocated += int(not status["located"])
+        for row, values in enumerate(table.rows):
+            fallback = (
+                table.provenance[row][0][0]
+                if row < len(table.provenance) and table.provenance[row]
+                else table.page
+            )
+            source_row = table.cell_sources[row] if row < len(table.cell_sources) else []
+            for column, value in enumerate(values):
+                sources = source_row[column] if column < len(source_row) else []
+                status = evidence_status(value, sources, fallback)
+                if status["status"] == "not_applicable":
+                    continue
+                table_total += 1
+                table_located += int(status["located"])
+                table_unlocated += int(not status["located"])
+        total += table_total
+        located += table_located
+        unlocated += table_unlocated
+        by_table.append(
+            {
+                "table": table_index,
+                "nonempty_cells": table_total,
+                "located": table_located,
+                "unlocated": table_unlocated,
+                "coverage": table_located / table_total if table_total else 1.0,
+            }
+        )
+    return {
+        "nonempty_cells": total,
+        "located": located,
+        "unlocated": unlocated,
+        "coverage": located / total if total else 1.0,
+        "complete": unlocated == 0,
+        "by_table": by_table,
+        "invariant": "Every non-empty cell is located or explicitly marked unlocated.",
+    }
+
+
+def _review_items(result: Result) -> list[dict]:
+    """Build the complete source-addressable queue without truncating any category."""
     saved = result.review.get("item_reviews", {})
     if not isinstance(saved, dict):
         saved = {}
@@ -140,6 +264,7 @@ def review_queue(result: Result) -> dict:
                 or (table_index, row, column) in finding_cells
                 or not 0 <= row < len(table.rows)
                 or not 0 <= column < len(table.rows[row])
+                or not str(table.rows[row][column]).strip()
             ):
                 continue
             sources = (
@@ -177,18 +302,59 @@ def review_queue(result: Result) -> dict:
                     "confidence": score,
                 }
             )
-    uncertain.sort(
-        key=lambda item: (
-            item["confidence"],
-            item["page"],
-            item["table"],
-            item["row"],
-            item["column"],
-        )
-    )
-    finding_total = len(items)
-    uncertain_total = len(uncertain)
-    items.extend(uncertain[:LOW_CONFIDENCE_LIMIT])
+
+    evidence_items: list[dict] = []
+    for table_index, table in enumerate(result.tables):
+        for column, value in enumerate(table.headers):
+            sources = table.header_sources[column] if column < len(table.header_sources) else []
+            location = evidence_status(value, sources, table.page)
+            if location["status"] != "unlocated":
+                continue
+            evidence_items.append(
+                {
+                    "id": f"evidence-{table_index}-header-{column}",
+                    "kind": "evidence",
+                    "severity": "warning",
+                    "page": location["page"] or table.page,
+                    "title": "Header source box unavailable",
+                    "reason": location["reason"],
+                    "suggestion": "Inspect the full source page before accepting this header.",
+                    "table": table_index,
+                    "row": -1,
+                    "column": column,
+                    "confidence": None,
+                }
+            )
+        for row, values in enumerate(table.rows):
+            fallback = (
+                table.provenance[row][0][0]
+                if row < len(table.provenance) and table.provenance[row]
+                else table.page
+            )
+            source_row = table.cell_sources[row] if row < len(table.cell_sources) else []
+            for column, value in enumerate(values):
+                sources = source_row[column] if column < len(source_row) else []
+                location = evidence_status(value, sources, fallback)
+                if location["status"] != "unlocated":
+                    continue
+                evidence_items.append(
+                    {
+                        "id": f"evidence-{table_index}-{row}-{column}",
+                        "kind": "evidence",
+                        "severity": "warning",
+                        "page": location["page"] or table.page,
+                        "title": "Cell source box unavailable",
+                        "reason": location["reason"],
+                        "suggestion": "Inspect the full source page before accepting this value.",
+                        "table": table_index,
+                        "row": row,
+                        "column": column,
+                        "confidence": None,
+                    }
+                )
+
+    items.extend(evidence_items)
+    items.extend(uncertain)
 
     checked = 0
     for item in items:
@@ -200,20 +366,103 @@ def review_queue(result: Result) -> dict:
         else:
             item["status"] = "pending"
             item["checked_at"] = None
+    kind_order = {"finding": 0, "evidence": 1, "confidence": 2}
+    items.sort(
+        key=lambda item: (
+            item["status"] == "checked",
+            kind_order.get(item["kind"], 9),
+            item.get("confidence") if item.get("confidence") is not None else 1.0,
+            item.get("page") or 0,
+            item.get("table") if item.get("table") is not None else -1,
+            item.get("row") if item.get("row") is not None else -2,
+            item.get("column") if item.get("column") is not None else -1,
+            item["id"],
+        )
+    )
+    return items
+
+
+def review_queue(
+    result: Result,
+    *,
+    offset: int = 0,
+    limit: int | None = DEFAULT_REVIEW_PAGE_SIZE,
+    table: int | None = None,
+    status: str | None = None,
+) -> dict:
+    """Return an explicit page of the complete review queue and global totals."""
+    if type(offset) is not int or offset < 0:
+        raise ValueError("Review queue offset must be a non-negative integer.")
+    if limit is not None and (type(limit) is not int or not 1 <= limit <= MAX_REVIEW_PAGE_SIZE):
+        raise ValueError(f"Review queue limit must be between 1 and {MAX_REVIEW_PAGE_SIZE}.")
+    if table is not None and (type(table) is not int or table < 0):
+        raise ValueError("Review queue table must be a non-negative integer.")
+    if status not in {None, "pending", "checked"}:
+        raise ValueError("Review queue status must be pending or checked.")
+
+    all_items = _review_items(result)
+    checked = sum(item["status"] == "checked" for item in all_items)
+    filtered = [
+        item
+        for item in all_items
+        if (table is None or item.get("table") in {None, table})
+        and (status is None or item["status"] == status)
+    ]
+    page = filtered[offset:] if limit is None else filtered[offset : offset + limit]
+    next_offset = offset + len(page)
+    remaining = max(0, len(filtered) - next_offset)
     return {
-        "items": items,
-        "total": finding_total + uncertain_total,
-        "visible": len(items),
-        "pending": len(items) - checked,
+        "items": page,
+        "total": len(all_items),
+        "visible": len(page),
+        "pending": len(all_items) - checked,
         "checked": checked,
-        "omitted": max(0, uncertain_total - LOW_CONFIDENCE_LIMIT),
+        "filtered_total": len(filtered),
+        "filtered_pending": sum(item["status"] == "pending" for item in filtered),
+        "offset": offset,
+        "limit": limit,
+        "remaining": remaining,
+        "has_more": remaining > 0,
+        "next_offset": next_offset if remaining else None,
+        # Kept for older clients, but now means an explicitly reported next page.
+        "omitted": remaining,
         "confidence_threshold": LOW_CONFIDENCE_THRESHOLD,
+    }
+
+
+def quality_state(result: Result) -> dict:
+    """Return a user-facing quality gate without replacing the job lifecycle state."""
+    reasons: list[str] = []
+    if any(page.error for page in result.pages):
+        reasons.append("One or more pages failed and should be rescanned or retried.")
+    has_data = any(
+        str(value).strip() for table in result.tables for row in table.rows for value in row
+    )
+    if not result.tables or not has_data:
+        reasons.append("No usable table data was reconstructed.")
+    if reasons:
+        state = "needs_rescan"
+    else:
+        queue = review_queue(result, limit=1)
+        if review_current(result) and queue["pending"] == 0:
+            state = "reviewed"
+        else:
+            state = "needs_review"
+            if queue["pending"]:
+                reasons.append(f"{queue['pending']} review item(s) remain unresolved.")
+            else:
+                reasons.append("A human source-check attestation has not been recorded.")
+    return {
+        "status": state,
+        "reasons": reasons,
+        "reviewed_export_ready": state == "reviewed",
+        "draft_export_ready": bool(result.tables),
     }
 
 
 def set_item_review(result: Result, item_id: str, source_checked: bool) -> Result:
     """Persist one queue decision without changing extracted values or their fingerprint."""
-    queue = review_queue(result)
+    queue = review_queue(result, limit=None)
     if item_id not in {item["id"] for item in queue["items"]}:
         raise ValueError("Review queue item is not part of the current extraction.")
     working = deepcopy(result)
@@ -307,13 +556,17 @@ def complete_review(result: Result, source_checked: bool, note: str) -> Result:
         raise ValueError("Record your source review and any accepted findings.")
     if not history_valid(result):
         raise ValueError("Correction history is inconsistent.")
+    queue = review_queue(result, limit=None)
+    if queue["pending"]:
+        raise ValueError(
+            f"Review each actionable item individually before completing the source check "
+            f"({queue['pending']} pending)."
+        )
     working = deepcopy(result)
     at = datetime.now(timezone.utc).isoformat()
     item_reviews = deepcopy(result.review.get("item_reviews", {}))
     if not isinstance(item_reviews, dict):
         item_reviews = {}
-    for item in review_queue(result)["items"]:
-        item_reviews[item["id"]] = {"status": "checked", "at": at}
     working.review = {
         "status": "reviewed",
         "at": at,

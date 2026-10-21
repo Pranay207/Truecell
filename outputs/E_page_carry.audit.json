@@ -780,7 +780,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.92,
-      "seconds": 0.03345719999924768,
+      "seconds": 0.033249499998419196,
       "attempts": [
         {
           "engine": "native",
@@ -789,7 +789,7 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 0.00893750000250293,
+          "seconds": 0.010203400001046248,
           "error": "",
           "selected": false
         },
@@ -800,7 +800,7 @@
           "cells": 18,
           "issues": 1,
           "score": 96.4,
-          "seconds": 0.012273000000277534,
+          "seconds": 0.013746399999945424,
           "error": "",
           "selected": false
         },
@@ -811,19 +811,58 @@
           "cells": 12,
           "issues": 3,
           "score": 90.4,
-          "seconds": 0.002344400003494229,
+          "seconds": 0.0035184000007575378,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 27,
+        "native_character_count": 172,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.611,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "statement",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 2,
       "route": "digital",
       "engine": "native",
       "confidence": 0.92,
-      "seconds": 0.018166199995903298,
+      "seconds": 0.1652912000008655,
       "attempts": [
         {
           "engine": "native",
@@ -832,7 +871,7 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 0.008278499997686595,
+          "seconds": 0.009109900000112248,
           "error": "",
           "selected": false
         },
@@ -843,7 +882,7 @@
           "cells": 18,
           "issues": 1,
           "score": 96.4,
-          "seconds": 0.006214400003955234,
+          "seconds": 0.087137000000439,
           "error": "",
           "selected": false
         },
@@ -854,15 +893,54 @@
           "cells": 12,
           "issues": 3,
           "score": 90.4,
-          "seconds": 0.0015923999962978996,
+          "seconds": 0.04202350000014121,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 27,
+        "native_character_count": 172,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.611,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "statement",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     }
   ],
-  "seconds": 0.05709760000172537,
+  "seconds": 0.2567863000003854,
   "source_sha256": "3af1117b3c8de6d7c9e99a70896d39403a49e8f1d192e283448a2bf742b4e68b",
   "constraints": [],
   "proposals": [],

@@ -10402,7 +10402,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.92,
-      "seconds": 1.5698692000005394,
+      "seconds": 2.9976857000001473,
       "attempts": [
         {
           "engine": "native",
@@ -10411,7 +10411,7 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 0.3355074999999488,
+          "seconds": 0.2259319000004325,
           "error": "",
           "selected": false
         },
@@ -10422,7 +10422,7 @@
           "cells": 224,
           "issues": 1,
           "score": 1094.4,
-          "seconds": 0.9462973999980022,
+          "seconds": 1.62528360000033,
           "error": "",
           "selected": false
         },
@@ -10433,19 +10433,58 @@
           "cells": 192,
           "issues": 1,
           "score": 1126.4,
-          "seconds": 0.2698554000016884,
+          "seconds": 0.5367931000000681,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1491,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 2,
       "route": "digital",
       "engine": "native",
       "confidence": 0.92,
-      "seconds": 1.5365746000024956,
+      "seconds": 2.522906199999852,
       "attempts": [
         {
           "engine": "native",
@@ -10454,7 +10493,7 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 0.3107921999981045,
+          "seconds": 0.2505929999988439,
           "error": "",
           "selected": false
         },
@@ -10465,7 +10504,7 @@
           "cells": 224,
           "issues": 1,
           "score": 1096.4,
-          "seconds": 0.9407648999986122,
+          "seconds": 1.1955671000014263,
           "error": "",
           "selected": false
         },
@@ -10476,19 +10515,58 @@
           "cells": 192,
           "issues": 1,
           "score": 1128.4,
-          "seconds": 0.2687900000018999,
+          "seconds": 0.5514433000007557,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1493,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     },
     {
       "page": 3,
       "route": "digital",
       "engine": "native",
       "confidence": 0.92,
-      "seconds": 1.5413756999987527,
+      "seconds": 2.17401769999924,
       "attempts": [
         {
           "engine": "native",
@@ -10497,7 +10575,7 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 0.30176809999829857,
+          "seconds": 0.21250580000014452,
           "error": "",
           "selected": false
         },
@@ -10508,7 +10586,7 @@
           "cells": 224,
           "issues": 1,
           "score": 1096.4,
-          "seconds": 0.9592063000018243,
+          "seconds": 1.3299174999992829,
           "error": "",
           "selected": false
         },
@@ -10519,15 +10597,54 @@
           "cells": 192,
           "issues": 1,
           "score": 1128.4,
-          "seconds": 0.2673242000018945,
+          "seconds": 0.32050230000095326,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 259,
+        "native_character_count": 1493,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.73,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "invoice",
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     }
   ],
-  "seconds": 6.078559600002336,
+  "seconds": 9.43738989999838,
   "source_sha256": "4a13a52a6d7697ec4262575a5f6c06262ae42626a8b631bacb9bd6b7ddf8bce9",
   "constraints": [
     {

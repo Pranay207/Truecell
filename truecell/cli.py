@@ -8,7 +8,16 @@ import logging
 from pathlib import Path
 
 from .pipeline import convert
+from .profiling import normalize_languages
 from .router import InputError
+
+
+def _ocr_languages(value: str) -> tuple[str, ...]:
+    """Validate a command-line language list while preserving friendly aliases."""
+    try:
+        return normalize_languages(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(str(exc)) from exc
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -37,6 +46,15 @@ def main(argv: list[str] | None = None) -> int:
         "--force-ocr",
         action="store_true",
         help="Read all pages through OCR, including PDFs with damaged text layers",
+    )
+    parser.add_argument(
+        "--ocr-languages",
+        type=_ocr_languages,
+        metavar="LANG[+LANG...]",
+        help=(
+            "Local OCR languages, for example eng+tel or English,Hindi. "
+            "Defaults to TRUECELL_OCR_LANGUAGES, then English."
+        ),
     )
     parser.add_argument(
         "--allow-cloud",
@@ -69,6 +87,7 @@ def main(argv: list[str] | None = None) -> int:
             force_ocr=args.force_ocr,
             checkpoint_dir=args.checkpoints,
             allow_cloud=args.allow_cloud,
+            ocr_languages=args.ocr_languages,
         )
         if args.audit_json:
             args.audit_json.parent.mkdir(parents=True, exist_ok=True)

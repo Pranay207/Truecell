@@ -2,6 +2,26 @@ import { strict as assert } from "node:assert";
 import { test } from "node:test";
 import { api, ApiError } from "./api.ts";
 
+test("upload sends explicit OCR languages with the extraction profile", async () => {
+  const previous = globalThis.fetch;
+  let body: FormData | undefined;
+  globalThis.fetch = async (_input, init) => {
+    body = init?.body as FormData;
+    return new Response(JSON.stringify({ id: "dummy", status: "processing" }), {
+      status: 200,
+    });
+  };
+  try {
+    const file = new File(["%PDF"], "dummy.pdf", { type: "application/pdf" });
+    await api.upload(file, true, false, "eng+tel");
+    assert.equal(body?.get("verify"), "true");
+    assert.equal(body?.get("force_ocr"), "false");
+    assert.equal(body?.get("ocr_languages"), "eng+tel");
+  } finally {
+    globalThis.fetch = previous;
+  }
+});
+
 test("counterfactual preview sends the exact snapshot and preserves numeric text", async () => {
   const previous = globalThis.fetch;
   let requested: { url: string; method?: string; body: unknown } | undefined;

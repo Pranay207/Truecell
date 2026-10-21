@@ -1,0 +1,22 @@
+{
+  "case": "G_thirteen_page_equivalent",
+  "disclosed_synthetic_fixture": true,
+  "external_private_document": false,
+  "source_sha256": "5d57669d0fcebb61dc7ef513ba319e4a4ba760c4d812c68120423368f71b2c15",
+  "pages": 13,
+  "tables": 4,
+  "columns_per_table": 14,
+  "rows": 78,
+  "expected_data_cells": 1092,
+  "cell_exact": 1.0,
+  "row_match": 1.0,
+  "header_match": 1.0,
+  "shape_match": true,
+  "tables_count_match": true,
+  "evidence_nonempty_cells": 1148,
+  "evidence_located": 1148,
+  "evidence_unlocated": 0,
+  "semantic_type_mismatches": 0,
+  "review_findings": 13,
+  "pass": true
+}

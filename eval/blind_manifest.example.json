@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "suite": "independent-held-out-documents",
+  "cases": [
+    {
+      "id": "invoice-001",
+      "file": "invoice-001.pdf",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "truth": "invoice-001.truth.json",
+      "category": "invoice",
+      "language": "English"
+    }
+  ]
+}

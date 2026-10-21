@@ -1566,6 +1566,21 @@
         ]
       ],
       "page_summaries": [],
+      "join_receipt": {
+        "page_joins": 0,
+        "repeated_headers_removed": 0,
+        "split_rows_recovered": 0,
+        "pages": [
+          1
+        ],
+        "rows_by_page": [
+          {
+            "page": 1,
+            "rows": 8
+          }
+        ],
+        "output_rows": 8
+      },
       "cell_scores": []
     }
   ],
@@ -1587,7 +1602,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.07878339999297168,
+      "seconds": 0.7334608000001026,
       "attempts": [
         {
           "engine": "native",
@@ -1596,15 +1611,53 @@
           "cells": 80,
           "issues": 1,
           "score": 1383.6,
-          "seconds": 0.06044840000686236,
+          "seconds": 0.3027509999992617,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 92,
+        "native_character_count": 494,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.726,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     }
   ],
-  "seconds": 0.10590720000618603,
+  "seconds": 1.068329800000356,
   "source_sha256": "5a30a9fcbccbcbf55cad381f2bfdff6db9c05aafd073f81c94c6705cadf94e4b",
   "constraints": [
     {

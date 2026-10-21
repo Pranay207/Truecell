@@ -10,6 +10,8 @@ from pathlib import Path
 import fitz
 from PIL import Image, ImageOps
 
+from .profiling import PageProfile, profile_page
+
 MAX_PAGES = 200
 MAX_IMAGE_FRAMES = 50
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".tif", ".tiff", ".bmp", ".webp"}
@@ -67,13 +69,25 @@ def open_document(path: str | Path) -> Iterator[fitz.Document]:
         document.close()
 
 
-def route_page(page: fitz.Page) -> str:
-    """Prefer usable native text; image-heavy text-poor pages need OCR."""
-    words = page.get_text("words")
-    usable = sum(len(w[4]) for w in words if "\ufffd" not in w[4])
-    if len(words) >= 8 and usable >= 30:
+def route_page(page: fitz.Page, profile: PageProfile | dict | None = None) -> str:
+    """Choose the primary route; the pipeline may add an audited cross-check."""
+    evidence = profile or profile_page(page)
+    if isinstance(evidence, PageProfile):
+        content_mode = evidence.content_mode
+        word_count = evidence.native_word_count
+        character_count = evidence.native_character_count
+    else:
+        content_mode = str(evidence.get("content_mode", ""))
+        word_count = int(evidence.get("native_word_count", 0))
+        character_count = int(evidence.get("native_character_count", 0))
+    if content_mode == "empty":
+        return "empty"
+    # Preserve a potentially useful native candidate when a damaged text layer
+    # still contains enough structure. The profile tells the pipeline to OCR it
+    # independently rather than silently trusting that candidate.
+    if word_count >= 8 and character_count >= 30:
         return "digital"
-    return "ocr" if page.get_images() or words else "empty"
+    return "ocr"
 
 
 def render_page(page: fitz.Page, dpi: int = 300) -> Image.Image:

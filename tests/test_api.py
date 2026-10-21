@@ -67,7 +67,9 @@ def fake_runner(calls, gate=None):
 
 
 def completed(client, identifier):
-    deadline = time.monotonic() + 10
+    # A cold Windows run profiles page quality before native extraction and can
+    # take more than ten seconds on slower CI hosts.
+    deadline = time.monotonic() + 30
     while time.monotonic() < deadline:
         response = client.get(f"/api/jobs/{identifier}")
         assert response.status_code == 200, response.text
@@ -85,22 +87,61 @@ def upload(client, name="dummy.pdf", content=None, **form):
     )
 
 
+def review_all(client, prefix, detail, note="Compared every actionable item with the source"):
+    """Check every current queue item through the public API, then attest."""
+    while detail["review_queue"]["pending"]:
+        queue = client.get(prefix + "/review-queue?status=pending&limit=500").json()
+        assert queue["items"]
+        for item in queue["items"]:
+            response = client.post(
+                prefix + "/review-items",
+                json={
+                    "item_id": item["id"],
+                    "source_checked": True,
+                    "fingerprint": detail["fingerprint"],
+                },
+            )
+            assert response.status_code == 200, response.text
+            detail = response.json()
+    response = client.post(
+        prefix + "/review",
+        json={
+            "source_checked": True,
+            "note": note,
+            "fingerprint": detail["fingerprint"],
+        },
+    )
+    assert response.status_code == 200, response.text
+    return response.json()
+
+
 def test_api_upload_edit_review_source_and_export_workflow(tmp_path):
     calls = []
     app = create_app(tmp_path / "jobs", runner=fake_runner(calls))
     with local_client(app) as client:
-        response = upload(client, "../dummy.pdf", verify="true", force_ocr="false")
+        response = upload(
+            client,
+            "../dummy.pdf",
+            verify="true",
+            force_ocr="false",
+            ocr_languages="English, Telugu",
+        )
         assert response.status_code == 202, response.text
         identifier = response.json()["id"]
         detail = completed(client, identifier)
         assert detail["name"] == "dummy.pdf" and detail["progress"] == 1
+        assert detail["quality"]["status"] == "needs_review"
+        assert detail["evidence_coverage"]["unlocated"] == 4
         assert calls[0]["allow_cloud"] is False and calls[0]["verify"] is True
         assert calls[0]["force_ocr"] is False
+        assert calls[0]["ocr_languages"] == "eng+tel"
         assert client.get("/api/jobs").json()["jobs"][0]["id"] == identifier
         prefix = f"/api/jobs/{identifier}"
         original = detail["result"]["tables"][0]["rows"][0][3]
         evidence = client.get(prefix + "/evidence?table=0&row=0&column=3").json()
         assert evidence["value"] == original and evidence["sources"][0]["bbox"]
+        assert evidence["location"]["status"] == "located"
+        assert client.get(prefix + "/reviewed.xlsx").status_code == 409
         assert client.get(prefix + "/source").content.startswith(b"%PDF")
         assert client.get(prefix + "/pages/1/image").content.startswith(b"\x89PNG")
         assert client.get(prefix + "/pages/1/info").json() == {"width": 300, "height": 400}
@@ -122,15 +163,20 @@ def test_api_upload_edit_review_source_and_export_workflow(tmp_path):
         assert edited["result"]["tables"][0]["cell_sources"][0][3][0]["text"] == original
         assert client.patch(prefix + "/cells", json=change).status_code == 409
         assert client.get(prefix + "/baseline.json").json()["tables"][0]["rows"][0][3] == original
-        reviewed = client.post(
+        blocked = client.post(
             prefix + "/review",
             json={
                 "source_checked": True,
                 "note": "Compared source and accepted findings",
                 "fingerprint": edited["fingerprint"],
             },
-        ).json()
+        )
+        assert blocked.status_code == 400 and "individually" in blocked.text
+        reviewed = review_all(client, prefix, edited)
         assert reviewed["reviewed"]
+        assert reviewed["quality"]["status"] == "reviewed"
+        assert client.get(prefix + "/reviewed.xlsx").status_code == 200
+        assert client.get(prefix + "/export.csv?table=1").content.startswith(b"\xef\xbb\xbf")
         header = {
             "table": 0,
             "row": -1,
@@ -191,6 +237,10 @@ def test_api_priority_review_queue_is_saved_and_source_addressable(tmp_path):
             json={"item_id": "missing", "source_checked": True},
         )
         assert invalid.status_code == 400
+        paged = client.get(f"/api/jobs/{identifier}/review-queue?limit=1").json()
+        assert paged["visible"] == 1
+        assert paged["total"] >= paged["visible"]
+        assert paged["remaining"] == paged["filtered_total"] - 1
 
 
 def test_api_delete_workspace_requires_exact_name_and_preserves_other_jobs(tmp_path):
@@ -295,6 +345,7 @@ def test_api_limits_invalid_input_and_addresses(tmp_path):
         assert upload(client, content=b"x" * 100_001).status_code == 413
         assert upload(client, "script.exe").status_code == 400
         assert upload(client, content=b"not a PDF").status_code == 400
+        assert upload(client, ocr_languages="bad-language-code!").status_code == 422
         long_document = upload(client, content=pdf_bytes(116))
         assert long_document.status_code == 202
         completed(client, long_document.json()["id"])
@@ -693,14 +744,7 @@ def test_api_reprocessing_preserves_reviewed_workspace_and_returns_fresh_job(tmp
                 },
             ).json()
         else:
-            detail = client.post(
-                prefix + "/review",
-                json={
-                    "source_checked": True,
-                    "note": "Compared original pages",
-                    "fingerprint": detail["fingerprint"],
-                },
-            ).json()
+            detail = review_all(client, prefix, detail, "Compared original pages")
         original_files = {
             path.name: path.read_bytes()
             for path in job_path(identifier, root).iterdir()

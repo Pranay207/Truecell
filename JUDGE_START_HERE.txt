@@ -15,22 +15,25 @@ TRUECELL — DOCUMENT INTELLIGENCE
    Inspect printed 1081.00 and the 1064.00 proposal supported by two
    adjacent balance equations. Preview without changing the working data.
 5. Select the finding to inspect its source and preview the proposal impact.
-   Open the invoice sample to show its page-join receipt, then Export Excel.
-   The workbook includes Join Receipt and Cell Evidence sheets.
+   Open the invoice sample to show its page-join receipt. Draft Excel and CSV
+   remain available for working data; Reviewed Excel unlocks only after every
+   current priority item has been individually checked against its source.
 
 Quick-demo buttons: Invoice register / Find a wrong balance / Skewed scan.
 Upload Sparse text schedule / Sideways invoice / Page carry-forwards from
 the samples/ folder. All sample data is dummy.
-All 22 dummy PDFs, truth workbooks and converted workbooks are in the source folder.
-Truecell-2.0-Submission.zip contains the current source, samples, converted workbooks,
-reports, tests and setup instructions.
+All 23 dummy PDFs, truth workbooks and converted workbooks are in the source folder.
+The 13-page equivalent sample is disclosed synthetic evidence, not an external
+private evaluation document. Independent evaluators can use docs/BLIND_EVALUATION.md.
 
 CLI: python convert.py samples/A_invoice_register.pdf -o outputs/demo.xlsx
+Multilingual CLI: python convert.py input.pdf -o output.xlsx --ocr-languages eng+tel+hin
+Docker: docker compose up --build
 Tests: python -m pytest -q
 Fast recorded-output verification: python scripts/verify_recorded_outputs.py
 Full development evaluation: python scripts/judge_check.py
 
-Read README.md and reports/BUILD_VERIFICATION.md for setup and limitations.
+Read README.md, docs/IMPLEMENTATION_STATUS.md and reports/BUILD_VERIFICATION.md.
 Development tests are not hidden-document accuracy guarantees.
 Demo video (3:53): https://pranay207.github.io/Truecell/demo/
 The matching recording script is in docs/DEMO_SCRIPT.md.

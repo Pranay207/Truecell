@@ -53,6 +53,12 @@ export type PageReport = {
   seconds: number;
   error: string;
   attempts: Attempt[];
+  profile?: {
+    requested_ocr_languages?: string[];
+    ocr_engine_language_coverage?: Record<string, string[]>;
+    missing_ocr_languages?: string[];
+    [key: string]: unknown;
+  };
 };
 export type Relation = {
   table: number;
@@ -90,7 +96,7 @@ export type Result = {
 };
 export type ReviewQueueItem = {
   id: string;
-  kind: "finding" | "confidence";
+  kind: "finding" | "confidence" | "evidence";
   severity: string;
   page: number;
   title: string;
@@ -109,6 +115,13 @@ export type ReviewQueue = {
   visible: number;
   pending: number;
   checked: number;
+  filtered_total: number;
+  filtered_pending: number;
+  offset: number;
+  limit: number | null;
+  remaining: number;
+  has_more: boolean;
+  next_offset?: number | null;
   omitted: number;
   confidence_threshold: number;
 };
@@ -124,10 +137,29 @@ export type Job = {
   result?: Result;
   fingerprint?: string;
   coverage?: Record<string, number>;
-  options?: { verify?: boolean; force_ocr?: boolean; force?: boolean };
+  options?: {
+    verify?: boolean;
+    force_ocr?: boolean;
+    force?: boolean;
+    ocr_languages?: string;
+  };
   result_is_previous?: boolean;
   forked_from?: string;
   review_queue?: ReviewQueue;
+  evidence_coverage?: {
+    nonempty_cells: number;
+    located: number;
+    unlocated: number;
+    coverage: number;
+    complete: boolean;
+  };
+  quality?: {
+    status: "needs_review" | "needs_rescan" | "reviewed";
+    reasons: string[];
+    reviewed_export_ready: boolean;
+    draft_export_ready: boolean;
+  };
+  reviewed?: boolean;
 };
 export type Sample = { filename: string; name: string; pages?: number };
 export type Cell = { table: number; row: number; column: number };

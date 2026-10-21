@@ -560,6 +560,21 @@
         ]
       ],
       "page_summaries": [],
+      "join_receipt": {
+        "page_joins": 0,
+        "repeated_headers_removed": 0,
+        "split_rows_recovered": 0,
+        "pages": [
+          1
+        ],
+        "rows_by_page": [
+          {
+            "page": 1,
+            "rows": 6
+          }
+        ],
+        "output_rows": 6
+      },
       "cell_scores": [
         [
           0,
@@ -827,7 +842,7 @@
       "route": "ocr",
       "engine": "rapidocr",
       "confidence": 0.999950851003329,
-      "seconds": 21.98404070000106,
+      "seconds": 37.156117799999265,
       "attempts": [
         {
           "engine": "tesseract",
@@ -836,7 +851,7 @@
           "cells": 18,
           "issues": 27,
           "score": -159.2,
-          "seconds": 1.5250366999971448,
+          "seconds": 2.546681499999977,
           "error": "",
           "selected": false
         },
@@ -847,7 +862,7 @@
           "cells": 14,
           "issues": 26,
           "score": -102.2,
-          "seconds": 5.886046500003431,
+          "seconds": 7.266801199999463,
           "error": "",
           "selected": false
         },
@@ -858,7 +873,7 @@
           "cells": 14,
           "issues": 26,
           "score": -102.2,
-          "seconds": 5.582563299991307,
+          "seconds": 7.881848799999716,
           "error": "",
           "selected": false
         },
@@ -869,7 +884,7 @@
           "cells": 14,
           "issues": 24,
           "score": -139.166,
-          "seconds": 1.9234818999975687,
+          "seconds": 5.48839560000124,
           "error": "",
           "selected": false
         },
@@ -880,7 +895,7 @@
           "cells": 20,
           "issues": 21,
           "score": -108.1,
-          "seconds": 0.8471482000022661,
+          "seconds": 1.9833333999995375,
           "error": "",
           "selected": false
         },
@@ -891,7 +906,7 @@
           "cells": 17,
           "issues": 27,
           "score": -134.7,
-          "seconds": 1.234577499999432,
+          "seconds": 1.7332344000005833,
           "error": "",
           "selected": false
         },
@@ -902,7 +917,7 @@
           "cells": 21,
           "issues": 5,
           "score": 77.2,
-          "seconds": 1.2868113000004087,
+          "seconds": 1.2479060999994545,
           "error": "",
           "selected": false
         },
@@ -913,15 +928,62 @@
           "cells": 21,
           "issues": 2,
           "score": 98.999,
-          "seconds": 3.358082899998408,
+          "seconds": 7.590910900000381,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "scan",
+        "native_text_health": "missing",
+        "native_word_count": 0,
+        "native_character_count": 0,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 0.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 1,
+        "image_coverage": 1.0,
+        "raster_profiled": true,
+        "ink_coverage": 0.057,
+        "blur_score": 0.88,
+        "contrast_score": 0.945,
+        "skew_degrees": 0.0,
+        "rotation_hint": 90,
+        "perspective_risk": 0.02,
+        "table_likelihood": 1.0,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "poor",
+        "content_cues": [
+          "table"
+        ],
+        "detected_scripts": [],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "ocr",
+        "cross_check_recommended": false,
+        "high_value_content": false,
+        "risk_reasons": [
+          "rotation"
+        ],
+        "profiler_warnings": [],
+        "routing_decision": "ocr",
+        "native_candidate_available": false,
+        "ocr_engine_language_coverage": {
+          "tesseract": [
+            "eng"
+          ],
+          "rapidocr": [
+            "eng"
+          ]
+        },
+        "cross_check_executed": false
+      }
     }
   ],
-  "seconds": 22.011949499996263,
+  "seconds": 37.24293779999971,
   "source_sha256": "52a9ca3fde6039fb51fca8ef01af616de4beb9db01362cc175d4c05cedb6dc83",
   "constraints": [],
   "proposals": [],

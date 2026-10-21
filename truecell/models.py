@@ -88,6 +88,7 @@ class PageReport:
     seconds: float = 0
     attempts: list[Attempt] = field(default_factory=list)
     error: str = ""
+    profile: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass

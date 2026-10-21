@@ -369,6 +369,21 @@
         ]
       ],
       "page_summaries": [],
+      "join_receipt": {
+        "page_joins": 0,
+        "repeated_headers_removed": 0,
+        "split_rows_recovered": 0,
+        "pages": [
+          1
+        ],
+        "rows_by_page": [
+          {
+            "page": 1,
+            "rows": 5
+          }
+        ],
+        "output_rows": 5
+      },
       "cell_scores": []
     },
     {
@@ -835,6 +850,21 @@
         ]
       ],
       "page_summaries": [],
+      "join_receipt": {
+        "page_joins": 0,
+        "repeated_headers_removed": 0,
+        "split_rows_recovered": 0,
+        "pages": [
+          1
+        ],
+        "rows_by_page": [
+          {
+            "page": 1,
+            "rows": 5
+          }
+        ],
+        "output_rows": 5
+      },
       "cell_scores": []
     }
   ],
@@ -845,7 +875,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.029625600000144914,
+      "seconds": 0.060720299999957206,
       "attempts": [
         {
           "engine": "native",
@@ -854,15 +884,53 @@
           "cells": 35,
           "issues": 0,
           "score": 1083.2,
-          "seconds": 0.02283299999544397,
+          "seconds": 0.03576040000007197,
           "error": "",
           "selected": true
         }
       ],
-      "error": ""
+      "error": "",
+      "profile": {
+        "content_mode": "digital",
+        "native_text_health": "healthy",
+        "native_word_count": 42,
+        "native_character_count": 134,
+        "replacement_character_ratio": 0.0,
+        "printable_character_ratio": 1.0,
+        "overlapping_word_ratio": 0.0,
+        "image_count": 0,
+        "image_coverage": 0.0,
+        "raster_profiled": false,
+        "ink_coverage": 0.0,
+        "blur_score": 1.0,
+        "contrast_score": 1.0,
+        "skew_degrees": 0.0,
+        "rotation_hint": 0,
+        "perspective_risk": 0.0,
+        "table_likelihood": 0.75,
+        "estimated_tables": 1,
+        "table_count_class": "single",
+        "quality_grade": "good",
+        "content_cues": [
+          "table"
+        ],
+        "detected_scripts": [
+          "Latin"
+        ],
+        "requested_ocr_languages": [
+          "eng"
+        ],
+        "recommended_strategy": "native",
+        "cross_check_recommended": false,
+        "high_value_content": true,
+        "risk_reasons": [],
+        "profiler_warnings": [],
+        "routing_decision": "digital",
+        "native_candidate_available": true
+      }
     }
   ],
-  "seconds": 0.0364625999936834,
+  "seconds": 0.10132970000086061,
   "source_sha256": "20a9b0865a38ba5407cdd24d9f8fe9ac46672d36cb532820e6f8b2e9ffecb19d",
   "constraints": [
     {

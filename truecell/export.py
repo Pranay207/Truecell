@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import csv
 import math
 import re
 import sys
@@ -154,8 +155,15 @@ def style_sheet(sheet) -> None:
         sheet.row_dimensions[row[0].row].height = min(409, 17 * line_count)
 
 
-def export_workbook(result: Result, output: str | Path) -> Path:
-    """Write data, every validation finding, page attempts and source row mapping."""
+def export_workbook(result: Result, output: str | Path, *, reviewed: bool = False) -> Path:
+    """Write a draft or quality-gated reviewed workbook with complete evidence accounting."""
+    from .review import quality_state, review_current
+
+    if reviewed and (not review_current(result) or quality_state(result)["status"] != "reviewed"):
+        raise ValueError(
+            "Reviewed Excel is available only after every actionable item is checked "
+            "and the current snapshot has a source-check attestation."
+        )
     workbook = Workbook()
     workbook.remove(workbook.active)
     strings = _TextWriter()
@@ -165,9 +173,30 @@ def export_workbook(result: Result, output: str | Path) -> Path:
         sheet = workbook.create_sheet(f"Data {index}")
         for col, header in enumerate(table.headers, 1):
             strings.write(sheet.cell(1, col), header)
-            if table.header_sources[col - 1]:
+            sources = table.header_sources[col - 1] if col - 1 < len(table.header_sources) else []
+            from .review import evidence_status
+
+            location = evidence_status(header, sources, table.page)
+            if str(header).strip():
                 sheet.cell(1, col).hyperlink = f"#'Cell Evidence'!A{len(evidence_rows) + 2}"
-            for record in table.header_sources[col - 1]:
+            if not sources and str(header).strip():
+                evidence_rows.append(
+                    [
+                        sheet.title,
+                        1,
+                        col,
+                        location["page"],
+                        *([None] * 4),
+                        None,
+                        None,
+                        header,
+                        "",
+                        "unlocated",
+                        location["status"],
+                        location["reason"],
+                    ]
+                )
+            for record in sources:
                 evidence_rows.append(
                     [
                         sheet.title,
@@ -180,16 +209,44 @@ def export_workbook(result: Result, output: str | Path) -> Path:
                         record.get("text"),
                         record.get("initial_reading", ""),
                         record.get("role", "header"),
+                        location["status"],
+                        location["reason"],
                     ]
                 )
         for row_no, row in enumerate(table.rows, 2):
             for col, value in enumerate(row, 1):
                 write_value(sheet.cell(row_no, col), value, strings.write)
-                sources = table.cell_sources[row_no - 2][col - 1]
-                if sources:
+                source_row = (
+                    table.cell_sources[row_no - 2] if row_no - 2 < len(table.cell_sources) else []
+                )
+                sources = source_row[col - 1] if col - 1 < len(source_row) else []
+                fallback_page = (
+                    table.provenance[row_no - 2][0][0]
+                    if row_no - 2 < len(table.provenance) and table.provenance[row_no - 2]
+                    else table.page
+                )
+                location = evidence_status(value, sources, fallback_page)
+                if str(value).strip():
                     sheet.cell(
                         row_no, col
                     ).hyperlink = f"#'Cell Evidence'!A{len(evidence_rows) + 2}"
+                if not sources and str(value).strip():
+                    evidence_rows.append(
+                        [
+                            sheet.title,
+                            row_no,
+                            col,
+                            location["page"],
+                            *([None] * 4),
+                            None,
+                            None,
+                            value,
+                            "",
+                            "unlocated",
+                            location["status"],
+                            location["reason"],
+                        ]
+                    )
                 for record in sources:
                     bbox = record.get("bbox") or [None] * 4
                     evidence_rows.append(
@@ -204,6 +261,8 @@ def export_workbook(result: Result, output: str | Path) -> Path:
                             record.get("text"),
                             record.get("initial_reading", ""),
                             record.get("role", "extracted"),
+                            location["status"],
+                            location["reason"],
                         ]
                     )
             for page, source_row in table.provenance[row_no - 2]:
@@ -473,12 +532,14 @@ def export_workbook(result: Result, output: str | Path) -> Path:
             "Reading",
             "Initial reading",
             "Role",
+            "Location status",
+            "Location reason",
         ],
     )
     for row in evidence_rows:
         strings.append(sheet, row)
     from .constraints import coverage
-    from .review import fingerprint, review_current
+    from .review import evidence_coverage, fingerprint
 
     sheet = workbook.create_sheet("Verification")
     strings.append(sheet, ["Evidence", "Value"])
@@ -501,6 +562,13 @@ def export_workbook(result: Result, output: str | Path) -> Path:
     strings.append(
         sheet, ["Review note", result.review.get("note", "") if review_current(result) else ""]
     )
+    strings.append(sheet, ["Export type", "Reviewed Excel" if reviewed else "Draft Excel"])
+    evidence = evidence_coverage(result)
+    strings.append(sheet, ["Non-empty exported cells", evidence["nonempty_cells"]])
+    strings.append(sheet, ["Cells with source boxes", evidence["located"]])
+    strings.append(sheet, ["Cells requiring full-page evidence review", evidence["unlocated"]])
+    strings.append(sheet, ["Cell source-box coverage", evidence["coverage"]])
+    sheet.cell(sheet.max_row, 2).number_format = "0.0%"
     for name, value in coverage(result).items():
         strings.append(sheet, [name.replace("_", " "), value])
     sheet = workbook.create_sheet("Constraints")
@@ -620,4 +688,27 @@ def export_workbook(result: Result, output: str | Path) -> Path:
     target = Path(output)
     target.parent.mkdir(parents=True, exist_ok=True)
     workbook.save(target)
+    return target
+
+
+def csv_text(value: object) -> str:
+    """Return a spreadsheet-safe CSV field while preserving exact text in audit JSON."""
+    text = "" if value is None else str(value)
+    if re.match(r"^[\s\u0000-\u001f]*[=+\-@]", text):
+        return "'" + text
+    return text
+
+
+def export_csv(result: Result, output: str | Path, table: int = 0) -> Path:
+    """Export one selected table as UTF-8 CSV without executable spreadsheet formulas."""
+    if type(table) is not int or not 0 <= table < len(result.tables):
+        raise ValueError("Invalid table index.")
+    target = Path(output)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    selected = result.tables[table]
+    with target.open("w", encoding="utf-8-sig", newline="") as stream:
+        writer = csv.writer(stream, lineterminator="\n")
+        writer.writerow(csv_text(value) for value in selected.headers)
+        for row in selected.rows:
+            writer.writerow(csv_text(value) for value in row)
     return target

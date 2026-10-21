@@ -8,6 +8,7 @@ from decimal import Decimal
 from itertools import combinations, permutations
 
 from .models import Issue, Table
+from .semantics import ColumnSemantic, infer_column_semantics, value_matches
 from .values import kind, number
 
 TOTAL = re.compile(r"\b(?:total|subtotal|grand\s+total|sum|net\s+total|amt\s+total)\b", re.I)
@@ -45,6 +46,7 @@ def validate(table: Table, table_index: int = 1) -> list[Issue]:
     """Find structural, arithmetic and OCR risks without changing extracted values."""
     issues: list[Issue] = []
     types = classify_columns(table)
+    semantics = infer_column_semantics(table)
 
     def add(
         r: int | None,
@@ -53,9 +55,12 @@ def validate(table: Table, table_index: int = 1) -> list[Issue]:
         reason: str,
         severity: str = "warning",
         suggestion: str = "Compare with the source document.",
+        page_override: int | None = None,
     ) -> None:
         sources = table.provenance[r] if r is not None else [(table.page, None)]
         page, source_row = sources[0]
+        if page_override is not None:
+            page = page_override
         issues.append(
             Issue(
                 severity,
@@ -69,7 +74,38 @@ def validate(table: Table, table_index: int = 1) -> list[Issue]:
             )
         )
 
+    title_records = []
+    seen_titles = set()
+    for record in table.page_summaries:
+        if record.get("role") != "document_title":
+            continue
+        key = (
+            int(record.get("page", table.page)),
+            str(record.get("text", "")),
+            tuple(record.get("bbox") or ()),
+        )
+        if key not in seen_titles:
+            title_records.append(record)
+            seen_titles.add(key)
+    for record in title_records:
+        title = str(record.get("text", ""))
+        issues.append(
+            Issue(
+                "warning",
+                int(record.get("page", table.page)),
+                None,
+                None,
+                f"Full-width document title {title!r} retained separately from column headers.",
+                "Verify the source page and reconstructed headers.",
+                "layout_review",
+                table_index,
+            )
+        )
     for note in table.notes:
+        if title_records and note.startswith("Full-width document title "):
+            # Old checkpoints may contain the pre-attribution title note as
+            # well as the page summary. The summary owns the precise page.
+            continue
         for page in sorted({p for sources in table.provenance for p, _ in sources} or {table.page}):
             issues.append(
                 Issue(
@@ -179,8 +215,12 @@ def validate(table: Table, table_index: int = 1) -> list[Issue]:
                         "Multiple decimal separators in a numeric column.",
                     )
     _check_totals(table, add)
-    _discover_arithmetic(table, types, add)
-    _running_balance(table, types, add)
+    _discover_arithmetic(table, types, semantics, add)
+    _running_balance(table, types, semantics, add)
+    _check_semantic_cells(table, semantics, add)
+    _check_shifted_rows(table, semantics, add)
+    _check_sequences(table, semantics, add)
+    _check_cross_page_continuity(table, semantics, add)
     for c in range(len(table.headers)):
         formats = []
         for r, row in enumerate(table.rows):
@@ -208,6 +248,202 @@ def validate(table: Table, table_index: int = 1) -> list[Issue]:
                         "Date layout differs from the column majority.",
                     )
     return issues
+
+
+def _business_rows(table: Table) -> list[int]:
+    return [r for r, row in enumerate(table.rows) if not total_row(row)]
+
+
+def _check_semantic_cells(table: Table, semantics: list[ColumnSemantic], add) -> None:
+    """Validate high-risk roles and infer requiredness only from recurring evidence."""
+    rows = _business_rows(table)
+    for c, semantic in enumerate(semantics):
+        if semantic.role == "text" or semantic.confidence < 0.75:
+            continue
+        populated = [r for r in rows if c < len(table.rows[r]) and table.rows[r][c].strip()]
+        if semantic.header_signal:
+            for r in populated:
+                value = table.rows[r][c]
+                if value_matches(semantic.role, value) is False:
+                    add(
+                        r,
+                        c,
+                        "semantic_type_mismatch",
+                        f"Value {value!r} does not match the inferred {semantic.role} role "
+                        f"({semantic.evidence}).",
+                    )
+        # A column is treated as locally required only when the current document
+        # itself provides a strong near-complete pattern. This is a review flag,
+        # not a schema rule and never causes data insertion.
+        if (
+            semantic.header_signal
+            and len(rows) >= 5
+            and len(populated) >= 4
+            and len(populated) / len(rows) >= 0.8
+        ):
+            for r in rows:
+                if c >= len(table.rows[r]) or not table.rows[r][c].strip():
+                    add(
+                        r,
+                        c,
+                        "required_value_missing",
+                        f"This {semantic.role} column is populated in "
+                        f"{len(populated)}/{len(rows)} comparable rows; the blank requires review.",
+                    )
+
+
+def _check_shifted_rows(table: Table, semantics: list[ColumnSemantic], add) -> None:
+    """Flag a likely one-column shift only when semantic fit improves materially."""
+    reliable = [
+        c
+        for c, semantic in enumerate(semantics)
+        if semantic.role != "text" and semantic.confidence >= 0.75
+    ]
+    if len(reliable) < 3:
+        return
+    for r in _business_rows(table):
+        row = table.rows[r]
+
+        def score(offset: int) -> int:
+            matched = 0
+            for target in reliable:
+                source = target + offset
+                if 0 <= source < len(row):
+                    matched += value_matches(semantics[target].role, row[source]) is True
+            return matched
+
+        baseline = score(0)
+        alternatives = [(score(-1), -1), (score(1), 1)]
+        best, offset = max(alternatives)
+        if best >= max(2, round(len(reliable) * 0.7)) and best >= baseline + 2:
+            direction = "left" if offset == 1 else "right"
+            add(
+                r,
+                None,
+                "shifted_columns",
+                f"Values fit neighbouring semantic columns better than their current columns; "
+                f"a one-column shift to the {direction} is possible ({best} vs {baseline} matches).",
+            )
+
+
+def _sequence_candidates(table: Table, semantics: list[ColumnSemantic]) -> list[tuple[int, list]]:
+    candidates = []
+    for c, semantic in enumerate(semantics):
+        if semantic.role != "id" or semantic.confidence < 0.84:
+            continue
+        values = []
+        for r in _business_rows(table):
+            if c >= len(table.rows[r]):
+                continue
+            text = table.rows[r][c].strip()
+            if re.fullmatch(r"\d+", text):
+                values.append((r, int(text), text))
+        if len(values) < 5:
+            continue
+        deltas = [current[1] - previous[1] for previous, current in zip(values, values[1:])]
+        if deltas and sum(delta == 1 for delta in deltas) / len(deltas) >= 0.7:
+            candidates.append((c, values))
+    return candidates
+
+
+def _check_sequences(table: Table, semantics: list[ColumnSemantic], add) -> None:
+    """Detect missing or repeated records in strongly sequential identifier columns."""
+    for c, values in _sequence_candidates(table, semantics):
+        for previous, current in zip(values, values[1:]):
+            if current[1] == previous[1] + 1:
+                continue
+            previous_page = table.provenance[previous[0]][0][0]
+            current_page = table.provenance[current[0]][0][0]
+            if current_page != previous_page:
+                continue
+            expected = str(previous[1] + 1).zfill(len(previous[2]))
+            add(
+                current[0],
+                c,
+                "sequence_gap",
+                f"Sequential identifier follows {previous[2]!r} with {current[2]!r}; "
+                f"expected {expected!r}. A missing, duplicate or misread row is possible.",
+            )
+
+
+def _check_cross_page_continuity(table: Table, semantics: list[ColumnSemantic], add) -> None:
+    """Check page boundaries, provenance receipts and explicit record-count statements."""
+    for c, values in _sequence_candidates(table, semantics):
+        for previous, current in zip(values, values[1:]):
+            previous_page = table.provenance[previous[0]][0][0]
+            current_page = table.provenance[current[0]][0][0]
+            if current_page == previous_page or current[1] == previous[1] + 1:
+                continue
+            expected = str(previous[1] + 1).zfill(len(previous[2]))
+            add(
+                current[0],
+                c,
+                "cross_page_sequence_gap",
+                f"Identifier continuity changes from {previous[2]!r} on page {previous_page} "
+                f"to {current[2]!r} on page {current_page}; expected {expected!r}.",
+                "error",
+                "Inspect the end and start of both pages for a missing or split record.",
+            )
+
+    receipt = table.join_receipt
+    pages = [int(page) for page in receipt.get("pages", [])]
+    if pages and pages != list(range(min(pages), max(pages) + 1)):
+        add(
+            None,
+            None,
+            "page_continuity_gap",
+            f"Joined table provenance skips pages: {pages}.",
+            "error",
+            "Confirm whether the missing page contains a continuation table.",
+        )
+    if pages and int(receipt.get("page_joins", 0)) != max(0, len(pages) - 1):
+        add(
+            None,
+            None,
+            "join_receipt_mismatch",
+            f"Join receipt reports {receipt.get('page_joins', 0)} joins for {len(pages)} pages.",
+            "error",
+            "Regenerate the extraction and verify each page boundary.",
+        )
+    if receipt.get("rows_by_page"):
+        observed = Counter(
+            page for row_sources in table.provenance for page, _source_row in row_sources
+        )
+        recorded = {int(item["page"]): int(item["rows"]) for item in receipt["rows_by_page"]}
+        if dict(observed) != recorded:
+            add(
+                None,
+                None,
+                "provenance_count_mismatch",
+                f"Join receipt row counts {recorded} differ from retained provenance {dict(observed)}.",
+                "error",
+                "Regenerate the extraction; do not approve this join receipt.",
+            )
+
+    declared = []
+    count_pattern = re.compile(
+        r"(?:grand\s+)?total\s+(?:records?|rows?|entries|persons?)\s*[:=#-]?\s*(\d+)"
+        r"|(\d+)\s+total\s+(?:records?|rows?|entries|persons?)\b",
+        re.I,
+    )
+    for record in table.page_summaries:
+        match = count_pattern.search(str(record.get("text", "")))
+        if match:
+            declared.append((record, int(next(group for group in match.groups() if group))))
+    business_count = len(_business_rows(table))
+    for record, expected in declared:
+        if expected != business_count:
+            issues_page = int(record.get("page", table.page))
+            add(
+                None,
+                None,
+                "record_count_mismatch",
+                f"Source page {issues_page} declares {expected} records; "
+                f"the reconstructed table contains {business_count} business rows.",
+                "error",
+                "Check for missing, duplicated or incorrectly joined rows.",
+                issues_page,
+            )
 
 
 def _check_totals(table: Table, add) -> None:
@@ -242,8 +478,14 @@ def _check_totals(table: Table, add) -> None:
         start = r + 1
 
 
-def _discover_arithmetic(table: Table, types: list[str], add) -> None:
-    numeric = [c for c, t in enumerate(types) if t == "numeric"][:14]
+def _discover_arithmetic(
+    table: Table, types: list[str], semantics: list[ColumnSemantic], add
+) -> None:
+    numeric = [
+        c
+        for c, value_type in enumerate(types)
+        if value_type == "numeric" and semantics[c].role not in {"id", "phone", "date"}
+    ][:14]
     rows = [(r, row) for r, row in enumerate(table.rows) if not total_row(row)]
     # Require at least five diverse examples and >=80% agreement, excluding all-zero identities.
     for a, b in combinations(numeric, 2):
@@ -274,10 +516,15 @@ def _discover_arithmetic(table: Table, types: list[str], add) -> None:
                             )
 
 
-def _running_balance(table: Table, types: list[str], add) -> None:
-    numeric = [c for c, t in enumerate(types) if t == "numeric"][:12]
+def _running_balance(table: Table, types: list[str], semantics: list[ColumnSemantic], add) -> None:
+    numeric = [
+        c
+        for c, value_type in enumerate(types)
+        if value_type == "numeric" and semantics[c].role not in {"id", "phone", "date"}
+    ][:12]
     candidates = []
-    for balance in numeric:
+    named_balances = [c for c in numeric if semantics[c].role == "balance"]
+    for balance in named_balances or numeric:
         others = [c for c in numeric if c != balance]
         for debit, credit in permutations(others, 2):
             evidence = []

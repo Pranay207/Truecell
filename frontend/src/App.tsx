@@ -16,6 +16,7 @@ import type {
   ChallengeReport,
   Job,
   PreviewReport,
+  ReviewQueue,
   ReviewQueueItem,
   Result,
   Sample,
@@ -390,7 +391,9 @@ export default function App() {
         <Landing
           samples={samples}
           busy={busy}
-          onUpload={(f, v, o) => void start(() => api.upload(f, v, o))}
+          onUpload={(f, v, o, languages) =>
+            void start(() => api.upload(f, v, o, languages))
+          }
           onSample={(f) => void start(() => api.sample(f))}
         />
       )}
@@ -428,9 +431,19 @@ export default function App() {
                       </small>
                     </span>
                     <span
-                      className={`status-pill ${j.status === "failed" ? "warning" : ""}`}
+                      className={`status-pill ${
+                        j.status === "failed" || j.quality?.status === "needs_rescan"
+                          ? "warning"
+                          : ""
+                      }`}
                     >
-                      {labelStatus(j.status)}
+                      {j.quality?.status === "needs_rescan"
+                        ? "Needs better scan"
+                        : j.quality?.status === "needs_review"
+                          ? "Review required"
+                          : j.quality?.status === "reviewed"
+                            ? "Reviewed"
+                            : labelStatus(j.status)}
                     </span>
                     <Icon name="chevron" size={16} />
                   </button>
@@ -552,12 +565,18 @@ function Landing({
 }: {
   samples: Sample[];
   busy: boolean;
-  onUpload: (file: File, verify: boolean, force: boolean) => void;
+  onUpload: (
+    file: File,
+    verify: boolean,
+    force: boolean,
+    ocrLanguages: string,
+  ) => void;
   onSample: (file: string) => void;
 }) {
   const [file, setFile] = useState<File | null>(null);
   const [verify, setVerify] = useState(false);
   const [force, setForce] = useState(false);
+  const [ocrLanguages, setOcrLanguages] = useState("eng");
   const [drag, setDrag] = useState(false);
   const [fileError, setFileError] = useState("");
   const input = useRef<HTMLInputElement>(null);
@@ -696,11 +715,36 @@ function Landing({
               Force OCR on every page{" "}
               <small>Use for a damaged or unreliable PDF text layer.</small>
             </label>
+            <label className="language-option">
+              <span>OCR language codes</span>
+              <input
+                type="text"
+                value={ocrLanguages}
+                list="ocr-language-presets"
+                spellCheck={false}
+                autoCapitalize="none"
+                autoComplete="off"
+                placeholder="eng or eng+tel"
+                onChange={(event) => setOcrLanguages(event.target.value)}
+              />
+              <datalist id="ocr-language-presets">
+                <option value="eng">English</option>
+                <option value="eng+hin">English + Hindi</option>
+                <option value="eng+tel">English + Telugu</option>
+                <option value="eng+hin+tel">English + Hindi + Telugu</option>
+              </datalist>
+              <small>
+                Use local Tesseract codes. Missing installed packs appear as
+                review findings.
+              </small>
+            </label>
           </details>
           <button
             className="primary-button extract-button"
             disabled={!file || busy}
-            onClick={() => file && onUpload(file, verify, force)}
+            onClick={() =>
+              file && onUpload(file, verify, force, ocrLanguages.trim() || "eng")
+            }
           >
             {busy ? <Spinner /> : <Icon name="spark" />}
             {busy ? "Opening workspace…" : "Extract & validate"}
@@ -817,6 +861,8 @@ function Workspace({
   const [gridPage, setGridPage] = useState(0);
   const [tableSearch, setTableSearch] = useState("");
   const [saving, setSaving] = useState(false);
+  const [queueLoading, setQueueLoading] = useState(false);
+  const [queueView, setQueueView] = useState<ReviewQueue | null>(null);
   const [showEvidence, setShowEvidence] = useState(true);
   const table = result?.tables[tableIndex];
   const reviewed =
@@ -869,14 +915,74 @@ function Workspace({
     if (sources.length) setPage(sources[0].page);
   };
   const records = result && selected ? recordsFor(result, selected) : [];
-  const reviewQueue = job.review_queue ?? {
+  const emptyReviewQueue: ReviewQueue = {
     items: [],
     total: 0,
     visible: 0,
     pending: 0,
     checked: 0,
+    filtered_total: 0,
+    filtered_pending: 0,
+    offset: 0,
+    limit: 100,
+    remaining: 0,
+    has_more: false,
+    next_offset: null,
     omitted: 0,
     confidence_threshold: 0.93,
+  };
+  const globalReviewQueue = job.review_queue ?? emptyReviewQueue;
+  const reviewQueue = queueView ?? globalReviewQueue;
+  useEffect(() => {
+    if (!result) {
+      setQueueView(null);
+      return;
+    }
+    let current = true;
+    setQueueLoading(true);
+    api
+      .reviewQueue(job.id, 0, 100, tableIndex)
+      .then((queue) => {
+        if (current) setQueueView(queue);
+      })
+      .catch((error) => {
+        if (current) onError(message(error));
+      })
+      .finally(() => {
+        if (current) setQueueLoading(false);
+      });
+    return () => {
+      current = false;
+    };
+  }, [
+    job.id,
+    job.fingerprint,
+    job.review_queue?.checked,
+    job.review_queue?.pending,
+    onError,
+    result,
+    tableIndex,
+  ]);
+  const loadMoreReviewItems = async () => {
+    if (queueLoading || reviewQueue.next_offset == null) return;
+    setQueueLoading(true);
+    try {
+      const next = await api.reviewQueue(
+        job.id,
+        reviewQueue.next_offset,
+        100,
+        tableIndex,
+      );
+      setQueueView((current) => {
+        if (!current) return next;
+        const items = [...current.items, ...next.items];
+        return { ...next, items, visible: items.length, offset: 0 };
+      });
+    } catch (error) {
+      onError(message(error));
+    } finally {
+      setQueueLoading(false);
+    }
   };
   const relevantReviewItems = reviewQueue.items
     .filter((item) => item.table == null || item.table === tableIndex)
@@ -940,6 +1046,22 @@ function Workspace({
                         ? "Source check recorded"
                         : "Awaiting source review"}
                     </span>
+                    <span
+                      className={
+                        job.quality?.status === "needs_rescan"
+                          ? "quality-label quality-rescan"
+                          : job.quality?.status === "reviewed"
+                            ? "quality-label quality-reviewed"
+                            : "quality-label"
+                      }
+                      title={job.quality?.reasons.join(" ")}
+                    >
+                      {job.quality?.status === "needs_rescan"
+                        ? "Needs better scan"
+                        : job.quality?.status === "reviewed"
+                          ? "Reviewed"
+                          : "Review required"}
+                    </span>
                   </>
                 )}
               </div>
@@ -956,13 +1078,49 @@ function Workspace({
               >
                 <Icon name="download" size={16} /> Audit JSON
               </a>
-              <a
-                className="primary-button"
-                href={api.download(job.id, "export.xlsx")}
-                download
-              >
-                <Icon name="download" size={17} /> Export Excel
-              </a>
+              {job.quality?.draft_export_ready ? (
+                <>
+                  <a
+                    className="secondary-button"
+                    href={api.download(job.id, "export.xlsx")}
+                    download
+                  >
+                    <Icon name="download" size={17} /> Draft Excel
+                  </a>
+                  <a
+                    className="secondary-button"
+                    href={api.csv(job.id, tableIndex)}
+                    download
+                  >
+                    <Icon name="download" size={16} /> CSV
+                  </a>
+                </>
+              ) : (
+                <button
+                  className="secondary-button"
+                  disabled
+                  title="No table data is available. Download the audit JSON and retry the source."
+                >
+                  <Icon name="warning" size={16} /> No table export
+                </button>
+              )}
+              {job.quality?.reviewed_export_ready ? (
+                <a
+                  className="primary-button"
+                  href={api.download(job.id, "reviewed.xlsx")}
+                  download
+                >
+                  <Icon name="shield" size={17} /> Reviewed Excel
+                </a>
+              ) : (
+                <button
+                  className="primary-button"
+                  disabled
+                  title="Check every review item and record the final source attestation first."
+                >
+                  <Icon name="shield" size={17} /> Reviewed Excel
+                </button>
+              )}
             </>
           )}
         </div>
@@ -1019,6 +1177,7 @@ function Workspace({
                         verify: job.options?.verify ?? false,
                         force_ocr:
                           job.options?.force_ocr ?? job.options?.force ?? false,
+                        ocr_languages: job.options?.ocr_languages ?? "eng",
                       });
                       onRefresh();
                       return resumed;
@@ -1067,9 +1226,9 @@ function Workspace({
               <strong>{countRows(result).toLocaleString()}</strong>
               <span>data rows</span>
             </div>
-            <div className={reviewQueue.pending ? "summary-findings" : ""}>
-              <Icon name={reviewQueue.pending ? "warning" : "check"} />
-              <strong>{reviewQueue.pending}</strong>
+            <div className={globalReviewQueue.pending ? "summary-findings" : ""}>
+              <Icon name={globalReviewQueue.pending ? "warning" : "check"} />
+              <strong>{globalReviewQueue.pending}</strong>
               <span>items to review</span>
             </div>
             <button
@@ -1353,12 +1512,15 @@ function Workspace({
                     </p>
                     <div aria-label="Review queue progress">
                       <strong>
-                        {reviewQueue.checked}/{reviewQueue.visible}
+                        {reviewQueue.filtered_total - reviewQueue.filtered_pending}/
+                        {reviewQueue.filtered_total}
                       </strong>
                       <span>checked</span>
                       <progress
-                        max={Math.max(1, reviewQueue.visible)}
-                        value={reviewQueue.checked}
+                        max={Math.max(1, reviewQueue.filtered_total)}
+                        value={
+                          reviewQueue.filtered_total - reviewQueue.filtered_pending
+                        }
                       />
                     </div>
                   </div>
@@ -1409,13 +1571,16 @@ function Workspace({
                       </p>
                     </div>
                   )}
-                  {reviewQueue.omitted > 0 && (
-                    <p className="queue-omitted">
-                      {reviewQueue.omitted.toLocaleString()} additional
-                      low-confidence cells are outside this bounded priority
-                      view. The Excel evidence sheet still lists every source
-                      reading.
-                    </p>
+                  {reviewQueue.has_more && (
+                    <button
+                      className="secondary-button queue-load-more"
+                      disabled={queueLoading}
+                      onClick={() => void loadMoreReviewItems()}
+                    >
+                      {queueLoading ? <Spinner /> : <Icon name="plus" size={14} />}
+                      Load {Math.min(100, reviewQueue.remaining).toLocaleString()} more
+                      <span>({reviewQueue.remaining.toLocaleString()} remaining)</span>
+                    </button>
                   )}
                   <div className="rail-footnote">
                     <Icon name="eye" size={16} />
@@ -1627,7 +1792,7 @@ function Workspace({
               result={result}
               saving={saving || processing}
               reviewed={!!reviewed}
-              pendingItems={reviewQueue.pending}
+              pendingItems={globalReviewQueue.pending}
               onClose={() => setReview(false)}
               onReview={(note) =>
                 void mutate(() => api.review(job.id, note, job.fingerprint))
@@ -1967,6 +2132,8 @@ function ReviewQueueCard({
             ? "Source checked"
             : item.kind === "finding"
               ? "Validation finding"
+              : item.kind === "evidence"
+                ? "Source location"
               : "Uncertain reading"}
         </span>
         <small>
@@ -2012,6 +2179,14 @@ function Evidence({
   onSave: (value: string, note: string) => void;
 }) {
   const current = cellValue(result, cell);
+  const hasSourceBox = records.some(
+    (record) =>
+      Array.isArray(record.bbox) &&
+      record.bbox.length === 4 &&
+      record.bbox.every((value) => Number.isFinite(value)) &&
+      record.bbox[2] > record.bbox[0] &&
+      record.bbox[3] > record.bbox[1],
+  );
   const canEdit =
     cell.column <
     (cell.row < 0
@@ -2077,9 +2252,10 @@ function Evidence({
             <code>{current || "(empty)"}</code>
           </div>
           {records.length ? (
-            <div className="reading-list">
-              {records.map((r, i) => (
-                <button key={i} onClick={() => onPage(r.page)}>
+            <>
+              <div className="reading-list">
+                {records.map((r, i) => (
+                  <button key={i} onClick={() => onPage(r.page)}>
                   <span className="reading-page">p.{r.page}</span>
                   <span>
                     <strong>{r.text || "(empty reading)"}</strong>
@@ -2102,13 +2278,21 @@ function Evidence({
                       : `${Math.round(r.confidence * 100)}% OCR score`}
                   </span>
                   <Icon name="eye" size={14} />
-                </button>
-              ))}
-            </div>
+                  </button>
+                ))}
+              </div>
+              {!hasSourceBox && (
+                <p className="evidence-location-warning" role="status">
+                  <Icon name="warning" size={15} /> The engine retained a source
+                  reading but no exact cell box. Inspect the full source page before
+                  accepting this value.
+                </p>
+              )}
+            </>
           ) : (
             <p className="empty-note">
-              No cell box was recovered. Compare the full original page before
-              editing.
+              No cell-level source record was produced. Compare the mapped full
+              source page before accepting or editing this value.
             </p>
           )}
           <p className="disclosure">
@@ -2288,9 +2472,15 @@ function ReviewModal({
           <p>
             Review the original pages and the{" "}
             <strong>{pendingItems} pending priority items</strong> before
-            recording your check. This final attestation marks the visible
-            queue as checked.
+            recording your check. Every actionable item must be marked checked
+            individually.
           </p>
+          {pendingItems > 0 && (
+            <p className="field-error" role="alert">
+              Complete all {pendingItems} pending review items before recording
+              the final source check.
+            </p>
+          )}
           <label className="check-label">
             <input
               type="checkbox"
@@ -2319,7 +2509,7 @@ function ReviewModal({
           </p>
           <button
             className="primary-button"
-            disabled={saving || !checked || !note.trim()}
+            disabled={saving || pendingItems > 0 || !checked || !note.trim()}
           >
             {saving ? <Spinner /> : <Icon name="shield" size={17} />}Record
             source check

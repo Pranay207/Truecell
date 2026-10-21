@@ -7,6 +7,7 @@ import importlib.util
 import math
 import os
 import shutil
+import subprocess
 from functools import lru_cache
 from pathlib import Path
 from statistics import median
@@ -18,6 +19,7 @@ from PIL import Image
 from .anchors import append_summaries, header_tables
 from .geometry import rotation_to_original, transformed_box
 from .models import Table
+from .profiling import normalize_languages
 from .table import normalize, words_to_grid
 
 
@@ -52,6 +54,49 @@ def available_engines() -> list[str]:
     if importlib.util.find_spec("rapidocr_onnxruntime"):
         engines.append("rapidocr")
     return engines
+
+
+def configured_languages(value: str | list[str] | tuple[str, ...] | None = None) -> tuple[str, ...]:
+    """Return explicit languages or the local environment preference."""
+    if value is None:
+        value = os.environ.get("TRUECELL_OCR_LANGUAGES", "eng")
+    return normalize_languages(value)
+
+
+@lru_cache(maxsize=1)
+def tesseract_languages() -> tuple[str, ...]:
+    """Read installed language packs without downloading any assets."""
+    binary = tesseract_path()
+    if not binary:
+        return ()
+    try:
+        completed = subprocess.run(
+            [binary, "--list-langs"], capture_output=True, text=True, timeout=8, check=False
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return ()
+    values = [line.strip() for line in completed.stdout.splitlines()[1:] if line.strip()]
+    return tuple(sorted(set(values)))
+
+
+def engine_language_coverage(engine: str, languages: tuple[str, ...]) -> tuple[str, ...]:
+    """Return requested languages an installed OCR engine can actually read."""
+    if engine.startswith("rapidocr"):
+        return tuple(language for language in languages if language == "eng")
+    if engine.startswith("tesseract"):
+        installed = set(tesseract_languages())
+        return tuple(language for language in languages if language in installed)
+    # Test and third-party engines retain the pre-language-routing contract.
+    return languages
+
+
+def order_engines(engines: list[str], languages: tuple[str, ...]) -> list[str]:
+    """Prefer the engine with the greatest requested-language coverage."""
+    positions = {engine: index for index, engine in enumerate(engines)}
+    return sorted(
+        engines,
+        key=lambda engine: (-len(engine_language_coverage(engine, languages)), positions[engine]),
+    )
 
 
 @lru_cache(maxsize=1)
@@ -288,7 +333,12 @@ def grid_regions(
     return sorted(regions, key=lambda r: (r[1][0], r[0][0])), mask
 
 
-def recognize(gray: np.ndarray, engine: str) -> list[dict]:
+def recognize(
+    gray: np.ndarray,
+    engine: str,
+    *,
+    languages: str | list[str] | tuple[str, ...] | None = None,
+) -> list[dict]:
     """Return text boxes with engine confidence; no lexical substitutions."""
     if engine == "rapidocr":
         result, _ = rapid_engine()(cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR))
@@ -310,9 +360,16 @@ def recognize(gray: np.ndarray, engine: str) -> list[dict]:
 
     pytesseract.pytesseract.tesseract_cmd = tesseract_path() or "tesseract"
     mode = 7 if engine == "tesseract-cell" else 6
-    data = pytesseract.image_to_data(
-        gray, config=f"--psm {mode}", output_type=pytesseract.Output.DICT, timeout=90
-    )
+    requested = configured_languages(languages)
+    supported = engine_language_coverage(engine, requested)
+    options = {
+        "config": f"--psm {mode}",
+        "output_type": pytesseract.Output.DICT,
+        "timeout": 90,
+    }
+    if supported:
+        options["lang"] = "+".join(supported)
+    data = pytesseract.image_to_data(gray, **options)
     return [
         {
             "x0": data["left"][i],
@@ -384,6 +441,7 @@ def extract_image(
     alternate: bool = False,
     rotation: int = 0,
     perspective: bool = False,
+    languages: str | list[str] | tuple[str, ...] | None = None,
 ) -> list[Table]:
     """Reconstruct ruled grids first; fall back to recurring word-box alignment."""
     original_width, original_height = image.size
@@ -436,10 +494,15 @@ def extract_image(
         # A white rule painted across a shaded photograph becomes a false edge.
         # Remove the slowly varying illumination before OCR layout analysis.
         cleaned = cv2.divide(cleaned, cv2.GaussianBlur(cleaned, (0, 0), 25), scale=255)
+    requested_languages = configured_languages(languages)
     words = (
         recognize_grid(cleaned, regions)
-        if engine == "rapidocr" and regions
-        else recognize(cleaned, engine)
+        if engine == "rapidocr" and regions and requested_languages == ("eng",)
+        else (
+            recognize(cleaned, engine)
+            if requested_languages == ("eng",)
+            else recognize(cleaned, engine, languages=requested_languages)
+        )
     )
     confidence = median(w["confidence"] for w in words) if words else 0
     h, w = gray.shape
@@ -463,11 +526,17 @@ def extract_image(
                         crop = cleaned[ys[r] + 5 : ys[r + 1] - 4, xs[c] + 5 : xs[c + 1] - 4]
                         if not crop.size:
                             continue
-                        rechecked = recognize(
-                            cv2.copyMakeBorder(
-                                crop, 12, 12, 12, 12, cv2.BORDER_CONSTANT, value=255
-                            ),
-                            "tesseract-cell",
+                        recheck_image = cv2.copyMakeBorder(
+                            crop, 12, 12, 12, 12, cv2.BORDER_CONSTANT, value=255
+                        )
+                        rechecked = (
+                            recognize(recheck_image, "tesseract-cell")
+                            if requested_languages == ("eng",)
+                            else recognize(
+                                recheck_image,
+                                "tesseract-cell",
+                                languages=requested_languages,
+                            )
                         )
                         if rechecked and min(w["confidence"] for w in rechecked) > min(
                             w["confidence"] for w in cell
@@ -520,7 +589,12 @@ def extract_image(
                         if header_index is not None
                         else None
                     )
-            if alternate and engine == "tesseract" and header_index is not None:
+            if (
+                alternate
+                and engine == "tesseract"
+                and header_index is not None
+                and requested_languages == ("eng",)
+            ):
                 try:
                     verified_headers = reread_headers(gray, xs, ys[header_index : header_index + 2])
                     for c, reading in enumerate(verified_headers):
@@ -572,7 +646,11 @@ def extract_image(
                             footer, 64, 64, 0, 0, cv2.BORDER_CONSTANT, value=255
                         )
                         try:
-                            readings = recognize(footer, engine)
+                            readings = (
+                                recognize(footer, engine)
+                                if requested_languages == ("eng",)
+                                else recognize(footer, engine, languages=requested_languages)
+                            )
                         except Exception as exc:
                             readings = []
                             table.notes.append(
