@@ -42,6 +42,19 @@ Truecell is a local-first React and FastAPI application built for the **INCUXAI 
 
 </details>
 
+## What Truecell does
+
+Truecell turns a difficult document into reviewable spreadsheet data through one traceable local workflow:
+
+- **Accept and profile documents.** Open digital or scanned PDFs plus PNG, JPG, JPEG, TIFF, BMP and WebP images. Truecell accepts PDFs up to 200 pages, multi-frame images up to 50 frames and files up to 50 MB. It profiles each page for native, scanned or hybrid content; text-layer health; detected scripts; blur; skew; rotation; perspective risk; and table likelihood before choosing an extraction path.
+- **Extract with local engines.** Native PDF line, text and word strategies work alongside bundled RapidOCR and locally installed Tesseract language packs. Truecell ranks viable candidates deterministically, records every attempt and keeps the selected strategy and reason in the audit. Missing optional engines or languages are reported instead of downloaded or silently substituted.
+- **Reconstruct difficult tables.** The pipeline handles ruled and borderless tables, wide layouts, multi-line and source-backed merged headers, wrapped values, empty columns, multiple tables on one page, repeated headers, split rows and cross-page continuations. It also preserves source-backed vertical groups in nested line items; ambiguous irregular nesting is sent to review rather than guessed.
+- **Understand and validate the result.** Phone, date, identifier, quantity, amount, total and balance roles guide conservative typing and checks. Truecell tests table shape, alignment, missing or shifted values, duplicates, date and number formats, totals, products, running balances and cross-page joins. Repair proposals remain unapplied until a reviewer approves them.
+- **Review only exceptions, with evidence.** Search works across every extracted column while preserving the original row identity. Each displayed cell has an explicit evidence state with its source page, box when available, original reading, engine, confidence and alternatives. Priority findings, unlocated values and uncertain OCR are collected in one paginated queue; edits require a reason and retain correction history. Processing and quality states distinguish complete, partial, failed, needs-rescan, needs-review and reviewed results.
+- **Deliver and recover locally.** Export Draft or quality-gated Reviewed Excel, CSV, JSON and API data. Source-bound checkpoints reuse only verified completed pages, later pages continue after a page failure, and saved workspaces survive restarts. Truecell runs through the Windows portable application, Python source launcher or Docker, with a responsive desktop/mobile interface and offline OCR.
+
+Measured claims and known limits are documented below. The detailed [11-point implementation map](docs/IMPLEMENTATION_STATUS.md) links each capability to its code and tests, while the [blind-evaluation workflow](docs/BLIND_EVALUATION.md) remains ready for an independent evaluator's unseen documents and withheld truth.
+
 ## Verified Results
 
 | Verified result | Evidence |
