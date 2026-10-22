@@ -1,190 +1,173 @@
-﻿WEBVTT
+WEBVTT
 
 1
-00:00:00.220 --> 00:00:03.874
-Truecell turns difficult PDFs and scans into structured, validated Excel.
+00:00:00.200 --> 00:00:05.990
+Truecell turns difficult PDFs and scans into reviewable spreadsheet data with source evidence.
 
 2
-00:00:03.874 --> 00:00:11.546
-It verifies numeric relationships, links every retained value to its source, and records human review from first extraction to final workbook.
+00:00:05.990 --> 00:00:11.780
+A plausible misplaced number can corrupt decisions, so extraction alone is not enough.
 
 3
-00:00:11.546 --> 00:00:15.200
-Every result arrives with the evidence needed to understand it.
+00:00:11.780 --> 00:00:17.571
+Everything runs locally on CPU, without an API key or cloud AI upload.
 
 4
-00:00:15.850 --> 00:00:19.403
-Truecell converts extraction into a complete document intelligence workflow.
+00:00:17.571 --> 00:00:22.916
+Open PDFs or supported images, with PDF intake up to 200 pages.
 
 5
-00:00:19.403 --> 00:00:28.877
-It structures complex tables, validates numeric relationships, links cells to their source, guides human review, and packages the full audit trail into the workbook.
+00:00:22.916 --> 00:00:29.151
+Before extraction, Truecell profiles scripts, text health, blur, skew, rotation, perspective, and table likelihood.
 
 6
-00:00:28.877 --> 00:00:31.640
-Every stage is visible, local, and reproducible.
+00:00:29.151 --> 00:00:34.051
+Native PDF strategies, bundled RapidOCR, and installed Tesseract produce independent candidates.
 
 7
-00:00:32.290 --> 00:00:36.981
-Truecell runs locally on CPU, without an API key or cloud AI upload.
+00:00:34.051 --> 00:00:38.950
+Every candidate, rank, reason, and missing capability appears in Page Audit.
 
 8
-00:00:36.981 --> 00:00:43.476
-It handles native PDFs and scanned documents, detects tables automatically, and accepts files up to two hundred pages.
+00:00:38.950 --> 00:00:44.740
+This dummy bank statement extracts successfully, but its quality status is Needs review.
 
 9
-00:00:43.476 --> 00:00:49.250
-Its included stress suite verifies fifty pages, eight hundred rows, and twelve columns with source traceability.
+00:00:44.740 --> 00:00:49.640
+The priority queue combines validation failures, uncertain readings, and unlocated evidence.
 
 10
-00:00:49.900 --> 00:00:55.118
-In this dummy bank statement, the table appears in seconds, but extraction is only step one.
+00:00:49.640 --> 00:00:54.984
+Selecting a finding jumps to its table cell and exact source location.
 
 11
-00:00:55.118 --> 00:00:57.075
-Truecell builds a bounded priority queue.
+00:00:54.984 --> 00:01:00.329
+Evidence retains page, bounding box, original reading, engine, alternatives, and confidence meaning.
 
 12
-00:00:57.075 --> 00:01:04.250
-It flags a wrong total, a sparse summary row, and two running-balance breaks while retaining the original page beside the structured grid.
+00:01:00.329 --> 00:01:04.783
+Repeated values reveal a running-balance relationship without fixed financial headings.
 
 13
-00:01:04.900 --> 00:01:10.672
-Selecting the balance finding jumps to row eleven, column Z, and outlines the exact source cell.
+00:01:04.783 --> 00:01:09.683
+Fifteen of seventeen rows agree; printed 1081 breaks two adjacent equations.
 
 14
-00:01:10.672 --> 00:01:16.083
-The evidence drawer retains the original reading, page, source box, extraction engine, and confidence context.
+00:01:09.683 --> 00:01:14.582
+Truecell proposes 1064 and shows both equation instances supporting the suggestion.
 
 15
-00:01:16.083 --> 00:01:19.690
-A reviewer can inspect the document before touching the value.
+00:01:14.582 --> 00:01:20.372
+Preview evaluates the proposal on a disposable copy while saved data remains unchanged.
 
 16
-00:01:20.340 --> 00:01:25.313
-Truecell discovers repeated numeric relationships instead of relying on fixed financial column names.
+00:01:20.372 --> 00:01:25.717
+The failures would clear, but agreement is evidence, never permission to overwrite.
 
 17
-00:01:25.313 --> 00:01:29.521
-Fifteen of seventeen eligible rows agree with the inferred balance equation.
+00:01:25.717 --> 00:01:31.507
+After source inspection, the reviewer enters a reason and explicitly applies the correction.
 
 18
-00:01:29.521 --> 00:01:32.964
-The printed value, one thousand eighty-one, breaks two checks.
+00:01:31.507 --> 00:01:35.516
+History preserves the original value, replacement, timestamp, and explanation.
 
 19
-00:01:32.964 --> 00:01:36.790
-Two equation instances support a proposal of one thousand sixty-four.
+00:01:35.516 --> 00:01:40.861
+Reviewed export remains locked until every priority item is resolved and attested.
 
 20
-00:01:37.440 --> 00:01:41.020
-Before editing, Truecell evaluates the proposal on a disposable copy.
+00:01:40.861 --> 00:01:46.206
+A five-page raster-only case tests repeated headers and rows split across pages.
 
 21
-00:01:41.020 --> 00:01:46.747
-Review findings fall from four to two, and failed equation checks fall from two to zero.
+00:01:46.206 --> 00:01:51.996
+Truecell reconstructs twelve columns, removes four repeated headers, and recovers both split rows.
 
 22
-00:01:46.747 --> 00:01:48.537
-The working data remains unchanged.
+00:01:51.996 --> 00:01:57.786
+The join receipt exposes every contributing page, join, removed header, and recovered fragment.
 
 23
-00:01:48.537 --> 00:01:53.190
-Agreement is evidence, not permission, so the agent never silently applies the correction.
+00:01:57.786 --> 00:02:04.022
+It also handles borderless tables, merged headers, wrapped values, empty columns, and multiple tables.
 
 24
-00:01:53.840 --> 00:01:59.100
-After checking the source, the reviewer supplies a reason and explicitly saves the corrected value.
+00:02:04.022 --> 00:02:09.812
+Source-backed vertical groups and nested items are preserved; ambiguity is routed to review.
 
 25
-00:01:59.100 --> 00:02:05.413
-The original reading remains available, and the audit rail records the before value, after value, timestamp, and explanation.
+00:02:09.812 --> 00:02:14.711
+Search spans every column while retaining each result's original row identity.
 
 26
-00:02:05.413 --> 00:02:08.920
-This is a traceable human decision, not an invisible rewrite.
+00:02:14.711 --> 00:02:20.056
+Selecting invoice 800 goes to page 50 and highlights its source value.
 
 27
-00:02:09.570 --> 00:02:15.914
-Now the difficult case: five raster-only pages, twelve columns, repeated headers, and records split across page boundaries.
+00:02:20.056 --> 00:02:25.401
+Filtering never breaks the evidence link between displayed cells and original pages.
 
 28
-00:02:15.914 --> 00:02:22.258
-Truecell joins all five pages into one table, removes four repeated headers, and recovers both split rows.
+00:02:25.401 --> 00:02:30.746
+Honest states distinguish complete, partial, failed, needs rescan, needs review, and reviewed.
 
 29
-00:02:22.258 --> 00:02:25.990
-The join receipt exposes every merge instead of hiding it.
+00:02:30.746 --> 00:02:37.872
+If a page fails, later pages continue; checkpoints resume only when source and runtime still match.
 
 30
-00:02:26.640 --> 00:02:31.397
-This disclosed stress fixture contains fifty pages, eight hundred rows, and twelve columns.
+00:02:37.872 --> 00:02:42.772
+Saved local workspaces preserve extraction, corrections, and review history across restarts.
 
 31
-00:02:31.397 --> 00:02:34.691
-Searching for invoice eight hundred returns one exact match.
+00:02:42.772 --> 00:02:47.671
+Export working data through Excel, CSV, JSON, or the local API.
 
 32
-00:02:34.691 --> 00:02:39.448
-Selecting it moves straight to page fifty and outlines the original source value.
+00:02:47.671 --> 00:02:53.907
+The workbook includes data, evidence, validation, joins, page audit, constraints, provenance, corrections, and verification.
 
 33
-00:02:39.448 --> 00:02:42.010
-Search never breaks the row-to-page evidence link.
+00:02:53.907 --> 00:02:58.806
+Linked spreadsheet cells open their evidence row beside the processing trail.
 
 34
-00:02:42.660 --> 00:02:47.297
-Truecell tests its validation layer with controlled edits applied only to disposable copies.
+00:02:58.806 --> 00:03:04.151
+Across disclosed development fixtures, all 23 source-bound cases passed their exact checks.
 
 35
-00:02:47.297 --> 00:02:54.430
-In this run, fourteen of twenty-four changes generated a new finding, while the source data and review history remained untouched.
+00:03:04.151 --> 00:03:11.723
+RapidOCR passed five of five scans without Tesseract; the public Unicode audit matched 126 of 126 cells.
 
 36
-00:02:54.430 --> 00:02:58.710
-This turns error detection into a measurable, repeatable workflow with visible results.
+00:03:11.723 --> 00:03:16.622
+The stress fixture recovered 50 pages, 800 rows, and 12 columns.
 
 37
-00:02:59.360 --> 00:03:02.655
-The Excel output is designed for action and verification.
+00:03:16.622 --> 00:03:21.076
+A 13-page, four-table synthetic case matched 1,092 checked cells exactly.
 
 38
-00:03:02.655 --> 00:03:10.345
-Alongside the data, it includes cell evidence, validation findings, the join receipt, page audit, inferred constraints, correction history, verification, and provenance.
+00:03:21.076 --> 00:03:25.976
+These are disclosed development results, not universal or unseen-document accuracy claims.
 
 39
-00:03:10.345 --> 00:03:16.936
-Any exported value can be traced back to its original page with the full processing trail beside it.
+00:03:25.976 --> 00:03:31.766
+A truth-withheld blind evaluation workflow is ready for independent testing without rerunning extraction.
 
 40
-00:03:17.586 --> 00:03:22.323
-Across Truecell's disclosed development suite, all twenty-two cases passed their defined exact checks.
+00:03:31.766 --> 00:03:39.338
+Truecell ships for Windows, Python, and Docker; the verified build passed 304 Python and 16 frontend tests.
 
 41
-00:03:22.323 --> 00:03:30.704
-The packaged RapidOCR suite passed all five scan cases with Tesseract excluded, and the public Unicode audit matched all one hundred twenty-six cells.
+00:03:39.338 --> 00:03:45.128
+Truecell combines extraction, validation, evidence, human review, and recovery in one local workflow.
 
 42
-00:03:30.704 --> 00:03:35.806
-Every result is backed by fixtures, workbooks, and machine-readable reports included with the project.
+00:03:45.128 --> 00:03:50.473
+Difficult documents become defensible spreadsheets, with uncertainty visible and every decision recorded.
 
 43
-00:03:36.456 --> 00:03:47.593
-Truecell turns difficult documents into defensible spreadsheets through one local, end-to-end workflow: extraction, validation, cell-level source evidence, human review, and a complete audit trail.
-
-44
-00:03:47.593 --> 00:03:48.985
-Built for trust.
-
-45
-00:03:48.985 --> 00:03:50.377
-Built for scale.
-
-46
-00:03:50.377 --> 00:03:50.841
-Truecell.
-
-47
-00:03:50.841 --> 00:03:52.697
-Every cell, accounted for.
-
+00:03:50.473 --> 00:03:52.700
+Truecell. Every cell, accounted for.

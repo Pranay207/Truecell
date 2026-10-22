@@ -37,5 +37,5 @@ Full development evaluation: python scripts/judge_check.py
 
 Read README.md, docs/IMPLEMENTATION_STATUS.md and reports/BUILD_VERIFICATION.md.
 Development tests are not hidden-document accuracy guarantees.
-Demo video (3:53): https://pranay207.github.io/Truecell/demo/
+Updated demo video (3:53): https://pranay207.github.io/Truecell/demo/
 The matching recording script is in docs/DEMO_SCRIPT.md.
