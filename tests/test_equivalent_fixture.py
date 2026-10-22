@@ -2,9 +2,11 @@ import json
 from pathlib import Path
 
 import fitz
+import pdfplumber
 
 from eval.generate_equivalent import SCHEMAS, write_fixture
 from eval.score import score
+from truecell.digital import extract_page
 from truecell.models import Result
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,6 +24,22 @@ def test_thirteen_page_equivalent_is_deterministic_and_fully_truth_bound(tmp_pat
     assert [table["headers"] for table in truth["tables"]] == [item[1] for item in SCHEMAS]
     assert sum(len(table["rows"]) for table in truth["tables"]) == 78
     assert (tmp_path / "G_thirteen_page_equivalent.truth.xlsx").is_file()
+
+
+def test_thirteen_page_native_headers_match_all_four_truth_tables():
+    truth = json.loads(
+        (ROOT / "samples" / "G_thirteen_page_equivalent.truth.json").read_text(encoding="utf-8")
+    )
+    source = ROOT / "samples" / "G_thirteen_page_equivalent.pdf"
+
+    with pdfplumber.open(source) as document:
+        # Pages 1, 4, 7 and 10 begin the four independent table streams.
+        actual = [
+            extract_page(document.pages[index], index + 1, "lines")[0].headers
+            for index in (0, 3, 6, 9)
+        ]
+
+    assert actual == [table["headers"] for table in truth["tables"]]
 
 
 def test_verified_thirteen_page_audit_matches_every_truth_cell():

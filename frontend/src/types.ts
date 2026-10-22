@@ -6,6 +6,42 @@ export type SourceRecord = {
   confidence?: number | null;
   role?: string;
   initial_reading?: string;
+  confidence_evidence?: RecognitionConfidence;
+};
+export type RecognitionConfidence = {
+  kind: "ocr_score" | "engine_score" | "native_text" | "not_reported";
+  score: number | null;
+  label: string;
+  engine: string;
+  meaning: string;
+};
+export type CellEvidence = {
+  evidence_id: string;
+  cell: Cell & { kind: "header" | "data" };
+  value: string;
+  original_value: string;
+  original_reading: string;
+  sources: SourceRecord[];
+  alternative_readings: {
+    text: string;
+    kind: string;
+    engine: string;
+    page?: number | null;
+    bbox?: number[] | null;
+    confidence: RecognitionConfidence;
+  }[];
+  confidence: RecognitionConfidence;
+  location: {
+    status: "located" | "unlocated" | "not_applicable";
+    evidence_state: "exact_source_box" | "page_only_review" | "empty_cell";
+    located: boolean;
+    reason: string;
+    page?: number | null;
+    source_records: number;
+    located_records: number;
+  };
+  correction_history: Record<string, unknown>[];
+  correction_count: number;
 };
 export type Table = {
   headers: string[];

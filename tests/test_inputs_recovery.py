@@ -1,5 +1,7 @@
 """Input bounds, page failure containment and optional-model shape validation."""
 
+import math
+
 import fitz
 import pytest
 from PIL import Image
@@ -10,7 +12,14 @@ from truecell.llm_repair import configured, validate_payload
 from truecell.models import Result, Table
 from truecell.pipeline import convert
 from truecell.recover import evaluate
-from truecell.router import MAX_PAGES, InputError, open_document, route_page
+from truecell.router import (
+    MAX_IMAGE_PIXELS,
+    MAX_PAGES,
+    MAX_TOTAL_IMAGE_PIXELS,
+    InputError,
+    open_document,
+    route_page,
+)
 
 
 def test_two_hundred_page_limit(tmp_path):
@@ -75,6 +84,50 @@ def test_multipage_tiff(tmp_path):
     frames[0].save(overflow, save_all=True, append_images=frames[1:])
     with pytest.raises(InputError, match="At most 50 image frames"):
         with open_document(overflow):
+            pass
+
+
+def test_image_frame_decoded_pixel_budget(tmp_path):
+    source = tmp_path / "compressed_large.png"
+    side = 4_473
+    assert side * side > MAX_IMAGE_PIXELS
+    Image.new("1", (side, side), 1).save(source, optimize=True)
+    assert source.stat().st_size < 1_000_000
+
+    with pytest.raises(InputError, match="maximum per frame is 20,000,000"):
+        with open_document(source):
+            pass
+
+
+def test_image_cumulative_decoded_pixel_budget_is_preflighted(monkeypatch, tmp_path):
+    import truecell.router as router
+
+    source = tmp_path / "many_large_frames.tiff"
+    source.write_bytes(b"fixture opened through the test double")
+
+    class LargeMultiframeImage:
+        n_frames = 11
+        size = (3_163, 3_163)
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return False
+
+        def seek(self, index):
+            assert 0 <= index < self.n_frames
+
+        def copy(self):
+            pytest.fail("pixel copying must not begin before cumulative preflight succeeds")
+
+    assert LargeMultiframeImage.n_frames * math.prod(LargeMultiframeImage.size) > (
+        MAX_TOTAL_IMAGE_PIXELS
+    )
+    monkeypatch.setattr(router.Image, "open", lambda _source: LargeMultiframeImage())
+
+    with pytest.raises(InputError, match="decoded pixels across frames"):
+        with open_document(source):
             pass
 
 

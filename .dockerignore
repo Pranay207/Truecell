@@ -7,7 +7,6 @@ __pycache__
 .ruff_cache
 .streamlit
 frontend/node_modules
-frontend/dist
 outputs
 portable
 portable-build
@@ -20,3 +19,12 @@ docs
 tests
 *.zip
 *.mp4
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*
+.npmrc
+.pypirc

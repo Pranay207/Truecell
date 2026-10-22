@@ -12,6 +12,20 @@ from statistics import median
 
 from .values import number
 
+NESTED_LABEL = re.compile(
+    r"^(?:section|category|group|package|phase|department|division|class|part|chapter|"
+    r"work\s*package|lot)\b",
+    re.I,
+)
+
+
+def _nested_group_line(line: list[dict]) -> bool:
+    """Recognize explicit section markers without treating ordinary wraps as groups."""
+    if len(line) != 1:
+        return False
+    text = str(line[0].get("text", "")).strip()
+    return bool(text and (NESTED_LABEL.search(text) or text.endswith(":")))
+
 
 def aligned_tables(words: list[dict], page: int, engine: str) -> list:
     """Find stable table streams, preserve empty cells and flatten header paths."""
@@ -126,6 +140,8 @@ def aligned_tables(words: list[dict], page: int, engine: str) -> list:
             )
             and sum(number(w["text"]) is not None for w in line) < 2
         ]
+        leading_groups = [line for line in prefix if _nested_group_line(line)]
+        prefix = [line for line in prefix if line not in leading_groups]
         headers = [""] * count
         header_words = [[] for _ in range(count)]
         for li, line in enumerate(prefix):
@@ -167,9 +183,18 @@ def aligned_tables(words: list[dict], page: int, engine: str) -> list:
         boxes = []
         row_words = []
         baselines = []
+        data_baselines = []
         for i, line in group:
             if abs(len(line) - count) > 1:
                 continue
+            cells = [[] for _ in range(count)]
+            for word in line:
+                cells[column(word)].append(word)
+            row_words.append(cells)
+            baseline = median(w["top"] for w in line)
+            baselines.append(baseline)
+            data_baselines.append(baseline)
+        for line in leading_groups:
             cells = [[] for _ in range(count)]
             for word in line:
                 cells[column(word)].append(word)
@@ -179,15 +204,15 @@ def aligned_tables(words: list[dict], page: int, engine: str) -> list:
         from .validate import total_row
 
         step = (
-            median(b - a for a, b in zip(baselines, baselines[1:]))
-            if len(baselines) > 1
+            median(b - a for a, b in zip(data_baselines, data_baselines[1:]))
+            if len(data_baselines) > 1
             else height * 3
         )
         end = last
         for i in range(last + 1, len(chunks)):
             if not chunks[i]:
                 continue
-            if min(w["top"] for w in chunks[i]) - baselines[-1] > step * 1.8:
+            if min(w["top"] for w in chunks[i]) - data_baselines[-1] > step * 1.8:
                 break
             if total_row([w["text"] for w in chunks[i]]):
                 end = i
@@ -201,7 +226,8 @@ def aligned_tables(words: list[dict], page: int, engine: str) -> list:
             r = min(range(len(baselines)), key=lambda r: abs(baselines[r] - baseline))
             columns = {column(w) for w in line}
             if (
-                total_row([w["text"] for w in line])
+                _nested_group_line(line)
+                or total_row([w["text"] for w in line])
                 or 0 in columns
                 and len(columns) >= 2
                 and abs(baselines[r] - baseline) > height * 0.75

@@ -10,7 +10,10 @@ from truecell.ocr import (
     extract_image,
     grid_regions,
     preprocess,
+    recognize,
     rectify_perspective,
+    register_ocr_adapter,
+    unregister_ocr_adapter,
 )
 
 
@@ -23,6 +26,34 @@ def make_grid():
     for y in [40, 110, 180, 250, 320, 390]:
         draw.line((40, y, 840, y), fill=(145, 160, 175), width=3)
     return image
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("x0", float("nan")),
+        ("x1", float("inf")),
+        ("x1", 0.0),
+        ("bottom", 0.0),
+        ("confidence", float("nan")),
+    ],
+)
+def test_optional_ocr_adapter_rejects_nonfinite_or_empty_geometry(field, value):
+    record = {
+        "x0": 0.0,
+        "x1": 10.0,
+        "top": 0.0,
+        "bottom": 10.0,
+        "text": "word",
+        "confidence": 0.9,
+    }
+    record[field] = value
+    register_ocr_adapter("invalid-test", lambda gray, languages: [record])
+    try:
+        with pytest.raises(ValueError, match="invalid geometry/confidence"):
+            recognize(np.zeros((20, 20), dtype=np.uint8), "invalid-test")
+    finally:
+        unregister_ocr_adapter("invalid-test")
 
 
 def test_pale_grid_survives_dark_header():
@@ -80,6 +111,163 @@ def test_grid_box_assignment_preserves_empty_cell(monkeypatch):
     tables = extract_image(make_grid(), 1, "test")
     assert tables[0].headers == rows[0]
     assert tables[0].rows[1] == rows[2]
+
+
+def test_dark_header_without_visible_vertical_rules_keeps_distinct_columns(monkeypatch):
+    import truecell.ocr as ocr
+
+    image = make_grid()
+    draw = ImageDraw.Draw(image)
+    # Repaint inside the header after drawing the grid. This reproduces a
+    # common PDF style where a filled header band obscures local separators.
+    draw.rectangle((43, 43, 837, 107), fill=(25, 50, 75))
+    rows = [
+        ["Code", "Description", "Units", "Amount"],
+        ["A", "Paper", "2", "10"],
+        ["B", "Ink", "3", "15"],
+        ["C", "Labels", "4", "20"],
+        ["D", "Boxes", "5", "25"],
+    ]
+    words = [
+        {
+            "x0": 60 + c * 200,
+            "x1": 130 + c * 200,
+            "top": 60 + r * 70,
+            "bottom": 80 + r * 70,
+            "text": value,
+            "confidence": 0.99,
+        }
+        for r, row in enumerate(rows)
+        for c, value in enumerate(row)
+    ]
+    monkeypatch.setattr(ocr, "recognize", lambda gray, engine: words)
+
+    table = extract_image(image, 1, "test")[0]
+
+    assert table.headers == rows[0]
+    assert table.rows == rows[1:]
+    assert all(len(sources) == 1 for sources in table.header_sources)
+
+
+def test_ocr_ruled_vertical_span_reuses_one_source_box(monkeypatch):
+    import truecell.ocr as ocr
+
+    image = make_grid()
+    # Remove one local row separator while retaining the global grid line.
+    ImageDraw.Draw(image).line((43, 180, 237, 180), fill="white", width=9)
+    rows = [
+        ["Package", "Label", "Units", "Value"],
+        ["WP-1", "Item", "2", "10"],
+        ["", "Child", "3", "15"],
+        ["WP-2", "Third", "4", "20"],
+        ["WP-3", "Last", "5", "25"],
+    ]
+    words = [
+        {
+            "x0": 60 + c * 200,
+            "x1": 130 + c * 200,
+            "top": 60 + r * 70,
+            "bottom": 80 + r * 70,
+            "text": value,
+            "confidence": 0.99,
+        }
+        for r, row in enumerate(rows)
+        for c, value in enumerate(row)
+        if value
+    ]
+    monkeypatch.setattr(ocr, "recognize", lambda gray, engine: words)
+
+    table = extract_image(image, 1, "test")[0]
+
+    assert table.rows[1][0] == "WP-1"
+    assert table.cell_sources[1][0][0]["role"] == "vertical_merge_expansion"
+    assert table.cell_sources[0][0][0]["bbox"] == table.cell_sources[1][0][0]["bbox"]
+    assert table.cell_sources[1][0][0]["confidence"] == pytest.approx(0.99)
+
+
+def test_broken_rule_between_two_populated_cells_does_not_merge_rows(monkeypatch):
+    import truecell.ocr as ocr
+
+    image = make_grid()
+    draw = ImageDraw.Draw(image)
+    # Both slots contain independent readings even though their local rule is faint/missing.
+    draw.line((43, 180, 237, 180), fill="white", width=9)
+    font = ImageFont.load_default(size=24)
+    draw.text((60, 130), "A", font=font, fill="black")
+    draw.text((60, 200), "B", font=font, fill="black")
+    rows = [
+        ["Code", "Label", "Units", "Value"],
+        ["A", "Item", "2", "10"],
+        ["B", "Child", "3", "15"],
+        ["C", "Third", "4", "20"],
+        ["D", "Last", "5", "25"],
+    ]
+    recognized = [
+        {
+            "x0": 60 + c * 200,
+            "x1": 130 + c * 200,
+            "top": 60 + r * 70,
+            "bottom": 80 + r * 70,
+            "text": value,
+            "confidence": 0.99,
+        }
+        for r, row in enumerate(rows)
+        for c, value in enumerate(row)
+        if value
+    ]
+    monkeypatch.setattr(ocr, "recognize", lambda gray, engine: recognized)
+
+    table = extract_image(image, 1, "test")[0]
+
+    assert table.rows[:2] == rows[1:3]
+    assert table.cell_sources[0][0][0].get("role") != "vertical_merge_expansion"
+
+
+def test_ocr_horizontal_header_merges_become_source_backed_paths(monkeypatch):
+    import truecell.ocr as ocr
+
+    image = Image.new("RGB", (900, 400), "white")
+    draw = ImageDraw.Draw(image)
+    xs, ys = [40, 240, 440, 640, 840], [40, 100, 160, 220, 280, 340]
+    for x in xs:
+        draw.line((x, ys[0], x, ys[-1]), fill=(80, 80, 80), width=3)
+    for y in ys:
+        draw.line((xs[0], y, xs[-1], y), fill=(80, 80, 80), width=3)
+    draw.line((240, 43, 240, 97), fill="white", width=9)
+    draw.line((640, 43, 640, 97), fill="white", width=9)
+    rows = [
+        ["Identity", "", "Movement", ""],
+        ["Code", "Name", "In", "Out"],
+        ["A", "Alpha", "1", "2"],
+        ["B", "Beta", "3", "4"],
+        ["C", "Gamma", "5", "6"],
+    ]
+    words = [
+        {
+            "x0": 60 + c * 200,
+            "x1": 130 + c * 200,
+            "top": 60 + r * 60,
+            "bottom": 80 + r * 60,
+            "text": value,
+            "confidence": 0.99,
+        }
+        for r, row in enumerate(rows)
+        for c, value in enumerate(row)
+        if value
+    ]
+    monkeypatch.setattr(ocr, "recognize", lambda gray, engine: words)
+
+    table = extract_image(image, 1, "test")[0]
+
+    assert table.headers == [
+        "Identity | Code",
+        "Identity | Name",
+        "Movement | In",
+        "Movement | Out",
+    ]
+    assert table.rows == rows[2:]
+    assert table.header_sources[0][0]["bbox"] == table.header_sources[1][0]["bbox"]
+    assert [source["text"] for source in table.header_sources[3]] == ["Movement", "Out"]
 
 
 def test_blank_image_no_invented_table(monkeypatch):

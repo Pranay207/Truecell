@@ -19,6 +19,7 @@ The extraction, OCR, rendering, UI and spreadsheet libraries do substantial unde
 | python-multipart | Streaming multipart form parsing for document uploads | https://github.com/Kludex/python-multipart (Apache-2.0) |
 | ReportLab | Dummy PDF generation | https://www.reportlab.com (BSD) |
 | pytest | Regression tests | https://pytest.org (MIT) |
+| HTTPX | Development-time API integration tests | https://www.python-httpx.org (BSD-3-Clause) |
 | Python | Application runtime | https://www.python.org (PSF license) |
 | PyInstaller | Windows portable application packaging | https://pyinstaller.org (GPL-2.0-or-later with bootloader exception) |
 

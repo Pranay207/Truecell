@@ -273,7 +273,10 @@ def stitch(tables: list[Table]) -> tuple[list[Table], list[Issue]]:
                         scores.append(table.cell_confidence.get((0, c), table.confidence))
                     if scores:
                         target.cell_confidence[offset - 1, c] = min(scores)
-                    before[c] = clean(before[c] + " " + after[c])
+                    if clean(before[c]).casefold() == clean(after[c]).casefold():
+                        before[c] = clean(before[c])
+                    else:
+                        before[c] = clean(before[c] + " " + after[c])
                 target.provenance[-1].extend(table.provenance[0])
                 target.row_engines[-1] += "+" + table.row_engines[0]
                 for c in range(len(before)):

@@ -511,6 +511,7 @@
         ]
       ],
       "notes": [
+        "Merged body labels retained in their source cell with covered cells blank; no values were imputed across columns.",
         "OCR rapidocr; deskew correction 0.00 degrees; values require source review.",
         "OCR tesseract; deskew correction 0.00 degrees; values require source review.",
         "Cell recheck at grid row 1, column 1: 'Imvlce' -> 'Invoice'; compare source.",
@@ -565,6 +566,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999039098620415,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 1,
               "initial_reading": "INV-0001"
             }
           ],
@@ -581,6 +584,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999395310878754,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 2,
               "initial_reading": "2026-10-01"
             }
           ],
@@ -597,6 +602,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9992003664374352,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 3,
               "initial_reading": "Client 1"
             }
           ],
@@ -613,6 +620,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9957939585049947,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 4,
               "initial_reading": "000001"
             }
           ],
@@ -629,6 +638,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9992988194738116,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 1"
             }
           ],
@@ -645,6 +657,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999617338180542,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 6,
               "initial_reading": "1"
             }
           ],
@@ -661,6 +675,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9996767640113831,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 7,
               "initial_reading": "12.00"
             }
           ],
@@ -677,6 +693,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9996102333068848,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 8,
               "initial_reading": "12.00"
             }
           ],
@@ -693,6 +711,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9990893751382828,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 9,
               "initial_reading": "1.20"
             }
           ],
@@ -709,6 +729,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998559802770615,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -725,6 +747,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998656034469604,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -741,6 +765,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997527301311493,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -759,6 +785,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998719543218613,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 1,
               "initial_reading": "INV-0002"
             }
           ],
@@ -775,6 +803,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999894654750824,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 2,
               "initial_reading": "2026-10-02"
             }
           ],
@@ -791,6 +821,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9886299148201942,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 3,
               "initial_reading": "Client 2"
             }
           ],
@@ -807,6 +839,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9994642535845438,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 4,
               "initial_reading": "000002"
             }
           ],
@@ -823,6 +857,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9699669522898537,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 2"
             }
           ],
@@ -839,6 +876,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998804330825806,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 6,
               "initial_reading": "2"
             }
           ],
@@ -855,6 +894,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998489379882812,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 7,
               "initial_reading": "13.00"
             }
           ],
@@ -871,6 +912,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997259736061096,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 8,
               "initial_reading": "26.00"
             }
           ],
@@ -887,6 +930,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999543771147728,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 9,
               "initial_reading": "2.60"
             }
           ],
@@ -903,6 +948,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997939020395279,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -919,6 +966,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998462438583374,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -935,6 +984,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998145401477814,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -953,6 +1004,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998549669981003,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 1,
               "initial_reading": "INV-0003"
             }
           ],
@@ -969,6 +1022,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999890661239624,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 2,
               "initial_reading": "2026-10-03"
             }
           ],
@@ -985,6 +1040,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9995972663164139,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 3,
               "initial_reading": "Client 3"
             }
           ],
@@ -1001,6 +1058,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9989360769589742,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 4,
               "initial_reading": "000003"
             }
           ],
@@ -1017,6 +1076,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9904072880744934,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 3"
             }
           ],
@@ -1033,6 +1095,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998828172683716,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 6,
               "initial_reading": "3"
             }
           ],
@@ -1049,6 +1113,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997891068458558,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 7,
               "initial_reading": "14.00"
             }
           ],
@@ -1065,6 +1131,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998340606689453,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 8,
               "initial_reading": "42.00"
             }
           ],
@@ -1081,6 +1149,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998335242271423,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 9,
               "initial_reading": "4.20"
             }
           ],
@@ -1097,6 +1167,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999864786863327,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -1113,6 +1185,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997793197631836,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -1129,6 +1203,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997501820325851,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -1147,6 +1223,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998564273118973,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 1,
               "initial_reading": "INV-0004"
             }
           ],
@@ -1163,6 +1241,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998108446598053,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 2,
               "initial_reading": "2026-10-04"
             }
           ],
@@ -1179,6 +1259,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9995079934597015,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 3,
               "initial_reading": "Client 4"
             }
           ],
@@ -1195,6 +1277,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9986623326937357,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 4,
               "initial_reading": "000004"
             }
           ],
@@ -1211,6 +1295,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9811865176473346,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 4"
             }
           ],
@@ -1227,6 +1314,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999655485153198,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 6,
               "initial_reading": "4"
             }
           ],
@@ -1243,6 +1332,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998921394348145,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 7,
               "initial_reading": "15.00"
             }
           ],
@@ -1259,6 +1350,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9996372580528259,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 8,
               "initial_reading": "60.00"
             }
           ],
@@ -1275,6 +1368,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997310042381287,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 9,
               "initial_reading": "6.00"
             }
           ],
@@ -1291,6 +1386,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998121410608292,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -1307,6 +1404,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998473048210144,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -1323,6 +1422,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998452812433243,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -1341,6 +1442,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997659027576447,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 1,
               "initial_reading": "INV-0005"
             }
           ],
@@ -1357,6 +1460,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998997509479522,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 2,
               "initial_reading": "2026-10-05"
             }
           ],
@@ -1373,6 +1478,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9992491453886032,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 3,
               "initial_reading": "Client 5"
             }
           ],
@@ -1389,6 +1496,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9994654754797617,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 4,
               "initial_reading": "000005"
             }
           ],
@@ -1405,6 +1514,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9875032390866961,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 5"
             }
           ],
@@ -1421,6 +1533,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998735189437866,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 6,
               "initial_reading": "5"
             }
           ],
@@ -1437,6 +1551,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998632550239563,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 7,
               "initial_reading": "16.00"
             }
           ],
@@ -1453,6 +1569,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997903347015381,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 8,
               "initial_reading": "80.00"
             }
           ],
@@ -1469,6 +1587,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997885525226593,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 9,
               "initial_reading": "8.00"
             }
           ],
@@ -1485,6 +1605,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998473674058914,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -1501,6 +1623,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9255781412124634,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -1517,6 +1641,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9996878206729889,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -1535,6 +1661,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998767897486687,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 1,
               "initial_reading": "INV-0006"
             }
           ],
@@ -1551,6 +1679,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998534560203552,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 2,
               "initial_reading": "2026-10-06"
             }
           ],
@@ -1567,6 +1697,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9984079301357269,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 3,
               "initial_reading": "Client 6"
             }
           ],
@@ -1583,6 +1715,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9990598460038503,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 4,
               "initial_reading": "000006"
             }
           ],
@@ -1599,6 +1733,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9916682243347168,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 6"
             }
           ],
@@ -1615,6 +1752,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999686479568481,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 6,
               "initial_reading": "6"
             }
           ],
@@ -1631,6 +1770,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997598052024841,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 7,
               "initial_reading": "17.00"
             }
           ],
@@ -1647,6 +1788,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998788436253866,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 8,
               "initial_reading": "102.00"
             }
           ],
@@ -1663,6 +1806,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998751163482666,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 9,
               "initial_reading": "10.20"
             }
           ],
@@ -1679,6 +1824,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998767524957657,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -1695,6 +1842,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999839723110199,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -1711,6 +1860,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998064488172531,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -1729,6 +1880,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998713135719299,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 1,
               "initial_reading": "INV-0007"
             }
           ],
@@ -1745,6 +1898,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999901020526886,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 2,
               "initial_reading": "2026-10-07"
             }
           ],
@@ -1761,6 +1916,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9995785430073738,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 3,
               "initial_reading": "Client 7"
             }
           ],
@@ -1777,6 +1934,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9989546736081442,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 4,
               "initial_reading": "000007"
             }
           ],
@@ -1793,6 +1952,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9872834554740361,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 7"
             }
           ],
@@ -1809,6 +1971,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998205304145813,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 6,
               "initial_reading": "7"
             }
           ],
@@ -1825,6 +1989,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999887478351593,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 7,
               "initial_reading": "18.00"
             }
           ],
@@ -1841,6 +2007,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999131957689921,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 8,
               "initial_reading": "126.00"
             }
           ],
@@ -1857,6 +2025,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999796450138092,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 9,
               "initial_reading": "12.60"
             }
           ],
@@ -1873,6 +2043,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999811053276062,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -1889,6 +2061,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998297810554504,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -1905,6 +2079,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997619837522507,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -1923,6 +2099,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998756423592567,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 1,
               "initial_reading": "INV-0008"
             }
           ],
@@ -1939,6 +2117,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999883621931076,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 2,
               "initial_reading": "2026-10-08"
             }
           ],
@@ -1955,6 +2135,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9995909407734871,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 3,
               "initial_reading": "Client 8"
             }
           ],
@@ -1971,6 +2153,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9989058077335358,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 4,
               "initial_reading": "000008"
             }
           ],
@@ -1987,6 +2171,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9901277635778699,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 8"
             }
           ],
@@ -2003,6 +2190,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999704360961914,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 6,
               "initial_reading": "1"
             }
           ],
@@ -2019,6 +2208,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998228669166564,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 7,
               "initial_reading": "19.00"
             }
           ],
@@ -2035,6 +2226,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998784899711609,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 8,
               "initial_reading": "19.00"
             }
           ],
@@ -2051,6 +2244,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9993586838245392,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 9,
               "initial_reading": "1.90"
             }
           ],
@@ -2067,6 +2262,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998867958784103,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -2083,6 +2280,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997447967529297,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -2099,6 +2298,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998017698526382,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -2117,6 +2318,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998861849308014,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 1,
               "initial_reading": "INV-0009"
             }
           ],
@@ -2133,6 +2336,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9714889287948608,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 2,
               "initial_reading": "2026-10-09"
             }
           ],
@@ -2149,6 +2354,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9973131641745567,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 3,
               "initial_reading": "Client 9"
             }
           ],
@@ -2165,6 +2372,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9987626771132151,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 4,
               "initial_reading": "000009"
             }
           ],
@@ -2181,6 +2390,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9708665013313293,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 9"
             }
           ],
@@ -2197,6 +2409,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998472929000854,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 6,
               "initial_reading": "2"
             }
           ],
@@ -2213,6 +2427,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9995174169540405,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 7,
               "initial_reading": "20.00"
             }
           ],
@@ -2229,6 +2445,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9996445298194885,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 8,
               "initial_reading": "40.00"
             }
           ],
@@ -2245,6 +2463,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9996570944786072,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 9,
               "initial_reading": "4.00"
             }
           ],
@@ -2261,6 +2481,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998591840267181,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -2277,6 +2499,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998538374900818,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -2293,6 +2517,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999800443649292,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -2311,6 +2537,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999892458319664,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 1,
               "initial_reading": "INV-0010"
             }
           ],
@@ -2327,6 +2555,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999398469924927,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 2,
               "initial_reading": "2026-10-10"
             }
           ],
@@ -2343,6 +2573,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9992458149790764,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 3,
               "initial_reading": "Client 1"
             }
           ],
@@ -2359,6 +2591,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9993779261906942,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 4,
               "initial_reading": "000010"
             }
           ],
@@ -2375,6 +2609,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9935513615608216,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 10"
             }
           ],
@@ -2391,6 +2628,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998717308044434,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 6,
               "initial_reading": "3"
             }
           ],
@@ -2407,6 +2646,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9991572856903076,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 7,
               "initial_reading": "21.00"
             }
           ],
@@ -2423,6 +2664,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997150540351868,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 8,
               "initial_reading": "63.00"
             }
           ],
@@ -2439,6 +2682,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998583197593689,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 9,
               "initial_reading": "6.30"
             }
           ],
@@ -2455,6 +2700,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998713433742523,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -2471,6 +2718,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997491359710693,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -2487,6 +2736,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997586458921432,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -2505,6 +2756,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998782649636269,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 1,
               "initial_reading": "INV-0011"
             }
           ],
@@ -2521,6 +2774,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999357998371124,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 2,
               "initial_reading": "2026-10-11"
             }
           ],
@@ -2537,6 +2792,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9987429231405258,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 3,
               "initial_reading": "Client 2"
             }
           ],
@@ -2553,6 +2810,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997372031211853,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 4,
               "initial_reading": "000011"
             }
           ],
@@ -2569,6 +2828,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9692920446395874,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 11"
             }
           ],
@@ -2585,6 +2847,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999719858169556,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 6,
               "initial_reading": "4"
             }
           ],
@@ -2601,6 +2865,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998938322067261,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 7,
               "initial_reading": "22.00"
             }
           ],
@@ -2617,6 +2883,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997823119163514,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 8,
               "initial_reading": "88.00"
             }
           ],
@@ -2633,6 +2901,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999857485294342,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 9,
               "initial_reading": "8.80"
             }
           ],
@@ -2649,6 +2919,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998402744531631,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -2665,6 +2937,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998041033744812,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -2681,6 +2955,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998005926609039,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -2699,6 +2975,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999093636870384,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 1,
               "initial_reading": "INV-0012"
             }
           ],
@@ -2715,6 +2993,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999429225921631,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 2,
               "initial_reading": "2026-10-12"
             }
           ],
@@ -2731,6 +3011,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9995703995227814,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 3,
               "initial_reading": "Client 3"
             }
           ],
@@ -2747,6 +3029,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998907248179117,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 4,
               "initial_reading": "000012"
             }
           ],
@@ -2763,6 +3047,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9884538769721984,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 12"
             }
           ],
@@ -2779,6 +3066,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998098015785217,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 6,
               "initial_reading": "5"
             }
           ],
@@ -2795,6 +3084,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9995375514030457,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 7,
               "initial_reading": "12.00"
             }
           ],
@@ -2811,6 +3102,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997598052024841,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 8,
               "initial_reading": "60.00"
             }
           ],
@@ -2827,6 +3120,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9996309578418732,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 9,
               "initial_reading": "6.00"
             }
           ],
@@ -2843,6 +3138,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997774660587311,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -2859,6 +3156,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998154759407043,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -2875,6 +3174,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997522085905075,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -2893,6 +3194,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.9,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 1,
               "initial_reading": "INV-0013"
             }
           ],
@@ -2909,6 +3212,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 2,
               "initial_reading": "2026-10-13"
             }
           ],
@@ -2925,6 +3230,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 3,
               "initial_reading": "Client 4"
             }
           ],
@@ -2941,6 +3248,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 4,
               "initial_reading": "000013"
             }
           ],
@@ -2957,6 +3266,9 @@
               "engine": "ocr-tesseract",
               "confidence": 0.95,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 13"
             }
           ],
@@ -2973,6 +3285,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 6,
               "initial_reading": "6"
             }
           ],
@@ -2989,6 +3303,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 7,
               "initial_reading": "13.00"
             }
           ],
@@ -3005,6 +3321,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 8,
               "initial_reading": "78.00"
             }
           ],
@@ -3021,6 +3339,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 9,
               "initial_reading": "7.80"
             }
           ],
@@ -3037,6 +3357,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.95,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3053,6 +3375,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3069,6 +3393,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3087,6 +3413,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.9,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 1,
               "initial_reading": "INV-0014"
             }
           ],
@@ -3103,6 +3431,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 2,
               "initial_reading": "2026-10-14"
             }
           ],
@@ -3119,6 +3449,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.94,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 3,
               "initial_reading": "Client 5"
             }
           ],
@@ -3135,6 +3467,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.95,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 4,
               "initial_reading": "000014"
             }
           ],
@@ -3151,6 +3485,9 @@
               "engine": "ocr-tesseract",
               "confidence": 0.94,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 1"
             }
           ],
@@ -3167,6 +3504,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 6,
               "initial_reading": "7"
             }
           ],
@@ -3183,6 +3522,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 7,
               "initial_reading": "14.00"
             }
           ],
@@ -3199,6 +3540,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 8,
               "initial_reading": "98.00"
             }
           ],
@@ -3215,6 +3558,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 9,
               "initial_reading": "9.80"
             }
           ],
@@ -3231,6 +3576,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3247,6 +3594,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3263,6 +3612,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3281,6 +3632,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.9,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 1,
               "initial_reading": "INV-0015"
             }
           ],
@@ -3297,6 +3650,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 2,
               "initial_reading": "2026-10-15"
             }
           ],
@@ -3313,6 +3668,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 3,
               "initial_reading": "Client 6"
             }
           ],
@@ -3329,6 +3686,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.95,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 4,
               "initial_reading": "000015"
             }
           ],
@@ -3345,6 +3704,9 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 2"
             }
           ],
@@ -3361,6 +3723,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 6,
               "initial_reading": "1"
             }
           ],
@@ -3377,6 +3741,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 7,
               "initial_reading": "15.00"
             }
           ],
@@ -3393,6 +3759,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 8,
               "initial_reading": "15.00"
             }
           ],
@@ -3409,6 +3777,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 9,
               "initial_reading": "1.50"
             }
           ],
@@ -3425,6 +3795,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3441,6 +3813,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3457,6 +3831,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3475,6 +3851,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.9,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 1,
               "initial_reading": "INV-0016"
             }
           ],
@@ -3491,6 +3869,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 2,
               "initial_reading": "2026-10-16"
             }
           ],
@@ -3507,6 +3887,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 3,
               "initial_reading": "Client 7"
             }
           ],
@@ -3523,6 +3905,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 4,
               "initial_reading": "000016"
             }
           ],
@@ -3539,6 +3923,9 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 3"
             }
           ],
@@ -3555,6 +3942,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 6,
               "initial_reading": "2"
             }
           ],
@@ -3571,6 +3960,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 7,
               "initial_reading": "16.00"
             }
           ],
@@ -3587,6 +3978,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 8,
               "initial_reading": "32.00"
             }
           ],
@@ -3603,6 +3996,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 9,
               "initial_reading": "3.20"
             }
           ],
@@ -3619,6 +4014,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3635,6 +4032,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3651,6 +4050,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3669,6 +4070,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.91,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 1,
               "initial_reading": "INV-0017"
             }
           ],
@@ -3685,6 +4088,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 2,
               "initial_reading": "2026-10-17"
             }
           ],
@@ -3701,6 +4106,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 3,
               "initial_reading": "Client 8"
             }
           ],
@@ -3717,6 +4124,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 4,
               "initial_reading": "000017"
             }
           ],
@@ -3733,6 +4142,9 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 4"
             }
           ],
@@ -3749,6 +4161,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 6,
               "initial_reading": "3"
             }
           ],
@@ -3765,6 +4179,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 7,
               "initial_reading": "17.00"
             }
           ],
@@ -3781,6 +4197,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 8,
               "initial_reading": "51.00"
             }
           ],
@@ -3797,6 +4215,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 9,
               "initial_reading": "5.10"
             }
           ],
@@ -3813,6 +4233,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3829,6 +4251,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3845,6 +4269,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3863,6 +4289,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.91,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 1,
               "initial_reading": "INV-0018"
             }
           ],
@@ -3879,6 +4307,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 2,
               "initial_reading": "2026-10-18"
             }
           ],
@@ -3895,6 +4325,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 3,
               "initial_reading": "Client 9"
             }
           ],
@@ -3911,6 +4343,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 4,
               "initial_reading": "000018"
             }
           ],
@@ -3927,6 +4361,9 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 5"
             }
           ],
@@ -3943,6 +4380,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 6,
               "initial_reading": "a"
             }
           ],
@@ -3959,6 +4398,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 7,
               "initial_reading": "18.00"
             }
           ],
@@ -3975,6 +4416,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 8,
               "initial_reading": "72.00"
             }
           ],
@@ -3991,6 +4434,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.95,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 9,
               "initial_reading": "7.20"
             }
           ],
@@ -4007,6 +4452,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4023,6 +4470,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4039,6 +4488,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4057,6 +4508,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.91,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 1,
               "initial_reading": "INV-0019"
             }
           ],
@@ -4073,6 +4526,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 2,
               "initial_reading": "2026-10-19"
             }
           ],
@@ -4089,6 +4544,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.93,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 3,
               "initial_reading": "Client 1"
             }
           ],
@@ -4105,6 +4562,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 4,
               "initial_reading": "000019"
             }
           ],
@@ -4121,6 +4580,9 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 6"
             }
           ],
@@ -4137,6 +4599,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 6,
               "initial_reading": "5"
             }
           ],
@@ -4153,6 +4617,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 7,
               "initial_reading": "19.00"
             }
           ],
@@ -4169,6 +4635,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 8,
               "initial_reading": "95.00"
             }
           ],
@@ -4185,6 +4653,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 9,
               "initial_reading": "9.50"
             }
           ],
@@ -4201,6 +4671,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.95,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4217,6 +4689,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4233,6 +4707,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4251,6 +4727,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.92,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 1,
               "initial_reading": "INV-0020"
             }
           ],
@@ -4267,6 +4745,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 2,
               "initial_reading": "2026-10-20"
             }
           ],
@@ -4283,6 +4763,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 3,
               "initial_reading": "Client 2"
             }
           ],
@@ -4299,6 +4781,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 4,
               "initial_reading": "000020"
             }
           ],
@@ -4315,6 +4799,9 @@
               "engine": "ocr-tesseract",
               "confidence": 0.95,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 7"
             }
           ],
@@ -4331,6 +4818,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 6,
               "initial_reading": "6"
             }
           ],
@@ -4347,6 +4836,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 7,
               "initial_reading": "20.00"
             }
           ],
@@ -4363,6 +4854,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 8,
               "initial_reading": "120.00"
             }
           ],
@@ -4379,6 +4872,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 9,
               "initial_reading": "12.00"
             }
           ],
@@ -4395,6 +4890,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4411,6 +4908,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4427,6 +4926,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4445,6 +4946,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.9,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 1,
               "initial_reading": "INV-0021"
             }
           ],
@@ -4461,6 +4964,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 2,
               "initial_reading": "2026-10-21"
             }
           ],
@@ -4477,6 +4982,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 3,
               "initial_reading": "Client 3"
             }
           ],
@@ -4493,6 +5000,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 4,
               "initial_reading": "000021"
             }
           ],
@@ -4509,6 +5018,9 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 8"
             }
           ],
@@ -4525,6 +5037,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 6,
               "initial_reading": "7"
             }
           ],
@@ -4541,6 +5055,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 7,
               "initial_reading": "21.00"
             }
           ],
@@ -4557,6 +5073,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 8,
               "initial_reading": "147.00"
             }
           ],
@@ -4573,6 +5091,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 9,
               "initial_reading": "14.70"
             }
           ],
@@ -4589,6 +5109,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4605,6 +5127,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4621,6 +5145,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4639,6 +5165,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.91,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 1,
               "initial_reading": "INV-0022"
             }
           ],
@@ -4655,6 +5183,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 2,
               "initial_reading": "2026-10-22"
             }
           ],
@@ -4671,6 +5201,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 3,
               "initial_reading": "Client 4"
             }
           ],
@@ -4687,6 +5219,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.95,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 4,
               "initial_reading": "000022"
             }
           ],
@@ -4703,6 +5237,9 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 9"
             }
           ],
@@ -4719,6 +5256,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 6,
               "initial_reading": "1"
             }
           ],
@@ -4735,6 +5274,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.95,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 7,
               "initial_reading": "22.00"
             }
           ],
@@ -4751,6 +5292,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 8,
               "initial_reading": "22.00"
             }
           ],
@@ -4767,6 +5310,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 9,
               "initial_reading": "2.20"
             }
           ],
@@ -4783,6 +5328,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4799,6 +5346,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4815,6 +5364,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4833,6 +5384,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.91,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 1,
               "initial_reading": "INV-0023"
             }
           ],
@@ -4849,6 +5402,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 2,
               "initial_reading": "2026-10-23"
             }
           ],
@@ -4865,6 +5420,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.95,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 3,
               "initial_reading": "Client 5"
             }
           ],
@@ -4881,6 +5438,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 4,
               "initial_reading": "000023"
             }
           ],
@@ -4897,6 +5456,9 @@
               "engine": "ocr-tesseract",
               "confidence": 0.93,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 10"
             }
           ],
@@ -4913,6 +5475,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 6,
               "initial_reading": "2"
             }
           ],
@@ -4929,6 +5493,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 7,
               "initial_reading": "12.00"
             }
           ],
@@ -4945,6 +5511,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 8,
               "initial_reading": "24.00"
             }
           ],
@@ -4961,6 +5529,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 9,
               "initial_reading": "2.40"
             }
           ],
@@ -4977,6 +5547,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4993,6 +5565,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -5009,6 +5583,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -5027,6 +5603,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.91,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 1,
               "initial_reading": "INV-0024"
             }
           ],
@@ -5043,6 +5621,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.95,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 2,
               "initial_reading": "2026-10-24"
             }
           ],
@@ -5059,6 +5639,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 3,
               "initial_reading": "Client 6"
             }
           ],
@@ -5075,6 +5657,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 4,
               "initial_reading": "000024"
             }
           ],
@@ -5091,6 +5675,9 @@
               "engine": "ocr-tesseract",
               "confidence": 0.95,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 11"
             }
           ],
@@ -5107,6 +5694,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 6,
               "initial_reading": "3"
             }
           ],
@@ -5123,6 +5712,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 7,
               "initial_reading": "13.00"
             }
           ],
@@ -5139,6 +5730,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 8,
               "initial_reading": "39.00"
             }
           ],
@@ -5155,6 +5748,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.95,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 9,
               "initial_reading": "3.90"
             }
           ],
@@ -5171,6 +5766,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -5187,6 +5784,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -5203,6 +5802,8 @@
               "engine": "ocr-tesseract",
               "confidence": 0.96,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -5221,7 +5822,9 @@
             "text": "Invoice",
             "engine": "ocr-rapidocr",
             "confidence": 0.9998000008719308,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 1
           },
           {
             "page": 2,
@@ -5234,7 +5837,9 @@
             "text": "Invoice",
             "engine": "ocr-tesseract",
             "confidence": 0.34,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 1
           }
         ],
         [
@@ -5249,7 +5854,9 @@
             "text": "Date",
             "engine": "ocr-rapidocr",
             "confidence": 0.9998417496681213,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 2
           },
           {
             "page": 2,
@@ -5262,7 +5869,9 @@
             "text": "me",
             "engine": "ocr-tesseract",
             "confidence": 0.37,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 2
           },
           {
             "page": 2,
@@ -5292,7 +5901,9 @@
             "text": "Client",
             "engine": "ocr-rapidocr",
             "confidence": 0.999173084894816,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 3
           },
           {
             "page": 2,
@@ -5305,7 +5916,9 @@
             "text": "lent",
             "engine": "ocr-tesseract",
             "confidence": 0.52,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 3
           },
           {
             "page": 2,
@@ -5335,7 +5948,9 @@
             "text": "SKU",
             "engine": "ocr-rapidocr",
             "confidence": 0.9992853999137878,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 4
           },
           {
             "page": 2,
@@ -5348,7 +5963,9 @@
             "text": "ee",
             "engine": "ocr-tesseract",
             "confidence": 0.55,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 4
           },
           {
             "page": 2,
@@ -5378,7 +5995,9 @@
             "text": "Description",
             "engine": "ocr-rapidocr",
             "confidence": 0.9998219826004722,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 5
           },
           {
             "page": 2,
@@ -5391,7 +6010,9 @@
             "text": "ee",
             "engine": "ocr-tesseract",
             "confidence": 0.06,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 5
           },
           {
             "page": 2,
@@ -5421,7 +6042,9 @@
             "text": "Qty.",
             "engine": "ocr-rapidocr",
             "confidence": 0.9738706797361374,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 6
           },
           {
             "page": 2,
@@ -5434,7 +6057,9 @@
             "text": "",
             "engine": "ocr-tesseract",
             "confidence": 0,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 6
           },
           {
             "page": 2,
@@ -5464,7 +6089,9 @@
             "text": "Rate",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999210238456726,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 7
           },
           {
             "page": 2,
@@ -5477,7 +6104,9 @@
             "text": "ate",
             "engine": "ocr-tesseract",
             "confidence": 0.58,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 7
           },
           {
             "page": 2,
@@ -5507,7 +6136,9 @@
             "text": "Amt",
             "engine": "ocr-rapidocr",
             "confidence": 0.9990895589192709,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 8
           },
           {
             "page": 2,
@@ -5520,7 +6151,9 @@
             "text": "ee",
             "engine": "ocr-tesseract",
             "confidence": 0.25,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 8
           },
           {
             "page": 2,
@@ -5550,7 +6183,9 @@
             "text": "Tax",
             "engine": "ocr-rapidocr",
             "confidence": 0.999869724114736,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 9
           },
           {
             "page": 2,
@@ -5563,7 +6198,9 @@
             "text": "Ta",
             "engine": "ocr-tesseract",
             "confidence": 0.54,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 9
           },
           {
             "page": 2,
@@ -5593,7 +6230,9 @@
             "text": "Ship",
             "engine": "ocr-rapidocr",
             "confidence": 0.9996831566095352,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 10
           },
           {
             "page": 2,
@@ -5606,7 +6245,9 @@
             "text": "Shp",
             "engine": "ocr-tesseract",
             "confidence": 0.7,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 10
           },
           {
             "page": 2,
@@ -5636,7 +6277,9 @@
             "text": "Region",
             "engine": "ocr-rapidocr",
             "confidence": 0.9998758435249329,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 11
           },
           {
             "page": 2,
@@ -5649,7 +6292,9 @@
             "text": "Region",
             "engine": "ocr-tesseract",
             "confidence": 0.52,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 11
           }
         ],
         [
@@ -5664,7 +6309,9 @@
             "text": "Status",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999123613039652,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 12
           },
           {
             "page": 2,
@@ -5677,7 +6324,9 @@
             "text": "sus",
             "engine": "ocr-tesseract",
             "confidence": 0.63,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 12
           },
           {
             "page": 2,
@@ -7187,6 +7836,26 @@
       "page": 1,
       "row": null,
       "column": null,
+      "reason": "Merged body labels retained in their source cell with covered cells blank; no values were imputed across columns.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Merged body labels retained in their source cell with covered cells blank; no values were imputed across columns.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
       "reason": "OCR rapidocr; deskew correction 0.00 degrees; values require source review.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
@@ -7549,29 +8218,39 @@
       "route": "ocr",
       "engine": "rapidocr",
       "confidence": 0.999800518155098,
-      "seconds": 35.418204499999774,
+      "seconds": 31.414595000009285,
       "attempts": [
         {
           "engine": "tesseract",
           "strategy": "deskew-300dpi",
           "tables": 1,
           "cells": 144,
-          "issues": 3,
+          "issues": 4,
           "score": 816.2,
-          "seconds": 10.246172700000898,
+          "seconds": 11.574283099995228,
           "error": "",
-          "selected": false
+          "selected": false,
+          "candidate_id": "p001-c01",
+          "phase": "ocr-independent-primary",
+          "execution": "sequential",
+          "rank": 2,
+          "selection_reason": ""
         },
         {
           "engine": "rapidocr",
           "strategy": "independent-language-aware-cross-check",
           "tables": 1,
           "cells": 144,
-          "issues": 1,
+          "issues": 2,
           "score": 842.996,
-          "seconds": 20.29306639999959,
+          "seconds": 17.091188599995803,
           "error": "",
-          "selected": true
+          "selected": true,
+          "candidate_id": "p001-c02",
+          "phase": "ocr-independent-cross-check",
+          "execution": "sequential",
+          "rank": 1,
+          "selection_reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
         }
       ],
       "error": "",
@@ -7608,8 +8287,64 @@
         "high_value_content": true,
         "risk_reasons": [],
         "profiler_warnings": [],
+        "candidate_policy": {
+          "max_workers": 2,
+          "parallel_scope": "independent-candidates-only",
+          "dependent_recovery": "sequential",
+          "tie_breaker": "declared-plan-order"
+        },
+        "candidate_plan": [
+          {
+            "candidate_id": "p001-c01",
+            "engine": "tesseract",
+            "strategy": "deskew-300dpi",
+            "phase": "ocr-independent-primary",
+            "execution": "sequential"
+          },
+          {
+            "candidate_id": "p001-c02",
+            "engine": "rapidocr",
+            "strategy": "independent-language-aware-cross-check",
+            "phase": "ocr-independent-cross-check",
+            "execution": "sequential"
+          }
+        ],
+        "parallel_candidate_batches": [],
         "routing_decision": "ocr",
         "native_candidate_available": false,
+        "ocr_engine_capabilities": {
+          "tesseract": {
+            "available": true,
+            "installed": true,
+            "provider": "builtin-system",
+            "layout_aware": false,
+            "parallel_safe": true,
+            "requested_language_coverage": [
+              "eng"
+            ],
+            "reason": ""
+          },
+          "rapidocr": {
+            "available": true,
+            "installed": true,
+            "provider": "bundled-onnx",
+            "layout_aware": false,
+            "parallel_safe": true,
+            "requested_language_coverage": [
+              "eng"
+            ],
+            "reason": ""
+          },
+          "paddleocr": {
+            "available": false,
+            "installed": false,
+            "provider": "optional-adapter",
+            "layout_aware": true,
+            "parallel_safe": false,
+            "requested_language_coverage": [],
+            "reason": "PaddleOCR and its Paddle runtime are not installed"
+          }
+        },
         "ocr_engine_language_coverage": {
           "tesseract": [
             "eng"
@@ -7619,7 +8354,15 @@
           ]
         },
         "cross_check_executed": false,
-        "high_value_detected_after_ocr": true
+        "high_value_detected_after_ocr": true,
+        "candidate_selection": {
+          "candidate_id": "p001-c02",
+          "engine": "rapidocr",
+          "strategy": "independent-language-aware-cross-check",
+          "rank": 1,
+          "score": 842.996,
+          "reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
+        }
       }
     },
     {
@@ -7627,29 +8370,39 @@
       "route": "ocr",
       "engine": "tesseract",
       "confidence": 0.96,
-      "seconds": 36.28293070000109,
+      "seconds": 21.320344699997804,
       "attempts": [
         {
           "engine": "tesseract",
           "strategy": "deskew-300dpi",
           "tables": 1,
           "cells": 144,
-          "issues": 3,
+          "issues": 4,
           "score": 816.2,
-          "seconds": 8.807928599999286,
+          "seconds": 6.260221899996395,
           "error": "",
-          "selected": false
+          "selected": false,
+          "candidate_id": "p002-c01",
+          "phase": "ocr-independent-primary",
+          "execution": "sequential",
+          "rank": 2,
+          "selection_reason": ""
         },
         {
           "engine": "tesseract",
           "strategy": "cell-recheck-300dpi",
           "tables": 1,
           "cells": 144,
-          "issues": 21,
+          "issues": 22,
           "score": 842.2,
-          "seconds": 19.884508600000117,
+          "seconds": 11.806224500003736,
           "error": "",
-          "selected": true
+          "selected": true,
+          "candidate_id": "p002-c02",
+          "phase": "ocr-conditional-recovery",
+          "execution": "sequential",
+          "rank": 1,
+          "selection_reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
         }
       ],
       "error": "",
@@ -7686,8 +8439,64 @@
         "high_value_content": false,
         "risk_reasons": [],
         "profiler_warnings": [],
+        "candidate_policy": {
+          "max_workers": 2,
+          "parallel_scope": "independent-candidates-only",
+          "dependent_recovery": "sequential",
+          "tie_breaker": "declared-plan-order"
+        },
+        "candidate_plan": [
+          {
+            "candidate_id": "p002-c01",
+            "engine": "tesseract",
+            "strategy": "deskew-300dpi",
+            "phase": "ocr-independent-primary",
+            "execution": "sequential"
+          },
+          {
+            "candidate_id": "p002-c02",
+            "engine": "tesseract",
+            "strategy": "cell-recheck-300dpi",
+            "phase": "ocr-conditional-recovery",
+            "execution": "sequential"
+          }
+        ],
+        "parallel_candidate_batches": [],
         "routing_decision": "ocr",
         "native_candidate_available": false,
+        "ocr_engine_capabilities": {
+          "tesseract": {
+            "available": true,
+            "installed": true,
+            "provider": "builtin-system",
+            "layout_aware": false,
+            "parallel_safe": true,
+            "requested_language_coverage": [
+              "eng"
+            ],
+            "reason": ""
+          },
+          "rapidocr": {
+            "available": true,
+            "installed": true,
+            "provider": "bundled-onnx",
+            "layout_aware": false,
+            "parallel_safe": true,
+            "requested_language_coverage": [
+              "eng"
+            ],
+            "reason": ""
+          },
+          "paddleocr": {
+            "available": false,
+            "installed": false,
+            "provider": "optional-adapter",
+            "layout_aware": true,
+            "parallel_safe": false,
+            "requested_language_coverage": [],
+            "reason": "PaddleOCR and its Paddle runtime are not installed"
+          }
+        },
         "ocr_engine_language_coverage": {
           "tesseract": [
             "eng"
@@ -7696,11 +8505,19 @@
             "eng"
           ]
         },
-        "cross_check_executed": false
+        "cross_check_executed": false,
+        "candidate_selection": {
+          "candidate_id": "p002-c02",
+          "engine": "tesseract",
+          "strategy": "cell-recheck-300dpi",
+          "rank": 1,
+          "score": 842.2,
+          "reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
+        }
       }
     }
   ],
-  "seconds": 72.96141659999921,
+  "seconds": 53.44462660000136,
   "source_sha256": "397ceaaf7677b98edfa1db5f33b2fdbcea55f0548cc9daebd33fbc70d8b289ec",
   "constraints": [
     {

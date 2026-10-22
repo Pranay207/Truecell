@@ -6,6 +6,7 @@ import logging
 import os
 import time
 from collections.abc import Callable
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import pdfplumber
@@ -106,12 +107,28 @@ def convert(
             report = PageReport(index + 1, "unknown", profile=page_profile.to_dict())
             result.pages.append(report)
             candidates: list[tuple[float, list[Table], Attempt]] = []
+            candidate_sequence = 0
+            report.profile["candidate_policy"] = {
+                "max_workers": 2,
+                "parallel_scope": "independent-candidates-only",
+                "dependent_recovery": "sequential",
+                "tie_breaker": "declared-plan-order",
+            }
+            report.profile["candidate_plan"] = []
+            report.profile["parallel_candidate_batches"] = []
 
             def best_tables() -> list[Table]:
                 best = max(candidates, key=candidate_key, default=None)
                 return best[1] if best else []
 
-            def attempt(engine: str, strategy: str, operation) -> None:
+            def execute_attempt(
+                engine: str,
+                strategy: str,
+                operation: Callable[[], list[Table]],
+                candidate_id: str,
+                phase: str,
+                execution: str,
+            ) -> tuple[float, list[Table], Attempt, bool]:
                 tick = time.perf_counter()
                 try:
                     tables = operation()
@@ -124,8 +141,11 @@ def convert(
                         findings,
                         score,
                         time.perf_counter() - tick,
+                        candidate_id=candidate_id,
+                        phase=phase,
+                        execution=execution,
                     )
-                    candidates.append((score, tables, record))
+                    return score, tables, record, True
                 except Exception as exc:
                     error = str(exc) or type(exc).__name__
                     record = Attempt(
@@ -137,9 +157,91 @@ def convert(
                         -10000,
                         time.perf_counter() - tick,
                         error,
+                        candidate_id=candidate_id,
+                        phase=phase,
+                        execution=execution,
                     )
                     LOG.warning("Page %s %s failed: %s", index + 1, strategy, error)
-                report.attempts.append(record)
+                    return -10000, [], record, False
+
+            def attempt_batch(
+                operations: list[tuple[str, str, Callable[[], list[Table]]]],
+                *,
+                phase: str,
+                parallel: bool = False,
+            ) -> list[Attempt]:
+                """Run independent candidates concurrently but record them in plan order."""
+                nonlocal candidate_sequence
+                if not operations:
+                    return []
+                execution = "bounded-parallel" if parallel and len(operations) > 1 else "sequential"
+                planned = []
+                for engine, strategy, operation in operations:
+                    candidate_sequence += 1
+                    candidate_id = f"p{index + 1:03d}-c{candidate_sequence:02d}"
+                    planned.append((engine, strategy, operation, candidate_id))
+                    report.profile["candidate_plan"].append(
+                        {
+                            "candidate_id": candidate_id,
+                            "engine": engine,
+                            "strategy": strategy,
+                            "phase": phase,
+                            "execution": execution,
+                        }
+                    )
+                if execution == "bounded-parallel":
+                    workers = min(2, len(planned))
+                    report.profile["parallel_candidate_batches"].append(
+                        {
+                            "phase": phase,
+                            "workers": workers,
+                            "candidate_ids": [item[3] for item in planned],
+                        }
+                    )
+                    with ThreadPoolExecutor(
+                        max_workers=workers, thread_name_prefix="truecell-candidate"
+                    ) as executor:
+                        futures = [
+                            executor.submit(
+                                execute_attempt,
+                                engine,
+                                strategy,
+                                operation,
+                                candidate_id,
+                                phase,
+                                execution,
+                            )
+                            for engine, strategy, operation, candidate_id in planned
+                        ]
+                        outcomes = [future.result() for future in futures]
+                else:
+                    outcomes = [
+                        execute_attempt(
+                            engine,
+                            strategy,
+                            operation,
+                            candidate_id,
+                            phase,
+                            execution,
+                        )
+                        for engine, strategy, operation, candidate_id in planned
+                    ]
+                records = []
+                for score, tables, record, succeeded in outcomes:
+                    report.attempts.append(record)
+                    records.append(record)
+                    if succeeded:
+                        candidates.append((score, tables, record))
+                return records
+
+            def attempt(
+                engine: str,
+                strategy: str,
+                operation: Callable[[], list[Table]],
+                *,
+                phase: str = "recovery",
+            ) -> Attempt:
+                return attempt_batch([(engine, strategy, operation)], phase=phase)[0]
 
             try:
                 report.route = "ocr" if force_ocr else route_page(page, page_profile)
@@ -152,24 +254,28 @@ def convert(
                     with fitz.open() as single:
                         single.insert_pdf(document, from_page=index, to_page=index)
                         data = single.tobytes()
-                    with pdfplumber.open(io.BytesIO(data)) as native:
-                        p = native.pages[0]
-                        attempt(
-                            "native",
-                            "lines",
-                            lambda: extract_page(p, index + 1, "lines"),
+
+                    def native_tables(strategy: str) -> list[Table]:
+                        # Each worker gets an isolated parser/page object. pdfplumber
+                        # page caches are not shared across candidate threads.
+                        with pdfplumber.open(io.BytesIO(data)) as native:
+                            return extract_page(native.pages[0], index + 1, strategy)
+
+                    attempt(
+                        "native",
+                        "lines",
+                        lambda: native_tables("lines"),
+                        phase="native-primary",
+                    )
+                    if recover and (not candidates or needs_retry(candidates[-1][1])):
+                        attempt_batch(
+                            [
+                                ("native", "text", lambda: native_tables("text")),
+                                ("native", "words", lambda: native_tables("words")),
+                            ],
+                            phase="native-independent-recovery",
+                            parallel=True,
                         )
-                        if recover and (not candidates or needs_retry(candidates[-1][1])):
-                            attempt(
-                                "native",
-                                "text",
-                                lambda: extract_page(p, index + 1, "text"),
-                            )
-                            attempt(
-                                "native",
-                                "words",
-                                lambda: extract_page(p, index + 1, "words"),
-                            )
                 native_candidate_available = any(
                     tables and record.engine == "native" for _, tables, record in candidates
                 )
@@ -192,12 +298,33 @@ def convert(
                 if should_run_ocr:
                     from .ocr import (
                         available_engines,
+                        engine_capabilities,
                         engine_language_coverage,
+                        engines_can_run_concurrently,
                         extract_image,
                         order_engines,
                     )
 
                     engines = order_engines(available_engines(), requested_languages)
+                    capabilities = engine_capabilities(requested_languages)
+                    # Custom test/application engines may be supplied through an
+                    # older availability hook. Keep their status explicit.
+                    for engine in engines:
+                        capabilities.setdefault(
+                            engine,
+                            {
+                                "available": True,
+                                "installed": True,
+                                "provider": "legacy-external",
+                                "layout_aware": False,
+                                "parallel_safe": False,
+                                "requested_language_coverage": list(
+                                    engine_language_coverage(engine, requested_languages)
+                                ),
+                                "reason": "",
+                            },
+                        )
+                    report.profile["ocr_engine_capabilities"] = capabilities
                     if not engines:
                         raise RuntimeError(
                             "No OCR engine available. Install rapidocr-onnxruntime or Tesseract."
@@ -239,15 +366,43 @@ def convert(
                             **options,
                         )
 
-                    ocr_candidate_count = len(candidates)
-                    attempt(
-                        engines[0],
-                        "deskew-300dpi",
-                        lambda: image_tables(engines[0]),
+                    primary_operations = [
+                        (
+                            engines[0],
+                            "deskew-300dpi",
+                            lambda: image_tables(engines[0]),
+                        )
+                    ]
+                    parallel_cross_check = (
+                        recover
+                        and not native_candidate_available
+                        and independent_cross_check
+                        and len(engines) > 1
+                        and engines_can_run_concurrently(engines[:2])
                     )
-                    discovered_high_value = len(
-                        candidates
-                    ) > ocr_candidate_count and _high_value_candidate(candidates[-1][1])
+                    if parallel_cross_check:
+                        primary_operations.append(
+                            (
+                                engines[1],
+                                "independent-language-aware-cross-check",
+                                lambda: image_tables(engines[1]),
+                            )
+                        )
+                    primary_records = attempt_batch(
+                        primary_operations,
+                        phase="ocr-independent-primary",
+                        parallel=parallel_cross_check,
+                    )
+                    primary_id = primary_records[0].candidate_id
+                    primary_tables = next(
+                        (
+                            tables
+                            for _, tables, record in candidates
+                            if record.candidate_id == primary_id
+                        ),
+                        [],
+                    )
+                    discovered_high_value = _high_value_candidate(primary_tables)
                     if discovered_high_value:
                         report.profile["high_value_content"] = True
                         report.profile["high_value_detected_after_ocr"] = True
@@ -255,11 +410,13 @@ def convert(
                         not native_candidate_available
                         and (independent_cross_check or (recover and discovered_high_value))
                         and len(engines) > 1
+                        and not any(item.engine == engines[1] for item in report.attempts)
                     ):
                         attempt(
                             engines[1],
                             "independent-language-aware-cross-check",
                             lambda: image_tables(engines[1]),
+                            phase="ocr-independent-cross-check",
                         )
                     # A nonempty native candidate plus one OCR reading is already
                     # an independent check. Keep the expensive threshold,
@@ -280,12 +437,14 @@ def convert(
                             engines[0],
                             alternate_name,
                             lambda: image_tables(engines[0], alternate=True),
+                            phase="ocr-conditional-recovery",
                         )
                         if needs_retry(best_tables()):
                             attempt(
                                 engines[0],
                                 "perspective-cell-recheck-300dpi",
                                 lambda: image_tables(engines[0], perspective=True, alternate=True),
+                                phase="ocr-conditional-recovery",
                             )
                         second_already_tried = (
                             any(item.engine == engines[1] for item in report.attempts)
@@ -301,6 +460,7 @@ def convert(
                                 engines[1],
                                 "second-engine",
                                 lambda: image_tables(engines[1]),
+                                phase="ocr-conditional-recovery",
                             )
                         # Sideways text can still produce a large, incorrect grid.
                         # Retry on substantive uncertainty, not just a low cell count.
@@ -316,6 +476,7 @@ def convert(
                                     engines[0],
                                     f"rotate-{angle}",
                                     lambda angle=angle: image_tables(engines[0], rotation=angle),
+                                    phase="ocr-rotation-recovery",
                                 )
                                 if not needs_retry(best_tables()):
                                     break
@@ -331,6 +492,7 @@ def convert(
                                     engines[1],
                                     f"rotate-{angle}-second-engine",
                                     lambda: image_tables(engines[1], rotation=angle),
+                                    phase="ocr-rotation-recovery",
                                 )
                 if (
                     allow_cloud
@@ -350,10 +512,26 @@ def convert(
                             "vision-llm",
                             "optional-vision",
                             lambda: vision_page(render_page(page), index + 1),
+                            phase="optional-cloud-candidate",
                         )
                 if candidates:
-                    _, chosen, record = max(candidates, key=candidate_key)
+                    ranked = sorted(candidates, key=candidate_key, reverse=True)
+                    for rank, (_, _, candidate_record) in enumerate(ranked, 1):
+                        candidate_record.rank = rank
+                    _, chosen, record = ranked[0]
                     record.selected = True
+                    record.selection_reason = (
+                        "Highest deterministic candidate key: trusted layout, credible content, "
+                        "structural quality, then validation-adjusted score; plan order breaks exact ties."
+                    )
+                    report.profile["candidate_selection"] = {
+                        "candidate_id": record.candidate_id,
+                        "engine": record.engine,
+                        "strategy": record.strategy,
+                        "rank": record.rank,
+                        "score": record.score,
+                        "reason": record.selection_reason,
+                    }
                     fragments.extend(chosen)
                     report.engine = record.engine
                     report.confidence = min((t.confidence for t in chosen), default=0)

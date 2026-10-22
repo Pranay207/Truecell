@@ -9,34 +9,34 @@ Evaluation host: Python 3.11.9, Windows AMD64. Timings are local wall-clock meas
 
 | Problem case | Cell P | Cell R | Exact | Rows | Headers | Shape | Tables | Errors caught | s/page | Result |
 |---|---:|---:|---:|---:|---:|---|---|---|---:|---|
-| A_invoice_register | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.83 | PASS |
-| B_bank_errors | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 2/2 | 0.30 | PASS |
-| C_scanned_inventory | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 13.60 | PASS |
-| D_blur_noise | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 36.48 | PASS |
-| D_borderless | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 3.15 | PASS |
-| D_headerless | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 4.19 | PASS |
-| D_merged_wrapped | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.05 | PASS |
-| D_mixed | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 6.27 | PASS |
-| D_phone_photo | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 19.47 | PASS |
-| D_skew_5deg | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 18.84 | PASS |
-| D_split_row | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.07 | PASS |
-| D_stress_50pages | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 1.48 | PASS |
-| D_two_tables | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.10 | PASS |
-| E_eighteen_columns | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 7.37 | PASS |
-| E_no_table_letter | n/a | n/a | n/a | n/a | n/a | True | True | 0/0 | 0.05 | PASS |
-| E_page_carry | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.13 | PASS |
-| E_sideways_invoice | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 37.24 | PASS |
-| E_sparse_schedule | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.13 | PASS |
-| E_unruled_totals | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.22 | PASS |
-| E_vertical_nested_lines | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 1.07 | PASS |
-| E_wrapped_contacts | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.20 | PASS |
-| F_scanned_multipage_continuations | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 40.50 | PASS |
-| G_thirteen_page_equivalent | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 1.06 | PASS |
+| A_invoice_register | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 2.18 | PASS |
+| B_bank_errors | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 2/2 | 0.79 | PASS |
+| C_scanned_inventory | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 30.54 | PASS |
+| D_blur_noise | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 26.72 | PASS |
+| D_borderless | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 1.96 | PASS |
+| D_headerless | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 5.67 | PASS |
+| D_merged_wrapped | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.06 | PASS |
+| D_mixed | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 10.01 | PASS |
+| D_phone_photo | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 13.58 | PASS |
+| D_skew_5deg | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 13.72 | PASS |
+| D_split_row | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.04 | PASS |
+| D_stress_50pages | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 2.95 | PASS |
+| D_two_tables | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.44 | PASS |
+| E_eighteen_columns | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 18.65 | PASS |
+| E_no_table_letter | n/a | n/a | n/a | n/a | n/a | True | True | 0/0 | 0.21 | PASS |
+| E_page_carry | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.42 | PASS |
+| E_sideways_invoice | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 47.41 | PASS |
+| E_sparse_schedule | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.23 | PASS |
+| E_unruled_totals | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.29 | PASS |
+| E_vertical_nested_lines | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.66 | PASS |
+| E_wrapped_contacts | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 0.23 | PASS |
+| F_scanned_multipage_continuations | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 60.53 | PASS |
+| G_thirteen_page_equivalent | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | True | True | 0/0 | 1.65 | PASS |
 
 ## Known limitations / failures
 
 - OCR confidence is not a calibrated accuracy probability. High-confidence digit mistakes can still occur.
-- Explicitly ruled vertical group spans in native-PDF body rows are supported conservatively. OCR/unruled spans, arbitrary multi-axis nested merges, borderless segmentation, two unrelated tables with similar geometry, and cross-page wrapped records can remain ambiguous. Values are retained for review; no business-row deduplication is performed.
+- Source-backed merged headers and explicitly ruled vertical or horizontal spans are supported conservatively for native and OCR tables. Ambiguous unruled inheritance, arbitrary irregular multi-axis nested layouts, borderless segmentation, two unrelated tables with similar geometry, and cross-page wrapped records can remain ambiguous. Values are retained for review; no business-row deduplication is performed.
 - Arithmetic inference needs enough varied rows and a strong majority. Checks may be skipped on short/heterogeneous tables. Inferred relations can be coincidental. Candidate selection prioritizes trusted native grid geometry but can still select the wrong layout; disagreements are audited.
 - Ambiguous day/month dates and comma-decimal numeric strings remain text. Structural total inference and multilingual total vocabularies are limited.
 - Phone-photo perspective, extreme rotation and handwritten text are not guaranteed.

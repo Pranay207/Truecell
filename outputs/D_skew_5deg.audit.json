@@ -511,6 +511,7 @@
         ]
       ],
       "notes": [
+        "Merged body labels retained in their source cell with covered cells blank; no values were imputed across columns.",
         "OCR rapidocr; deskew correction -5.00 degrees; values require source review."
       ],
       "row_engines": [
@@ -554,6 +555,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.99996317923069,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 1,
               "initial_reading": "INV-0001"
             }
           ],
@@ -570,6 +573,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999865651130676,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 2,
               "initial_reading": "2026-10-01"
             }
           ],
@@ -586,6 +591,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9479376599192619,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 3,
               "initial_reading": "Client 1"
             }
           ],
@@ -602,6 +609,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999894767999649,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 4,
               "initial_reading": "000001"
             }
           ],
@@ -618,6 +627,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9921105759484428,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 1"
             }
           ],
@@ -634,6 +646,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999927282333374,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 6,
               "initial_reading": "1"
             }
           ],
@@ -650,6 +664,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999172806739807,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 7,
               "initial_reading": "12.00"
             }
           ],
@@ -666,6 +682,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997877717018128,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 8,
               "initial_reading": "12.00"
             }
           ],
@@ -682,6 +700,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998957365751266,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 9,
               "initial_reading": "1.20"
             }
           ],
@@ -698,6 +718,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999303221702576,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -714,6 +736,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999531745910645,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -730,6 +754,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999845027923584,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -748,6 +774,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999459385871887,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 1,
               "initial_reading": "INV-0002"
             }
           ],
@@ -764,6 +792,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999858498573303,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 2,
               "initial_reading": "2026-10-02"
             }
           ],
@@ -780,6 +810,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9979292899370193,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 3,
               "initial_reading": "Client 2"
             }
           ],
@@ -796,6 +828,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997839232285818,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 4,
               "initial_reading": "000002"
             }
           ],
@@ -812,6 +846,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9976990393229893,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 2"
             }
           ],
@@ -828,6 +865,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999975323677063,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 6,
               "initial_reading": "2"
             }
           ],
@@ -844,6 +883,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999933397769928,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 7,
               "initial_reading": "13.00"
             }
           ],
@@ -860,6 +901,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998922109603882,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 8,
               "initial_reading": "26.00"
             }
           ],
@@ -876,6 +919,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9241041243076324,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 9,
               "initial_reading": "2.60"
             }
           ],
@@ -892,6 +937,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999276995658875,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -908,6 +955,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999566316604614,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -924,6 +973,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998756349086761,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -942,6 +993,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999412000179291,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 1,
               "initial_reading": "INV-0003"
             }
           ],
@@ -958,6 +1011,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999790906906127,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 2,
               "initial_reading": "2026-10-03"
             }
           ],
@@ -974,6 +1029,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9506487771868706,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 3,
               "initial_reading": "Client 3"
             }
           ],
@@ -990,6 +1047,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9993383387724558,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 4,
               "initial_reading": "000003"
             }
           ],
@@ -1006,6 +1065,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9902015796729496,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 3"
             }
           ],
@@ -1022,6 +1084,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999526739120483,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 6,
               "initial_reading": "3"
             }
           ],
@@ -1038,6 +1102,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999816071987152,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 7,
               "initial_reading": "14.00"
             }
           ],
@@ -1054,6 +1120,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999214291572571,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 8,
               "initial_reading": "42.00"
             }
           ],
@@ -1070,6 +1138,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999566674232483,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 9,
               "initial_reading": "4.20"
             }
           ],
@@ -1086,6 +1156,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999163895845413,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -1102,6 +1174,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999640703201294,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -1118,6 +1192,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998393654823303,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -1136,6 +1212,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999357610940933,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 1,
               "initial_reading": "INV-0004"
             }
           ],
@@ -1152,6 +1230,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999722480773926,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 2,
               "initial_reading": "2026-10-04"
             }
           ],
@@ -1168,6 +1248,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9930403828620911,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 3,
               "initial_reading": "Client 4"
             }
           ],
@@ -1184,6 +1266,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9996324578921,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 4,
               "initial_reading": "000004"
             }
           ],
@@ -1200,6 +1284,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9961479306221008,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 4"
             }
           ],
@@ -1216,6 +1303,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999513626098633,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 6,
               "initial_reading": "4"
             }
           ],
@@ -1232,6 +1321,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.99994295835495,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 7,
               "initial_reading": "15.00"
             }
           ],
@@ -1248,6 +1339,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997244000434875,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 8,
               "initial_reading": "60.00"
             }
           ],
@@ -1264,6 +1357,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998660385608673,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 9,
               "initial_reading": "6.00"
             }
           ],
@@ -1280,6 +1375,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999261498451233,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -1296,6 +1393,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999488830566406,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -1312,6 +1411,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998654723167419,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -1330,6 +1431,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999334439635277,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 1,
               "initial_reading": "INV-0005"
             }
           ],
@@ -1346,6 +1449,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999979293346405,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 2,
               "initial_reading": "2026-10-05"
             }
           ],
@@ -1362,6 +1467,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999062567949295,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 3,
               "initial_reading": "Client 5"
             }
           ],
@@ -1378,6 +1485,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997368256251017,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 4,
               "initial_reading": "000005"
             }
           ],
@@ -1394,6 +1503,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9984752791268485,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 5"
             }
           ],
@@ -1410,6 +1522,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999982476234436,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 6,
               "initial_reading": "5"
             }
           ],
@@ -1426,6 +1540,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998736262321473,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 7,
               "initial_reading": "16.00"
             }
           ],
@@ -1442,6 +1558,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.99979727268219,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 8,
               "initial_reading": "80.00"
             }
           ],
@@ -1458,6 +1576,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998844116926193,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 9,
               "initial_reading": "8.00"
             }
           ],
@@ -1474,6 +1594,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999350011348724,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -1490,6 +1612,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999515056610108,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -1506,6 +1630,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998449087142944,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -1524,6 +1650,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999079406261444,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 1,
               "initial_reading": "INV-0006"
             }
           ],
@@ -1540,6 +1668,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999755263328552,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 2,
               "initial_reading": "2026-10-06"
             }
           ],
@@ -1556,6 +1686,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9972659647464752,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 3,
               "initial_reading": "Client 6"
             }
           ],
@@ -1572,6 +1704,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999409685532252,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 4,
               "initial_reading": "000006"
             }
           ],
@@ -1588,6 +1722,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9954407513141632,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 6"
             }
           ],
@@ -1604,6 +1741,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999921321868896,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 6,
               "initial_reading": "6"
             }
           ],
@@ -1620,6 +1759,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999435305595398,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 7,
               "initial_reading": "17.00"
             }
           ],
@@ -1636,6 +1777,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999231100082397,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 8,
               "initial_reading": "102.00"
             }
           ],
@@ -1652,6 +1795,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999301314353943,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 9,
               "initial_reading": "10.20"
             }
           ],
@@ -1668,6 +1813,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999222606420517,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -1684,6 +1831,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999463796615601,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -1700,6 +1849,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999840185046196,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -1718,6 +1869,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999412447214127,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 1,
               "initial_reading": "INV-0007"
             }
           ],
@@ -1734,6 +1887,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999853491783142,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 2,
               "initial_reading": "2026-10-07"
             }
           ],
@@ -1750,6 +1905,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.958521768450737,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 3,
               "initial_reading": "Client 7"
             }
           ],
@@ -1766,6 +1923,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9996595084667206,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 4,
               "initial_reading": "000007"
             }
           ],
@@ -1782,6 +1941,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9994703318391528,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 7"
             }
           ],
@@ -1798,6 +1960,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999929666519165,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 6,
               "initial_reading": "7"
             }
           ],
@@ -1814,6 +1978,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999444961547852,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 7,
               "initial_reading": "18.00"
             }
           ],
@@ -1830,6 +1996,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998861948649088,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 8,
               "initial_reading": "126.00"
             }
           ],
@@ -1846,6 +2014,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998839497566223,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 9,
               "initial_reading": "12.60"
             }
           ],
@@ -1862,6 +2032,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999171495437622,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -1878,6 +2050,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999408006668091,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -1894,6 +2068,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998589605093002,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -1912,6 +2088,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999275952577591,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 1,
               "initial_reading": "INV-0008"
             }
           ],
@@ -1928,6 +2106,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9974368810653687,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 2,
               "initial_reading": "2026-10-08"
             }
           ],
@@ -1944,6 +2124,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9994651153683662,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 3,
               "initial_reading": "Client 8"
             }
           ],
@@ -1960,6 +2142,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9993756115436554,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 4,
               "initial_reading": "000008"
             }
           ],
@@ -1976,6 +2160,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999499078307833,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 8"
             }
           ],
@@ -1992,6 +2179,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999896287918091,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 6,
               "initial_reading": "1"
             }
           ],
@@ -2008,6 +2197,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999950647354126,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 7,
               "initial_reading": "19.00"
             }
           ],
@@ -2024,6 +2215,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999476075172424,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 8,
               "initial_reading": "19.00"
             }
           ],
@@ -2040,6 +2233,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998832195997238,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 9,
               "initial_reading": "1.90"
             }
           ],
@@ -2056,6 +2251,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9497159272432327,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -2072,6 +2269,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999243736267089,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -2088,6 +2287,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998290836811066,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -2106,6 +2307,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999021664261818,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 1,
               "initial_reading": "INV-0009"
             }
           ],
@@ -2122,6 +2325,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999749541282654,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 2,
               "initial_reading": "2026-10-09"
             }
           ],
@@ -2138,6 +2343,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9994727075099945,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 3,
               "initial_reading": "Client 9"
             }
           ],
@@ -2154,6 +2361,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9992553293704987,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 4,
               "initial_reading": "000009"
             }
           ],
@@ -2170,6 +2379,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9961507192679814,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 9"
             }
           ],
@@ -2186,6 +2398,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999721050262451,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 6,
               "initial_reading": "2"
             }
           ],
@@ -2202,6 +2416,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999890410900116,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 7,
               "initial_reading": "20.00"
             }
           ],
@@ -2218,6 +2434,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998987317085266,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 8,
               "initial_reading": "40.00"
             }
           ],
@@ -2234,6 +2452,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998818337917328,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 9,
               "initial_reading": "4.00"
             }
           ],
@@ -2250,6 +2470,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999311566352844,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -2266,6 +2488,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999542713165284,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -2282,6 +2506,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998548328876495,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -2300,6 +2526,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999471753835678,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 1,
               "initial_reading": "INV-0010"
             }
           ],
@@ -2316,6 +2544,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9897247552871704,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 2,
               "initial_reading": "2026-10-10"
             }
           ],
@@ -2332,6 +2562,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9992362186312675,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 3,
               "initial_reading": "Client 1"
             }
           ],
@@ -2348,6 +2580,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998572568098704,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 4,
               "initial_reading": "000010"
             }
           ],
@@ -2364,6 +2598,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9988410313924153,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 10"
             }
           ],
@@ -2380,6 +2617,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999492168426514,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 6,
               "initial_reading": "3"
             }
           ],
@@ -2396,6 +2635,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999511361122131,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 7,
               "initial_reading": "21.00"
             }
           ],
@@ -2412,6 +2653,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998871564865113,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 8,
               "initial_reading": "63.00"
             }
           ],
@@ -2428,6 +2671,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999435245990753,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 9,
               "initial_reading": "6.30"
             }
           ],
@@ -2444,6 +2689,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999212175607681,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -2460,6 +2707,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999671936035156,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -2476,6 +2725,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998631179332733,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -2494,6 +2745,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999957725405693,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 1,
               "initial_reading": "INV-0011"
             }
           ],
@@ -2510,6 +2763,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999993097782135,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 2,
               "initial_reading": "2026-10-11"
             }
           ],
@@ -2526,6 +2781,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9977446272969246,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 3,
               "initial_reading": "Client 2"
             }
           ],
@@ -2542,6 +2799,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999324480692545,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 4,
               "initial_reading": "000011"
             }
           ],
@@ -2558,6 +2817,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9771863142649333,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 11"
             }
           ],
@@ -2574,6 +2836,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999563694000244,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 6,
               "initial_reading": "4"
             }
           ],
@@ -2590,6 +2854,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999480485916138,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 7,
               "initial_reading": "22.00"
             }
           ],
@@ -2606,6 +2872,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999026298522949,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 8,
               "initial_reading": "88.00"
             }
           ],
@@ -2622,6 +2890,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999070316553116,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 9,
               "initial_reading": "8.80"
             }
           ],
@@ -2638,6 +2908,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999207407236099,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -2654,6 +2926,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999661207199096,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -2670,6 +2944,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998505115509033,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -2688,6 +2964,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999950185418129,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 1,
               "initial_reading": "INV-0012"
             }
           ],
@@ -2704,6 +2982,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999902606010437,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 2,
               "initial_reading": "2026-10-12"
             }
           ],
@@ -2720,6 +3000,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9444893002510071,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 3,
               "initial_reading": "Client 3"
             }
           ],
@@ -2736,6 +3018,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999570250511169,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 4,
               "initial_reading": "000012"
             }
           ],
@@ -2752,6 +3036,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9987680872281393,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 12"
             }
           ],
@@ -2768,6 +3055,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999974250793457,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 6,
               "initial_reading": "5"
             }
           ],
@@ -2784,6 +3073,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999436497688293,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 7,
               "initial_reading": "12.00"
             }
           ],
@@ -2800,6 +3091,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999106764793396,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 8,
               "initial_reading": "60.00"
             }
           ],
@@ -2816,6 +3109,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998394995927811,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 9,
               "initial_reading": "6.00"
             }
           ],
@@ -2832,6 +3127,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999383091926575,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -2848,6 +3145,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999646186828614,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -2864,6 +3163,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998529255390167,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -2882,6 +3183,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999612271785736,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 1,
               "initial_reading": "INV-0013"
             }
           ],
@@ -2898,6 +3201,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997913122177124,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 2,
               "initial_reading": "2026-10-13"
             }
           ],
@@ -2914,6 +3219,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9993457794189453,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 3,
               "initial_reading": "Client 4"
             }
           ],
@@ -2930,6 +3237,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999021391073862,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 4,
               "initial_reading": "000013"
             }
           ],
@@ -2946,6 +3255,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9940918882687887,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 13"
             }
           ],
@@ -2962,6 +3274,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999914169311523,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 6,
               "initial_reading": "6"
             }
           ],
@@ -2978,6 +3292,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999589920043945,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 7,
               "initial_reading": "13.00"
             }
           ],
@@ -2994,6 +3310,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998532891273498,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 8,
               "initial_reading": "78.00"
             }
           ],
@@ -3010,6 +3328,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999416768550873,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 9,
               "initial_reading": "7.80"
             }
           ],
@@ -3026,6 +3346,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999303221702576,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3042,6 +3364,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999534368515015,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3058,6 +3382,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999845027923584,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3076,6 +3402,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999957412481308,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 1,
               "initial_reading": "INV-0014"
             }
           ],
@@ -3092,6 +3420,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999912261962891,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 2,
               "initial_reading": "2026-10-14"
             }
           ],
@@ -3108,6 +3438,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9981127679347992,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 3,
               "initial_reading": "Client 5"
             }
           ],
@@ -3124,6 +3456,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999904990196228,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 4,
               "initial_reading": "000014"
             }
           ],
@@ -3140,6 +3474,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.996184161731175,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 1"
             }
           ],
@@ -3156,6 +3493,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999827146530151,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 6,
               "initial_reading": "7"
             }
           ],
@@ -3172,6 +3511,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998515129089356,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 7,
               "initial_reading": "14.00"
             }
           ],
@@ -3188,6 +3529,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999327659606934,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 8,
               "initial_reading": "98.00"
             }
           ],
@@ -3204,6 +3547,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999961644411087,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 9,
               "initial_reading": "9.80"
             }
           ],
@@ -3220,6 +3565,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999277591705322,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3236,6 +3583,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999566316604614,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3252,6 +3601,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998756349086761,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3270,6 +3621,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999576508998871,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 1,
               "initial_reading": "INV-0015"
             }
           ],
@@ -3286,6 +3639,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999906539916992,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 2,
               "initial_reading": "2026-10-15"
             }
           ],
@@ -3302,6 +3657,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9994575828313828,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 3,
               "initial_reading": "Client 6"
             }
           ],
@@ -3318,6 +3675,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999090433120728,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 4,
               "initial_reading": "000015"
             }
           ],
@@ -3334,6 +3693,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9972757824829647,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 2"
             }
           ],
@@ -3350,6 +3712,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999852180480957,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 6,
               "initial_reading": "1"
             }
           ],
@@ -3366,6 +3730,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999509930610657,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 7,
               "initial_reading": "15.00"
             }
           ],
@@ -3382,6 +3748,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999939787387848,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 8,
               "initial_reading": "15.00"
             }
           ],
@@ -3398,6 +3766,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998656362295151,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 9,
               "initial_reading": "1.50"
             }
           ],
@@ -3414,6 +3784,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999166280031204,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3430,6 +3802,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999644517898559,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3446,6 +3820,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998393654823303,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3464,6 +3840,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999530613422394,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 1,
               "initial_reading": "INV-0016"
             }
           ],
@@ -3480,6 +3858,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999868154525757,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 2,
               "initial_reading": "2026-10-16"
             }
           ],
@@ -3496,6 +3876,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9938662499189377,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 3,
               "initial_reading": "Client 7"
             }
           ],
@@ -3512,6 +3894,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999807596206665,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 4,
               "initial_reading": "000016"
             }
           ],
@@ -3528,6 +3912,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.997176183121545,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 3"
             }
           ],
@@ -3544,6 +3931,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999759197235107,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 6,
               "initial_reading": "2"
             }
           ],
@@ -3560,6 +3949,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998852252960205,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 7,
               "initial_reading": "16.00"
             }
           ],
@@ -3576,6 +3967,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999475717544556,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 8,
               "initial_reading": "32.00"
             }
           ],
@@ -3592,6 +3985,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999935194849968,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 9,
               "initial_reading": "3.20"
             }
           ],
@@ -3608,6 +4003,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999268352985382,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3624,6 +4021,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999948525428772,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3640,6 +4039,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998654723167419,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3658,6 +4059,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999626129865646,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 1,
               "initial_reading": "INV-0017"
             }
           ],
@@ -3674,6 +4077,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999902367591857,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 2,
               "initial_reading": "2026-10-17"
             }
           ],
@@ -3690,6 +4095,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997480064630508,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 3,
               "initial_reading": "Client 8"
             }
           ],
@@ -3706,6 +4113,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999262591203054,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 4,
               "initial_reading": "000017"
             }
           ],
@@ -3722,6 +4131,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9958437851497105,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 4"
             }
           ],
@@ -3738,6 +4150,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999576807022095,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 6,
               "initial_reading": "3"
             }
           ],
@@ -3754,6 +4168,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999218702316284,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 7,
               "initial_reading": "17.00"
             }
           ],
@@ -3770,6 +4186,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999670028686524,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 8,
               "initial_reading": "51.00"
             }
           ],
@@ -3786,6 +4204,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999950110912323,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 9,
               "initial_reading": "5.10"
             }
           ],
@@ -3802,6 +4222,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999338984489441,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3818,6 +4240,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999521017074585,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3834,6 +4258,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998449087142944,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3852,6 +4278,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999432861804962,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 1,
               "initial_reading": "INV-0018"
             }
           ],
@@ -3868,6 +4296,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999919414520264,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 2,
               "initial_reading": "2026-10-18"
             }
           ],
@@ -3884,6 +4314,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9990801736712456,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 3,
               "initial_reading": "Client 9"
             }
           ],
@@ -3900,6 +4332,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999906986951828,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 4,
               "initial_reading": "000018"
             }
           ],
@@ -3916,6 +4350,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9974331387451717,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 5"
             }
           ],
@@ -3932,6 +4369,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999394416809082,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 6,
               "initial_reading": "4"
             }
           ],
@@ -3948,6 +4387,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999951434135437,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 7,
               "initial_reading": "18.00"
             }
           ],
@@ -3964,6 +4405,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999683380126954,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 8,
               "initial_reading": "72.00"
             }
           ],
@@ -3980,6 +4423,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999955952167511,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 9,
               "initial_reading": "7.20"
             }
           ],
@@ -3996,6 +4441,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999213367700577,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4012,6 +4459,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999463796615601,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4028,6 +4477,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999840185046196,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4046,6 +4497,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999460950493813,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 1,
               "initial_reading": "INV-0019"
             }
           ],
@@ -4062,6 +4515,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9709282994270325,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 2,
               "initial_reading": "2026-10-19"
             }
           ],
@@ -4078,6 +4533,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997490644454956,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 3,
               "initial_reading": "Client 1"
             }
           ],
@@ -4094,6 +4551,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999107321103414,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 4,
               "initial_reading": "000019"
             }
           ],
@@ -4110,6 +4569,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9988967137677329,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 6"
             }
           ],
@@ -4126,6 +4588,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999793767929077,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 6,
               "initial_reading": "5"
             }
           ],
@@ -4142,6 +4606,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999617576599121,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 7,
               "initial_reading": "19.00"
             }
           ],
@@ -4158,6 +4624,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999528408050538,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 8,
               "initial_reading": "95.00"
             }
           ],
@@ -4174,6 +4642,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999596476554871,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 9,
               "initial_reading": "9.50"
             }
           ],
@@ -4190,6 +4660,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999919205904007,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4206,6 +4678,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999411344528198,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4222,6 +4696,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998589605093002,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4240,6 +4716,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999083280563354,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 1,
               "initial_reading": "INV-0020"
             }
           ],
@@ -4256,6 +4734,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9994461596012115,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 2,
               "initial_reading": "2026-10-20"
             }
           ],
@@ -4272,6 +4752,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9978682845830917,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 3,
               "initial_reading": "Client 2"
             }
           ],
@@ -4288,6 +4770,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9993488788604736,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 4,
               "initial_reading": "000020"
             }
           ],
@@ -4304,6 +4788,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9995998697621482,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 7"
             }
           ],
@@ -4320,6 +4807,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999932050704956,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 6,
               "initial_reading": "6"
             }
           ],
@@ -4336,6 +4825,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999150633811951,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 7,
               "initial_reading": "20.00"
             }
           ],
@@ -4352,6 +4843,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999561905860901,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 8,
               "initial_reading": "120.00"
             }
           ],
@@ -4368,6 +4861,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998053550720215,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 9,
               "initial_reading": "12.00"
             }
           ],
@@ -4384,6 +4879,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999348223209381,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4400,6 +4897,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999223589897156,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4416,6 +4915,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998290836811066,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4434,6 +4935,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999454617500305,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 1,
               "initial_reading": "INV-0021"
             }
           ],
@@ -4450,6 +4953,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999934673309326,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 2,
               "initial_reading": "2026-10-21"
             }
           ],
@@ -4466,6 +4971,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999783344566822,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 3,
               "initial_reading": "Client 3"
             }
           ],
@@ -4482,6 +4989,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998993674914042,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 4,
               "initial_reading": "000021"
             }
           ],
@@ -4498,6 +5007,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9983120858669281,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 8"
             }
           ],
@@ -4514,6 +5026,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999899864196777,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 6,
               "initial_reading": "7"
             }
           ],
@@ -4530,6 +5044,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999477982521057,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 7,
               "initial_reading": "21.00"
             }
           ],
@@ -4546,6 +5062,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999373058478037,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 8,
               "initial_reading": "147.00"
             }
           ],
@@ -4562,6 +5080,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999824523925781,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 9,
               "initial_reading": "14.70"
             }
           ],
@@ -4578,6 +5098,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999310970306396,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4594,6 +5116,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999540567398071,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4610,6 +5134,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998548328876495,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4628,6 +5154,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999939501285553,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 1,
               "initial_reading": "INV-0022"
             }
           ],
@@ -4644,6 +5172,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999921917915344,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 2,
               "initial_reading": "2026-10-22"
             }
           ],
@@ -4660,6 +5190,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9965510740876198,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 3,
               "initial_reading": "Client 4"
             }
           ],
@@ -4676,6 +5208,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998772939046224,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 4,
               "initial_reading": "000022"
             }
           ],
@@ -4692,6 +5226,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9966410143034798,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 9"
             }
           ],
@@ -4708,6 +5245,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999889135360718,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 6,
               "initial_reading": "1"
             }
           ],
@@ -4724,6 +5263,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998751521110535,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 7,
               "initial_reading": "22.00"
             }
           ],
@@ -4740,6 +5281,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999075293540954,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 8,
               "initial_reading": "22.00"
             }
           ],
@@ -4756,6 +5299,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999916598200798,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 9,
               "initial_reading": "2.20"
             }
           ],
@@ -4772,6 +5317,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998921900987625,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4788,6 +5335,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999670267105103,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4804,6 +5353,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998631179332733,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4822,6 +5373,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999402761459351,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 1,
               "initial_reading": "INV-0023"
             }
           ],
@@ -4838,6 +5391,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999881267547608,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 2,
               "initial_reading": "2026-10-23"
             }
           ],
@@ -4854,6 +5409,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9972521588206291,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 3,
               "initial_reading": "Client 5"
             }
           ],
@@ -4870,6 +5427,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998178283373514,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 4,
               "initial_reading": "000023"
             }
           ],
@@ -4886,6 +5445,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9932944973309835,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 10"
             }
           ],
@@ -4902,6 +5464,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999821186065674,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 6,
               "initial_reading": "2"
             }
           ],
@@ -4918,6 +5482,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998188018798828,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 7,
               "initial_reading": "12.00"
             }
           ],
@@ -4934,6 +5500,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999262690544128,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 8,
               "initial_reading": "24.00"
             }
           ],
@@ -4950,6 +5518,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998323023319244,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 9,
               "initial_reading": "2.40"
             }
           ],
@@ -4966,6 +5536,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999171644449234,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4982,6 +5554,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999661684036255,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4998,6 +5572,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998505115509033,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -5016,6 +5592,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999142736196518,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 1,
               "initial_reading": "INV-0024"
             }
           ],
@@ -5032,6 +5610,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999841809272766,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 2,
               "initial_reading": "2026-10-24"
             }
           ],
@@ -5048,6 +5628,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9995955377817154,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 3,
               "initial_reading": "Client 6"
             }
           ],
@@ -5064,6 +5646,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998769362767538,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 4,
               "initial_reading": "000024"
             }
           ],
@@ -5080,6 +5664,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.996494181950887,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 11"
             }
           ],
@@ -5096,6 +5683,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999957799911499,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 6,
               "initial_reading": "3"
             }
           ],
@@ -5112,6 +5701,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999544382095337,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 7,
               "initial_reading": "13.00"
             }
           ],
@@ -5128,6 +5719,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999528884887695,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 8,
               "initial_reading": "39.00"
             }
           ],
@@ -5144,6 +5737,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999268501996994,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 9,
               "initial_reading": "3.90"
             }
           ],
@@ -5160,6 +5755,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999380707740784,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -5176,6 +5773,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999645709991455,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -5192,6 +5791,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998529255390167,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -5210,7 +5811,9 @@
             "text": "Invoice",
             "engine": "ocr-rapidocr",
             "confidence": 0.9997900894709996,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 1
           },
           {
             "page": 2,
@@ -5223,7 +5826,9 @@
             "text": "Invoice",
             "engine": "ocr-rapidocr",
             "confidence": 0.999793027128492,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 1
           }
         ],
         [
@@ -5238,7 +5843,9 @@
             "text": "Date",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999067634344101,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 2
           },
           {
             "page": 2,
@@ -5251,7 +5858,9 @@
             "text": "Date",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999077171087265,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 2
           }
         ],
         [
@@ -5266,7 +5875,9 @@
             "text": "Client",
             "engine": "ocr-rapidocr",
             "confidence": 0.9997963110605875,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 3
           },
           {
             "page": 2,
@@ -5279,7 +5890,9 @@
             "text": "Client",
             "engine": "ocr-rapidocr",
             "confidence": 0.9997955759366354,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 3
           }
         ],
         [
@@ -5294,7 +5907,9 @@
             "text": "SKU",
             "engine": "ocr-rapidocr",
             "confidence": 0.9998581012090048,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 4
           },
           {
             "page": 2,
@@ -5307,7 +5922,9 @@
             "text": "SKU",
             "engine": "ocr-rapidocr",
             "confidence": 0.9998598098754883,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 4
           }
         ],
         [
@@ -5322,7 +5939,9 @@
             "text": "Description",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999509074471213,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 5
           },
           {
             "page": 2,
@@ -5335,7 +5954,9 @@
             "text": "Description",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999512542377819,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 5
           }
         ],
         [
@@ -5350,7 +5971,9 @@
             "text": "Qty.",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999670684337616,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 6
           },
           {
             "page": 2,
@@ -5363,7 +5986,9 @@
             "text": "Qty.",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999630451202393,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 6
           }
         ],
         [
@@ -5378,7 +6003,9 @@
             "text": "Rate",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999229311943054,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 7
           },
           {
             "page": 2,
@@ -5391,7 +6018,9 @@
             "text": "Rate",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999232888221741,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 7
           }
         ],
         [
@@ -5406,7 +6035,9 @@
             "text": "Amt",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999356269836426,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 8
           },
           {
             "page": 2,
@@ -5419,7 +6050,9 @@
             "text": "Amt",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999366601308187,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 8
           }
         ],
         [
@@ -5434,7 +6067,9 @@
             "text": "Tax",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999332825342814,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 9
           },
           {
             "page": 2,
@@ -5447,7 +6082,9 @@
             "text": "Tax",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999334017435709,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 9
           }
         ],
         [
@@ -5462,7 +6099,9 @@
             "text": "Ship",
             "engine": "ocr-rapidocr",
             "confidence": 0.999907836318016,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 10
           },
           {
             "page": 2,
@@ -5475,7 +6114,9 @@
             "text": "Ship",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999072998762131,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 10
           }
         ],
         [
@@ -5490,7 +6131,9 @@
             "text": "Region",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999435544013977,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 11
           },
           {
             "page": 2,
@@ -5503,7 +6146,9 @@
             "text": "Region",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999431769053141,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 11
           }
         ],
         [
@@ -5518,7 +6163,9 @@
             "text": "Status",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999759594599406,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 12
           },
           {
             "page": 2,
@@ -5531,7 +6178,9 @@
             "text": "Status",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999759594599406,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 12
           }
         ]
       ],
@@ -7006,6 +7655,26 @@
       "page": 1,
       "row": null,
       "column": null,
+      "reason": "Merged body labels retained in their source cell with covered cells blank; no values were imputed across columns.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Merged body labels retained in their source cell with covered cells blank; no values were imputed across columns.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
       "reason": "OCR rapidocr; deskew correction -5.00 degrees; values require source review.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
@@ -7028,29 +7697,39 @@
       "route": "ocr",
       "engine": "rapidocr",
       "confidence": 0.9999167695641518,
-      "seconds": 25.17805530000078,
+      "seconds": 12.046022099995753,
       "attempts": [
         {
           "engine": "tesseract",
           "strategy": "deskew-300dpi",
           "tables": 1,
           "cells": 144,
-          "issues": 1,
+          "issues": 2,
           "score": 842.2,
-          "seconds": 6.164308199999141,
+          "seconds": 3.751317000002018,
           "error": "",
-          "selected": false
+          "selected": false,
+          "candidate_id": "p001-c01",
+          "phase": "ocr-independent-primary",
+          "execution": "sequential",
+          "rank": 2,
+          "selection_reason": ""
         },
         {
           "engine": "rapidocr",
           "strategy": "independent-language-aware-cross-check",
           "tables": 1,
           "cells": 144,
-          "issues": 1,
+          "issues": 2,
           "score": 842.998,
-          "seconds": 17.22670929999913,
+          "seconds": 7.230067000011331,
           "error": "",
-          "selected": true
+          "selected": true,
+          "candidate_id": "p001-c02",
+          "phase": "ocr-independent-cross-check",
+          "execution": "sequential",
+          "rank": 1,
+          "selection_reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
         }
       ],
       "error": "",
@@ -7089,8 +7768,64 @@
           "skew"
         ],
         "profiler_warnings": [],
+        "candidate_policy": {
+          "max_workers": 2,
+          "parallel_scope": "independent-candidates-only",
+          "dependent_recovery": "sequential",
+          "tie_breaker": "declared-plan-order"
+        },
+        "candidate_plan": [
+          {
+            "candidate_id": "p001-c01",
+            "engine": "tesseract",
+            "strategy": "deskew-300dpi",
+            "phase": "ocr-independent-primary",
+            "execution": "sequential"
+          },
+          {
+            "candidate_id": "p001-c02",
+            "engine": "rapidocr",
+            "strategy": "independent-language-aware-cross-check",
+            "phase": "ocr-independent-cross-check",
+            "execution": "sequential"
+          }
+        ],
+        "parallel_candidate_batches": [],
         "routing_decision": "ocr",
         "native_candidate_available": false,
+        "ocr_engine_capabilities": {
+          "tesseract": {
+            "available": true,
+            "installed": true,
+            "provider": "builtin-system",
+            "layout_aware": false,
+            "parallel_safe": true,
+            "requested_language_coverage": [
+              "eng"
+            ],
+            "reason": ""
+          },
+          "rapidocr": {
+            "available": true,
+            "installed": true,
+            "provider": "bundled-onnx",
+            "layout_aware": false,
+            "parallel_safe": true,
+            "requested_language_coverage": [
+              "eng"
+            ],
+            "reason": ""
+          },
+          "paddleocr": {
+            "available": false,
+            "installed": false,
+            "provider": "optional-adapter",
+            "layout_aware": true,
+            "parallel_safe": false,
+            "requested_language_coverage": [],
+            "reason": "PaddleOCR and its Paddle runtime are not installed"
+          }
+        },
         "ocr_engine_language_coverage": {
           "tesseract": [
             "eng"
@@ -7100,7 +7835,15 @@
           ]
         },
         "cross_check_executed": false,
-        "high_value_detected_after_ocr": true
+        "high_value_detected_after_ocr": true,
+        "candidate_selection": {
+          "candidate_id": "p001-c02",
+          "engine": "rapidocr",
+          "strategy": "independent-language-aware-cross-check",
+          "rank": 1,
+          "score": 842.998,
+          "reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
+        }
       }
     },
     {
@@ -7108,29 +7851,39 @@
       "route": "ocr",
       "engine": "rapidocr",
       "confidence": 0.9999265521764755,
-      "seconds": 11.672927999999956,
+      "seconds": 14.921165199993993,
       "attempts": [
         {
           "engine": "tesseract",
           "strategy": "deskew-300dpi",
           "tables": 1,
           "cells": 144,
-          "issues": 1,
+          "issues": 2,
           "score": 842.2,
-          "seconds": 2.005796500001452,
+          "seconds": 3.8785022999945795,
           "error": "",
-          "selected": false
+          "selected": false,
+          "candidate_id": "p002-c01",
+          "phase": "ocr-independent-primary",
+          "execution": "sequential",
+          "rank": 2,
+          "selection_reason": ""
         },
         {
           "engine": "rapidocr",
           "strategy": "independent-language-aware-cross-check",
           "tables": 1,
           "cells": 144,
-          "issues": 1,
+          "issues": 2,
           "score": 842.999,
-          "seconds": 8.550677500001257,
+          "seconds": 9.83660689998942,
           "error": "",
-          "selected": true
+          "selected": true,
+          "candidate_id": "p002-c02",
+          "phase": "ocr-independent-cross-check",
+          "execution": "sequential",
+          "rank": 1,
+          "selection_reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
         }
       ],
       "error": "",
@@ -7169,8 +7922,64 @@
           "skew"
         ],
         "profiler_warnings": [],
+        "candidate_policy": {
+          "max_workers": 2,
+          "parallel_scope": "independent-candidates-only",
+          "dependent_recovery": "sequential",
+          "tie_breaker": "declared-plan-order"
+        },
+        "candidate_plan": [
+          {
+            "candidate_id": "p002-c01",
+            "engine": "tesseract",
+            "strategy": "deskew-300dpi",
+            "phase": "ocr-independent-primary",
+            "execution": "sequential"
+          },
+          {
+            "candidate_id": "p002-c02",
+            "engine": "rapidocr",
+            "strategy": "independent-language-aware-cross-check",
+            "phase": "ocr-independent-cross-check",
+            "execution": "sequential"
+          }
+        ],
+        "parallel_candidate_batches": [],
         "routing_decision": "ocr",
         "native_candidate_available": false,
+        "ocr_engine_capabilities": {
+          "tesseract": {
+            "available": true,
+            "installed": true,
+            "provider": "builtin-system",
+            "layout_aware": false,
+            "parallel_safe": true,
+            "requested_language_coverage": [
+              "eng"
+            ],
+            "reason": ""
+          },
+          "rapidocr": {
+            "available": true,
+            "installed": true,
+            "provider": "bundled-onnx",
+            "layout_aware": false,
+            "parallel_safe": true,
+            "requested_language_coverage": [
+              "eng"
+            ],
+            "reason": ""
+          },
+          "paddleocr": {
+            "available": false,
+            "installed": false,
+            "provider": "optional-adapter",
+            "layout_aware": true,
+            "parallel_safe": false,
+            "requested_language_coverage": [],
+            "reason": "PaddleOCR and its Paddle runtime are not installed"
+          }
+        },
         "ocr_engine_language_coverage": {
           "tesseract": [
             "eng"
@@ -7180,11 +7989,19 @@
           ]
         },
         "cross_check_executed": false,
-        "high_value_detected_after_ocr": true
+        "high_value_detected_after_ocr": true,
+        "candidate_selection": {
+          "candidate_id": "p002-c02",
+          "engine": "rapidocr",
+          "strategy": "independent-language-aware-cross-check",
+          "rank": 1,
+          "score": 842.999,
+          "reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
+        }
       }
     }
   ],
-  "seconds": 37.68711660000008,
+  "seconds": 27.446087499993155,
   "source_sha256": "c7911f8108edcc5187bbe0902b8bcf5d50200902f5b5aad94817ee6a1139e9e0",
   "constraints": [
     {

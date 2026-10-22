@@ -1917,6 +1917,38 @@ code {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
+.evidence-state {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 10px;
+  margin: 0 0 10px;
+  padding: 8px 10px;
+  border: 1px solid #dce7da;
+  border-radius: 7px;
+  background: #f8fbf6;
+}
+.evidence-state > span {
+  color: #396b52;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.evidence-state > code {
+  justify-self: end;
+  color: #66806e;
+  font-size: 9px;
+}
+.evidence-state > small {
+  grid-column: 1 / -1;
+  color: #718371;
+  font-size: 9px;
+  line-height: 1.45;
+}
+.evidence-state.is-page-only {
+  border-color: #ead9ac;
+  background: #fffaf0;
+}
 .reading-list {
   border: 1px solid #e1e9dd;
   border-radius: 7px;
@@ -1989,6 +2021,30 @@ code {
 .readings > .disclosure {
   font-size: 9px;
   margin-top: 8px;
+}
+.cell-history {
+  margin-top: 10px;
+  border: 1px solid #e1e9dd;
+  border-radius: 7px;
+  padding: 8px 10px;
+}
+.cell-history summary {
+  color: #496b56;
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 700;
+}
+.cell-history p {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 9px;
+}
+.cell-history p small {
+  grid-column: 1 / -1;
+  color: #788975;
 }
 .form-title {
   display: flex;

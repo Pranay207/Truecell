@@ -20,7 +20,7 @@ Do not use personal, restricted or confidential documents. Record source, licenc
   --outputs evaluation-run
 ```
 
-This writes source-bound audit JSON, Excel workbooks and `run.json`. `run.json` records that truth was unavailable during extraction.
+This writes source-bound audit JSON, Excel workbooks and `run.json`. The command prints the SHA-256 of `run.json`. The evaluator must copy that digest to a separate record before truth is supplied; a digest kept only inside the output folder is not an independent seal. The run metadata records the evaluator-withheld protocol as an auditable declaration, not as cryptographic proof of what the extraction host could access.
 
 ## Score the saved run
 
@@ -28,9 +28,10 @@ This writes source-bound audit JSON, Excel workbooks and `run.json`. `run.json` 
 .\.venv\Scripts\python.exe scripts\blind_benchmark.py score `
   --manifest evaluation-pack\manifest.json `
   --outputs evaluation-run `
-  --truth evaluation-pack\truth
+  --truth evaluation-pack\truth `
+  --run-sha256 <digest-recorded-by-the-evaluator>
 ```
 
-Scoring reads the saved audits. It refuses a changed manifest, mismatched source hash, unsafe path or incomplete case. A pass requires exact cells, headers and shapes plus every annotated injected error.
+Scoring reads the saved audits. It refuses a changed `run.json` seal, extraction source fingerprint, manifest, audit, workbook, source hash, OCR-language route, unsafe path or incomplete case. Each case records a runtime signature covering the source, extraction code/options, installed OCR packages, bundled ONNX assets, Tesseract version and the requested installed language assets. It also verifies every `Data N` workbook value, cell type and number format against a fresh export from the frozen audit before scoring. A pass requires exact cells, headers and shapes plus every annotated injected error.
 
-Use `eval/blind_manifest.example.json` as a schema example and replace its zero hash. Report results only for the frozen pack; never present them as universal accuracy.
+The input manifest uses schema version 1; the generated `run.json` uses run-metadata schema version 2. These numbers version different records and are expected to differ. Use `eval/blind_manifest.example.json` as the manifest example and replace its zero hash. Report results only for the frozen pack; never present them as universal accuracy.

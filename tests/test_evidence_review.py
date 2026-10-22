@@ -12,7 +12,9 @@ from truecell.models import Result
 from truecell.pipeline import convert
 from truecell.review import (
     apply_edit,
+    cell_evidence,
     complete_review,
+    confidence_evidence,
     evidence_coverage,
     evidence_status,
     fingerprint,
@@ -65,6 +67,108 @@ def test_every_native_cell_has_a_real_source_box(bank):
     assert source["confidence"] is None
     report = evidence_coverage(bank)
     assert report["nonempty_cells"] and report["unlocated"] == 0 and report["complete"]
+
+
+def test_cell_evidence_envelope_distinguishes_native_scores_and_tracks_history(bank):
+    detail = cell_evidence(bank, 0, 10, 5)
+    assert detail["evidence_id"] == "T1:R11:C6"
+    assert detail["location"]["evidence_state"] == "exact_source_box"
+    assert detail["confidence"] == {
+        "kind": "native_text",
+        "score": None,
+        "label": "Native PDF text (no OCR score)",
+        "engine": "native-lines",
+        "meaning": "Text and geometry came directly from the PDF text layer.",
+    }
+    assert detail["original_reading"] == "1081.00"
+    assert detail["sources"][0]["confidence_evidence"]["kind"] == "native_text"
+
+    edited = apply_edit(
+        bank,
+        0,
+        10,
+        5,
+        "1064.00",
+        "Confirmed the source reading and corrected the arithmetic value.",
+    )
+    changed = cell_evidence(edited, 0, 10, 5)
+    assert changed["value"] == "1064.00"
+    assert changed["original_value"] == "1081.00"
+    assert changed["original_reading"] == "1081.00"
+    assert changed["correction_count"] == 1
+    assert changed["correction_history"][0]["before"] == "1081.00"
+
+
+def test_multilevel_header_evidence_reports_the_complete_source_path(bank):
+    bank.tables[0].headers[0] = "Identity | Code"
+    bank.tables[0].header_sources[0] = [
+        {
+            "page": 1,
+            "bbox": [0, 0, 100, 20],
+            "text": "Identity",
+            "engine": "native-lines",
+            "role": "merged_header_path",
+        },
+        {
+            "page": 1,
+            "bbox": [0, 20, 50, 40],
+            "text": "Code",
+            "engine": "native-lines",
+            "role": "merged_header_path",
+        },
+    ]
+
+    detail = cell_evidence(bank, 0, -1, 0)
+
+    assert detail["original_reading"] == "Identity | Code"
+    assert detail["location"]["evidence_state"] == "exact_source_box"
+
+
+def test_cell_evidence_retains_competing_reading_and_explicit_page_only_state(bank):
+    source = bank.tables[0].cell_sources[0][0][0]
+    bank.tables[0].cell_sources[0][0].append(
+        {
+            "page": source["page"],
+            "bbox": source["bbox"],
+            "text": "TXN-000X",
+            "engine": "ocr-tesseract",
+            "confidence": 0.71,
+            "role": "comparison",
+        }
+    )
+    detail = cell_evidence(bank, 0, 0, 0)
+    assert detail["alternative_readings"][0]["text"] == "TXN-000X"
+    assert detail["alternative_readings"][0]["confidence"]["kind"] == "ocr_score"
+
+    bank.tables[0].cell_sources[0][0] = []
+    page_only = cell_evidence(bank, 0, 0, 0)
+    assert page_only["location"]["evidence_state"] == "page_only_review"
+    assert page_only["location"]["page"] == 1
+    assert page_only["confidence"]["kind"] == "not_reported"
+
+
+def test_comparison_box_does_not_locate_the_current_working_value(bank):
+    primary = dict(bank.tables[0].cell_sources[0][0][0])
+    primary["bbox"] = None
+    comparison = {
+        **bank.tables[0].cell_sources[0][0][0],
+        "text": "TXN-ALTERNATIVE",
+        "role": "comparison",
+    }
+    bank.tables[0].cell_sources[0][0] = [primary, comparison]
+
+    detail = cell_evidence(bank, 0, 0, 0)
+    assert detail["location"]["evidence_state"] == "page_only_review"
+    assert detail["location"]["located"] is False
+    assert detail["alternative_readings"][0]["text"] == "TXN-ALTERNATIVE"
+    assert evidence_coverage(bank)["unlocated"] == 1
+    assert any(item["id"] == "evidence-0-0-0" for item in review_queue(bank, limit=None)["items"])
+
+
+def test_confidence_evidence_clamps_engine_scores_without_calling_them_accuracy():
+    detail = confidence_evidence({"engine": "ocr-test", "confidence": 1.2})
+    assert detail["score"] == 1.0 and detail["kind"] == "ocr_score"
+    assert "not measured accuracy" in detail["meaning"]
 
 
 def test_correction_preserves_source_and_invalidates_review(bank):
@@ -272,3 +376,38 @@ def test_export_contains_source_link_and_unreviewed_status(bank, tmp_path):
     assert workbook["Verification"]["B4"].value == "Unreviewed"
     assert workbook["Repair Proposals"].max_row > 1
     assert not any(c.data_type == "f" for s in workbook for row in s for c in row)
+
+
+def test_exported_cell_evidence_links_original_confidence_and_history(bank, tmp_path):
+    from truecell.export import export_workbook
+
+    edited = apply_edit(
+        bank,
+        0,
+        10,
+        5,
+        "1064.00",
+        "Confirmed against the source and corrected the arithmetic value.",
+    )
+    workbook = load_workbook(export_workbook(edited, tmp_path / "traceable.xlsx"))
+    evidence = workbook["Cell Evidence"]
+    columns = {cell.value: cell.column for cell in evidence[1]}
+    matching = [
+        row
+        for row in range(2, evidence.max_row + 1)
+        if evidence.cell(row, columns["Evidence ID"]).value == "T1:R11:C6"
+    ]
+    assert matching
+    row = matching[0]
+    assert evidence.cell(row, columns["Working value"]).value == "1064.00"
+    assert evidence.cell(row, columns["Original extracted value"]).value == "1081.00"
+    assert evidence.cell(row, columns["Original source reading"]).value == "1081.00"
+    assert evidence.cell(row, columns["Confidence type"]).value == "native_text"
+    assert evidence.cell(row, columns["Recognition score"]).value is None
+    assert (
+        evidence.cell(row, columns["Confidence meaning"]).value
+        == "Text and geometry came directly from the PDF text layer."
+    )
+    assert evidence.cell(row, columns["Corrections"]).value == 1
+    history = workbook["Correction History"]
+    assert history["A2"].value == "T1:R11:C6"

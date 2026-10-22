@@ -244,6 +244,9 @@ def header_tables(
             table.notes.append(
                 "Nearby text-only continuation lines joined to keyed rows; source boxes retained."
             )
+        from .table import annotate_unruled_structure
+
+        annotate_unruled_structure(table)
         output.append(table)
     return output
 

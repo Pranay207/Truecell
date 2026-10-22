@@ -37,6 +37,16 @@ def test_split_row_keeps_both_sources():
     }
 
 
+def test_split_row_does_not_duplicate_an_identical_spanning_label():
+    first = t(rows=[["A", "Hardware", "", ""]])
+    second = t(page=2, rows=[["", "Hardware", "3", "15"], ["B", "Next", "4", "20"]])
+
+    joined, issues = stitch([first, second])
+
+    assert joined[0].rows[0] == ["A", "Hardware", "3", "15"]
+    assert any(issue.code == "split_row_join" for issue in issues)
+
+
 def test_join_receipt_counts_headerless_continuation_without_claiming_header_removal():
     joined, _ = stitch(
         [
@@ -153,6 +163,69 @@ def test_merged_headers_flattened():
     assert len(found.rows) == 2
 
 
+def test_merged_headers_do_not_consume_a_text_only_first_data_row():
+    raw = [
+        ["Identity", None, "Info", None],
+        ["Code", "Name", "Category", "Status"],
+        ["A", "Alpha", "Blue", "Open"],
+        ["B", "Beta", "2", "3"],
+        ["C", "Gamma", "4", "5"],
+    ]
+
+    found = normalize(raw, 1, (0, 0, 400, 100), "native")
+
+    assert found.headers == [
+        "Identity | Code",
+        "Identity | Name",
+        "Info | Category",
+        "Info | Status",
+    ]
+    assert found.rows == raw[2:]
+
+
+def test_merged_leaf_header_does_not_consume_the_next_text_data_row():
+    raw = [
+        ["Identity", None, "Info", None],
+        ["Code", "Name", "Status", None],
+        ["A", "Alpha", "Open", "Yes"],
+        ["B", "Beta", "3", "4"],
+        ["C", "Gamma", "5", "6"],
+    ]
+    boxes = [
+        [(0, 0, 200, 20), None, (200, 0, 400, 20), None],
+        [(0, 20, 100, 40), (100, 20, 200, 40), (200, 20, 400, 40), None],
+        [(c * 100, 40, (c + 1) * 100, 60) for c in range(4)],
+        [(c * 100, 60, (c + 1) * 100, 80) for c in range(4)],
+        [(c * 100, 80, (c + 1) * 100, 100) for c in range(4)],
+    ]
+
+    found = normalize(raw, 1, (0, 0, 400, 100), "native-lines", cell_boxes=boxes)
+
+    assert found.headers == [
+        "Identity | Code",
+        "Identity | Name",
+        "Info | Status",
+        "Info | Status",
+    ]
+    assert found.rows == raw[2:]
+
+
+def test_headerless_ruled_leading_section_keeps_section_and_first_record():
+    raw = [
+        ["SECTION A", "", "", ""],
+        ["A", "Alpha", "Open", "Yes"],
+        ["B", "Beta", "3", "4"],
+        ["C", "Gamma", "5", "6"],
+    ]
+    boxes = [[(c * 100, r * 20, (c + 1) * 100, (r + 1) * 20) for c in range(4)] for r in range(4)]
+
+    found = normalize(raw, 1, (0, 0, 400, 80), "native-lines", cell_boxes=boxes)
+
+    assert found.headers == ["Column 1", "Column 2", "Column 3", "Column 4"]
+    assert found.rows == raw
+    assert found.cell_sources[0][0][0]["role"] == "nested_group_label"
+
+
 def test_ragged_headers_are_extended_without_losing_spans():
     boxes = [
         [(0, 0, 100, 10)],
@@ -224,6 +297,8 @@ def test_vertical_expansion_requires_native_ruled_spanning_geometry():
     ]
     found = normalize(raw, 1, (0, 0, 90, 30), "native-text", cell_boxes=spanning)
     assert found.rows[1][0] == ""
+    found = normalize(raw, 1, (0, 0, 90, 30), "ocr-test-words", cell_boxes=spanning)
+    assert found.rows[1][0] == ""
 
 
 def test_vertical_expansion_does_not_impute_numeric_cells():
@@ -253,6 +328,77 @@ def test_vertical_header_span_is_only_flattened_as_a_header():
     found = normalize(raw, 1, (0, 0, 90, 40), "native-lines", cell_boxes=boxes)
     assert found.headers == ["Code", "Movement | In", "Movement | Out"]
     assert found.rows == [["A", "2", "1"], ["B", "3", "2"]]
+
+
+def test_three_axis_merged_headers_keep_source_backed_paths():
+    raw = [
+        ["Identity", None, "Operations", None, "Finance", None],
+        [None, None, "Fulfillment", None, "Revenue", None],
+        ["Code", "Name", "Planned", "Actual", "Gross", "Net"],
+        ["A", "Alpha", "1", "2", "3", "4"],
+        ["B", "Beta", "5", "6", "7", "8"],
+    ]
+    boxes = [
+        [(0, 0, 200, 30), None, (200, 0, 400, 15), None, (400, 0, 600, 15), None],
+        [None, None, (200, 15, 400, 30), None, (400, 15, 600, 30), None],
+        [(c * 100, 30, (c + 1) * 100, 45) for c in range(6)],
+        [(c * 100, 45, (c + 1) * 100, 60) for c in range(6)],
+        [(c * 100, 60, (c + 1) * 100, 75) for c in range(6)],
+    ]
+
+    found = normalize(raw, 1, (0, 0, 600, 75), "native-lines", cell_boxes=boxes)
+
+    assert found.headers == [
+        "Identity | Code",
+        "Identity | Name",
+        "Operations | Fulfillment | Planned",
+        "Operations | Fulfillment | Actual",
+        "Finance | Revenue | Gross",
+        "Finance | Revenue | Net",
+    ]
+    assert found.rows == raw[3:]
+    assert [source["text"] for source in found.header_sources[3]] == [
+        "Operations",
+        "Fulfillment",
+        "Actual",
+    ]
+    assert all(source["role"] == "merged_header_path" for source in found.header_sources[3])
+
+
+def test_horizontal_body_merge_is_retained_without_filling_covered_columns():
+    raw = [
+        ["Code", "Description", "Qty", "Amount"],
+        ["BUNDLE A", None, "3", "30"],
+        ["A1", "First", "1", "10"],
+        ["A2", "Second", "2", "20"],
+    ]
+    boxes = [
+        [(0, 0, 100, 20), (100, 0, 200, 20), (200, 0, 300, 20), (300, 0, 400, 20)],
+        [(0, 20, 200, 40), None, (200, 20, 300, 40), (300, 20, 400, 40)],
+        [(0, 40, 100, 60), (100, 40, 200, 60), (200, 40, 300, 60), (300, 40, 400, 60)],
+        [(0, 60, 100, 80), (100, 60, 200, 80), (200, 60, 300, 80), (300, 60, 400, 80)],
+    ]
+
+    found = normalize(raw, 1, (0, 0, 400, 80), "native-lines", cell_boxes=boxes)
+
+    assert found.rows[0] == ["BUNDLE A", "", "3", "30"]
+    assert found.cell_sources[0][0][0]["role"] == "horizontal_merge_label"
+    assert found.cell_sources[0][1][0]["text"] == ""
+    assert any("covered cells blank" in note for note in found.notes)
+
+
+def test_unruled_vertical_group_gap_is_disclosed_without_imputation():
+    raw = [["Group", "Item", "Qty"], ["Alpha", "One", "1"], [None, "Two", "2"]]
+    boxes = [
+        [(0, 0, 30, 10), (30, 0, 60, 10), (60, 0, 90, 10)],
+        [(0, 10, 30, 20), (30, 10, 60, 20), (60, 10, 90, 20)],
+        [None, (30, 20, 60, 30), (60, 20, 90, 30)],
+    ]
+
+    found = normalize(raw, 1, (0, 0, 90, 30), "native-text", cell_boxes=boxes)
+
+    assert found.rows[1][0] == ""
+    assert any("remain blank" in note for note in found.notes)
 
 
 def test_footer_removed():

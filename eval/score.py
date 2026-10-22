@@ -118,7 +118,7 @@ def write_report(metrics: list[dict], output: Path) -> None:
         "## Known limitations / failures",
         "",
         "- OCR confidence is not a calibrated accuracy probability. High-confidence digit mistakes can still occur.",
-        "- Explicitly ruled vertical group spans in native-PDF body rows are supported conservatively. OCR/unruled spans, arbitrary multi-axis nested merges, borderless segmentation, two unrelated tables with similar geometry, and cross-page wrapped records can remain ambiguous. Values are retained for review; no business-row deduplication is performed.",
+        "- Source-backed merged headers and explicitly ruled vertical or horizontal spans are supported conservatively for native and OCR tables. Ambiguous unruled inheritance, arbitrary irregular multi-axis nested layouts, borderless segmentation, two unrelated tables with similar geometry, and cross-page wrapped records can remain ambiguous. Values are retained for review; no business-row deduplication is performed.",
         "- Arithmetic inference needs enough varied rows and a strong majority. Checks may be skipped on short/heterogeneous tables. Inferred relations can be coincidental. Candidate selection prioritizes trusted native grid geometry but can still select the wrong layout; disagreements are audited.",
         "- Ambiguous day/month dates and comma-decimal numeric strings remain text. Structural total inference and multilingual total vocabularies are limited.",
         "- Phone-photo perspective, extreme rotation and handwritten text are not guaranteed.",

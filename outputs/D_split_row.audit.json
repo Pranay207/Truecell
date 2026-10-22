@@ -62,7 +62,9 @@
           ]
         ]
       ],
-      "notes": [],
+      "notes": [
+        "Merged body labels retained in their source cell with covered cells blank; no values were imputed across columns."
+      ],
       "row_engines": [
         "native-lines",
         "native-lines+native-lines",
@@ -82,7 +84,9 @@
               "text": "A1",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 1
             }
           ],
           [
@@ -97,7 +101,10 @@
               "text": "Complete",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 2,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -112,7 +119,9 @@
               "text": "2",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 3
             }
           ],
           [
@@ -127,7 +136,9 @@
               "text": "10",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 4
             }
           ]
         ],
@@ -144,7 +155,9 @@
               "text": "A2",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 1
             },
             {
               "page": 2,
@@ -157,7 +170,9 @@
               "text": "",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 1
             }
           ],
           [
@@ -172,7 +187,10 @@
               "text": "Long item",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 2,
+              "role": "horizontal_merge_label"
             },
             {
               "page": 2,
@@ -185,7 +203,10 @@
               "text": "continued",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 2,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -200,7 +221,9 @@
               "text": "",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 3
             },
             {
               "page": 2,
@@ -213,7 +236,9 @@
               "text": "3",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 3
             }
           ],
           [
@@ -228,7 +253,9 @@
               "text": "",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 4
             },
             {
               "page": 2,
@@ -241,7 +268,9 @@
               "text": "15",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 4
             }
           ]
         ],
@@ -258,7 +287,9 @@
               "text": "A3",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 1
             }
           ],
           [
@@ -273,7 +304,10 @@
               "text": "Next",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 2,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -288,7 +322,9 @@
               "text": "4",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 3
             }
           ],
           [
@@ -303,7 +339,9 @@
               "text": "20",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 4
             }
           ]
         ]
@@ -321,7 +359,9 @@
             "text": "Ref",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 1
           },
           {
             "page": 2,
@@ -334,7 +374,9 @@
             "text": "Ref",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 1
           }
         ],
         [
@@ -349,7 +391,9 @@
             "text": "Description",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 2
           },
           {
             "page": 2,
@@ -362,7 +406,9 @@
             "text": "Description",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 2
           }
         ],
         [
@@ -377,7 +423,9 @@
             "text": "Units",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 3
           },
           {
             "page": 2,
@@ -390,7 +438,9 @@
             "text": "Units",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 3
           }
         ],
         [
@@ -405,7 +455,9 @@
             "text": "Value",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 4
           },
           {
             "page": 2,
@@ -418,7 +470,9 @@
             "text": "Value",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 4
           }
         ]
       ],
@@ -477,6 +531,26 @@
       "suggestion": "Review the source document.",
       "code": "split_row_join",
       "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Merged body labels retained in their source cell with covered cells blank; no values were imputed across columns.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Merged body labels retained in their source cell with covered cells blank; no values were imputed across columns.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
     }
   ],
   "pages": [
@@ -485,18 +559,23 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.05820809999931953,
+      "seconds": 0.029602700000396,
       "attempts": [
         {
           "engine": "native",
           "strategy": "lines",
           "tables": 1,
           "cells": 6,
-          "issues": 0,
+          "issues": 1,
           "score": 1030.6,
-          "seconds": 0.0331994999996823,
+          "seconds": 0.0173718000005465,
           "error": "",
-          "selected": true
+          "selected": true,
+          "candidate_id": "p001-c01",
+          "phase": "native-primary",
+          "execution": "sequential",
+          "rank": 1,
+          "selection_reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
         }
       ],
       "error": "",
@@ -535,8 +614,32 @@
         "high_value_content": false,
         "risk_reasons": [],
         "profiler_warnings": [],
+        "candidate_policy": {
+          "max_workers": 2,
+          "parallel_scope": "independent-candidates-only",
+          "dependent_recovery": "sequential",
+          "tie_breaker": "declared-plan-order"
+        },
+        "candidate_plan": [
+          {
+            "candidate_id": "p001-c01",
+            "engine": "native",
+            "strategy": "lines",
+            "phase": "native-primary",
+            "execution": "sequential"
+          }
+        ],
+        "parallel_candidate_batches": [],
         "routing_decision": "digital",
-        "native_candidate_available": true
+        "native_candidate_available": true,
+        "candidate_selection": {
+          "candidate_id": "p001-c01",
+          "engine": "native",
+          "strategy": "lines",
+          "rank": 1,
+          "score": 1030.6,
+          "reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
+        }
       }
     },
     {
@@ -544,18 +647,23 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.05989020000015444,
+      "seconds": 0.030348000000230968,
       "attempts": [
         {
           "engine": "native",
           "strategy": "lines",
           "tables": 1,
           "cells": 7,
-          "issues": 0,
+          "issues": 1,
           "score": 1028.6,
-          "seconds": 0.033174799998960225,
+          "seconds": 0.018560900003649294,
           "error": "",
-          "selected": true
+          "selected": true,
+          "candidate_id": "p002-c01",
+          "phase": "native-primary",
+          "execution": "sequential",
+          "rank": 1,
+          "selection_reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
         }
       ],
       "error": "",
@@ -594,12 +702,36 @@
         "high_value_content": false,
         "risk_reasons": [],
         "profiler_warnings": [],
+        "candidate_policy": {
+          "max_workers": 2,
+          "parallel_scope": "independent-candidates-only",
+          "dependent_recovery": "sequential",
+          "tie_breaker": "declared-plan-order"
+        },
+        "candidate_plan": [
+          {
+            "candidate_id": "p002-c01",
+            "engine": "native",
+            "strategy": "lines",
+            "phase": "native-primary",
+            "execution": "sequential"
+          }
+        ],
+        "parallel_candidate_batches": [],
         "routing_decision": "digital",
-        "native_candidate_available": true
+        "native_candidate_available": true,
+        "candidate_selection": {
+          "candidate_id": "p002-c01",
+          "engine": "native",
+          "strategy": "lines",
+          "rank": 1,
+          "score": 1028.6,
+          "reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
+        }
       }
     }
   ],
-  "seconds": 0.13043010000001232,
+  "seconds": 0.07623740000417456,
   "source_sha256": "95bbd1f5cbbdf234d782c9db7f7f3e09e84aa3bbfe153a907a3ab71a11403ea2",
   "constraints": [],
   "proposals": [],

@@ -1,6 +1,6 @@
-# Truecell Studio frontend
+# Truecell frontend
 
-React + TypeScript interface for the local Truecell extraction engine. The Python server serves `dist/`; judges do not need Node for the prebuilt interface.
+React + TypeScript interface for the local Truecell extraction engine. The Python server serves `dist/`; end users do not need Node for the prebuilt interface.
 
 ## Development
 
@@ -20,21 +20,22 @@ All routes are same-origin, rooted at `/api`; `src/api.ts` centralizes requests.
 | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `GET /health`                       | `{status}`                                                                                                                                                |
 | `GET /jobs`                         | `{jobs: Job[]}`                                                                                                                                           |
-| `POST /jobs`                        | Multipart `file`, `verify`, `force_ocr`. Boolean fields are strings. Starts processing and returns a Job.                                                 |
+| `POST /jobs`                        | Multipart `file`, `verify`, `force_ocr`, `ocr_languages`. Boolean fields are strings. Starts processing and returns a Job.                                |
 | `GET /jobs/{id}`                    | Job metadata and progress; includes `result`, `fingerprint`, `coverage` once available. Polled while processing.                                          |
 | `DELETE /jobs/{id}`                 | JSON `{confirmation}` containing the exact workspace filename. Removes an idle local workspace and returns `{deleted,name}`; active jobs return 409.      |
-| `POST /jobs/{id}/process`           | Resumes an untouched failed/partial job, or returns a new forked workspace when the existing job has edits/review.                                       |
+| `POST /jobs/{id}/process`           | JSON `{verify,force_ocr,ocr_languages}`. Resumes an untouched failed/partial job, or returns a new forked workspace when the existing job has edits/review. |
 | `GET /jobs/{id}/result`             | Current extraction result with snapshot fingerprint.                                                                                                    |
 | `PATCH /jobs/{id}/cells`            | JSON `{table,row,column,value,note,fingerprint}`; returns updated Job. Indices start at zero; row `-1` means header. Stale fingerprint should return 409. |
 | `POST /jobs/{id}/review`            | JSON `{source_checked:true,note,fingerprint}`; returns updated Job.                                                                                       |
 | `POST /jobs/{id}/revalidate`        | Re-runs validation on the current saved working result.                                                                                                  |
-| `GET /jobs/{id}/evidence`           | Cell/header evidence and source coverage for the current result.                                                                                         |
+| `GET /jobs/{id}/evidence`           | Query `{table,row,column,fingerprint}`; returns source coverage for that exact current snapshot.                                                         |
 | `POST /jobs/{id}/preview`           | Evaluates one proposed cell value on a disposable copy and returns before/after validation counts.                                                       |
 | `POST /jobs/{id}/challenge`         | Runs bounded controlled mutations against the production validator without saving.                                                                      |
 | `GET /jobs/{id}/pages/{page}/info`  | `{width,height}` in PDF points. Page starts at 1. Required for accurate source-box placement.                                                             |
 | `GET /jobs/{id}/pages/{page}/image` | PNG image of original source page.                                                                                                                        |
 | `GET /jobs/{id}/source`             | Original uploaded document.                                                                                                                               |
 | `GET /jobs/{id}/export.xlsx`        | Current Excel with evidence and validation.                                                                                                               |
+| `GET /jobs/{id}/export.csv`         | Current table as CSV; use the table query when selecting among multiple extracted tables.                                                                 |
 | `GET /jobs/{id}/audit.json`         | Current complete audit JSON.                                                                                                                              |
 | `GET /jobs/{id}/baseline.json`      | Immutable original extraction JSON.                                                                                                                       |
 | `GET /samples`                      | `{samples:[{filename,name,pages?}]}`; public/dummy examples only.                                                                                         |
@@ -54,6 +55,6 @@ Missing source previews leave result/export controls usable. No-table results re
 
 - `POST /jobs/{id}/preview`: JSON `{table,row,column,value,fingerprint}`. Returns `{observed,proposed,before:{findings,failed_equation_checks},after:{findings,failed_equation_checks},fingerprint,saved:false}`. This changes only a disposable copy.
 - `POST /jobs/{id}/challenge`: JSON `{table,fingerprint}`. Returns the real validator-sensitivity report, including caught/tested, unmodeled columns, injection cases, tested/available row counts and `saved:false`. It uses at most 24 edits on the first 120 rows. This is not an OCR accuracy measurement.
-- `POST /jobs/{id}/process`: JSON `{verify,force_ocr}`. Reuses verified checkpoints for untouched jobs. Edited/reviewed copies fork into a new job with `forked_from`, preserving the original workspace. The returned ID can differ from the requested ID.
+- `POST /jobs/{id}/process`: JSON `{verify,force_ocr,ocr_languages}`. Reuses verified checkpoints for untouched jobs. Edited/reviewed copies fork into a new job with `forked_from`, preserving the original workspace. The returned ID can differ from the requested ID.
 
 The Challenge panel and preview receipts never apply edits. Pending source checks, preview/challenge reports and correction drafts are bound to the current job/snapshot/target. The Audit panel displays recent correction history; its complete record is included in the audit JSON.

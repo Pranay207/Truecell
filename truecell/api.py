@@ -33,21 +33,29 @@ from .assurance import challenge
 from .constraints import analyze, coverage
 from .export import export_csv, export_workbook
 from .models import Result
-from .ocr import available_engines, tesseract_languages
+from .ocr import available_engines, engine_capabilities, tesseract_languages
 from .pipeline import convert
 from .profiling import normalize_languages
 from .review import (
     apply_edit,
+    cell_evidence,
     complete_review,
     evidence_coverage,
-    evidence_status,
     fingerprint,
     quality_state,
     review_current,
     review_queue,
     set_item_review,
 )
-from .router import IMAGE_EXTENSIONS, MAX_PAGES, open_document, render_page
+from .router import (
+    IMAGE_EXTENSIONS,
+    MAX_IMAGE_FRAMES,
+    MAX_IMAGE_PIXELS,
+    MAX_PAGES,
+    MAX_TOTAL_IMAGE_PIXELS,
+    open_document,
+    render_page,
+)
 from .validate import validate
 from .workspace import (
     ROOT,
@@ -454,8 +462,12 @@ def create_app(
             "status": "ok",
             "offline": True,
             "max_pages": MAX_PAGES,
+            "max_image_frames": MAX_IMAGE_FRAMES,
+            "max_image_pixels_per_frame": MAX_IMAGE_PIXELS,
+            "max_image_pixels_total": MAX_TOTAL_IMAGE_PIXELS,
             "max_upload_bytes": jobs.maximum,
             "ocr_engines": available_engines(),
+            "ocr_capabilities": engine_capabilities(),
             "tesseract_languages": list(tesseract_languages()),
             "network_mode": "lan"
             if lan_host
@@ -720,32 +732,19 @@ def create_app(
             return jobs.detail(identifier)
 
     @application.get("/api/jobs/{identifier}/evidence")
-    def evidence(identifier: str, table: int, row: int, column: int):
+    def evidence(
+        identifier: str,
+        table: int,
+        row: int,
+        column: int,
+        fingerprint: str | None = None,
+    ):
         result = jobs.result(identifier)
-        if not 0 <= table < len(result.tables):
-            raise HTTPException(400, "Invalid table index.")
-        target = result.tables[table]
-        if not -1 <= row < len(target.rows):
-            raise HTTPException(400, "Invalid source row.")
-        values = target.headers if row == -1 else target.rows[row]
-        if not 0 <= column < len(values):
-            raise HTTPException(400, "Invalid column index.")
-        if row == -1:
-            records = target.header_sources[column] if column < len(target.header_sources) else []
-            fallback_page = target.page
-        else:
-            source_row = target.cell_sources[row] if row < len(target.cell_sources) else []
-            records = source_row[column] if column < len(source_row) else []
-            fallback_page = (
-                target.provenance[row][0][0]
-                if row < len(target.provenance) and target.provenance[row]
-                else target.page
-            )
-        return {
-            "value": values[column],
-            "sources": records,
-            "location": evidence_status(values[column], records, fallback_page),
-        }
+        try:
+            jobs.check_snapshot(result, fingerprint)
+            return cell_evidence(result, table, row, column)
+        except ValueError as exc:
+            raise HTTPException(400, str(exc)) from exc
 
     def checked_source(identifier: str) -> Path:
         source = jobs.source(identifier)

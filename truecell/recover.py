@@ -21,7 +21,7 @@ def candidate_key(candidate: tuple) -> tuple:
         for t in tables
     )
     if not tables:
-        return False, -1, score
+        return False, False, -1, score
     if all(t.engine == "native-anchors" for t in tables):
         trusted = True
     cells = sum(len(row) for t in tables for row in t.rows)
@@ -51,7 +51,11 @@ def candidate_key(candidate: tuple) -> tuple:
             for issue in validate(t)
         )
         quality -= min(0.4, structural / max(1, cells))
-    return trusted, round(quality, 1), score
+    # A structurally dense rotated OCR hallucination can look superficially
+    # complete while validation-adjusted content evidence is net negative.
+    # Keep layout quality ahead of score only among credible candidates.
+    credible = trusted or score >= 0
+    return trusted, credible, round(quality, 1), score
 
 
 def evaluate(tables: list[Table]) -> tuple[float, int, int]:

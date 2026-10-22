@@ -77,6 +77,11 @@ class Attempt:
     seconds: float
     error: str = ""
     selected: bool = False
+    candidate_id: str = ""
+    phase: str = ""
+    execution: str = "sequential"
+    rank: int | None = None
+    selection_reason: str = ""
 
 
 @dataclass

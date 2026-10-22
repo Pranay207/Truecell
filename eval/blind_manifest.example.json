@@ -8,7 +8,8 @@
       "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "truth": "invoice-001.truth.json",
       "category": "invoice",
-      "language": "English"
+      "language": "English",
+      "ocr_languages": ["eng"]
     }
   ]
 }

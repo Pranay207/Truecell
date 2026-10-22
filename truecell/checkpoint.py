@@ -40,6 +40,7 @@ def signature(source_sha256: str, options: dict) -> str:
     import subprocess
 
     from .ocr import available_engines, tesseract_path
+    from .profiling import normalize_languages
 
     ocr_version = ""
     binary = tesseract_path()
@@ -52,8 +53,11 @@ def signature(source_sha256: str, options: dict) -> str:
         ]
         if os.getenv("TESSDATA_PREFIX"):
             directories.insert(0, Path(os.environ["TESSDATA_PREFIX"]))
+        requested_languages = normalize_languages(options.get("ocr_languages"))
+        traineddata = [f"{language}.traineddata" for language in requested_languages]
+        traineddata.append("osd.traineddata")
         for folder in directories:
-            for name in ["eng.traineddata", "osd.traineddata"]:
+            for name in dict.fromkeys(traineddata):
                 if (folder / name).is_file():
                     assets["tesseract/" + str(folder / name)] = source_hash(folder / name)
         try:

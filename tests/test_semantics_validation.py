@@ -84,6 +84,26 @@ def test_title_allows_a_text_only_leaf_header_without_promoting_the_title():
     ]
 
 
+def test_long_full_width_numbered_section_caption_is_not_a_parent_header():
+    raw = [
+        ["Regional training attendance - section 10", None, None, None],
+        ["Batch", "Date", "Participant Name", "Score"],
+        ["BT-0001", "2026-04-02", "Anita Rao", "84"],
+        ["BT-0002", "2026-04-03", "Bina Das", "91"],
+    ]
+    boxes = [
+        [(0, 0, 400, 20), None, None, None],
+        [(0, 20, 100, 40), (100, 20, 200, 40), (200, 20, 300, 40), (300, 20, 400, 40)],
+        [(0, 40, 100, 60), (100, 40, 200, 60), (200, 40, 300, 60), (300, 40, 400, 60)],
+        [(0, 60, 100, 80), (100, 60, 200, 80), (200, 60, 300, 80), (300, 60, 400, 80)],
+    ]
+
+    table = normalize(raw, 10, (0, 0, 400, 80), "native-lines", cell_boxes=boxes)
+
+    assert table.headers == ["Batch", "Date", "Participant Name", "Score"]
+    assert table.page_summaries[0]["text"] == "Regional training attendance - section 10"
+
+
 def test_two_text_fields_on_one_continuation_line_join_with_source_evidence():
     words = (
         _line(["ID", "Name", "Address", "Qty", "Rate", "Amount"], 20, bold=True)

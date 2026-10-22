@@ -13,6 +13,7 @@ import {
 import { JoinReceipt } from "./JoinReceipt";
 import type {
   Cell,
+  CellEvidence,
   ChallengeReport,
   Job,
   PreviewReport,
@@ -1767,10 +1768,12 @@ function Workspace({
               )}
             </aside>
           </section>
-          {selected && showEvidence && (
+          {selected && showEvidence && job.fingerprint && (
             <Evidence
               key={`${job.id}:${job.fingerprint}:${selected.table}:${selected.row}:${selected.column}`}
               result={result}
+              jobId={job.id}
+              fingerprint={job.fingerprint}
               cell={selected}
               records={records}
               saving={saving || processing}
@@ -2161,6 +2164,8 @@ function ReviewQueueCard({
 
 function Evidence({
   result,
+  jobId,
+  fingerprint,
   cell,
   records,
   saving,
@@ -2170,6 +2175,8 @@ function Evidence({
   onSave,
 }: {
   result: Result;
+  jobId: string;
+  fingerprint: string;
   cell: Cell;
   records: SourceRecord[];
   saving: boolean;
@@ -2179,14 +2186,47 @@ function Evidence({
   onSave: (value: string, note: string) => void;
 }) {
   const current = cellValue(result, cell);
-  const hasSourceBox = records.some(
+  const [evidence, setEvidence] = useState<CellEvidence | null>(null);
+  const [evidenceError, setEvidenceError] = useState("");
+  useEffect(() => {
+    let activeRequest = true;
+    setEvidence(null);
+    setEvidenceError("");
+    api
+      .evidence(jobId, cell, fingerprint)
+      .then((detail) => {
+        if (activeRequest) setEvidence(detail);
+      })
+      .catch((error) => {
+        if (activeRequest) setEvidenceError(message(error));
+      });
+    return () => {
+      activeRequest = false;
+    };
+  }, [jobId, fingerprint, cell.table, cell.row, cell.column]);
+  const sourceRecords = evidence?.sources ?? records;
+  const hasSourceBox = sourceRecords.some(
     (record) =>
+      record.role !== "comparison" &&
       Array.isArray(record.bbox) &&
       record.bbox.length === 4 &&
       record.bbox.every((value) => Number.isFinite(value)) &&
       record.bbox[2] > record.bbox[0] &&
       record.bbox[3] > record.bbox[1],
   );
+  const fallbackEvidenceState = !current.trim()
+    ? "empty_cell"
+    : hasSourceBox
+      ? "exact_source_box"
+      : "page_only_review";
+  const evidenceState = evidence?.location.evidence_state ?? fallbackEvidenceState;
+  const evidenceReason =
+    evidence?.location.reason ??
+    (evidenceState === "empty_cell"
+      ? "The extracted cell is empty; no source location is required."
+      : evidenceState === "exact_source_box"
+        ? "An exact source box is available."
+        : "Inspect the mapped source page before accepting this value.");
   const canEdit =
     cell.column <
     (cell.row < 0
@@ -2251,10 +2291,26 @@ function Evidence({
             <span>WORKING VALUE</span>
             <code>{current || "(empty)"}</code>
           </div>
-          {records.length ? (
+          <div
+            className={`evidence-state ${
+              evidenceState === "exact_source_box" ? "is-located" : "is-page-only"
+            }`}
+          >
+            <span>{
+              evidenceState === "exact_source_box"
+                ? "Exact source box"
+                : evidenceState === "empty_cell"
+                  ? "Empty cell"
+                  : "Full-page review"
+            }</span>
+            <code>{evidence?.evidence_id ?? "Loading evidence ID…"}</code>
+            <small>{evidenceReason}</small>
+          </div>
+          {evidenceError && <p className="field-error">{evidenceError}</p>}
+          {sourceRecords.length ? (
             <>
               <div className="reading-list">
-                {records.map((r, i) => (
+                {sourceRecords.map((r, i) => (
                   <button key={i} onClick={() => onPage(r.page)}>
                   <span className="reading-page">p.{r.page}</span>
                   <span>
@@ -2271,11 +2327,12 @@ function Evidence({
                     </small>
                   </span>
                   <span className="reading-score">
-                    {r.confidence == null
-                      ? r.engine?.startsWith("native")
-                        ? "Native text"
-                        : "Score unavailable"
-                      : `${Math.round(r.confidence * 100)}% OCR score`}
+                    {r.confidence_evidence?.label ??
+                      (r.confidence == null
+                        ? r.engine?.startsWith("native")
+                          ? "Native PDF text · no OCR score"
+                          : "Score unavailable"
+                        : `${Math.round(r.confidence * 100)}% recognition score`)}
                   </span>
                   <Icon name="eye" size={14} />
                   </button>
@@ -2299,6 +2356,21 @@ function Evidence({
             OCR recognition scores describe the engine’s reading, not measured
             extraction accuracy.
           </p>
+          {!!evidence?.correction_history.length && (
+            <details className="cell-history">
+              <summary>
+                Correction history · {evidence.correction_history.length}
+              </summary>
+              {evidence.correction_history.map((event, index) => (
+                <p key={String(event.sha256 ?? index)}>
+                  <code>{String(event.before ?? "")}</code>
+                  <Icon name="arrow" size={12} />
+                  <code>{String(event.after ?? "")}</code>
+                  <small>{String(event.note ?? "Source-reviewed correction")}</small>
+                </p>
+              ))}
+            </details>
+          )}
           {proposal && (
             <details className="proposal-receipts" open>
               <summary>

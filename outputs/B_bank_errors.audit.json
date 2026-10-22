@@ -290,7 +290,9 @@
           ]
         ]
       ],
-      "notes": [],
+      "notes": [
+        "Merged body labels retained in their source cell with covered cells blank; no values were imputed across columns."
+      ],
       "row_engines": [
         "native-lines",
         "native-lines",
@@ -326,7 +328,9 @@
               "text": "TX-001",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 1
             }
           ],
           [
@@ -341,7 +345,9 @@
               "text": "2026-10-01",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 2
             }
           ],
           [
@@ -356,7 +362,10 @@
               "text": "Entry 1",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -371,7 +380,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 4
             }
           ],
           [
@@ -386,7 +397,9 @@
               "text": "40.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 5
             }
           ],
           [
@@ -401,7 +414,9 @@
               "text": "1040.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 6
             }
           ]
         ],
@@ -418,7 +433,9 @@
               "text": "TX-002",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 1
             }
           ],
           [
@@ -433,7 +450,9 @@
               "text": "2026-10-02",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 2
             }
           ],
           [
@@ -448,7 +467,10 @@
               "text": "Entry 2",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -463,7 +485,9 @@
               "text": "12.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 4
             }
           ],
           [
@@ -478,7 +502,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 5
             }
           ],
           [
@@ -493,7 +519,9 @@
               "text": "1028.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 6
             }
           ]
         ],
@@ -510,7 +538,9 @@
               "text": "TX-003",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 1
             }
           ],
           [
@@ -525,7 +555,9 @@
               "text": "2026-10-03",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 2
             }
           ],
           [
@@ -540,7 +572,10 @@
               "text": "Entry 3",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -555,7 +590,9 @@
               "text": "13.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 4
             }
           ],
           [
@@ -570,7 +607,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 5
             }
           ],
           [
@@ -585,7 +624,9 @@
               "text": "1015.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 6
             }
           ]
         ],
@@ -602,7 +643,9 @@
               "text": "TX-004",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 1
             }
           ],
           [
@@ -617,7 +660,9 @@
               "text": "2026-10-04",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 2
             }
           ],
           [
@@ -632,7 +677,10 @@
               "text": "Entry 4",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -647,7 +695,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 4
             }
           ],
           [
@@ -662,7 +712,9 @@
               "text": "43.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 5
             }
           ],
           [
@@ -677,7 +729,9 @@
               "text": "1058.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 6
             }
           ]
         ],
@@ -694,7 +748,9 @@
               "text": "TX-005",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 1
             }
           ],
           [
@@ -709,7 +765,9 @@
               "text": "2026-10-05",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 2
             }
           ],
           [
@@ -724,7 +782,10 @@
               "text": "Entry 5",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -739,7 +800,9 @@
               "text": "15.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 4
             }
           ],
           [
@@ -754,7 +817,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 5
             }
           ],
           [
@@ -769,7 +834,9 @@
               "text": "1043.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 6
             }
           ]
         ],
@@ -786,7 +853,9 @@
               "text": "TX-006",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 1
             }
           ],
           [
@@ -801,7 +870,9 @@
               "text": "2026-10-06",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 2
             }
           ],
           [
@@ -816,7 +887,10 @@
               "text": "Entry 6",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -831,7 +905,9 @@
               "text": "16.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 4
             }
           ],
           [
@@ -846,7 +922,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 5
             }
           ],
           [
@@ -861,7 +939,9 @@
               "text": "1027.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 6
             }
           ]
         ],
@@ -878,7 +958,9 @@
               "text": "TX-007",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 1
             }
           ],
           [
@@ -893,7 +975,9 @@
               "text": "2026-10-07",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 2
             }
           ],
           [
@@ -908,7 +992,10 @@
               "text": "Entry 7",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -923,7 +1010,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 4
             }
           ],
           [
@@ -938,7 +1027,9 @@
               "text": "46.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 5
             }
           ],
           [
@@ -953,7 +1044,9 @@
               "text": "1073.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 6
             }
           ]
         ],
@@ -970,7 +1063,9 @@
               "text": "TX-008",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 1
             }
           ],
           [
@@ -985,7 +1080,9 @@
               "text": "2026-10-08",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 2
             }
           ],
           [
@@ -1000,7 +1097,10 @@
               "text": "Entry 8",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1015,7 +1115,9 @@
               "text": "18.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 4
             }
           ],
           [
@@ -1030,7 +1132,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 5
             }
           ],
           [
@@ -1045,7 +1149,9 @@
               "text": "1055.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 6
             }
           ]
         ],
@@ -1062,7 +1168,9 @@
               "text": "TX-009",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 1
             }
           ],
           [
@@ -1077,7 +1185,9 @@
               "text": "2026-10-09",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 2
             }
           ],
           [
@@ -1092,7 +1202,10 @@
               "text": "Entry 9",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1107,7 +1220,9 @@
               "text": "19.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 4
             }
           ],
           [
@@ -1122,7 +1237,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 5
             }
           ],
           [
@@ -1137,7 +1254,9 @@
               "text": "1036.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 6
             }
           ]
         ],
@@ -1154,7 +1273,9 @@
               "text": "TX-010",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 1
             }
           ],
           [
@@ -1169,7 +1290,9 @@
               "text": "2026-10-10",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 2
             }
           ],
           [
@@ -1184,7 +1307,10 @@
               "text": "Entry 10",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1199,7 +1325,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 4
             }
           ],
           [
@@ -1214,7 +1342,9 @@
               "text": "49.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 5
             }
           ],
           [
@@ -1229,7 +1359,9 @@
               "text": "1085.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 6
             }
           ]
         ],
@@ -1246,7 +1378,9 @@
               "text": "TX-011",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 1
             }
           ],
           [
@@ -1261,7 +1395,9 @@
               "text": "2026-10-11",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 2
             }
           ],
           [
@@ -1276,7 +1412,10 @@
               "text": "Entry 11",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1291,7 +1430,9 @@
               "text": "21.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 4
             }
           ],
           [
@@ -1306,7 +1447,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 5
             }
           ],
           [
@@ -1321,7 +1464,9 @@
               "text": "1081.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 6
             }
           ]
         ],
@@ -1338,7 +1483,9 @@
               "text": "TX-012",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 1
             }
           ],
           [
@@ -1353,7 +1500,9 @@
               "text": "2026-10-12",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 2
             }
           ],
           [
@@ -1368,7 +1517,10 @@
               "text": "Entry 12",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1383,7 +1535,9 @@
               "text": "22.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 4
             }
           ],
           [
@@ -1398,7 +1552,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 5
             }
           ],
           [
@@ -1413,7 +1569,9 @@
               "text": "1042.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 6
             }
           ]
         ],
@@ -1430,7 +1588,9 @@
               "text": "TX-013",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 14,
+              "source_column": 1
             }
           ],
           [
@@ -1445,7 +1605,9 @@
               "text": "2026-10-13",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 14,
+              "source_column": 2
             }
           ],
           [
@@ -1460,7 +1622,10 @@
               "text": "Entry 13",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 14,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1475,7 +1640,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 14,
+              "source_column": 4
             }
           ],
           [
@@ -1490,7 +1657,9 @@
               "text": "52.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 14,
+              "source_column": 5
             }
           ],
           [
@@ -1505,7 +1674,9 @@
               "text": "1094.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 14,
+              "source_column": 6
             }
           ]
         ],
@@ -1522,7 +1693,9 @@
               "text": "TX-014",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 15,
+              "source_column": 1
             }
           ],
           [
@@ -1537,7 +1710,9 @@
               "text": "2026-10-14",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 15,
+              "source_column": 2
             }
           ],
           [
@@ -1552,7 +1727,10 @@
               "text": "Entry 14",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 15,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1567,7 +1745,9 @@
               "text": "24.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 15,
+              "source_column": 4
             }
           ],
           [
@@ -1582,7 +1762,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 15,
+              "source_column": 5
             }
           ],
           [
@@ -1597,7 +1779,9 @@
               "text": "1070.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 15,
+              "source_column": 6
             }
           ]
         ],
@@ -1614,7 +1798,9 @@
               "text": "TX-015",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 16,
+              "source_column": 1
             }
           ],
           [
@@ -1629,7 +1815,9 @@
               "text": "2026-10-15",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 16,
+              "source_column": 2
             }
           ],
           [
@@ -1644,7 +1832,10 @@
               "text": "Entry 15",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 16,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1659,7 +1850,9 @@
               "text": "25.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 16,
+              "source_column": 4
             }
           ],
           [
@@ -1674,7 +1867,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 16,
+              "source_column": 5
             }
           ],
           [
@@ -1689,7 +1884,9 @@
               "text": "1045.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 16,
+              "source_column": 6
             }
           ]
         ],
@@ -1706,7 +1903,9 @@
               "text": "TX-016",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 17,
+              "source_column": 1
             }
           ],
           [
@@ -1721,7 +1920,9 @@
               "text": "2026-10-16",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 17,
+              "source_column": 2
             }
           ],
           [
@@ -1736,7 +1937,10 @@
               "text": "Entry 16",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 17,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1751,7 +1955,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 17,
+              "source_column": 4
             }
           ],
           [
@@ -1766,7 +1972,9 @@
               "text": "55.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 17,
+              "source_column": 5
             }
           ],
           [
@@ -1781,7 +1989,9 @@
               "text": "1100.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 17,
+              "source_column": 6
             }
           ]
         ],
@@ -1798,7 +2008,9 @@
               "text": "TX-017",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 18,
+              "source_column": 1
             }
           ],
           [
@@ -1813,7 +2025,9 @@
               "text": "2026-10-17",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 18,
+              "source_column": 2
             }
           ],
           [
@@ -1828,7 +2042,10 @@
               "text": "Entry 17",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 18,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1843,7 +2060,9 @@
               "text": "27.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 18,
+              "source_column": 4
             }
           ],
           [
@@ -1858,7 +2077,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 18,
+              "source_column": 5
             }
           ],
           [
@@ -1873,7 +2094,9 @@
               "text": "1073.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 18,
+              "source_column": 6
             }
           ]
         ],
@@ -1890,7 +2113,9 @@
               "text": "TX-018",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 19,
+              "source_column": 1
             }
           ],
           [
@@ -1905,7 +2130,9 @@
               "text": "2026-10-18",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 19,
+              "source_column": 2
             }
           ],
           [
@@ -1920,7 +2147,10 @@
               "text": "Entry 18",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 19,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1935,7 +2165,9 @@
               "text": "28.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 19,
+              "source_column": 4
             }
           ],
           [
@@ -1950,7 +2182,9 @@
               "text": "0.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 19,
+              "source_column": 5
             }
           ],
           [
@@ -1965,7 +2199,9 @@
               "text": "1045.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 19,
+              "source_column": 6
             }
           ]
         ],
@@ -1982,7 +2218,9 @@
               "text": "",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 20,
+              "source_column": 1
             }
           ],
           [
@@ -1997,7 +2235,9 @@
               "text": "",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 20,
+              "source_column": 2
             }
           ],
           [
@@ -2012,7 +2252,10 @@
               "text": "Total",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 20,
+              "source_column": 3,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -2027,7 +2270,9 @@
               "text": "249.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 20,
+              "source_column": 4
             }
           ],
           [
@@ -2042,7 +2287,9 @@
               "text": "",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 20,
+              "source_column": 5
             }
           ],
           [
@@ -2057,7 +2304,9 @@
               "text": "",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 20,
+              "source_column": 6
             }
           ]
         ]
@@ -2075,7 +2324,9 @@
             "text": "Ref",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 1
           }
         ],
         [
@@ -2090,7 +2341,9 @@
             "text": "When",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 2
           }
         ],
         [
@@ -2105,7 +2358,9 @@
             "text": "Memo",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 3
           }
         ],
         [
@@ -2120,7 +2375,9 @@
             "text": "X",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 4
           }
         ],
         [
@@ -2135,7 +2392,9 @@
             "text": "Y",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 5
           }
         ],
         [
@@ -2150,7 +2409,9 @@
             "text": "Z",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 6
           }
         ]
       ],
@@ -2174,6 +2435,16 @@
     }
   ],
   "issues": [
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Merged body labels retained in their source cell with covered cells blank; no values were imputed across columns.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
     {
       "severity": "warning",
       "page": 1,
@@ -2221,18 +2492,23 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.23690669999996317,
+      "seconds": 0.647447999988799,
       "attempts": [
         {
           "engine": "native",
           "strategy": "lines",
           "tables": 1,
           "cells": 110,
-          "issues": 4,
+          "issues": 5,
           "score": 1694.126,
-          "seconds": 0.13820560000021942,
+          "seconds": 0.42315750000125263,
           "error": "",
-          "selected": true
+          "selected": true,
+          "candidate_id": "p001-c01",
+          "phase": "native-primary",
+          "execution": "sequential",
+          "rank": 1,
+          "selection_reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
         }
       ],
       "error": "",
@@ -2272,12 +2548,36 @@
         "high_value_content": true,
         "risk_reasons": [],
         "profiler_warnings": [],
+        "candidate_policy": {
+          "max_workers": 2,
+          "parallel_scope": "independent-candidates-only",
+          "dependent_recovery": "sequential",
+          "tie_breaker": "declared-plan-order"
+        },
+        "candidate_plan": [
+          {
+            "candidate_id": "p001-c01",
+            "engine": "native",
+            "strategy": "lines",
+            "phase": "native-primary",
+            "execution": "sequential"
+          }
+        ],
+        "parallel_candidate_batches": [],
         "routing_decision": "digital",
-        "native_candidate_available": true
+        "native_candidate_available": true,
+        "candidate_selection": {
+          "candidate_id": "p001-c01",
+          "engine": "native",
+          "strategy": "lines",
+          "rank": 1,
+          "score": 1694.126,
+          "reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
+        }
       }
     }
   ],
-  "seconds": 0.30261760000030336,
+  "seconds": 0.789007400002447,
   "source_sha256": "0312be673c7db85435e2a34ddcb8c6b2b688c9e0f5825b2702d47b02188ed142",
   "constraints": [
     {

@@ -16,7 +16,7 @@ from truecell.api import create_app, environment_lan_host
 from truecell.checkpoint import source_hash
 from truecell.constraints import analyze
 from truecell.models import PageReport, Result, Table
-from truecell.router import MAX_PAGES
+from truecell.router import MAX_IMAGE_FRAMES, MAX_IMAGE_PIXELS, MAX_PAGES, MAX_TOTAL_IMAGE_PIXELS
 from truecell.workspace import create_job, job_path, set_status
 
 
@@ -138,9 +138,21 @@ def test_api_upload_edit_review_source_and_export_workflow(tmp_path):
         assert client.get("/api/jobs").json()["jobs"][0]["id"] == identifier
         prefix = f"/api/jobs/{identifier}"
         original = detail["result"]["tables"][0]["rows"][0][3]
-        evidence = client.get(prefix + "/evidence?table=0&row=0&column=3").json()
+        evidence = client.get(
+            prefix + "/evidence?table=0&row=0&column=3&fingerprint=" + detail["fingerprint"]
+        ).json()
         assert evidence["value"] == original and evidence["sources"][0]["bbox"]
         assert evidence["location"]["status"] == "located"
+        assert evidence["location"]["evidence_state"] == "exact_source_box"
+        assert evidence["evidence_id"] == "T1:R1:C4"
+        assert evidence["confidence"]["kind"] == "native_text"
+        assert evidence["original_reading"] == original
+        assert evidence["alternative_readings"] == []
+        assert evidence["correction_history"] == []
+        assert (
+            client.get(prefix + "/evidence?table=0&row=0&column=3&fingerprint=stale").status_code
+            == 409
+        )
         assert client.get(prefix + "/reviewed.xlsx").status_code == 409
         assert client.get(prefix + "/source").content.startswith(b"%PDF")
         assert client.get(prefix + "/pages/1/image").content.startswith(b"\x89PNG")
@@ -161,6 +173,9 @@ def test_api_upload_edit_review_source_and_export_workflow(tmp_path):
         edited = edited_response.json()
         assert edited["result"]["tables"][0]["rows"][0][3] == "99.00"
         assert edited["result"]["tables"][0]["cell_sources"][0][3][0]["text"] == original
+        changed_evidence = client.get(prefix + "/evidence?table=0&row=0&column=3").json()
+        assert changed_evidence["original_value"] == original
+        assert changed_evidence["correction_count"] == 1
         assert client.patch(prefix + "/cells", json=change).status_code == 409
         assert client.get(prefix + "/baseline.json").json()["tables"][0]["rows"][0][3] == original
         blocked = client.post(
@@ -381,6 +396,10 @@ def test_api_blocks_remote_origins_and_dns_rebinding(tmp_path):
         health = client.get("/api/health").json()
         assert health["offline"] is True
         assert health["max_pages"] == 200 == MAX_PAGES
+        assert health["max_image_frames"] == MAX_IMAGE_FRAMES
+        assert health["max_image_pixels_per_frame"] == MAX_IMAGE_PIXELS
+        assert health["max_image_pixels_total"] == MAX_TOTAL_IMAGE_PIXELS
+        assert set(health["ocr_capabilities"]) >= {"tesseract", "rapidocr", "paddleocr"}
         assert (
             client.get("/api/health", headers={"Origin": "https://evil.example"}).status_code == 403
         )

@@ -68,11 +68,15 @@ def test_controls_in_data_header_evidence_and_review_metadata_export(tmp_path):
 
     assert decode_text(workbook["Data 1"]["A1"].value) == header
     assert decode_text(workbook["Data 1"]["A2"].value) == corrected
-    assert decode_text(workbook["Cell Evidence"]["K2"].value) == header
-    assert decode_text(workbook["Cell Evidence"]["K3"].value) == original
-    assert decode_text(workbook["Correction History"]["E2"].value) == original
-    assert decode_text(workbook["Correction History"]["F2"].value) == corrected
-    assert decode_text(workbook["Correction History"]["G2"].value) == reason
+    evidence_sheet = workbook["Cell Evidence"]
+    evidence_columns = {cell.value: cell.column for cell in evidence_sheet[1]}
+    assert decode_text(evidence_sheet.cell(2, evidence_columns["Reading"]).value) == header
+    assert decode_text(evidence_sheet.cell(3, evidence_columns["Reading"]).value) == original
+    history_sheet = workbook["Correction History"]
+    history_columns = {cell.value: cell.column for cell in history_sheet[1]}
+    assert decode_text(history_sheet.cell(2, history_columns["Before"]).value) == original
+    assert decode_text(history_sheet.cell(2, history_columns["After"]).value) == corrected
+    assert decode_text(history_sheet.cell(2, history_columns["Reason"]).value) == reason
     verification = {row[0].value: row[1].value for row in workbook["Verification"]}
     assert decode_text(verification["Review note"]) == review_note
     assert decode_text(workbook["Read me"]["B2"].value) == result.source

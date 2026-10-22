@@ -58,7 +58,9 @@
           ]
         ]
       ],
-      "notes": [],
+      "notes": [
+        "Multi-level merged headers flattened into source-backed column paths."
+      ],
       "row_engines": [
         "native-lines",
         "native-lines",
@@ -78,7 +80,9 @@
               "text": "A01",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 1
             }
           ],
           [
@@ -93,7 +97,9 @@
               "text": "Long product name",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 2
             }
           ],
           [
@@ -108,7 +114,9 @@
               "text": "12",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 3
             }
           ],
           [
@@ -123,7 +131,9 @@
               "text": "36.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 4
             }
           ]
         ],
@@ -140,7 +150,9 @@
               "text": "A02",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 1
             }
           ],
           [
@@ -155,7 +167,9 @@
               "text": "Wrapped description",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 2
             }
           ],
           [
@@ -170,7 +184,9 @@
               "text": "15",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 3
             }
           ],
           [
@@ -185,7 +201,9 @@
               "text": "45.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 4
             }
           ]
         ],
@@ -202,7 +220,9 @@
               "text": "A03",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 1
             }
           ],
           [
@@ -217,7 +237,9 @@
               "text": "Single",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 2
             }
           ],
           [
@@ -232,7 +254,9 @@
               "text": "10",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 3
             }
           ],
           [
@@ -247,7 +271,9 @@
               "text": "30.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 4
             }
           ]
         ]
@@ -265,7 +291,10 @@
             "text": "Product",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 1,
+            "role": "merged_header_path"
           },
           {
             "page": 1,
@@ -278,7 +307,10 @@
             "text": "Code",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 2,
+            "source_column": 1,
+            "role": "merged_header_path"
           }
         ],
         [
@@ -293,7 +325,10 @@
             "text": "Product",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 1,
+            "role": "merged_header_path"
           },
           {
             "page": 1,
@@ -306,7 +341,10 @@
             "text": "Description",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 2,
+            "source_column": 2,
+            "role": "merged_header_path"
           }
         ],
         [
@@ -321,7 +359,10 @@
             "text": "Movement",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 3,
+            "role": "merged_header_path"
           },
           {
             "page": 1,
@@ -334,7 +375,10 @@
             "text": "Units",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 2,
+            "source_column": 3,
+            "role": "merged_header_path"
           }
         ],
         [
@@ -349,7 +393,10 @@
             "text": "Movement",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 3,
+            "role": "merged_header_path"
           },
           {
             "page": 1,
@@ -362,7 +409,10 @@
             "text": "Value",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 2,
+            "source_column": 4,
+            "role": "merged_header_path"
           }
         ]
       ],
@@ -385,25 +435,41 @@
       "cell_scores": []
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
+      "reason": "Multi-level merged headers flattened into source-backed column paths.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    }
+  ],
   "pages": [
     {
       "page": 1,
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.03483869999945455,
+      "seconds": 0.04522479999286588,
       "attempts": [
         {
           "engine": "native",
           "strategy": "lines",
           "tables": 1,
           "cells": 12,
-          "issues": 0,
+          "issues": 1,
           "score": 1076.6,
-          "seconds": 0.01816299999882176,
+          "seconds": 0.03288230000180192,
           "error": "",
-          "selected": true
+          "selected": true,
+          "candidate_id": "p001-c01",
+          "phase": "native-primary",
+          "execution": "sequential",
+          "rank": 1,
+          "selection_reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
         }
       ],
       "error": "",
@@ -442,12 +508,36 @@
         "high_value_content": false,
         "risk_reasons": [],
         "profiler_warnings": [],
+        "candidate_policy": {
+          "max_workers": 2,
+          "parallel_scope": "independent-candidates-only",
+          "dependent_recovery": "sequential",
+          "tie_breaker": "declared-plan-order"
+        },
+        "candidate_plan": [
+          {
+            "candidate_id": "p001-c01",
+            "engine": "native",
+            "strategy": "lines",
+            "phase": "native-primary",
+            "execution": "sequential"
+          }
+        ],
+        "parallel_candidate_batches": [],
         "routing_decision": "digital",
-        "native_candidate_available": true
+        "native_candidate_available": true,
+        "candidate_selection": {
+          "candidate_id": "p001-c01",
+          "engine": "native",
+          "strategy": "lines",
+          "rank": 1,
+          "score": 1076.6,
+          "reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
+        }
       }
     }
   ],
-  "seconds": 0.04732069999954547,
+  "seconds": 0.05990829999791458,
   "source_sha256": "e8a441b23bca503cd5ea8a74044f47c89801ffbc4c93a9df136d9cf0ced3d042",
   "constraints": [],
   "proposals": [],

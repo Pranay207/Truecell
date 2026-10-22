@@ -157,7 +157,7 @@ def style_sheet(sheet) -> None:
 
 def export_workbook(result: Result, output: str | Path, *, reviewed: bool = False) -> Path:
     """Write a draft or quality-gated reviewed workbook with complete evidence accounting."""
-    from .review import quality_state, review_current
+    from .review import cell_evidence, quality_state, review_current
 
     if reviewed and (not review_current(result) or quality_state(result)["status"] != "reviewed"):
         raise ValueError(
@@ -169,102 +169,73 @@ def export_workbook(result: Result, output: str | Path, *, reviewed: bool = Fals
     strings = _TextWriter()
     provenance = []
     evidence_rows = []
+
+    def append_cell_evidence(
+        sheet,
+        excel_row: int,
+        excel_column: int,
+        table_index: int,
+        source_row: int,
+        source_column: int,
+    ) -> None:
+        evidence = cell_evidence(result, table_index, source_row, source_column)
+        if not evidence["value"].strip():
+            return
+        sheet.cell(
+            excel_row, excel_column
+        ).hyperlink = f"#'Cell Evidence'!A{len(evidence_rows) + 2}"
+        alternatives = " | ".join(
+            f"{item['kind']}: {item['text']} ({item['engine']})"
+            for item in evidence["alternative_readings"]
+        )
+        records = evidence["sources"] or [
+            {
+                "page": evidence["location"]["page"],
+                "bbox": None,
+                "text": evidence["original_reading"],
+                "engine": None,
+                "confidence": None,
+                "role": "unlocated",
+                "confidence_evidence": evidence["confidence"],
+            }
+        ]
+        for record in records:
+            confidence = record["confidence_evidence"]
+            evidence_rows.append(
+                [
+                    evidence["evidence_id"],
+                    sheet.title,
+                    excel_row,
+                    excel_column,
+                    evidence["value"],
+                    evidence["original_value"],
+                    evidence["original_reading"],
+                    record.get("page") or evidence["location"]["page"],
+                    *(record.get("bbox") or [None] * 4),
+                    record.get("engine"),
+                    confidence["kind"],
+                    confidence["score"],
+                    confidence["meaning"],
+                    record.get("text"),
+                    record.get("initial_reading", ""),
+                    record.get("role", "extracted"),
+                    evidence["location"]["evidence_state"],
+                    evidence["location"]["status"],
+                    evidence["location"]["reason"],
+                    evidence["correction_count"],
+                    alternatives,
+                ]
+            )
+
     for index, table in enumerate(result.tables, 1):
         sheet = workbook.create_sheet(f"Data {index}")
         for col, header in enumerate(table.headers, 1):
             strings.write(sheet.cell(1, col), header)
-            sources = table.header_sources[col - 1] if col - 1 < len(table.header_sources) else []
-            from .review import evidence_status
-
-            location = evidence_status(header, sources, table.page)
-            if str(header).strip():
-                sheet.cell(1, col).hyperlink = f"#'Cell Evidence'!A{len(evidence_rows) + 2}"
-            if not sources and str(header).strip():
-                evidence_rows.append(
-                    [
-                        sheet.title,
-                        1,
-                        col,
-                        location["page"],
-                        *([None] * 4),
-                        None,
-                        None,
-                        header,
-                        "",
-                        "unlocated",
-                        location["status"],
-                        location["reason"],
-                    ]
-                )
-            for record in sources:
-                evidence_rows.append(
-                    [
-                        sheet.title,
-                        1,
-                        col,
-                        record.get("page"),
-                        *(record.get("bbox") or [None] * 4),
-                        record.get("engine"),
-                        record.get("confidence"),
-                        record.get("text"),
-                        record.get("initial_reading", ""),
-                        record.get("role", "header"),
-                        location["status"],
-                        location["reason"],
-                    ]
-                )
+            append_cell_evidence(sheet, 1, col, index - 1, -1, col - 1)
         for row_no, row in enumerate(table.rows, 2):
             for col, value in enumerate(row, 1):
                 write_value(sheet.cell(row_no, col), value, strings.write)
-                source_row = (
-                    table.cell_sources[row_no - 2] if row_no - 2 < len(table.cell_sources) else []
-                )
-                sources = source_row[col - 1] if col - 1 < len(source_row) else []
-                fallback_page = (
-                    table.provenance[row_no - 2][0][0]
-                    if row_no - 2 < len(table.provenance) and table.provenance[row_no - 2]
-                    else table.page
-                )
-                location = evidence_status(value, sources, fallback_page)
-                if str(value).strip():
-                    sheet.cell(
-                        row_no, col
-                    ).hyperlink = f"#'Cell Evidence'!A{len(evidence_rows) + 2}"
-                if not sources and str(value).strip():
-                    evidence_rows.append(
-                        [
-                            sheet.title,
-                            row_no,
-                            col,
-                            location["page"],
-                            *([None] * 4),
-                            None,
-                            None,
-                            value,
-                            "",
-                            "unlocated",
-                            location["status"],
-                            location["reason"],
-                        ]
-                    )
-                for record in sources:
-                    bbox = record.get("bbox") or [None] * 4
-                    evidence_rows.append(
-                        [
-                            sheet.title,
-                            row_no,
-                            col,
-                            record.get("page"),
-                            *bbox,
-                            record.get("engine"),
-                            record.get("confidence"),
-                            record.get("text"),
-                            record.get("initial_reading", ""),
-                            record.get("role", "extracted"),
-                            location["status"],
-                            location["reason"],
-                        ]
-                    )
+                append_cell_evidence(sheet, row_no, col, index - 1, row_no - 2, col - 1)
             for page, source_row in table.provenance[row_no - 2]:
                 provenance.append(
                     [
@@ -338,6 +309,11 @@ def export_workbook(result: Result, output: str | Path, *, reviewed: bool = Fals
             "Confidence",
             "Seconds",
             "Strategy",
+            "Candidate ID",
+            "Phase",
+            "Execution",
+            "Rank",
+            "Selection reason",
             "Selected",
             "Tables",
             "Cells",
@@ -357,6 +333,11 @@ def export_workbook(result: Result, output: str | Path, *, reviewed: bool = Fals
                     page.confidence,
                     page.seconds,
                     "",
+                    "",
+                    "",
+                    "",
+                    None,
+                    "",
                     True,
                     0,
                     0,
@@ -375,6 +356,11 @@ def export_workbook(result: Result, output: str | Path, *, reviewed: bool = Fals
                     page.confidence,
                     round(attempt.seconds, 3),
                     attempt.strategy,
+                    attempt.candidate_id,
+                    attempt.phase,
+                    attempt.execution,
+                    attempt.rank,
+                    attempt.selection_reason,
                     attempt.selected,
                     attempt.tables,
                     attempt.cells,
@@ -505,7 +491,7 @@ def export_workbook(result: Result, output: str | Path, *, reviewed: bool = Fals
         sheet,
         [
             "Cell evidence",
-            "Ctrl+click a linked data cell for its source bounding box and original readings.",
+            "Ctrl+click a linked data cell for its source box, confidence meaning, original readings, alternatives and correction count.",
         ],
     )
     strings.append(
@@ -519,21 +505,30 @@ def export_workbook(result: Result, output: str | Path, *, reviewed: bool = Fals
     strings.append(
         sheet,
         [
+            "Evidence ID",
             "Data sheet",
             "Excel row",
             "Column",
+            "Working value",
+            "Original extracted value",
+            "Original source reading",
             "Source page",
             "x0",
             "y0",
             "x1",
             "y1",
             "Engine",
-            "OCR score",
+            "Confidence type",
+            "Recognition score",
+            "Confidence meaning",
             "Reading",
             "Initial reading",
             "Role",
+            "Evidence state",
             "Location status",
             "Location reason",
+            "Corrections",
+            "Alternative readings",
         ],
     )
     for row in evidence_rows:
@@ -634,6 +629,7 @@ def export_workbook(result: Result, output: str | Path, *, reviewed: bool = Fals
     strings.append(
         sheet,
         [
+            "Evidence ID",
             "Time UTC",
             "Table",
             "Excel row",
@@ -649,6 +645,11 @@ def export_workbook(result: Result, output: str | Path, *, reviewed: bool = Fals
         strings.append(
             sheet,
             [
+                (
+                    f"T{event['table'] + 1}:H:C{event['column'] + 1}"
+                    if event["row"] == -1
+                    else f"T{event['table'] + 1}:R{event['row'] + 1}:C{event['column'] + 1}"
+                ),
                 event["at"],
                 event["table"] + 1,
                 event["row"] + 2,

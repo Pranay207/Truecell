@@ -1,11 +1,3 @@
-FROM node:22-alpine AS frontend-build
-
-WORKDIR /build/frontend
-COPY frontend/package.json frontend/package-lock.json ./
-RUN npm ci
-COPY frontend/ ./
-RUN npm run build
-
 FROM python:3.12-slim AS runtime
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -13,17 +5,31 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     TRUECELL_TRUST_LOCAL_PROXY=1
 
 RUN apt-get update \
-    && apt-get install --no-install-recommends -y libgl1 libglib2.0-0 tesseract-ocr \
+    && apt-get install --no-install-recommends -y \
+        libgl1 \
+        libglib2.0-0 \
+        tesseract-ocr \
+        tesseract-ocr-hin \
+        tesseract-ocr-tel \
+    && tesseract --list-langs 2>/dev/null | grep -qx eng \
+    && tesseract --list-langs 2>/dev/null | grep -qx hin \
+    && tesseract --list-langs 2>/dev/null | grep -qx tel \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 COPY requirements.txt ./
+ARG PIP_TRUSTED_HOST
 RUN python -m pip install --no-cache-dir -r requirements.txt
 
 COPY truecell/ ./truecell/
 COPY models/ ./models/
 COPY samples/ ./samples/
-COPY --from=frontend-build /build/frontend/dist/ ./frontend/dist/
+COPY LICENSE THIRD_PARTY.md ./
+COPY third_party_licenses/ ./third_party_licenses/
+# The checked-in bundle is built and freshness-checked by the frontend CI job.
+# Keeping npm outside this image avoids a registry dependency on Docker build hosts where
+# npm's registry client fails behind an intercepting proxy.
+COPY frontend/dist/ ./frontend/dist/
 
 RUN mkdir -p /app/outputs/jobs \
     && addgroup --system truecell \

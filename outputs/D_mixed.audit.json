@@ -511,6 +511,7 @@
         ]
       ],
       "notes": [
+        "Merged body labels retained in their source cell with covered cells blank; no values were imputed across columns.",
         "OCR rapidocr; deskew correction 0.00 degrees; values require source review."
       ],
       "row_engines": [
@@ -553,7 +554,9 @@
               "text": "INV-0001",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 1
             }
           ],
           [
@@ -568,7 +571,9 @@
               "text": "2026-10-01",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 2
             }
           ],
           [
@@ -583,7 +588,9 @@
               "text": "Client 1",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 3
             }
           ],
           [
@@ -598,7 +605,9 @@
               "text": "000001",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 4
             }
           ],
           [
@@ -613,7 +622,10 @@
               "text": "Widget model 1",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 5,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -628,7 +640,9 @@
               "text": "1",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 6
             }
           ],
           [
@@ -643,7 +657,9 @@
               "text": "12.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 7
             }
           ],
           [
@@ -658,7 +674,9 @@
               "text": "12.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 8
             }
           ],
           [
@@ -673,7 +691,9 @@
               "text": "1.20",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 9
             }
           ],
           [
@@ -688,7 +708,9 @@
               "text": "5.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 10
             }
           ],
           [
@@ -703,7 +725,9 @@
               "text": "South",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 11
             }
           ],
           [
@@ -718,7 +742,9 @@
               "text": "Paid",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 12
             }
           ]
         ],
@@ -735,7 +761,9 @@
               "text": "INV-0002",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 1
             }
           ],
           [
@@ -750,7 +778,9 @@
               "text": "2026-10-02",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 2
             }
           ],
           [
@@ -765,7 +795,9 @@
               "text": "Client 2",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 3
             }
           ],
           [
@@ -780,7 +812,9 @@
               "text": "000002",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 4
             }
           ],
           [
@@ -795,7 +829,10 @@
               "text": "Widget model 2",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 5,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -810,7 +847,9 @@
               "text": "2",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 6
             }
           ],
           [
@@ -825,7 +864,9 @@
               "text": "13.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 7
             }
           ],
           [
@@ -840,7 +881,9 @@
               "text": "26.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 8
             }
           ],
           [
@@ -855,7 +898,9 @@
               "text": "2.60",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 9
             }
           ],
           [
@@ -870,7 +915,9 @@
               "text": "5.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 10
             }
           ],
           [
@@ -885,7 +932,9 @@
               "text": "South",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 11
             }
           ],
           [
@@ -900,7 +949,9 @@
               "text": "Paid",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 12
             }
           ]
         ],
@@ -917,7 +968,9 @@
               "text": "INV-0003",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 1
             }
           ],
           [
@@ -932,7 +985,9 @@
               "text": "2026-10-03",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 2
             }
           ],
           [
@@ -947,7 +1002,9 @@
               "text": "Client 3",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 3
             }
           ],
           [
@@ -962,7 +1019,9 @@
               "text": "000003",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 4
             }
           ],
           [
@@ -977,7 +1036,10 @@
               "text": "Widget model 3",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 5,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -992,7 +1054,9 @@
               "text": "3",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 6
             }
           ],
           [
@@ -1007,7 +1071,9 @@
               "text": "14.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 7
             }
           ],
           [
@@ -1022,7 +1088,9 @@
               "text": "42.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 8
             }
           ],
           [
@@ -1037,7 +1105,9 @@
               "text": "4.20",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 9
             }
           ],
           [
@@ -1052,7 +1122,9 @@
               "text": "5.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 10
             }
           ],
           [
@@ -1067,7 +1139,9 @@
               "text": "South",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 11
             }
           ],
           [
@@ -1082,7 +1156,9 @@
               "text": "Paid",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 12
             }
           ]
         ],
@@ -1099,7 +1175,9 @@
               "text": "INV-0004",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 1
             }
           ],
           [
@@ -1114,7 +1192,9 @@
               "text": "2026-10-04",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 2
             }
           ],
           [
@@ -1129,7 +1209,9 @@
               "text": "Client 4",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 3
             }
           ],
           [
@@ -1144,7 +1226,9 @@
               "text": "000004",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 4
             }
           ],
           [
@@ -1159,7 +1243,10 @@
               "text": "Widget model 4",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 5,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1174,7 +1261,9 @@
               "text": "4",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 6
             }
           ],
           [
@@ -1189,7 +1278,9 @@
               "text": "15.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 7
             }
           ],
           [
@@ -1204,7 +1295,9 @@
               "text": "60.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 8
             }
           ],
           [
@@ -1219,7 +1312,9 @@
               "text": "6.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 9
             }
           ],
           [
@@ -1234,7 +1329,9 @@
               "text": "5.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 10
             }
           ],
           [
@@ -1249,7 +1346,9 @@
               "text": "South",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 11
             }
           ],
           [
@@ -1264,7 +1363,9 @@
               "text": "Paid",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 12
             }
           ]
         ],
@@ -1281,7 +1382,9 @@
               "text": "INV-0005",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 1
             }
           ],
           [
@@ -1296,7 +1399,9 @@
               "text": "2026-10-05",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 2
             }
           ],
           [
@@ -1311,7 +1416,9 @@
               "text": "Client 5",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 3
             }
           ],
           [
@@ -1326,7 +1433,9 @@
               "text": "000005",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 4
             }
           ],
           [
@@ -1341,7 +1450,10 @@
               "text": "Widget model 5",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 5,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1356,7 +1468,9 @@
               "text": "5",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 6
             }
           ],
           [
@@ -1371,7 +1485,9 @@
               "text": "16.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 7
             }
           ],
           [
@@ -1386,7 +1502,9 @@
               "text": "80.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 8
             }
           ],
           [
@@ -1401,7 +1519,9 @@
               "text": "8.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 9
             }
           ],
           [
@@ -1416,7 +1536,9 @@
               "text": "5.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 10
             }
           ],
           [
@@ -1431,7 +1553,9 @@
               "text": "South",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 11
             }
           ],
           [
@@ -1446,7 +1570,9 @@
               "text": "Paid",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 12
             }
           ]
         ],
@@ -1463,7 +1589,9 @@
               "text": "INV-0006",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 1
             }
           ],
           [
@@ -1478,7 +1606,9 @@
               "text": "2026-10-06",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 2
             }
           ],
           [
@@ -1493,7 +1623,9 @@
               "text": "Client 6",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 3
             }
           ],
           [
@@ -1508,7 +1640,9 @@
               "text": "000006",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 4
             }
           ],
           [
@@ -1523,7 +1657,10 @@
               "text": "Widget model 6",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 5,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1538,7 +1675,9 @@
               "text": "6",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 6
             }
           ],
           [
@@ -1553,7 +1692,9 @@
               "text": "17.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 7
             }
           ],
           [
@@ -1568,7 +1709,9 @@
               "text": "102.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 8
             }
           ],
           [
@@ -1583,7 +1726,9 @@
               "text": "10.20",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 9
             }
           ],
           [
@@ -1598,7 +1743,9 @@
               "text": "5.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 10
             }
           ],
           [
@@ -1613,7 +1760,9 @@
               "text": "South",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 11
             }
           ],
           [
@@ -1628,7 +1777,9 @@
               "text": "Paid",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 12
             }
           ]
         ],
@@ -1645,7 +1796,9 @@
               "text": "INV-0007",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 1
             }
           ],
           [
@@ -1660,7 +1813,9 @@
               "text": "2026-10-07",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 2
             }
           ],
           [
@@ -1675,7 +1830,9 @@
               "text": "Client 7",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 3
             }
           ],
           [
@@ -1690,7 +1847,9 @@
               "text": "000007",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 4
             }
           ],
           [
@@ -1705,7 +1864,10 @@
               "text": "Widget model 7",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 5,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1720,7 +1882,9 @@
               "text": "7",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 6
             }
           ],
           [
@@ -1735,7 +1899,9 @@
               "text": "18.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 7
             }
           ],
           [
@@ -1750,7 +1916,9 @@
               "text": "126.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 8
             }
           ],
           [
@@ -1765,7 +1933,9 @@
               "text": "12.60",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 9
             }
           ],
           [
@@ -1780,7 +1950,9 @@
               "text": "5.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 10
             }
           ],
           [
@@ -1795,7 +1967,9 @@
               "text": "South",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 11
             }
           ],
           [
@@ -1810,7 +1984,9 @@
               "text": "Paid",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 12
             }
           ]
         ],
@@ -1827,7 +2003,9 @@
               "text": "INV-0008",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 1
             }
           ],
           [
@@ -1842,7 +2020,9 @@
               "text": "2026-10-08",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 2
             }
           ],
           [
@@ -1857,7 +2037,9 @@
               "text": "Client 8",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 3
             }
           ],
           [
@@ -1872,7 +2054,9 @@
               "text": "000008",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 4
             }
           ],
           [
@@ -1887,7 +2071,10 @@
               "text": "Widget model 8",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 5,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -1902,7 +2089,9 @@
               "text": "1",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 6
             }
           ],
           [
@@ -1917,7 +2106,9 @@
               "text": "19.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 7
             }
           ],
           [
@@ -1932,7 +2123,9 @@
               "text": "19.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 8
             }
           ],
           [
@@ -1947,7 +2140,9 @@
               "text": "1.90",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 9
             }
           ],
           [
@@ -1962,7 +2157,9 @@
               "text": "5.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 10
             }
           ],
           [
@@ -1977,7 +2174,9 @@
               "text": "South",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 11
             }
           ],
           [
@@ -1992,7 +2191,9 @@
               "text": "Paid",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 12
             }
           ]
         ],
@@ -2009,7 +2210,9 @@
               "text": "INV-0009",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 1
             }
           ],
           [
@@ -2024,7 +2227,9 @@
               "text": "2026-10-09",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 2
             }
           ],
           [
@@ -2039,7 +2244,9 @@
               "text": "Client 9",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 3
             }
           ],
           [
@@ -2054,7 +2261,9 @@
               "text": "000009",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 4
             }
           ],
           [
@@ -2069,7 +2278,10 @@
               "text": "Widget model 9",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 5,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -2084,7 +2296,9 @@
               "text": "2",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 6
             }
           ],
           [
@@ -2099,7 +2313,9 @@
               "text": "20.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 7
             }
           ],
           [
@@ -2114,7 +2330,9 @@
               "text": "40.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 8
             }
           ],
           [
@@ -2129,7 +2347,9 @@
               "text": "4.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 9
             }
           ],
           [
@@ -2144,7 +2364,9 @@
               "text": "5.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 10
             }
           ],
           [
@@ -2159,7 +2381,9 @@
               "text": "South",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 11
             }
           ],
           [
@@ -2174,7 +2398,9 @@
               "text": "Paid",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 12
             }
           ]
         ],
@@ -2191,7 +2417,9 @@
               "text": "INV-0010",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 1
             }
           ],
           [
@@ -2206,7 +2434,9 @@
               "text": "2026-10-10",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 2
             }
           ],
           [
@@ -2221,7 +2451,9 @@
               "text": "Client 1",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 3
             }
           ],
           [
@@ -2236,7 +2468,9 @@
               "text": "000010",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 4
             }
           ],
           [
@@ -2251,7 +2485,10 @@
               "text": "Widget model 10",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 5,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -2266,7 +2503,9 @@
               "text": "3",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 6
             }
           ],
           [
@@ -2281,7 +2520,9 @@
               "text": "21.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 7
             }
           ],
           [
@@ -2296,7 +2537,9 @@
               "text": "63.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 8
             }
           ],
           [
@@ -2311,7 +2554,9 @@
               "text": "6.30",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 9
             }
           ],
           [
@@ -2326,7 +2571,9 @@
               "text": "5.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 10
             }
           ],
           [
@@ -2341,7 +2588,9 @@
               "text": "South",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 11
             }
           ],
           [
@@ -2356,7 +2605,9 @@
               "text": "Paid",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 12
             }
           ]
         ],
@@ -2373,7 +2624,9 @@
               "text": "INV-0011",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 1
             }
           ],
           [
@@ -2388,7 +2641,9 @@
               "text": "2026-10-11",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 2
             }
           ],
           [
@@ -2403,7 +2658,9 @@
               "text": "Client 2",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 3
             }
           ],
           [
@@ -2418,7 +2675,9 @@
               "text": "000011",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 4
             }
           ],
           [
@@ -2433,7 +2692,10 @@
               "text": "Widget model 11",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 5,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -2448,7 +2710,9 @@
               "text": "4",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 6
             }
           ],
           [
@@ -2463,7 +2727,9 @@
               "text": "22.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 7
             }
           ],
           [
@@ -2478,7 +2744,9 @@
               "text": "88.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 8
             }
           ],
           [
@@ -2493,7 +2761,9 @@
               "text": "8.80",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 9
             }
           ],
           [
@@ -2508,7 +2778,9 @@
               "text": "5.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 10
             }
           ],
           [
@@ -2523,7 +2795,9 @@
               "text": "South",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 11
             }
           ],
           [
@@ -2538,7 +2812,9 @@
               "text": "Paid",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 12
             }
           ]
         ],
@@ -2555,7 +2831,9 @@
               "text": "INV-0012",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 1
             }
           ],
           [
@@ -2570,7 +2848,9 @@
               "text": "2026-10-12",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 2
             }
           ],
           [
@@ -2585,7 +2865,9 @@
               "text": "Client 3",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 3
             }
           ],
           [
@@ -2600,7 +2882,9 @@
               "text": "000012",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 4
             }
           ],
           [
@@ -2615,7 +2899,10 @@
               "text": "Widget model 12",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 5,
+              "role": "horizontal_merge_label"
             }
           ],
           [
@@ -2630,7 +2917,9 @@
               "text": "5",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 6
             }
           ],
           [
@@ -2645,7 +2934,9 @@
               "text": "12.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 7
             }
           ],
           [
@@ -2660,7 +2951,9 @@
               "text": "60.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 8
             }
           ],
           [
@@ -2675,7 +2968,9 @@
               "text": "6.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 9
             }
           ],
           [
@@ -2690,7 +2985,9 @@
               "text": "5.00",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 10
             }
           ],
           [
@@ -2705,7 +3002,9 @@
               "text": "South",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 11
             }
           ],
           [
@@ -2720,7 +3019,9 @@
               "text": "Paid",
               "engine": "native-lines",
               "confidence": null,
-              "coordinates": "page points"
+              "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 12
             }
           ]
         ],
@@ -2738,6 +3039,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999687671661377,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 1,
               "initial_reading": "INV-0013"
             }
           ],
@@ -2754,6 +3057,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999916434288025,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 2,
               "initial_reading": "2026-10-13"
             }
           ],
@@ -2770,6 +3075,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9386227503418922,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 3,
               "initial_reading": "Client 4"
             }
           ],
@@ -2786,6 +3093,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999212423960367,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 4,
               "initial_reading": "000013"
             }
           ],
@@ -2802,6 +3111,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998136480649312,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 13"
             }
           ],
@@ -2818,6 +3130,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999961853027344,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 6,
               "initial_reading": "6"
             }
           ],
@@ -2834,6 +3148,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999926221370697,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 7,
               "initial_reading": "13.00"
             }
           ],
@@ -2850,6 +3166,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999614953994751,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 8,
               "initial_reading": "78.00"
             }
           ],
@@ -2866,6 +3184,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999672770500183,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 9,
               "initial_reading": "7.80"
             }
           ],
@@ -2882,6 +3202,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999361932277679,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -2898,6 +3220,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999462842941285,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -2914,6 +3238,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998781979084015,
               "coordinates": "page points",
+              "source_row": 2,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -2932,6 +3258,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999647438526154,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 1,
               "initial_reading": "INV-0014"
             }
           ],
@@ -2948,6 +3276,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999909996986389,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 2,
               "initial_reading": "2026-10-14"
             }
           ],
@@ -2964,6 +3294,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9980887547135353,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 3,
               "initial_reading": "Client 5"
             }
           ],
@@ -2980,6 +3312,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999114175637563,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 4,
               "initial_reading": "000014"
             }
           ],
@@ -2996,6 +3330,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9996509424277714,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 1"
             }
           ],
@@ -3012,6 +3349,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999948740005493,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 6,
               "initial_reading": "7"
             }
           ],
@@ -3028,6 +3367,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999682664871216,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 7,
               "initial_reading": "14.00"
             }
           ],
@@ -3044,6 +3385,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999960470199585,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 8,
               "initial_reading": "98.00"
             }
           ],
@@ -3060,6 +3403,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999549984931946,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 9,
               "initial_reading": "9.80"
             }
           ],
@@ -3076,6 +3421,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999276101589203,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3092,6 +3439,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999284505844116,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3108,6 +3457,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998601973056793,
               "coordinates": "page points",
+              "source_row": 3,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3126,6 +3477,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999643564224243,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 1,
               "initial_reading": "INV-0015"
             }
           ],
@@ -3142,6 +3495,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999896883964539,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 2,
               "initial_reading": "2026-10-15"
             }
           ],
@@ -3158,6 +3513,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.99974624812603,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 3,
               "initial_reading": "Client 6"
             }
           ],
@@ -3174,6 +3531,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999016920725504,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 4,
               "initial_reading": "000015"
             }
           ],
@@ -3190,6 +3549,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997207309518542,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 2"
             }
           ],
@@ -3206,6 +3568,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999887943267822,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 6,
               "initial_reading": "1"
             }
           ],
@@ -3222,6 +3586,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999677896499634,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 7,
               "initial_reading": "15.00"
             }
           ],
@@ -3238,6 +3604,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999156951904297,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 8,
               "initial_reading": "15.00"
             }
           ],
@@ -3254,6 +3622,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998491108417511,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 9,
               "initial_reading": "1.50"
             }
           ],
@@ -3270,6 +3640,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999318718910217,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3286,6 +3658,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999535083770752,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3302,6 +3676,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998824298381805,
               "coordinates": "page points",
+              "source_row": 4,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3320,6 +3696,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999567270278931,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 1,
               "initial_reading": "INV-0016"
             }
           ],
@@ -3336,6 +3714,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999897480010986,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 2,
               "initial_reading": "2026-10-16"
             }
           ],
@@ -3352,6 +3732,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9996017515659332,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 3,
               "initial_reading": "Client 7"
             }
           ],
@@ -3368,6 +3750,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998262226581573,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 4,
               "initial_reading": "000016"
             }
           ],
@@ -3384,6 +3768,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997296120439257,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 3"
             }
           ],
@@ -3400,6 +3787,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999775886535645,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 6,
               "initial_reading": "2"
             }
           ],
@@ -3416,6 +3805,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999653339385987,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 7,
               "initial_reading": "16.00"
             }
           ],
@@ -3432,6 +3823,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999672889709472,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 8,
               "initial_reading": "32.00"
             }
           ],
@@ -3448,6 +3841,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999619424343109,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 9,
               "initial_reading": "3.20"
             }
           ],
@@ -3464,6 +3859,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999357759952545,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3480,6 +3877,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.99992995262146,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3496,6 +3895,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998646676540375,
               "coordinates": "page points",
+              "source_row": 5,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3514,6 +3915,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999676942825317,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 1,
               "initial_reading": "INV-0017"
             }
           ],
@@ -3530,6 +3933,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999908089637757,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 2,
               "initial_reading": "2026-10-17"
             }
           ],
@@ -3546,6 +3951,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9659256115555763,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 3,
               "initial_reading": "Client 8"
             }
           ],
@@ -3562,6 +3969,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999160369237264,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 4,
               "initial_reading": "000017"
             }
           ],
@@ -3578,6 +3987,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9994494191237858,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 4"
             }
           ],
@@ -3594,6 +4006,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999673366546631,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 6,
               "initial_reading": "3"
             }
           ],
@@ -3610,6 +4024,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999572277069092,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 7,
               "initial_reading": "17.00"
             }
           ],
@@ -3626,6 +4042,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999678134918213,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 8,
               "initial_reading": "51.00"
             }
           ],
@@ -3642,6 +4060,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999772906303406,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 9,
               "initial_reading": "5.10"
             }
           ],
@@ -3658,6 +4078,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999304115772247,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3674,6 +4096,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999487638473511,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3690,6 +4114,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998885095119476,
               "coordinates": "page points",
+              "source_row": 6,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3708,6 +4134,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999966636300087,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 1,
               "initial_reading": "INV-0018"
             }
           ],
@@ -3724,6 +4152,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999914407730103,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 2,
               "initial_reading": "2026-10-18"
             }
           ],
@@ -3740,6 +4170,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999345988035202,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 3,
               "initial_reading": "Client 9"
             }
           ],
@@ -3756,6 +4188,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999249080816904,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 4,
               "initial_reading": "000018"
             }
           ],
@@ -3772,6 +4206,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9994614124298096,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 5"
             }
           ],
@@ -3788,6 +4225,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999953031539917,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 6,
               "initial_reading": "4"
             }
           ],
@@ -3804,6 +4243,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999693870544434,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 7,
               "initial_reading": "18.00"
             }
           ],
@@ -3820,6 +4261,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999794721603393,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 8,
               "initial_reading": "72.00"
             }
           ],
@@ -3836,6 +4279,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999663233757019,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 9,
               "initial_reading": "7.20"
             }
           ],
@@ -3852,6 +4297,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999386370182037,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -3868,6 +4315,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999240398406982,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -3884,6 +4333,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998617768287659,
               "coordinates": "page points",
+              "source_row": 7,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -3902,6 +4353,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999620318412781,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 1,
               "initial_reading": "INV-0019"
             }
           ],
@@ -3918,6 +4371,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999854922294616,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 2,
               "initial_reading": "2026-10-19"
             }
           ],
@@ -3934,6 +4389,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997502192854881,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 3,
               "initial_reading": "Client 1"
             }
           ],
@@ -3950,6 +4407,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999228815237681,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 4,
               "initial_reading": "000019"
             }
           ],
@@ -3966,6 +4425,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9993727462632316,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 6"
             }
           ],
@@ -3982,6 +4444,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999804496765137,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 6,
               "initial_reading": "5"
             }
           ],
@@ -3998,6 +4462,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999603271484375,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 7,
               "initial_reading": "19.00"
             }
           ],
@@ -4014,6 +4480,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999542474746704,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 8,
               "initial_reading": "95.00"
             }
           ],
@@ -4030,6 +4498,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999963790178299,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 9,
               "initial_reading": "9.50"
             }
           ],
@@ -4046,6 +4516,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999251216650009,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4062,6 +4534,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999487161636352,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4078,6 +4552,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998963326215744,
               "coordinates": "page points",
+              "source_row": 8,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4096,6 +4572,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999234899878502,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 1,
               "initial_reading": "INV-0020"
             }
           ],
@@ -4112,6 +4590,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999890327453613,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 2,
               "initial_reading": "2026-10-20"
             }
           ],
@@ -4128,6 +4608,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999072477221489,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 3,
               "initial_reading": "Client 2"
             }
           ],
@@ -4144,6 +4626,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9994029005368551,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 4,
               "initial_reading": "000020"
             }
           ],
@@ -4160,6 +4644,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9995468088558742,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 7"
             }
           ],
@@ -4176,6 +4663,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999943971633911,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 6,
               "initial_reading": "6"
             }
           ],
@@ -4192,6 +4681,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999928605556488,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 7,
               "initial_reading": "20.00"
             }
           ],
@@ -4208,6 +4699,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999266068140665,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 8,
               "initial_reading": "120.00"
             }
           ],
@@ -4224,6 +4717,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999547362327575,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 9,
               "initial_reading": "12.00"
             }
           ],
@@ -4240,6 +4735,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999367892742157,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4256,6 +4753,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999260425567627,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4272,6 +4771,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999861091375351,
               "coordinates": "page points",
+              "source_row": 9,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4290,6 +4791,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999683201313019,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 1,
               "initial_reading": "INV-0021"
             }
           ],
@@ -4306,6 +4809,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999928951263428,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 2,
               "initial_reading": "2026-10-21"
             }
           ],
@@ -4322,6 +4827,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9589861482381821,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 3,
               "initial_reading": "Client 3"
             }
           ],
@@ -4338,6 +4845,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999013741811117,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 4,
               "initial_reading": "000021"
             }
           ],
@@ -4354,6 +4863,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997723358018058,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 8"
             }
           ],
@@ -4370,6 +4882,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999945163726807,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 6,
               "initial_reading": "7"
             }
           ],
@@ -4386,6 +4900,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999518275260926,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 7,
               "initial_reading": "21.00"
             }
           ],
@@ -4402,6 +4918,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999208748340607,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 8,
               "initial_reading": "147.00"
             }
           ],
@@ -4418,6 +4936,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999867439270019,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 9,
               "initial_reading": "14.70"
             }
           ],
@@ -4434,6 +4954,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999103397130966,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4450,6 +4972,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999480724334717,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4466,6 +4990,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999019950628281,
               "coordinates": "page points",
+              "source_row": 10,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4484,6 +5010,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999615103006363,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 1,
               "initial_reading": "INV-0022"
             }
           ],
@@ -4500,6 +5028,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999904990196228,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 2,
               "initial_reading": "2026-10-22"
             }
           ],
@@ -4516,6 +5046,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9985221773386002,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 3,
               "initial_reading": "Client 4"
             }
           ],
@@ -4532,6 +5064,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998856981595358,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 4,
               "initial_reading": "000022"
             }
           ],
@@ -4548,6 +5082,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999435910156795,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 9"
             }
           ],
@@ -4564,6 +5101,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.99998939037323,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 6,
               "initial_reading": "1"
             }
           ],
@@ -4580,6 +5119,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999685525894165,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 7,
               "initial_reading": "22.00"
             }
           ],
@@ -4596,6 +5137,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999571800231933,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 8,
               "initial_reading": "22.00"
             }
           ],
@@ -4612,6 +5155,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998994469642639,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 9,
               "initial_reading": "2.20"
             }
           ],
@@ -4628,6 +5173,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999941349029541,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4644,6 +5191,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999351263046264,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4660,6 +5209,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998669922351837,
               "coordinates": "page points",
+              "source_row": 11,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4678,6 +5229,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999515116214752,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 1,
               "initial_reading": "INV-0023"
             }
           ],
@@ -4694,6 +5247,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999853491783142,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 2,
               "initial_reading": "2026-10-23"
             }
           ],
@@ -4710,6 +5265,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9996262043714523,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 3,
               "initial_reading": "Client 5"
             }
           ],
@@ -4726,6 +5283,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997453987598419,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 4,
               "initial_reading": "000023"
             }
           ],
@@ -4742,6 +5301,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9662841320037842,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 10"
             }
           ],
@@ -4758,6 +5320,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999749660491943,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 6,
               "initial_reading": "2"
             }
           ],
@@ -4774,6 +5338,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9996129274368286,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 7,
               "initial_reading": "12.00"
             }
           ],
@@ -4790,6 +5356,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999366879463196,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 8,
               "initial_reading": "24.00"
             }
           ],
@@ -4806,6 +5374,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998530894517899,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 9,
               "initial_reading": "2.40"
             }
           ],
@@ -4822,6 +5392,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998990148305893,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -4838,6 +5410,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999520540237427,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -4854,6 +5428,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999033659696579,
               "coordinates": "page points",
+              "source_row": 12,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -4872,6 +5448,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999552816152573,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 1,
               "initial_reading": "INV-0024"
             }
           ],
@@ -4888,6 +5466,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999863624572753,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 2,
               "initial_reading": "2026-10-24"
             }
           ],
@@ -4904,6 +5484,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.998554952442646,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 3,
               "initial_reading": "Client 6"
             }
           ],
@@ -4920,6 +5502,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999879002571106,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 4,
               "initial_reading": "000024"
             }
           ],
@@ -4936,6 +5520,9 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9997740745544433,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 5,
+              "role": "horizontal_merge_label",
               "initial_reading": "Widget model 11"
             }
           ],
@@ -4952,6 +5539,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999620914459229,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 6,
               "initial_reading": "3"
             }
           ],
@@ -4968,6 +5557,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999487519264221,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 7,
               "initial_reading": "13.00"
             }
           ],
@@ -4984,6 +5575,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999499320983887,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 8,
               "initial_reading": "39.00"
             }
           ],
@@ -5000,6 +5593,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.999956339597702,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 9,
               "initial_reading": "3.90"
             }
           ],
@@ -5016,6 +5611,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999371767044067,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 10,
               "initial_reading": "5.00"
             }
           ],
@@ -5032,6 +5629,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9999411582946778,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 11,
               "initial_reading": "South"
             }
           ],
@@ -5048,6 +5647,8 @@
               "engine": "ocr-rapidocr",
               "confidence": 0.9998748600482941,
               "coordinates": "page points",
+              "source_row": 13,
+              "source_column": 12,
               "initial_reading": "Paid"
             }
           ]
@@ -5066,7 +5667,9 @@
             "text": "Invoice",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 1
           },
           {
             "page": 2,
@@ -5079,7 +5682,9 @@
             "text": "Invoice",
             "engine": "ocr-rapidocr",
             "confidence": 0.9998472332954407,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 1
           }
         ],
         [
@@ -5094,7 +5699,9 @@
             "text": "Date",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 2
           },
           {
             "page": 2,
@@ -5107,7 +5714,9 @@
             "text": "Date",
             "engine": "ocr-rapidocr",
             "confidence": 0.9998795390129089,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 2
           }
         ],
         [
@@ -5122,7 +5731,9 @@
             "text": "Client",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 3
           },
           {
             "page": 2,
@@ -5135,7 +5746,9 @@
             "text": "Client",
             "engine": "ocr-rapidocr",
             "confidence": 0.9995063344637553,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 3
           }
         ],
         [
@@ -5150,7 +5763,9 @@
             "text": "SKU",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 4
           },
           {
             "page": 2,
@@ -5163,7 +5778,9 @@
             "text": "SKU",
             "engine": "ocr-rapidocr",
             "confidence": 0.9998641411463419,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 4
           }
         ],
         [
@@ -5178,7 +5795,9 @@
             "text": "Description",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 5
           },
           {
             "page": 2,
@@ -5191,7 +5810,9 @@
             "text": "Description",
             "engine": "ocr-rapidocr",
             "confidence": 0.9997081594033674,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 5
           }
         ],
         [
@@ -5206,7 +5827,9 @@
             "text": "Qty.",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 6
           },
           {
             "page": 2,
@@ -5219,7 +5842,9 @@
             "text": "Qty.",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999770224094391,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 6
           }
         ],
         [
@@ -5234,7 +5859,9 @@
             "text": "Rate",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 7
           },
           {
             "page": 2,
@@ -5247,7 +5874,9 @@
             "text": "Rate",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999109655618668,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 7
           }
         ],
         [
@@ -5262,7 +5891,9 @@
             "text": "Amt",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 8
           },
           {
             "page": 2,
@@ -5275,7 +5906,9 @@
             "text": "Amt",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999066392580668,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 8
           }
         ],
         [
@@ -5290,7 +5923,9 @@
             "text": "Tax",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 9
           },
           {
             "page": 2,
@@ -5303,7 +5938,9 @@
             "text": "Tax",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999334812164307,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 9
           }
         ],
         [
@@ -5318,7 +5955,9 @@
             "text": "Ship",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 10
           },
           {
             "page": 2,
@@ -5331,7 +5970,9 @@
             "text": "Ship",
             "engine": "ocr-rapidocr",
             "confidence": 0.9998739361763,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 10
           }
         ],
         [
@@ -5346,7 +5987,9 @@
             "text": "Region",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 11
           },
           {
             "page": 2,
@@ -5359,7 +6002,9 @@
             "text": "Region",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999604026476542,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 11
           }
         ],
         [
@@ -5374,7 +6019,9 @@
             "text": "Status",
             "engine": "native-lines",
             "confidence": null,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 12
           },
           {
             "page": 2,
@@ -5387,7 +6034,9 @@
             "text": "Status",
             "engine": "ocr-rapidocr",
             "confidence": 0.9999742905298868,
-            "coordinates": "page points"
+            "coordinates": "page points",
+            "source_row": 1,
+            "source_column": 12
           }
         ]
       ],
@@ -6142,6 +6791,26 @@
       "page": 1,
       "row": null,
       "column": null,
+      "reason": "Merged body labels retained in their source cell with covered cells blank; no values were imputed across columns.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 2,
+      "row": null,
+      "column": null,
+      "reason": "Merged body labels retained in their source cell with covered cells blank; no values were imputed across columns.",
+      "suggestion": "Verify the source page and reconstructed cells.",
+      "code": "layout_review",
+      "table": 1
+    },
+    {
+      "severity": "warning",
+      "page": 1,
+      "row": null,
+      "column": null,
       "reason": "OCR rapidocr; deskew correction 0.00 degrees; values require source review.",
       "suggestion": "Verify the source page and reconstructed cells.",
       "code": "layout_review",
@@ -6164,18 +6833,23 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.98,
-      "seconds": 0.5366094000000885,
+      "seconds": 0.6924902999890037,
       "attempts": [
         {
           "engine": "native",
           "strategy": "lines",
           "tables": 1,
           "cells": 144,
-          "issues": 0,
+          "issues": 1,
           "score": 1842.6,
-          "seconds": 0.30856520000088494,
+          "seconds": 0.3299881999992067,
           "error": "",
-          "selected": true
+          "selected": true,
+          "candidate_id": "p001-c01",
+          "phase": "native-primary",
+          "execution": "sequential",
+          "rank": 1,
+          "selection_reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
         }
       ],
       "error": "",
@@ -6215,8 +6889,32 @@
         "high_value_content": true,
         "risk_reasons": [],
         "profiler_warnings": [],
+        "candidate_policy": {
+          "max_workers": 2,
+          "parallel_scope": "independent-candidates-only",
+          "dependent_recovery": "sequential",
+          "tie_breaker": "declared-plan-order"
+        },
+        "candidate_plan": [
+          {
+            "candidate_id": "p001-c01",
+            "engine": "native",
+            "strategy": "lines",
+            "phase": "native-primary",
+            "execution": "sequential"
+          }
+        ],
+        "parallel_candidate_batches": [],
         "routing_decision": "digital",
-        "native_candidate_available": true
+        "native_candidate_available": true,
+        "candidate_selection": {
+          "candidate_id": "p001-c01",
+          "engine": "native",
+          "strategy": "lines",
+          "rank": 1,
+          "score": 1842.6,
+          "reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
+        }
       }
     },
     {
@@ -6224,29 +6922,39 @@
       "route": "ocr",
       "engine": "rapidocr",
       "confidence": 0.9999354511499405,
-      "seconds": 11.65289969999867,
+      "seconds": 18.761351299996022,
       "attempts": [
         {
           "engine": "tesseract",
           "strategy": "deskew-300dpi",
           "tables": 1,
           "cells": 144,
-          "issues": 1,
+          "issues": 2,
           "score": 842.2,
-          "seconds": 4.353232100000241,
+          "seconds": 4.311192699999083,
           "error": "",
-          "selected": false
+          "selected": false,
+          "candidate_id": "p002-c01",
+          "phase": "ocr-independent-primary",
+          "execution": "sequential",
+          "rank": 2,
+          "selection_reason": ""
         },
         {
           "engine": "rapidocr",
           "strategy": "independent-language-aware-cross-check",
           "tables": 1,
           "cells": 144,
-          "issues": 1,
+          "issues": 2,
           "score": 842.999,
-          "seconds": 5.974585700001626,
+          "seconds": 13.23611849998997,
           "error": "",
-          "selected": true
+          "selected": true,
+          "candidate_id": "p002-c02",
+          "phase": "ocr-independent-cross-check",
+          "execution": "sequential",
+          "rank": 1,
+          "selection_reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
         }
       ],
       "error": "",
@@ -6283,8 +6991,64 @@
         "high_value_content": true,
         "risk_reasons": [],
         "profiler_warnings": [],
+        "candidate_policy": {
+          "max_workers": 2,
+          "parallel_scope": "independent-candidates-only",
+          "dependent_recovery": "sequential",
+          "tie_breaker": "declared-plan-order"
+        },
+        "candidate_plan": [
+          {
+            "candidate_id": "p002-c01",
+            "engine": "tesseract",
+            "strategy": "deskew-300dpi",
+            "phase": "ocr-independent-primary",
+            "execution": "sequential"
+          },
+          {
+            "candidate_id": "p002-c02",
+            "engine": "rapidocr",
+            "strategy": "independent-language-aware-cross-check",
+            "phase": "ocr-independent-cross-check",
+            "execution": "sequential"
+          }
+        ],
+        "parallel_candidate_batches": [],
         "routing_decision": "ocr",
         "native_candidate_available": false,
+        "ocr_engine_capabilities": {
+          "tesseract": {
+            "available": true,
+            "installed": true,
+            "provider": "builtin-system",
+            "layout_aware": false,
+            "parallel_safe": true,
+            "requested_language_coverage": [
+              "eng"
+            ],
+            "reason": ""
+          },
+          "rapidocr": {
+            "available": true,
+            "installed": true,
+            "provider": "bundled-onnx",
+            "layout_aware": false,
+            "parallel_safe": true,
+            "requested_language_coverage": [
+              "eng"
+            ],
+            "reason": ""
+          },
+          "paddleocr": {
+            "available": false,
+            "installed": false,
+            "provider": "optional-adapter",
+            "layout_aware": true,
+            "parallel_safe": false,
+            "requested_language_coverage": [],
+            "reason": "PaddleOCR and its Paddle runtime are not installed"
+          }
+        },
         "ocr_engine_language_coverage": {
           "tesseract": [
             "eng"
@@ -6294,11 +7058,19 @@
           ]
         },
         "cross_check_executed": false,
-        "high_value_detected_after_ocr": true
+        "high_value_detected_after_ocr": true,
+        "candidate_selection": {
+          "candidate_id": "p002-c02",
+          "engine": "rapidocr",
+          "strategy": "independent-language-aware-cross-check",
+          "rank": 1,
+          "score": 842.999,
+          "reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
+        }
       }
     }
   ],
-  "seconds": 12.530545200001143,
+  "seconds": 20.011342899990268,
   "source_sha256": "478fc4a515e2814c73ee88ea36191b29c8fc3abacb844b525af3a9499721171a",
   "constraints": [
     {

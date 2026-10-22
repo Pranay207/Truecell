@@ -1,5 +1,6 @@
 """General layout regressions discovered during external-document auditing."""
 
+from truecell.layout import aligned_tables
 from truecell.models import Table
 from truecell.recover import candidate_key
 from truecell.table import normalize, words_to_grid
@@ -53,6 +54,40 @@ def test_explicit_spanning_header_preserves_vertical_leaf_labels():
     assert len(table.rows) == 2
 
 
+def test_unruled_section_row_is_retained_as_hierarchy_not_attached_to_record():
+    rows = [
+        ["Code", "Description", "Qty", "Amount"],
+        ["SECTION A", "", "", ""],
+        ["A1", "First", "2", "10"],
+        ["A2", "Second", "3", "15"],
+        ["A3", "Third", "4", "20"],
+    ]
+
+    table = words_to_grid(words(rows, xs=(10, 130, 260, 370)), 1, "ocr-test", 500, 600)[0]
+
+    assert table.rows[0] == ["SECTION A", "", "", ""]
+    assert table.rows[1:] == rows[2:]
+    assert table.cell_sources[0][0][0]["role"] == "nested_group_label"
+    assert any("no child values were imputed" in note for note in table.notes)
+
+
+def test_leading_section_does_not_hide_a_trailing_total():
+    rows = [
+        ["Code", "Description", "Qty", "Amount"],
+        ["SECTION A", "", "", ""],
+        ["A1", "First", "2", "10"],
+        ["A2", "Second", "3", "15"],
+        ["A3", "Third", "4", "20"],
+        ["Total", "", "9", "45"],
+    ]
+    page_words = words(rows, xs=(10, 130, 260, 370))
+
+    table = aligned_tables(page_words, 1, "ocr-test")[0]
+
+    assert table.rows[0] == ["SECTION A", "", "", ""]
+    assert table.rows[-1] == ["Total", "", "9", "45"]
+
+
 def test_page_prose_cannot_outvote_trusted_native_grid():
     grid = Table(["Code", "Amt"], [["A", "12"], ["B", "13"]], 1, (0, 0, 100, 100), "native-lines")
     prose = Table(
@@ -96,3 +131,24 @@ def test_dense_upside_down_ocr_cannot_outvote_sparse_upright_totals():
         0.75,
     )
     assert candidate_key((100, [upright], None)) > candidate_key((500, [nonsense], None))
+
+
+def test_negative_rotated_candidate_cannot_outvote_credible_ocr_grid():
+    credible = Table(
+        ["Invoice", "Date", "Client", "Amount"],
+        [["INV-0001", "2026-10-01", "Client 1", "12.00"]],
+        1,
+        (0, 0, 400, 300),
+        "ocr-tesseract-words",
+        0.9,
+    )
+    rotated = Table(
+        ["pled", "yinog", "00'S", "00�9"],
+        [["pled", "yinog", "00�S", "088"]] * 5,
+        1,
+        (0, 0, 400, 300),
+        "ocr-tesseract-words",
+        0.9,
+    )
+
+    assert candidate_key((663, [credible], None)) > candidate_key((-164, [rotated], None))

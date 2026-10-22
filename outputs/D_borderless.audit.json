@@ -10402,7 +10402,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.92,
-      "seconds": 2.9976857000001473,
+      "seconds": 1.4517593000055058,
       "attempts": [
         {
           "engine": "native",
@@ -10411,9 +10411,14 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 0.2259319000004325,
+          "seconds": 0.11510740000812802,
           "error": "",
-          "selected": false
+          "selected": false,
+          "candidate_id": "p001-c01",
+          "phase": "native-primary",
+          "execution": "sequential",
+          "rank": 3,
+          "selection_reason": ""
         },
         {
           "engine": "native",
@@ -10422,9 +10427,14 @@
           "cells": 224,
           "issues": 1,
           "score": 1094.4,
-          "seconds": 1.62528360000033,
+          "seconds": 1.1306437000021106,
           "error": "",
-          "selected": false
+          "selected": false,
+          "candidate_id": "p001-c02",
+          "phase": "native-independent-recovery",
+          "execution": "bounded-parallel",
+          "rank": 2,
+          "selection_reason": ""
         },
         {
           "engine": "native",
@@ -10433,9 +10443,14 @@
           "cells": 192,
           "issues": 1,
           "score": 1126.4,
-          "seconds": 0.5367931000000681,
+          "seconds": 0.5955084000015631,
           "error": "",
-          "selected": true
+          "selected": true,
+          "candidate_id": "p001-c03",
+          "phase": "native-independent-recovery",
+          "execution": "bounded-parallel",
+          "rank": 1,
+          "selection_reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
         }
       ],
       "error": "",
@@ -10475,8 +10490,55 @@
         "high_value_content": true,
         "risk_reasons": [],
         "profiler_warnings": [],
+        "candidate_policy": {
+          "max_workers": 2,
+          "parallel_scope": "independent-candidates-only",
+          "dependent_recovery": "sequential",
+          "tie_breaker": "declared-plan-order"
+        },
+        "candidate_plan": [
+          {
+            "candidate_id": "p001-c01",
+            "engine": "native",
+            "strategy": "lines",
+            "phase": "native-primary",
+            "execution": "sequential"
+          },
+          {
+            "candidate_id": "p001-c02",
+            "engine": "native",
+            "strategy": "text",
+            "phase": "native-independent-recovery",
+            "execution": "bounded-parallel"
+          },
+          {
+            "candidate_id": "p001-c03",
+            "engine": "native",
+            "strategy": "words",
+            "phase": "native-independent-recovery",
+            "execution": "bounded-parallel"
+          }
+        ],
+        "parallel_candidate_batches": [
+          {
+            "phase": "native-independent-recovery",
+            "workers": 2,
+            "candidate_ids": [
+              "p001-c02",
+              "p001-c03"
+            ]
+          }
+        ],
         "routing_decision": "digital",
-        "native_candidate_available": true
+        "native_candidate_available": true,
+        "candidate_selection": {
+          "candidate_id": "p001-c03",
+          "engine": "native",
+          "strategy": "words",
+          "rank": 1,
+          "score": 1126.4,
+          "reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
+        }
       }
     },
     {
@@ -10484,7 +10546,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.92,
-      "seconds": 2.522906199999852,
+      "seconds": 1.3530197000072803,
       "attempts": [
         {
           "engine": "native",
@@ -10493,9 +10555,14 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 0.2505929999988439,
+          "seconds": 0.08477729999867734,
           "error": "",
-          "selected": false
+          "selected": false,
+          "candidate_id": "p002-c01",
+          "phase": "native-primary",
+          "execution": "sequential",
+          "rank": 3,
+          "selection_reason": ""
         },
         {
           "engine": "native",
@@ -10504,9 +10571,14 @@
           "cells": 224,
           "issues": 1,
           "score": 1096.4,
-          "seconds": 1.1955671000014263,
+          "seconds": 0.9531911999947624,
           "error": "",
-          "selected": false
+          "selected": false,
+          "candidate_id": "p002-c02",
+          "phase": "native-independent-recovery",
+          "execution": "bounded-parallel",
+          "rank": 2,
+          "selection_reason": ""
         },
         {
           "engine": "native",
@@ -10515,9 +10587,14 @@
           "cells": 192,
           "issues": 1,
           "score": 1128.4,
-          "seconds": 0.5514433000007557,
+          "seconds": 0.5570111999986693,
           "error": "",
-          "selected": true
+          "selected": true,
+          "candidate_id": "p002-c03",
+          "phase": "native-independent-recovery",
+          "execution": "bounded-parallel",
+          "rank": 1,
+          "selection_reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
         }
       ],
       "error": "",
@@ -10557,8 +10634,55 @@
         "high_value_content": true,
         "risk_reasons": [],
         "profiler_warnings": [],
+        "candidate_policy": {
+          "max_workers": 2,
+          "parallel_scope": "independent-candidates-only",
+          "dependent_recovery": "sequential",
+          "tie_breaker": "declared-plan-order"
+        },
+        "candidate_plan": [
+          {
+            "candidate_id": "p002-c01",
+            "engine": "native",
+            "strategy": "lines",
+            "phase": "native-primary",
+            "execution": "sequential"
+          },
+          {
+            "candidate_id": "p002-c02",
+            "engine": "native",
+            "strategy": "text",
+            "phase": "native-independent-recovery",
+            "execution": "bounded-parallel"
+          },
+          {
+            "candidate_id": "p002-c03",
+            "engine": "native",
+            "strategy": "words",
+            "phase": "native-independent-recovery",
+            "execution": "bounded-parallel"
+          }
+        ],
+        "parallel_candidate_batches": [
+          {
+            "phase": "native-independent-recovery",
+            "workers": 2,
+            "candidate_ids": [
+              "p002-c02",
+              "p002-c03"
+            ]
+          }
+        ],
         "routing_decision": "digital",
-        "native_candidate_available": true
+        "native_candidate_available": true,
+        "candidate_selection": {
+          "candidate_id": "p002-c03",
+          "engine": "native",
+          "strategy": "words",
+          "rank": 1,
+          "score": 1128.4,
+          "reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
+        }
       }
     },
     {
@@ -10566,7 +10690,7 @@
       "route": "digital",
       "engine": "native",
       "confidence": 0.92,
-      "seconds": 2.17401769999924,
+      "seconds": 1.9299715000088327,
       "attempts": [
         {
           "engine": "native",
@@ -10575,9 +10699,14 @@
           "cells": 0,
           "issues": 0,
           "score": -10000,
-          "seconds": 0.21250580000014452,
+          "seconds": 0.15676159999566153,
           "error": "",
-          "selected": false
+          "selected": false,
+          "candidate_id": "p003-c01",
+          "phase": "native-primary",
+          "execution": "sequential",
+          "rank": 3,
+          "selection_reason": ""
         },
         {
           "engine": "native",
@@ -10586,9 +10715,14 @@
           "cells": 224,
           "issues": 1,
           "score": 1096.4,
-          "seconds": 1.3299174999992829,
+          "seconds": 1.5730131000018446,
           "error": "",
-          "selected": false
+          "selected": false,
+          "candidate_id": "p003-c02",
+          "phase": "native-independent-recovery",
+          "execution": "bounded-parallel",
+          "rank": 2,
+          "selection_reason": ""
         },
         {
           "engine": "native",
@@ -10597,9 +10731,14 @@
           "cells": 192,
           "issues": 1,
           "score": 1128.4,
-          "seconds": 0.32050230000095326,
+          "seconds": 0.8674548999988474,
           "error": "",
-          "selected": true
+          "selected": true,
+          "candidate_id": "p003-c03",
+          "phase": "native-independent-recovery",
+          "execution": "bounded-parallel",
+          "rank": 1,
+          "selection_reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
         }
       ],
       "error": "",
@@ -10639,12 +10778,59 @@
         "high_value_content": true,
         "risk_reasons": [],
         "profiler_warnings": [],
+        "candidate_policy": {
+          "max_workers": 2,
+          "parallel_scope": "independent-candidates-only",
+          "dependent_recovery": "sequential",
+          "tie_breaker": "declared-plan-order"
+        },
+        "candidate_plan": [
+          {
+            "candidate_id": "p003-c01",
+            "engine": "native",
+            "strategy": "lines",
+            "phase": "native-primary",
+            "execution": "sequential"
+          },
+          {
+            "candidate_id": "p003-c02",
+            "engine": "native",
+            "strategy": "text",
+            "phase": "native-independent-recovery",
+            "execution": "bounded-parallel"
+          },
+          {
+            "candidate_id": "p003-c03",
+            "engine": "native",
+            "strategy": "words",
+            "phase": "native-independent-recovery",
+            "execution": "bounded-parallel"
+          }
+        ],
+        "parallel_candidate_batches": [
+          {
+            "phase": "native-independent-recovery",
+            "workers": 2,
+            "candidate_ids": [
+              "p003-c02",
+              "p003-c03"
+            ]
+          }
+        ],
         "routing_decision": "digital",
-        "native_candidate_available": true
+        "native_candidate_available": true,
+        "candidate_selection": {
+          "candidate_id": "p003-c03",
+          "engine": "native",
+          "strategy": "words",
+          "rank": 1,
+          "score": 1128.4,
+          "reason": "Highest deterministic candidate key: trusted layout, credible content, structural quality, then validation-adjusted score; plan order breaks exact ties."
+        }
       }
     }
   ],
-  "seconds": 9.43738989999838,
+  "seconds": 5.867875900003128,
   "source_sha256": "4a13a52a6d7697ec4262575a5f6c06262ae42626a8b631bacb9bd6b7ddf8bce9",
   "constraints": [
     {

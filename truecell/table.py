@@ -19,7 +19,22 @@ VERTICAL_MERGE_NOTE = (
     "geometry; inherited cells reuse the original source box."
 )
 NESTED_GROUP_NOTE = (
-    "Full-width body group labels retained as nested section rows; no child values were imputed."
+    "Explicit body group labels retained as nested section rows; no child values were imputed."
+)
+HORIZONTAL_MERGE_NOTE = (
+    "Merged body labels retained in their source cell with covered cells blank; no values were "
+    "imputed across columns."
+)
+MULTILEVEL_HEADER_NOTE = "Multi-level merged headers flattened into source-backed column paths."
+UNRULED_VERTICAL_NOTE = (
+    "Possible unruled vertical group spans remain blank because the available geometry does not "
+    "prove inheritance; review those cells against the source."
+)
+
+GROUP_HEADER = re.compile(
+    r"\b(?:group|section|category|package|phase|department|division|class|part|chapter|"
+    r"work\s*package|lot)\b",
+    re.I,
 )
 
 
@@ -72,6 +87,17 @@ def _title_row_likely(
     if len(occupied) != 1 or not (header_likely(rows[1], rows[2:]) or dense_leaf):
         return False
     title = occupied[0]
+    # Short labels such as ``SECTION A`` or ``Work package 1`` can be a real
+    # parent header spanning every column.  A longer full-width caption that
+    # happens to contain one of those words (for example a page-specific
+    # ``... - section 10`` title) is document context when a complete leaf
+    # header follows it.  Keeping the exemption deliberately concise avoids
+    # copying a page caption into every column while preserving ordinary group
+    # headers.
+    group_tokens = re.findall(r"[\w]+", title, flags=re.UNICODE)
+    concise_group_label = len(group_tokens) <= 3
+    if _strong_group_label(title) and not TITLE_WORDS.search(title) and concise_group_label:
+        return False
     letters = "".join(character for character in title if character.isalpha())
     lexical = bool(TITLE_WORDS.search(title)) or (
         len(title.split()) >= 2 and bool(letters) and letters.upper() == letters
@@ -138,6 +164,245 @@ def _vertical_merge_origins(
     return origins
 
 
+def _box_at(cell_boxes: list[list[tuple | None]] | None, row: int, column: int) -> tuple | None:
+    if cell_boxes is None or row >= len(cell_boxes) or column >= len(cell_boxes[row]):
+        return None
+    box = cell_boxes[row][column]
+    return box if box is not None and len(box) >= 4 else None
+
+
+def _header_token(value: str) -> bool:
+    """Return whether a scalar can safely label a header level."""
+    text = clean(value)
+    return bool(
+        not text
+        or kind(text) == "text"
+        or re.fullmatch(r"(?:19|20)\d{2}", text)
+        or re.fullmatch(r"(?:q[1-4]|h[12]|fy\s*\d{2,4})", text, re.I)
+    )
+
+
+def _parent_header_geometry(
+    raw_index: int,
+    values: list[str],
+    width: int,
+    cell_boxes: list[list[tuple | None]] | None,
+    table_bbox: tuple,
+) -> bool:
+    """Return whether a level is clearly a parent rather than a merged leaf header.
+
+    A single wide cell in an otherwise dense leaf row is not enough to justify
+    consuming the next all-text row as another header axis.  Parent levels are
+    sparse or contain multiple independent horizontal spans.
+    """
+    if cell_boxes is None or raw_index >= len(cell_boxes):
+        return False
+    table_width = max(1.0, float(table_bbox[2]) - float(table_bbox[0]))
+    nominal_width = table_width / max(1, width)
+    spanning = sum(
+        box is not None and len(box) >= 4 and float(box[2]) - float(box[0]) > nominal_width * 1.45
+        for box in cell_boxes[raw_index]
+    )
+    populated = sum(bool(clean(value)) for value in values)
+    return spanning >= 2 or spanning == 1 and populated <= max(1, width // 2)
+
+
+def _header_depth(
+    rows: list[list[str]],
+    width: int,
+    cell_boxes: list[list[tuple | None]] | None,
+    raw_indices: list[int],
+    table_bbox: tuple,
+) -> int:
+    """Find a conservative two-to-four-row merged header hierarchy."""
+    if len(rows) < 3:
+        return 0
+    first_values = [(column, clean(value)) for column, value in enumerate(rows[0]) if clean(value)]
+    if len(first_values) == 1 and _strong_group_label(first_values[0][1]):
+        first_box = _box_at(cell_boxes, raw_indices[0], first_values[0][0])
+        table_width = max(1.0, float(table_bbox[2]) - float(table_bbox[0]))
+        full_width_parent = (
+            first_box is not None
+            and (float(first_box[2]) - float(first_box[0])) / table_width >= 0.8
+        )
+        if not full_width_parent:
+            return 0
+    first_sparse = sum(bool(c) for c in rows[0]) < width
+    later_data = any(
+        kind(c) in {"numeric", "currency", "date", "id"} for row in rows[2:6] for c in row
+    )
+    if not first_sparse or not later_data or not all(_header_token(c) for c in rows[0]):
+        return 0
+    depth = 1
+    for position in range(1, min(4, len(rows) - 1)):
+        row = rows[position]
+        following = rows[position + 1 : position + 5]
+        dense = sum(bool(c) for c in row) >= max(2, width * 0.3)
+        header_evidence = header_likely(row, following)
+        if all(_header_token(c) for c in row) and (dense or header_evidence):
+            depth += 1
+            # Continue only when this accepted level is affirmatively a parent
+            # level. A dense leaf row with one merged label must end the header;
+            # otherwise an all-text first data row can be silently consumed.
+            if not _parent_header_geometry(
+                raw_indices[position], row, width, cell_boxes, table_bbox
+            ):
+                break
+            continue
+        break
+    return depth if depth >= 2 else 0
+
+
+def _header_paths(
+    raw: list[list[object]],
+    header_indices: list[int],
+    width: int,
+    cell_boxes: list[list[tuple | None]] | None,
+    table_bbox: tuple,
+) -> tuple[list[str], list[list[int | None]]]:
+    """Flatten merged header levels and retain the source cell for every path part."""
+    table_left, table_right = float(table_bbox[0]), float(table_bbox[2])
+    step = max(1.0, table_right - table_left) / width
+    centers = [table_left + (column + 0.5) * step for column in range(width)]
+    # Dense body/header cells give better column centers than equal-width fallback.
+    for column in range(width):
+        candidates = []
+        for row, boxes in enumerate(cell_boxes or []):
+            if column >= len(boxes):
+                continue
+            box = _box_at(cell_boxes, row, column)
+            if box is not None and (box[2] - box[0]) <= step * 1.6:
+                candidates.append((box[0] + box[2]) / 2)
+        if candidates:
+            centers[column] = median(candidates)
+
+    levels: list[list[str]] = []
+    owners: list[list[int | None]] = []
+    for raw_index in header_indices:
+        values = [clean(raw[raw_index][c]) if c < len(raw[raw_index]) else "" for c in range(width)]
+        level = [""] * width
+        owner_row: list[int | None] = [None] * width
+        populated = [c for c, value in enumerate(values) if value]
+        for source_column in populated:
+            value = values[source_column]
+            box = _box_at(cell_boxes, raw_index, source_column)
+            covered = (
+                [c for c, center in enumerate(centers) if box[0] - 0.75 <= center <= box[2] + 0.75]
+                if box is not None
+                else []
+            )
+            if not covered:
+                next_column = next((c for c in populated if c > source_column), width)
+                covered = list(range(source_column, next_column))
+            for column in covered:
+                # Do not let a coarse parent overwrite an explicit cell at this level.
+                if not level[column] or column == source_column:
+                    level[column] = value
+                    owner_row[column] = source_column
+        levels.append(level)
+        owners.append(owner_row)
+
+    headers = []
+    for column in range(width):
+        path = []
+        for level in levels:
+            value = level[column]
+            if value and (not path or value.casefold() != path[-1].casefold()):
+                path.append(value)
+        headers.append(" | ".join(path) or f"Column {column + 1}")
+    return headers, owners
+
+
+def _strong_group_label(value: str) -> bool:
+    text = clean(value)
+    letters = "".join(character for character in text if character.isalpha())
+    return bool(
+        text
+        and kind(text) == "text"
+        and (
+            GROUP_HEADER.search(text)
+            or text.endswith(":")
+            or len(text.split()) >= 2
+            and len(letters) >= 4
+            and letters.upper() == letters
+        )
+    )
+
+
+def _structural_annotations(
+    raw: list[list[object]],
+    indices: list[int],
+    width: int,
+    bbox: tuple,
+    cell_boxes: list[list[tuple | None]] | None,
+) -> tuple[set[tuple[int, int]], set[tuple[int, int]]]:
+    """Identify explicit horizontal spans and conservative nested group rows."""
+    horizontal: set[tuple[int, int]] = set()
+    nested: set[tuple[int, int]] = set()
+    table_width = max(1.0, float(bbox[2]) - float(bbox[0]))
+    nominal_width = table_width / max(1, width)
+    for raw_index in indices:
+        populated = [c for c, value in enumerate(raw[raw_index]) if clean(value)]
+        for column in populated:
+            value = clean(raw[raw_index][column])
+            box = _box_at(cell_boxes, raw_index, column)
+            if box is not None and kind(value) == "text" and box[2] - box[0] >= nominal_width * 1.6:
+                horizontal.add((raw_index, column))
+        if len(populated) != 1:
+            continue
+        column = populated[0]
+        value = clean(raw[raw_index][column])
+        box = _box_at(cell_boxes, raw_index, column)
+        full_width = box is not None and (box[2] - box[0]) / table_width >= 0.8
+        if kind(value) == "text" and (full_width or _strong_group_label(value)):
+            nested.add((raw_index, column))
+    return horizontal, nested
+
+
+def _possible_unruled_vertical_spans(
+    headers: list[str], rows: list[list[str]], engine: str
+) -> bool:
+    """Detect ambiguous hierarchy blanks, deliberately without filling them."""
+    if engine.endswith("-lines"):
+        return False
+    for column, header in enumerate(headers[:-1]):
+        if not GROUP_HEADER.search(header):
+            continue
+        prior = ""
+        for row in rows:
+            value = clean(row[column]) if column < len(row) else ""
+            if value:
+                prior = value
+            elif prior and sum(bool(clean(cell)) for cell in row) >= 2:
+                return True
+    return False
+
+
+def annotate_unruled_structure(table: Table) -> None:
+    """Label explicit section rows and disclose unresolved vertical spans."""
+    nested = False
+    table_width = max(1.0, table.bbox[2] - table.bbox[0])
+    for row_index, row in enumerate(table.rows):
+        populated = [column for column, value in enumerate(row) if clean(value)]
+        if len(populated) != 1:
+            continue
+        column = populated[0]
+        sources = table.cell_sources[row_index][column]
+        boxes = [source.get("bbox") for source in sources if source.get("bbox")]
+        full_width = bool(boxes) and max(box[2] - box[0] for box in boxes) / table_width >= 0.8
+        if full_width or _strong_group_label(row[column]):
+            nested = True
+            for source in sources:
+                source["role"] = "nested_group_label"
+    if nested and NESTED_GROUP_NOTE not in table.notes:
+        table.notes.append(NESTED_GROUP_NOTE)
+    if (
+        _possible_unruled_vertical_spans(table.headers, table.rows, table.engine)
+        and UNRULED_VERTICAL_NOTE not in table.notes
+    ):
+        table.notes.append(UNRULED_VERTICAL_NOTE)
+
+
 def normalize(
     raw: list[list[object]],
     page: int,
@@ -146,6 +411,7 @@ def normalize(
     confidence: float = 1.0,
     cell_boxes: list[list[tuple | None]] | None = None,
     row_indices: list[int] | None = None,
+    ruled_geometry: bool | None = None,
 ) -> Table | None:
     """Normalize tables; optionally return raw data-row indexes for OCR evidence."""
     if row_indices is not None:
@@ -166,25 +432,15 @@ def normalize(
         rows = rows[1:]
         indices = indices[1:]
     has_header = title_index is not None or header_likely(rows[0], rows[1:])
-    header_indices = []
-    # Spanning top groups: pdfplumber represents merged cells as None/empty.
-    if (
-        len(rows) >= 3
-        and sum(bool(c) for c in rows[0]) < width
-        and sum(bool(c) for c in rows[1]) >= 2
-        and all(kind(c) in {"text", "empty"} for c in rows[1])
-        and any(kind(c) in {"numeric", "currency", "date", "id"} for row in rows[2:5] for c in row)
-        and all(kind(c) in {"text", "empty"} for c in rows[0])
-    ):
-        parent = ""
-        headers = []
-        for c in range(width):
-            top = rows[0][c] if c < len(rows[0]) else ""
-            parent = top or parent
-            sub = rows[1][c] if c < len(rows[1]) else ""
-            headers.append(" | ".join(filter(None, (parent, sub))))
-        rows = rows[2:]
-        header_indices, indices = indices[:2], indices[2:]
+    header_indices: list[int] = []
+    header_owners: list[list[int | None]] = []
+    # pdfplumber and OCR topology represent merged cells with one source cell
+    # followed by empty covered positions. Support two to four header axes.
+    header_depth = _header_depth(rows, width, cell_boxes, indices, bbox)
+    if header_depth:
+        header_indices, indices = indices[:header_depth], indices[header_depth:]
+        headers, header_owners = _header_paths(raw, header_indices, width, cell_boxes, bbox)
+        rows = rows[header_depth:]
         has_header = True
     elif has_header:
         headers, rows = rows[0] + [""] * (width - len(rows[0])), rows[1:]
@@ -193,30 +449,24 @@ def normalize(
         headers = [f"Column {c + 1}" for c in range(width)]
     headers = [h or f"Column {c + 1}" for c, h in enumerate(headers)]
     vertical_origins: dict[tuple[int, int], int] = {}
+    horizontal_spans: set[tuple[int, int]] = set()
     nested_groups: set[tuple[int, int]] = set()
-    if engine == "native-lines" and cell_boxes is not None:
-        vertical_origins = _vertical_merge_origins(raw, cell_boxes, indices)
+    if cell_boxes is not None:
+        supports_ruled_spans = (
+            engine == "native-lines" if ruled_geometry is None else ruled_geometry
+        )
+        if supports_ruled_spans:
+            vertical_origins = _vertical_merge_origins(raw, cell_boxes, indices)
         for data_row, raw_index in enumerate(indices):
             for column in range(len(rows[data_row])):
                 source_index = vertical_origins.get((raw_index, column))
                 if source_index is not None:
                     rows[data_row][column] = clean(raw[source_index][column])
-            populated = [c for c, value in enumerate(raw[raw_index]) if clean(value)]
-            if len(populated) == 1:
-                column = populated[0]
-                box = (
-                    cell_boxes[raw_index][column]
-                    if raw_index < len(cell_boxes) and column < len(cell_boxes[raw_index])
-                    else None
-                )
-                table_width = max(1.0, float(bbox[2]) - float(bbox[0]))
-                if (
-                    box is not None
-                    and len(box) >= 4
-                    and (box[2] - box[0]) / table_width >= 0.8
-                    and kind(clean(raw[raw_index][column])) == "text"
-                ):
-                    nested_groups.add((raw_index, column))
+        horizontal_spans, nested_groups = _structural_annotations(
+            raw, indices, width, bbox, cell_boxes
+        )
+        if not supports_ruled_spans:
+            horizontal_spans.clear()
     table = Table(headers, rows, page, tuple(bbox), engine, confidence, has_header)
     if title_index is not None:
         title_cell = next(
@@ -243,6 +493,12 @@ def normalize(
         table.notes.append(VERTICAL_MERGE_NOTE)
     if nested_groups:
         table.notes.append(NESTED_GROUP_NOTE)
+    if horizontal_spans - nested_groups:
+        table.notes.append(HORIZONTAL_MERGE_NOTE)
+    if len(header_indices) > 1:
+        table.notes.append(MULTILEVEL_HEADER_NOTE)
+    if _possible_unruled_vertical_spans(headers, rows, engine):
+        table.notes.append(UNRULED_VERTICAL_NOTE)
     if row_indices is not None:
         row_indices.extend(indices)
     if cell_boxes is not None:
@@ -250,24 +506,10 @@ def normalize(
         def source(r: int, c: int) -> list[dict]:
             inherited = (r, c) in vertical_origins
             nested_group = (r, c) in nested_groups
+            horizontal_span = (r, c) in horizontal_spans
             if inherited:
                 r = vertical_origins[(r, c)]
-            top_value = raw[r][c] if c < len(raw[r]) else None
-            second_value = (
-                raw[header_indices[1]][c]
-                if len(header_indices) == 2 and c < len(raw[header_indices[1]])
-                else None
-            )
-            if (
-                len(header_indices) == 2
-                and r == header_indices[0]
-                and not top_value
-                and second_value
-            ):
-                c = next(
-                    (j for j in range(c - 1, -1, -1) if j < len(raw[r]) and raw[r][j]),
-                    c,
-                )
+            source_row, source_column = r, c
             box = cell_boxes[r][c] if r < len(cell_boxes) and c < len(cell_boxes[r]) else None
             return [
                 {
@@ -277,20 +519,41 @@ def normalize(
                     "engine": engine,
                     "confidence": None if engine.startswith("native") else confidence,
                     "coordinates": "page points",
+                    "source_row": source_row + 1,
+                    "source_column": source_column + 1,
                     **(
                         {"role": "vertical_merge_expansion"}
                         if inherited
                         else {"role": "nested_group_label"}
                         if nested_group
+                        else {"role": "horizontal_merge_label"}
+                        if horizontal_span
                         else {}
                     ),
                 }
             ]
 
         table.cell_sources = [[source(r, c) for c in range(len(raw[r]))] for r in indices]
-        table.header_sources = [
-            [s for r in header_indices for s in source(r, c)] for c in range(len(headers))
-        ]
+        if header_owners:
+            table.header_sources = []
+            for column in range(len(headers)):
+                records = []
+                for level, raw_index in enumerate(header_indices):
+                    owner = header_owners[level][column]
+                    if owner is None:
+                        continue
+                    for record in source(raw_index, owner):
+                        record["role"] = "merged_header_path"
+                        if not records or (record["text"], record["bbox"]) != (
+                            records[-1]["text"],
+                            records[-1]["bbox"],
+                        ):
+                            records.append(record)
+                table.header_sources.append(records)
+        else:
+            table.header_sources = [
+                [s for r in header_indices for s in source(r, c)] for c in range(len(headers))
+            ]
     if not has_header:
         table.notes.append("Header uncertain; generic column labels used. First row retained.")
     return table

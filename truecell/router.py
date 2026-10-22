@@ -14,6 +14,8 @@ from .profiling import PageProfile, profile_page
 
 MAX_PAGES = 200
 MAX_IMAGE_FRAMES = 50
+MAX_IMAGE_PIXELS = 20_000_000
+MAX_TOTAL_IMAGE_PIXELS = 100_000_000
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".tif", ".tiff", ".bmp", ".webp"}
 
 
@@ -34,9 +36,33 @@ def open_document(path: str | Path) -> Iterator[fitz.Document]:
         elif source.suffix.lower() in IMAGE_EXTENSIONS:
             document = fitz.open()
             with Image.open(source) as image:
-                if getattr(image, "n_frames", 1) > MAX_IMAGE_FRAMES:
+                frame_count = getattr(image, "n_frames", 1)
+                if frame_count > MAX_IMAGE_FRAMES:
                     raise InputError(f"At most {MAX_IMAGE_FRAMES} image frames are supported.")
-                for index in range(getattr(image, "n_frames", 1)):
+
+                # Validate every decoded frame dimension before copying or converting
+                # any pixels. Compressed image files can be small on disk while
+                # expanding to an unsafe amount of memory when decoded.
+                total_pixels = 0
+                for index in range(frame_count):
+                    image.seek(index)
+                    width, height = image.size
+                    if width < 1 or height < 1:
+                        raise InputError(f"Image frame {index + 1} has invalid dimensions.")
+                    pixels = width * height
+                    if pixels > MAX_IMAGE_PIXELS:
+                        raise InputError(
+                            f"Image frame {index + 1} has {pixels:,} decoded pixels; "
+                            f"maximum per frame is {MAX_IMAGE_PIXELS:,}."
+                        )
+                    total_pixels += pixels
+                    if total_pixels > MAX_TOTAL_IMAGE_PIXELS:
+                        raise InputError(
+                            f"Image has {total_pixels:,} decoded pixels across frames; "
+                            f"maximum is {MAX_TOTAL_IMAGE_PIXELS:,}."
+                        )
+
+                for index in range(frame_count):
                     image.seek(index)
                     frame = ImageOps.exif_transpose(image.copy()).convert("RGB")
                     import io
@@ -93,7 +119,10 @@ def route_page(page: fitz.Page, profile: PageProfile | dict | None = None) -> st
 def render_page(page: fitz.Page, dpi: int = 300) -> Image.Image:
     """Render at 300 DPI, capped for unusually large PDF media boxes."""
     width, height = page.rect.width, page.rect.height
-    maximum_dpi = min(5500 * 72 / max(width, height), math.sqrt(20_000_000 / (width * height)) * 72)
+    maximum_dpi = min(
+        5500 * 72 / max(width, height),
+        math.sqrt(MAX_IMAGE_PIXELS / (width * height)) * 72,
+    )
     actual_dpi = max(1, min(dpi, int(maximum_dpi)))
     pix = page.get_pixmap(dpi=actual_dpi, colorspace=fitz.csRGB, alpha=False)
     image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)

@@ -46,9 +46,9 @@ Truecell is a local-first React and FastAPI application built for the **INCUXAI 
 
 | Verified result | Evidence |
 |---|---|
-| **23/23** deterministic development cases passed | [Accuracy report](reports/ACCURACY_REPORT.md) |
-| **260** Python tests and **15** frontend tests passed | [Build verification](reports/BUILD_VERIFICATION.md) |
-| **5/5** scan cases passed with Tesseract excluded | [Portable OCR results](reports/PORTABLE_OCR.json) |
+| **23/23** source-bound development cases passed exact truth checks | [Accuracy report](reports/ACCURACY_REPORT.md) |
+| **304 Python** and **16 frontend** tests passed; Docker and portable smoke checks passed | [Build verification](reports/BUILD_VERIFICATION.md) |
+| **5/5** scan cases passed with bundled RapidOCR and Tesseract excluded | [Portable OCR results](reports/PORTABLE_OCR.json) |
 | **50 pages / 800 rows / 12 columns** recovered in the measured stress fixture | [Stress PDF](samples/D_stress_50pages.pdf) · [Converted workbook](outputs/D_stress_50pages.xlsx) |
 | **13 pages / 4 tables / 1,092 cells** matched exactly in a disclosed challenge-equivalent fixture | [Equivalent report](reports/THIRTEEN_PAGE_EQUIVALENT.md) · [PDF](samples/G_thirteen_page_equivalent.pdf) · [Workbook](outputs/G_thirteen_page_equivalent.xlsx) |
 | **18-column** borderless table and vertically grouped nested line items passed exact checks | [18-column workbook](outputs/E_eighteen_columns.xlsx) · [Nested-lines workbook](outputs/E_vertical_nested_lines.xlsx) |
@@ -60,11 +60,11 @@ These are disclosed dummy development fixtures, not blind or hidden-document acc
 
 | Evaluation criterion | Verified proof |
 |---|---|
-| **OCR and extraction accuracy — 30** | **5/5 offline OCR fixtures passed** with Tesseract excluded. Per-page quality profiling, native PDF extraction, multilingual local Tesseract routing, RapidOCR, deskew, rotation/perspective recovery, candidate cross-checking and cell-level source boxes. [View OCR evidence](reports/PORTABLE_OCR.json). |
+| **OCR and extraction accuracy — 30** | **5/5 engine-isolated scan fixtures passed** with external Tesseract excluded. Per-page quality profiling, native PDF extraction, multilingual local Tesseract routing, bundled RapidOCR, deskew, rotation/perspective recovery, candidate cross-checking and cell-level source boxes. [View OCR evidence](reports/PORTABLE_OCR.json). |
 | **Multi-page and complex tables — 25** | **50 pages · 800 rows · 12 columns** recovered in the measured stress fixture, plus an exact **13-page / 4-table / 14-column** equivalent case. Repeated headers, consensus repair, split rows, full-width titles and vertically grouped line items are covered. [View accuracy report](reports/ACCURACY_REPORT.md). |
 | **Column alignment and data integrity — 20** | **126/126 public Unicode cells matched** their source-pinned reference. Leading zeros, duplicates, row provenance, safe formulas, and exact header/shape checks are preserved. [View external audit](reports/EXTERNAL_AUDIT.md). |
 | **Automation and error recovery — 15** | Automatic quality/risk routing, alternate extraction strategies, resumable checkpoints, partial/failed result states, page-level continuation, arithmetic validation, correction previews, and fingerprint-bound review history. [View QA evidence](reports/QA_REPORT.md). |
-| **Code quality and usability — 10** | **260 Python + 15 frontend tests passed.** Responsive React UI, FastAPI backend, searchable tables, complete paginated review, Draft/Reviewed export gates, CSV/JSON outputs, Docker delivery and multi-platform CI. [View build verification](reports/BUILD_VERIFICATION.md). |
+| **Code quality and usability — 10** | **304 Python + 16 frontend tests passed.** Responsive React UI, FastAPI backend, searchable tables, complete paginated review, Draft/Reviewed export gates, CSV/JSON outputs, Docker delivery and multi-platform CI. [View build verification](reports/BUILD_VERIFICATION.md). |
 
 ## Run Truecell
 
@@ -83,7 +83,7 @@ Use the supplied `Truecell-Portable-Windows-x64.zip` on **Windows 10/11 x64**:
 
 Python, Node.js, an API key and internet access are not required. The portable folder includes the React application, local FastAPI server, RapidOCR, OCR models and demo PDFs. Saved documents remain beside the executable in `TruecellData`; keep the entire extracted folder together. The console window shows the local address and stops the server when closed.
 
-The tested portable bundle is a PyInstaller one-folder application: **316.68 MiB extracted / 152.50 MiB zipped**. Its packaged EXE passed health and UI checks, exact native-PDF extraction, a RapidOCR scan with external Tesseract disabled, Excel/audit downloads, launch from a path containing spaces, and workspace persistence after restart. See [portable instructions](portable/README-FIRST.txt).
+The verified portable release is a PyInstaller one-folder application: **316.71 MiB extracted / 152.53 MiB zipped**. SHA-256: `e786bec9bb3fa46d316c964552c82b47f56cf999af38800ae9bb4f65df50b3ea`. Its packaged EXE passed health and UI checks, exact native-PDF extraction, a RapidOCR scan with external Tesseract disabled, Excel/audit downloads, launch from a path containing spaces, and workspace persistence after restart. See [portable instructions](portable/README-FIRST.txt).
 
 ### 2. Python/source launcher
 
@@ -94,7 +94,7 @@ Windows:       double-click START_TRUECELL.cmd
 Linux/macOS:   bash start.sh
 ```
 
-The first source run creates `.venv` and installs pinned dependencies, so it needs internet. Later runs and normal conversions work offline on CPU without an API key or GPU. The launcher opens a local URL, normally **http://127.0.0.1:8501**.
+The first source run creates `.venv` and installs the declared version-constrained dependencies, so it needs internet. Later runs and normal conversions work offline on CPU without an API key or GPU. The launcher opens a local URL, normally **http://127.0.0.1:8501**.
 
 ```powershell
 # Verify an existing installation without network access
@@ -107,7 +107,7 @@ The first source run creates `.venv` and installs pinned dependencies, so it nee
 .\START_TRUECELL.cmd --offline --lan
 ```
 
-The application accepts PDFs up to **200 pages**, multi-frame images/TIFFs up to **50 frames**, and uploads up to **50 MB**. The measured large-document fixture is 50 pages; the 200-page ceiling is an input capability, not a 200-page accuracy benchmark. The production frontend is prebuilt, so judges do not need Node.js.
+The application accepts PDFs up to **200 pages**, multi-frame images/TIFFs up to **50 frames**, and uploads up to **50 MB**. Decoded images are limited to **20 million pixels per frame** and **100 million pixels in total** before any frame copy, preventing small compressed files from expanding without a memory bound. The measured large-document fixture is 50 pages; the 200-page ceiling is an input capability, not a 200-page accuracy benchmark. The production frontend is prebuilt, so end users do not need Node.js.
 
 ### 3. Docker/server
 
@@ -117,7 +117,7 @@ With Docker Desktop or Docker Engine running:
 docker compose up --build
 ```
 
-Open **http://127.0.0.1:8501**. The container runs as a non-root user, exposes only loopback by default, includes offline English OCR, and stores workspaces in the `truecell-workspaces` volume. Add the required Tesseract language packages to the image when deploying multilingual scan support.
+Open **http://127.0.0.1:8501**. The container runs as a non-root user, exposes only loopback by default, includes offline Tesseract packs for English, Hindi and Telugu plus bundled RapidOCR, and stores workspaces in the `truecell-workspaces` volume.
 
 <details>
 <summary>Manual setup and CLI</summary>
@@ -137,7 +137,7 @@ python convert.py scan.pdf -o outputs/scan.xlsx --force-ocr
 python convert.py multilingual.pdf -o outputs/multilingual.xlsx --ocr-languages eng+tel+hin
 ```
 
-`--verify` runs an independent local OCR check on native pages. `--force-ocr` handles damaged text layers. `--ocr-languages` accepts Tesseract codes or friendly names and reports missing local language packs instead of silently falling back. `python run.py --lan` serves the app only to loopback and the detected private network while the process is running.
+`--verify` runs an independent local OCR check on native pages. `--force-ocr` handles damaged text layers. `--ocr-languages` accepts Tesseract codes or friendly names and reports missing local language packs instead of silently falling back. `python run.py --lan` serves the app to loopback and the detected private network while the process is running. Use `--lan` only on a trusted private network; it does not add authentication and must not be exposed to the public internet.
 
 </details>
 
@@ -150,7 +150,7 @@ python convert.py multilingual.pdf -o outputs/multilingual.xlsx --ocr-languages 
 .\.venv\Scripts\python.exe scripts\smoke_portable.py
 ```
 
-The build uses pinned packages from `requirements-build.txt`, writes ignored artifacts under `portable-release/`, and creates a per-file `SHA256SUMS.txt`. The portable ZIP is a release artifact rather than a source-controlled binary.
+The build installs the declared build requirements from `requirements-build.txt`, writes ignored artifacts under `portable-release/`, and creates a per-file `SHA256SUMS.txt`. The portable ZIP is a release artifact rather than a source-controlled binary. Upstream package indexes, the operating system and the Python distribution remain external inputs, so a successful build must still be smoke-tested and hashed.
 
 </details>
 
@@ -171,21 +171,7 @@ Every document below contains generated dummy data. The linked XLSX files are Tr
 
 ## Measured benchmark
 
-Measured locally on Windows, Python 3.11.9. Times are wall-clock observations and can vary by CPU and OCR engine.
-
-| Development fixture | Pages | Rows | Columns | Time | Exact result |
-|---|---:|---:|---:|---:|---|
-| Invoice register | 3 | 48 | 12 | 6.43 s | PASS |
-| Bank errors | 1 | 19 | 6 | 1.31 s | PASS, 2/2 errors caught |
-| Scanned inventory | 2 | 24 | 12 | 69.41 s | PASS |
-| 5-page scanned continuations | 5 | 33 | 12 | 202.48 s | PASS, 2/2 split rows joined |
-| 50-page stress | 50 | 800 | 12 | 73.81 s | PASS |
-| 18-column table | 1 | 9 | 18 | 7.37 s | PASS |
-| Vertical nested lines | 1 | 8 | 10 | 1.07 s | PASS |
-| 13-page equivalent | 13 | 78 | 14 each | 13.74 s | PASS, 1,092/1,092 data cells |
-
-See all 23 cases, definitions, and per-page timings in the [accuracy report](reports/ACCURACY_REPORT.md).
-The current five-page raster benchmark cross-checked local Tesseract and RapidOCR, selected RapidOCR for the exported pages, and took about 3.4 minutes on this host. The separate portable suite excludes Tesseract and remains 5/5 on its five disclosed scan fixtures.
+The generated [accuracy report](reports/ACCURACY_REPORT.md) records every development case, exact-result checks and the per-page timings from the latest complete evaluation run. Timings are local wall-clock observations and can vary with CPU contention, model startup, OCR engine and document quality. The separate [portable OCR report](reports/PORTABLE_OCR.json) records the scan suite with external Tesseract excluded.
 
 ## Demo
 
@@ -282,7 +268,7 @@ python scripts/public_audit.py --fetch
 ## Limitations
 
 - Handwriting, uninstalled OCR scripts, broken glyph maps, severe cropping, overlapping text, and extreme perspective may fail.
-- Native, explicitly ruled vertical body spans are supported conservatively. OCR/unruled spans and arbitrary multi-axis merged structures remain ambiguous and are flagged for review.
+- Source-backed merged headers and explicitly ruled vertical or horizontal spans are supported conservatively for native and OCR tables. Ambiguous unruled inheritance and irregular multi-axis nested layouts remain review cases.
 - Headerless joins can confuse unrelated tables with similar geometry. Sparse data may not provide enough evidence for arithmetic inference, while coincidental relations can create false alarms.
 - OCR confidence and arithmetic agreement are evidence, not guarantees. A clean validation report does not prove correct extraction; important values still require source review.
 - Semantic header signals currently emphasize English, Hindi and Telugu; data-driven inference covers additional scripts only when recurring value patterns are strong. OCR engines can share the same mistake.

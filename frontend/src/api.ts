@@ -1,5 +1,6 @@
 import type {
   Cell,
+  CellEvidence,
   ChallengeReport,
   Job,
   PreviewReport,
@@ -112,6 +113,15 @@ export const api = {
     if (table != null) query.set("table", String(table));
     if (status) query.set("status", status);
     return request<ReviewQueue>(`/jobs/${id}/review-queue?${query}`);
+  },
+  evidence: (id: string, cell: Cell, fingerprint?: string) => {
+    const query = new URLSearchParams({
+      table: String(cell.table),
+      row: String(cell.row),
+      column: String(cell.column),
+    });
+    if (fingerprint) query.set("fingerprint", fingerprint);
+    return request<CellEvidence>(`/jobs/${id}/evidence?${query}`);
   },
   preview: (id: string, cell: Cell, value: string, fingerprint?: string) =>
     request<PreviewReport>(

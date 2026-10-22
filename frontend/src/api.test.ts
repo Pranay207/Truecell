@@ -129,6 +129,42 @@ test("priority review records the exact queue item and source-check state", asyn
   }
 });
 
+test("cell evidence requests one deterministic table row and column", async () => {
+  const previous = globalThis.fetch;
+  let requested = "";
+  globalThis.fetch = async (input) => {
+    requested = String(input);
+    return new Response(
+      JSON.stringify({
+        evidence_id: "T2:R4:C6",
+        confidence: { kind: "native_text", score: null },
+        location: { evidence_state: "exact_source_box" },
+        correction_history: [],
+      }),
+      { status: 200 },
+    );
+  };
+  try {
+    const evidence = await api.evidence(
+      "workspace",
+      {
+        table: 1,
+        row: 3,
+        column: 5,
+      },
+      "snapshot-123",
+    );
+    assert.equal(
+      requested,
+      "/api/jobs/workspace/evidence?table=1&row=3&column=5&fingerprint=snapshot-123",
+    );
+    assert.equal(evidence.evidence_id, "T2:R4:C6");
+    assert.equal(evidence.confidence.kind, "native_text");
+  } finally {
+    globalThis.fetch = previous;
+  }
+});
+
 test("recovery accepts a new workspace ID while retaining the fork origin", async () => {
   const previous = globalThis.fetch;
   globalThis.fetch = async (input, init) => {

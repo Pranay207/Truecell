@@ -1,6 +1,6 @@
-# QA pass - 17 October 2026
+# QA pass — 22 October 2026
 
-Tested on Windows with Python 3.11.9. This pass covers the current source folder; the source/evidence archive was rebuilt from the reviewed Git-tracked allowlist on 19 October 2026.
+Tested on Windows with Python 3.11.9 on 22 October 2026. The counts and artifact hash below come from the final local release gate; these are development checks, not hidden-document accuracy claims.
 
 ## Issues found and fixed
 
@@ -29,24 +29,19 @@ Tested on Windows with Python 3.11.9. This pass covers the current source folder
 
 ## Verification
 
-- **260 Python tests passed** in the development environment. Ruff checks and formatting passed, and dependency checks passed in the recorded environments.
-- The packaged Windows EXE passed a separate portable smoke test covering local health/UI, exact native extraction, bundled RapidOCR, Excel/audit downloads, a path containing spaces and saved-workspace recovery after restart.
-- **15 frontend tests passed**, including extracted-row search, original-index preservation, OCR-language upload options and snapshot-safe review requests; strict TypeScript checks passed, and the Vite production bundle rebuilt successfully. The supplied build needs no Node.js at runtime.
-- **23/23** committed dummy-document outputs passed source-hash and exact-score verification. The five-page raster-only, 12-column continuation fixture passed Tesseract/RapidOCR cross-checking with all 33 rows, four repeated headers removed and two split rows recovered. The disclosed 13-page equivalent matched all 1,092 data cells. A no-table control passes only with zero output tables; its cell percentages are n/a.
-- **5/5** scan cases passed with Tesseract excluded: inventory, blur/noise, skew, perspective photo and sideways invoice. See `PORTABLE_OCR.json` for the engine-isolation method and measured timings.
+- **304 Python tests passed**. Ruff check, Ruff format check and dependency consistency passed.
+- **16 frontend tests passed**, followed by strict TypeScript checks and a fresh production build. The supplied build needs no Node.js at runtime.
+- **23/23** source-bound dummy-document cases passed exact truth checks. Every saved workbook was reopened and compared with its frozen audit at cell, data-type and number-format level; all 46 audit/XLSX artifacts were fresh.
+- **5/5** scan cases passed with external Tesseract excluded: inventory, blur/noise, skew, perspective photo and sideways invoice.
+- The rebuilt **Windows x64 EXE passed** local health/UI, exact native extraction, bundled RapidOCR, Excel/audit downloads, a path containing spaces and restart recovery. The bundle is **316.71 MiB extracted / 152.53 MiB zipped**; ZIP SHA-256 is `e786bec9bb3fa46d316c964552c82b47f56cf999af38800ae9bb4f65df50b3ea`.
 - Public cached regression checks passed their disclosed scope: 35 fuel-table cells, 48 selected census cells plus headers/shapes, a W3C no-table control, and 126 cells plus 14 flattened headers across two public Unicode tables. This does not check every census cell.
-- The recorded readback audit predates the vertical-span case and checked the original **20 converted workbooks** for row counts, headers, source hashes, **1,067 identifier cells**, and absence of formula-type cells. Those workbooks contain 13,225 data-cell positions; that count is not an independent accuracy measurement.
 - CLI checks returned the expected exit codes for a missing file, identical input/output paths, invalid output suffix, a no-table document and successful native conversion, without tracebacks.
 - FastAPI tests covered uploads, no-table downloads, source integrity, edits, reviews, exports, safe workspace deletion, recovery and reprocessing. Frontend unit tests covered API requests and display formatting.
-- The modern local server returned HTTP 200 for health, the React page, hashed assets, a source-page image, Excel and audit JSON. Optional LAN mode also returned HTTP 200 through its exact private-network address while retaining localhost access. A live bank extraction produced 19 rows × 6 columns; preview removed two failed equation checks in a disposable copy, Challenge caught 22/24 controlled edits, and the saved fingerprint/value stayed unchanged.
+- Docker Compose validation, final image build and live smoke checks passed. The non-root container exposed English/Hindi/Telugu OCR packs and RapidOCR, served the React page, extracted native and scanned samples exactly, returned Excel/CSV/audit downloads, remained healthy and restored its saved workspace after restart. Optional LAN mode is unauthenticated and is for a trusted private network only.
 - The offline launcher/model check passed. Browser screenshot interaction and native Excel rendering were not performed.
 
 ## Performance scope
 
-The final export-only check on the 50-page/800-row audit took **9.083 seconds**. An isolated two-page perspective-photo conversion, including Excel export, took **16.760 seconds** and passed all expected cells, headers and shapes.
+The generated `ACCURACY_REPORT.md` is the source for timings from the latest complete evaluation. Timings vary with CPU contention, model startup, OCR engine and document quality; they are not a cross-machine speed guarantee. Peak memory and execution on other operating systems/Python versions were not measured here.
 
-The fresh five-page raster-only continuation conversion took **174.97 seconds** with local Tesseract on this host (about **34.99 seconds/page**) and passed its exact source-bound checks. This is a single-machine development measurement.
-
-Concurrent OCR testing produced a much slower photo run, retained in the raw benchmark reports. Timings vary with CPU contention, model startup and document quality; they are not a cross-machine speed guarantee. Peak memory and execution on other operating systems/Python versions were not measured here.
-
-No live cloud-provider request or hidden-test accuracy claim is included in this QA pass. The final 3:53 demo and current source/evidence archive accompany the submission. External project review materials remain outside this repository.
+One first portable smoke attempt encountered a transient Windows connection reset while reading an audit response; server logs showed HTTP 200 and an immediate complete rerun passed every portable check. No repeat was reproduced. No live cloud-provider request or hidden-test accuracy claim is included in this QA pass. The final 3:53 demo and current source/evidence archive accompany the submission. External project review materials remain outside this repository.

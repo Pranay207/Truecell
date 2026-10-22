@@ -8,7 +8,8 @@ TRUECELL — DOCUMENT INTELLIGENCE
    64-bit Python 3.10–3.12; later source launches work offline.
 3. Open the localhost URL printed by the launcher.
    Optional phone demo: START_TRUECELL.cmd --offline --lan, then open the
-   printed Phone URL from the same private Wi-Fi network.
+   printed Phone URL from the same trusted private Wi-Fi network. LAN mode has
+   no authentication; never expose it to the public internet.
 4. Click “Find a wrong balance”, then open “Review” in the validation rail.
    The priority queue opens each uncertain or invalid value at its source.
    Mark an item checked only after inspecting that evidence. Then open “Equations”.
@@ -23,8 +24,9 @@ Quick-demo buttons: Invoice register / Find a wrong balance / Skewed scan.
 Upload Sparse text schedule / Sideways invoice / Page carry-forwards from
 the samples/ folder. All sample data is dummy.
 All 23 dummy PDFs, truth workbooks and converted workbooks are in the source folder.
-The 13-page equivalent sample is disclosed synthetic evidence, not an external
-private evaluation document. Independent evaluators can use docs/BLIND_EVALUATION.md.
+The 13-page equivalent sample is a disclosed synthetic development fixture, not
+blind evidence. External evaluators can use docs/BLIND_EVALUATION.md for a
+truth-withheld run on unseen authorized documents.
 
 CLI: python convert.py samples/A_invoice_register.pdf -o outputs/demo.xlsx
 Multilingual CLI: python convert.py input.pdf -o output.xlsx --ocr-languages eng+tel+hin

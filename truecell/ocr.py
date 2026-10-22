@@ -8,9 +8,12 @@ import math
 import os
 import shutil
 import subprocess
+from collections.abc import Callable, Iterable
+from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 from statistics import median
+from typing import Any
 
 import cv2
 import numpy as np
@@ -21,6 +24,73 @@ from .geometry import rotation_to_original, transformed_box
 from .models import Table
 from .profiling import normalize_languages
 from .table import normalize, words_to_grid
+
+
+@dataclass(frozen=True)
+class OCRAdapter:
+    """Explicit boundary for optional local OCR/layout runtimes.
+
+    Adapters receive a preprocessed grayscale page plus normalized language
+    codes and return the same word-box records as the bundled engines. They
+    are registered by the embedding application, so importing Truecell never
+    downloads a model or imports a heavyweight optional runtime.
+    """
+
+    recognizer: Callable[[np.ndarray, tuple[str, ...]], list[dict[str, Any]]]
+    languages: tuple[str, ...]
+    provider: str
+    layout_aware: bool
+    parallel_safe: bool
+
+
+_OCR_ADAPTERS: dict[str, OCRAdapter] = {}
+_RAPID_MODEL_SHA256 = "c3461add59bb4323ecba96a492ab75e06dda42467c9e3d0c18db5d1d21924be8"
+
+
+def register_ocr_adapter(
+    name: str,
+    recognizer: Callable[[np.ndarray, tuple[str, ...]], list[dict[str, Any]]],
+    *,
+    languages: Iterable[str] = ("eng",),
+    provider: str = "external",
+    layout_aware: bool = False,
+    parallel_safe: bool = False,
+) -> None:
+    """Register a locally configured OCR engine without changing dependencies."""
+    key = name.strip().lower()
+    if not key or key in {"rapidocr", "tesseract", "tesseract-cell"}:
+        raise ValueError("Adapter name must be nonempty and must not replace a bundled engine.")
+    normalized = normalize_languages(tuple(languages))
+    _OCR_ADAPTERS[key] = OCRAdapter(
+        recognizer,
+        normalized,
+        provider.strip() or "external",
+        bool(layout_aware),
+        bool(parallel_safe),
+    )
+
+
+def unregister_ocr_adapter(name: str) -> None:
+    """Remove an optional adapter; primarily useful for application lifecycle/tests."""
+    _OCR_ADAPTERS.pop(name.strip().lower(), None)
+
+
+def _module_available(name: str) -> bool:
+    try:
+        return importlib.util.find_spec(name) is not None
+    except (ImportError, ValueError):
+        return False
+
+
+@lru_cache(maxsize=1)
+def rapid_model_status() -> tuple[bool, str]:
+    """Verify the bundled recognizer before advertising it as available."""
+    path = Path(__file__).resolve().parents[1] / "models" / "en_PP-OCRv5_rec_mobile.onnx"
+    if not path.is_file():
+        return False, "bundled English OCR model is missing"
+    if hashlib.sha256(path.read_bytes()).hexdigest() != _RAPID_MODEL_SHA256:
+        return False, "bundled English OCR model failed its checksum"
+    return True, ""
 
 
 def cell_text(words: list[dict]) -> str:
@@ -49,10 +119,11 @@ def tesseract_path() -> str | None:
 def available_engines() -> list[str]:
     """List installed offline engines without downloading or loading a model."""
     engines = []
-    if importlib.util.find_spec("pytesseract") and tesseract_path():
+    if _module_available("pytesseract") and tesseract_path():
         engines.append("tesseract")
-    if importlib.util.find_spec("rapidocr_onnxruntime"):
+    if _module_available("rapidocr_onnxruntime") and rapid_model_status()[0]:
         engines.append("rapidocr")
+    engines.extend(sorted(_OCR_ADAPTERS))
     return engines
 
 
@@ -81,6 +152,10 @@ def tesseract_languages() -> tuple[str, ...]:
 
 def engine_language_coverage(engine: str, languages: tuple[str, ...]) -> tuple[str, ...]:
     """Return requested languages an installed OCR engine can actually read."""
+    adapter = _OCR_ADAPTERS.get(engine)
+    if adapter:
+        supported = set(adapter.languages)
+        return tuple(language for language in languages if language in supported)
     if engine.startswith("rapidocr"):
         return tuple(language for language in languages if language == "eng")
     if engine.startswith("tesseract"):
@@ -88,6 +163,84 @@ def engine_language_coverage(engine: str, languages: tuple[str, ...]) -> tuple[s
         return tuple(language for language in languages if language in installed)
     # Test and third-party engines retain the pre-language-routing contract.
     return languages
+
+
+def engine_capabilities(
+    languages: str | list[str] | tuple[str, ...] | None = None,
+) -> dict[str, dict[str, Any]]:
+    """Describe usable and detected OCR runtimes without importing their models."""
+    requested = configured_languages(languages)
+    tesseract_installed = _module_available("pytesseract") and bool(tesseract_path())
+    rapid_installed = _module_available("rapidocr_onnxruntime")
+    rapid_model_ready, rapid_model_reason = rapid_model_status() if rapid_installed else (False, "")
+    rapid_available = rapid_installed and rapid_model_ready
+    capabilities: dict[str, dict[str, Any]] = {
+        "tesseract": {
+            "available": tesseract_installed,
+            "installed": tesseract_installed,
+            "provider": "builtin-system",
+            "layout_aware": False,
+            "parallel_safe": True,
+            "requested_language_coverage": list(
+                engine_language_coverage("tesseract", requested) if tesseract_installed else ()
+            ),
+            "reason": (
+                "" if tesseract_installed else "pytesseract or the Tesseract binary is unavailable"
+            ),
+        },
+        "rapidocr": {
+            "available": rapid_available,
+            "installed": rapid_installed,
+            "provider": "bundled-onnx",
+            "layout_aware": False,
+            "parallel_safe": True,
+            "requested_language_coverage": list(
+                engine_language_coverage("rapidocr", requested) if rapid_available else ()
+            ),
+            "reason": (
+                ""
+                if rapid_available
+                else rapid_model_reason
+                if rapid_installed
+                else "rapidocr-onnxruntime is unavailable"
+            ),
+        },
+    }
+    for name, adapter in sorted(_OCR_ADAPTERS.items()):
+        capabilities[name] = {
+            "available": True,
+            "installed": True,
+            "provider": adapter.provider,
+            "layout_aware": adapter.layout_aware,
+            "parallel_safe": adapter.parallel_safe,
+            "requested_language_coverage": list(engine_language_coverage(name, requested)),
+            "reason": "",
+        }
+    if "paddleocr" not in capabilities:
+        paddle_installed = _module_available("paddleocr") and _module_available("paddle")
+        capabilities["paddleocr"] = {
+            "available": False,
+            "installed": paddle_installed,
+            "provider": "optional-adapter",
+            "layout_aware": True,
+            "parallel_safe": False,
+            "requested_language_coverage": [],
+            "reason": (
+                "installed but no local Truecell adapter is registered; automatic model downloads are disabled"
+                if paddle_installed
+                else "PaddleOCR and its Paddle runtime are not installed"
+            ),
+        }
+    return capabilities
+
+
+def engines_can_run_concurrently(engines: Iterable[str]) -> bool:
+    """Return whether distinct engines opted into one bounded parallel batch."""
+    names = list(engines)
+    if len(names) != len(set(names)):
+        return False
+    capabilities = engine_capabilities()
+    return all(capabilities.get(name, {}).get("parallel_safe", False) for name in names)
 
 
 def order_engines(engines: list[str], languages: tuple[str, ...]) -> list[str]:
@@ -111,8 +264,7 @@ def english_engine():
     from rapidocr_onnxruntime import RapidOCR
 
     path = Path(__file__).resolve().parents[1] / "models" / "en_PP-OCRv5_rec_mobile.onnx"
-    expected = "c3461add59bb4323ecba96a492ab75e06dda42467c9e3d0c18db5d1d21924be8"
-    if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+    if not rapid_model_status()[0]:
         raise ValueError("Bundled English OCR model is missing or failed its checksum.")
     return RapidOCR(rec_model_path=str(path), intra_op_num_threads=2, inter_op_num_threads=1)
 
@@ -333,6 +485,118 @@ def grid_regions(
     return sorted(regions, key=lambda r: (r[1][0], r[0][0])), mask
 
 
+def grid_topology(
+    xs: list[int], ys: list[int], line_mask: np.ndarray, gray: np.ndarray | None = None
+) -> tuple[list[list[tuple[int, int]]], list[list[tuple[int, int, int, int] | None]]]:
+    """Recover merged grid components from locally missing separator segments.
+
+    Global x/y lines establish a table, while a missing segment between two
+    adjacent slots is positive evidence that those slots share one source cell.
+    The returned owner map always points at the component's top-left slot.
+    """
+    rows, columns = len(ys) - 1, len(xs) - 1
+    parents = list(range(rows * columns))
+
+    def find(item: int) -> int:
+        while parents[item] != item:
+            parents[item] = parents[parents[item]]
+            item = parents[item]
+        return item
+
+    def union(left: int, right: int) -> None:
+        a, b = find(left), find(right)
+        if a != b:
+            parents[max(a, b)] = min(a, b)
+
+    def slot_has_content(row: int, column: int) -> bool:
+        """Detect independent ink before interpreting a broken rule as a merge."""
+        if gray is None:
+            return False
+        pad_x = max(3, round((xs[column + 1] - xs[column]) * 0.04))
+        pad_y = max(3, round((ys[row + 1] - ys[row]) * 0.08))
+        crop = gray[
+            ys[row] + pad_y : ys[row + 1] - pad_y,
+            xs[column] + pad_x : xs[column + 1] - pad_x,
+        ]
+        if crop.size == 0:
+            return False
+        if np.median(crop) < 150:
+            return True
+        return tight_ink(crop) is not None
+
+    def horizontal_present(boundary: int, column: int) -> bool:
+        y = ys[boundary]
+        pad = max(3, round((xs[column + 1] - xs[column]) * 0.06))
+        crop = line_mask[
+            max(0, y - 3) : min(line_mask.shape[0], y + 4),
+            xs[column] + pad : xs[column + 1] - pad,
+        ]
+        if crop.size == 0:
+            return True
+        coverage = np.count_nonzero(np.any(crop > 0, axis=0)) / max(1, crop.shape[1])
+        return coverage >= 0.25
+
+    def vertical_present(row: int, boundary: int) -> bool:
+        # A filled header band can hide pale separators from the binary line
+        # mask even though it contains independent labels in every column.
+        # Treat a dark band as column-preserving evidence; otherwise the whole
+        # header is incorrectly collapsed into one horizontally merged cell.
+        if gray is not None:
+            band = gray[
+                ys[row] + 4 : ys[row + 1] - 3,
+                xs[0] + 4 : xs[-1] - 3,
+            ]
+            if band.size and np.median(band) < 150:
+                return True
+        x = xs[boundary]
+        pad = max(3, round((ys[row + 1] - ys[row]) * 0.06))
+        crop = line_mask[
+            ys[row] + pad : ys[row + 1] - pad,
+            max(0, x - 3) : min(line_mask.shape[1], x + 4),
+        ]
+        if crop.size == 0:
+            return True
+        coverage = np.count_nonzero(np.any(crop > 0, axis=1)) / max(1, crop.shape[0])
+        return coverage >= 0.25
+
+    for boundary in range(1, rows):
+        for column in range(columns):
+            if not horizontal_present(boundary, column):
+                above, below = boundary - 1, boundary
+                if not (slot_has_content(above, column) and slot_has_content(below, column)):
+                    union(above * columns + column, below * columns + column)
+    for row in range(rows):
+        for boundary in range(1, columns):
+            if not vertical_present(row, boundary):
+                left, right = boundary - 1, boundary
+                if not (slot_has_content(row, left) and slot_has_content(row, right)):
+                    union(row * columns + left, row * columns + right)
+
+    members: dict[int, list[tuple[int, int]]] = {}
+    for row in range(rows):
+        for column in range(columns):
+            members.setdefault(find(row * columns + column), []).append((row, column))
+    owners = [[(row, column) for column in range(columns)] for row in range(rows)]
+    boxes: list[list[tuple[int, int, int, int] | None]] = [
+        [None for _ in range(columns)] for _ in range(rows)
+    ]
+    for cells in members.values():
+        top = min(row for row, _ in cells)
+        left = min(column for _, column in cells)
+        bottom = max(row for row, _ in cells)
+        right = max(column for _, column in cells)
+        if len(cells) != (bottom - top + 1) * (right - left + 1):
+            for row, column in cells:
+                owners[row][column] = (row, column)
+                boxes[row][column] = (xs[column], ys[row], xs[column + 1], ys[row + 1])
+            continue
+        owner = (top, left)
+        for row, column in cells:
+            owners[row][column] = owner
+        boxes[top][left] = (xs[left], ys[top], xs[right + 1], ys[bottom + 1])
+    return owners, boxes
+
+
 def recognize(
     gray: np.ndarray,
     engine: str,
@@ -340,6 +604,41 @@ def recognize(
     languages: str | list[str] | tuple[str, ...] | None = None,
 ) -> list[dict]:
     """Return text boxes with engine confidence; no lexical substitutions."""
+    adapter = _OCR_ADAPTERS.get(engine)
+    if adapter:
+        requested = configured_languages(languages)
+        supported = engine_language_coverage(engine, requested)
+        raw_words = adapter.recognizer(gray, supported)
+        words = []
+        for item in raw_words:
+            required = {"x0", "x1", "top", "bottom", "text", "confidence"}
+            if not isinstance(item, dict) or not required.issubset(item):
+                raise ValueError(f"OCR adapter {engine!r} returned an invalid word record.")
+            text = str(item["text"]).strip()
+            if not text:
+                continue
+            x0, x1 = float(item["x0"]), float(item["x1"])
+            top, bottom = float(item["top"]), float(item["bottom"])
+            confidence = float(item["confidence"])
+            coordinates = (x0, x1, top, bottom)
+            if (
+                not all(math.isfinite(value) for value in coordinates)
+                or x1 <= x0
+                or bottom <= top
+                or not math.isfinite(confidence)
+            ):
+                raise ValueError(f"OCR adapter {engine!r} returned invalid geometry/confidence.")
+            words.append(
+                {
+                    "x0": x0,
+                    "x1": x1,
+                    "top": top,
+                    "bottom": bottom,
+                    "text": text,
+                    "confidence": max(0.0, min(1.0, confidence)),
+                }
+            )
+        return words
     if engine == "rapidocr":
         result, _ = rapid_engine()(cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR))
         words = []
@@ -384,14 +683,25 @@ def recognize(
     ]
 
 
-def recognize_grid(gray: np.ndarray, regions: list[tuple[list[int], list[int]]]) -> list[dict]:
+def recognize_grid(
+    gray: np.ndarray,
+    regions: list[tuple[list[int], list[int]]],
+    component_boxes: list[list[list[tuple[int, int, int, int] | None]]] | None = None,
+) -> list[dict]:
     """Recognize known grid cells directly, avoiding word-detection digit loss."""
     crops = []
     positions = []
-    for xs, ys in regions:
+    for region_index, (xs, ys) in enumerate(regions):
+        boxes = component_boxes[region_index] if component_boxes is not None else None
         for r in range(len(ys) - 1):
             for c in range(len(xs) - 1):
-                crop = gray[ys[r] + 6 : ys[r + 1] - 5, xs[c] + 6 : xs[c + 1] - 5]
+                source_box = (
+                    boxes[r][c] if boxes is not None else (xs[c], ys[r], xs[c + 1], ys[r + 1])
+                )
+                if source_box is None:
+                    continue
+                x0, y0, x1, y1 = source_box
+                crop = gray[y0 + 6 : y1 - 5, x0 + 6 : x1 - 5]
                 tight = tight_ink(crop)
                 if tight is None:
                     continue
@@ -410,10 +720,10 @@ def recognize_grid(gray: np.ndarray, regions: list[tuple[list[int], list[int]]])
                     crops.append(cv2.cvtColor(line, cv2.COLOR_GRAY2BGR))
                     positions.append(
                         (
-                            xs[c] + 6,
-                            xs[c + 1] - 6,
-                            ys[r] + 8 + line_index * 12,
-                            ys[r] + 18 + line_index * 12,
+                            x0 + 6,
+                            x1 - 6,
+                            y0 + 8 + line_index * 12,
+                            y0 + 18 + line_index * 12,
                         )
                     )
     if not crops:
@@ -463,6 +773,8 @@ def extract_image(
     pixel_to_original = to_original @ scale_matrix @ np.linalg.inv(np.vstack([deskew, [0, 0, 1]]))
     point_map = np.diag([72 / original_dpi[0], 72 / original_dpi[1], 1]) @ pixel_to_original
     regions, mask = grid_regions(gray)
+    topologies = [grid_topology(xs, ys, mask, gray) for xs, ys in regions]
+    component_boxes = [boxes for _owners, boxes in topologies]
     cleaned = gray.copy()
     if not regions:
         # A single underline can join every header into a glyph-like blob.
@@ -475,16 +787,27 @@ def extract_image(
         cleaned[cv2.dilate(thin_rules, np.ones((3, 3), np.uint8)) > 0] = 255
     # Whiten inferred rule coordinates, not the entire morphology mask: the
     # latter can erase filled header backgrounds and the text they surround.
-    for xs, ys in regions:
+    for region_index, (xs, ys) in enumerate(regions):
+        owners, _boxes = topologies[region_index]
         # OCR engines struggle with white text on dark, filled header bands.
         for y0, y1 in zip(ys, ys[1:]):
             band = cleaned[y0 + 4 : y1 - 3, xs[0] + 4 : xs[-1] - 3]
             if band.size and np.median(band) < 150:
                 cleaned[y0 + 4 : y1 - 3, xs[0] + 4 : xs[-1] - 3] = 255 - band
-        for x in xs:
-            cv2.line(cleaned, (x, ys[0]), (x, ys[-1]), 255, 7)
-        for y in ys:
-            cv2.line(cleaned, (xs[0], y), (xs[-1], y), 255, 7)
+        for boundary, x in enumerate(xs):
+            if boundary in {0, len(xs) - 1}:
+                cv2.line(cleaned, (x, ys[0]), (x, ys[-1]), 255, 7)
+                continue
+            for row in range(len(ys) - 1):
+                if owners[row][boundary - 1] != owners[row][boundary]:
+                    cv2.line(cleaned, (x, ys[row]), (x, ys[row + 1]), 255, 7)
+        for boundary, y in enumerate(ys):
+            if boundary in {0, len(ys) - 1}:
+                cv2.line(cleaned, (xs[0], y), (xs[-1], y), 255, 7)
+                continue
+            for column in range(len(xs) - 1):
+                if owners[boundary - 1][column] != owners[boundary][column]:
+                    cv2.line(cleaned, (xs[column], y), (xs[column + 1], y), 255, 7)
     if alternate and engine != "tesseract":
         # Normalize dark backgrounds before binarization to preserve header text.
         cleaned = cv2.adaptiveThreshold(
@@ -496,7 +819,7 @@ def extract_image(
         cleaned = cv2.divide(cleaned, cv2.GaussianBlur(cleaned, (0, 0), 25), scale=255)
     requested_languages = configured_languages(languages)
     words = (
-        recognize_grid(cleaned, regions)
+        recognize_grid(cleaned, regions, component_boxes)
         if engine == "rapidocr" and regions and requested_languages == ("eng",)
         else (
             recognize(cleaned, engine)
@@ -509,21 +832,27 @@ def extract_image(
     dpi_x, dpi_y = image.info.get("dpi", (300, 300))
     sx, sy = image.width * 72 / dpi_x / w, image.height * 72 / dpi_y / h
     tables = []
-    for xs, ys in regions:
+    for region_index, (xs, ys) in enumerate(regions):
+        owners, pixel_boxes = topologies[region_index]
         grid = [[[] for _ in range(len(xs) - 1)] for _ in range(len(ys) - 1)]
         for word in words:
             cx, cy = (word["x0"] + word["x1"]) / 2, (word["top"] + word["bottom"]) / 2
             c = next((i for i in range(len(xs) - 1) if xs[i] <= cx < xs[i + 1]), None)
             r = next((i for i in range(len(ys) - 1) if ys[i] <= cy < ys[i + 1]), None)
             if r is not None and c is not None:
-                grid[r][c].append(word)
+                owner_row, owner_column = owners[r][c]
+                grid[owner_row][owner_column].append(word)
         rechecks = []
         original_readings = [[cell_text(cell) for cell in row] for row in grid]
         if alternate and engine == "tesseract":
             for r, row in enumerate(grid):
                 for c, cell in enumerate(row):
                     if cell and min(word["confidence"] for word in cell) < 0.80:
-                        crop = cleaned[ys[r] + 5 : ys[r + 1] - 4, xs[c] + 5 : xs[c + 1] - 4]
+                        source_box = pixel_boxes[r][c]
+                        if source_box is None:
+                            continue
+                        x0, y0, x1, y1 = source_box
+                        crop = cleaned[y0 + 5 : y1 - 4, x0 + 5 : x1 - 4]
                         if not crop.size:
                             continue
                         recheck_image = cv2.copyMakeBorder(
@@ -549,11 +878,8 @@ def extract_image(
                             grid[r][c] = rechecked
         raw = [[cell_text(cell) for cell in row] for row in grid]
         boxes = [
-            [
-                tuple(transformed_box((xs[c], ys[r], xs[c + 1], ys[r + 1]), point_map))
-                for c in range(len(xs) - 1)
-            ]
-            for r in range(len(ys) - 1)
+            [tuple(transformed_box(box, point_map)) if box is not None else None for box in row]
+            for row in pixel_boxes
         ]
         row_indices: list[int] = []
         table = normalize(
@@ -563,7 +889,8 @@ def extract_image(
             f"ocr-{engine}",
             confidence,
             boxes,
-            row_indices,
+            row_indices=row_indices,
+            ruled_geometry=True,
         )
         if table:
             single_header = table.header_detected and all(len(s) == 1 for s in table.header_sources)
@@ -584,10 +911,16 @@ def extract_image(
             )
             for c, sources in enumerate(table.header_sources):
                 for record in sources:
-                    record["confidence"] = (
-                        min((word["confidence"] for word in grid[header_index][c]), default=0)
-                        if header_index is not None
-                        else None
+                    source_row = int(record.get("source_row", (header_index or 0) + 1)) - 1
+                    source_column = int(record.get("source_column", c + 1)) - 1
+                    source_cell = (
+                        grid[source_row][source_column]
+                        if 0 <= source_row < len(grid)
+                        and 0 <= source_column < len(grid[source_row])
+                        else []
+                    )
+                    record["confidence"] = min(
+                        (word["confidence"] for word in source_cell), default=0
                     )
             if (
                 alternate
@@ -620,12 +953,25 @@ def extract_image(
             for r, raw_index in enumerate(row_indices):
                 row = grid[raw_index]
                 for c, cell in enumerate(row):
-                    table.cell_confidence[(r, c)] = min(
-                        (word["confidence"] for word in cell), default=0
-                    )
+                    score = min((word["confidence"] for word in cell), default=0)
                     for record in table.cell_sources[r][c]:
-                        record["confidence"] = table.cell_confidence[(r, c)]
-                        record["initial_reading"] = original_readings[raw_index][c]
+                        source_row = int(record.get("source_row", raw_index + 1)) - 1
+                        source_column = int(record.get("source_column", c + 1)) - 1
+                        source_cell = (
+                            grid[source_row][source_column]
+                            if 0 <= source_row < len(grid)
+                            and 0 <= source_column < len(grid[source_row])
+                            else []
+                        )
+                        score = min((word["confidence"] for word in source_cell), default=score)
+                        record["confidence"] = score
+                        record["initial_reading"] = (
+                            original_readings[source_row][source_column]
+                            if 0 <= source_row < len(original_readings)
+                            and 0 <= source_column < len(original_readings[source_row])
+                            else ""
+                        )
+                    table.cell_confidence[(r, c)] = score
             table.notes.append(
                 f"OCR {engine}; deskew correction {angle:.2f} degrees; values require source review."
             )

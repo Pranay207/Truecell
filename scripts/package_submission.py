@@ -44,6 +44,9 @@ if __name__ == "__main__":
         "pytest.ini",
         ".gitignore",
         ".gitattributes",
+        ".dockerignore",
+        "Dockerfile",
+        "docker-compose.yml",
     }
     excluded_parts = {
         ".git",
@@ -89,6 +92,9 @@ if __name__ == "__main__":
         "Truecell/frontend/dist/index.html",
         "Truecell/models/en_PP-OCRv5_rec_mobile.onnx",
         "Truecell/portable/Truecell.spec",
+        "Truecell/.dockerignore",
+        "Truecell/Dockerfile",
+        "Truecell/docker-compose.yml",
     }
     with zipfile.ZipFile(destination) as archive:
         missing = required.difference(archive.namelist())

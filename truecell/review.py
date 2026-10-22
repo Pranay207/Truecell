@@ -108,10 +108,15 @@ def evidence_status(value: object, sources: object, fallback_page: int | None = 
         if isinstance(sources, list)
         else []
     )
+    # Comparison records are deliberately retained for alternative-reading UI,
+    # but they do not locate or support the current working value.  Counting a
+    # comparison box here could falsely label an unlocated primary reading as
+    # exact cell evidence.
+    supporting_records = [record for record in records if record.get("role") != "comparison"]
     pages = sorted(
         {
             record["page"]
-            for record in records
+            for record in supporting_records
             if isinstance(record.get("page"), int) and record["page"] > 0
         }
     )
@@ -119,35 +124,183 @@ def evidence_status(value: object, sources: object, fallback_page: int | None = 
     if not text.strip():
         return {
             "status": "not_applicable",
+            "evidence_state": "empty_cell",
             "located": False,
             "reason": "The extracted cell is empty; no source location is required.",
             "page": page,
-            "source_records": len(records),
+            "source_records": len(supporting_records),
             "located_records": 0,
         }
-    located = sum(_valid_bbox(record) for record in records)
+    located = sum(_valid_bbox(record) for record in supporting_records)
     if located:
         reason = "At least one original reading has an exact source bounding box."
         status = "located"
-    elif records:
+        state = "exact_source_box"
+    elif supporting_records:
         reason = (
             "The extraction engine retained a source reading but did not return an exact "
             "cell bounding box; inspect the full source page."
         )
         status = "unlocated"
+        state = "page_only_review"
     else:
         reason = (
             "No cell-level source record was produced; inspect the mapped source page "
             "before accepting this value."
         )
         status = "unlocated"
+        state = "page_only_review"
     return {
         "status": status,
+        "evidence_state": state,
         "located": bool(located),
         "reason": reason,
         "page": page,
-        "source_records": len(records),
+        "source_records": len(supporting_records),
         "located_records": located,
+    }
+
+
+def confidence_evidence(record: object | None, fallback_score: object = None) -> dict:
+    """Describe what a recognition score means without inventing native confidence.
+
+    Native PDF text has deterministic text/geometry evidence but no probabilistic
+    OCR score.  Keeping that state explicit prevents a missing score from being
+    mistaken for either zero or perfect confidence.
+    """
+    source = record if isinstance(record, dict) else {}
+    engine = str(source.get("engine") or "unknown")
+    raw_score = source.get("confidence", fallback_score)
+    try:
+        score = float(raw_score) if raw_score is not None else None
+    except (TypeError, ValueError):
+        score = None
+    if score is not None and math.isfinite(score):
+        score = max(0.0, min(1.0, score))
+        return {
+            "kind": "ocr_score" if not engine.startswith("native") else "engine_score",
+            "score": score,
+            "label": f"{round(score * 100)}% recognition score",
+            "engine": engine,
+            "meaning": "Engine-reported recognition confidence; not measured accuracy.",
+        }
+    if engine.startswith("native"):
+        return {
+            "kind": "native_text",
+            "score": None,
+            "label": "Native PDF text (no OCR score)",
+            "engine": engine,
+            "meaning": "Text and geometry came directly from the PDF text layer.",
+        }
+    return {
+        "kind": "not_reported",
+        "score": None,
+        "label": "Recognition score unavailable",
+        "engine": engine,
+        "meaning": "The source record does not contain an engine confidence score.",
+    }
+
+
+def cell_evidence(result: Result, table: int, row: int, column: int) -> dict:
+    """Return one complete, deterministic evidence envelope for a displayed cell."""
+    if type(table) is not int or not 0 <= table < len(result.tables):
+        raise ValueError("Invalid table index.")
+    target = result.tables[table]
+    if type(row) is not int or not -1 <= row < len(target.rows):
+        raise ValueError("Invalid source row.")
+    values = target.headers if row == -1 else target.rows[row]
+    if type(column) is not int or not 0 <= column < len(values):
+        raise ValueError("Invalid column index.")
+
+    if row == -1:
+        raw_records = target.header_sources[column] if column < len(target.header_sources) else []
+        fallback_page = target.page
+        fallback_score = None
+        reference = f"T{table + 1}:H:C{column + 1}"
+    else:
+        source_row = target.cell_sources[row] if row < len(target.cell_sources) else []
+        raw_records = source_row[column] if column < len(source_row) else []
+        fallback_page = (
+            target.provenance[row][0][0]
+            if row < len(target.provenance) and target.provenance[row]
+            else target.page
+        )
+        fallback_score = target.cell_confidence.get((row, column))
+        reference = f"T{table + 1}:R{row + 1}:C{column + 1}"
+
+    records = [dict(record) for record in raw_records if isinstance(record, dict)]
+    for record in records:
+        record["confidence_evidence"] = confidence_evidence(record, fallback_score)
+    primary = next((record for record in records if record.get("role") != "comparison"), None)
+    confidence = confidence_evidence(primary, fallback_score)
+    value = str(values[column])
+    history = [
+        dict(event)
+        for event in result.history
+        if event.get("table") == table and event.get("row") == row and event.get("column") == column
+    ]
+    original_value = str(history[0].get("before", value)) if history else value
+    original_reading = original_value
+    contributing_readings: list[str] = []
+    for record in records:
+        if record.get("role") == "comparison":
+            continue
+        reading = str(
+            record.get("initial_reading")
+            if record.get("initial_reading") is not None
+            else record.get("text", "")
+        ).strip()
+        if reading and (
+            not contributing_readings or reading.casefold() != contributing_readings[-1].casefold()
+        ):
+            contributing_readings.append(reading)
+    if contributing_readings:
+        original_reading = " | ".join(contributing_readings)
+
+    alternatives: list[dict] = []
+    seen: set[tuple[str, str, int | None]] = set()
+    for record in records:
+        candidates = []
+        if record.get("role") == "comparison":
+            candidates.append((record.get("text"), "comparison"))
+        initial = record.get("initial_reading")
+        if initial is not None and str(initial) != str(record.get("text", "")):
+            candidates.append((initial, "initial_reading"))
+        for reading, kind in candidates:
+            text = "" if reading is None else str(reading)
+            page = record.get("page") if isinstance(record.get("page"), int) else None
+            key = (text, str(record.get("engine") or "unknown"), page)
+            if not text or key in seen:
+                continue
+            seen.add(key)
+            alternatives.append(
+                {
+                    "text": text,
+                    "kind": kind,
+                    "engine": record.get("engine") or "unknown",
+                    "page": page,
+                    "bbox": record.get("bbox"),
+                    "confidence": record["confidence_evidence"],
+                }
+            )
+
+    return {
+        "evidence_id": reference,
+        "cell": {
+            "table": table,
+            "row": row,
+            "column": column,
+            "kind": "header" if row == -1 else "data",
+        },
+        "value": value,
+        "original_value": original_value,
+        "original_reading": original_reading,
+        "sources": records,
+        "alternative_readings": alternatives,
+        "confidence": confidence,
+        "location": evidence_status(value, records, fallback_page),
+        "correction_history": history,
+        "correction_count": len(history),
     }
 
 

@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
+from eval.benchmark import ManifestError, _verify_workbook_matches_audit
 from eval.score import score, write_report
 from truecell.models import Result
 
@@ -28,6 +29,10 @@ def main() -> int:
         source_hash = hashlib.sha256(source.read_bytes()).hexdigest()
         if result.source_sha256 != source_hash:
             raise SystemExit(f"Source hash mismatch for {name}.")
+        try:
+            _verify_workbook_matches_audit(workbook, result, name)
+        except ManifestError as exc:
+            raise SystemExit(f"Workbook mismatch for {name}: {exc}") from exc
         metric = score(truth, result)
         metrics.append(metric)
         print(
