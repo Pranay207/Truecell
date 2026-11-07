@@ -18,7 +18,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-663399" alt="AGPL-3.0-or-later"></a>
 </p>
 
-Truecell is a local-first React and FastAPI application built for the **INCUXAI AI Agent Development Challenge 2026**. It profiles every page, routes native text and scans through evidence-based extraction strategies, reconstructs difficult tables, checks structural and numeric relationships, and exports reviewable spreadsheet data. Every non-empty cell is accounted for as source-located or explicitly unlocated with a reason.
+Truecell is a local-first React and FastAPI application . It profiles every page, routes native text and scans through evidence-based extraction strategies, reconstructs difficult tables, checks structural and numeric relationships, and exports reviewable spreadsheet data. Every non-empty cell is accounted for as source-located or explicitly unlocated with a reason.
 
 <p align="center">
   <a href="https://pranay207.github.io/Truecell/demo/"><strong>▶ Watch the Updated 3:53 Demo</strong></a><br>
